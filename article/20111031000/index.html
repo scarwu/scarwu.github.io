@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html lang="zh-tw" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>[Mobile Web] iOS螢幕旋轉網頁自動放大修正 | ScarShow | 刀疤說</title>
+	<meta name="viewport" content="width=640, initial-scale=1">
+	
+	<!-- Load Cascading Style Sheets -->
+	<link rel="stylesheet" href="/main.css">
+</head>
+<body>
+	<div id="main">
+		<header>
+			<hgroup>
+				<h1><a href="/">ScarShow | 刀疤說</a></h1>
+				<h2>Do Right Thing Right.</h2>
+			</hgroup>
+		</header>
+		<div id="nav"><a href="/">Home</a></div>
+		<div id="container"><div class="title">[Mobile Web] iOS螢幕旋轉網頁自動放大修正</div>
+<div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置(iPhone/iPad)在旋轉後網頁怎麼會自動放大Android則一切正常，查了一下原因是出在 <strong><meta></strong> 這個 Tag 的設定。</p>
+
+<p>以下是原本的 <strong><meta></strong></p>
+
+<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+</code></pre>
+
+<p><!--more-->
+原因是在於 <meta> 中的 content屬性的設定，首先 <strong>width=device-width</strong> 只是單純在設定網頁的寬度要符合顯示螢幕，再來 <strong>initial-scale=1</strong> 這就是重點了，這是在設定當網頁載入時的放大比例，這邊設定放大率是一倍，這看起來很像很美好但它並沒有強制縮放比例，僅限於剛載入網頁時才有用。</p>
+
+<p>所以將它修改為 <strong>minimum-scale=1, maximum-scale=1</strong> 將網頁的最大及最小縮放比例設為一倍，這樣不管螢幕怎樣旋轉，網頁縮放比例都不會變了。</p>
+
+<p>這是修改後的 <strong><meta></strong></p>
+
+<pre><code>&lt;meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"&gt;
+</code></pre>
+</div></div>
+		<div id="slider"><div class="tag">
+	<div class="title">Tag</div>
+	<div class="content">
+		<span><a href="/tag/Android">Android (2)</a></span><span><a href="/tag/Note">Note (4)</a></span><span><a href="/tag/HTML5">HTML5 (1)</a></span><span><a href="/tag/Javascript">Javascript (1)</a></span><span><a href="/tag/Linux">Linux (1)</a></span><span><a href="/tag/PHP">PHP (1)</a></span><span><a href="/tag/Ubuntu">Ubuntu (1)</a></span><span><a href="/tag/iOS">iOS (1)</a></span><span><a href="/tag/Mobile Web">Mobile Web (1)</a></span>	</div>
+</div><div class="category">
+	<div class="title">Category</div>
+	<div class="content">
+		<span><a href="/category/Android">Android (1)</a></span><span><a href="/category/HTML5">HTML5 (1)</a></span><span><a href="/category/Linux">Linux (1)</a></span><span><a href="/category/Mobile Web">Mobile Web (1)</a></span>	</div>
+</div><div class="archive">
+	<div class="title">Archive</div>
+	<div class="content">
+		<span><a href="/archive/2011">2011 (2)</a></span><span><a href="/archive/2012">2012 (2)</a></span>	</div>
+</div><div class="profile">
+	<div class="title">Profile</div>
+	<div class="content">
+		ScarWu
+	</div>
+</div></div>
+		<footer>Copyright (c) 2011-2012 ScarShow</footer>
+	</div>
+	<!-- Define and Load Javascript -->
+	<script src="/main.js"></script>
+	</body>
+</html>
