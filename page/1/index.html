@@ -23,9 +23,13 @@
 				<h2>Do Right Thing Right.</h2>
 			</hgroup>
 		</header>
-		<div id="nav"><a href="/">Home</a></div>
+		<div id="nav">
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/works">Works</a>
+		</div>
 		<div id="container"><div id="page">
-	<article><div class="title"><a href="/article/20120307000">[Linux] HipHop building on Ubuntu 11.10</a></div><div class="info"><span class="date">Date: 2012-03-07</span></div><div class="content"><p>最近有個專案有機會用到Facebook所提出的HipHop for PHP，它可以將PHP程式碼轉為C++並編譯成可執行檔用來加速處理效能，在這邊筆記一下安裝過程。</p>
+	<article><div class="title"><a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10">HipHop building on Ubuntu 11.10</a></div><div class="info"><span class="date">Date: 2012-03-07</span></div><div class="content"><p>最近有個專案有機會用到Facebook所提出的HipHop for PHP，它可以將PHP程式碼轉為C++並編譯成可執行檔用來加速處理效能，在這邊筆記一下安裝過程。</p>
 
 <p>refrence: <a href="https://github.com/facebook/hiphop-php/wiki/Building-and-Installing-on-Ubuntu-11.10">Building and Installing on Ubuntu 11.10</a></p>
 
@@ -34,47 +38,41 @@
 <pre><code>sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0
 </code></pre>
 
-</div><a class="more" href="/article/20120307000">Read more ...</a></article><hr><article><div class="title"><a href="/article/20120129000">[HTML5] 建立及使用HTML5 SQL Database</a></div><div class="info"><span class="date">Date: 2012-01-29</span></div><div class="content"><p>HTML5提供了許多的新功能其中一項就是Local端的儲存功能，在Javascript中的函示分別為window.openDatabase及window.localStorage，window.openDatabase相較於Cookie有很大的不同，而window.localStorage比較相近於Cookie是一種key-value的儲存方式。</p>
+</div><a class="more" href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10">Read more ...</a></article><hr><article><div class="title"><a href="/article/2012/01/29/html5-sql-database">建立及使用HTML5 SQL Database</a></div><div class="info"><span class="date">Date: 2012-01-29</span></div><div class="content"><p>HTML5提供了許多的新功能其中一項就是Local端的儲存功能，在Javascript中的函示分別為window.openDatabase及window.localStorage，window.openDatabase相較於Cookie有很大的不同，而window.localStorage比較相近於Cookie是一種key-value的儲存方式。</p>
 
 <p>使用window.openDatabase的方法，這是在Local端建立一個SQL資料庫</p>
 
 <pre><code>var db = window.openDatabase(name, version, display_name, size);
 </code></pre>
 
-<p></div><a class="more" href="/article/20120129000">Read more ...</a></article><hr><article><div class="title"><a href="/article/20111031000">[Mobile Web] iOS螢幕旋轉網頁自動放大修正</a></div><div class="info"><span class="date">Date: 2011-10-31</span></div><div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置(iPhone/iPad)在旋轉後網頁怎麼會自動放大Android則一切正常，查了一下原因是出在 <strong><meta></strong> 這個 Tag 的設定。</p>
+<p></div><a class="more" href="/article/2012/01/29/html5-sql-database">Read more ...</a></article><hr><article><div class="title"><a href="/article/2011/10/31/ios螢幕旋轉網頁自動放大修正">iOS螢幕旋轉網頁自動放大修正</a></div><div class="info"><span class="date">Date: 2011-10-31</span></div><div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置(iPhone/iPad)在旋轉後網頁怎麼會自動放大Android則一切正常，查了一下原因是出在 <strong><meta></strong> 這個 Tag 的設定。</p>
 
 <p>以下是原本的 <strong><meta></strong></p>
 
 <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
 </code></pre>
 
-<p></div><a class="more" href="/article/20111031000">Read more ...</a></article><hr><article><div class="title"><a href="/article/20110926000">[Android] Android 開發環境設置</a></div><div class="info"><span class="date">Date: 2011-09-26</span></div><div class="content"><h2>下載</h2>
+<p></div><a class="more" href="/article/2011/10/31/ios螢幕旋轉網頁自動放大修正">Read more ...</a></article><hr><article><div class="title"><a href="/article/2011/09/26/android-開發環境設置">Android 開發環境設置</a></div><div class="info"><span class="date">Date: 2011-09-26</span></div><div class="content"><h2>下載</h2>
 
 <ul>
 <li>JDK 7 (jdk-7-windows-i586.exe) - <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/<wbr>technetwork/java/javase/downloads/index.html</a></li>
 <li>Android SDK (android-sdk_r15-windows.zip) - <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></li>
 <li>ADT 15.0.0 (ADT-15.0.0.zip) - <a href="http://developer.android.com/sdk/eclipse-adt.html">http://developer.android.com/sdk/eclipse-adt.html</a></li>
 <li>Eclipse Classic 3.7 (Windows 32 Bit) - <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>
-</div><a class="more" href="/article/20110926000">Read more ...</a></article><hr>	<div class="bar">Bar</div>
+</div><a class="more" href="/article/2011/09/26/android-開發環境設置">Read more ...</a></article><hr>	<div class="bar">Bar</div>
 </div></div>
 		<div id="slider"><div class="tag">
 	<div class="title">Tag</div>
 	<div class="content">
-		<span><a href="/tag/Note">Note (4)</a></span><span><a href="/tag/Android">Android (2)</a></span><span><a href="/tag/iOS">iOS (1)</a></span><span><a href="/tag/Mobile Web">Mobile Web (1)</a></span><span><a href="/tag/Ubuntu">Ubuntu (1)</a></span><span><a href="/tag/Linux">Linux (1)</a></span><span><a href="/tag/HTML5">HTML5 (1)</a></span><span><a href="/tag/Javascript">Javascript (1)</a></span><span><a href="/tag/PHP">PHP (1)</a></span>	</div>
+		<span><a href="/tag/Note">Note (4)</a></span><span><a href="/tag/Android">Android (2)</a></span><span><a href="/tag/iOS">iOS (1)</a></span><span><a href="/tag/Mobile Web">Mobile Web (1)</a></span><span><a href="/tag/Javascript">Javascript (1)</a></span><span><a href="/tag/Ubuntu">Ubuntu (1)</a></span><span><a href="/tag/Linux">Linux (1)</a></span><span><a href="/tag/PHP">PHP (1)</a></span><span><a href="/tag/HTML5">HTML5 (1)</a></span>	</div>
 </div><div class="category">
 	<div class="title">Category</div>
 	<div class="content">
-		<span><a href="/category/Mobile Web">Mobile Web (1)</a></span><span><a href="/category/Linux">Linux (1)</a></span><span><a href="/category/HTML5">HTML5 (1)</a></span><span><a href="/category/Android">Android (1)</a></span>	</div>
+		<span><a href="/category/Mobile Web">Mobile Web (1)</a></span><span><a href="/category/HTML5">HTML5 (1)</a></span><span><a href="/category/Linux">Linux (1)</a></span><span><a href="/category/Android">Android (1)</a></span>	</div>
 </div><div class="archive">
 	<div class="title">Archive</div>
 	<div class="content">
-		<span><a href="/archive/2012">2012 (2)</a></span><span><a href="/archive/2011">2011 (2)</a></span>	</div>
-</div><div class="profile">
-	<div class="title">Profile</div>
-	<div class="content">
-		<p>ScarWu - 刀疤</p>
-		<img src="https://secure.gravatar.com/avatar/707490a8cfcb1bc5824a153fa9e874a2?s=200"/>
-	</div>
+		<span><a href="/archive/2011">2011 (2)</a></span><span><a href="/archive/2012">2012 (2)</a></span>	</div>
 </div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>
 	</div>
