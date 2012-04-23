@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html lang="zh-tw" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>實作一個小型Router use PHP (1) | ScarShow | 刀疤說</title>
+	<meta name="viewport" content="width=640, initial-scale=1">
+	
+	<!-- Load Cascading Style Sheets -->
+	<link rel="stylesheet" href="/main.css">
+</head>
+<body>
+	<div id="main">
+		<header>
+			<hgroup>
+				<h1><a href="/">ScarShow | 刀疤說</a></h1>
+				<h2>Do Right Thing Right.</h2>
+			</hgroup>
+		</header>
+		<div id="nav">
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/works">Works</a>
+		</div>
+		<div id="container"><div id="article">
+	<article>
+		<div class="title">實作一個小型Router use PHP (1)</div>
+		<div class="info">
+		<span class="date">Date: 2012-04-23</span>		</div>
+		<div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼接下來就看看這到底是怎麼一回事。</p>
+
+<p>首先建立一個PHP程式 server.php</p>
+
+<pre><code>&lt;?php
+    print_r($_SERVER);
+</code></pre>
+
+<!--more-->
+
+<p>然後我們用curl來發送請求來觀察PHP到底收到了什麼訊息</p>
+
+<pre><code>curl -X GET "localhost/server.php/segement/input" -d "param=test" -G
+</code></pre>
+
+<p>底下是curl輸出之結果</p>
+
+<pre><code>Array
+(
+    [HTTP_USER_AGENT] =&gt; curl/7.21.6 (x86_64-pc-linux-gnu) libcurl/7.21.6 OpenSSL/1.0.0e zlib/1.2.3.4 libidn/1.22 librtmp/2.3
+    [HTTP_HOST] =&gt; localhost
+    [HTTP_ACCEPT] =&gt; */*
+    [PATH] =&gt; /usr/local/bin:/usr/bin:/bin
+    [SERVER_SIGNATURE] =&gt; &lt;address&gt;Apache/2.2.20 (Ubuntu) Server at localhost Port 80&lt;/address&gt;
+
+    [SERVER_SOFTWARE] =&gt; Apache/2.2.20 (Ubuntu)
+    [SERVER_NAME] =&gt; localhost
+    [SERVER_ADDR] =&gt; 127.0.0.1
+    [SERVER_PORT] =&gt; 80
+    [REMOTE_ADDR] =&gt; 127.0.0.1
+    [DOCUMENT_ROOT] =&gt; /var/www/
+    [SERVER_ADMIN] =&gt; webmaster@localhost
+    [SCRIPT_FILENAME] =&gt; /var/www/server.php
+    [REMOTE_PORT] =&gt; 58117
+    [GATEWAY_INTERFACE] =&gt; CGI/1.1
+    [SERVER_PROTOCOL] =&gt; HTTP/1.1
+    [REQUEST_METHOD] =&gt; GET
+    [QUERY_STRING] =&gt; param=test
+    [REQUEST_URI] =&gt; /server.php/segement/input?param=test
+    [SCRIPT_NAME] =&gt; /server.php
+    [PATH_INFO] =&gt; /segement/input
+    [PATH_TRANSLATED] =&gt; /var/www/segement/input
+    [PHP_SELF] =&gt; /server.php/segement/input
+    [REQUEST_TIME] =&gt; 1335154750
+)
+</code></pre>
+
+<p>根據 $_SERVER 的內容中我們挑出能用的部份，REQUEST_METHOD 就是HTTP請求時的Method而 PATH_INFO 、PHP_SELF 及 REQUEST_URI 則可以用來當作比對用的URL。PATH_INFO的內容 <code>/segement/input</code> 完全符合需求，另外的 PHP_SELF 及 REQUEST_URI 要做額外的處理才能使用。</p>
+
+<p>還有一件值得一提的事情，上面三個變數Apache都有、Nginx少 PATH_INFO 而IIS則少 REQUEST_URI。</p>
+
+<p>接下來就開始實作了，實做一個Router我們需要上面提到的HTTP Method、URL以及Route Rule及Callback，原理很簡單當Method及URL與Route rule互相Match的時候就會去呼叫Callback執行相對應的動作。首先新增一個名為router的class把一些基本的架構制定出來</p>
+
+<pre><code>&lt;?php
+// filename: router.php
+
+class router {
+    public function __construct() {
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
+    }
+
+    public function add($route, $callback) {
+        // do something
+    }
+
+    public function run() {
+        // compare
+    }
+}
+</code></pre>
+
+<p>以上的class提供一些基本的功能，當class被new時自動取得Method及URL，再用add加入Route Rule及Callback，接來下就可以用run讓Router <strike>跑路</strike> 啟動了。</p>
+
+<p>那麼比對怎樣做，<strike>直接用 == 字串比對就好啦</strike> 比較好的做好是使用正規表達式去比對字串。</p>
+
+<p><strong>待續...</strong></p>
+</div>
+	</article>
+	<hr>
+</div></div>
+		<div id="slider"><div class="tag">
+	<div class="title">Tag</div>
+	<div class="content">
+		<span><a href="/tag/Note">Note (4)</a></span><span><a href="/tag/Android">Android (2)</a></span><span><a href="/tag/PHP">PHP (2)</a></span><span><a href="/tag/iOS">iOS (1)</a></span><span><a href="/tag/Mobile Web">Mobile Web (1)</a></span><span><a href="/tag/HTML5">HTML5 (1)</a></span><span><a href="/tag/Ubuntu">Ubuntu (1)</a></span><span><a href="/tag/Linux">Linux (1)</a></span><span><a href="/tag/Javascript">Javascript (1)</a></span>	</div>
+</div><div class="category">
+	<div class="title">Category</div>
+	<div class="content">
+		<span><a href="/category/PHP">PHP (1)</a></span><span><a href="/category/Android">Android (1)</a></span><span><a href="/category/Mobile Web">Mobile Web (1)</a></span><span><a href="/category/HTML5">HTML5 (1)</a></span><span><a href="/category/Linux">Linux (1)</a></span>	</div>
+</div><div class="archive">
+	<div class="title">Archive</div>
+	<div class="content">
+		<span><a href="/archive/2012">2012 (3)</a></span><span><a href="/archive/2011">2011 (2)</a></span>	</div>
+</div></div>
+		<footer>Copyright (c) 2011-2012 ScarShow</footer>
+	</div>
+	<!-- Define and Load Javascript -->
+	<script src="/main.js"></script>
+	<script>
+		var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
+			var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+			g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g, s)
+		} (document, 'script'));
+	</script></body>
+</html>
