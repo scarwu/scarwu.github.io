@@ -1,0 +1,218 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html lang="zh-tw" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>實作一個小型Router use PHP (2) | ScarShow | 刀疤說</title>
+	<meta name="viewport" content="width=640, initial-scale=1">
+	
+	<!-- Load Cascading Style Sheets -->
+	<link rel="stylesheet" href="/main.css">
+</head>
+<body>
+	<div id="main">
+		<header>
+			<hgroup>
+				<h1><a href="/">ScarShow | 刀疤說</a></h1>
+				<h2>Do Right Thing Right.</h2>
+			</hgroup>
+		</header>
+		<div id="nav">
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/works">Works</a>
+		</div>
+		<div id="container"><div id="article">
+	<article>
+		<div class="title">實作一個小型Router use PHP (2)</div>
+		<div class="info">
+		<span class="date">Date: 2012-04-23</span>		</div>
+		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
+
+<pre><code>&lt;?php
+// filename: router.php
+class router {
+    public function __construct() {
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
+    }
+
+    public function add($route, $callback) {
+        $this-&gt;rules[] = array(
+            'route' =&gt; $route,
+            'callback' =&gt; $callback
+        );
+    }
+
+    public function run() {
+        foreach($this-&gt;rules as $index =&gt; $rule) {
+            if($rule['route'] == $this-&gt;url)
+                $rule['callback']();
+        }
+    }
+}
+</code></pre>
+
+<p><!--more-->
+為了讓範例簡單一點這邊還是直接使用字串比對，首先修改了add function讓它可以接收外在傳入，Route Rule及Callback而run function則是將rule讀出，去和URL做比對。</p>
+
+<p>以上都設定好後，我們修改原先用來測試的server.php，將router生成出來、並加入一條規則接著執行它</p>
+
+<pre><code>&lt;?php
+// filename: server.php
+require_once 'router.php';
+
+$Router = new router();
+
+$Router-&gt;add('/test/index.html', function() {
+    echo 'Success';
+});
+
+$Router-&gt;run();
+</code></pre>
+
+<p>當我們用curl去要求 <code>localhost/server.php/test/index.html</code> 時因為規則Match會回傳 Success 而要求其他路徑因為規則不符則不會有任何反應。</p>
+
+<p>那麼接下來讓Route Rule支援Default Route，就像是Linux的Route一樣當不清楚該將資料送給哪個Gateway的時候一律送給Default Gateway，所以這邊也一樣。</p>
+
+<p>Router.php</p>
+
+<pre><code>&lt;?php
+// filename: router.php
+class router {
+    public function __construct() {
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
+    }
+
+    public function add($route, $callback) {
+        $this-&gt;rules[$route] = $callback;
+    }
+
+    public function run() {
+        $is_match = FALSE;
+
+        foreach($this-&gt;rules as $route =&gt; $callback) {
+            if('default' === $route)
+                continue;
+
+            if($route == $this-&gt;url) {
+                $is_match = TRUE;
+                $callback();
+            }
+
+            if(!$is_match)
+                $this-&gt;rules['default']();
+        }
+    }
+}
+</code></pre>
+
+<p>Server.php</p>
+
+<pre><code>&lt;?php
+// filename: server.php
+require_once 'router.php';
+
+$Router = new router();
+
+$Router-&gt;add('/test/index.html', function() {
+    echo 'Success';
+});
+$Router-&gt;add('default', function() {
+    echo 'Default';
+});
+
+$Router-&gt;run();
+</code></pre>
+
+<p>基本上到這邊一個簡單的Router Prototype就完成了。那麼就在加強一下，使用正規表達式去比對字串。我們稍微對run function做調整並修改server.php傳入的參數。</p>
+
+<p>Router.php</p>
+
+<pre><code>&lt;?php
+// filename: router.php
+class router {
+    public function __construct() {
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
+    }
+
+    public function add($route, $callback) {
+        $this-&gt;rules[$route] = $callback;
+    }
+
+    public function run() {
+        $is_match = FALSE;
+
+        foreach($this-&gt;rules as $route =&gt; $callback) {
+            if('default' === $route)
+                continue;
+
+            if(preg_match($route, $this-&gt;url, $match)) {
+                $is_match = TRUE;
+                $callback($match);
+            }
+
+            if(!$is_match)
+                $this-&gt;rules['default']();
+        }
+    }
+}
+</code></pre>
+
+<p>Server.php</p>
+
+<pre><code>&lt;?php
+// filename: server.php
+require_once 'router.php';
+
+$Router = new router();
+
+$Router-&gt;add('/\/(\w+)\/(\w+)/', function($result) {
+    print_r($result);
+});
+$Router-&gt;add('default', function() {
+    echo 'Default';
+});
+
+$Router-&gt;run();
+</code></pre>
+
+<p>上面的範例可以Match所有 <code>/*/*/</code> 的字串，由於已經使用正規表達式去比對字串，用來切字串也是理所當然，所以就將切出來的字串順便塞到Callback裡方便使用。
+至於比對Method的部份我就沒有範例了，要作到怎麼樣的程度就看專案的情況，但如果你要又好又強大當然已經有大神刻好<a href="https://github.com/c9s/Roller">放在那邊了</a>。</p>
+</div>
+	</article>
+	<hr>
+</div></div>
+		<div id="slider"><div class="tag">
+	<div class="title">Tag</div>
+	<div class="content">
+		<span><a href="/tag/Note">Note (4)</a></span><span><a href="/tag/PHP">PHP (3)</a></span><span><a href="/tag/Android">Android (2)</a></span><span><a href="/tag/iOS">iOS (1)</a></span><span><a href="/tag/Mobile Web">Mobile Web (1)</a></span><span><a href="/tag/HTML5">HTML5 (1)</a></span><span><a href="/tag/Ubuntu">Ubuntu (1)</a></span><span><a href="/tag/Linux">Linux (1)</a></span><span><a href="/tag/Javascript">Javascript (1)</a></span>	</div>
+</div><div class="category">
+	<div class="title">Category</div>
+	<div class="content">
+		<span><a href="/category/PHP">PHP (2)</a></span><span><a href="/category/Android">Android (1)</a></span><span><a href="/category/Mobile Web">Mobile Web (1)</a></span><span><a href="/category/HTML5">HTML5 (1)</a></span><span><a href="/category/Linux">Linux (1)</a></span>	</div>
+</div><div class="archive">
+	<div class="title">Archive</div>
+	<div class="content">
+		<span><a href="/archive/2012">2012 (4)</a></span><span><a href="/archive/2011">2011 (2)</a></span>	</div>
+</div></div>
+		<footer>Copyright (c) 2011-2012 ScarShow</footer>
+	</div>
+	<!-- Define and Load Javascript -->
+	<script src="/main.js"></script>
+	<script>
+		var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
+			var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+			g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g, s)
+		} (document, 'script'));
+	</script></body>
+</html>

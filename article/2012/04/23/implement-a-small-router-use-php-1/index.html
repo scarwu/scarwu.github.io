@@ -33,17 +33,18 @@
 		<div class="title">實作一個小型Router use PHP (1)</div>
 		<div class="info">
 		<span class="date">Date: 2012-04-23</span>		</div>
-		<div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼接下來就看看這到底是怎麼一回事。</p>
+		<div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
 
 <p>首先建立一個PHP程式 server.php</p>
 
 <pre><code>&lt;?php
-    print_r($_SERVER);
+// filename: server.php
+
+print_r($_SERVER);
 </code></pre>
 
-<!--more-->
-
-<p>然後我們用curl來發送請求來觀察PHP到底收到了什麼訊息</p>
+<p><!--more-->
+然後我們用curl來發送請求來觀察PHP到底收到了什麼訊息</p>
 
 <pre><code>curl -X GET "localhost/server.php/segement/input" -d "param=test" -G
 </code></pre>
@@ -88,7 +89,6 @@
 
 <pre><code>&lt;?php
 // filename: router.php
-
 class router {
     public function __construct() {
         $this-&gt;method = $_SERVER['REQUEST_METHOD'];
@@ -117,15 +117,15 @@ class router {
 		<div id="slider"><div class="tag">
 	<div class="title">Tag</div>
 	<div class="content">
-		<span><a href="/tag/Note">Note (4)</a></span><span><a href="/tag/Android">Android (2)</a></span><span><a href="/tag/PHP">PHP (2)</a></span><span><a href="/tag/iOS">iOS (1)</a></span><span><a href="/tag/Mobile Web">Mobile Web (1)</a></span><span><a href="/tag/HTML5">HTML5 (1)</a></span><span><a href="/tag/Ubuntu">Ubuntu (1)</a></span><span><a href="/tag/Linux">Linux (1)</a></span><span><a href="/tag/Javascript">Javascript (1)</a></span>	</div>
+		<span><a href="/tag/Note">Note (4)</a></span><span><a href="/tag/PHP">PHP (3)</a></span><span><a href="/tag/Android">Android (2)</a></span><span><a href="/tag/iOS">iOS (1)</a></span><span><a href="/tag/Mobile Web">Mobile Web (1)</a></span><span><a href="/tag/HTML5">HTML5 (1)</a></span><span><a href="/tag/Ubuntu">Ubuntu (1)</a></span><span><a href="/tag/Linux">Linux (1)</a></span><span><a href="/tag/Javascript">Javascript (1)</a></span>	</div>
 </div><div class="category">
 	<div class="title">Category</div>
 	<div class="content">
-		<span><a href="/category/PHP">PHP (1)</a></span><span><a href="/category/Android">Android (1)</a></span><span><a href="/category/Mobile Web">Mobile Web (1)</a></span><span><a href="/category/HTML5">HTML5 (1)</a></span><span><a href="/category/Linux">Linux (1)</a></span>	</div>
+		<span><a href="/category/PHP">PHP (2)</a></span><span><a href="/category/Android">Android (1)</a></span><span><a href="/category/Mobile Web">Mobile Web (1)</a></span><span><a href="/category/HTML5">HTML5 (1)</a></span><span><a href="/category/Linux">Linux (1)</a></span>	</div>
 </div><div class="archive">
 	<div class="title">Archive</div>
 	<div class="content">
-		<span><a href="/archive/2012">2012 (3)</a></span><span><a href="/archive/2011">2011 (2)</a></span>	</div>
+		<span><a href="/archive/2012">2012 (4)</a></span><span><a href="/archive/2011">2011 (2)</a></span>	</div>
 </div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>
 	</div>
