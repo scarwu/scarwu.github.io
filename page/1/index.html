@@ -47,7 +47,7 @@ class router {
     }
 
     public function run() {
-        foreach($this-&gt;rules as $index =&gt; $rule) {
+        foreach($this-&gt;rules as $rule) {
             if($rule['route'] == $this-&gt;url) {
                 $rule['callback']();
                 break;
