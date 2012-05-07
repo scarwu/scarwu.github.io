@@ -9,7 +9,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>建立及使用HTML5 SQL Database | ScarShow | 刀疤說</title>
+	<title>Pointless使用說明 | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=640, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -37,65 +37,110 @@
 		</div>
 		<div id="container"><div id="article">
 	<article>
-		<div class="title">建立及使用HTML5 SQL Database</div>
+		<div class="title">Pointless使用說明</div>
 		<div class="info">
-		<span class="date">Date: 2012-01-29</span>		</div>
-		<div class="content"><p>HTML5提供了許多的新功能其中一項就是Local端的儲存功能，在Javascript中的函示分別為window.openDatabase及window.localStorage，window.openDatabase相較於Cookie有很大的不同，而window.localStorage比較相近於Cookie是一種key-value的儲存方式。</p>
+		<span class="date">Date: 2012-05-07</span>		</div>
+		<div class="content"><p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
 
-<p>使用window.openDatabase的方法，這是在Local端建立一個SQL資料庫</p>
+<h3>系統要求:</h3>
 
-<pre><code>var db = window.openDatabase(name, version, display_name, size);
+<ul>
+<li>PHP 5.3+</li>
+<li>Command Line Interface</li>
+</ul>
+
+<h3>支援</h3>
+
+<ul>
+<li>Github CNAME</li>
+<li>Google Analystics</li>
+<li>DIGQUS</li>
+</ul>
+
+<h3>外部程式</h3>
+
+<ul>
+<li><a href="http://michelf.com/projects/php-markdown/">PHP Makrdown</a></li>
+<li><a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a>
+<!--more--></li>
+</ul>
+
+<h3>如何安裝</h3>
+
+<h4>使用 git 從 github 上下載</h4>
+
+<pre><code>git clone git://github.com/scarwu/Pointless.git
 </code></pre>
 
-<p><!--more-->
-接著就可以下達SQL指令，使用以下的方式</p>
+<h4>將以下只加入 <code>.bashrc</code> 或是 <code>.zshrc</code> 檔案中</h4>
 
-<pre><code>db.transaction(query, error, success);
-var query = function(tx) {
-    var sql = 'doSomething';
-    var value = []
-    tx.executeSql(sql, value, function(tx, result) { ... }, function(tx, error) { ... });
-}
-
-var error = function(err) {
-    // do something
-}
-
-var success = function() {
-    // do something
-}
+<pre><code>export PATH=$PATH:/path/to/Pointless/Bin/
 </code></pre>
 
-<p>連起來寫就會像是這樣</p>
+<h3>poi 指令</h3>
 
-<pre><code>if(window.openDatabase) {
-    var db = window.openDatabase('TestDB', '0.1', 'Test local DB', 65535);
-    db.transaction(
-        function(tx) {
-            var createTable = 'CREATE TABLE `test` IF NOT EXISTS'
-                + '(`id` INT, `name` TEXT, `age` INT, `sex` TEXT)';
-            tx.executeSql(createTable);
-
-            tx.executeSql('INSERT INTO `test` (`id`, `name`, `age`, `sex`) VALUES(1, 'Tom', 20, 'Male')');
-            tx.executeSql('INSERT INTO `test` (`id`, `name`, `age`, `sex`) VALUES(2, 'John', 20, 'Male')');
-            tx.executeSql('INSERT INTO `test` (`id`, `name`, `age`, `sex`) VALUES(3, 'Iris', 20, 'Female')');
-
-            var sqlQuery = 'SELECT * FROM `test` WHERE `age`=? AND `sex`=?';
-            var value = [20, 'Male'];
-            tx.excuteSql(
-                sqlQuery, value,
-                function(tx, rs) {
-                    for(var i = 0;i &amp;lt; rs.rows.length;i++)
-                        alert(rs.rows.item(i).name);
-                },
-                function(tx, err) { ... }
-            );
-        },
-        funciton(error) { ... },
-        function() { ... }
-    );
-}
+<pre><code>help            - 顯示幫助.
+init            - 初始化Pointless
+gen (all)       - 產生靜態部落格
+gen css         - 單獨產生及壓縮CSS
+gen js          - 單獨產生及壓縮JavaScript
+gen clean       - 清除靜態部落格(.git除外)
+article (list)  - 列出所有文章
+article add     - 新增文章
+blogpage (list) - 列出所以靜態頁面
+blogpage add    - 新增靜態頁面
 </code></pre>
+
+<h4>初始化Pointless</h4>
+
+<pre><code>poi init
+</code></pre>
+
+<p>初始化後的資料放置在 /path/to/Pointless/Blog/ ，並且也生成了靜態資料放置在 /path/to/Pointless/Blog/Public 中</p>
+
+<p>而產生出的Blog資料夾檔案結構為</p>
+
+<pre><code>Blog
+├── Config.php    (部落格個設定檔，包含部落格的基本設定)
+├── Markdown      (MD檔的存放資料夾)
+│   ├── Article   (放置文章)
+│   └── BlogPage  (放置部落格的靜態頁面)
+├── Public        (靜態頁面公開的位置，可以將網頁伺服器指向它或是將它傳送到任何免費的網頁空間(Dropbox or Github))
+├── Resource      (部落格的公開檔案資料，會經由產生器全部複製到Public中)
+└── UI            (部落格頁面的樣式設定)
+    ├── Resource  (放置CSS, Javascript及圖片)
+    ├── Script    (產生樣板用的資料)
+    └── Template  (網頁樣板)
+</code></pre>
+
+<h3>新增文章</h3>
+
+<pre><code>poi article add
+</code></pre>
+
+<p>然後填入相對應的資料然後手動使用文字編輯器去修改內容</p>
+
+<h4>Markdown內容</h4>
+
+<pre><code>-----
+{
+    "title": "Welcome",
+    "url": "Welcome",
+    "tag": "Unset|Pointless",
+    "category": "Unset",
+    "date": "1970-01-01",
+    "time": "00:00:00"
+}
+-----
+Hi, Welcome to my blog!
+======================
+</code></pre>
+
+<p>文章資訊由 <code>-----</code> 所包圍，而資訊是使用JSON格式紀錄可以手動修改，另外 tag 是使用 <code>|</code> 所隔開，而在 <code>-----</code> 之後就可以開始寫文章了</p>
+
+<p><strong>結束</strong></p>
+
+<p>可能還有一些重要的東西忘了寫...有問題再留言吧，畢竟現在這個工具目前只有我一個人在用。</p>
 </div>
 	</article>
 	<hr>
