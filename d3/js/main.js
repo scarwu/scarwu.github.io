@@ -14,7 +14,11 @@ $(function() {
 	$(document).ready(function() {
 		if(source == null) {
 			source = {
-				skill: {},
+				skill: {
+					damage: 0,
+					critical_chance: 0,
+					critical_damage: 0
+				},
 				belt: {},
 				boots: {},
 				braces: {},
@@ -187,7 +191,18 @@ $(function() {
 		dps = dps * ((total_critical_chance / 100) * ((total_critical_damage / 100)) + 1);
 		dps = dps * (skill_damage / 100 + 1);
 		
+		var min = weapon_min_damage_1 + weapon_min_damage_2 + total_min_damage;
+		min = min * (total_main_attribute / 100 + 1);
+		min = min * (skill_damage / 100 + 1);
+		
+		var max = weapon_max_damage_1 + weapon_max_damage_2 + total_max_damage;
+		max = max * (total_main_attribute / 100 + 1);
+		max = max * (total_critical_damage / 100 + 1);
+		max = max * (skill_damage / 100 + 1);
+		
 		$('#source .attribute .damage_per_second').val(parseInt(dps * 100) / 100);
+		$('#source .attribute .total_min_damage').val(parseInt(dps * 100) / 100);
+		$('#source .attribute .total_max_damage').val(parseInt(dps * 100) / 100);
 	}
 	
 	function diff() {
@@ -314,7 +329,6 @@ $(function() {
 		// FIXME
 		// total_min_damage = total_min_damage + total['min_damage'];
 		// total_max_damage = total_max_damage + total['max_damage'];
-		console.log(JSON.stringify(total));
 		
 		//
 		var attack_per_second_1 = weapon_attack_per_second_1 * (total_attack_speed / 100 + 1);
@@ -331,15 +345,24 @@ $(function() {
 		$('#result .attribute .attack_per_second').val(parseInt(average_aps * 100) / 100);
 		
 		var dps = weapon_min_damage_1 + weapon_max_damage_1 + weapon_min_damage_2 + weapon_max_damage_2;
-		
 		dps = (dps + total_min_damage + total_max_damage) / 2;
 		dps = dps * average_aps;
 		dps = dps * (total_main_attribute / 100 + 1);
 		dps = dps * ((total_critical_chance / 100) * ((total_critical_damage / 100)) + 1);
 		dps = dps * (skill_damage / 100 + 1);
 		
+		var min = weapon_min_damage_1 + weapon_min_damage_2 + total_min_damage;
+		min = min * (total_main_attribute / 100 + 1);
+		min = min * (skill_damage / 100 + 1);
+		
+		var max = weapon_max_damage_1 + weapon_max_damage_2 + total_max_damage;
+		max = max * (total_main_attribute / 100 + 1);
+		max = max * (total_critical_damage / 100 + 1);
+		max = max * (skill_damage / 100 + 1);
 		
 		$('#result .attribute .damage_per_second').val(parseInt(dps * 100) / 100);
+		$('#result .attribute .total_min_damage').val(parseInt(dps * 100) / 100);
+		$('#result .attribute .total_max_damage').val(parseInt(dps * 100) / 100);
 		
 		$('#result .attribute .main_attribute').val(total_main_attribute);
 		$('#result .attribute .critical_chance').val(total_critical_chance);
