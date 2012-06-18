@@ -201,8 +201,8 @@ $(function() {
 		max = max * (skill_damage / 100 + 1);
 		
 		$('#source .attribute .damage_per_second').val(parseInt(dps * 100) / 100);
-		$('#source .attribute .total_min_damage').val(parseInt(dps * 100) / 100);
-		$('#source .attribute .total_max_damage').val(parseInt(dps * 100) / 100);
+		$('#source .attribute .min_damage').val(parseInt(min * 100) / 100);
+		$('#source .attribute .max_damage').val(parseInt(max * 100) / 100);
 	}
 	
 	function diff() {
@@ -361,8 +361,8 @@ $(function() {
 		max = max * (skill_damage / 100 + 1);
 		
 		$('#result .attribute .damage_per_second').val(parseInt(dps * 100) / 100);
-		$('#result .attribute .total_min_damage').val(parseInt(dps * 100) / 100);
-		$('#result .attribute .total_max_damage').val(parseInt(dps * 100) / 100);
+		$('#result .attribute .min_damage').val(parseInt(min * 100) / 100);
+		$('#result .attribute .max_damage').val(parseInt(max * 100) / 100);
 		
 		$('#result .attribute .main_attribute').val(total_main_attribute);
 		$('#result .attribute .critical_chance').val(total_critical_chance);
