@@ -1,2 +1,0 @@
-Diablo III - DPS Calculator
-===========================
