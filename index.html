@@ -37,7 +37,52 @@
 			</a>
 		</div>
 		<div id="container"><div id="page">
-	<article><div class="title"><a href="/article/2012/07/18/diablo-3-calculator-readme">Diablo 3 計算機使用說明</a></div><div class="info"><span class="date">Date: 2012-07-18</span></div><div class="content"><p>關於此<a href="/Diablo3Calculator/">計算機</a>主要是用來計算暗黑破壞神3中裝備所提供的DPS效益。</p>
+	<article><div class="title"><a href="/article/2012/07/19/hidden-ads-facebook-with-google-chrome">隱藏Facebook廣告 (Google Chrome)</a></div><div class="info"><span class="date">Date: 2012-07-19</span></div><div class="content"><p>最近覺得Facebook側邊的廣告是在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
+
+<p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<strike>放心本人為人正直不會亂放病毒。</strike></p>
+
+<p><strike>正因為如此，</strike>所以下面就附上Source Code，然後Extension本身是用Javascript寫得。</p>
+
+<h3><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h3>
+
+<pre><code>// ==UserScript==
+// @name           Facebook Ads Blocker
+// @version        0.1.0
+// @author         Scar Wu
+// @namespace      http://scar.simcz.tw
+// @description    Hidden Facebook Ads
+// @include        *
+// ==/UserScript==
+
+var _id = [
+    'pagelet_ego_pane_w',
+    'pagelet_side_ads'
+]
+
+var _class = [
+    'fbTimelineSideAds'
+]
+
+window.onload = hideAds();
+
+document.addEventListener('DOMNodeInserted', function() {
+    hideAds();
+});
+
+function hideAds() {
+    if(document.location.host == 'www.facebook.com') {
+        for (var key in _id)
+            if(document.getElementById(_id[key]) != undefined)
+                document.getElementById(_id[key]).innerHTML = null;
+
+        for (var key in _class)
+            if(document.getElementsByClassName(_class[key]) != undefined)
+                for(var index in document.getElementsByClassName(_class[key]))
+                    document.getElementsByClassName(_class[key])[index].innerHTML = null;
+    }
+}
+</code></pre>
+</div><a class="more" href="/article/2012/07/19/hidden-ads-facebook-with-google-chrome">Read more ...</a></article><hr><article><div class="title"><a href="/article/2012/07/18/diablo-3-calculator-readme">Diablo 3 計算機使用說明</a></div><div class="info"><span class="date">Date: 2012-07-18</span></div><div class="content"><p>關於此<a href="/Diablo3Calculator/">計算機</a>主要是用來計算暗黑破壞神3中裝備所提供的DPS效益。</p>
 
 <p><strike>因為我也是Diablo的忠實玩家，所以寫出這個計算機是很合理的。</strike></p>
 
@@ -143,15 +188,15 @@ print_r($_SERVER);
 		<div id="slider"><div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
-		<span><a href="/tag/PHP">PHP(5)</a></span><span><a href="/tag/Note">Note(4)</a></span><span><a href="/tag/Works">Works(3)</a></span><span><a href="/tag/Javascript">Javascript(2)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/Game">Game(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span>	</div>
+		<span><a href="/tag/PHP">PHP(5)</a></span><span><a href="/tag/Note">Note(4)</a></span><span><a href="/tag/Javascript">Javascript(3)</a></span><span><a href="/tag/Works">Works(3)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/Facebook">Facebook(1)</a></span><span><a href="/tag/Chrome">Chrome(1)</a></span><span><a href="/tag/Game">Game(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span>	</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-		<span><a href="/category/PHP">PHP(4)</a></span><span><a href="/category/Android">Android(1)</a></span><span><a href="/category/Linux">Linux(1)</a></span><span><a href="/category/HTML5">HTML5(1)</a></span><span><a href="/category/Mobile Web">Mobile Web(1)</a></span><span><a href="/category/Javascript">Javascript(1)</a></span>	</div>
+		<span><a href="/category/PHP">PHP(4)</a></span><span><a href="/category/Android">Android(1)</a></span><span><a href="/category/Tools">Tools(1)</a></span><span><a href="/category/Linux">Linux(1)</a></span><span><a href="/category/Mobile Web">Mobile Web(1)</a></span><span><a href="/category/HTML5">HTML5(1)</a></span><span><a href="/category/Javascript">Javascript(1)</a></span>	</div>
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-		<span><a href="/archive/2012">2012(7)</a></span><span><a href="/archive/2011">2011(2)</a></span>	</div>
+		<span><a href="/archive/2012">2012(8)</a></span><span><a href="/archive/2011">2011(2)</a></span>	</div>
 </div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>
 	</div>

@@ -9,7 +9,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Category: Mobile Web | ScarShow | 刀疤說</title>
+	<title>隱藏Facebook廣告 (Google Chrome) | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=640, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -36,9 +36,70 @@
 				</form>
 			</a>
 		</div>
-		<div id="container"><div id="category">
-	<div class="title">Category: Mobile Web</div>
-	<div class="month_archive"><div class="month">10</div><div class="list"><article><span class="title"><a href="/article/2011/10/31/ios螢幕旋轉網頁自動放大修正">iOS螢幕旋轉網頁自動放大修正</a></span><span class="archive">Archive: <a href="/archive/2011">2011</a></span><span class="tag">Tag: <a href="/tag/Android">Android</a>, <a href="/tag/iOS">iOS</a>, <a href="/tag/Mobile Web">Mobile Web</a>, <a href="/tag/Note">Note</a></span></article></div></div><hr></div></div>
+		<div id="container"><div id="article">
+	<article>
+		<div class="title">隱藏Facebook廣告 (Google Chrome)</div>
+		<div class="info">
+		<span class="date">Date: 2012-07-19</span>		</div>
+		<div class="content"><p>最近覺得Facebook側邊的廣告是在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
+
+<p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<strike>放心本人為人正直不會亂放病毒。</strike></p>
+
+<p><strike>正因為如此，</strike>所以下面就附上Source Code，然後Extension本身是用Javascript寫得。</p>
+
+<h3><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h3>
+
+<pre><code>// ==UserScript==
+// @name           Facebook Ads Blocker
+// @version        0.1.0
+// @author         Scar Wu
+// @namespace      http://scar.simcz.tw
+// @description    Hidden Facebook Ads
+// @include        *
+// ==/UserScript==
+
+var _id = [
+    'pagelet_ego_pane_w',
+    'pagelet_side_ads'
+]
+
+var _class = [
+    'fbTimelineSideAds'
+]
+
+window.onload = hideAds();
+
+document.addEventListener('DOMNodeInserted', function() {
+    hideAds();
+});
+
+function hideAds() {
+    if(document.location.host == 'www.facebook.com') {
+        for (var key in _id)
+            if(document.getElementById(_id[key]) != undefined)
+                document.getElementById(_id[key]).innerHTML = null;
+
+        for (var key in _class)
+            if(document.getElementsByClassName(_class[key]) != undefined)
+                for(var index in document.getElementsByClassName(_class[key]))
+                    document.getElementsByClassName(_class[key])[index].innerHTML = null;
+    }
+}
+</code></pre>
+</div>
+	</article>
+	<hr>
+	<!-- DISQUS -->
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	    var disqus_shortname = 'scarshow';
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	</script>
+</div></div>
 		<div id="slider"><div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
