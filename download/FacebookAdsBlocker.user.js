@@ -24,11 +24,11 @@ document.addEventListener('DOMNodeInserted', function() {
 
 function hideAds() {
 	if(document.location.host == 'www.facebook.com') {
-		for (var key in _id)
+		for(var key in _id)
 			if(document.getElementById(_id[key]) != undefined)
 				document.getElementById(_id[key]).innerHTML = null;
 		
-		for (var key in _class)
+		for(var key in _class)
 			if(document.getElementsByClassName(_class[key]) != undefined)
 				for(var index in document.getElementsByClassName(_class[key]))
 					document.getElementsByClassName(_class[key])[index].innerHTML = null;

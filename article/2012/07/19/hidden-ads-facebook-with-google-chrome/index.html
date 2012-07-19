@@ -45,7 +45,7 @@
 
 <p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<strike>放心本人為人正直不會亂放病毒。</strike></p>
 
-<p><strike>正因為如此，</strike>所以下面就附上Source Code，然後Extension本身是用Javascript寫得。</p>
+<p>下面就附上Source Code，然後Extension本身是用Javascript寫得，<strike>Oguma水美媒</strike>就這麼簡單。</p>
 
 <h3><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h3>
 
@@ -75,11 +75,11 @@ document.addEventListener('DOMNodeInserted', function() {
 
 function hideAds() {
     if(document.location.host == 'www.facebook.com') {
-        for (var key in _id)
+        for(var key in _id)
             if(document.getElementById(_id[key]) != undefined)
                 document.getElementById(_id[key]).innerHTML = null;
 
-        for (var key in _class)
+        for(var key in _class)
             if(document.getElementsByClassName(_class[key]) != undefined)
                 for(var index in document.getElementsByClassName(_class[key]))
                     document.getElementsByClassName(_class[key])[index].innerHTML = null;
