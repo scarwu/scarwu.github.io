@@ -1,22 +1,15 @@
 // ==UserScript==
 // @name           Facebook Ads Blocker
-// @version        0.1.0
+// @version        0.2.2
 // @author         Scar Wu
 // @namespace      http://scar.simcz.tw
 // @description    Hidden Facebook Ads
 // @include        *
 // ==/UserScript==
 
-var _id = [
-	'pagelet_ego_pane_w',
-	'pagelet_side_ads'
-]
-
-var _class = [
-	'fbTimelineSideAds'
-]
-
-window.onload = hideAds();
+window.onload = function() {
+	hideAds();
+};
 
 document.addEventListener('DOMNodeInserted', function() {
 	hideAds();
@@ -24,13 +17,23 @@ document.addEventListener('DOMNodeInserted', function() {
 
 function hideAds() {
 	if(document.location.host == 'www.facebook.com') {
-		for(var key in _id)
-			if(document.getElementById(_id[key]) != undefined)
-				document.getElementById(_id[key]).innerHTML = null;
+		var pagelet_side_ads = document.getElementById('pagelet_side_ads');
+		if(pagelet_side_ads != undefined)
+			pagelet_side_ads.innerHTML = null;
 		
-		for(var key in _class)
-			if(document.getElementsByClassName(_class[key]) != undefined)
-				for(var index in document.getElementsByClassName(_class[key]))
-					document.getElementsByClassName(_class[key])[index].innerHTML = null;
+		var ego_column = document.getElementsByClassName('ego_column');
+		if(ego_column != undefined && ego_column.length > 0) {
+			for(var index in ego_column) {
+				if(ego_column[index].getElementsByClassName('adsCategoryTitleLink') != undefined) {
+					ego_column[index].innerHTML = null;
+					break;
+				}
+			}
+		}
+			
+		var fbTimelineSideAds = document.getElementsByClassName('fbTimelineSideAds');
+		for(var index in fbTimelineSideAds) {
+			fbTimelineSideAds[index].innerHTML = null;
+		}
 	}
 }
