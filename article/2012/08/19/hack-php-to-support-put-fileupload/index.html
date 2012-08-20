@@ -65,13 +65,7 @@ if (SG(request_info).content_type &amp;&amp; !strcmp(SG(request_info).request_me
      * depending on given content type */
     sapi_read_post_data(TSRMLS_C);
 } else {
-    /* Any other method with content payload will fill $HTTP_RAW_POST_DATA 
-     * if it is enabled by always_populate_raw_post_data. 
-     * It's up to the webserver to decide whether to allow a method or not. */
-    SG(request_info).content_type_dup = NULL;
-    if (sapi_module.default_post_reader) {
-        sapi_module.default_post_reader(TSRMLS_C);
-    }
+    // ...
 }
 </code></pre>
 
@@ -84,13 +78,7 @@ if (SG(request_info).content_type &amp;&amp; (!strcmp(SG(request_info).request_m
      * depending on given content type */
     sapi_read_post_data(TSRMLS_C);
 } else {
-    /* Any other method with content payload will fill $HTTP_RAW_POST_DATA 
-     * if it is enabled by always_populate_raw_post_data. 
-     * It's up to the webserver to decide whether to allow a method or not. */
-    SG(request_info).content_type_dup = NULL;
-    if (sapi_module.default_post_reader) {
-        sapi_module.default_post_reader(TSRMLS_C);
-    }
+    // ...
 }
 </code></pre>
 
@@ -109,14 +97,7 @@ if (!strcmp(SG(request_info).request_method, "POST") || !strcmp(SG(request_info)
         /* no post handler registered, so we just swallow the data */
         sapi_read_standard_form_data(TSRMLS_C);
     }
-
-    /* For unknown content types we create HTTP_RAW_POST_DATA even if always_populate_raw_post_data off,
-     * this is in-effecient, but we need to keep doing it for BC reasons (for now) */
-    if ((PG(always_populate_raw_post_data) || NULL == SG(request_info).post_entry) &amp;&amp; SG(request_info).post_data) {
-        length = SG(request_info).post_data_length;
-        data = estrndup(SG(request_info).post_data, length);
-        SET_VAR_STRINGL("HTTP_RAW_POST_DATA", data, length);
-    }
+    // ...
 }
 </code></pre>
 
@@ -132,13 +113,7 @@ if (PG(variables_order) &amp;&amp;
     sapi_module.treat_data(PARSE_POST, NULL, NULL TSRMLS_CC);
     vars = PG(http_globals)[TRACK_VARS_POST];
 } else {
-    ALLOC_ZVAL(vars);
-    array_init(vars);
-    INIT_PZVAL(vars);
-    if (PG(http_globals)[TRACK_VARS_POST]) {
-        zval_ptr_dtor(&amp;PG(http_globals)[TRACK_VARS_POST]);
-    }
-    PG(http_globals)[TRACK_VARS_POST] = vars;
+    // ...
 }
 </code></pre>
 
