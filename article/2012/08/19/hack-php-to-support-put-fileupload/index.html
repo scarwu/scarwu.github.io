@@ -48,26 +48,35 @@
 
     $put_data = file_get_contents('php://input');
 
-    // handle put date...
+    // handle put data...
 </code></pre>
 
 <p><br>
 簡單的資料處理起來還OK但是遇到 form-data 的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
 
-<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code
-<!--more-->
-發現在 main/SAPI.c 中的 sapi_activate Function 中有這麼一段Code</p>
+<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
+
+<p><!--more-->
+結果發現在 main/SAPI.c 中的 sapi_activate Function 中有這麼一段Code</p>
 
 <pre><code>/* main/SAPI.c:456 */
 if (SG(request_info).content_type &amp;&amp; !strcmp(SG(request_info).request_method, "POST"))) {
     /* HTTP POST may contain form data to be processed into variables
      * depending on given content type */
     sapi_read_post_data(TSRMLS_C);
+} else {
+    /* Any other method with content payload will fill $HTTP_RAW_POST_DATA 
+     * if it is enabled by always_populate_raw_post_data. 
+     * It's up to the webserver to decide whether to allow a method or not. */
+    SG(request_info).content_type_dup = NULL;
+    if (sapi_module.default_post_reader) {
+        sapi_module.default_post_reader(TSRMLS_C);
+    }
 }
 </code></pre>
 
 <p><br>
-它用來比較HTTP Method是否為POST，然後底下所呼叫的Function sapi_read_post_data是用來處理檔案上傳的，所以就對它做一些修改</p>
+它用來比較HTTP Request Method是否為POST，然後底下所呼叫的Function sapi_read_post_data 是用來處理檔案上傳的，所以就對它做一些修改</p>
 
 <pre><code>/* main/SAPI.c:456 */
 if (SG(request_info).content_type &amp;&amp; (!strcmp(SG(request_info).request_method, "POST") || !strcmp(SG(request_info).request_method, "PUT"))) {
@@ -199,7 +208,8 @@ Array
 </div>
 	</article>
 	<hr>
-	<!-- DISQUS -->
+	<div class="bar"><span class="count">< 1 / 11 ></span><span class="new"></span><span class="old"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">隱藏Facebook廣告 (Google Chrome) >></a></span></div>
+		<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 	    var disqus_shortname = 'scarshow';
@@ -209,7 +219,7 @@ Array
 	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	    })();
 	</script>
-</div></div>
+	</div></div>
 		<div id="slider"><div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">

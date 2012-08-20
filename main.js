@@ -10,3 +10,10 @@ hljs.tabReplace = '    ';
 hljs.lineNodes = true;
 hljs.initHighlightingOnLoad();
 
+$(document).bind('keydown', function(e) {
+	if(e.keyCode == 39 && $('.old a')[0] != undefined)
+		$('.old a')[0].click();
+	if(e.keyCode == 37 && $('.new a')[0] != undefined)
+		$('.new a')[0].click();
+});
+
