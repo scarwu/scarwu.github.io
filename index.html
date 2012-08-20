@@ -37,7 +37,21 @@
 			</a>
 		</div>
 		<div id="container"><div id="page">
-	<article><div class="title"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">隱藏Facebook廣告 (Google Chrome)</a></div><div class="info"><span class="date">Date: 2012-07-19</span></div><div class="content"><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
+	<article><div class="title"><a href="/article/2012/08/19/hack-php-to-support-put-fileupload">讓PHP支援Put FileUpload</a></div><div class="info"><span class="date">Date: 2012-08-19</span></div><div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取 php://input 再做處理</p>
+
+<pre><code>&lt;?php
+    // do something...
+
+    $put_data = file_get_contents('php://input');
+
+    // handle put date...
+</code></pre>
+
+<p><br>
+簡單的資料處理起來還OK但是遇到 form-data 的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
+
+<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code
+</div><a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload">Read more ...</a></article><hr><article><div class="title"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">隱藏Facebook廣告 (Google Chrome)</a></div><div class="info"><span class="date">Date: 2012-07-19</span></div><div class="content"><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
 
 <p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<strike>放心本人為人正直不會亂放病毒。</strike></p>
 
@@ -165,41 +179,20 @@ print_r($_SERVER);
 <pre><code>sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0
 </code></pre>
 
-</div><a class="more" href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10">Read more ...</a></article><hr><article><div class="title"><a href="/article/2012/01/29/html5-sql-database">建立及使用HTML5 SQL Database</a></div><div class="info"><span class="date">Date: 2012-01-29</span></div><div class="content"><p>HTML5提供了許多的新功能其中一項就是Local端的儲存功能，在Javascript中的函示分別為window.openDatabase及window.localStorage，window.openDatabase相較於Cookie有很大的不同，而window.localStorage比較相近於Cookie是一種key-value的儲存方式。</p>
-
-<p>使用window.openDatabase的方法，這是在Local端建立一個SQL資料庫</p>
-
-<pre><code>var db = window.openDatabase(name, version, display_name, size);
-</code></pre>
-
-<p></div><a class="more" href="/article/2012/01/29/html5-sql-database">Read more ...</a></article><hr><article><div class="title"><a href="/article/2011/10/31/ios螢幕旋轉網頁自動放大修正">iOS螢幕旋轉網頁自動放大修正</a></div><div class="info"><span class="date">Date: 2011-10-31</span></div><div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置(iPhone/iPad)在旋轉後網頁怎麼會自動放大Android則一切正常，查了一下原因是出在 <strong><meta></strong> 這個 Tag 的設定。</p>
-
-<p>以下是原本的 <strong><meta></strong></p>
-
-<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-</code></pre>
-
-<p></div><a class="more" href="/article/2011/10/31/ios螢幕旋轉網頁自動放大修正">Read more ...</a></article><hr><article><div class="title"><a href="/article/2011/09/26/android-開發環境設置">Android 開發環境設置</a></div><div class="info"><span class="date">Date: 2011-09-26</span></div><div class="content"><h2>下載</h2>
-
-<ul>
-<li>JDK 7 (jdk-7-windows-i586.exe) - <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/<wbr>technetwork/java/javase/downloads/index.html</a></li>
-<li>Android SDK (android-sdk_r15-windows.zip) - <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></li>
-<li>ADT 15.0.0 (ADT-15.0.0.zip) - <a href="http://developer.android.com/sdk/eclipse-adt.html">http://developer.android.com/sdk/eclipse-adt.html</a></li>
-<li>Eclipse Classic 3.7 (Windows 32 Bit) - <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>
-</div><a class="more" href="/article/2011/09/26/android-開發環境設置">Read more ...</a></article><hr>	<div class="bar"></div>
+</div><a class="more" href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10">Read more ...</a></article><hr>	<div class="bar"><span class="count">< 1 / 2 ></span><a class="new"></a><a class="old" href="/page/2">Older Posts >></a></div>
 </div></div>
 		<div id="slider"><div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
-		<span><a href="/tag/PHP">PHP(5)</a></span><span><a href="/tag/Note">Note(4)</a></span><span><a href="/tag/Javascript">Javascript(3)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Works">Works(2)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/Chrome">Chrome(1)</a></span><span><a href="/tag/Facebook">Facebook(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span><span><a href="/tag/Game">Game(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span>	</div>
+		<span><a href="/tag/PHP">PHP(6)</a></span><span><a href="/tag/Note">Note(4)</a></span><span><a href="/tag/Javascript">Javascript(3)</a></span><span><a href="/tag/Works">Works(2)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Facebook">Facebook(1)</a></span><span><a href="/tag/Chrome">Chrome(1)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/Game">Game(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span>	</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-		<span><a href="/category/PHP">PHP(4)</a></span><span><a href="/category/Tools">Tools(2)</a></span><span><a href="/category/Android">Android(1)</a></span><span><a href="/category/HTML5">HTML5(1)</a></span><span><a href="/category/Mobile Web">Mobile Web(1)</a></span><span><a href="/category/Linux">Linux(1)</a></span>	</div>
+		<span><a href="/category/PHP">PHP(5)</a></span><span><a href="/category/Tools">Tools(2)</a></span><span><a href="/category/Android">Android(1)</a></span><span><a href="/category/Linux">Linux(1)</a></span><span><a href="/category/Mobile Web">Mobile Web(1)</a></span><span><a href="/category/HTML5">HTML5(1)</a></span>	</div>
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-		<span><a href="/archive/2012">2012(8)</a></span><span><a href="/archive/2011">2011(2)</a></span>	</div>
+		<span><a href="/archive/2012">2012(9)</a></span><span><a href="/archive/2011">2011(2)</a></span>	</div>
 </div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>
 	</div>
