@@ -90,11 +90,12 @@ article (list)  - 列出所有文章
 article add     - 新增文章
 blogpage (list) - 列出所以靜態頁面
 blogpage add    - 新增靜態頁面
+deploy          - 佈署部落格
 </code></pre>
 
 <h4>初始化部落格</h4>
 
-<pre><code>poi init
+<pre><code>./init.sh
 </code></pre>
 
 <p>初始化後的資料放置在 /path/to/Pointless/Blog/ ，並且也生成了靜態資料放置在 /path/to/Pointless/Blog/Public 中。</p>
@@ -134,7 +135,7 @@ blogpage add    - 新增靜態頁面
 }
 -----
 Hi, Welcome to my blog!
-======================
+=======================
 </code></pre>
 
 <p>文章資訊由 <code>-----</code> 所包圍，而文章資訊是使用JSON格式紀錄可以手動修改，另外 tag 是使用 <code>|</code> 所隔開，而在 <code>-----</code> 之後就可以開始寫文章了。
@@ -143,6 +144,10 @@ Hi, Welcome to my blog!
 <p><strong>結束</strong></p>
 
 <p>可能還有一些重要的東西忘了寫...有問題再留言吧，畢竟現在這個工具目前只有我一個人在用。</p>
+
+<p>如果對於程式有什麼提議或發現BUG的話也可以在Github上發個Issue。</p>
+
+<p><strong>Update 2012/08/20</strong></p>
 </div>
 	</article>
 	<hr>
