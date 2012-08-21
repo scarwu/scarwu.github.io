@@ -120,12 +120,40 @@ if (PG(variables_order) &amp;&amp;
 <p><br>
 所以一共改了3個地方，都多加了PUT的判斷，接下來就開始編譯了</p>
 
-<pre><code>./configure \
-    --prefix=/home/yourname/php \
-    --with-config-file-path=/home/yourname/php/etc \
-    --with-config-file-scan-dir=/home/yourname/php/var/db \
-    --with-pear=/home/yourname/php/lib/php \
-    --enable-all
+<pre><code>./configure --prefix=/home/scarwu/php \
+    --with-config-file-path=/home/scarwu/php/etc \
+    --with-config-file-scan-dir=/home/scarwu/php/var/db \
+    --with-pear=/home/scarwu/php/lib/php \
+    --disable-all \
+    --enable-dom \
+    --enable-exif \
+    --enable-hash \
+    --enable-json \
+    --enable-mbregex \
+    --enable-mbstring \
+    --enable-phar \
+    --enable-session \
+    --enable-short-tags \
+    --enable-libxml \
+    --enable-simplexml \
+    --enable-tokenizer \
+    --enable-xml \
+    --enable-xmlreader \
+    --enable-xmlwriter \
+    --with-xsl \
+    --with-xmlrpc \
+    --with-mhash \
+    --with-pcre-regex \
+    --with-zlib=/usr \
+    --with-curl=/usr \
+    --with-gettext=/usr \
+    --with-mysql=mysqlnd \
+    --with-mysqli=mysqlnd \
+    --with-pdo-mysql=mysqlnd \
+    --enable-pdo \
+    --with-sqlite3 \
+    --with-pdo-sqlite \
+    --enable-fpm
 make
 make install
 </code></pre>
