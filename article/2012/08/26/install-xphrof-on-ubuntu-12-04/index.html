@@ -45,7 +45,13 @@
 
 <h3>安裝</h3>
 
-<p>安裝 Xhprof，如果沒有 phpize 指令請先安裝 php5-dev，不過還是建議下 <strong>sudo apt-get build-dep php5</strong> 用來安裝編譯 PHP 所需的相關套件</p>
+<h4>編譯環境</h4>
+
+<pre><code>sudo apt-get build-dep php5
+sudo apt-get install php5-dev
+</code></pre>
+
+<h4>Xhprof</h4>
 
 <pre><code>wget http://pecl.php.net/get/xhprof-0.9.2.tgz
 tar -zxvf xhprof-0.9.2.tgz
@@ -72,16 +78,16 @@ make
 sudo make install
 </code></pre>
 
-<p><br>安裝 Graphviz，這是用來繪製結果需要用到的套件</p>
-
-<pre><code>sudo apt-get install graphviz
-</code></pre>
-
 <p><br>修改 php.ini 設定檔</p>
 
 <pre><code>[xhprof]
 extension=xhprof.so
 xhprof.output_dir=/tmp
+</code></pre>
+
+<h4>Graphviz，這是用來繪製結果需要用到的套件</h4>
+
+<pre><code>sudo apt-get install graphviz
 </code></pre>
 
 <h3>使用</h3>
