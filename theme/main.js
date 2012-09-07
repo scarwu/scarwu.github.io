@@ -56,7 +56,6 @@ $('#show').click(function() {
 	$('#slider').animate({
 		'left': '+=250'
 	}, time, function() {
-		$('.toggle').html('<<');
 		$('#slider').removeClass('hide');
 	});
 });
@@ -84,7 +83,6 @@ $('#hide').click(function() {
 	$('#slider').animate({
 		'left': '-=250'
 	}, time, function() {
-		$('.toggle').html('>>');
 		$('#slider').addClass('hide');
 	});
 });
