@@ -31,44 +31,61 @@ $(window).keydown(function(e) {
 	}
 });
 
-$('.toggle').click(function() {
-	if($('#slider').attr('class') == 'hide') {
-		$('body').animate({
-			'padding-left': '+=250'
-		}, 1000);
-		$('#main').animate({
-			'margin-left': '-=125'
-		}, 1000, function() {
-			$('#main').css('margin', '0 auto');
+$('#show').click(function() {
+	var time = 1000;
+
+	$('.arrow-right').animate({
+		'left': '+=250'
+	}, time, function() {
+		$('.arrow-left').fadeIn(time/2);
+		$('.arrow-right').fadeOut(time/2, function() {
+			$('.arrow-right').css('left', '0px')
 		});
-		$('#nav').animate({
-			'left': '+=250'
-		}, 1000);
-		$('#slider').animate({
-			'left': '+=250'
-		}, 1000, function() {
-			$('.toggle').html('<<');
-			$('#slider').removeClass('hide');
-		});
-	}
-	else {
-		$('body').animate({
-			'padding-left': '-=250'
-		}, 1000);
-		$('#main').animate({
-			'margin-left': '+=125'
-		}, 1000, function() {
-			$('#main').css('margin', '0 auto');
-		});
-		$('#nav').animate({
-			'left': '-=250'
-		}, 1000);
-		$('#slider').animate({
-			'left': '-=250'
-		}, 1000, function() {
-			$('.toggle').html('>>');
-			$('#slider').addClass('hide');
-		});
-	}
+	});
+	$('body').animate({
+		'padding-left': '+=250'
+	}, time);
+	$('#main').animate({
+		'margin-left': '-=125'
+	}, time, function() {
+		$('#main').css('margin', '0 auto');
+	});
+	$('#nav').animate({
+		'left': '+=250'
+	}, time);
+	$('#slider').animate({
+		'left': '+=250'
+	}, time, function() {
+		$('.toggle').html('<<');
+		$('#slider').removeClass('hide');
+	});
+});
+
+$('#hide').click(function() {
+	var time = 1000;
+	
+	$('.arrow-left').animate({
+		'left': '-=250'
+	}, time, function() {
+		$('.arrow-right').fadeIn(time/2);
+		$('.arrow-left').hide().css('left', '210px');
+	});
+	$('body').animate({
+		'padding-left': '-=250'
+	}, time);
+	$('#main').animate({
+		'margin-left': '+=125'
+	}, time, function() {
+		$('#main').css('margin', '0 auto');
+	});
+	$('#nav').animate({
+		'left': '-=250'
+	}, time);
+	$('#slider').animate({
+		'left': '-=250'
+	}, time, function() {
+		$('.toggle').html('>>');
+		$('#slider').addClass('hide');
+	});
 });
 
