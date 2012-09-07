@@ -10,3 +10,65 @@ hljs.tabReplace = '    ';
 hljs.lineNodes = true;
 hljs.initHighlightingOnLoad();
 
+$(window).keydown(function(e) {
+	switch(e.keyCode) {
+		case 37:
+		case 72:
+			if($('.bar .new a')[0] != undefined)
+				$('.bar .new a')[0].click();
+			break;
+		case 39:
+		case 76:
+			if($('.bar .old a')[0] != undefined)
+				$('.bar .old a')[0].click();
+			break;
+		case 74:
+			scrollBy(0,40);
+			break;
+		case 75:
+			scrollBy(0,-40);
+			break;
+	}
+});
+
+$('.toggle').click(function() {
+	if($('#slider').attr('class') == 'hide') {
+		$('body').animate({
+			'padding-left': '+=250'
+		}, 1000);
+		$('#main').animate({
+			'margin-left': '-=125'
+		}, 1000, function() {
+			$('#main').css('margin', '0 auto');
+		});
+		$('#nav').animate({
+			'left': '+=250'
+		}, 1000);
+		$('#slider').animate({
+			'left': '+=250'
+		}, 1000, function() {
+			$('.toggle').html('<<');
+			$('#slider').removeClass('hide');
+		});
+	}
+	else {
+		$('body').animate({
+			'padding-left': '-=250'
+		}, 1000);
+		$('#main').animate({
+			'margin-left': '+=125'
+		}, 1000, function() {
+			$('#main').css('margin', '0 auto');
+		});
+		$('#nav').animate({
+			'left': '-=250'
+		}, 1000);
+		$('#slider').animate({
+			'left': '-=250'
+		}, 1000, function() {
+			$('.toggle').html('>>');
+			$('#slider').addClass('hide');
+		});
+	}
+});
+
