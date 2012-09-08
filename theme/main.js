@@ -10,66 +10,7 @@ hljs.tabReplace = '    ';
 hljs.lineNodes = true;
 hljs.initHighlightingOnLoad();
 
-$('a').live('click', function(e) {
-	if($(this).attr('class') == 'non-async')
-		return true;
-	
-	e.preventDefault();
-	e.stopPropagation();
-	
-	var url = window.location.origin + $(this).attr("href");
-
-	if(!window.history.pushState) {
-		window.location.href = url;
-		return false;
-	}
-	
-	$.ajax({
-		url: url,
-		type: 'GET',
-		cache: false,
-		dataType: 'html',
-		success: function(data) {
-			var title = data.match(/<title>((?:.|\n)+)<\/title>/)[1];
-			var container = data.match(/<div id="container">((?:.|\n)+)<\/div>(?:.|\n)+<footer>/)[1];
-			$('title').html(title);
-			$('#container').html(container);
-
-			window.history.pushState({
-				'title': title,
-				'container': container
-			}, title, url);
-			
-			hljs.initHighlighting.called = false;
-			hljs.initHighlighting();
-		}
-	});
-});
-
-$(document).ready(function() {
-	if(window.history.pushState) {
-		var url = window.location.herf;
-		var title = $('title').html();
-		var container = $('#container').html();
-		
-		window.history.replaceState({
-			'title': title,
-			'container': container
-		}, title, url);
-	}
-});
-
-$(window).bind('popstate', function(e) {
-	if(window.history.pushState && e.originalEvent.state != null) {
-		var data = e.originalEvent.state;
-		
-		$('title').html(data.title);
-		$('#container').html(data.container);
-		
-		hljs.initHighlighting.called = false;
-		hljs.initHighlighting();
-	}
-}).keydown(function(e) {
+$(window).keydown(function(e) {
 	switch(e.keyCode) {
 		case 37:
 		case 72:
