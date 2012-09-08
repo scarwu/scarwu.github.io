@@ -33,6 +33,10 @@ $(window).keydown(function(e) {
 
 $('#show').click(function() {
 	if($('#slider').attr('class') == 'hide') {
+		if($.browser.webkit)
+			$('#main').animate({ 'margin-left': '-=125px' }, function() {
+				$('#main').css('margin', '0 auto');
+			});
 		$('body').animate({ 'padding-left': '+=250px' });
 		$('#nav').animate({ 'left': '+=250px' });
 		$('#slider').animate({
@@ -47,6 +51,10 @@ $('#show').click(function() {
 
 $('#hide').click(function() {
 	if($('#slider').attr('class') != 'hide') {
+		if($.browser.webkit)
+			$('#main').animate({ 'margin-left': '+=125px' }, function() {
+				$('#main').css('margin', '0 auto');
+			});
 		$('body').animate({ 'padding-left': '-=250px' });
 		$('#nav').animate({ 'left': '-=250px' });
 		$('#slider').animate({
