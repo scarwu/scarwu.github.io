@@ -51,7 +51,9 @@
 	<article>
 		<div class="title">隱藏Facebook廣告 (Google Chrome)</div>
 		<div class="info">
-			<span class="date">Date: 2012-07-19</span>
+			<span class="date">2012-07-19</span>
+			<br />
+			<span class="comments"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome#disqus_thread"></a></span>
 		</div>
 		<div class="content"><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
 
@@ -111,10 +113,18 @@ function hideAds() {
 	<script type="text/javascript">
 	    var disqus_shortname = 'scarshow';
 	    (function() {
-	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
+	        var embed = document.createElement('script');
+	        embed.type = 'text/javascript';
+	        embed.async = true;
+	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+
+			var count = document.createElement('script');
+			count.async = true;
+			count.type = 'text/javascript';
+			count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+		}());
 	</script>
 	</div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>

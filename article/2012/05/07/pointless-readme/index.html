@@ -51,7 +51,9 @@
 	<article>
 		<div class="title">Pointless使用說明</div>
 		<div class="info">
-			<span class="date">Date: 2012-05-07</span>
+			<span class="date">2012-05-07</span>
+			<br />
+			<span class="comments"><a href="/article/2012/05/07/pointless-readme#disqus_thread"></a></span>
 		</div>
 		<div class="content"><p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
 
@@ -170,10 +172,18 @@ Hi, Welcome to my blog!
 	<script type="text/javascript">
 	    var disqus_shortname = 'scarshow';
 	    (function() {
-	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
+	        var embed = document.createElement('script');
+	        embed.type = 'text/javascript';
+	        embed.async = true;
+	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+
+			var count = document.createElement('script');
+			count.async = true;
+			count.type = 'text/javascript';
+			count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+		}());
 	</script>
 	</div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>

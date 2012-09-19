@@ -51,7 +51,9 @@
 	<article>
 		<div class="title">修正 iOS 螢幕轉向網頁自動放大問題</div>
 		<div class="info">
-			<span class="date">Date: 2011-10-31</span>
+			<span class="date">2011-10-31</span>
+			<br />
+			<span class="comments"><a href="/article/2011/10/31/ios-rotation-resize-fix#disqus_thread"></a></span>
 		</div>
 		<div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置 (iPhone/iPad) 在旋轉後網頁怎麼會自動放大 Android 則一切正常，查了一下原因是出在 <strong><meta></strong> 這個 Tag 的設定。</p>
 
@@ -79,10 +81,18 @@
 	<script type="text/javascript">
 	    var disqus_shortname = 'scarshow';
 	    (function() {
-	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
+	        var embed = document.createElement('script');
+	        embed.type = 'text/javascript';
+	        embed.async = true;
+	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+
+			var count = document.createElement('script');
+			count.async = true;
+			count.type = 'text/javascript';
+			count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+		}());
 	</script>
 	</div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>
