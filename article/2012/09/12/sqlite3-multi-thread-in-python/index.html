@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Works | ScarShow | 刀疤說</title>
+	<title>SQLite3 Multi-Thread in Python | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -49,48 +49,57 @@
 		</div>
 		<div id="container"><div id="article">
 	<article>
-		<div class="title">Works</div>
-		<div class="info"></div>
-		<div class="content"><h3>Demo</h3>
+		<div class="title">SQLite3 Multi-Thread in Python</div>
+		<div class="info">
+			<span class="date">2012-09-12</span>
+			<br />
+			<span class="comments"><a href="/article/2012/09/12/sqlite3-multi-thread-in-python/#disqus_thread"></a></span>
+		</div>
+		<div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
+但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
 
-<ul>
-<li><a href="http://scar.simcz.tw/Diablo3Calculator" target="_blank" >Diablo 3 Calculator</a></li>
-<li><a href="http://scar.simcz.tw">Pointless</a></li>
-</ul>
+<h4>Error Code</h4>
 
-<h3>Source Code</h3>
+<pre><code>ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
+</code></pre>
 
-<ul>
-<li><a href="https://github.com/scarwu/Diablo3Calculator">Diablo 3 Calculator</a>
+<p><!--more-->
+查了一下官方的文件發現，在 Connect 的時候有這個選項 <code>check_same_thread=False</code> ，只要在連的時設定為 False 就可以了。</p>
 
-<ul>
-<li>Diablo III 屬性計算機</li>
-</ul></li>
-<li><a href="https://github.com/scarwu/Pointless">Pointless</a>
+<h4>Sample Code</h4>
 
-<ul>
-<li>以PHP結合CLI Mode撰寫的靜態Blog產生器</li>
-</ul></li>
-<li><a href="https://github.com/scarwu/ChexxWars">ChexxWars</a>
+<pre><code>import sqlite3
 
-<ul>
-<li>畢業專題 Facebook Game</li>
-</ul></li>
-</ul>
+conn = sqlite3.connect(path, check_same_thread=False)
+conn.execute('Do something')
+conn.close()
+</code></pre>
+
+<p>原因是在於SQLite在執行的時候會檢查Thread ID是否跟Cerate SQLite Connect的Thread ID相同，如果不相同他就吐出錯誤訊息。大概是要的防止SQLite的Deadlock問題，確保他在同Thread下循序執行SQL不會產生衝突。</p>
+
+<p>這個設定則是把檢查Thread ID的機制關閉這樣在執行程式的時候就不會吐出錯誤了。</p>
 </div>
 	</article>
 	<hr>
-		<!-- DISQUS -->
+	<div class="bar"><span class="new"></span><span class="old"><a href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04">Install Xhprof on Ubuntu 12.04 >></a></span><span class="count">< 1 / 13 ></span></div>
+		<hr>
+	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 	    var disqus_shortname = 'scarshow';
 	    (function() {
 	        var embed = document.createElement('script');
-	        embed.async = true;
 	        embed.type = 'text/javascript';
+	        embed.async = true;
 	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
 	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
-	    })();
+
+			var count = document.createElement('script');
+			count.async = true;
+			count.type = 'text/javascript';
+			count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+		}());
 	</script>
 	</div></div>
 		<footer>Copyright (c) 2011-2012 ScarShow</footer>
