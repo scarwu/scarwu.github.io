@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>HipHop building on Ubuntu 11.10 | ScarShow | 刀疤說</title>
+	<title>讓SQLite支援REGEXP語法 | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -49,107 +49,52 @@
 		</div>
 		<div id="container"><div id="article">
 	<article>
-		<div class="title">HipHop building on Ubuntu 11.10</div>
+		<div class="title">讓SQLite支援REGEXP語法</div>
 		<div class="info">
-			<span class="date">2012-03-07</span>
+			<span class="date">2012-09-20</span>
 			<br />
-			<span class="comments"><a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10/#disqus_thread"></a></span>
+			<span class="comments"><a href="/article/2012/09/20/extend-sqlite-to-support-regexp/#disqus_thread"></a></span>
 		</div>
-		<div class="content"><p>最近有個專案有機會用到Facebook所提出的HipHop for PHP，它可以將PHP程式碼轉為C++並編譯成可執行檔用來加速處理效能，在這邊筆記一下安裝過程。</p>
+		<div class="content"><p>在使用 MySQL 的時候 REGEXP 正規表示是查詢好用又強大，雖然 SQLite 官方說有支援但其實意思是要使用者寫函式去擴充 SQLite。</p>
 
-<p>refrence: <a href="https://github.com/facebook/hiphop-php/wiki/Building-and-Installing-on-Ubuntu-11.10">Building and Installing on Ubuntu 11.10</a></p>
-
-<h2>先將系統的編譯環境用apt安裝好</h2>
-
-<pre><code>sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0
-</code></pre>
-
+<p>因為最近寫 PHP, Python 都有用到 SQLite 所以就順便做一下使用筆記。
 <!--more-->
+在 SQLite 建立連線之後，就要對他做擴充的動作，程式碼如下。</p>
 
-<h2>接著從GitHub將hiphop-php clone下來</h2>
+<h4>Python</h4>
 
-<pre><code>mkdir dev
-cd dev
-git clone git://github.com/facebook/hiphop-php.git
-cd hiphop-php
-export CMAKE_PREFIX_PATH=`/bin/pwd`/../
-export HPHP_HOME=`/bin/pwd`
-export HPHP_LIB=`/bin/pwd`/bin
-cd ..
+<pre><code>import sqlite3
+import re
+
+def regexp(self, pattern, subject):
+    reg = re.compile(pattern)
+    return reg.search(subject) is not None
+
+conn = sqlite3.connect('/path/to/db.sqlite3')
+conn.create_function('REGEXP', 2, regexp)
+
+conn.execute('DELETE FROM table REGEXP "\m"')
+
+conn.close()
 </code></pre>
 
-<h2>編譯第三方Libraries</h2>
+<h4>PHP</h4>
 
-<h3>libevent</h3>
+<pre><code>&lt;?php
 
-<pre><code>wget http://www.monkey.org/~provos/libevent-1.4.14b-stable.tar.gz
-tar -xzvf libevent-1.4.14b-stable.tar.gz
-cd libevent-1.4.14b-stable
-cp ../hiphop-php/src/third_party/libevent-1.4.14.fb-changes.diff .
-patch -p1 &lt; libevent-1.4.14.fb-changes.diff
-./configure --prefix=$CMAKE_PREFIX_PATH
-make
-make install
-cd ..
-</code></pre>
+function regexp($pattern, $subject) {
+    return preg_match("/{$pattern}/", $subject);
+}
 
-<h3>libdurl</h3>
+$conn = new PDO('sqlite:/path/to/db.sqlite3');
+$conn-&gt;sqliteCreateFunction('REGEXP', regexp, 2);
 
-<pre><code>wget http://curl.haxx.se/download/curl-7.21.2.tar.gz
-tar -xvzf curl-7.21.2.tar.gz
-cd curl-7.21.2
-cp ../hiphop-php/src/third_party/libcurl.fb-changes.diff .
-patch -p1 &lt; libcurl.fb-changes.diff
-./configure --prefix=$CMAKE_PREFIX_PATH
-</code></pre>
-
-<p>將以下兩的檔案用連結中的檔案置換掉</p>
-
-<p><a href="https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c">curl-7.21.2/lib/ssluse.c</a></p>
-
-<p><a href="https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp">hiphop-php/src/runtime/ext/extension.cpp</a></p>
-
-<pre><code>rm "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
-wget https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c -O "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
-rm "$HPHP_HOME"/src/runtime/ext/extension.cpp
-wget https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp -O "$HPHP_HOME"/src/runtime/ext/extension.cpp
-
-make
-make install
-cd ..
-</code></pre>
-
-<h3>libmemcacheed</h3>
-
-<pre><code>wget http://launchpad.net/libmemcached/1.0/0.49/+download/libmemcached-0.49.tar.gz
-tar -xzvf libmemcached-0.49.tar.gz
-cd libmemcached-0.49
-./configure --prefix=$CMAKE_PREFIX_PATH
-make
-make install
-cd ..
-</code></pre>
-
-<h2>開始編譯hiphop-php</h2>
-
-<pre><code>cd hiphop-php
-git submodule init
-git submodule update
-cmake .
-make
-</code></pre>
-
-<h3>到這邊就算完成Hiphop的編譯了，接下來是設定環境變數，可以寫到/etc/profile, ~/.bashrc或在~/.zshrc</h3>
-
-<pre><code>export HPHP_HOME=your_path/dev/hiphop-php
-export HPHP_LIB=$HPHP_HOME/bin
-export CMAKE_PREFIX_PATH=$HPHP_HOME/../
-export PATH=$PATH:$HPHP_HOME/src/hphp:$HPHP_HOME/src/hphpi
+$conn-&gt;query('DELECT FROM table REGEXP "\m"');
 </code></pre>
 </div>
 	</article>
 	<hr>
-	<div class="bar"><span class="new"><a href="/article/2012/04/23/implement-a-small-router-use-php-1"><< 實作一個小型Router use PHP (1)</a></span><span class="old"><a href="/article/2012/01/29/html5-sql-database">建立及使用HTML5 SQL Database >></a></span><span class="count">< 11 / 14 ></span></div>
+	<div class="bar"><span class="new"></span><span class="old"><a href="/article/2012/09/12/sqlite3-multi-thread-in-python">SQLite3 Multi-Thread in Python >></a></span><span class="count">< 1 / 14 ></span></div>
 		<hr>
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
