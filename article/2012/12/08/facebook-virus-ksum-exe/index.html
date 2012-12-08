@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>實作一個小型Router use PHP (1) | ScarShow | 刀疤說</title>
+	<title>Facebook病毒 - YouNaked.JPG.exe | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -48,92 +48,55 @@
 		</div>
 		<div id="container"><div id="article">
 	<article>
-		<div class="title">實作一個小型Router use PHP (1)</div>
+		<div class="title">Facebook病毒 - YouNaked.JPG.exe</div>
 		<div class="info">
-			<span class="date">2012-04-23</span>
+			<span class="date">2012-12-08</span>
 			<br />
-			<span class="comments"><a href="/article/2012/04/23/implement-a-small-router-use-php-1/#disqus_thread">0 Comments</a></span>
+			<span class="comments"><a href="/article/2012/12/08/facebook-virus-ksum-exe/#disqus_thread">0 Comments</a></span>
 		</div>
-		<div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
+		<div class="content"><p>今天在使用Facebook的時候看見了朋友的動態留言上有不尋常的連結，好齊心驅使下我就觀察看看有什麼行為。</p>
 
-<p>首先建立一個PHP程式 server.php</p>
+<p>首先它的連結是一串縮址,點擊之後它會到向另一個頁面，並且自動下載一個檔案，但這只是下載而已，要去執行它病毒才會有作用。</p>
 
-<pre><code>&lt;?php
-// filename: server.php
-print_r($_SERVER);
+<p>下載下來的檔名是 YouNaked.JPG.exe，檔案大小160KB，初步用Avira-Anti去掃描並沒有結果，接下來用 whois 去查詢IP發現來自於土耳其。</p>
+
+<pre><code>inetnum:        185.4.227.0 - 185.4.227.255
+netname:        SAYFANET
+descr:          Istanbul DC Customer
+country:        TR
+admin-c:        KSM20-RIPE
+tech-c:         KSM20-RIPE
+status:         ASSIGNED PA
+mnt-by:         ER101-MNT
+source:         RIPE # Filtered
+
+person:         Kiralik Sunucu Musterisi
+address:        Sayfa.NET Datacenter
+address:        Metrocity AVM Levent Istanbul
+address:        detayli musteri bilgisi ogrenmek icin email gonderiniz
+address:        please email us for customer details
+address:        TURKEY
+phone:          +905327235263
+fax-no:         +905327235263
+nic-hdl:        KSM20-RIPE
+mnt-by:         ISTANBULDC-MNT
+abuse-mailbox:  registry@istanbuldc.com
+source:         RIPE # Filtered
 </code></pre>
 
-<p><!--more-->
-然後我們用curl來發送請求來觀察PHP到底收到了什麼訊息</p>
+<p>接著觀察到它的副檔名，在一般的使用上 Windows 會隱藏副檔名，這時候使用者看見的就是 YouNaked.JPG，它會誘使你認為它是一張圖片，另外加上他的檔名讓你充滿好奇心，然後就點中招。</p>
 
-<pre><code>curl -X GET "localhost/server.php/segement/input" -d "param=test" -G
-</code></pre>
+<p>接下來做個簡單的行為分析，當程式執行後 YouNaked.JPG.exe 會自我刪除，然後就會在你朋友的動態訊息以及聊天室中留下同樣的訊息，到這邊還沒結束。</p>
 
-<p>底下是curl輸出之結果</p>
+<p>在剛剛的過程中它會在你的註冊檔中心新增一條紀錄，接下來啟動 msconfig，在中你會看見其中一條預設啟動名為 MSConfig 而啟動的路徑是 C:/Users/YourName/ksum.exe，是這是一個隱藏檔，這意味著只要你重新開機它就會自動執行。</p>
 
-<pre><code>Array
-(
-    [HTTP_USER_AGENT] =&gt; curl/7.21.6 (x86_64-pc-linux-gnu) libcurl/7.21.6 OpenSSL/1.0.0e zlib/1.2.3.4 libidn/1.22 librtmp/2.3
-    [HTTP_HOST] =&gt; localhost
-    [HTTP_ACCEPT] =&gt; */*
-    [PATH] =&gt; /usr/local/bin:/usr/bin:/bin
-    [SERVER_SIGNATURE] =&gt; &lt;address&gt;Apache/2.2.20 (Ubuntu) Server at localhost Port 80&lt;/address&gt;
+<p>是個去刪除它會發現它又自動再生了，不管次都是一樣。所以這時後去觀察資源監視器的磁碟，會發現有個影像在操作 ksum.exe 但是名稱都會不同，我有見過 explorer.exe 以及 SearchProtocolHost.exe 這2個程式，接著我去看這兩隻程式並沒有發現異常，所以它有可能可以偽裝為別的程式。</p>
 
-    [SERVER_SOFTWARE] =&gt; Apache/2.2.20 (Ubuntu)
-    [SERVER_NAME] =&gt; localhost
-    [SERVER_ADDR] =&gt; 127.0.0.1
-    [SERVER_PORT] =&gt; 80
-    [REMOTE_ADDR] =&gt; 127.0.0.1
-    [DOCUMENT_ROOT] =&gt; /var/www/
-    [SERVER_ADMIN] =&gt; webmaster@localhost
-    [SCRIPT_FILENAME] =&gt; /var/www/server.php
-    [REMOTE_PORT] =&gt; 58117
-    [GATEWAY_INTERFACE] =&gt; CGI/1.1
-    [SERVER_PROTOCOL] =&gt; HTTP/1.1
-    [REQUEST_METHOD] =&gt; GET
-    [QUERY_STRING] =&gt; param=test
-    [REQUEST_URI] =&gt; /server.php/segement/input?param=test
-    [SCRIPT_NAME] =&gt; /server.php
-    [PATH_INFO] =&gt; /segement/input
-    [PATH_TRANSLATED] =&gt; /var/www/segement/input
-    [PHP_SELF] =&gt; /server.php/segement/input
-    [REQUEST_TIME] =&gt; 1335154750
-)
-</code></pre>
-
-<p>根據 $_SERVER 的內容中我們挑出能用的部份，REQUEST_METHOD 就是HTTP請求時的Method而 PATH_INFO 、PHP_SELF 及 REQUEST_URI 則可以用來當作比對用的URL。PATH_INFO的內容 <code>/segement/input</code> 完全符合需求，另外的 PHP_SELF 及 REQUEST_URI 要做額外的處理才能使用。</p>
-
-<p>還有一件值得一提的事情，上面三個變數Apache都有、Nginx少 PATH_INFO 而IIS則少 REQUEST_URI。</p>
-
-<p>接下來就開始實作了，實做一個Router我們需要上面提到的HTTP Method、URL以及Route Rule及Callback，原理很簡單當Method及URL與Route rule互相Match的時候就會去呼叫Callback執行相對應的動作。首先新增一個名為router的class把一些基本的架構制定出來</p>
-
-<pre><code>&lt;?php
-// filename: router.php
-class router {
-    public function __construct() {
-        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
-        $this-&gt;url = $_SERVER['PATH_INFO'];
-    }
-
-    public function add($route, $callback) {
-        // do something
-    }
-
-    public function run() {
-        // compare
-    }
-}
-</code></pre>
-
-<p>以上的class提供一些基本的功能，當class被new時自動取得Method及URL，再用add加入Route Rule及Callback，接來下就可以用run讓Router <strike>跑路</strike> 啟動了。</p>
-
-<p>那麼比對怎樣做，<strike>直接用 == 字串比對就好啦</strike> 比較好的做好是使用正規表達式去比對字串。</p>
-
-<p><strong>待續...</strong></p>
+<p>最後如清理病毒，首先重新開機按 F8 進入安全模式，然後開啟 regedit 搜尋並刪除 MSConfig 的紀錄，然後刪除使用者目錄 C:/Users/YourName/ 底下 的ksum.exe，接著重新開機就好了。</p>
 </div>
 	</article>
 	<hr>
-	<div class="bar"><span class="new"><a href="/article/2012/04/23/implement-a-small-router-use-php-2"><< 實作一個小型Router use PHP (2)</a></span><span class="old"><a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10">HipHop building on Ubuntu 11.10 >></a></span><span class="count">< 11 / 15 ></span></div>
+	<div class="bar"><span class="new"></span><span class="old"><a href="/article/2012/09/20/extend-sqlite-to-support-regexp">讓SQLite支援REGEXP語法 >></a></span><span class="count">< 1 / 15 ></span></div>
 		<hr>
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>

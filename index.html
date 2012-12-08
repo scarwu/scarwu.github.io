@@ -28,15 +28,15 @@
 		<div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
-		<span><a href="/tag/PHP">PHP(8)</a></span><span><a href="/tag/Note">Note(5)</a></span><span><a href="/tag/Javascript">Javascript(3)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Python">Python(2)</a></span><span><a href="/tag/Works">Works(2)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span><span><a href="/tag/Facebook">Facebook(1)</a></span><span><a href="/tag/SQLite">SQLite(1)</a></span><span><a href="/tag/Game">Game(1)</a></span><span><a href="/tag/Chrome">Chrome(1)</a></span>	</div>
+		<span><a href="/tag/PHP">PHP(8)</a></span><span><a href="/tag/Note">Note(5)</a></span><span><a href="/tag/Javascript">Javascript(3)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Python">Python(2)</a></span><span><a href="/tag/Works">Works(2)</a></span><span><a href="/tag/Facebook">Facebook(2)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span><span><a href="/tag/Chrome">Chrome(1)</a></span><span><a href="/tag/SQLite">SQLite(1)</a></span><span><a href="/tag/Game">Game(1)</a></span><span><a href="/tag/Virus">Virus(1)</a></span>	</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-		<span><a href="/category/PHP">PHP(6)</a></span><span><a href="/category/Note">Note(2)</a></span><span><a href="/category/Tools">Tools(2)</a></span><span><a href="/category/Linux">Linux(1)</a></span><span><a href="/category/Mobile Web">Mobile Web(1)</a></span><span><a href="/category/Android">Android(1)</a></span><span><a href="/category/HTML5">HTML5(1)</a></span>	</div>
+		<span><a href="/category/PHP">PHP(6)</a></span><span><a href="/category/Note">Note(2)</a></span><span><a href="/category/Tools">Tools(2)</a></span><span><a href="/category/Linux">Linux(1)</a></span><span><a href="/category/Mobile Web">Mobile Web(1)</a></span><span><a href="/category/Android">Android(1)</a></span><span><a href="/category/HTML5">HTML5(1)</a></span><span><a href="/category/Windows">Windows(1)</a></span>	</div>
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-		<span><a href="/archive/2012">2012(12)</a></span><span><a href="/archive/2011">2011(2)</a></span>	</div>
+		<span><a href="/archive/2012">2012(13)</a></span><span><a href="/archive/2011">2011(2)</a></span>	</div>
 </div>		<a id="show" href="javascript:void(0);" class="arrow-right"></a>
 		<a id="hide" href="javascript:void(0);" class="arrow-left"></a>
 	</div>
@@ -47,7 +47,46 @@
 			<h2>Peace and Respect.</h2>
 		</div>
 		<div id="container"><div id="page">
-	<article><div class="title"><a href="/article/2012/09/20/extend-sqlite-to-support-regexp">讓SQLite支援REGEXP語法</a></div><div class="info"><span class="date">2012-09-20</span><br /><span class="comments"><a href="/article/2012/09/20/extend-sqlite-to-support-regexp/#disqus_thread">0 Comments</a></span></div><div class="content"><p>在使用 MySQL 的時候 REGEXP 正規表示是查詢好用又強大，雖然 SQLite 官方說有支援但其實意思是要使用者寫函式去擴充 SQLite。</p>
+	<article><div class="title"><a href="/article/2012/12/08/facebook-virus-ksum-exe">Facebook病毒 - YouNaked.JPG.exe</a></div><div class="info"><span class="date">2012-12-08</span><br /><span class="comments"><a href="/article/2012/12/08/facebook-virus-ksum-exe/#disqus_thread">0 Comments</a></span></div><div class="content"><p>今天在使用Facebook的時候看見了朋友的動態留言上有不尋常的連結，好齊心驅使下我就觀察看看有什麼行為。</p>
+
+<p>首先它的連結是一串縮址,點擊之後它會到向另一個頁面，並且自動下載一個檔案，但這只是下載而已，要去執行它病毒才會有作用。</p>
+
+<p>下載下來的檔名是 YouNaked.JPG.exe，檔案大小160KB，初步用Avira-Anti去掃描並沒有結果，接下來用 whois 去查詢IP發現來自於土耳其。</p>
+
+<pre><code>inetnum:        185.4.227.0 - 185.4.227.255
+netname:        SAYFANET
+descr:          Istanbul DC Customer
+country:        TR
+admin-c:        KSM20-RIPE
+tech-c:         KSM20-RIPE
+status:         ASSIGNED PA
+mnt-by:         ER101-MNT
+source:         RIPE # Filtered
+
+person:         Kiralik Sunucu Musterisi
+address:        Sayfa.NET Datacenter
+address:        Metrocity AVM Levent Istanbul
+address:        detayli musteri bilgisi ogrenmek icin email gonderiniz
+address:        please email us for customer details
+address:        TURKEY
+phone:          +905327235263
+fax-no:         +905327235263
+nic-hdl:        KSM20-RIPE
+mnt-by:         ISTANBULDC-MNT
+abuse-mailbox:  registry@istanbuldc.com
+source:         RIPE # Filtered
+</code></pre>
+
+<p>接著觀察到它的副檔名，在一般的使用上 Windows 會隱藏副檔名，這時候使用者看見的就是 YouNaked.JPG，它會誘使你認為它是一張圖片，另外加上他的檔名讓你充滿好奇心，然後就點中招。</p>
+
+<p>接下來做個簡單的行為分析，當程式執行後 YouNaked.JPG.exe 會自我刪除，然後就會在你朋友的動態訊息以及聊天室中留下同樣的訊息，到這邊還沒結束。</p>
+
+<p>在剛剛的過程中它會在你的註冊檔中心新增一條紀錄，接下來啟動 msconfig，在中你會看見其中一條預設啟動名為 MSConfig 而啟動的路徑是 C:/Users/YourName/ksum.exe，是這是一個隱藏檔，這意味著只要你重新開機它就會自動執行。</p>
+
+<p>是個去刪除它會發現它又自動再生了，不管次都是一樣。所以這時後去觀察資源監視器的磁碟，會發現有個影像在操作 ksum.exe 但是名稱都會不同，我有見過 explorer.exe 以及 SearchProtocolHost.exe 這2個程式，接著我去看這兩隻程式並沒有發現異常，所以它有可能可以偽裝為別的程式。</p>
+
+<p>最後如清理病毒，首先重新開機按 F8 進入安全模式，然後開啟 regedit 搜尋並刪除 MSConfig 的紀錄，然後刪除使用者目錄 C:/Users/YourName/ 底下 的ksum.exe，接著重新開機就好了。</p>
+</div><a class="more" href="/article/2012/12/08/facebook-virus-ksum-exe">Read more</a></article><hr><article><div class="title"><a href="/article/2012/09/20/extend-sqlite-to-support-regexp">讓SQLite支援REGEXP語法</a></div><div class="info"><span class="date">2012-09-20</span><br /><span class="comments"><a href="/article/2012/09/20/extend-sqlite-to-support-regexp/#disqus_thread">0 Comments</a></span></div><div class="content"><p>在使用 MySQL 的時候 REGEXP 正規表示是查詢好用又強大，雖然 SQLite 官方說有支援但其實意思是要使用者寫函式去擴充 SQLite。</p>
 
 <p>因為最近寫 PHP, Python 都有用到 SQLite 所以就順便做一下使用筆記。
 </div><a class="more" href="/article/2012/09/20/extend-sqlite-to-support-regexp">Read more</a></article><hr><article><div class="title"><a href="/article/2012/09/12/sqlite3-multi-thread-in-python">SQLite3 Multi-Thread in Python</a></div><div class="info"><span class="date">2012-09-12</span><br /><span class="comments"><a href="/article/2012/09/12/sqlite3-multi-thread-in-python/#disqus_thread">0 Comments</a></span></div><div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
@@ -95,55 +134,7 @@ cd xhprof-0.9.2
 
 <p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
 
-<p></div><a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload">Read more</a></article><hr><article><div class="title"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">隱藏Facebook廣告 (Google Chrome)</a></div><div class="info"><span class="date">2012-07-19</span><br /><span class="comments"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/#disqus_thread">0 Comments</a></span></div><div class="content"><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
-
-<p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<strike>放心本人為人正直不會亂放病毒。</strike></p>
-
-<p>下面就附上Source Code，然後Extension本身是用Javascript寫得，<strike>Oguma水美媒</strike>就這麼簡單。</p>
-
-<h3><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h3>
-
-<pre><code>// ==UserScript==
-// @name           Facebook Ads Blocker
-// @version        0.2.2
-// @author         Scar Wu
-// @namespace      http://scar.simcz.tw
-// @description    Hidden Facebook Ads
-// @include        *
-// ==/UserScript==
-
-window.onload = function() {
-    hideAds();
-};
-
-document.addEventListener('DOMNodeInserted', function() {
-    hideAds();
-});
-
-function hideAds() {
-    if(document.location.host == 'www.facebook.com') {
-        var pagelet_side_ads = document.getElementById('pagelet_side_ads');
-        if(pagelet_side_ads != undefined)
-            pagelet_side_ads.innerHTML = null;
-
-        var ego_column = document.getElementsByClassName('ego_column');
-        if(ego_column != undefined &amp;&amp; ego_column.length &gt; 0) {
-            for(var index in ego_column) {
-                if(ego_column[index].getElementsByClassName('adsCategoryTitleLink') != undefined) {
-                    ego_column[index].innerHTML = null;
-                    break;
-                }
-            }
-        }
-
-        var fbTimelineSideAds = document.getElementsByClassName('fbTimelineSideAds');
-        for(var index in fbTimelineSideAds) {
-            fbTimelineSideAds[index].innerHTML = null;
-        }
-    }
-}
-</code></pre>
-</div><a class="more" href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">Read more</a></article><hr>	<div class="bar"><span class="new"></span><span class="old"><a href="/page/2">Older Posts >></a></span><span class="count">< 1 / 3 ></span></div>
+<p></div><a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload">Read more</a></article><hr>	<div class="bar"><span class="new"></span><span class="old"><a href="/page/2">Older Posts >></a></span><span class="count">< 1 / 3 ></span></div>
 </div>
 <script type="text/javascript">
 	var disqus_shortname = 'scarshow';
