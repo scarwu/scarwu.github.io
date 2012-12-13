@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>修正 iOS 螢幕轉向網頁自動放大問題 | ScarShow | 刀疤說</title>
+	<title>關於一些程式語言裡的遞增運算子 | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -48,32 +48,105 @@
 		</div>
 		<div id="container"><div id="article">
 	<article>
-		<div class="title">修正 iOS 螢幕轉向網頁自動放大問題</div>
+		<div class="title">關於一些程式語言裡的遞增運算子</div>
 		<div class="info">
-			<span class="date">2011-10-31</span>
+			<span class="date">2012-12-13</span>
 			<br />
-			<span class="comments"><a href="/article/2011/10/31/ios-rotation-resize-fix/#disqus_thread">0 Comments</a></span>
+			<span class="comments"><a href="/article/2012/12/13/increment-operator-in-few-programming-language/#disqus_thread">0 Comments</a></span>
 		</div>
-		<div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置 (iPhone/iPad) 在旋轉後網頁怎麼會自動放大 Android 則一切正常，查了一下原因是出在 <strong><meta></strong> 這個 Tag 的設定。</p>
+		<div class="content"><p>前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子。</p>
 
-<p>以下是原本的 <strong><meta></strong></p>
+<pre><code>#include &lt;stdio.h&gt;
 
-<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+main() {
+    int n = 0;
+    n = ++n + ++n + ++n + ++n;
+
+    printf("n = %d", n);
+}
 </code></pre>
 
-<p><!--more-->
-原因是在於 <meta> 中的 content屬性的設定，首先 <strong>width=device-width</strong> 只是單純在設定網頁的寬度要符合顯示螢幕，再來 <strong>initial-scale=1</strong> 這就是重點了，這是在設定當網頁載入時的放大比例，這邊設定放大率是一倍，這看起來很像很美好但它並沒有強制縮放比例，僅限於剛載入網頁時才有用。</p>
+<!--more-->
 
-<p>所以將它修改為 <strong>minimum-scale=1, maximum-scale=1</strong> 將網頁的最大及最小縮放比例設為一倍，這樣不管螢幕怎樣旋轉，網頁縮放比例都不會變了。</p>
+<p>它算出來的結果是 <strong>11</strong> 跟實際上的結果有些許的不同，一般來說答案應該是</p>
 
-<p>這是修改後的 <strong><meta></strong></p>
-
-<pre><code>&lt;meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"&gt;
+<pre><code>10 = 1 + 2 + 3 + 4
 </code></pre>
+
+<p>測試了一下會發現實際上變數中的數值卻是，跟所想的有出入</p>
+
+<pre><code>11 = 2 + 2 + 3 + 4
+</code></pre>
+
+<p>什麼? 為什麼 1 變成了 2 ，一定有哪邊有誤會，所以就用 GCC 把組合語言輸出看一下到底哪邊出問題了，發現其中一段程式碼</p>
+
+<pre><code>; ...
+
+movl    $0, -4(%rbp)   ; rbp = 0
+
+addl    $1, -4(%rbp)   ; rbp = 0 + 1 = 1
+
+addl    $1, -4(%rbp)   ; rbp = 1 + 1 = 2
+movl    -4(%rbp), %eax ; eax = 2
+addl    %eax, %eax     ; eax = 2 + 2 = 4
+
+addl    $1, -4(%rbp)   ; rbp = 2 + 1 = 3
+addl    -4(%rbp), %eax ; eax = 4 + 3 = 7
+
+addl    $1, -4(%rbp)   ; rbp = 3 + 1 = 4
+addl    %eax, -4(%rbp) ; rbp = 4 + 7 = 11
+
+; ...
+</code></pre>
+
+<p>程式在遞增並相加的時候有點問題，所以才造成 11 這個結果，再試了一下C++也是一樣，所以這時候我在想其他語言應該沒有這個問題吧? 所以就多試了一些語言，像是PHP及Javascript，另外還多試了 Visual C++，結果如下</p>
+
+<h4>PHP</h4>
+
+<pre><code>&lt;?php
+
+$n = 0;
+$n = ++$n + ++$n + ++$n + ++$n;
+
+// 10 = 1 + 2 + 3 + 4
+echo $n;
+</code></pre>
+
+<h4>Javascript</h4>
+
+<pre><code>'use strict'
+
+var n = 0;
+n = ++n + ++n + ++n + ++n;
+
+// 10 = 1 + 2 + 3 + 4
+console.log(n); 
+</code></pre>
+
+<h4>Visual C++</h4>
+
+<pre><code>#include "stdafx.h"
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    int n = 0;
+    n = ++n + ++n + ++n + ++n;
+
+    // 16 = 4 + 4 + 4 + 4
+    printf("%d", n);
+
+    return 0;
+}
+</code></pre>
+
+<h3>結論</h3>
+
+<p>從測試的結果來看 PHP 及 Javascript 與預期的答案相符，不過 Visual C++ 的結果就不是這樣了，Visual C++ 算出來是 <strong>16</strong>，不過形成原因也比較滿合理的，所以這還是各家編譯的問題。
+但 C/C++ 的結果 11 是 feature 嗎...?</p>
 </div>
 	</article>
 	<hr>
-	<div class="bar"><span class="new"><a href="/article/2012/01/29/html5-sql-database"><< 建立及使用HTML5 SQL Database</a></span><span class="old"><a href="/article/2011/09/26/android-develop-env-setting">Android 開發環境設置 >></a></span><span class="count">< 15 / 16 ></span></div>
+	<div class="bar"><span class="new"></span><span class="old"><a href="/article/2012/12/08/facebook-virus-ksum-exe">Facebook病毒 - YouNaked.JPG.exe >></a></span><span class="count">< 1 / 16 ></span></div>
 		<hr>
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
