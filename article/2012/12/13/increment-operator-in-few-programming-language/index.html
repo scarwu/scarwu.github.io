@@ -28,7 +28,7 @@
 		<div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
-		<span><a href="/tag/PHP">PHP(9)</a></span><span><a href="/tag/Note">Note(8)</a></span><span><a href="/tag/Javascript">Javascript(3)</a></span><span><a href="/tag/Python">Python(2)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Tools">Tools(2)</a></span><span><a href="/tag/Works">Works(2)</a></span><span><a href="/tag/Facebook">Facebook(2)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/JavaScript">JavaScript(1)</a></span><span><a href="/tag/C/C++">C/C++(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/SQLite">SQLite(1)</a></span><span><a href="/tag/Chrome">Chrome(1)</a></span><span><a href="/tag/Diablo III">Diablo III(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span><span><a href="/tag/Virus">Virus(1)</a></span><span><a href="/tag/Windows">Windows(1)</a></span>	</div>
+		<span><a href="/tag/PHP">PHP(9)</a></span><span><a href="/tag/Note">Note(8)</a></span><span><a href="/tag/Javascript">Javascript(3)</a></span><span><a href="/tag/Pointless">Pointless(2)</a></span><span><a href="/tag/Works">Works(2)</a></span><span><a href="/tag/Tools">Tools(2)</a></span><span><a href="/tag/Android">Android(2)</a></span><span><a href="/tag/Python">Python(2)</a></span><span><a href="/tag/Facebook">Facebook(2)</a></span><span><a href="/tag/Mobile Web">Mobile Web(1)</a></span><span><a href="/tag/JavaScript">JavaScript(1)</a></span><span><a href="/tag/C/C++">C/C++(1)</a></span><span><a href="/tag/Linux">Linux(1)</a></span><span><a href="/tag/Ubuntu">Ubuntu(1)</a></span><span><a href="/tag/iOS">iOS(1)</a></span><span><a href="/tag/SQLite">SQLite(1)</a></span><span><a href="/tag/Chrome">Chrome(1)</a></span><span><a href="/tag/Diablo III">Diablo III(1)</a></span><span><a href="/tag/HTML5">HTML5(1)</a></span><span><a href="/tag/Virus">Virus(1)</a></span><span><a href="/tag/Windows">Windows(1)</a></span>	</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
@@ -54,7 +54,7 @@
 			<br />
 			<span class="comments"><a href="/article/2012/12/13/increment-operator-in-few-programming-language/#disqus_thread">0 Comments</a></span>
 		</div>
-		<div class="content"><p>前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子。</p>
+		<div class="content"><p>前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：</p>
 
 <pre><code>#include &lt;stdio.h&gt;
 
@@ -68,17 +68,17 @@ main() {
 
 <!--more-->
 
-<p>它算出來的結果是 <strong>11</strong> 跟實際上的結果有些許的不同，一般來說答案應該是</p>
+<p>它算出來的結果是 <strong>11</strong> 跟實際上的結果有些許的不同，一般來說答案應該是：</p>
 
 <pre><code>10 = 1 + 2 + 3 + 4
 </code></pre>
 
-<p>測試了一下會發現實際上變數中的數值卻是，跟所想的有出入</p>
+<p>測試了一下會發現實際上變數中的數值卻是，跟所想的有出入：</p>
 
 <pre><code>11 = 2 + 2 + 3 + 4
 </code></pre>
 
-<p>什麼? 為什麼 1 變成了 2 ，一定有哪邊有誤會，所以就用 GCC 把組合語言輸出看一下到底哪邊出問題了，發現其中一段程式碼</p>
+<p>什麼? 為什麼 1 變成了 2 ，一定有哪邊有誤會，所以就用 GCC 把組合語言輸出看一下到底哪邊出問題了，發現其中一段程式碼：</p>
 
 <pre><code>; ...
 
@@ -99,7 +99,7 @@ addl    %eax, -4(%rbp) ; rbp = 4 + 7 = 11
 ; ...
 </code></pre>
 
-<p>程式在遞增並相加的時候有點問題，所以才造成 11 這個結果，再試了一下C++也是一樣，所以這時候我在想其他語言應該沒有這個問題吧? 所以就多試了一些語言，像是PHP及Javascript，另外還多試了 Visual C++，結果如下</p>
+<p>程式在遞增並相加的時候有點問題，所以才造成 11 這個結果，再試了一下C++也是一樣，所以這時候我在想其他語言應該沒有這個問題吧? 所以就多試了一些語言，像是 PHP 及 Javascript，另外還多試了 Visual C++，執行結果如下：</p>
 
 <h4>PHP</h4>
 
@@ -139,10 +139,10 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 </code></pre>
 
-<h3>結論</h3>
+<h2>結論</h2>
 
-<p>從測試的結果來看 PHP 及 Javascript 與預期的答案相符，不過 Visual C++ 的結果就不是這樣了，Visual C++ 算出來是 <strong>16</strong>，不過形成原因也比較滿合理的，所以這還是各家編譯的問題。
-但 C/C++ 的結果 11 是 feature 嗎...?</p>
+<p>從測試的結果來看 PHP 及 Javascript 與預期的答案相符，不過 Visual C++ 的結果就不是這樣了，Visual C++ 算出來是 <strong>16</strong>，不過形成原因也比較滿合理的，所以這還是各家編譯器設計的問題。
+但 C/C++ 的結果是 feature 嗎...? XD</p>
 </div>
 	</article>
 	<hr>
