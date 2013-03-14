@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>ScarShow | 刀疤說</title>
+	<subtitle>I know that I don't know.</subtitle>
+	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
+	<link href="http://scar.simcz.tw/" />
+	<id>urn:uuid:c9d63f67-f694-4832-ef84-1c4362066729</id>
+	<updated>2013-03-14T17:18:21+08:00</updated>
+	<entry>
+		<title>Pointless使用說明</title>
+		<link href="http://scar.simcz.tw/2012/05/07/pointless-readme" />
+		<id>urn:uuid:a5d20745-d11a-3a42-1dfa-14fd74138d4f</id>
+		<updated>2013-03-14T17:18:21+08:00</updated>
+		<summary><p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
+
+<h3>系統要求:</h3>
+
+<ul>
+<li>PHP 5.3+</li>
+<li>Command Line Interface</li>
+</ul>
+
+<h3>支援:</h3>
+
+<ul>
+<li>Github CNAME</li>
+<li>Google Analystics</li>
+<li>DIGQUS</li>
+</ul>
+
+<h3>外部程式:</h3>
+
+<ul>
+<li><a href="http://michelf.com/projects/php-markdown/">PHP Makrdown</a></li>
+<li><a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a></li>
+</ul>
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>scar.simcz.tw/</uri>		</author>
+	</entry>
+	<entry>
+		<title>關於Pointless靜態部落格產生器</title>
+		<link href="http://scar.simcz.tw/2012/04/27/about-pointless-static-blog-generator" />
+		<id>urn:uuid:0f0fe421-6572-378a-5c31-6aeaaff42204</id>
+		<updated>2013-03-14T17:18:21+08:00</updated>
+		<summary><p>最近這些日子裡，放在腦中三年之久的想法被激起了，三年前因為大學專題要想題目去實做，曾經想過寫一個部落格系統並且可以把存在資料庫的資料轉換成靜態的HTML檔案，但當時用這個題目好像不太好，就像是部份的資管系學生專題都是寫一個購物車就結束這樣，可能會被認為沒什麼挑戰性，之後索性就把題目改成了Facebook Game(當時很夯)，三年後的今天有因為種種因素又讓我想實現當年的想法。</p>
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>scar.simcz.tw/</uri>		</author>
+	</entry>
+	<entry>
+		<title>實作一個小型Router use PHP (2)</title>
+		<link href="http://scar.simcz.tw/2012/04/23/implement-a-small-router-use-php-2" />
+		<id>urn:uuid:d94b235d-16cb-8c8e-133c-c5f3b4dc0799</id>
+		<updated>2013-03-14T17:18:21+08:00</updated>
+		<summary><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
+
+<pre><code>&lt;?php
+// filename: router.php
+class router {
+    public function __construct() {
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
+    }
+
+    public function add($route, $callback) {
+        $this-&gt;rules[] = array(
+            'route' =&gt; $route,
+            'callback' =&gt; $callback
+        );
+    }
+
+    public function run() {
+        foreach($this-&gt;rules as $rule) {
+            if($rule['route'] == $this-&gt;url) {
+                $rule['callback']();
+                break;
+            }
+        }
+    }
+}
+</code></pre>
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>scar.simcz.tw/</uri>		</author>
+	</entry>
+	<entry>
+		<title>隱藏Facebook廣告 (Google Chrome)</title>
+		<link href="http://scar.simcz.tw/2012/07/19/hidden-facebook-ads-with-google-chrome" />
+		<id>urn:uuid:798adcbf-f4f2-b467-2976-a53f6cea8f1a</id>
+		<updated>2013-03-14T17:18:21+08:00</updated>
+		<summary><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
+
+<p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<strike>放心本人為人正直不會亂放病毒。</strike></p>
+
+<p>下面就附上Source Code，然後Extension本身是用Javascript寫得，<strike>Oguma水美媒</strike>就這麼簡單。</p>
+
+<h3><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h3>
+
+<pre><code>// ==UserScript==
+// @name           Facebook Ads Blocker
+// @version        0.2.2
+// @author         Scar Wu
+// @namespace      http://scar.simcz.tw
+// @description    Hidden Facebook Ads
+// @include        *
+// ==/UserScript==
+
+window.onload = function() {
+    hideAds();
+};
+
+document.addEventListener('DOMNodeInserted', function() {
+    hideAds();
+});
+
+function hideAds() {
+    if(document.location.host == 'www.facebook.com') {
+        var pagelet_side_ads = document.getElementById('pagelet_side_ads');
+        if(pagelet_side_ads != undefined)
+            pagelet_side_ads.innerHTML = null;
+
+        var ego_column = document.getElementsByClassName('ego_column');
+        if(ego_column != undefined &amp;&amp; ego_column.length &gt; 0) {
+            for(var index in ego_column) {
+                if(ego_column[index].getElementsByClassName('adsCategoryTitleLink') != undefined) {
+                    ego_column[index].innerHTML = null;
+                    break;
+                }
+            }
+        }
+
+        var fbTimelineSideAds = document.getElementsByClassName('fbTimelineSideAds');
+        for(var index in fbTimelineSideAds) {
+            fbTimelineSideAds[index].innerHTML = null;
+        }
+    }
+}
+</code></pre>
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>scar.simcz.tw/</uri>		</author>
+	</entry>
+	<entry>
+		<title>Diablo 3 計算機使用說明</title>
+		<link href="http://scar.simcz.tw/2012/07/18/diablo-3-calculator-readme" />
+		<id>urn:uuid:80678c0d-c396-e6d4-57ed-fe1534c7411a</id>
+		<updated>2013-03-14T17:18:21+08:00</updated>
+		<summary><p>關於此<a href="/Diablo3Calculator/">計算機</a>主要是用來計算暗黑破壞神3中裝備所提供的DPS效益。</p>
+
+<p><strike>因為我也是Diablo的忠實玩家，所以寫出這個計算機是很合理的。</strike></p>
+
+<h2>主要功能</h2>
+
+<ul>
+<li>提供裝備的交叉比較，基於現階段拍賣場無法顯示裝備所帶來的增益</li>
+<li>提供5組裝備設定檔，並可以自由匯入匯出</li>
+<li>5組設定檔間也可以互相比較</li>
+<li>可獨立顯示各裝備所帶來的DPS增益 (與該部位的白裝做比較)</li>
+</ul>
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>scar.simcz.tw/</uri>		</author>
+	</entry>
+	<entry>
+		<title>Install Xhprof on Ubuntu 12.04</title>
+		<link href="http://scar.simcz.tw/2012/08/26/install-xphrof-on-ubuntu-12-04" />
+		<id>urn:uuid:d202a626-3d66-0931-9385-f48af8ea1ce0</id>
+		<updated>2013-03-14T17:18:21+08:00</updated>
+		<summary><p>最近有想要分析自己程式碼的衝動，就想起了 Facebook 所撰寫的 Xhprof，因為在安裝途中有點小問題，所以就紀錄一下完整的安裝過程</p>
+
+<h3>安裝</h3>
+
+<h4>編譯環境</h4>
+
+<pre><code>sudo apt-get build-dep php5
+sudo apt-get install php5-dev
+</code></pre>
+
+<h4>Xhprof</h4>
+
+<pre><code>wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+tar -zxvf xhprof-0.9.2.tgz
+cd xhprof-0.9.2
+</code></pre>
+
+<p><br />複製 xhprof 所需要用到的程式到你的 web 根目錄</p>
+
+<pre><code>cp -a xhprof_html xhprof_lib /path/to/htdocs
+</code></pre>
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>scar.simcz.tw/</uri>		</author>
+	</entry>
+	<entry>
+		<title>SQLite3 Multi-Thread in Python</title>
+		<link href="http://scar.simcz.tw/2012/09/12/sqlite3-multi-thread-in-python" />
+		<id>urn:uuid:a87bbb8c-7f77-5b9d-d484-f733b17c9c85</id>
+		<updated>2013-03-14T17:18:21+08:00</updated>
+		<summary><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
+但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
+
+<h4>Error Code</h4>
+
+<pre><code>ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
+</code></pre>
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>scar.simcz.tw/</uri>		</author>
+	</entry>
+</feed>

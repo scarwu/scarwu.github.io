@@ -71,18 +71,19 @@ tar -zxvf xhprof-0.9.2.tgz
 cd xhprof-0.9.2
 </code></pre>
 
-<p><br>複製 xhprof 所需要用到的程式到你的 web 根目錄</p>
+<p><br />複製 xhprof 所需要用到的程式到你的 web 根目錄</p>
 
 <pre><code>cp -a xhprof_html xhprof_lib /path/to/htdocs
 </code></pre>
 
-<p><!--more-->
-<br>對 xhprof.c 進行Patch</p>
+<!--more-->
+
+<p><br />對 xhprof.c 進行Patch</p>
 
 <pre><code>curl https://github.com/facebook/xhprof/commit/a6bae51236.diff | patch -p1
 </code></pre>
 
-<p><br>開始編譯並安裝</p>
+<p><br />開始編譯並安裝</p>
 
 <pre><code>cd extension
 phpize
@@ -91,7 +92,7 @@ make
 sudo make install
 </code></pre>
 
-<p><br>修改 php.ini 設定檔</p>
+<p><br />修改 php.ini 設定檔</p>
 
 <pre><code>[xhprof]
 extension=xhprof.so
@@ -145,13 +146,13 @@ echo sprintf(
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
-	    var disqus_shortname = 'scarshow';
-	    (function() {
-	        var embed = document.createElement('script');
-	        embed.type = 'text/javascript';
-	        embed.async = true;
-	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+		var disqus_shortname = 'scarshow';
+		(function() {
+			var embed = document.createElement('script');
+			embed.type = 'text/javascript';
+			embed.async = true;
+			embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
 
 			var count = document.createElement('script');
 			count.async = true;

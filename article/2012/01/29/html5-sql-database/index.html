@@ -61,8 +61,9 @@
 <pre><code>var db = window.openDatabase(name, version, display_name, size);
 </code></pre>
 
-<p><!--more-->
-接著就可以下達SQL指令，使用以下的方式</p>
+<!--more-->
+
+<p>接著就可以下達SQL指令，使用以下的方式</p>
 
 <pre><code>db.transaction(query, error, success);
 var query = function(tx) {
@@ -118,13 +119,13 @@ var success = function() {
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
-	    var disqus_shortname = 'scarshow';
-	    (function() {
-	        var embed = document.createElement('script');
-	        embed.type = 'text/javascript';
-	        embed.async = true;
-	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+		var disqus_shortname = 'scarshow';
+		(function() {
+			var embed = document.createElement('script');
+			embed.type = 'text/javascript';
+			embed.async = true;
+			embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
 
 			var count = document.createElement('script');
 			count.async = true;

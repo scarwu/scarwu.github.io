@@ -54,19 +54,20 @@
 			<br />
 			<span class="comments"><a href="/article/2011/10/31/ios-rotation-resize-fix/#disqus_thread">0 Comments</a></span>
 		</div>
-		<div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置 (iPhone/iPad) 在旋轉後網頁怎麼會自動放大 Android 則一切正常，查了一下原因是出在 <strong><meta></strong> 這個 Tag 的設定。</p>
+		<div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置 (iPhone/iPad) 在旋轉後網頁怎麼會自動放大 Android 則一切正常，查了一下原因是出在 <strong>meta</strong> 這個 Tag 的設定。</p>
 
-<p>以下是原本的 <strong><meta></strong></p>
+<p>以下是原本的 <strong>meta</strong></p>
 
 <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
 </code></pre>
 
-<p><!--more-->
-原因是在於 <meta> 中的 content屬性的設定，首先 <strong>width=device-width</strong> 只是單純在設定網頁的寬度要符合顯示螢幕，再來 <strong>initial-scale=1</strong> 這就是重點了，這是在設定當網頁載入時的放大比例，這邊設定放大率是一倍，這看起來很像很美好但它並沒有強制縮放比例，僅限於剛載入網頁時才有用。</p>
+<!--more-->
+
+<p>原因是在於 meta 中的 content屬性的設定，首先 <strong>width=device-width</strong> 只是單純在設定網頁的寬度要符合顯示螢幕，再來 <strong>initial-scale=1</strong> 這就是重點了，這是在設定當網頁載入時的放大比例，這邊設定放大率是一倍，這看起來很像很美好但它並沒有強制縮放比例，僅限於剛載入網頁時才有用。</p>
 
 <p>所以將它修改為 <strong>minimum-scale=1, maximum-scale=1</strong> 將網頁的最大及最小縮放比例設為一倍，這樣不管螢幕怎樣旋轉，網頁縮放比例都不會變了。</p>
 
-<p>這是修改後的 <strong><meta></strong></p>
+<p>這是修改後的 <strong>meta</strong></p>
 
 <pre><code>&lt;meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"&gt;
 </code></pre>
@@ -78,13 +79,13 @@
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
-	    var disqus_shortname = 'scarshow';
-	    (function() {
-	        var embed = document.createElement('script');
-	        embed.type = 'text/javascript';
-	        embed.async = true;
-	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+		var disqus_shortname = 'scarshow';
+		(function() {
+			var embed = document.createElement('script');
+			embed.type = 'text/javascript';
+			embed.async = true;
+			embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
 
 			var count = document.createElement('script');
 			count.async = true;

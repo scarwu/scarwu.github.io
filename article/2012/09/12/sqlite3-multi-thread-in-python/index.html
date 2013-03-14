@@ -62,8 +62,9 @@
 <pre><code>ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
 </code></pre>
 
-<p><!--more-->
-查了一下官方的文件發現，在 Connect 的時候有這個選項 <code>check_same_thread=False</code> ，只要在連的時設定為 False 就可以了。</p>
+<!--more-->
+
+<p>查了一下官方的文件發現，在 Connect 的時候有這個選項 <code>check_same_thread=False</code> ，只要在連的時設定為 False 就可以了。</p>
 
 <h4>Sample Code</h4>
 
@@ -85,13 +86,13 @@ conn.close()
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
-	    var disqus_shortname = 'scarshow';
-	    (function() {
-	        var embed = document.createElement('script');
-	        embed.type = 'text/javascript';
-	        embed.async = true;
-	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+		var disqus_shortname = 'scarshow';
+		(function() {
+			var embed = document.createElement('script');
+			embed.type = 'text/javascript';
+			embed.async = true;
+			embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
 
 			var count = document.createElement('script');
 			count.async = true;

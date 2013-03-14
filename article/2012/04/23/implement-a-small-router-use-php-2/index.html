@@ -82,8 +82,9 @@ class router {
 }
 </code></pre>
 
-<p><!--more-->
-為了讓範例簡單一點這邊還是直接使用字串比對，首先修改了add function讓它可以接收外在傳入，Route Rule及Callback而run function則是將rule讀出，去和URL做比對。</p>
+<!--more-->
+
+<p>為了讓範例簡單一點這邊還是直接使用字串比對，首先修改了add function讓它可以接收外在傳入，Route Rule及Callback而run function則是將rule讀出，去和URL做比對。</p>
 
 <p>以上都設定好後，我們修改原先用來測試的server.php，將router生成出來、並加入一條規則接著執行它</p>
 
@@ -221,13 +222,13 @@ $Router-&gt;run();
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
-	    var disqus_shortname = 'scarshow';
-	    (function() {
-	        var embed = document.createElement('script');
-	        embed.type = 'text/javascript';
-	        embed.async = true;
-	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+		var disqus_shortname = 'scarshow';
+		(function() {
+			var embed = document.createElement('script');
+			embed.type = 'text/javascript';
+			embed.async = true;
+			embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
 
 			var count = document.createElement('script');
 			count.async = true;

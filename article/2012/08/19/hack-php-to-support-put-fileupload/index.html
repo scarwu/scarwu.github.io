@@ -64,13 +64,14 @@
     // handle put data...
 </code></pre>
 
-<p><br>
+<p><br />
 簡單的資料處理起來還OK但是遇到 form-data 的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
 
 <p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
 
-<p><!--more-->
-結果發現在 main/SAPI.c 中的 sapi_activate Function 中有這麼一段Code</p>
+<!--more-->
+
+<p>結果發現在 main/SAPI.c 中的 sapi_activate Function 中有這麼一段Code</p>
 
 <pre><code>/* main/SAPI.c:456 */
 if (SG(request_info).content_type &amp;&amp; !strcmp(SG(request_info).request_method, "POST"))) {
@@ -82,7 +83,7 @@ if (SG(request_info).content_type &amp;&amp; !strcmp(SG(request_info).request_me
 }
 </code></pre>
 
-<p><br>
+<p><br />
 它用來比較HTTP Request Method是否為POST，然後底下所呼叫的Function sapi_read_post_data 是用來處理檔案上傳的，所以就對它做一些修改</p>
 
 <pre><code>/* main/SAPI.c:456 */
@@ -95,13 +96,13 @@ if (SG(request_info).content_type &amp;&amp; (!strcmp(SG(request_info).request_m
 }
 </code></pre>
 
-<p><br>
+<p><br />
 既然有了這麼一個Sample然後在看看還有哪些程式中也有相同的處理機制，所以就用 grep 吧</p>
 
 <pre><code>grep -rn \"POST\" ./main
 </code></pre>
 
-<p><br>
+<p><br />
 然後發現底下的程式中也有相同的判斷，所以就再多做修改，這邊</p>
 
 <pre><code>/* main/php_content_type.c:44 */
@@ -114,7 +115,7 @@ if (!strcmp(SG(request_info).request_method, "POST") || !strcmp(SG(request_info)
 }
 </code></pre>
 
-<p><br>
+<p><br />
 還有這邊</p>
 
 <pre><code>/* main/php_variables.c:681 */
@@ -130,7 +131,7 @@ if (PG(variables_order) &amp;&amp;
 }
 </code></pre>
 
-<p><br>
+<p><br />
 所以一共改了3個地方，都多加了PUT的判斷，接下來就開始編譯了</p>
 
 <pre><code>./configure --prefix=/home/scarwu/php \
@@ -171,7 +172,7 @@ make
 make install
 </code></pre>
 
-<p><br>
+<p><br />
 測試環境Server部份 Nginx + php-fpm 而Client是自己用 PHP + curl 寫得，至於Server設定就不多說，以下是測試用的PHP Code</p>
 
 <pre><code>&lt;?php
@@ -182,7 +183,7 @@ make install
     print_r($_FILES);
 </code></pre>
 
-<p><br>
+<p><br />
 試著用PUT傳檔案及Params上去之後，回傳結果為此，PHP已經幫你處理好了，該出現的都出現了</p>
 
 <pre><code>Array
@@ -229,13 +230,13 @@ Array
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
-	    var disqus_shortname = 'scarshow';
-	    (function() {
-	        var embed = document.createElement('script');
-	        embed.type = 'text/javascript';
-	        embed.async = true;
-	        embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
+		var disqus_shortname = 'scarshow';
+		(function() {
+			var embed = document.createElement('script');
+			embed.type = 'text/javascript';
+			embed.async = true;
+			embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
 
 			var count = document.createElement('script');
 			count.async = true;
