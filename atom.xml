@@ -4,13 +4,13 @@
 	<subtitle>I know that I don't know.</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:d7c8d420-7231-e461-c1db-17c70dd63fe2</id>
-	<updated>2013-03-14T17:36:17+08:00</updated>
+	<id>urn:uuid:4f8ae28e-8682-83d0-1678-46ee00ef7689</id>
+	<updated>2013-03-14T17:41:39+08:00</updated>
 	<entry>
 		<title>Phar建立與使用</title>
-		<link href="http://scar.simcz.tw/2013/01/09/php-phar-create-and-use" />
-		<id>urn:uuid:9a7ea4ff-a7fc-98d6-1f09-06df3be58af9</id>
-		<updated>2013-03-14T17:36:17+08:00</updated>
+		<link href="http://scar.simcz.tw/article/2013/01/09/php-phar-create-and-use" />
+		<id>urn:uuid:74b4e548-8715-5770-7f74-5b24f5ec7185</id>
+		<updated>2013-03-14T17:41:39+08:00</updated>
 		<summary type="html">&lt;p&gt;這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題&lt;/p&gt;
 
 &lt;h2&gt;Phar&lt;/h2&gt;
@@ -24,9 +24,9 @@
 	</entry>
 	<entry>
 		<title>關於一些程式語言裡的遞增運算子</title>
-		<link href="http://scar.simcz.tw/2012/12/13/increment-operator-in-few-programming-language" />
-		<id>urn:uuid:e54db2d4-539b-9402-db73-0ab6094cfe2b</id>
-		<updated>2013-03-14T17:36:17+08:00</updated>
+		<link href="http://scar.simcz.tw/article/2012/12/13/increment-operator-in-few-programming-language" />
+		<id>urn:uuid:a9aefe84-933d-b815-56fd-3b8bb81bce2a</id>
+		<updated>2013-03-14T17:41:39+08:00</updated>
 		<summary type="html">&lt;p&gt;前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
@@ -46,9 +46,9 @@ main() {
 	</entry>
 	<entry>
 		<title>Facebook病毒 - YouNaked.JPG.exe</title>
-		<link href="http://scar.simcz.tw/2012/12/08/facebook-virus-ksum-exe" />
-		<id>urn:uuid:2a8bfe88-7be4-1f6b-9bdd-20deb3aeec1f</id>
-		<updated>2013-03-14T17:36:17+08:00</updated>
+		<link href="http://scar.simcz.tw/article/2012/12/08/facebook-virus-ksum-exe" />
+		<id>urn:uuid:6c16743e-a6f2-178c-6d04-3806758cc95a</id>
+		<updated>2013-03-14T17:41:39+08:00</updated>
 		<summary type="html">&lt;p&gt;今天在使用Facebook的時候看見了朋友的動態留言上有不尋常的連結，好齊心驅使下我就觀察看看有什麼行為。&lt;/p&gt;
 
 &lt;p&gt;首先它的連結是一串縮址,點擊之後它會到向另一個頁面，並且自動下載一個檔案，但這只是下載而已，要去執行它病毒才會有作用。&lt;/p&gt;
@@ -60,9 +60,9 @@ main() {
 	</entry>
 	<entry>
 		<title>讓SQLite支援REGEXP語法</title>
-		<link href="http://scar.simcz.tw/2012/09/20/extend-sqlite-to-support-regexp" />
-		<id>urn:uuid:8e6e2230-994a-db6a-4d58-7faa8f24fa17</id>
-		<updated>2013-03-14T17:36:17+08:00</updated>
+		<link href="http://scar.simcz.tw/article/2012/09/20/extend-sqlite-to-support-regexp" />
+		<id>urn:uuid:1bd85204-3f2c-113d-fa9d-d6b6746022e7</id>
+		<updated>2013-03-14T17:41:39+08:00</updated>
 		<summary type="html">&lt;p&gt;在使用 MySQL 的時候 REGEXP 正規表示是查詢好用又強大，雖然 SQLite 官方說有支援但其實意思是要使用者寫函式去擴充 SQLite。&lt;/p&gt;
 
 &lt;p&gt;因為最近寫 PHP, Python 都有用到 SQLite 所以就順便做一下使用筆記。&lt;/p&gt;
@@ -74,9 +74,9 @@ main() {
 	</entry>
 	<entry>
 		<title>SQLite3 Multi-Thread in Python</title>
-		<link href="http://scar.simcz.tw/2012/09/12/sqlite3-multi-thread-in-python" />
-		<id>urn:uuid:14a492e5-048f-92b7-ae1f-a17e4bb210b3</id>
-		<updated>2013-03-14T17:36:17+08:00</updated>
+		<link href="http://scar.simcz.tw/article/2012/09/12/sqlite3-multi-thread-in-python" />
+		<id>urn:uuid:e66d1d44-3cd8-4332-4343-5e9484b59e91</id>
+		<updated>2013-03-14T17:41:39+08:00</updated>
 		<summary type="html">&lt;p&gt;最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
 但在開始將 Thread 一個一個都啟動並同時存取就爆了。&lt;/p&gt;
 
