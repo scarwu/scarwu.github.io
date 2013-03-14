@@ -4,38 +4,38 @@
 	<subtitle>I know that I don't know.</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:6f2a0507-9f88-90ba-beb4-872244bbeac5</id>
-	<updated>2013-03-14T17:21:58+08:00</updated>
+	<id>urn:uuid:5eb482fe-0b46-2248-0503-44b0c76e0779</id>
+	<updated>2013-03-14T17:28:05+08:00</updated>
 	<entry>
 		<title>Pointless使用說明</title>
 		<link href="http://scar.simcz.tw/2012/05/07/pointless-readme" />
-		<id>urn:uuid:880d1f79-f2e4-1256-abac-7f192330dbbb</id>
-		<updated>2013-03-14T17:21:58+08:00</updated>
-		<summary>&lt;p&gt;Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。&lt;/p&gt;
+		<id>urn:uuid:0a501441-1efc-7289-fc25-73b3ba0d7d93</id>
+		<updated>2013-03-14T17:28:05+08:00</updated>
+		<summary><![CDATA[<p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
 
-&lt;h3&gt;系統要求:&lt;/h3&gt;
+<h3>系統要求:</h3>
 
-&lt;ul&gt;
-&lt;li&gt;PHP 5.3+&lt;/li&gt;
-&lt;li&gt;Command Line Interface&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+<li>PHP 5.3+</li>
+<li>Command Line Interface</li>
+</ul>
 
-&lt;h3&gt;支援:&lt;/h3&gt;
+<h3>支援:</h3>
 
-&lt;ul&gt;
-&lt;li&gt;Github CNAME&lt;/li&gt;
-&lt;li&gt;Google Analystics&lt;/li&gt;
-&lt;li&gt;DIGQUS&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+<li>Github CNAME</li>
+<li>Google Analystics</li>
+<li>DIGQUS</li>
+</ul>
 
-&lt;h3&gt;外部程式:&lt;/h3&gt;
+<h3>外部程式:</h3>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://michelf.com/projects/php-markdown/&quot;&gt;PHP Makrdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://softwaremaniacs.org/soft/highlight/en/&quot;&gt;highlight.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+<li><a href="http://michelf.com/projects/php-markdown/">PHP Makrdown</a></li>
+<li><a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a></li>
+</ul>
 
-</summary>
+]]></summary>
 		<author>
 			<name>ScarWu</name>
 			<uri>scar.simcz.tw/</uri>		</author>
@@ -43,11 +43,11 @@
 	<entry>
 		<title>關於Pointless靜態部落格產生器</title>
 		<link href="http://scar.simcz.tw/2012/04/27/about-pointless-static-blog-generator" />
-		<id>urn:uuid:7e65f72e-ef76-65e7-9343-591cc5f1be60</id>
-		<updated>2013-03-14T17:21:58+08:00</updated>
-		<summary>&lt;p&gt;最近這些日子裡，放在腦中三年之久的想法被激起了，三年前因為大學專題要想題目去實做，曾經想過寫一個部落格系統並且可以把存在資料庫的資料轉換成靜態的HTML檔案，但當時用這個題目好像不太好，就像是部份的資管系學生專題都是寫一個購物車就結束這樣，可能會被認為沒什麼挑戰性，之後索性就把題目改成了Facebook Game(當時很夯)，三年後的今天有因為種種因素又讓我想實現當年的想法。&lt;/p&gt;
+		<id>urn:uuid:1f06dbf2-9283-63f4-0ce3-4862ad872b25</id>
+		<updated>2013-03-14T17:28:05+08:00</updated>
+		<summary><![CDATA[<p>最近這些日子裡，放在腦中三年之久的想法被激起了，三年前因為大學專題要想題目去實做，曾經想過寫一個部落格系統並且可以把存在資料庫的資料轉換成靜態的HTML檔案，但當時用這個題目好像不太好，就像是部份的資管系學生專題都是寫一個購物車就結束這樣，可能會被認為沒什麼挑戰性，之後索性就把題目改成了Facebook Game(當時很夯)，三年後的今天有因為種種因素又讓我想實現當年的想法。</p>
 
-</summary>
+]]></summary>
 		<author>
 			<name>ScarWu</name>
 			<uri>scar.simcz.tw/</uri>		</author>
@@ -55,37 +55,37 @@
 	<entry>
 		<title>實作一個小型Router use PHP (2)</title>
 		<link href="http://scar.simcz.tw/2012/04/23/implement-a-small-router-use-php-2" />
-		<id>urn:uuid:a9643680-e317-cbdb-1c4b-7b9dedeeca58</id>
-		<updated>2013-03-14T17:21:58+08:00</updated>
-		<summary>&lt;p&gt;接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php&lt;/p&gt;
+		<id>urn:uuid:b4c65bd0-aa00-60bd-cf8b-2fd37cde1085</id>
+		<updated>2013-03-14T17:28:05+08:00</updated>
+		<summary><![CDATA[<p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+<pre><code>&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
-        $this-&amp;gt;method = $_SERVER[&#039;REQUEST_METHOD&#039;];
-        $this-&amp;gt;url = $_SERVER[&#039;PATH_INFO&#039;];
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
     }
 
     public function add($route, $callback) {
-        $this-&amp;gt;rules[] = array(
-            &#039;route&#039; =&amp;gt; $route,
-            &#039;callback&#039; =&amp;gt; $callback
+        $this-&gt;rules[] = array(
+            'route' =&gt; $route,
+            'callback' =&gt; $callback
         );
     }
 
     public function run() {
-        foreach($this-&amp;gt;rules as $rule) {
-            if($rule[&#039;route&#039;] == $this-&amp;gt;url) {
-                $rule[&#039;callback&#039;]();
+        foreach($this-&gt;rules as $rule) {
+            if($rule['route'] == $this-&gt;url) {
+                $rule['callback']();
                 break;
             }
         }
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-</summary>
+]]></summary>
 		<author>
 			<name>ScarWu</name>
 			<uri>scar.simcz.tw/</uri>		</author>
@@ -93,17 +93,17 @@ class router {
 	<entry>
 		<title>隱藏Facebook廣告 (Google Chrome)</title>
 		<link href="http://scar.simcz.tw/2012/07/19/hidden-facebook-ads-with-google-chrome" />
-		<id>urn:uuid:2739530f-afb8-f065-ccd0-91b419700e61</id>
-		<updated>2013-03-14T17:21:58+08:00</updated>
-		<summary>&lt;p&gt;最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。&lt;/p&gt;
+		<id>urn:uuid:df0c2f43-e73e-04f8-bccb-3d22c5992dde</id>
+		<updated>2013-03-14T17:28:05+08:00</updated>
+		<summary><![CDATA[<p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
 
-&lt;p&gt;點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。&lt;strike&gt;放心本人為人正直不會亂放病毒。&lt;/strike&gt;&lt;/p&gt;
+<p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<strike>放心本人為人正直不會亂放病毒。</strike></p>
 
-&lt;p&gt;下面就附上Source Code，然後Extension本身是用Javascript寫得，&lt;strike&gt;Oguma水美媒&lt;/strike&gt;就這麼簡單。&lt;/p&gt;
+<p>下面就附上Source Code，然後Extension本身是用Javascript寫得，<strike>Oguma水美媒</strike>就這麼簡單。</p>
 
-&lt;h3&gt;&lt;a href=&quot;/download/FacebookAdsBlocker.user.js&quot;&gt;按這邊安裝&lt;/a&gt;&lt;/h3&gt;
+<h3><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h3>
 
-&lt;pre&gt;&lt;code&gt;// ==UserScript==
+<pre><code>// ==UserScript==
 // @name           Facebook Ads Blocker
 // @version        0.2.2
 // @author         Scar Wu
@@ -116,34 +116,34 @@ window.onload = function() {
     hideAds();
 };
 
-document.addEventListener(&#039;DOMNodeInserted&#039;, function() {
+document.addEventListener('DOMNodeInserted', function() {
     hideAds();
 });
 
 function hideAds() {
-    if(document.location.host == &#039;www.facebook.com&#039;) {
-        var pagelet_side_ads = document.getElementById(&#039;pagelet_side_ads&#039;);
+    if(document.location.host == 'www.facebook.com') {
+        var pagelet_side_ads = document.getElementById('pagelet_side_ads');
         if(pagelet_side_ads != undefined)
             pagelet_side_ads.innerHTML = null;
 
-        var ego_column = document.getElementsByClassName(&#039;ego_column&#039;);
-        if(ego_column != undefined &amp;amp;&amp;amp; ego_column.length &amp;gt; 0) {
+        var ego_column = document.getElementsByClassName('ego_column');
+        if(ego_column != undefined &amp;&amp; ego_column.length &gt; 0) {
             for(var index in ego_column) {
-                if(ego_column[index].getElementsByClassName(&#039;adsCategoryTitleLink&#039;) != undefined) {
+                if(ego_column[index].getElementsByClassName('adsCategoryTitleLink') != undefined) {
                     ego_column[index].innerHTML = null;
                     break;
                 }
             }
         }
 
-        var fbTimelineSideAds = document.getElementsByClassName(&#039;fbTimelineSideAds&#039;);
+        var fbTimelineSideAds = document.getElementsByClassName('fbTimelineSideAds');
         for(var index in fbTimelineSideAds) {
             fbTimelineSideAds[index].innerHTML = null;
         }
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-</summary>
+</code></pre>
+]]></summary>
 		<author>
 			<name>ScarWu</name>
 			<uri>scar.simcz.tw/</uri>		</author>
@@ -151,22 +151,22 @@ function hideAds() {
 	<entry>
 		<title>Diablo 3 計算機使用說明</title>
 		<link href="http://scar.simcz.tw/2012/07/18/diablo-3-calculator-readme" />
-		<id>urn:uuid:54166bee-989e-20d6-b19b-946ed33a2d00</id>
-		<updated>2013-03-14T17:21:58+08:00</updated>
-		<summary>&lt;p&gt;關於此&lt;a href=&quot;/Diablo3Calculator/&quot;&gt;計算機&lt;/a&gt;主要是用來計算暗黑破壞神3中裝備所提供的DPS效益。&lt;/p&gt;
+		<id>urn:uuid:5a655dd4-d3a3-e3be-bbbf-fc3b581ba32e</id>
+		<updated>2013-03-14T17:28:05+08:00</updated>
+		<summary><![CDATA[<p>關於此<a href="/Diablo3Calculator/">計算機</a>主要是用來計算暗黑破壞神3中裝備所提供的DPS效益。</p>
 
-&lt;p&gt;&lt;strike&gt;因為我也是Diablo的忠實玩家，所以寫出這個計算機是很合理的。&lt;/strike&gt;&lt;/p&gt;
+<p><strike>因為我也是Diablo的忠實玩家，所以寫出這個計算機是很合理的。</strike></p>
 
-&lt;h2&gt;主要功能&lt;/h2&gt;
+<h2>主要功能</h2>
 
-&lt;ul&gt;
-&lt;li&gt;提供裝備的交叉比較，基於現階段拍賣場無法顯示裝備所帶來的增益&lt;/li&gt;
-&lt;li&gt;提供5組裝備設定檔，並可以自由匯入匯出&lt;/li&gt;
-&lt;li&gt;5組設定檔間也可以互相比較&lt;/li&gt;
-&lt;li&gt;可獨立顯示各裝備所帶來的DPS增益 (與該部位的白裝做比較)&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+<li>提供裝備的交叉比較，基於現階段拍賣場無法顯示裝備所帶來的增益</li>
+<li>提供5組裝備設定檔，並可以自由匯入匯出</li>
+<li>5組設定檔間也可以互相比較</li>
+<li>可獨立顯示各裝備所帶來的DPS增益 (與該部位的白裝做比較)</li>
+</ul>
 
-</summary>
+]]></summary>
 		<author>
 			<name>ScarWu</name>
 			<uri>scar.simcz.tw/</uri>		</author>
@@ -174,31 +174,31 @@ function hideAds() {
 	<entry>
 		<title>Install Xhprof on Ubuntu 12.04</title>
 		<link href="http://scar.simcz.tw/2012/08/26/install-xphrof-on-ubuntu-12-04" />
-		<id>urn:uuid:e6090e30-5ba8-e3a2-b0e3-171619626082</id>
-		<updated>2013-03-14T17:21:58+08:00</updated>
-		<summary>&lt;p&gt;最近有想要分析自己程式碼的衝動，就想起了 Facebook 所撰寫的 Xhprof，因為在安裝途中有點小問題，所以就紀錄一下完整的安裝過程&lt;/p&gt;
+		<id>urn:uuid:55151ee2-4fe2-54e6-6b54-c0fccfeb6f06</id>
+		<updated>2013-03-14T17:28:05+08:00</updated>
+		<summary><![CDATA[<p>最近有想要分析自己程式碼的衝動，就想起了 Facebook 所撰寫的 Xhprof，因為在安裝途中有點小問題，所以就紀錄一下完整的安裝過程</p>
 
-&lt;h3&gt;安裝&lt;/h3&gt;
+<h3>安裝</h3>
 
-&lt;h4&gt;編譯環境&lt;/h4&gt;
+<h4>編譯環境</h4>
 
-&lt;pre&gt;&lt;code&gt;sudo apt-get build-dep php5
+<pre><code>sudo apt-get build-dep php5
 sudo apt-get install php5-dev
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h4&gt;Xhprof&lt;/h4&gt;
+<h4>Xhprof</h4>
 
-&lt;pre&gt;&lt;code&gt;wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+<pre><code>wget http://pecl.php.net/get/xhprof-0.9.2.tgz
 tar -zxvf xhprof-0.9.2.tgz
 cd xhprof-0.9.2
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;&lt;br /&gt;複製 xhprof 所需要用到的程式到你的 web 根目錄&lt;/p&gt;
+<p><br />複製 xhprof 所需要用到的程式到你的 web 根目錄</p>
 
-&lt;pre&gt;&lt;code&gt;cp -a xhprof_html xhprof_lib /path/to/htdocs
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>cp -a xhprof_html xhprof_lib /path/to/htdocs
+</code></pre>
 
-</summary>
+]]></summary>
 		<author>
 			<name>ScarWu</name>
 			<uri>scar.simcz.tw/</uri>		</author>
@@ -206,17 +206,17 @@ cd xhprof-0.9.2
 	<entry>
 		<title>SQLite3 Multi-Thread in Python</title>
 		<link href="http://scar.simcz.tw/2012/09/12/sqlite3-multi-thread-in-python" />
-		<id>urn:uuid:2a3eace1-cb3a-c901-34ed-f699a896ba27</id>
-		<updated>2013-03-14T17:21:58+08:00</updated>
-		<summary>&lt;p&gt;最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
-但在開始將 Thread 一個一個都啟動並同時存取就爆了。&lt;/p&gt;
+		<id>urn:uuid:e32a3045-b4fe-b475-0ecb-3358802e5e28</id>
+		<updated>2013-03-14T17:28:05+08:00</updated>
+		<summary><![CDATA[<p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
+但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
 
-&lt;h4&gt;Error Code&lt;/h4&gt;
+<h4>Error Code</h4>
 
-&lt;pre&gt;&lt;code&gt;ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
+</code></pre>
 
-</summary>
+]]></summary>
 		<author>
 			<name>ScarWu</name>
 			<uri>scar.simcz.tw/</uri>		</author>
