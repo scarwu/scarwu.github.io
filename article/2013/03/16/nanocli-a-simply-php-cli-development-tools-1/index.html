@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>修正 iOS 螢幕轉向網頁自動放大問題 | ScarShow | 刀疤說</title>
+	<title>NanoCLI - PHP CLI開發工具 (1) | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -48,33 +48,140 @@
 		</div>
 		<div id="container"><div id="article">
 	<article>
-		<div class="title">修正 iOS 螢幕轉向網頁自動放大問題</div>
+		<div class="title">NanoCLI - PHP CLI開發工具 (1)</div>
 		<div class="info">
-			<span class="date">2011-10-31</span>
+			<span class="date">2013-03-16</span>
 			<br />
-			<span class="comments"><a href="/article/2011/10/31/ios-rotation-resize-fix/#disqus_thread">0 Comments</a></span>
+			<span class="comments"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/#disqus_thread">0 Comments</a></span>
 		</div>
-		<div class="content"><p>最近因為專案所以在開發手機及平板的網頁，當在測試時發現只有iOS的裝置 (iPhone/iPad) 在旋轉後網頁怎麼會自動放大 Android 則一切正常，查了一下原因是出在 <strong>meta</strong> 這個 Tag 的設定。</p>
+		<div class="content"><p>關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。</p>
 
-<p>以下是原本的 <strong>meta</strong></p>
+<p>約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。</p>
 
-<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-</code></pre>
+<h2>系統要求</h2>
+
+<p>PHP 5.3+</p>
+
+<h2>功能</h2>
+
+<ul>
+<li>指令呼叫 (ex. <code>$ ./cli.php command</code>)</li>
+<li>指令選項 (ex. <code>$ ./cli.php command -v -al</code>)</li>
+<li>指令配置 (ex. <code>$ ./cli.php command --prefix=/usr/local/bin</code>)</li>
+<li>文字色彩</li>
+<li>文字界面讀寫</li>
+<li>Namespace 以及 Autoload</li>
+</ul>
 
 <!--more-->
 
-<p>原因是在於 meta 中的 content屬性的設定，首先 <strong>width=device-width</strong> 只是單純在設定網頁的寬度要符合顯示螢幕，再來 <strong>initial-scale=1</strong> 這就是重點了，這是在設定當網頁載入時的放大比例，這邊設定放大率是一倍，這看起來很像很美好但它並沒有強制縮放比例，僅限於剛載入網頁時才有用。</p>
+<h2>使用</h2>
 
-<p>所以將它修改為 <strong>minimum-scale=1, maximum-scale=1</strong> 將網頁的最大及最小縮放比例設為一倍，這樣不管螢幕怎樣旋轉，網頁縮放比例都不會變了。</p>
+<h3>下載原始碼</h3>
 
-<p>這是修改後的 <strong>meta</strong></p>
-
-<pre><code>&lt;meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"&gt;
+<pre><code>git clone git://github.com/scarwu/NanoCLI.git
 </code></pre>
+
+<h3>檔案配置</h3>
+
+<pre><code>.
+├── boot.php
+├── Command
+│   ├── Test
+│   │   ├── Help.php
+│   │   └── Read.php
+│   └── Test.php
+└── NanoCLI
+    ├── Command.php
+    ├── IO.php
+    └── Loader.php
+</code></pre>
+
+<h3>設定Boot</h3>
+
+<p>做為一個CLI應用程式首先要設定程式的進入點。</p>
+
+<pre><code>&lt;?php
+/* Boot.php */
+
+// 載入 Loader
+require realpath(__DIR__ . '/../src/NanoCLI/Loader.php');
+
+use NanoCLI\Loader;
+
+// 設定程式目錄以及Namespace
+// 先設定NanoCLI的位置
+Loader::register('NanoCLI', realpath(__DIR__ . '/../src'));
+// 再設定相關指令的位置
+Loader::register('Test', realpath(__DIR__ . '/Command'));
+
+// 註冊autoload function
+spl_autoload_register('NanoCLI\Loader::load');
+
+// 初始化指令
+$test = new Test();
+$test-&gt;Init();
+</code></pre>
+
+<h3>實作指令 Test.php</h3>
+
+<p>上面的程式碼最後初始化了Test這個Class，再初始化之後NanoCLI會自動呼叫對應指令，所以在這邊我們顯來實作第一個指令。</p>
+
+<pre><code>&lt;?php
+use NanoCLI\IO;
+
+// 繼承 NanoCLI\Command
+class Test extends NanoCLI\Command {
+
+    public function __construct() {
+        // 呼叫Parent Construct
+        parent::__construct();
+    }
+
+    public function run() {
+        // 讀取鍵盤輸入
+        IO::write('Enter your name: ');
+        $name = IO::read();
+
+        // 輸出結果
+        IO::writeln('Hi, ' . $name, 'green');
+    }
+}
+</code></pre>
+
+<p><br />每個指令都要繼承NanoCLI\Command，然後記得要叫Parent Construct，這樣程式才會動，所以現在可以執行第一個程式了，應該會有以下的結果。</p>
+
+<pre><code>$ php boot.php
+$ Enter your name: Scar
+$ Hi, Scar
+</code></pre>
+
+<p><br />雖然在呼叫的時候沒有帶入任何參數但它也是一個指令，它就像是一般程式的main一樣的作用，所以可以將上面範例程式的 <code>run()</code> 改成自動呼叫help指令以防止使用者不知道要如何去使用你的程式。</p>
+
+<pre><code>&lt;?php
+use NanoCLI\IO;
+
+// 繼承 NanoCLI\Command
+class Test extends NanoCLI\Command {
+
+    public function __construct() {
+        // 呼叫Parent Construct
+        parent::__construct();
+    }
+
+    public function run() {
+        // 呼叫Help指令
+        $help = new Test\Help();
+        $help-&gt;run();
+    }
+}
+</code></pre>
+
+<p><strong>待續</strong></p>
 </div>
 	</article>
 	<hr>
-	<div class="bar"><span class="new"><a href="/article/2012/01/29/html5-sql-database"><< 建立及使用HTML5 SQL Database</a></span><span class="old"><a href="/article/2011/09/26/android-develop-env-setting">Android 開發環境設置 >></a></span><span class="count">< 18 / 19 ></span></div>
+	<div class="bar"><span class="new"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2"><< NanoCLI - PHP CLI開發工具 (2)</a></span><span class="old"><a href="/article/2013/01/09/php-phar-create-and-use">Phar建立與使用 >></a></span><span class="count">< 2 / 19 ></span></div>
 		<hr>
 	<!-- DISQUS -->
 	<div id="disqus_thread"></div>
