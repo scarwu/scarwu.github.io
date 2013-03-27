@@ -4,13 +4,13 @@
 	<subtitle>I know that I don't know.</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:35a4c77a-f808-784e-b742-47b6509a9ab7</id>
-	<updated>2013-03-16T05:40:25+08:00</updated>
+	<id>urn:uuid:0d8096f9-7851-7287-dee5-6f7037c34ef9</id>
+	<updated>2013-03-27T17:25:57+08:00</updated>
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (2)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:39331e06-6562-e050-4047-c75380bc9e43</id>
-		<updated>2013-03-16T05:40:25+08:00</updated>
+		<id>urn:uuid:0f9c1099-e9de-5cfa-8719-3d18805fe70f</id>
+		<updated>2013-03-27T17:25:57+08:00</updated>
 		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
 
 &lt;h2&gt;使用&lt;/h2&gt;
@@ -46,8 +46,8 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (1)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1" />
-		<id>urn:uuid:fa519c46-10b4-7f55-3bc2-1a0fe76158a3</id>
-		<updated>2013-03-16T05:40:25+08:00</updated>
+		<id>urn:uuid:1ea5a9d3-dc97-407f-2211-5e07eac621d6</id>
+		<updated>2013-03-27T17:25:57+08:00</updated>
 		<summary type="html">&lt;p&gt;關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。&lt;/p&gt;
 
 &lt;p&gt;約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。&lt;/p&gt;
@@ -76,8 +76,8 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>Phar建立與使用</title>
 		<link href="http://scar.simcz.tw/article/2013/01/09/php-phar-create-and-use" />
-		<id>urn:uuid:d1b80bd3-8ab2-a2ce-59d9-c4565c712ac4</id>
-		<updated>2013-03-16T05:40:25+08:00</updated>
+		<id>urn:uuid:66d36f8b-9df1-55dd-60d2-decaf0fc1fd5</id>
+		<updated>2013-03-27T17:25:57+08:00</updated>
 		<summary type="html">&lt;p&gt;這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題&lt;/p&gt;
 
 &lt;h2&gt;Phar&lt;/h2&gt;
@@ -93,8 +93,8 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>關於一些程式語言裡的遞增運算子</title>
 		<link href="http://scar.simcz.tw/article/2012/12/13/increment-operator-in-few-programming-language" />
-		<id>urn:uuid:b106ae3f-1136-0537-c7dc-e3b3e0590f70</id>
-		<updated>2013-03-16T05:40:25+08:00</updated>
+		<id>urn:uuid:d84eb7ac-fb28-b696-776e-6957a9ba6cc3</id>
+		<updated>2013-03-27T17:25:57+08:00</updated>
 		<summary type="html">&lt;p&gt;前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
@@ -116,8 +116,8 @@ main() {
 	<entry>
 		<title>Facebook病毒 - YouNaked.JPG.exe</title>
 		<link href="http://scar.simcz.tw/article/2012/12/08/facebook-virus-ksum-exe" />
-		<id>urn:uuid:0999b8a6-3bda-aa65-8294-76db45e4475c</id>
-		<updated>2013-03-16T05:40:25+08:00</updated>
+		<id>urn:uuid:174a957c-138a-28de-a185-00e94c189cd3</id>
+		<updated>2013-03-27T17:25:57+08:00</updated>
 		<summary type="html">&lt;p&gt;今天在使用Facebook的時候看見了朋友的動態留言上有不尋常的連結，好齊心驅使下我就觀察看看有什麼行為。&lt;/p&gt;
 
 &lt;p&gt;首先它的連結是一串縮址,點擊之後它會到向另一個頁面，並且自動下載一個檔案，但這只是下載而已，要去執行它病毒才會有作用。&lt;/p&gt;
