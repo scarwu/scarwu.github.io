@@ -17,18 +17,20 @@
 		<h2>I know that I don't know.</h2>
 	</header>
 	<nav>
-		<span class="home"><a href="/">Home</a></span>
 		<span class="left">
 			<a href="/archive">Archive</a>
 			<a href="/category">Category</a>
 			<a href="/tag">Tag</a>
+		</span>
+		<span class="space">
+			<a href="/">Home</a>
+			<span class="arrow"></span>
 		</span>
 		<span class="right">
 			<a href="/about">About</a>
 			<a href="/works">Works</a>
 			<a href="/Diablo3Calculator" target="_blank">D3 Calculator</a>
 		</span>
-		<span class="arrow"></span>
 	</nav>
 	<div id="main">
 		<div id="container"><div id="page">
@@ -161,7 +163,18 @@ main() {
 			<a href="/page/2">Older Posts >></a>		</span>
 		<span class="count">< 1 / 4 ></span>
 	</div>
-</div></div>
+</div>
+<script type="text/javascript">
+	var disqus_shortname = 'scarshow';
+	(function() {
+		var count = document.createElement('script');
+		count.async = true;
+		count.type = 'text/javascript';
+		count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+	}());
+</script>
+</div>
 		<div id="side">
 			<form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
 				<input type="hidden" name="q" value="site:scar.simcz.tw" />
