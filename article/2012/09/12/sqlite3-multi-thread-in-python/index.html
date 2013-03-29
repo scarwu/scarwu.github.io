@@ -14,22 +14,22 @@
 	<header>
 		<h1><a href="/">ScarShow</a></h1>
 		<hr />
-		<h2>I know that I don't know.</h2>
+		<h2>I know that I don't know</h2>
 	</header>
 	<nav>
 		<span class="left">
-			<a href="/archive">Archive</a>
-			<a href="/category">Category</a>
-			<a href="/tag">Tag</a>
+			<a href="/about">About</a>
+			<a href="/works">Works</a>
+			<a href="/Diablo3Calculator" target="_blank">D3 Calculator</a>
 		</span>
-		<span class="space">
+		<span class="home">
 			<a href="/">Home</a>
 			<span class="arrow"></span>
 		</span>
 		<span class="right">
-			<a href="/about">About</a>
-			<a href="/works">Works</a>
-			<a href="/Diablo3Calculator" target="_blank">D3 Calculator</a>
+			<a href="/archive">Archive</a>
+			<a href="/category">Category</a>
+			<a href="/tag">Tag</a>
 		</span>
 	</nav>
 	<div id="main">
@@ -44,7 +44,7 @@
 		<div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
 但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
 
-<h4>Error Code</h4>
+<h3>Error Code</h3>
 
 <pre><code>ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
 </code></pre>
@@ -53,7 +53,7 @@
 
 <p>查了一下官方的文件發現，在 Connect 的時候有這個選項 <code>check_same_thread=False</code> ，只要在連的時設定為 False 就可以了。</p>
 
-<h4>Sample Code</h4>
+<h3>Sample Code</h3>
 
 <pre><code>import sqlite3
 

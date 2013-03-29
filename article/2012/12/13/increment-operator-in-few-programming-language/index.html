@@ -14,22 +14,22 @@
 	<header>
 		<h1><a href="/">ScarShow</a></h1>
 		<hr />
-		<h2>I know that I don't know.</h2>
+		<h2>I know that I don't know</h2>
 	</header>
 	<nav>
 		<span class="left">
-			<a href="/archive">Archive</a>
-			<a href="/category">Category</a>
-			<a href="/tag">Tag</a>
+			<a href="/about">About</a>
+			<a href="/works">Works</a>
+			<a href="/Diablo3Calculator" target="_blank">D3 Calculator</a>
 		</span>
-		<span class="space">
+		<span class="home">
 			<a href="/">Home</a>
 			<span class="arrow"></span>
 		</span>
 		<span class="right">
-			<a href="/about">About</a>
-			<a href="/works">Works</a>
-			<a href="/Diablo3Calculator" target="_blank">D3 Calculator</a>
+			<a href="/archive">Archive</a>
+			<a href="/category">Category</a>
+			<a href="/tag">Tag</a>
 		</span>
 	</nav>
 	<div id="main">
@@ -88,7 +88,7 @@ addl    %eax, -4(%rbp) ; rbp = 4 + 7 = 11
 
 <p>程式在遞增並相加的時候有點問題，所以才造成 11 這個結果，再試了一下C++也是一樣，所以這時候我在想其他語言應該沒有這個問題吧? 所以就多試了一些語言，像是 PHP 及 Javascript，另外還多試了 Visual C++ 及 C#，執行結果如下：</p>
 
-<h4>PHP</h4>
+<h3>PHP</h3>
 
 <pre><code>&lt;?php
 
@@ -99,7 +99,7 @@ $n = ++$n + ++$n + ++$n + ++$n;
 echo $n;
 </code></pre>
 
-<h4>Javascript</h4>
+<h3>Javascript</h3>
 
 <pre><code>'use strict'
 
@@ -110,7 +110,7 @@ n = ++n + ++n + ++n + ++n;
 console.log(n); 
 </code></pre>
 
-<h4>Visual C++</h4>
+<h3>Visual C++</h3>
 
 <pre><code>#include "stdafx.h"
 
@@ -126,7 +126,7 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 </code></pre>
 
-<h4>C Shape</h4>
+<h3>C Shape</h3>
 
 <pre><code>using System;
 using System.Collections.Generic;
