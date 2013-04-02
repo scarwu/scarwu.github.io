@@ -37,9 +37,18 @@
 	<article>
 		<h1 class="title">HipHop building on Ubuntu 11.10</h1>
 		<div class="info">
-			<span class="date">2012-03-07</span>
-			<br />
-			<span class="comments"><a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10/#disqus_thread">0 Comments</a></span>
+			<span class="date">2012-03-07</span>-
+			<span class="category">-
+				Category: <a href="//category/IT">IT</a>			</span>-
+			<span class="tag">
+				Tag: 
+								<span><a href="//tag/Linux">Linux</a>, </span>
+								<span><a href="//tag/PHP">PHP</a>, </span>
+								<span><a href="//tag/Ubuntu">Ubuntu</a>, </span>
+								<span><a href="//tag/Note">Note</a></span>
+							</span>-
+			<span class="comment">
+				<a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10/#disqus_thread">0 Comment</a>			</span>
 		</div>
 		<div class="content"><p>最近有個專案有機會用到Facebook所提出的HipHop for PHP，它可以將PHP程式碼轉為C++並編譯成可執行檔用來加速處理效能，在這邊筆記一下安裝過程。</p>
 
@@ -91,9 +100,14 @@ patch -p1 &lt; libcurl.fb-changes.diff
 
 <p>將以下兩的檔案用連結中的檔案置換掉</p>
 
-<p><a href="https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c">curl-7.21.2/lib/ssluse.c</a></p>
-
-<p><a href="https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp">hiphop-php/src/runtime/ext/extension.cpp</a></p>
+<ul>
+    <li>
+        <a href="https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c">curl-7.21.2/lib/ssluse.c</a>
+    </li>
+    <li>
+        <a href="https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp">hiphop-php/src/runtime/ext/extension.cpp</a>
+    </li>
+</ul>
 
 <pre><code>rm "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
 wget https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c -O "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
@@ -125,7 +139,7 @@ cmake .
 make
 </code></pre>
 
-<h3>到這邊就算完成Hiphop的編譯了，接下來是設定環境變數，可以寫到/etc/profile, ~/.bashrc或在~/.zshrc</h3>
+<p>到這邊就算完成Hiphop的編譯了，接下來是設定環境變數，可以寫到<code>/etc/profile</code>, <code>~/.bashrc</code>或在<code>~/.zshrc</code></p>
 
 <pre><code>export HPHP_HOME=your_path/dev/hiphop-php
 export HPHP_LIB=$HPHP_HOME/bin

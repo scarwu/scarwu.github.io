@@ -37,11 +37,17 @@
 	<article>
 		<h1 class="title">讓PHP支援PUT FileUpload</h1>
 		<div class="info">
-			<span class="date">2012-08-19</span>
-			<br />
-			<span class="comments"><a href="/article/2012/08/19/hack-php-to-support-put-fileupload/#disqus_thread">0 Comments</a></span>
+			<span class="date">2012-08-19</span>-
+			<span class="category">-
+				Category: <a href="//category/IT">IT</a>			</span>-
+			<span class="tag">
+				Tag: 
+								<span><a href="//tag/PHP">PHP</a></span>
+							</span>-
+			<span class="comment">
+				<a href="/article/2012/08/19/hack-php-to-support-put-fileupload/#disqus_thread">0 Comment</a>			</span>
 		</div>
-		<div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取 php://input 再做處理</p>
+		<div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
 
 <pre><code>&lt;?php
     // do something...
@@ -52,7 +58,7 @@
 </code></pre>
 
 <p><br />
-簡單的資料處理起來還OK但是遇到 form-data 的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
+簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
 
 <p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
 
@@ -204,7 +210,7 @@ Array
 
 <p><br></p>
 
-<h3>結論</h3>
+<h2>結論</h2>
 
 <p>隨然這樣子對PHP做修改可以達到目的，但畢竟這不是一個正確的選擇，會造成維護上的困難，接著就是在此環境開發的Code不一定能在其他環境中使用</p>
 

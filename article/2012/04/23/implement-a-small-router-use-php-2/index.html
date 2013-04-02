@@ -37,9 +37,15 @@
 	<article>
 		<h1 class="title">實作一個小型Router use PHP (2)</h1>
 		<div class="info">
-			<span class="date">2012-04-23</span>
-			<br />
-			<span class="comments"><a href="/article/2012/04/23/implement-a-small-router-use-php-2/#disqus_thread">0 Comments</a></span>
+			<span class="date">2012-04-23</span>-
+			<span class="category">-
+				Category: <a href="//category/IT">IT</a>			</span>-
+			<span class="tag">
+				Tag: 
+								<span><a href="//tag/PHP">PHP</a></span>
+							</span>-
+			<span class="comment">
+				<a href="/article/2012/04/23/implement-a-small-router-use-php-2/#disqus_thread">0 Comment</a>			</span>
 		</div>
 		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
 
@@ -88,11 +94,11 @@ $Router-&gt;add('/test/index.html', function() {
 $Router-&gt;run();
 </code></pre>
 
-<p>當我們用curl去要求 <code>localhost/server.php/test/index.html</code> 時因為規則Match會回傳 Success 而要求其他路徑因為規則不符則不會有任何反應。</p>
+<p>當我們用curl去要求<code>localhost/server.php/test/index.html</code>時因為規則Match會回傳 Success 而要求其他路徑因為規則不符則不會有任何反應。</p>
 
 <p>那麼接下來讓Route Rule支援Default Route，就像是Linux的Route一樣當不清楚該將資料送給哪個Gateway的時候一律送給Default Gateway，所以這邊也一樣。</p>
 
-<p>Router.php</p>
+<h3>Router.php</h3>
 
 <pre><code>&lt;?php
 // filename: router.php
@@ -126,7 +132,7 @@ class router {
 }
 </code></pre>
 
-<p>Server.php</p>
+<h3>Server.php</h3>
 
 <pre><code>&lt;?php
 // filename: server.php
@@ -146,7 +152,7 @@ $Router-&gt;run();
 
 <p>基本上到這邊一個簡單的Router Prototype就完成了。那麼就在加強一下，使用正規表達式去比對字串。我們稍微對run function做調整並修改server.php傳入的參數。</p>
 
-<p>Router.php</p>
+<h3>Router.php</h3>
 
 <pre><code>&lt;?php
 // filename: router.php
@@ -180,7 +186,7 @@ class router {
 }
 </code></pre>
 
-<p>Server.php</p>
+<h3>Server.php</h3>
 
 <pre><code>&lt;?php
 // filename: server.php
@@ -198,7 +204,7 @@ $Router-&gt;add('default', function() {
 $Router-&gt;run();
 </code></pre>
 
-<p>上面的範例可以Match所有 <code>/*/*/</code> 的字串，由於已經使用正規表達式去比對字串，用來切字串也是理所當然，所以就將切出來的字串順便塞到Callback裡方便使用。</p>
+<p>上面的範例可以Match所有<code>/*/*/</code>的字串，由於已經使用正規表達式去比對字串，用來切字串也是理所當然，所以就將切出來的字串順便塞到Callback裡方便使用。</p>
 
 <p>至於比對Method的部份我就不放範例了，這部份就讓大家去實做吧，要作到怎麼樣的程度就看專案的情況，但如果你要又好又強大當然已經有大神刻好<a href="https://github.com/c9s/Roller">放在那邊了</a>。</p>
 </div>
