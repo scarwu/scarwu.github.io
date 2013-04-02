@@ -43,9 +43,9 @@
 		</div>
 		<div class="content"><h2>前言</h2>
 
-<p>在PHP中字串連結的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式 <code>strcat()</code> 來連接兩個字元陣列，而在Java中我們可以使用 <code>+</code> 運算子來做字串的連接。</p>
+<p>在PHP中字串連接的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式 <code>strcat()</code> 來連接兩個字元陣列，而在Java中我們可以使用 <code>+</code> 運算子來做字串的連接。</p>
 
-<p>而PHP呢？除了一般用來連結字串的 <code>.</code> 運算子，我們還有許多方式可以連接字串。而且PHP的字串也有很大的學問。</p>
+<p>而PHP呢？除了一般用來連接字串的 <code>.</code> 運算子，我們還有許多方式可以連接字串。而且PHP的字串也有很大的學問。</p>
 
 <h2>基本使用</h2>
 
@@ -66,7 +66,7 @@ echo $str;
 
 <p>由上面範例可以得知使用 <code>"</code> 宣告的字串可以讓跳脫字元發揮出作用，而使用 <code>'</code> 宣告的字串則是純字串你輸入什麼就輸出什麼。</p>
 
-<h3>字串連結</h3>
+<h3>字串連接</h3>
 
 <pre><code>&lt;?php
 $name = 'Tony';
@@ -77,9 +77,9 @@ echo "Hi $name";    // Hi Tony
 echo 'Hi $name';    // Hi $name
 </code></pre>
 
-<p>那麼字串與變數的連結，在 <code>"</code> 可以很彈性的使用變數，而 <code>'</code> 只能夠使用 <code>.</code> 來做連結，而兩者都可以使用格式化輸出 <code>sprintf()</code> 但這邊就先不提。</p>
+<p>那麼字串與變數的連接，在 <code>"</code> 可以很彈性的使用變數，而 <code>'</code> 只能夠使用 <code>.</code> 來做連接，而兩者都可以使用格式化輸出 <code>sprintf()</code> 但這邊就先不提。</p>
 
-<p>由上面得知 <code>"</code> 可以很彈性的連結變數，那麼它除了變數的連結外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。</p>
+<p>由上面得知 <code>"</code> 可以很彈性的連接變數，那麼它除了變數的連接外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。</p>
 
 <!--more-->
 
@@ -119,7 +119,7 @@ echo "My name is {$name()}";   // My name is Tony
 echo "My name is " . $name();  // My name is Tony
 </code></pre>
 
-<p>當輸出函式時並沒辦法使用 <code>{ }</code> 將函式跳脫，所以還是只能用 <code>.</code> 來做字串連結，但是以變數為名的還是可以使用 <code>{ }</code> 來做跳脫。</p>
+<p>當輸出函式時並沒辦法使用 <code>{ }</code> 將函式跳脫，所以還是只能用 <code>.</code> 來做字串連接，但是以變數為名的還是可以使用 <code>{ }</code> 來做跳脫。</p>
 
 <h3>物件範例</h3>
 
@@ -160,7 +160,7 @@ class Student {
 $student = new Student('Tony', 18);
 </code></pre>
 
-<p>我們寫一個Student物件，其中包含了類型、姓名以及年齡然後我們做個簡單的測試，結果物件的私有變數可以正常輸出，但是遇到了靜態變數時還是要使用 <code>.</code> 來做連結。</p>
+<p>我們寫一個Student物件，其中包含了類型、姓名以及年齡然後我們做個簡單的測試，結果物件的私有變數可以正常輸出，但是遇到了靜態變數時還是要使用 <code>.</code> 來做連接。</p>
 
 <pre><code>&lt;?php
 $student = new Student('Tony', 18);
@@ -181,7 +181,7 @@ echo "I am {Student::getType()}";                 // Error: I am {Student::getTy
 echo "I am " . Student::getType();                // I am student
 </code></pre>
 
-<p>承襲上面的物件，我沒從外部去呼叫方法以及靜態方法，擁有實體的方法以及靜態方法可以使用 <code>{ }</code> 來做，但是沒有實體的靜態方法還是只能使用 <code>.</code> 來做連結。</p>
+<p>承襲上面的物件，我沒從外部去呼叫方法以及靜態方法，擁有實體的方法以及靜態方法可以使用 <code>{ }</code> 來做，但是沒有實體的靜態方法還是只能使用 <code>.</code> 來做連接。</p>
 
 <h2>小結</h2>
 
@@ -276,25 +276,25 @@ Static::func()  |      |      |  OK  |
 				<span class="item"><a href="/tag/PHP">PHP(13)</a></span>
 				<span class="item"><a href="/tag/Note">Note(9)</a></span>
 				<span class="item"><a href="/tag/Javascript">Javascript(3)</a></span>
-				<span class="item"><a href="/tag/Works">Works(2)</a></span>
-				<span class="item"><a href="/tag/Python">Python(2)</a></span>
 				<span class="item"><a href="/tag/Android">Android(2)</a></span>
+				<span class="item"><a href="/tag/Python">Python(2)</a></span>
 				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
-				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
+				<span class="item"><a href="/tag/Works">Works(2)</a></span>
 				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
+				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
 				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
 				<span class="item"><a href="/tag/Mobile Web">Mobile Web(1)</a></span>
-				<span class="item"><a href="/tag/C/C++">C/C++(1)</a></span>
-				<span class="item"><a href="/tag/Linux">Linux(1)</a></span>
-				<span class="item"><a href="/tag/Ubuntu">Ubuntu(1)</a></span>
 				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
-				<span class="item"><a href="/tag/JavaScript">JavaScript(1)</a></span>
 				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
-				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
+				<span class="item"><a href="/tag/Ubuntu">Ubuntu(1)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(1)</a></span>
 				<span class="item"><a href="/tag/Diablo III">Diablo III(1)</a></span>
 				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
+				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
 				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
 				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
+				<span class="item"><a href="/tag/C/C++">C/C++(1)</a></span>
+				<span class="item"><a href="/tag/JavaScript">JavaScript(1)</a></span>
 			</div>
 </div>		</div>
 	</div>
