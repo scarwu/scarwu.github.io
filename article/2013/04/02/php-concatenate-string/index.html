@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>ScarShow | 刀疤說</title>
+	<title>PHP字串連接 | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -33,14 +33,13 @@
 		</span>
 	</nav>
 	<div id="main">
-		<div id="container"><div id="page">
-		<article>
-		<h1 class="title"><a href="/article/2013/04/02/php-concatenate-string">PHP字串連接</a></h1>
+		<div id="container"><div id="article">
+	<article>
+		<h1 class="title">PHP字串連接</h1>
 		<div class="info">
 			<span class="date">2013-04-02</span>
 			<br />
-			<span class="comments">
-				<a href="/article/2013/04/02/php-concatenate-string/#disqus_thread">0 Comments</a>			</span>
+			<span class="comments"><a href="/article/2013/04/02/php-concatenate-string/#disqus_thread">0 Comments</a></span>
 		</div>
 		<div class="content"><h2>前言</h2>
 
@@ -82,124 +81,158 @@ echo 'Hi $name';    // Hi $name
 
 <p>由上面得知 <code>"</code> 可以很彈性的連結變數，那麼它除了變數的連結外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。</p>
 
-</div>
-		<a class="more" href="/article/2013/04/02/php-concatenate-string">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">NanoCLI - PHP CLI開發工具 (2)</a></h1>
-		<div class="info">
-			<span class="date">2013-03-16</span>
-			<br />
-			<span class="comments">
-				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/#disqus_thread">0 Comments</a>			</span>
-		</div>
-		<div class="content"><p>上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。</p>
+<!--more-->
 
-<h2>使用</h2>
-
-<h3>實作指令 Help.php</h3>
-
-<p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
+<h3>陣列範例</h3>
 
 <pre><code>&lt;?php
+$color = array('black', 'blue');
 
-// 設定namespace
-namespace Test;
+echo "The sky is $color[1]";     // The sky is blue
+echo "The sky is {$color[1]}";   // The sky is blue
+echo "The sky is . $color[1];    // The sky is blue
 
-use NanoCLI\IO;
+$student = array('name' =&gt; 'Tony', 'age' =&gt; 18);
 
-class Help extends NanoCLI\Command {
-    public function __construct() {
-        parent::__construct();
-    }
-
-    public function run() {
-        IO::writeln("This is Command: help\n");
-    }
-}
+echo "I am $student['name']";    // Error
+echo "I am {$student['name']}";  // I am Tony
+echo "I am " . $student['name']; // I am Tony
 </code></pre>
 
+<p>如果輸出以字串當作索引值的陣列時就必須使用 <code>{ }</code> 將變數跳脫。</p>
+
+<h3>函式範例</h3>
+
+<pre><code>&lt;?php
+function getName() {
+    return 'Tony';
+}
+
+echo "My name is getName()";    // Error: My name is name()
+echo "My name is {getName()}";  // Error: My name is {name()}
+echo "My name is " . getName(); // My name is Tony
+
+$name = 'getName';
+
+echo "My name is $name()";     // Error: My name is getName()
+echo "My name is {$name()}";   // My name is Tony
+echo "My name is " . $name();  // My name is Tony
+</code></pre>
+
+<p>當輸出函式時並沒辦法使用 <code>{ }</code> 將函式跳脫，所以還是只能用 <code>.</code> 來做字串連結，但是以變數為名的還是可以使用 <code>{ }</code> 來做跳脫。</p>
+
+<h3>物件範例</h3>
+
+<pre><code>&lt;?php
+class Student {
+    private static $type = 'student';
+    private $name;
+    private $age;
+
+    public function __construct($n, $a) {
+        $this-&gt;name = $n;
+        $this-&gt;age = $a;
+
+        // Class Variable
+        echo "I am $this-&gt;age years old";         // I am 18 years old
+        echo "I am {$this-&gt;age} years old";       // I am 18 years old
+        echo "I am " . $this-&gt;age . " years old"; // I am 18 years old
+
+        // Class Static Variable
+        echo "I am self::$type";                  // Error: I am self::
+        echo "I am {self::$type}";                // Error: I am {self::}
+        echo "I am " . self::$type;               // I am student
+    }
+
+    public static function getType() {
+        return self::$type;
+    }
+
+    public function getName() {
+        return $this-&gt;name;
+    }
+
+    public function getAge() {
+        return $this-&gt;age;
+    }
+}
+
+$student = new Student('Tony', 18);
+</code></pre>
+
+<p>我們寫一個Student物件，其中包含了類型、姓名以及年齡然後我們做個簡單的測試，結果物件的私有變數可以正常輸出，但是遇到了靜態變數時還是要使用 <code>.</code> 來做連結。</p>
+
+<pre><code>&lt;?php
+$student = new Student('Tony', 18);
+
+// Class Method
+echo "I am $student-&gt;getAge() years old";         // Error: I am () years old
+echo "I am {$student-&gt;getAge()} years old";       // I am 18 years old
+echo "I am " . $student-&gt;getAge() . " years old"; // I am 18 years old
+
+// Class Static Method with Instance
+echo "I am $student::getType()";                  // Error
+echo "I am {$student::getType()}";                // I am student
+echo "I am " . $student::getType();               // I am student
+
+// Class Static Method without Instance
+echo "I am Student::getType()";                   // Error: I am Student::getType()
+echo "I am {Student::getType()}";                 // Error: I am {Student::getType()}
+echo "I am " . Student::getType();                // I am student
+</code></pre>
+
+<p>承襲上面的物件，我沒從外部去呼叫方法以及靜態方法，擁有實體的方法以及靜態方法可以使用 <code>{ }</code> 來做，但是沒有實體的靜態方法還是只能使用 <code>.</code> 來做連結。</p>
+
+<h2>小結</h2>
+
+<p>由上面範例示範了一半可能會遇到到的情況，並且可以得知PHP在字串的連接上與其它與語言比較起來使用上自由許多。雖然自由但是如果是寫網頁程式的話記得對字串消毒，小心被走後門。</p>
+
+<p>綜合以上結果整理一下幾種輸出方式，見下表：</p>
+
+<pre><code>                   "      {}     .
+--------------------------------------
+$var            |  OK  |  OK  |  OK  |
+$array[0]       |  OK  |  OK  |  OK  |
+$array['key']   |      |  OK  |  OK  |
+--------------------------------------
+function()      |      |      |  OK  |
+$function()     |      |  OK  |  OK  |
+--------------------------------------
+$this-&gt;var      |  OK  |  OK  |  OK  |
+self::$var      |      |      |  OK  |
+--------------------------------------
+$class-&gt;func()  |      |  OK  |  OK  |
+$class::func()  |      |  OK  |  OK  |
+Static::func()  |      |      |  OK  |
+</code></pre>
 </div>
-		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">NanoCLI - PHP CLI開發工具 (1)</a></h1>
-		<div class="info">
-			<span class="date">2013-03-16</span>
-			<br />
-			<span class="comments">
-				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/#disqus_thread">0 Comments</a>			</span>
-		</div>
-		<div class="content"><p>關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。</p>
+		<!-- DISQUS -->
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		var disqus_shortname = 'scarshow';
+		(function() {
+			var embed = document.createElement('script');
+			embed.type = 'text/javascript';
+			embed.async = true;
+			embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
 
-<p>約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。</p>
-
-<h2>系統要求</h2>
-
-<p>PHP 5.3+</p>
-
-<h2>功能</h2>
-
-<ul>
-<li>指令呼叫 (ex. <code>$ ./cli.php command</code>)</li>
-<li>指令選項 (ex. <code>$ ./cli.php command -v -al</code>)</li>
-<li>指令配置 (ex. <code>$ ./cli.php command --prefix=/usr/local/bin</code>)</li>
-<li>文字色彩</li>
-<li>文字界面讀寫</li>
-<li>Namespace 以及 Autoload</li>
-</ul>
-
-</div>
-		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/01/09/pointless-install-and-use">Pointless安裝與使用</a></h1>
-		<div class="info">
-			<span class="date">2013-01-09</span>
-			<br />
-			<span class="comments">
-				<a href="/article/2013/01/09/pointless-install-and-use/#disqus_thread">0 Comments</a>			</span>
-		</div>
-		<div class="content">
-</div>
-		<a class="more" href="/article/2013/01/09/pointless-install-and-use">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/01/09/php-phar-create-and-use">Phar建立與使用</a></h1>
-		<div class="info">
-			<span class="date">2013-01-09</span>
-			<br />
-			<span class="comments">
-				<a href="/article/2013/01/09/php-phar-create-and-use/#disqus_thread">0 Comments</a>			</span>
-		</div>
-		<div class="content"><p>這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題</p>
-
-<h2>Phar</h2>
-
-<p>Phar(PHP Archive)它是PHP的extension，就像是Java的jar一樣可以用來打包程式碼，可讓專案易於散佈並安裝使用</p>
-
-</div>
-		<a class="more" href="/article/2013/01/09/php-phar-create-and-use">More</a>
-	</article>
+			var count = document.createElement('script');
+			count.async = true;
+			count.type = 'text/javascript';
+			count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+		}());
+	</script>
 		<div class="bar">
 		<span class="new">
 					</span>
 		<span class="old">
-			<a href="/page/2">Older Posts >></a>		</span>
-		<span class="count">1 / 5</span>
+			<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">NanoCLI - PHP CLI開發工具 (2) >></a>		</span>
+		<span class="count">1 / 21</span>
 	</div>
-</div>
-<script type="text/javascript">
-	var disqus_shortname = 'scarshow';
-	(function() {
-		var count = document.createElement('script');
-		count.async = true;
-		count.type = 'text/javascript';
-		count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
-	}());
-</script>
-</div>
+</div></div>
 		<div id="side">
 			<form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
 				<input type="hidden" name="q" value="site:scar.simcz.tw" />

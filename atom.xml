@@ -4,13 +4,64 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:f7d5d42c-4b06-ab0f-72c6-064b135008b6</id>
-	<updated>2013-03-29T21:46:41+08:00</updated>
+	<id>urn:uuid:beb0dd48-9d7a-0577-afc7-9cf4ad3152ed</id>
+	<updated>2013-04-02T23:06:36+08:00</updated>
+	<entry>
+		<title>PHP字串連接</title>
+		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
+		<id>urn:uuid:f8a3427d-8bb0-48a4-74dd-bed5c0b8c8ed</id>
+		<updated>2013-04-02T23:06:36+08:00</updated>
+		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;在PHP中字串連結的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式 &lt;code&gt;strcat()&lt;/code&gt; 來連接兩個字元陣列，而在Java中我們可以使用 &lt;code&gt;+&lt;/code&gt; 運算子來做字串的連接。&lt;/p&gt;
+
+&lt;p&gt;而PHP呢？除了一般用來連結字串的 &lt;code&gt;.&lt;/code&gt; 運算子，我們還有許多方式可以連接字串。而且PHP的字串也有很大的學問。&lt;/p&gt;
+
+&lt;h2&gt;基本使用&lt;/h2&gt;
+
+&lt;h3&gt;字串宣告&lt;/h3&gt;
+
+&lt;p&gt;在PHP當中可以使用 &lt;code&gt;&#039;&lt;/code&gt; 或者是 &lt;code&gt;&quot;&lt;/code&gt; 來宣告字串，但是這兩個符號宣告出的字串其實是不相同的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+$str = &quot;Hi, I am Tony.\nNice to meet you.&quot;;
+echo $str;
+// Hi, I am Tony.
+// Nice to meet you.
+
+$str = &#039;Hi, I am Tony.\nNice to meet you.&#039;;
+echo $str;
+// Hi, i am Tony,\nNice to meet you.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;由上面範例可以得知使用 &lt;code&gt;&quot;&lt;/code&gt; 宣告的字串可以讓跳脫字元發揮出作用，而使用 &lt;code&gt;&#039;&lt;/code&gt; 宣告的字串則是純字串你輸入什麼就輸出什麼。&lt;/p&gt;
+
+&lt;h3&gt;字串連結&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+$name = &#039;Tony&#039;;
+
+echo &quot;Hi &quot; . $name; // Hi Tony
+echo &#039;Hi &#039; . $name; // Hi Tony
+echo &quot;Hi $name&quot;;    // Hi Tony
+echo &#039;Hi $name&#039;;    // Hi $name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;那麼字串與變數的連結，在 &lt;code&gt;&quot;&lt;/code&gt; 可以很彈性的使用變數，而 &lt;code&gt;&#039;&lt;/code&gt; 只能夠使用 &lt;code&gt;.&lt;/code&gt; 來做連結，而兩者都可以使用格式化輸出 &lt;code&gt;sprintf()&lt;/code&gt; 但這邊就先不提。&lt;/p&gt;
+
+&lt;p&gt;由上面得知 &lt;code&gt;&quot;&lt;/code&gt; 可以很彈性的連結變數，那麼它除了變數的連結外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。&lt;/p&gt;
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (2)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:50895857-abba-d66c-f702-b7b4c13c4cf9</id>
-		<updated>2013-03-29T21:46:41+08:00</updated>
+		<id>urn:uuid:fab6ca0d-6c0a-8ccd-b547-ed1706bcbdf7</id>
+		<updated>2013-04-02T23:06:36+08:00</updated>
 		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
 
 &lt;h2&gt;使用&lt;/h2&gt;
@@ -46,8 +97,8 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (1)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1" />
-		<id>urn:uuid:153404b4-793b-eb35-7c37-dcd0bb8fa507</id>
-		<updated>2013-03-29T21:46:41+08:00</updated>
+		<id>urn:uuid:95b61b81-7c14-c472-1718-ab675f21f67a</id>
+		<updated>2013-04-02T23:06:36+08:00</updated>
 		<summary type="html">&lt;p&gt;關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。&lt;/p&gt;
 
 &lt;p&gt;約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。&lt;/p&gt;
@@ -74,53 +125,27 @@ class Help extends NanoCLI\Command {
 		</author>
 	</entry>
 	<entry>
+		<title>Pointless安裝與使用</title>
+		<link href="http://scar.simcz.tw/article/2013/01/09/pointless-install-and-use" />
+		<id>urn:uuid:9ed610c3-8bf3-6db0-3f59-753047699ebf</id>
+		<updated>2013-04-02T23:06:36+08:00</updated>
+		<summary type="html">
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
+	<entry>
 		<title>Phar建立與使用</title>
 		<link href="http://scar.simcz.tw/article/2013/01/09/php-phar-create-and-use" />
-		<id>urn:uuid:e9c06ce6-7e5f-fafc-fe62-58d801d41f1b</id>
-		<updated>2013-03-29T21:46:41+08:00</updated>
+		<id>urn:uuid:3e2280f1-e234-78be-df40-0901a7967f51</id>
+		<updated>2013-04-02T23:06:36+08:00</updated>
 		<summary type="html">&lt;p&gt;這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題&lt;/p&gt;
 
 &lt;h2&gt;Phar&lt;/h2&gt;
 
 &lt;p&gt;Phar(PHP Archive)它是PHP的extension，就像是Java的jar一樣可以用來打包程式碼，可讓專案易於散佈並安裝使用&lt;/p&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>關於一些程式語言裡的遞增運算子</title>
-		<link href="http://scar.simcz.tw/article/2012/12/13/increment-operator-in-few-programming-language" />
-		<id>urn:uuid:ff2edd62-c37b-12e6-4a5b-cd8ac44a39f4</id>
-		<updated>2013-03-29T21:46:41+08:00</updated>
-		<summary type="html">&lt;p&gt;前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-main() {
-    int n = 0;
-    n = ++n + ++n + ++n + ++n;
-
-    printf(&quot;%d&quot;, n);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>Facebook病毒 - YouNaked.JPG.exe</title>
-		<link href="http://scar.simcz.tw/article/2012/12/08/facebook-virus-ksum-exe" />
-		<id>urn:uuid:c2e762d3-5b25-f2e7-3ca8-8581b1af92d4</id>
-		<updated>2013-03-29T21:46:41+08:00</updated>
-		<summary type="html">&lt;p&gt;今天在使用Facebook的時候看見了朋友的動態留言上有不尋常的連結，好齊心驅使下我就觀察看看有什麼行為。&lt;/p&gt;
-
-&lt;p&gt;首先它的連結是一串縮址,點擊之後它會到向另一個頁面，並且自動下載一個檔案，但這只是下載而已，要去執行它病毒才會有作用。&lt;/p&gt;
 
 </summary>
 		<author>
