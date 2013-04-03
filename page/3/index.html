@@ -35,6 +35,37 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2012/08/19/hack-php-to-support-put-fileupload">讓PHP支援PUT FileUpload</a></h1>
+		<div class="info">
+			<span class="date">2012-08-19</span>-
+			<span class="category">
+				Category: <a href="//category/IT">IT</a>			</span>-
+			<span class="tag">
+				Tag: 
+								<span><a href="//tag/PHP">PHP</a></span>
+							</span>-
+			<span class="comments">
+				<a href="/article/2012/08/19/hack-php-to-support-put-fileupload/#disqus_thread">0 Comment</a>			</span>
+		</div>
+		<div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
+
+<pre><code>&lt;?php
+    // do something...
+
+    $put_data = file_get_contents('php://input');
+
+    // handle put data...
+</code></pre>
+
+<p><br />
+簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
+
+<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
+
+</div>
+		<a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">隱藏Facebook廣告 (Google Chrome)</a></h1>
 		<div class="info">
 			<span class="date">2012-07-19</span>-
@@ -194,56 +225,12 @@ function hideAds() {
 </div>
 		<a class="more" href="/article/2012/04/27/about-pointless-static-blog-generator">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-2">實作一個小型Router use PHP (2)</a></h1>
-		<div class="info">
-			<span class="date">2012-04-23</span>-
-			<span class="category">
-				Category: <a href="//category/IT">IT</a>			</span>-
-			<span class="tag">
-				Tag: 
-								<span><a href="//tag/PHP">PHP</a></span>
-							</span>-
-			<span class="comments">
-				<a href="/article/2012/04/23/implement-a-small-router-use-php-2/#disqus_thread">0 Comment</a>			</span>
-		</div>
-		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
-
-<pre><code>&lt;?php
-// filename: router.php
-class router {
-    public function __construct() {
-        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
-        $this-&gt;url = $_SERVER['PATH_INFO'];
-    }
-
-    public function add($route, $callback) {
-        $this-&gt;rules[] = array(
-            'route' =&gt; $route,
-            'callback' =&gt; $callback
-        );
-    }
-
-    public function run() {
-        foreach($this-&gt;rules as $rule) {
-            if($rule['route'] == $this-&gt;url) {
-                $rule['callback']();
-                break;
-            }
-        }
-    }
-}
-</code></pre>
-
-</div>
-		<a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-2">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 			<a href="/page/2"><< Newer Posts</a>		</span>
 		<span class="old">
 			<a href="/page/4">Older Posts >></a>		</span>
-		<span class="count">3 / 4</span>
+		<span class="count">3 / 5</span>
 	</div>
 </div>
 <script type="text/javascript">
@@ -284,20 +271,20 @@ class router {
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="/archive/2013">2013(4)</a></span>
+				<span class="item"><a href="/archive/2013">2013(5)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
 			</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(19)</a></span>
+				<span class="item"><a href="/category/IT">IT(20)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 			</div>
 </div><div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
-				<span class="item"><a href="/tag/PHP">PHP(13)</a></span>
+				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
 				<span class="item"><a href="/tag/Note">Note(9)</a></span>
 				<span class="item"><a href="/tag/Javascript">Javascript(3)</a></span>
 				<span class="item"><a href="/tag/Android">Android(2)</a></span>

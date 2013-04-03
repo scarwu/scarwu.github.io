@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>實作一個小型Router use PHP (1) | ScarShow | 刀疤說</title>
+	<title>關於PHP原生樣板引擎 | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -35,9 +35,9 @@
 	<div id="main">
 		<div id="container"><div id="article">
 	<article>
-		<h1 class="title">實作一個小型Router use PHP (1)</h1>
+		<h1 class="title">關於PHP原生樣板引擎</h1>
 		<div class="info">
-			<span class="date">2012-04-23</span>-
+			<span class="date">2013-04-04</span>-
 			<span class="category">
 				Category: <a href="//category/IT">IT</a>			</span>-
 			<span class="tag">
@@ -45,85 +45,133 @@
 								<span><a href="//tag/PHP">PHP</a></span>
 							</span>-
 			<span class="comment">
-				<a href="/article/2012/04/23/implement-a-small-router-use-php-1/#disqus_thread">0 Comment</a>			</span>
+				<a href="/article/2013/04/04/about-php-native-template-engine/#disqus_thread">0 Comment</a>			</span>
 		</div>
-		<div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
+		<div class="content"><h2>前言</h2>
 
-<p>首先建立一個PHP程式 server.php</p>
+<p>想寫一個簡單的網頁程式，但現在市面上PHP的樣板引擎百百種，那該選什麼樣的樣板引擎來搭配好呢？...等等先不說這個，你有聽說過PHP本身也是樣板引擎嗎？沒錯它是。</p>
 
-<pre><code>&lt;?php
-// filename: server.php
-print_r($_SERVER);
-</code></pre>
+<p>在這之前我們先看看Wikipedia是怎麼解釋樣板引擎：</p>
+
+<blockquote>
+  <p>"A (web) template engine is software that is designed to process web templates and content information to produce output web documents. It runs in the context of a template system."</p>
+</blockquote>
+
+<p>它說明了樣板引擎的功能是將內容資訊與網頁樣板結合，然後產生出網頁文件的這一個行為。將網頁的內容與網頁樣板切開，這個不用幾行程式碼PHP就可以做到。</p>
 
 <!--more-->
 
-<p>然後我們用curl來發送請求來觀察PHP到底收到了什麼訊息</p>
+<h2>替換語法</h2>
 
-<pre><code>curl -X GET "localhost/server.php/segement/input" -d "param=test" -G
+<p>不用其他樣板引擎那樣炫目的結構語法，PHP就有內建控制結構的替換語法，PHP官方手冊這邊就有寫了 <a href="http://php.net/manual/en/control-structures.alternative-syntax.php">Alternative syntax for control structures</a> ，PHP內建的替換語法包含if, while, for, foreach以及switch這些耳熟能詳的語法，我們可以這樣去使用它：</p>
+
+<pre><code>&lt;?php if($scores &gt;= 60): ?&gt;
+&lt;span&gt;Congratulation!&lt;/span&gt;
+&lt;?php endif; ?&gt;
+
+&lt;ol&gt;
+    &lt;?php foreach($list as $name): ?&gt;
+    &lt;li&gt;&lt;?=$name?&gt;&lt;/li&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/ol&gt;
 </code></pre>
 
-<p>底下是curl輸出之結果</p>
+<p>上面示範了<code>if():</code>以及<code>foreach():</code>的語法，它基本使用上就跟我們在PHP中的寫法差不多，每個語法都必須在<code>&lt;?php ?&gt;</code>的標籤中，不過稍有不同的是語法後面都要加上<code>:</code>以及在區塊的最後加上<code>&lt;?php endxxx; ?&gt;</code>結束語法來作結尾。然而變數的輸出可以使用一般的<code>&lt;?php echo $variable; ?&gt;</code>，也可以使用在PHP中稱為Short Tag的特殊標籤<code>&lt;?=$variable?&gt;</code>。</p>
 
-<pre><code>Array
-(
-    [HTTP_USER_AGENT] =&gt; curl/7.21.6 (x86_64-pc-linux-gnu) libcurl/7.21.6 OpenSSL/1.0.0e zlib/1.2.3.4 libidn/1.22 librtmp/2.3
-    [HTTP_HOST] =&gt; localhost
-    [HTTP_ACCEPT] =&gt; */*
-    [PATH] =&gt; /usr/local/bin:/usr/bin:/bin
-    [SERVER_SIGNATURE] =&gt; &lt;address&gt;Apache/2.2.20 (Ubuntu) Server at localhost Port 80&lt;/address&gt;
+<p>在這邊我們要注意的是，PHP只做邏輯判斷並且印出事先就處理好的變數內容，並且盡量少用PHP印出HTML的標籤，這樣做的話會讓樣板更乾淨。</p>
 
-    [SERVER_SOFTWARE] =&gt; Apache/2.2.20 (Ubuntu)
-    [SERVER_NAME] =&gt; localhost
-    [SERVER_ADDR] =&gt; 127.0.0.1
-    [SERVER_PORT] =&gt; 80
-    [REMOTE_ADDR] =&gt; 127.0.0.1
-    [DOCUMENT_ROOT] =&gt; /var/www/
-    [SERVER_ADMIN] =&gt; webmaster@localhost
-    [SCRIPT_FILENAME] =&gt; /var/www/server.php
-    [REMOTE_PORT] =&gt; 58117
-    [GATEWAY_INTERFACE] =&gt; CGI/1.1
-    [SERVER_PROTOCOL] =&gt; HTTP/1.1
-    [REQUEST_METHOD] =&gt; GET
-    [QUERY_STRING] =&gt; param=test
-    [REQUEST_URI] =&gt; /server.php/segement/input?param=test
-    [SCRIPT_NAME] =&gt; /server.php
-    [PATH_INFO] =&gt; /segement/input
-    [PATH_TRANSLATED] =&gt; /var/www/segement/input
-    [PHP_SELF] =&gt; /server.php/segement/input
-    [REQUEST_TIME] =&gt; 1335154750
-)
-</code></pre>
+<h2>資料處理與讀取樣板</h2>
 
-<p>根據 $_SERVER 的內容中我們挑出能用的部份，REQUEST_METHOD 就是HTTP請求時的Method而 PATH_INFO 、PHP_SELF 及 REQUEST_URI 則可以用來當作比對用的URL。PATH_INFO的內容<code>/segement/input</code>完全符合需求，另外的 PHP_SELF 及 REQUEST_URI 要做額外的處理才能使用。</p>
-
-<p>還有一件值得一提的事情，上面三個變數Apache都有、Nginx少 PATH_INFO 而IIS則少 REQUEST_URI。</p>
-
-<p>接下來就開始實作了，實做一個Router我們需要上面提到的HTTP Method、URL以及Route Rule及Callback，原理很簡單當Method及URL與Route rule互相Match的時候就會去呼叫Callback執行相對應的動作。首先新增一個名為router的class把一些基本的架構制定出來</p>
+<p>讓資料與樣板切割最快也最徹底的方式就是分檔，但是分檔完之後還是要將樣板與資料做結合，所以動手做一個render來將樣板跟資料做結合吧！</p>
 
 <pre><code>&lt;?php
-// filename: router.php
-class router {
-    public function __construct() {
-        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
-        $this-&gt;url = $_SERVER['PATH_INFO'];
-    }
+function render($template, $data) {
+    ob_start();
+    include $template;
+    $result = ob_get_contents();
+    ob_end_clean();
 
-    public function add($route, $callback) {
-        // do something
-    }
-
-    public function run() {
-        // compare
-    }
+    return $result;
 }
 </code></pre>
 
-<p>以上的class提供一些基本的功能，當class被new時自動取得Method及URL，再用add加入Route Rule及Callback，接來下就可以用run讓Router <strike>跑路</strike> 啟動了。</p>
+<p>這個<code>render</code>函式是利用output buffer來取得資料與樣板結合後的HTML文件，並且將HTML回傳。</p>
 
-<p>那麼比對怎樣做，<strike>直接用 == 字串比對就好啦</strike> 比較好的做好是使用正規表達式去比對字串。</p>
+<h2>使用範例</h2>
 
-<p><strong>待續...</strong></p>
+<p>我們這邊假設寫一個呈現學生清單的網頁，並且分為兩個網頁一個是處理資料<code>student_info.php</code>還有它所讀取的網頁樣板<code>list_template.php</code>。</p>
+
+<h4>student_info.php</h4>
+
+<pre><code>&lt;?php
+// query database
+
+$info = array(
+    array('id' =&gt; 1, 'name' =&gt; 'Tony'),
+    array('id' =&gt; 2, 'name' =&gt; 'Micky'),
+    array( ... )
+);
+
+$html = render('list_template.php', $info);
+echo $html;
+</code></pre>
+
+<h4>list_template.php</h4>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Student List&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;ID&lt;/td&gt;&lt;td&gt;Name&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;?php foreach($data as $student): ?&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;?=$data['id']?&gt;&lt;/td&gt;&lt;td&gt;&lt;?=$data['name']?&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;?php endforeach; ?&gt;
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>輸出結果</h3>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Student List&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;ID&lt;/td&gt;&lt;td&gt;Name&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;/td&gt;&lt;td&gt;Tony&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;/td&gt;&lt;td&gt;Micky&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;/td&gt;&lt;td&gt; ... &lt;/td&gt;
+            &lt;/tr&gt;
+
+            ...
+
+        &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strike>就這樣沒了。</strike></p>
+
+<h2>不負責結論</h2>
+
+<p>當然現成的樣板引擎當然有它的好處，但如果你想要附屬的好用功能當然還是可以用，比較起那些炫目簡短的語法，但我還是會選擇原生的語法(雖然醜了點)，廣告台詞說了這麼一句：<code>天然ㄟ尚好</code>，畢竟人家都已經做好放在那邊而且速度又比較快，也沒有什麼理由不用，如果要簡單的附加功能大不了自己寫也是可以的。</p>
+
+<p><strong>我還是強調一下，要不要用樣板引擎，這全憑個人選擇。</strong></p>
 </div>
 	</article>
 		<!-- DISQUS -->
@@ -146,10 +194,10 @@ class router {
 	</script>
 		<div class="bar">
 		<span class="new">
-			<a href="/article/2012/04/23/implement-a-small-router-use-php-2"><< 實作一個小型Router use PHP (2)</a>		</span>
+					</span>
 		<span class="old">
-			<a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10">HipHop building on Ubuntu 11.10 >></a>		</span>
-		<span class="count">17 / 21</span>
+			<a href="/article/2013/04/02/php-concatenate-string">PHP字串連接 >></a>		</span>
+		<span class="count">1 / 21</span>
 	</div>
 </div></div>
 		<div id="side">

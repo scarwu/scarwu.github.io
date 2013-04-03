@@ -4,18 +4,41 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:0ec76c50-6e4e-4c3f-53dc-fc8dd8768e33</id>
-	<updated>2013-04-03T06:42:52+08:00</updated>
+	<id>urn:uuid:3159d1f2-649f-a40c-657e-e28861a25d07</id>
+	<updated>2013-04-04T04:34:34+08:00</updated>
+	<entry>
+		<title>關於PHP原生樣板引擎</title>
+		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
+		<id>urn:uuid:ce4e0c54-cdcb-d1d0-3553-21771ccecc7c</id>
+		<updated>2013-04-04T04:34:34+08:00</updated>
+		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;想寫一個簡單的網頁程式，但現在市面上PHP的樣板引擎百百種，那該選什麼樣的樣板引擎來搭配好呢？...等等先不說這個，你有聽說過PHP本身也是樣板引擎嗎？沒錯它是。&lt;/p&gt;
+
+&lt;p&gt;在這之前我們先看看Wikipedia是怎麼解釋樣板引擎：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&quot;A (web) template engine is software that is designed to process web templates and content information to produce output web documents. It runs in the context of a template system.&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;它說明了樣板引擎的功能是將內容資訊與網頁樣板結合，然後產生出網頁文件的這一個行為。將網頁的內容與網頁樣板切開，這個不用幾行程式碼PHP就可以做到。&lt;/p&gt;
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>PHP字串連接</title>
 		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
-		<id>urn:uuid:d50c47e4-35e7-3dd7-5c51-973cf75f4e67</id>
-		<updated>2013-04-03T06:42:52+08:00</updated>
+		<id>urn:uuid:58a24f29-9a86-c6a3-034a-b825af962948</id>
+		<updated>2013-04-04T04:34:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;在PHP中字串連接的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式&lt;code&gt;strcat()&lt;/code&gt;來連接兩個字元陣列，而在Java中我們可以使用&lt;code&gt;+&lt;/code&gt;運算子來做字串的連接。&lt;/p&gt;
 
-&lt;p&gt;而PHP呢？除了一般用來連接字串的&lt;code&gt;.&lt;/code&gt;運算子，我們還有許多方式可以連接字串。而且PHP的字串也有很大的學問。&lt;/p&gt;
+&lt;p&gt;而PHP呢？PHP不同與上述語言，它則使用&lt;code&gt;.&lt;/code&gt;運算子來連接字串，而且除了&lt;code&gt;.&lt;/code&gt;以外還有許多不同的方式也可以連接字串。&lt;/p&gt;
 
 &lt;h2&gt;基本使用&lt;/h2&gt;
 
@@ -60,8 +83,8 @@ echo &#039;Hi $name&#039;;    // Hi $name
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (2)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:99b91dc4-a174-93fc-b18b-bcb1f5d21412</id>
-		<updated>2013-04-03T06:42:52+08:00</updated>
+		<id>urn:uuid:ef085a12-ac33-77a7-4158-5a9b7df22e04</id>
+		<updated>2013-04-04T04:34:34+08:00</updated>
 		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
 
 &lt;h2&gt;使用&lt;/h2&gt;
@@ -97,8 +120,8 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (1)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1" />
-		<id>urn:uuid:cb574171-1ccc-c424-6374-e6bed5125c8c</id>
-		<updated>2013-04-03T06:42:52+08:00</updated>
+		<id>urn:uuid:8e0040ec-7bf3-61c7-2eaa-3c8aaecbc000</id>
+		<updated>2013-04-04T04:34:34+08:00</updated>
 		<summary type="html">&lt;p&gt;關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。&lt;/p&gt;
 
 &lt;p&gt;約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。&lt;/p&gt;
@@ -127,36 +150,13 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>Phar建立與使用</title>
 		<link href="http://scar.simcz.tw/article/2013/01/09/php-phar-create-and-use" />
-		<id>urn:uuid:9f22fa9f-735a-533a-302a-de12ae093d70</id>
-		<updated>2013-04-03T06:42:52+08:00</updated>
+		<id>urn:uuid:3a8ef3ac-db05-1bbb-f7bb-0afa23ca7e4f</id>
+		<updated>2013-04-04T04:34:34+08:00</updated>
 		<summary type="html">&lt;p&gt;這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題&lt;/p&gt;
 
 &lt;h2&gt;Phar&lt;/h2&gt;
 
 &lt;p&gt;Phar(PHP Archive)它是PHP的extension，就像是Java的jar一樣可以用來打包程式碼，可讓專案易於散佈並安裝使用&lt;/p&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>關於一些程式語言裡的遞增運算子</title>
-		<link href="http://scar.simcz.tw/article/2012/12/13/increment-operator-in-few-programming-language" />
-		<id>urn:uuid:5654b4a2-3d1e-f673-557f-ed0e7fe3e9e1</id>
-		<updated>2013-04-03T06:42:52+08:00</updated>
-		<summary type="html">&lt;p&gt;前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
-
-main() {
-    int n = 0;
-    n = ++n + ++n + ++n + ++n;
-
-    printf(&quot;%d&quot;, n);
-}
-&lt;/code&gt;&lt;/pre&gt;
 
 </summary>
 		<author>
