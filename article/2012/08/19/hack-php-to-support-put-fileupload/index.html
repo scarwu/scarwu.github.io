@@ -49,12 +49,12 @@
 		</div>
 		<div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
 
-<pre><code>&lt;?php
-    // do something...
+<pre><code class="php">&lt;?php
+// do something...
 
-    $put_data = file_get_contents('php://input');
+$put_data = file_get_contents('php://input');
 
-    // handle put data...
+// handle put data...
 </code></pre>
 
 <p><br />
@@ -66,7 +66,7 @@
 
 <p>結果發現在 main/SAPI.c 中的 sapi_activate Function 中有這麼一段Code</p>
 
-<pre><code>/* main/SAPI.c:456 */
+<pre><code class="php">/* main/SAPI.c:456 */
 if (SG(request_info).content_type &amp;&amp; !strcmp(SG(request_info).request_method, "POST"))) {
     /* HTTP POST may contain form data to be processed into variables
      * depending on given content type */
@@ -79,7 +79,7 @@ if (SG(request_info).content_type &amp;&amp; !strcmp(SG(request_info).request_me
 <p><br />
 它用來比較HTTP Request Method是否為POST，然後底下所呼叫的Function sapi_read_post_data 是用來處理檔案上傳的，所以就對它做一些修改</p>
 
-<pre><code>/* main/SAPI.c:456 */
+<pre><code class="php">/* main/SAPI.c:456 */
 if (SG(request_info).content_type &amp;&amp; (!strcmp(SG(request_info).request_method, "POST") || !strcmp(SG(request_info).request_method, "PUT"))) {
     /* HTTP POST may contain form data to be processed into variables
      * depending on given content type */
@@ -92,13 +92,13 @@ if (SG(request_info).content_type &amp;&amp; (!strcmp(SG(request_info).request_m
 <p><br />
 既然有了這麼一個Sample然後在看看還有哪些程式中也有相同的處理機制，所以就用 grep 吧</p>
 
-<pre><code>grep -rn \"POST\" ./main
+<pre><code class="bash">$ grep -rn \"POST\" ./main
 </code></pre>
 
 <p><br />
 然後發現底下的程式中也有相同的判斷，所以就再多做修改，這邊</p>
 
-<pre><code>/* main/php_content_type.c:44 */
+<pre><code class="php">/* main/php_content_type.c:44 */
 if (!strcmp(SG(request_info).request_method, "POST") || !strcmp(SG(request_info).request_method, "PUT")) {
     if (NULL == SG(request_info).post_entry) {
         /* no post handler registered, so we just swallow the data */
@@ -111,7 +111,7 @@ if (!strcmp(SG(request_info).request_method, "POST") || !strcmp(SG(request_info)
 <p><br />
 還有這邊</p>
 
-<pre><code>/* main/php_variables.c:681 */
+<pre><code class="php">/* main/php_variables.c:681 */
 if (PG(variables_order) &amp;&amp;
         (strchr(PG(variables_order),'P') || strchr(PG(variables_order),'p')) &amp;&amp;
     !SG(headers_sent) &amp;&amp;
@@ -127,7 +127,7 @@ if (PG(variables_order) &amp;&amp;
 <p><br />
 所以一共改了3個地方，都多加了PUT的判斷，接下來就開始編譯了</p>
 
-<pre><code>./configure --prefix=/home/scarwu/php \
+<pre><code class="bash">./configure --prefix=/home/scarwu/php \
     --with-config-file-path=/home/scarwu/php/etc \
     --with-config-file-scan-dir=/home/scarwu/php/var/db \
     --with-pear=/home/scarwu/php/lib/php \
@@ -179,7 +179,7 @@ make install
 <p><br />
 試著用PUT傳檔案及Params上去之後，回傳結果為此，PHP已經幫你處理好了，該出現的都出現了</p>
 
-<pre><code>Array
+<pre><code class="bash">Array
 (
     ...
     [REQUEST_METHOD] =&gt; PUT

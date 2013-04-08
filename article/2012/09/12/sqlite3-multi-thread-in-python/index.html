@@ -54,7 +54,7 @@
 
 <h3>Error Code</h3>
 
-<pre><code>ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
+<pre><code class="bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
 </code></pre>
 
 <!--more-->
@@ -63,7 +63,7 @@
 
 <h3>Sample Code</h3>
 
-<pre><code>import sqlite3
+<pre><code class="python">import sqlite3
 
 conn = sqlite3.connect(path, check_same_thread=False)
 conn.execute('Do something')

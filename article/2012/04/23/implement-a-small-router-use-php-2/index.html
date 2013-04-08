@@ -49,7 +49,7 @@
 		</div>
 		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
@@ -81,7 +81,7 @@ class router {
 
 <p>以上都設定好後，我們修改原先用來測試的server.php，將router生成出來、並加入一條規則接著執行它</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: server.php
 require_once 'router.php';
 
@@ -100,7 +100,7 @@ $Router-&gt;run();
 
 <h3>Router.php</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
@@ -134,7 +134,7 @@ class router {
 
 <h3>Server.php</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: server.php
 require_once 'router.php';
 
@@ -154,7 +154,7 @@ $Router-&gt;run();
 
 <h3>Router.php</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
@@ -188,7 +188,7 @@ class router {
 
 <h3>Server.php</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: server.php
 require_once 'router.php';
 

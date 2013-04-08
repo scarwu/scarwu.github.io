@@ -52,7 +52,7 @@
 		</div>
 		<div class="content"><p>前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：</p>
 
-<pre><code>#include &lt;stdio.h&gt;
+<pre><code class="c">#include &lt;stdio.h&gt;
 
 main() {
     int n = 0;
@@ -129,7 +129,7 @@ main() {
 
 <h3>Error Code</h3>
 
-<pre><code>ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
+<pre><code class="bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
 </code></pre>
 
 </div>
@@ -155,20 +155,20 @@ main() {
 
 <h3>編譯環境</h3>
 
-<pre><code>sudo apt-get build-dep php5
+<pre><code class="bash">sudo apt-get build-dep php5
 sudo apt-get install php5-dev
 </code></pre>
 
 <h3>Xhprof</h3>
 
-<pre><code>wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+<pre><code class="bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
 tar -zxvf xhprof-0.9.2.tgz
 cd xhprof-0.9.2
 </code></pre>
 
 <p><br />複製 xhprof 所需要用到的程式到你的 web 根目錄</p>
 
-<pre><code>cp -a xhprof_html xhprof_lib /path/to/htdocs
+<pre><code class="bash">cp -a xhprof_html xhprof_lib /path/to/htdocs
 </code></pre>
 
 </div>

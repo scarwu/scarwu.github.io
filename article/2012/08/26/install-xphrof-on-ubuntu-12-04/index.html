@@ -54,32 +54,32 @@
 
 <h3>編譯環境</h3>
 
-<pre><code>sudo apt-get build-dep php5
+<pre><code class="bash">sudo apt-get build-dep php5
 sudo apt-get install php5-dev
 </code></pre>
 
 <h3>Xhprof</h3>
 
-<pre><code>wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+<pre><code class="bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
 tar -zxvf xhprof-0.9.2.tgz
 cd xhprof-0.9.2
 </code></pre>
 
 <p><br />複製 xhprof 所需要用到的程式到你的 web 根目錄</p>
 
-<pre><code>cp -a xhprof_html xhprof_lib /path/to/htdocs
+<pre><code class="bash">cp -a xhprof_html xhprof_lib /path/to/htdocs
 </code></pre>
 
 <!--more-->
 
 <p><br />對 xhprof.c 進行Patch</p>
 
-<pre><code>curl https://github.com/facebook/xhprof/commit/a6bae51236.diff | patch -p1
+<pre><code class="bash">curl https://github.com/facebook/xhprof/commit/a6bae51236.diff | patch -p1
 </code></pre>
 
 <p><br />開始編譯並安裝</p>
 
-<pre><code>cd extension
+<pre><code class="bash">cd extension
 phpize
 ./configure
 make
@@ -88,21 +88,21 @@ sudo make install
 
 <p><br />修改 php.ini 設定檔</p>
 
-<pre><code>[xhprof]
+<pre><code class="ini">[xhprof]
 extension=xhprof.so
 xhprof.output_dir=/tmp
 </code></pre>
 
 <h3>Graphviz，這是用來繪製結果需要用到的套件</h3>
 
-<pre><code>sudo apt-get install graphviz
+<pre><code class="bash">sudo apt-get install graphviz
 </code></pre>
 
 <h3>使用</h3>
 
 <p>重新啟動 Web Service，然後將的程式碼加入需要測試的檔案中，並執行程式</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 xhprof_enable();
 
 // 待測程式碼

@@ -56,8 +56,7 @@
 
 <p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
 
-<pre><code>&lt;?php
-
+<pre><code class="php">&lt;?php
 // 設定namespace
 namespace Test;
 
@@ -78,25 +77,26 @@ class Help extends NanoCLI\Command {
 
 <p><br />上面時做了help指令而呼叫的方式如下，第一個是透過主要指令自動去呼叫的而第二個是直接去呼叫help指令。</p>
 
-<pre><code>$ php boot.php
-$ This is Command: help
+<pre><code class="bash">php boot.php
+This is Command: help
+</code></pre>
 
-// 或者是
+<p>// 或者是</p>
 
-$ php boot.php help
-$ This is Command: help
+<pre><code class="bash">php boot.php help
+This is Command: help
 </code></pre>
 
 <h3>多層指令實作</h3>
 
 <p>在這邊要提到的是指令可以是多層的可以像是下面那樣去呼叫。</p>
 
-<pre><code>$ php boot.php commandA commandB commandC
+<pre><code class="bash">php boot.php commandA commandB commandC
 </code></pre>
 
 <p><br />如果要實作到上面的指令就必須要設定多層資料夾以及Namespace去配合像是下面那樣，它是可以一直循序下去的。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 namespace Test;
 class CommandA extends NanoCLI\Command { ... }
 
@@ -111,7 +111,7 @@ class CommandC extends NanoCLI\Command { ... }
 
 <p><br />檔案結構要設定成這樣配合autoload才會正常運作。</p>
 
-<pre><code>.
+<pre><code class="bash">.
 ├── boot.php
 ├── Command
 │   ├── Test
@@ -133,20 +133,20 @@ class CommandC extends NanoCLI\Command { ... }
 
 <p>像是讀取鍵盤的輸入可以使用 <code>NanoCLI\IO::read()</code> ，它會返回鍵盤在按下Enter前所輸入的資料。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 $input = NanoCLI\IO::read();
 </code></pre>
 
 <p><br />如果要輸出文字到Console可以使用 <code>NanoCLI\IO::write()</code> 或是 <code>NanoCLI\IO::writeln()</code> ，這兩個函式在輸出文字的時候可以設定文字顏色。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 NanoCLI\IO::writeln('I am Yellow', 'yellow');
 NanoCLI\IO::writeln('I am Red', 'red');
 </code></pre>
 
 <p><br />如果想要知道terminal的大小，可以透過 <code>NanoCLI\IO::width()</code> 、 <code>NanoCLI\IO::height()</code> 去取得。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 use NanoCLI\IO;
 
 $size = IO::width() . ' x ' . IO::height();
@@ -155,7 +155,7 @@ IO::writeln($size); // 80 x 24
 
 <h2>總結</h2>
 
-<p>到這邊基本上已經結束了NanoCLI的基本說明，要寫個PHP CLI不是難事基本上NanoCLI都幫你自動處理了，更進階的應用之後再說明，像是指令選項或是指令參數的使用方式。</p>
+<p>到這邊基本上已經結束了NanoCLI的基本說明，要寫個PHP CLI不是難事基本上NanoCLI幫你自動處理了，更進階的應用之後再說明，像是指令選項或是指令參數的使用方式。</p>
 </div>
 	</article>
 		<!-- DISQUS -->

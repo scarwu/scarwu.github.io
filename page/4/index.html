@@ -49,7 +49,7 @@
 		</div>
 		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
@@ -95,7 +95,7 @@ class router {
 
 <p>首先建立一個PHP程式 server.php</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: server.php
 print_r($_SERVER);
 </code></pre>
@@ -125,7 +125,7 @@ print_r($_SERVER);
 
 <h2>先將系統的編譯環境用apt安裝好</h2>
 
-<pre><code>sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0
+<pre><code class="bash">sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0
 </code></pre>
 
 </div>
@@ -150,7 +150,7 @@ print_r($_SERVER);
 
 <p>使用window.openDatabase的方法，這是在Local端建立一個SQL資料庫</p>
 
-<pre><code>var db = window.openDatabase(name, version, display_name, size);
+<pre><code class="javascript">var db = window.openDatabase(name, version, display_name, size);
 </code></pre>
 
 </div>
@@ -176,7 +176,7 @@ print_r($_SERVER);
 
 <p>以下是原本的<code>meta</code></p>
 
-<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+<pre><code class="html">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
 </code></pre>
 
 </div>

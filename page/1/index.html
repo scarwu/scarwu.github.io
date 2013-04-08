@@ -87,7 +87,7 @@
 
 <p>在PHP當中可以使用<code>'</code>或者是<code>"</code>來宣告字串，但是這兩個符號宣告出的字串其實是不相同的。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 $str = "Hi, I am Tony.\nNice to meet you.";
 echo $str;
 // Hi, I am Tony.
@@ -102,7 +102,7 @@ echo $str;
 
 <h3>字串連接</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 $name = 'Tony';
 
 echo "Hi " . $name; // Hi Tony
@@ -140,8 +140,7 @@ echo 'Hi $name';    // Hi $name
 
 <p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
 
-<pre><code>&lt;?php
-
+<pre><code class="php">&lt;?php
 // 設定namespace
 namespace Test;
 

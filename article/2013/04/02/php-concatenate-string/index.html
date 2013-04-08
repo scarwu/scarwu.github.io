@@ -59,7 +59,7 @@
 
 <p>在PHP當中可以使用<code>'</code>或者是<code>"</code>來宣告字串，但是這兩個符號宣告出的字串其實是不相同的。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 $str = "Hi, I am Tony.\nNice to meet you.";
 echo $str;
 // Hi, I am Tony.
@@ -74,7 +74,7 @@ echo $str;
 
 <h3>字串連接</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 $name = 'Tony';
 
 echo "Hi " . $name; // Hi Tony
@@ -91,12 +91,12 @@ echo 'Hi $name';    // Hi $name
 
 <h3>陣列範例</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 $color = array('black', 'blue');
 
 echo "The sky is $color[1]";     // The sky is blue
 echo "The sky is {$color[1]}";   // The sky is blue
-echo "The sky is . $color[1];    // The sky is blue
+echo "The sky is" . $color[1];    // The sky is blue
 
 $student = array('name' =&gt; 'Tony', 'age' =&gt; 18);
 
@@ -109,7 +109,7 @@ echo "I am " . $student['name']; // I am Tony
 
 <h3>函式範例</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 function getName() {
     return 'Tony';
 }
@@ -129,7 +129,7 @@ echo "My name is " . $name();  // My name is Tony
 
 <h3>物件範例</h3>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 class Student {
     private static $type = 'student';
     private $name;
@@ -168,7 +168,7 @@ $student = new Student('Tony', 18);
 
 <p>我們寫一個Student物件，其中包含了類型、姓名以及年齡然後我們做個簡單的測試，結果物件的私有變數可以正常輸出，但是遇到了靜態變數時還是要使用<code>.</code>來做連接。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 $student = new Student('Tony', 18);
 
 // Class Method
@@ -195,7 +195,7 @@ echo "I am " . Student::getType();                // I am student
 
 <p>綜合以上結果整理一下幾種輸出方式，見下表：</p>
 
-<pre><code>                   "      {}     .
+<pre><code class="bash">                   "      {}     .
 --------------------------------------
 $var            |  OK  |  OK  |  OK  |
 $array[0]       |  OK  |  OK  |  OK  |

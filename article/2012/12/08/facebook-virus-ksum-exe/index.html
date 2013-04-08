@@ -55,7 +55,7 @@
 
 <!--more-->
 
-<p>下載下來的檔名是 <strong>YouNaked.JPG.exe</strong>，檔案大小 <strong>160KB</strong>，初步用 Avira Free Antivirus 去掃描並沒有結果，接下來用 whois 去查詢IP發現來自於土耳其。</p>
+<p>下載下來的檔名是 <strong>YouNaked.JPG.exe</strong>，檔案大小 <strong>160KB</strong>，初步用 Avira Free Antivirus 去掃描並沒有結果，接下來用<code>whois</code>去查詢IP發現來自於土耳其。</p>
 
 <pre><code>inetnum:        185.4.227.0 - 185.4.227.255
 netname:        SAYFANET
@@ -85,15 +85,15 @@ source:         RIPE # Filtered
 
 <h3>行為</h3>
 
-<p>接下來做個簡單的行為分析，當程式執行後 YouNaked.JPG.exe 會自我刪除，然後就會在你朋友的動態訊息以及聊天室中留下同樣的訊息，到這邊還沒結束。</p>
+<p>接下來做個簡單的行為分析，當程式執行後<code>YouNaked.JPG.exe</code>會自我刪除，然後就會在你朋友的動態訊息以及聊天室中留下同樣的訊息，到這邊還沒結束。</p>
 
-<p>在剛剛的過程中它會在你的登錄檔中新增一條紀錄，接下來啟動 msconfig，在中你會看見其中一條預設啟動名為 <strong>MSConfig</strong> 而啟動的路徑是 <strong>C:\Users&#92;{YourName}\ksum.exe</strong>，是這是一個隱藏檔，這意味著只要你重新開機它就會自動執行。</p>
+<p>在剛剛的過程中它會在你的登錄檔中新增一條紀錄，接下來啟動<code>msconfig</code>，在中你會看見其中一條預設啟動名為 <strong>MSConfig</strong> 而啟動的路徑是<code>C:\Users\\{YourName}\ksum.exe</code>，是這是一個隱藏檔，這意味著只要你重新開機它就會自動執行。</p>
 
-<p>試著去刪除它會發現它又自動再生了，不管次都是一樣。所以這時後去觀察資源監視器中的磁碟，會發現有個影像在操作 <strong>ksum.exe</strong> 但是名稱都會不同，我有見過 explorer.exe 以及 SearchProtocolHost.exe 這2個程式，接著我去看這兩隻程式並沒有發現異常，所以它有可能可以偽裝為別的程式。</p>
+<p>試著去刪除它會發現它又自動再生了，不管次都是一樣。所以這時後去觀察資源監視器中的磁碟，會發現有個影像在操作 <strong>ksum.exe</strong> 但是名稱都會不同，我有見過<code>explorer.exe</code>以及<code>SearchProtocolHost.exe</code>這2個程式，接著我去看這兩隻程式並沒有發現異常，所以它有可能可以偽裝為別的程式。</p>
 
 <h3>清除</h3>
 
-<p>最後如何清理病毒，首先重新開機按 <strong>F8</strong> 進入安全模式，然後開啟 <strong>regedit</strong> 搜尋並刪除 MSConfig 的登錄檔紀錄，然後刪除使用者目錄 C:\Users&#92;{YourName}\ 底下的 <strong>ksum.exe</strong>，接著重新開機就好了。</p>
+<p>最後如何清理病毒，首先重新開機按 <strong>F8</strong> 進入安全模式，然後開啟 <strong>regedit</strong> 搜尋並刪除 MSConfig 的登錄檔紀錄，然後刪除使用者目錄<code>C:\Users\\{YourName}\</code>底下的 <strong>ksum.exe</strong>，接著重新開機就好了。</p>
 </div>
 	</article>
 		<!-- DISQUS -->

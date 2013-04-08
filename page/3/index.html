@@ -49,12 +49,12 @@
 		</div>
 		<div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
 
-<pre><code>&lt;?php
-    // do something...
+<pre><code class="php">&lt;?php
+// do something...
 
-    $put_data = file_get_contents('php://input');
+$put_data = file_get_contents('php://input');
 
-    // handle put data...
+// handle put data...
 </code></pre>
 
 <p><br />
@@ -89,7 +89,7 @@
 
 <h4><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h4>
 
-<pre><code>// ==UserScript==
+<pre><code class="javascript">// ==UserScript==
 // @name           Facebook Ads Blocker
 // @version        0.2.2
 // @author         Scar Wu

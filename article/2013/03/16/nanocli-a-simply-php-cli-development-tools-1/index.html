@@ -78,7 +78,7 @@
 
 <h3>檔案配置</h3>
 
-<pre><code>.
+<pre><code class="bash">.
 ├── boot.php
 ├── Command
 │   ├── Test
@@ -95,7 +95,7 @@
 
 <p>做為一個CLI應用程式首先要設定程式的進入點。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 /* Boot.php */
 
 // 載入 Loader
@@ -121,7 +121,7 @@ $test-&gt;Init();
 
 <p>上面的程式碼最後初始化了Test這個Class，再初始化之後NanoCLI會自動呼叫對應指令，所以在這邊我們顯來實作第一個指令。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 use NanoCLI\IO;
 
 // 繼承 NanoCLI\Command
@@ -145,14 +145,14 @@ class Test extends NanoCLI\Command {
 
 <p><br />每個指令都要繼承NanoCLI\Command，然後記得要叫Parent Construct，這樣程式才會動，所以現在可以執行第一個程式了，應該會有以下的結果。</p>
 
-<pre><code>$ php boot.php
-$ Enter your name: Scar
-$ Hi, Scar
+<pre><code class="bash">php boot.php
+Enter your name: Scar
+Hi, Scar
 </code></pre>
 
 <p><br />雖然在呼叫的時候沒有帶入任何參數但它也是一個指令，它就像是一般程式的main一樣的作用，所以可以將上面範例程式的 <code>run()</code> 改成自動呼叫help指令以防止使用者不知道要如何去使用你的程式。</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 use NanoCLI\IO;
 
 // 繼承 NanoCLI\Command

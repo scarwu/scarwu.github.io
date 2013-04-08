@@ -53,14 +53,14 @@
 
 <p>使用window.openDatabase的方法，這是在Local端建立一個SQL資料庫</p>
 
-<pre><code>var db = window.openDatabase(name, version, display_name, size);
+<pre><code class="javascript">var db = window.openDatabase(name, version, display_name, size);
 </code></pre>
 
 <!--more-->
 
 <p>接著就可以下達SQL指令，使用以下的方式</p>
 
-<pre><code>db.transaction(query, error, success);
+<pre><code class="javascript">db.transaction(query, error, success);
 var query = function(tx) {
     var sql = 'doSomething';
     var value = []
@@ -78,7 +78,7 @@ var success = function() {
 
 <p>連起來寫就會像是這樣</p>
 
-<pre><code>if(window.openDatabase) {
+<pre><code class="javascript">if(window.openDatabase) {
     var db = window.openDatabase('TestDB', '0.1', 'Test local DB', 65535);
     db.transaction(
         function(tx) {

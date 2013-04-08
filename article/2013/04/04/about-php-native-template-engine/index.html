@@ -65,7 +65,7 @@
 
 <p>不用其他樣板引擎那樣炫目的結構語法，PHP就有內建控制結構的替換語法，PHP官方手冊這邊就有寫了 <a href="http://php.net/manual/en/control-structures.alternative-syntax.php">Alternative syntax for control structures</a> ，PHP內建的替換語法包含if, while, for, foreach以及switch這些耳熟能詳的語法，我們可以這樣去使用它：</p>
 
-<pre><code>&lt;?php if($scores &gt;= 60): ?&gt;
+<pre><code class="php">&lt;?php if($scores &gt;= 60): ?&gt;
 &lt;span&gt;Congratulation!&lt;/span&gt;
 &lt;?php endif; ?&gt;
 
@@ -84,7 +84,7 @@
 
 <p>讓資料與樣板切割最快也最徹底的方式就是分檔，但是分檔完之後還是要將樣板與資料做結合，所以動手做一個render來將樣板跟資料做結合吧！</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 function render($template, $data) {
     ob_start();
     include $template;
@@ -103,7 +103,7 @@ function render($template, $data) {
 
 <h4>student_info.php</h4>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // query database
 
 $info = array(
@@ -118,7 +118,7 @@ echo $html;
 
 <h4>list_template.php</h4>
 
-<pre><code>&lt;html&gt;
+<pre><code class="php">&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Student List&lt;/title&gt;
     &lt;/head&gt;
@@ -139,7 +139,7 @@ echo $html;
 
 <h3>輸出結果</h3>
 
-<pre><code>&lt;html&gt;
+<pre><code class="html">&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Student List&lt;/title&gt;
     &lt;/head&gt;

@@ -51,7 +51,7 @@
 
 <p>首先建立一個PHP程式 server.php</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: server.php
 print_r($_SERVER);
 </code></pre>
@@ -60,12 +60,12 @@ print_r($_SERVER);
 
 <p>然後我們用curl來發送請求來觀察PHP到底收到了什麼訊息</p>
 
-<pre><code>curl -X GET "localhost/server.php/segement/input" -d "param=test" -G
+<pre><code class="bash">curl -X GET "localhost/server.php/segement/input" -d "param=test" -G
 </code></pre>
 
 <p>底下是curl輸出之結果</p>
 
-<pre><code>Array
+<pre><code class="bash">Array
 (
     [HTTP_USER_AGENT] =&gt; curl/7.21.6 (x86_64-pc-linux-gnu) libcurl/7.21.6 OpenSSL/1.0.0e zlib/1.2.3.4 libidn/1.22 librtmp/2.3
     [HTTP_HOST] =&gt; localhost
@@ -101,7 +101,7 @@ print_r($_SERVER);
 
 <p>接下來就開始實作了，實做一個Router我們需要上面提到的HTTP Method、URL以及Route Rule及Callback，原理很簡單當Method及URL與Route rule互相Match的時候就會去呼叫Callback執行相對應的動作。首先新增一個名為router的class把一些基本的架構制定出來</p>
 
-<pre><code>&lt;?php
+<pre><code class="php">&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
