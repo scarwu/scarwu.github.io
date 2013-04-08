@@ -96,21 +96,20 @@ cd curl-7.21.2
 cp ../hiphop-php/src/third_party/libcurl.fb-changes.diff .
 patch -p1 &lt; libcurl.fb-changes.diff
 ./configure --prefix=$CMAKE_PREFIX_PATH
-~~~ .bash
+</code></pre>
 
-將以下兩的檔案用連結中的檔案置換掉
+<p>將以下兩的檔案用連結中的檔案置換掉</p>
 
-&lt;ul&gt;
-    &lt;li&gt;
-        &lt;a href="https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c"&gt;curl-7.21.2/lib/ssluse.c&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;a href="https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp"&gt;hiphop-php/src/runtime/ext/extension.cpp&lt;/a&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+    <li>
+        <a href="https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c">curl-7.21.2/lib/ssluse.c</a>
+    </li>
+    <li>
+        <a href="https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp">hiphop-php/src/runtime/ext/extension.cpp</a>
+    </li>
+</ul>
 
-~~~ .bash
-rm "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
+<pre><code class="bash">rm "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
 wget https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c -O "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
 rm "$HPHP_HOME"/src/runtime/ext/extension.cpp
 wget https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp -O "$HPHP_HOME"/src/runtime/ext/extension.cpp
