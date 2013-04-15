@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:d4e1e4d8-a22b-a012-673e-fd7e3b4cd036</id>
-	<updated>2013-04-09T22:07:19+08:00</updated>
+	<id>urn:uuid:6d07c730-1c67-8491-b4f0-8b5c424f7904</id>
+	<updated>2013-04-15T15:51:50+08:00</updated>
 	<entry>
 		<title>關於PHP原生樣板引擎</title>
 		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
-		<id>urn:uuid:327578a8-a00f-3aa2-53d5-c72f648511d3</id>
+		<id>urn:uuid:b4871143-0b42-fc68-08ea-7de8d470baee</id>
 		<updated>2013-04-04T03:06:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -32,7 +32,7 @@
 	<entry>
 		<title>PHP字串連接</title>
 		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
-		<id>urn:uuid:8b4a4822-4ea4-f608-c7a4-2bc353d69b84</id>
+		<id>urn:uuid:eb7173f6-1272-f8d1-e706-eecda3698531</id>
 		<updated>2013-04-02T19:36:39+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -83,7 +83,7 @@ echo &#039;Hi $name&#039;;    // Hi $name
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (2)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:a74f717c-5577-f4ee-2727-fc5f70616619</id>
+		<id>urn:uuid:4a920c2e-21b2-9592-cc5d-21d2a282a774</id>
 		<updated>2013-03-16T07:55:12+08:00</updated>
 		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
 
@@ -119,7 +119,7 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (1)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1" />
-		<id>urn:uuid:87bad3ed-f79a-c3c9-9c9f-5fc968e93424</id>
+		<id>urn:uuid:dfcaa56f-e1ac-3da3-38af-debad46f3d95</id>
 		<updated>2013-03-16T03:30:37+08:00</updated>
 		<summary type="html">&lt;p&gt;關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。&lt;/p&gt;
 
@@ -149,7 +149,7 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>Phar建立與使用</title>
 		<link href="http://scar.simcz.tw/article/2013/01/09/php-phar-create-and-use" />
-		<id>urn:uuid:7842743c-0f38-2804-5367-4bec48329915</id>
+		<id>urn:uuid:00a10b85-38a2-a4fd-3f5f-1b35f217bb68</id>
 		<updated>2013-01-09T19:20:34+08:00</updated>
 		<summary type="html">&lt;p&gt;這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題&lt;/p&gt;
 
