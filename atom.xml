@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:e39c6f16-db6f-779c-0c2c-d6b45e1816ab</id>
-	<updated>2013-04-19T14:06:56+08:00</updated>
+	<id>urn:uuid:8369a23b-00ab-1089-0859-01cd6aad0341</id>
+	<updated>2013-04-19T14:21:05+08:00</updated>
 	<entry>
 		<title>敗家紀錄</title>
 		<link href="http://scar.simcz.tw/article/2013/04/19/shopping-record" />
-		<id>urn:uuid:292728fb-80cb-7580-ca78-c3b00daceeb5</id>
+		<id>urn:uuid:14710f54-e29f-7c59-2739-be9cc2ea4b63</id>
 		<updated>2013-04-19T13:41:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -24,7 +24,7 @@
 	<entry>
 		<title>關於PHP原生樣板引擎</title>
 		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
-		<id>urn:uuid:e9126671-9d24-bd5f-c46d-a4392562d438</id>
+		<id>urn:uuid:e078c611-e606-e007-c7fe-e06e8c399019</id>
 		<updated>2013-04-04T03:06:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -47,7 +47,7 @@
 	<entry>
 		<title>PHP字串連接</title>
 		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
-		<id>urn:uuid:fd333e93-7f73-47d7-4068-3564a7c69031</id>
+		<id>urn:uuid:d622a818-f6ec-1eec-af39-be62cb638623</id>
 		<updated>2013-04-02T19:36:39+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -98,7 +98,7 @@ echo &#039;Hi $name&#039;;    // Hi $name
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (2)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:33ca703a-dc1a-60ef-c58d-fb928b97a462</id>
+		<id>urn:uuid:b60e124d-5747-0aab-7791-ebb683332115</id>
 		<updated>2013-03-16T07:55:12+08:00</updated>
 		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
 
@@ -134,7 +134,7 @@ class Help extends NanoCLI\Command {
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (1)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1" />
-		<id>urn:uuid:80d9ce4b-b8ad-3b05-5dd1-cc63e88ded53</id>
+		<id>urn:uuid:d1f133a3-c6f4-d31b-6ae9-c7884248aace</id>
 		<updated>2013-03-16T03:30:37+08:00</updated>
 		<summary type="html">&lt;p&gt;關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。&lt;/p&gt;
 
