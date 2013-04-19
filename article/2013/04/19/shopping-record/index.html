@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>建立及使用HTML5 SQL Database | ScarShow | 刀疤說</title>
+	<title>敗家紀錄 | ScarShow | 刀疤說</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
@@ -35,77 +35,71 @@
 	<div id="main">
 		<div id="container"><div id="article">
 	<article>
-		<h1 class="title">建立及使用HTML5 SQL Database</h1>
+		<h1 class="title">敗家紀錄</h1>
 		<div class="info">
-			<span class="date">2012-01-29</span>-
+			<span class="date">2013-04-19</span>-
 			<span class="category">
-				Category: <a href="//category/IT">IT</a>			</span>-
+				Category: <a href="//category/Life">Life</a>			</span>-
 			<span class="tag">
 				Tag: 
-								<span><a href="//tag/HTML5">HTML5</a>, </span>
-								<span><a href="//tag/Javascript">Javascript</a>, </span>
-								<span><a href="//tag/Note">Note</a></span>
+								<span><a href="//tag/Toy">Toy</a>, </span>
+								<span><a href="//tag/3C">3C</a></span>
 							</span>-
 			<span class="comment">
-				<a href="/article/2012/01/29/html5-sql-database/#disqus_thread">0 Comment</a>			</span>
+				<a href="/article/2013/04/19/shopping-record/#disqus_thread">0 Comment</a>			</span>
 		</div>
-		<div class="content"><p>HTML5提供了許多的新功能其中一項就是Local端的儲存功能，在Javascript中的函示分別為window.openDatabase及window.localStorage，window.openDatabase相較於Cookie有很大的不同，而window.localStorage比較相近於Cookie是一種key-value的儲存方式。</p>
+		<div class="content"><h2>前言</h2>
 
-<p>使用window.openDatabase的方法，這是在Local端建立一個SQL資料庫</p>
-
-<pre><code class="javascript">var db = window.openDatabase(name, version, display_name, size);
-</code></pre>
+<p>自從上研究所之後，想買得東西突然就多了起來，小朋友就一個個出走，這邊就紀錄一下這研究所兩年間究竟買了哪些東西...。</p>
 
 <!--more-->
 
-<p>接著就可以下達SQL指令，使用以下的方式</p>
+<h2>清單</h2>
 
-<pre><code class="javascript">db.transaction(query, error, success);
-var query = function(tx) {
-    var sql = 'doSomething';
-    var value = []
-    tx.executeSql(sql, value, function(tx, result) { ... }, function(tx, error) { ... });
-}
+<h3>個人電腦</h3>
 
-var error = function(err) {
-    // do something
-}
+<ul>
+<li>Case: LainLi PC-Q08</li>
+<li>MB: ASRock H77M-ITX</li>
+<li>CPU: Intel i5 2400</li>
+<li>RAM: Kingston HyperX DDR3-1600 4G * 2</li>
+<li>PSU: Coolmaster Silent Pro Gold 600W</li>
+</ul>
 
-var success = function() {
-    // do something
-}
-</code></pre>
+<h3>筆記型電腦</h3>
 
-<p>連起來寫就會像是這樣</p>
+<ul>
+<li>Lenovo ThinkPad Edge E420s</li>
+</ul>
 
-<pre><code class="javascript">if(window.openDatabase) {
-    var db = window.openDatabase('TestDB', '0.1', 'Test local DB', 65535);
-    db.transaction(
-        function(tx) {
-            var createTable = 'CREATE TABLE `test` IF NOT EXISTS'
-                + '(`id` INT, `name` TEXT, `age` INT, `sex` TEXT)';
-            tx.executeSql(createTable);
+<h3>音響</h3>
 
-            tx.executeSql('INSERT INTO `test` (`id`, `name`, `age`, `sex`) VALUES(1, 'Tom', 20, 'Male')');
-            tx.executeSql('INSERT INTO `test` (`id`, `name`, `age`, `sex`) VALUES(2, 'John', 20, 'Male')');
-            tx.executeSql('INSERT INTO `test` (`id`, `name`, `age`, `sex`) VALUES(3, 'Iris', 20, 'Female')');
+<ul>
+<li>Altec Lansing VS4621</li>
+<li>FireStone Fubar IV</li>
+</ul>
 
-            var sqlQuery = 'SELECT * FROM `test` WHERE `age`=? AND `sex`=?';
-            var value = [20, 'Male'];
-            tx.excuteSql(
-                sqlQuery, value,
-                function(tx, rs) {
-                    for(var i = 0;i &amp;lt; rs.rows.length;i++)
-                        alert(rs.rows.item(i).name);
-                },
-                function(tx, err) { ... }
-            );
-        },
-        funciton(error) { ... },
-        function() { ... }
-    );
-}
-</code></pre>
+<h3>鍵盤滑鼠</h3>
+
+<ul>
+<li>Logitech M705</li>
+<li>FILCO Ninja (Brown Switch)</li>
+<li>CM Strom Quick Fire Rapid (Red Switch)</li>
+</ul>
+
+<h3>開發版</h3>
+
+<ul>
+<li>Respbarry Pi</li>
+</ul>
+
+<h3>其它</h3>
+
+<p><strike>就日用品跟費用(電費、房租...)之類的，該花的。</strike></p>
+
+<h2>後記</h2>
+
+<p>花自己錢得感覺不錯，至少對得起家人。<strike>其實我很節省的。</strike></p>
 </div>
 	</article>
 		<!-- DISQUS -->
@@ -128,10 +122,10 @@ var success = function() {
 	</script>
 		<div class="bar">
 		<span class="new">
-			<a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10"><< HipHop building on Ubuntu 11.10</a>		</span>
+					</span>
 		<span class="old">
-			<a href="/article/2011/10/31/ios-rotation-resize-fix">修正 iOS 螢幕轉向網頁自動放大問題 >></a>		</span>
-		<span class="count">20 / 22</span>
+			<a href="/article/2013/04/04/about-php-native-template-engine">關於PHP原生樣板引擎 >></a>		</span>
+		<span class="count">1 / 22</span>
 	</div>
 </div></div>
 		<div id="side">
