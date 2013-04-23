@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>ScarShow | 刀疤說</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Load Cascading Style Sheets -->
+	<link rel="stylesheet" href="/theme/main.css">
+</head>
+<body>
+	<header>
+		<h1><a href="/">ScarShow</a></h1>
+		<hr />
+		<h2>I know that I don't know</h2>
+	</header>
+	<nav>
+		<span class="left">
+			<a href="/about">About</a>
+			<a href="/works">Works</a>
+			<a href="/Diablo3Calculator" target="_blank">D3 Calculator</a>
+		</span>
+		<span class="home">
+			<a href="/">Home</a>
+			<span class="arrow"></span>
+		</span>
+		<span class="right">
+			<a href="/archive">Archive</a>
+			<a href="/category">Category</a>
+			<a href="/tag">Tag</a>
+		</span>
+	</nav>
+	<div id="main">
+		<div id="container"><div id="page">
+		<article>
+		<h1 class="title"><a href="/article/2013/04/19/shopping-record">敗家紀錄</a></h1>
+		<div class="info">
+			<span class="date">2013-04-19</span>
+			-
+			<span class="category">
+				Category: <a href="/category/Life">Life</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="/tag/Toy">Toy</a>, </span>
+								<span><a href="/tag/3C">3C</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2013/04/19/shopping-record/%23disqus_thread">0 Comment</a>			</span>
+		</div>
+		<div class="content"><h2>前言</h2>
+
+<p>自從上研究所之後，想買得東西突然就多了起來，小朋友就一個個出走，這邊就紀錄一下這研究所兩年間究竟買了哪些東西...。</p>
+
+</div>
+		<a class="more" href="/article/2013/04/19/shopping-record">More</a>
+	</article>
+		<article>
+		<h1 class="title"><a href="/article/2013/04/04/about-php-native-template-engine">關於PHP原生樣板引擎</a></h1>
+		<div class="info">
+			<span class="date">2013-04-04</span>
+			-
+			<span class="category">
+				Category: <a href="/category/IT">IT</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="/tag/PHP">PHP</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2013/04/04/about-php-native-template-engine/%23disqus_thread">0 Comment</a>			</span>
+		</div>
+		<div class="content"><h2>前言</h2>
+
+<p>想寫一個簡單的網頁程式，但現在市面上PHP的樣板引擎百百種，那該選什麼樣的樣板引擎來搭配好呢？...等等先不說這個，你有聽說過PHP本身也是樣板引擎嗎？沒錯它是。</p>
+
+<p>在這之前我們先看看Wikipedia是怎麼解釋樣板引擎：</p>
+
+<blockquote>
+  <p>"A (web) template engine is software that is designed to process web templates and content information to produce output web documents. It runs in the context of a template system."</p>
+</blockquote>
+
+<p>它說明了樣板引擎的功能是將內容資訊與網頁樣板結合，然後產生出網頁文件的這一個行為。將網頁的內容與網頁樣板切開，這個不用幾行程式碼PHP就可以做到。</p>
+
+</div>
+		<a class="more" href="/article/2013/04/04/about-php-native-template-engine">More</a>
+	</article>
+		<article>
+		<h1 class="title"><a href="/article/2013/04/02/php-concatenate-string">PHP字串連接</a></h1>
+		<div class="info">
+			<span class="date">2013-04-02</span>
+			-
+			<span class="category">
+				Category: <a href="/category/IT">IT</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="/tag/PHP">PHP</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2013/04/02/php-concatenate-string/%23disqus_thread">0 Comment</a>			</span>
+		</div>
+		<div class="content"><h2>前言</h2>
+
+<p>在PHP中字串連接的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式<code>strcat()</code>來連接兩個字元陣列，而在Java中我們可以使用<code>+</code>運算子來做字串的連接。</p>
+
+<p>而PHP呢？PHP不同與上述語言，它則使用<code>.</code>運算子來連接字串，而且除了<code>.</code>以外還有許多不同的方式也可以連接字串。</p>
+
+<h2>基本使用</h2>
+
+<h3>字串宣告</h3>
+
+<p>在PHP當中可以使用<code>'</code>或者是<code>"</code>來宣告字串，但是這兩個符號宣告出的字串其實是不相同的。</p>
+
+<pre><code class="php">&lt;?php
+$str = "Hi, I am Tony.\nNice to meet you.";
+echo $str;
+// Hi, I am Tony.
+// Nice to meet you.
+
+$str = 'Hi, I am Tony.\nNice to meet you.';
+echo $str;
+// Hi, i am Tony,\nNice to meet you.
+</code></pre>
+
+<p>由上面範例可以得知使用<code>"</code>宣告的字串可以讓跳脫字元發揮出作用，而使用<code>'</code>宣告的字串則是純字串你輸入什麼就輸出什麼。</p>
+
+<h3>字串連接</h3>
+
+<pre><code class="php">&lt;?php
+$name = 'Tony';
+
+echo "Hi " . $name; // Hi Tony
+echo 'Hi ' . $name; // Hi Tony
+echo "Hi $name";    // Hi Tony
+echo 'Hi $name';    // Hi $name
+</code></pre>
+
+<p>那麼字串與變數的連接，在<code>"</code>可以很彈性的使用變數，而<code>'</code>只能夠使用<code>.</code>來做連接，而兩者都可以使用格式化輸出<code>sprintf()</code>但這邊就先不提。</p>
+
+<p>由上面得知<code>"</code>可以很彈性的連接變數，那麼它除了變數的連接外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。</p>
+
+</div>
+		<a class="more" href="/article/2013/04/02/php-concatenate-string">More</a>
+	</article>
+		<article>
+		<h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">NanoCLI - PHP CLI開發工具 (2)</a></h1>
+		<div class="info">
+			<span class="date">2013-03-16</span>
+			-
+			<span class="category">
+				Category: <a href="/category/IT">IT</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="/tag/PHP">PHP</a>, </span>
+								<span><a href="/tag/NanoCLI">NanoCLI</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/%23disqus_thread">0 Comment</a>			</span>
+		</div>
+		<div class="content"><p>上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。</p>
+
+<h2>使用</h2>
+
+<h3>實作指令 Help.php</h3>
+
+<p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
+
+<pre><code class="php">&lt;?php
+// 設定namespace
+namespace Test;
+
+use NanoCLI\IO;
+
+class Help extends NanoCLI\Command {
+    public function __construct() {
+        parent::__construct();
+    }
+
+    public function run() {
+        IO::writeln("This is Command: help\n");
+    }
+}
+</code></pre>
+
+</div>
+		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">More</a>
+	</article>
+		<article>
+		<h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">NanoCLI - PHP CLI開發工具 (1)</a></h1>
+		<div class="info">
+			<span class="date">2013-03-16</span>
+			-
+			<span class="category">
+				Category: <a href="/category/IT">IT</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="/tag/PHP">PHP</a>, </span>
+								<span><a href="/tag/NanoCLI">NanoCLI</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/%23disqus_thread">0 Comment</a>			</span>
+		</div>
+		<div class="content"><p>關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。</p>
+
+<p>約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。</p>
+
+<h2>系統要求</h2>
+
+<p>PHP 5.3+</p>
+
+<h2>功能</h2>
+
+<ul>
+<li>指令呼叫 (ex. <code>$ ./cli.php command</code>)</li>
+<li>指令選項 (ex. <code>$ ./cli.php command -v -al</code>)</li>
+<li>指令配置 (ex. <code>$ ./cli.php command --prefix=/usr/local/bin</code>)</li>
+<li>文字色彩</li>
+<li>文字界面讀寫</li>
+<li>Namespace 以及 Autoload</li>
+</ul>
+
+</div>
+		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">More</a>
+	</article>
+		<div class="bar">
+		<span class="new">
+					</span>
+		<span class="old">
+			<a href="/page/2">Older Posts >></a>		</span>
+		<span class="count">1 / 5</span>
+	</div>
+</div>
+<script type="text/javascript">
+	var disqus_shortname = 'scarshow';
+	(function() {
+		var count = document.createElement('script');
+		count.async = true;
+		count.type = 'text/javascript';
+		count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+	}());
+</script>
+</div>
+		<div id="side">
+			<form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
+				<input type="hidden" name="q" value="site:scar.simcz.tw" />
+				<input type="text" name="q" placeholder="Search" />
+				<input type="submit" />
+			</form>
+			<div class="about">
+	<div class="title"><a href="/about">About</a></div>
+	<div class="content">
+		<img class="avatar" src="http://avatars.plurk.com/3891981-big26.jpg" alt="ScarWu" />
+		<p class="name">刀疤</p>
+		<p class="says">別人都覺得我多才多藝，但其實我只是略懂略懂。</p>
+		<div class="social_icon">	
+			<a href="https://github.com/ScarWu" target="_blank">
+				<img src="/theme/icons/github.png" alt="Github" />
+			</a>
+			<a href="https://plus.google.com/108940352426915109637/posts" target="_blank">
+				<img src="/theme/icons/google_plus.png" alt="Google+" />
+			</a>
+			<a href="http://www.plurk.com/ScarWu" target="_blank">
+				<img src="/theme/icons/plurk.png" alt="Plurk" />
+			</a>
+		</div>
+	</div>
+</div><div class="archive">
+	<div class="title"><a href="/archive">Archive</a></div>
+	<div class="content">
+				<span class="item"><a href="/archive/2013">2013(6)</a></span>
+				<span class="item"><a href="/archive/2012">2012(14)</a></span>
+				<span class="item"><a href="/archive/2011">2011(2)</a></span>
+			</div>
+</div><div class="category">
+	<div class="title"><a href="/category">Category</a></div>
+	<div class="content">
+				<span class="item"><a href="/category/IT">IT(20)</a></span>
+				<span class="item"><a href="/category/Game">Game(1)</a></span>
+				<span class="item"><a href="/category/Life">Life(1)</a></span>
+			</div>
+</div><div class="tag">
+	<div class="title"><a href="/tag">Tag</a></div>
+	<div class="content">
+				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
+				<span class="item"><a href="/tag/Note">Note(9)</a></span>
+				<span class="item"><a href="/tag/Javascript">Javascript(3)</a></span>
+				<span class="item"><a href="/tag/Python">Python(2)</a></span>
+				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
+				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
+				<span class="item"><a href="/tag/Works">Works(2)</a></span>
+				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
+				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
+				<span class="item"><a href="/tag/Android">Android(2)</a></span>
+				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
+				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(1)</a></span>
+				<span class="item"><a href="/tag/Ubuntu">Ubuntu(1)</a></span>
+				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
+				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
+				<span class="item"><a href="/tag/JavaScript">JavaScript(1)</a></span>
+				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
+				<span class="item"><a href="/tag/3C">3C(1)</a></span>
+				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
+				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
+				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
+				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
+				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
+			</div>
+</div>		</div>
+	</div>
+	<footer>
+		<span>Copyright (c) 2011-2013 ScarShow</span>
+		<p>Powered by Pointless</p>
+	</footer>
+
+	<!-- Define and Load Javascript -->
+	<script src="/theme/main.js"></script>
+		<script>
+		var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
+			var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+			g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g, s)
+		} (document, 'script'));
+	</script>
+	</body>
+</html>
