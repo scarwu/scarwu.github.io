@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>敗家紀錄 | ScarShow | 刀疤說</title>
+	<title>Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說</title>
 	
 	<!-- Load Cascading Style Sheets -->
 	<link rel="stylesheet" href="/theme/main.css">
@@ -34,74 +34,161 @@
 	<div id="main">
 		<div id="container"><div id="article">
 	<article>
-		<h1 class="title">敗家紀錄</h1>
+		<h1 class="title">Apache - mod_vhost_alias與mod_userdir設定</h1>
 		<div class="info">
-			<span class="date">2013-04-19</span>
+			<span class="date">2013-04-28</span>
 			-
 			<span class="category">
-				Category: <a href="/category/Life">Life</a>			</span>
+				Category: <a href="/category/IT">IT</a>			</span>
 			-
 			<span class="tag">
 				Tag: 
-								<span><a href="/tag/Toy">Toy</a>, </span>
-								<span><a href="/tag/3C">3C</a></span>
+								<span><a href="/tag/Apache">Apache</a>, </span>
+								<span><a href="/tag/Linux">Linux</a>, </span>
+								<span><a href="/tag/Ubuntu">Ubuntu</a></span>
 							</span>
 			-
 			<span class="comment">
-				<a href="/article/2013/04/19/shopping-record/%23disqus_thread">0 Comment</a>			</span>
+				<a href="/article/2013/04/28/apache-vhost-and-userdir-config/%23disqus_thread">0 Comment</a>			</span>
 		</div>
 		<div class="content"><h2>前言</h2>
 
-<p>自從上研究所之後，想買得東西突然就多了起來，小朋友就一個個出走，這邊就紀錄一下這研究所兩年間究竟買了哪些東西...。</p>
+<p>Apache是常用的網頁伺服器，而<code>userdir</code>這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以<code>http://examaple.com/~username</code>的形式呈現。另外<code>vhost_alias</code>則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設<code>http://a.example.com</code>與<code>b.examle.com</code>都指向<code>192.168.1.1</code>，那麼Apache就可以根據域名來挑選網頁的根目錄<code>/var/www/a</code>或是<code>/var/www/b</code>來呈現不同的內容。</p>
 
 <!--more-->
 
-<h2>清單</h2>
+<h2>啟用Module</h2>
 
-<h3>個人電腦</h3>
+<p>一般在Apache安裝完成後這兩個Module通常都是未啟用的，所以在使用前必須去啟用它在這邊我們所使用Ubuntu 12.04 LTS作為預設環境，在Ubuntu中有兩種啟用方式。</p>
+
+<h3>內建指令</h3>
+
+<pre><code class="bash"># 啟用
+sudo a2enmod vhost_alias
+sudo a2enmod userdir
+
+# 停用
+sudo a2enmod module_name
+</code></pre>
+
+<h3>手動啟用</h3>
+
+<pre><code class="bash">cd /etc/apache2/mod-enable
+
+sudo ln -s ../mod-available/vhost_alias.load
+sudo ln -s ../mod-available/userdir.load
+sudo ln -s ../mod-available/userdir.conf
+</code></pre>
+
+<p>使用內建指令跟手動建立連結是一樣的。</p>
+
+<h2>設定</h2>
+
+<p>假設<code>a.example.com</code>以及<code>b.example.com</code>都指向<code>192.168.1.1</code>，但只有<code>b.example.com</code>需要使用<code>userdir</code>我們可以這樣設定。</p>
+
+<p>以下內容取自系統內建設定檔並稍做修改。</p>
+
+<h3>a.example.com</h3>
+
+<pre><code class="ini"># a.example.com config
+
+&lt;VirtualHost *:80&gt;
+    ServerAdmin webmaster@localhost
+
+    # Virtual Host Alias
+    ServerName a.example.com
+
+    DocumentRoot /var/www/a
+    &lt;Directory /&gt;
+        Options FollowSymLinks
+        AllowOverride None
+    &lt;/Directory&gt;
+    &lt;Directory /var/www/a&gt;
+        Options -Indexes -FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<h3>b.example.com</h3>
+
+<pre><code class="ini">&lt;VirtualHost *:80&gt;
+    ServerAdmin webmaster@localhost
+
+    # Domain Name Setting
+    ServerName b.example.com
+
+    DocumentRoot /var/www/b
+    &lt;Directory /&gt;
+        Options FollowSymLinks
+        AllowOverride None
+    &lt;/Directory&gt;
+    &lt;Directory /var/www/b&gt;
+        Options -Indexes -FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+
+    # User Directory Setting
+    &lt;IfModule mod_userdir.c&gt;
+        UserDir htdocs /home/*/htdocs
+        UserDir disabled root
+
+        &lt;Directory /home/*/htdocs&gt;
+            AllowOverride FileInfo AuthConfig Limit
+            Options MultiViews -Indexes SymLinksIfOwnerMatch IncludesNoExec
+            &lt;Limit GET POST OPTIONS&gt;
+                Order allow,deny
+                Allow from all
+            &lt;/Limit&gt;
+            &lt;LimitExcept GET POST OPTIONS&gt;
+                Order deny,allow
+                Deny from all
+            &lt;/LimitExcept&gt;
+        &lt;/Directory&gt;
+    &lt;/IfModule&gt;
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p><code>vhost_alias</code>的設定必須包含在<code>&lt;VirtualHost *:80&gt;&lt;/VirtualHost&gt;</code>之中，並且加入對應的域名設定<code>ServerName example.com</code>，這樣vhost_alias才會生效。</p>
+
+<p>接著我們將<code>userdir</code>的設定加入需要使用的Virtual Host的設定檔中，<code>UserDir htdocs /home/*/htdocs</code>用來指定使用者的網頁根目錄名稱以及目錄位置、<code>UserDir diabled root</code>則是讓root不能使用User Directory。</p>
+
+<p>接著我們將系統內建的User Directory設定取消，把<code>/etc/apache2/mod-enabled/userdir.conf</code>刪除或是將內容註解都可以。</p>
+
+<p>最後重新啟動Apache就完成設定了。</p>
+
+<pre><code class="bash">sudo service apache2 restart
+</code></pre>
+
+<h2>結語</h2>
+
+<p>如果需要更詳細的設定可以參考官方的文件。</p>
 
 <ul>
-<li>Case: LianLi PC-Q08</li>
-<li>MB: ASRock H77M-ITX</li>
-<li>CPU: Intel i5 2400</li>
-<li>RAM: Kingston HyperX DDR3-1600 4G * 2</li>
-<li>PSU: CoolerMaster Silent Pro Gold 600W</li>
+<li><a href="http://httpd.apache.org/docs/2.2/mod/mod_userdir.html">UserDir</a></li>
+<li><a href="http://httpd.apache.org/docs/2.2/mod/mod_vhost_alias.html">VirtualHost</a></li>
 </ul>
-
-<h3>筆記型電腦</h3>
-
-<ul>
-<li>Lenovo ThinkPad Edge E420s</li>
-</ul>
-
-<h3>音響</h3>
-
-<ul>
-<li>Altec Lansing VS4621</li>
-<li>FireStone Fubar IV</li>
-</ul>
-
-<h3>鍵盤滑鼠</h3>
-
-<ul>
-<li>Logitech M705</li>
-<li>FILCO Ninja (Brown Switch)</li>
-<li>CM Strom Quick Fire Rapid (Red Switch)</li>
-</ul>
-
-<h3>開發版</h3>
-
-<ul>
-<li>Respbarry Pi</li>
-</ul>
-
-<h3>其它</h3>
-
-<p><del>就日用品跟費用(電費、房租...)之類的，該花的。</del></p>
-
-<h2>後記</h2>
-
-<p>花自己錢得感覺不錯，至少對得起家人。<del>其實我很節省的。</del></p>
 </div>
 	</article>
 		<!-- DISQUS -->
@@ -124,10 +211,10 @@
 	</script>
 		<div class="bar">
 		<span class="new">
-			<a href="/article/2013/04/28/apache-vhost-and-userdir-config"><< Apache - mod_vhost_alias與mod_userdir設定</a>		</span>
+					</span>
 		<span class="old">
-			<a href="/article/2013/04/04/about-php-native-template-engine">關於PHP原生樣板引擎 >></a>		</span>
-		<span class="count">2 / 23</span>
+			<a href="/article/2013/04/19/shopping-record">敗家紀錄 >></a>		</span>
+		<span class="count">1 / 23</span>
 	</div>
 </div></div>
 		<div id="side">

@@ -2,10 +2,9 @@
 <html lang="zh-tw">
 <head>
 	<meta charset="utf-8">
-	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>ScarShow | 刀疤說</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- Load Cascading Style Sheets -->
 	<link rel="stylesheet" href="/theme/main.css">
@@ -34,6 +33,31 @@
 	</nav>
 	<div id="main">
 		<div id="container"><div id="page">
+		<article>
+		<h1 class="title"><a href="/article/2013/04/28/apache-vhost-and-userdir-config">Apache - mod_vhost_alias與mod_userdir設定</a></h1>
+		<div class="info">
+			<span class="date">2013-04-28</span>
+			-
+			<span class="category">
+				Category: <a href="/category/IT">IT</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="/tag/Apache">Apache</a>, </span>
+								<span><a href="/tag/Linux">Linux</a>, </span>
+								<span><a href="/tag/Ubuntu">Ubuntu</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2013/04/28/apache-vhost-and-userdir-config/%23disqus_thread">0 Comment</a>			</span>
+		</div>
+		<div class="content"><h2>前言</h2>
+
+<p>Apache是常用的網頁伺服器，而<code>userdir</code>這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以<code>http://examaple.com/~username</code>的形式呈現。另外<code>vhost_alias</code>則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設<code>http://a.example.com</code>與<code>b.examle.com</code>都指向<code>192.168.1.1</code>，那麼Apache就可以根據域名來挑選網頁的根目錄<code>/var/www/a</code>或是<code>/var/www/b</code>來呈現不同的內容。</p>
+
+</div>
+		<a class="more" href="/article/2013/04/28/apache-vhost-and-userdir-config">More</a>
+	</article>
 		<article>
 		<h1 class="title"><a href="/article/2013/04/19/shopping-record">敗家紀錄</a></h1>
 		<div class="info">
@@ -193,45 +217,6 @@ class Help extends NanoCLI\Command {
 </div>
 		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">NanoCLI - PHP CLI開發工具 (1)</a></h1>
-		<div class="info">
-			<span class="date">2013-03-16</span>
-			-
-			<span class="category">
-				Category: <a href="/category/IT">IT</a>			</span>
-			-
-			<span class="tag">
-				Tag: 
-								<span><a href="/tag/PHP">PHP</a>, </span>
-								<span><a href="/tag/NanoCLI">NanoCLI</a></span>
-							</span>
-			-
-			<span class="comments">
-				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/%23disqus_thread">0 Comment</a>			</span>
-		</div>
-		<div class="content"><p>關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。</p>
-
-<p>約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。</p>
-
-<h2>系統要求</h2>
-
-<p>PHP 5.3+</p>
-
-<h2>功能</h2>
-
-<ul>
-<li>指令呼叫 (ex. <code>$ ./cli.php command</code>)</li>
-<li>指令選項 (ex. <code>$ ./cli.php command -v -al</code>)</li>
-<li>指令配置 (ex. <code>$ ./cli.php command --prefix=/usr/local/bin</code>)</li>
-<li>文字色彩</li>
-<li>文字界面讀寫</li>
-<li>Namespace 以及 Autoload</li>
-</ul>
-
-</div>
-		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 					</span>
@@ -278,14 +263,14 @@ class Help extends NanoCLI\Command {
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="/archive/2013">2013(6)</a></span>
+				<span class="item"><a href="/archive/2013">2013(7)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
 			</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(20)</a></span>
+				<span class="item"><a href="/category/IT">IT(21)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 				<span class="item"><a href="/category/Life">Life(1)</a></span>
 			</div>
@@ -295,27 +280,28 @@ class Help extends NanoCLI\Command {
 				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
 				<span class="item"><a href="/tag/Note">Note(9)</a></span>
 				<span class="item"><a href="/tag/Javascript">Javascript(3)</a></span>
-				<span class="item"><a href="/tag/Python">Python(2)</a></span>
-				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
-				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
-				<span class="item"><a href="/tag/Works">Works(2)</a></span>
 				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
-				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
+				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
+				<span class="item"><a href="/tag/Python">Python(2)</a></span>
+				<span class="item"><a href="/tag/Ubuntu">Ubuntu(2)</a></span>
+				<span class="item"><a href="/tag/Works">Works(2)</a></span>
 				<span class="item"><a href="/tag/Android">Android(2)</a></span>
+				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(2)</a></span>
+				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
 				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
+				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
 				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
-				<span class="item"><a href="/tag/Linux">Linux(1)</a></span>
-				<span class="item"><a href="/tag/Ubuntu">Ubuntu(1)</a></span>
 				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
-				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
-				<span class="item"><a href="/tag/JavaScript">JavaScript(1)</a></span>
+				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
 				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
 				<span class="item"><a href="/tag/3C">3C(1)</a></span>
-				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
-				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
-				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
 				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
-				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
+				<span class="item"><a href="/tag/JavaScript">JavaScript(1)</a></span>
+				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
+				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
+				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
+				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
 			</div>
 </div>		</div>
 	</div>

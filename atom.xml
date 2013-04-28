@@ -4,12 +4,27 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:af10a016-1e98-7994-3184-8d0407e25ccc</id>
-	<updated>2013-04-23T23:04:49+08:00</updated>
+	<id>urn:uuid:64240718-02ea-5efd-a99e-a63bc01404d8</id>
+	<updated>2013-04-28T19:49:49+08:00</updated>
+	<entry>
+		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
+		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
+		<id>urn:uuid:04a186b9-adf4-86dc-6eed-f7082a4c4d92</id>
+		<updated>2013-04-28T17:42:53+08:00</updated>
+		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;Apache是常用的網頁伺服器，而&lt;code&gt;userdir&lt;/code&gt;這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以&lt;code&gt;http://examaple.com/~username&lt;/code&gt;的形式呈現。另外&lt;code&gt;vhost_alias&lt;/code&gt;則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設&lt;code&gt;http://a.example.com&lt;/code&gt;與&lt;code&gt;b.examle.com&lt;/code&gt;都指向&lt;code&gt;192.168.1.1&lt;/code&gt;，那麼Apache就可以根據域名來挑選網頁的根目錄&lt;code&gt;/var/www/a&lt;/code&gt;或是&lt;code&gt;/var/www/b&lt;/code&gt;來呈現不同的內容。&lt;/p&gt;
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>敗家紀錄</title>
 		<link href="http://scar.simcz.tw/article/2013/04/19/shopping-record" />
-		<id>urn:uuid:eed51836-2eaf-334f-8edb-ed09faf53876</id>
+		<id>urn:uuid:9e2d7a43-1b99-5ad4-e272-132ba7d6c940</id>
 		<updated>2013-04-19T13:41:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -24,7 +39,7 @@
 	<entry>
 		<title>關於PHP原生樣板引擎</title>
 		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
-		<id>urn:uuid:0e71ac1b-0927-d707-84a6-9d5fbf4ccb3a</id>
+		<id>urn:uuid:d7f8a896-525a-875b-f099-0730df7a1e4e</id>
 		<updated>2013-04-04T03:06:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -47,7 +62,7 @@
 	<entry>
 		<title>PHP字串連接</title>
 		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
-		<id>urn:uuid:1c6cca18-7afc-a49d-3989-4fa7a3d054b9</id>
+		<id>urn:uuid:dd57a944-b489-ddc3-bcab-0d05bf089a97</id>
 		<updated>2013-04-02T19:36:39+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -98,7 +113,7 @@ echo &#039;Hi $name&#039;;    // Hi $name
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (2)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:581d4786-cdb8-2dbc-c1f5-33c04aaa2af7</id>
+		<id>urn:uuid:c0403caa-8d10-6dbc-ea97-cd17471c13c3</id>
 		<updated>2013-03-16T07:55:12+08:00</updated>
 		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
 
@@ -124,36 +139,6 @@ class Help extends NanoCLI\Command {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>NanoCLI - PHP CLI開發工具 (1)</title>
-		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1" />
-		<id>urn:uuid:bfc5818a-1b66-d9b5-594a-690b7ae1b58d</id>
-		<updated>2013-03-16T03:30:37+08:00</updated>
-		<summary type="html">&lt;p&gt;關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。&lt;/p&gt;
-
-&lt;p&gt;約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。&lt;/p&gt;
-
-&lt;h2&gt;系統要求&lt;/h2&gt;
-
-&lt;p&gt;PHP 5.3+&lt;/p&gt;
-
-&lt;h2&gt;功能&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;指令呼叫 (ex. &lt;code&gt;$ ./cli.php command&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;指令選項 (ex. &lt;code&gt;$ ./cli.php command -v -al&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;指令配置 (ex. &lt;code&gt;$ ./cli.php command --prefix=/usr/local/bin&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;文字色彩&lt;/li&gt;
-&lt;li&gt;文字界面讀寫&lt;/li&gt;
-&lt;li&gt;Namespace 以及 Autoload&lt;/li&gt;
-&lt;/ul&gt;
 
 </summary>
 		<author>
