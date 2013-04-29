@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:01aafeee-6b5d-5699-0092-57ccbde6e8c3</id>
-	<updated>2013-04-29T00:34:09+08:00</updated>
+	<id>urn:uuid:b9521e7b-af14-6d11-7664-414611ea348e</id>
+	<updated>2013-04-29T11:51:17+08:00</updated>
 	<entry>
 		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
 		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
-		<id>urn:uuid:e90f4d89-ff30-4350-67e6-faafbdbbdc49</id>
+		<id>urn:uuid:9ca7480e-d902-35eb-197f-d3977400db20</id>
 		<updated>2013-04-28T17:42:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -24,7 +24,7 @@
 	<entry>
 		<title>敗家紀錄</title>
 		<link href="http://scar.simcz.tw/article/2013/04/19/shopping-record" />
-		<id>urn:uuid:556267e2-8ec7-0034-5785-982074158856</id>
+		<id>urn:uuid:3ff16985-296e-7110-8c7c-0ce419e7ca83</id>
 		<updated>2013-04-19T13:41:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -39,7 +39,7 @@
 	<entry>
 		<title>關於PHP原生樣板引擎</title>
 		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
-		<id>urn:uuid:d5a4cfee-d550-551e-7060-157c11e3fffe</id>
+		<id>urn:uuid:a5d0355a-4645-a521-50d0-f04ce9fab360</id>
 		<updated>2013-04-04T03:06:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -62,7 +62,7 @@
 	<entry>
 		<title>PHP字串連接</title>
 		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
-		<id>urn:uuid:5fc6a6ff-1fb3-2490-ea06-c06ac1c214f9</id>
+		<id>urn:uuid:3174e34f-5815-85b1-426d-b5fcd5b00162</id>
 		<updated>2013-04-02T19:36:39+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -113,7 +113,7 @@ echo &#039;Hi $name&#039;;    // Hi $name
 	<entry>
 		<title>NanoCLI - PHP CLI開發工具 (2)</title>
 		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:12e5d140-dbc1-5acb-e978-096b9f0bed94</id>
+		<id>urn:uuid:b59420ba-426a-26f4-9551-2b2b7340cb54</id>
 		<updated>2013-03-16T07:55:12+08:00</updated>
 		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
 
