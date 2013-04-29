@@ -77,21 +77,19 @@ client.send(message, 0, message.length, port, ip, callback);
 
 <p>所以就簡單修改一下程式碼，果不其然它就正常執行了。</p>
 
-<p>~~~ .js</p>
+<pre><code class="js">#!/usr/bin/env node
 
-<h1>!/usr/bin/env node</h1>
+'use strict';
 
-<p>'use strict';</p>
-
-<p>var dgram = require('dgram'),
+var dgram = require('dgram'),
     ip = '127.0.0.1',
-    port = 9000;</p>
+    port = 9000;
 
-<p>client.bind(port, function () {
+client.bind(port, function () {
     client.setBroadcast(true);
     client.send(message, 0, message.length, port, ip, callback);
 });
-~~~</p>
+</code></pre>
 
 <p>我將<code>setBroadcast</code>連同<code>send</code>一起寫進<code>bind</code>的<code>callback function</code>確保它是在<code>bind</code>後面執行這樣就正常了。</p>
 </div>
