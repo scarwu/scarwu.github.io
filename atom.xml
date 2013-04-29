@@ -4,12 +4,40 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:b9521e7b-af14-6d11-7664-414611ea348e</id>
-	<updated>2013-04-29T11:51:17+08:00</updated>
+	<id>urn:uuid:4615834a-923e-84ee-4fea-d2e7bba2748a</id>
+	<updated>2013-04-29T22:23:05+08:00</updated>
+	<entry>
+		<title>NodeJS - dgram error with EBADF</title>
+		<link href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF" />
+		<id>urn:uuid:ab0ad410-d289-f64d-d30a-ea9f8cb54426</id>
+		<updated>2013-04-29T21:28:17+08:00</updated>
+		<summary type="html">&lt;p&gt;最近把NodeJS從原本的&lt;code&gt;v0.8.x&lt;/code&gt;更新到最新的&lt;code&gt;v0.10.x&lt;/code&gt;，結果程式就炸了！程式就給我吐出&lt;code&gt;Error: setBroadcast EBADF&lt;/code&gt;，結果是&lt;code&gt;dgram&lt;/code&gt;炸了，不管是&lt;code&gt;setBroadcast&lt;/code&gt;或者是&lt;code&gt;setTTL&lt;/code&gt;都一樣會炸掉，問Google大神也問不出答案。&lt;/p&gt;
+
+&lt;p&gt;然後我就查了一下&lt;code&gt;EBADF&lt;/code&gt;到底是什麼意思，它是一個socket的錯誤碼，原文是&lt;code&gt;The socket argument is not a valid file descriptor.&lt;/code&gt;，意思是，我們來看原本的程式碼。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;#!/usr/bin/env node
+
+&#039;use strict&#039;;
+
+var dgram = require(&#039;dgram&#039;),
+    ip = &#039;127.0.0.1&#039;,
+    port = 9000;
+
+client.bind(port);
+client.setBroadcast(true);
+client.send(message, 0, message.length, port, ip, callback);
+&lt;/code&gt;&lt;/pre&gt;
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
 		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
-		<id>urn:uuid:9ca7480e-d902-35eb-197f-d3977400db20</id>
+		<id>urn:uuid:8de72197-65ec-3701-8ae8-6dadbdd4401b</id>
 		<updated>2013-04-28T17:42:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -24,7 +52,7 @@
 	<entry>
 		<title>敗家紀錄</title>
 		<link href="http://scar.simcz.tw/article/2013/04/19/shopping-record" />
-		<id>urn:uuid:3ff16985-296e-7110-8c7c-0ce419e7ca83</id>
+		<id>urn:uuid:5b1b63f1-1f0d-c232-86c3-ff60fa2b68e0</id>
 		<updated>2013-04-19T13:41:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -39,7 +67,7 @@
 	<entry>
 		<title>關於PHP原生樣板引擎</title>
 		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
-		<id>urn:uuid:a5d0355a-4645-a521-50d0-f04ce9fab360</id>
+		<id>urn:uuid:e0f57399-9637-7e04-8d24-eb2f1d031f25</id>
 		<updated>2013-04-04T03:06:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -62,7 +90,7 @@
 	<entry>
 		<title>PHP字串連接</title>
 		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
-		<id>urn:uuid:3174e34f-5815-85b1-426d-b5fcd5b00162</id>
+		<id>urn:uuid:556ee8a3-363e-cb44-aa75-009bf53f214d</id>
 		<updated>2013-04-02T19:36:39+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -103,42 +131,6 @@ echo &#039;Hi $name&#039;;    // Hi $name
 &lt;p&gt;那麼字串與變數的連接，在&lt;code&gt;&quot;&lt;/code&gt;可以很彈性的使用變數，而&lt;code&gt;&#039;&lt;/code&gt;只能夠使用&lt;code&gt;.&lt;/code&gt;來做連接，而兩者都可以使用格式化輸出&lt;code&gt;sprintf()&lt;/code&gt;但這邊就先不提。&lt;/p&gt;
 
 &lt;p&gt;由上面得知&lt;code&gt;&quot;&lt;/code&gt;可以很彈性的連接變數，那麼它除了變數的連接外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。&lt;/p&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>NanoCLI - PHP CLI開發工具 (2)</title>
-		<link href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2" />
-		<id>urn:uuid:b59420ba-426a-26f4-9551-2b2b7340cb54</id>
-		<updated>2013-03-16T07:55:12+08:00</updated>
-		<summary type="html">&lt;p&gt;上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。&lt;/p&gt;
-
-&lt;h2&gt;使用&lt;/h2&gt;
-
-&lt;h3&gt;實作指令 Help.php&lt;/h3&gt;
-
-&lt;p&gt;接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&amp;lt;?php
-// 設定namespace
-namespace Test;
-
-use NanoCLI\IO;
-
-class Help extends NanoCLI\Command {
-    public function __construct() {
-        parent::__construct();
-    }
-
-    public function run() {
-        IO::writeln(&quot;This is Command: help\n&quot;);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
 
 </summary>
 		<author>

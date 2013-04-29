@@ -36,6 +36,45 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="%2Farticle%2F2013%2F04%2F29%2Fnode-js-dgram-error-with-EBADF">NodeJS - dgram error with EBADF</a></h1>
+		<div class="info">
+			<span class="date">2013-04-29</span>
+			-
+			<span class="category">
+				Category: <a href="%2Fcategory%2FIT">IT</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="%2Ftag%2FNodeJS">NodeJS</a>, </span>
+								<span><a href="%2Ftag%2FJavascript">Javascript</a>, </span>
+								<span><a href="%2Ftag%2FNote">Note</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2013/04/29/node-js-dgram-error-with-EBADF/#disqus_thread">0 Comment</a>
+			</span>
+		</div>
+		<div class="content"><p>最近把NodeJS從原本的<code>v0.8.x</code>更新到最新的<code>v0.10.x</code>，結果程式就炸了！程式就給我吐出<code>Error: setBroadcast EBADF</code>，結果是<code>dgram</code>炸了，不管是<code>setBroadcast</code>或者是<code>setTTL</code>都一樣會炸掉，問Google大神也問不出答案。</p>
+
+<p>然後我就查了一下<code>EBADF</code>到底是什麼意思，它是一個socket的錯誤碼，原文是<code>The socket argument is not a valid file descriptor.</code>，意思是，我們來看原本的程式碼。</p>
+
+<pre><code class="js">#!/usr/bin/env node
+
+'use strict';
+
+var dgram = require('dgram'),
+    ip = '127.0.0.1',
+    port = 9000;
+
+client.bind(port);
+client.setBroadcast(true);
+client.send(message, 0, message.length, port, ip, callback);
+</code></pre>
+
+</div>
+		<a class="more" href="/article/2013/04/29/node-js-dgram-error-with-EBADF">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="%2Farticle%2F2013%2F04%2F28%2Fapache-vhost-and-userdir-config">Apache - mod_vhost_alias與mod_userdir設定</a></h1>
 		<div class="info">
 			<span class="date">2013-04-28</span>
@@ -178,52 +217,6 @@ echo 'Hi $name';    // Hi $name
 </div>
 		<a class="more" href="/article/2013/04/02/php-concatenate-string">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="%2Farticle%2F2013%2F03%2F16%2Fnanocli-a-simply-php-cli-development-tools-2">NanoCLI - PHP CLI開發工具 (2)</a></h1>
-		<div class="info">
-			<span class="date">2013-03-16</span>
-			-
-			<span class="category">
-				Category: <a href="%2Fcategory%2FIT">IT</a>			</span>
-			-
-			<span class="tag">
-				Tag: 
-								<span><a href="%2Ftag%2FPHP">PHP</a>, </span>
-								<span><a href="%2Ftag%2FNanoCLI">NanoCLI</a></span>
-							</span>
-			-
-			<span class="comments">
-				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/#disqus_thread">0 Comment</a>
-			</span>
-		</div>
-		<div class="content"><p>上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。</p>
-
-<h2>使用</h2>
-
-<h3>實作指令 Help.php</h3>
-
-<p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
-
-<pre><code class="php">&lt;?php
-// 設定namespace
-namespace Test;
-
-use NanoCLI\IO;
-
-class Help extends NanoCLI\Command {
-    public function __construct() {
-        parent::__construct();
-    }
-
-    public function run() {
-        IO::writeln("This is Command: help\n");
-    }
-}
-</code></pre>
-
-</div>
-		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 					</span>
@@ -270,14 +263,14 @@ class Help extends NanoCLI\Command {
 </div><div class="archive">
 	<div class="title"><a href="%2Farchive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="%2Farchive%2F2013">2013(7)</a></span>
+				<span class="item"><a href="%2Farchive%2F2013">2013(8)</a></span>
 				<span class="item"><a href="%2Farchive%2F2012">2012(14)</a></span>
 				<span class="item"><a href="%2Farchive%2F2011">2011(2)</a></span>
 			</div>
 </div><div class="category">
 	<div class="title"><a href="%2Fcategory">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="%2Fcategory%2FIT">IT(21)</a></span>
+				<span class="item"><a href="%2Fcategory%2FIT">IT(22)</a></span>
 				<span class="item"><a href="%2Fcategory%2FGame">Game(1)</a></span>
 				<span class="item"><a href="%2Fcategory%2FLife">Life(1)</a></span>
 			</div>
@@ -285,30 +278,31 @@ class Help extends NanoCLI\Command {
 	<div class="title"><a href="%2Ftag">Tag</a></div>
 	<div class="content">
 				<span class="item"><a href="%2Ftag%2FPHP">PHP(14)</a></span>
-				<span class="item"><a href="%2Ftag%2FNote">Note(9)</a></span>
-				<span class="item"><a href="%2Ftag%2FJavascript">Javascript(3)</a></span>
-				<span class="item"><a href="%2Ftag%2FFacebook">Facebook(2)</a></span>
-				<span class="item"><a href="%2Ftag%2FPointless">Pointless(2)</a></span>
+				<span class="item"><a href="%2Ftag%2FNote">Note(10)</a></span>
+				<span class="item"><a href="%2Ftag%2FJavascript">Javascript(4)</a></span>
 				<span class="item"><a href="%2Ftag%2FPython">Python(2)</a></span>
-				<span class="item"><a href="%2Ftag%2FUbuntu">Ubuntu(2)</a></span>
-				<span class="item"><a href="%2Ftag%2FWorks">Works(2)</a></span>
+				<span class="item"><a href="%2Ftag%2FTools">Tools(2)</a></span>
+				<span class="item"><a href="%2Ftag%2FPointless">Pointless(2)</a></span>
 				<span class="item"><a href="%2Ftag%2FAndroid">Android(2)</a></span>
 				<span class="item"><a href="%2Ftag%2FNanoCLI">NanoCLI(2)</a></span>
+				<span class="item"><a href="%2Ftag%2FWorks">Works(2)</a></span>
+				<span class="item"><a href="%2Ftag%2FFacebook">Facebook(2)</a></span>
 				<span class="item"><a href="%2Ftag%2FLinux">Linux(2)</a></span>
-				<span class="item"><a href="%2Ftag%2FTools">Tools(2)</a></span>
-				<span class="item"><a href="%2Ftag%2FMobile+Web">Mobile Web(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FUbuntu">Ubuntu(2)</a></span>
 				<span class="item"><a href="%2Ftag%2FDiablo+III">Diablo III(1)</a></span>
-				<span class="item"><a href="%2Ftag%2FiOS">iOS(1)</a></span>
 				<span class="item"><a href="%2Ftag%2FHTML5">HTML5(1)</a></span>
-				<span class="item"><a href="%2Ftag%2FWindows">Windows(1)</a></span>
-				<span class="item"><a href="%2Ftag%2FC%2FC%2B%2B">C/C++(1)</a></span>
-				<span class="item"><a href="%2Ftag%2F3C">3C(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FApache">Apache(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FMobile+Web">Mobile Web(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FiOS">iOS(1)</a></span>
 				<span class="item"><a href="%2Ftag%2FToy">Toy(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FChrome">Chrome(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FNodeJS">NodeJS(1)</a></span>
 				<span class="item"><a href="%2Ftag%2FJavaScript">JavaScript(1)</a></span>
 				<span class="item"><a href="%2Ftag%2FVirus">Virus(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FWindows">Windows(1)</a></span>
 				<span class="item"><a href="%2Ftag%2FSQLite">SQLite(1)</a></span>
-				<span class="item"><a href="%2Ftag%2FApache">Apache(1)</a></span>
-				<span class="item"><a href="%2Ftag%2FChrome">Chrome(1)</a></span>
+				<span class="item"><a href="%2Ftag%2F3C">3C(1)</a></span>
+				<span class="item"><a href="%2Ftag%2FC%2FC%2B%2B">C/C++(1)</a></span>
 			</div>
 </div>		</div>
 	</div>
