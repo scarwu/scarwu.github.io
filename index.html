@@ -56,7 +56,7 @@
 		</div>
 		<div class="content"><p>最近把NodeJS從原本的<code>v0.8.x</code>更新到最新的<code>v0.10.x</code>，結果程式就炸了！程式就給我吐出<code>Error: setBroadcast EBADF</code>，結果是<code>dgram</code>炸了，不管是<code>setBroadcast</code>或者是<code>setTTL</code>都一樣會炸掉，問Google大神也問不出答案。</p>
 
-<p>然後我就查了一下<code>EBADF</code>到底是什麼意思，它是一個socket的錯誤碼，原文是<code>The socket argument is not a valid file descriptor.</code>，意思是，我們來看原本的程式碼。</p>
+<p>然後我就查了一下<code>EBADF</code>到底是什麼意思，它是一個socket的錯誤碼，原文是<code>The socket argument is not a valid file descriptor.</code>，意思是非法的socket代號，我們來看原本炸掉的程式碼。</p>
 
 <pre><code class="js">#!/usr/bin/env node
 
