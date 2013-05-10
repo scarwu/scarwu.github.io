@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:7bb612ed-b771-55bb-3435-53b13f11243f</id>
-	<updated>2013-04-29T22:36:55+08:00</updated>
+	<id>urn:uuid:7dcbfd85-b57e-dd30-45a3-5b84dc067e5b</id>
+	<updated>2013-05-10T15:21:27+08:00</updated>
 	<entry>
 		<title>NodeJS - dgram error with EBADF</title>
 		<link href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF" />
-		<id>urn:uuid:dadbd416-68e4-1c7e-32a0-5bbb3d8fbce2</id>
+		<id>urn:uuid:3918dc6f-da08-1b36-b845-3cf27734b0c0</id>
 		<updated>2013-04-29T21:28:17+08:00</updated>
 		<summary type="html">&lt;p&gt;最近把NodeJS從原本的&lt;code&gt;v0.8.x&lt;/code&gt;更新到最新的&lt;code&gt;v0.10.x&lt;/code&gt;，結果程式就炸了！程式就給我吐出&lt;code&gt;Error: setBroadcast EBADF&lt;/code&gt;，結果是&lt;code&gt;dgram&lt;/code&gt;炸了，不管是&lt;code&gt;setBroadcast&lt;/code&gt;或者是&lt;code&gt;setTTL&lt;/code&gt;都一樣會炸掉，問Google大神也問不出答案。&lt;/p&gt;
 
@@ -37,7 +37,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
 		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
-		<id>urn:uuid:8da6eb64-d2ec-0e24-0219-cf172933c86c</id>
+		<id>urn:uuid:b8c5fd6c-992f-2462-37fc-d408d3f5a38b</id>
 		<updated>2013-04-28T17:42:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -52,7 +52,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>敗家紀錄</title>
 		<link href="http://scar.simcz.tw/article/2013/04/19/shopping-record" />
-		<id>urn:uuid:e64df934-dd9a-530d-5d76-203e5e1afd7e</id>
+		<id>urn:uuid:f9cad3f7-845f-4623-3769-c9cd487d5ca2</id>
 		<updated>2013-04-19T13:41:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -67,7 +67,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>關於PHP原生樣板引擎</title>
 		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
-		<id>urn:uuid:d3473d96-3fa7-59e8-f066-ff03f2f54048</id>
+		<id>urn:uuid:abc1f604-cd7c-fd6c-905c-281ae34a6b63</id>
 		<updated>2013-04-04T03:06:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -90,7 +90,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>PHP字串連接</title>
 		<link href="http://scar.simcz.tw/article/2013/04/02/php-concatenate-string" />
-		<id>urn:uuid:e289d399-9dda-1b4d-5a79-e20b3ddebd0f</id>
+		<id>urn:uuid:c8c8e039-ca88-6c16-e768-4e768beb2424</id>
 		<updated>2013-04-02T19:36:39+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
