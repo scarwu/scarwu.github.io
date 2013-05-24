@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:ee38601d-c7fc-1a13-c9e6-96efe06f5137</id>
-	<updated>2013-05-17T17:20:04+08:00</updated>
+	<id>urn:uuid:4189f1db-1e87-997e-9938-32728275ecb6</id>
+	<updated>2013-05-24T11:18:18+08:00</updated>
 	<entry>
 		<title>試用Android Studio v0.1</title>
 		<link href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01" />
-		<id>urn:uuid:4447b34e-15b4-5092-1878-1672b6b1474d</id>
+		<id>urn:uuid:b2d06cc2-6479-e2a6-9b85-e9a05baa9b7e</id>
 		<updated>2013-05-16T15:29:46+08:00</updated>
 		<summary type="html">&lt;p&gt;今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。&lt;/p&gt;
 
@@ -28,7 +28,7 @@
 	<entry>
 		<title>NodeJS - dgram error with EBADF</title>
 		<link href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF" />
-		<id>urn:uuid:77b18abc-b96c-bbec-4e55-41427654adbf</id>
+		<id>urn:uuid:744ee29e-b58d-6d80-7b55-81432ab00d5d</id>
 		<updated>2013-04-29T21:28:17+08:00</updated>
 		<summary type="html">&lt;p&gt;最近把NodeJS從原本的&lt;code&gt;v0.8.x&lt;/code&gt;更新到最新的&lt;code&gt;v0.10.x&lt;/code&gt;，結果程式就炸了！程式就給我吐出&lt;code&gt;Error: setBroadcast EBADF&lt;/code&gt;，結果是&lt;code&gt;dgram&lt;/code&gt;炸了，不管是&lt;code&gt;setBroadcast&lt;/code&gt;或者是&lt;code&gt;setTTL&lt;/code&gt;都一樣會炸掉，問Google大神也問不出答案。&lt;/p&gt;
 
@@ -56,7 +56,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
 		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
-		<id>urn:uuid:1d4bd258-7886-1330-1c63-7ffed7d0fd0f</id>
+		<id>urn:uuid:705d21d0-3424-d763-72ca-bd0c13d0a60d</id>
 		<updated>2013-04-28T17:42:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -71,7 +71,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>敗家紀錄</title>
 		<link href="http://scar.simcz.tw/article/2013/04/19/shopping-record" />
-		<id>urn:uuid:513ba907-f17b-12bc-53fb-2111fb07471b</id>
+		<id>urn:uuid:22bc51a3-ec05-ec13-6cab-57ca0dd98e2f</id>
 		<updated>2013-04-19T13:41:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -86,7 +86,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>關於PHP原生樣板引擎</title>
 		<link href="http://scar.simcz.tw/article/2013/04/04/about-php-native-template-engine" />
-		<id>urn:uuid:24591924-c908-3010-cfc3-4f48eea97eae</id>
+		<id>urn:uuid:7f2eef38-0f2c-ace9-27e1-ac8e7185efdb</id>
 		<updated>2013-04-04T03:06:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
