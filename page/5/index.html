@@ -41,6 +41,58 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-2">實作一個小型Router use PHP (2)</a></h1>
+		<div class="info">
+			<span class="date">2012-04-23</span>
+			-
+			<span class="category">
+				Category: <a href="/category/IT">IT</a>			</span>
+			-
+			<span class="tag">
+				Tag: 
+								<span><a href="/tag/PHP">PHP</a></span>
+							</span>
+			-
+			<span class="comments">
+				<a href="/article/2012/04/23/implement-a-small-router-use-php-2/#disqus_thread">0 Comment</a>
+			</span>
+			<div class="social_tool">
+				<div class="fb-like" href="http%3A//scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-2/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+				<div class="g-plusone" data-href="http%3A//scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-2/" data-size="medium"></div>
+			</div>
+		</div>
+		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
+
+<pre><code class="php">&lt;?php
+// filename: router.php
+class router {
+    public function __construct() {
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
+    }
+
+    public function add($route, $callback) {
+        $this-&gt;rules[] = array(
+            'route' =&gt; $route,
+            'callback' =&gt; $callback
+        );
+    }
+
+    public function run() {
+        foreach($this-&gt;rules as $rule) {
+            if($rule['route'] == $this-&gt;url) {
+                $rule['callback']();
+                break;
+            }
+        }
+    }
+}
+</code></pre>
+
+</div>
+		<a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-2">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-1">實作一個小型Router use PHP (1)</a></h1>
 		<div class="info">
 			<span class="date">2012-04-23</span>
@@ -176,46 +228,12 @@ print_r($_SERVER);
 </div>
 		<a class="more" href="/article/2011/10/31/ios-rotation-resize-fix">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2011/09/26/android-develop-env-setting">Android 開發環境設置</a></h1>
-		<div class="info">
-			<span class="date">2011-09-26</span>
-			-
-			<span class="category">
-				Category: <a href="/category/IT">IT</a>			</span>
-			-
-			<span class="tag">
-				Tag: 
-								<span><a href="/tag/Android">Android</a>, </span>
-								<span><a href="/tag/Note">Note</a></span>
-							</span>
-			-
-			<span class="comments">
-				<a href="/article/2011/09/26/android-develop-env-setting/#disqus_thread">0 Comment</a>
-			</span>
-			<div class="social_tool">
-				<div class="fb-like" href="http%3A//scar.simcz.tw/article/2011/09/26/android-develop-env-setting/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-				<div class="g-plusone" data-href="http%3A//scar.simcz.tw/article/2011/09/26/android-develop-env-setting/" data-size="medium"></div>
-			</div>
-		</div>
-		<div class="content"><h2>下載</h2>
-
-<ul>
-<li>JDK 7 (jdk-7-windows-i586.exe) - <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></li>
-<li>Android SDK (android-sdk_r15-windows.zip) - <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></li>
-<li>ADT 15.0.0 (ADT-15.0.0.zip) - <a href="http://developer.android.com/sdk/eclipse-adt.html">http://developer.android.com/sdk/eclipse-adt.html</a></li>
-<li>Eclipse Classic 3.7 (Windows 32 Bit) - <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a></li>
-</ul>
-
-</div>
-		<a class="more" href="/article/2011/09/26/android-develop-env-setting">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 			<a href="/page/4"><< Newer Posts</a>		</span>
 		<span class="old">
-					</span>
-		<span class="count">5 / 5</span>
+			<a href="/page/6">Older Posts >></a>		</span>
+		<span class="count">5 / 6</span>
 	</div>
 </div>
 <script type="text/javascript">
@@ -279,14 +297,14 @@ print_r($_SERVER);
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="/archive/2013">2013(9)</a></span>
+				<span class="item"><a href="/archive/2013">2013(10)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
 			</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(23)</a></span>
+				<span class="item"><a href="/category/IT">IT(24)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 				<span class="item"><a href="/category/Life">Life(1)</a></span>
 			</div>
@@ -297,27 +315,28 @@ print_r($_SERVER);
 				<span class="item"><a href="/tag/Note">Note(11)</a></span>
 				<span class="item"><a href="/tag/JavaScript">JavaScript(5)</a></span>
 				<span class="item"><a href="/tag/Android">Android(3)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(3)</a></span>
 				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
-				<span class="item"><a href="/tag/Python">Python(2)</a></span>
-				<span class="item"><a href="/tag/Works">Works(2)</a></span>
-				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
 				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
+				<span class="item"><a href="/tag/Python">Python(2)</a></span>
 				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
+				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
+				<span class="item"><a href="/tag/Works">Works(2)</a></span>
 				<span class="item"><a href="/tag/Ubuntu">Ubuntu(2)</a></span>
-				<span class="item"><a href="/tag/Linux">Linux(2)</a></span>
-				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
-				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
-				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
 				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
 				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
-				<span class="item"><a href="/tag/NodeJS">NodeJS(1)</a></span>
+				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
 				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
-				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
+				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
 				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
-				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
-				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
-				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
+				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
+				<span class="item"><a href="/tag/NodeJS">NodeJS(1)</a></span>
+				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
+				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
 				<span class="item"><a href="/tag/3C">3C(1)</a></span>
+				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
+				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
+				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
 			</div>
 </div>		</div>
 	</div>

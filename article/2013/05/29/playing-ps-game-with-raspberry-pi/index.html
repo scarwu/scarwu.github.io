@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="description" content="記錄學習過程、生活以及一些想說的話。">
-	<meta name="keywords" content="ScarShow,刀疤說,ScarWu,刀疤,php,cli,nanocli">
+	<meta name="keywords" content="ScarShow,刀疤說,ScarWu,刀疤,raspberry pi,raspberry,rpi">
 
-	<title>NanoCLI - PHP CLI開發工具 (1) | ScarShow | 刀疤說</title>
+	<title>用Raspberry Pi玩PS遊戲 | ScarShow | 刀疤說</title>
 	
 	<!-- Load Cascading Style Sheets -->
 	<link rel="stylesheet" href="/theme/main.css">
 	
-	<link rel="canonical" href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">
+	<link rel="canonical" href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi">
 	<link rel="author" href="https://plus.google.com/108940352426915109637">
 </head>
 <body>
@@ -41,151 +41,83 @@
 	<div id="main">
 		<div id="container"><div id="article">
 	<article>
-		<h1 class="title">NanoCLI - PHP CLI開發工具 (1)</h1>
+		<h1 class="title">用Raspberry Pi玩PS遊戲</h1>
 		<div class="info">
-			<span class="date">2013-03-16</span>
+			<span class="date">2013-05-29</span>
 			-
 			<span class="category">
 				Category: <a href="/category/IT">IT</a>			</span>
 			-
 			<span class="tag">
 				Tag: 
-								<span><a href="/tag/PHP">PHP</a>, </span>
-								<span><a href="/tag/NanoCLI">NanoCLI</a></span>
+								<span><a href="/tag/Linux">Linux</a>, </span>
+								<span><a href="/tag/Raspberry%20Pi">Raspberry Pi</a></span>
 							</span>
 			-
 			<span class="comment">
-				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/#disqus_thread">0 Comment</a>
+				<a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi/#disqus_thread">0 Comment</a>
 			</span>
 		</div>
 		<div class="social_tool">
-			<div class="fb-like" href="http%3A//scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			<div class="g-plusone" data-href="http%3A//scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/" data-size="medium"></div>
+			<div class="fb-like" href="http%3A//scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			<div class="g-plusone" data-href="http%3A//scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-size="medium"></div>
 		</div>
-		<div class="content"><p>關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。</p>
+		<div class="content"><h2>前言</h2>
 
-<p>約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。</p>
+<p>Raspberry Pi小巧好用拿來打電動很剛好，當作PS遊戲模擬器也是游刃有餘。</p>
 
-<h2>系統要求</h2>
-
-<p>PHP 5.3+</p>
-
-<h2>功能</h2>
-
-<ul>
-<li>指令呼叫 (ex. <code>$ ./cli.php command</code>)</li>
-<li>指令選項 (ex. <code>$ ./cli.php command -v -al</code>)</li>
-<li>指令配置 (ex. <code>$ ./cli.php command --prefix=/usr/local/bin</code>)</li>
-<li>文字色彩</li>
-<li>文字界面讀寫</li>
-<li>Namespace 以及 Autoload</li>
-</ul>
+<p>所以在這邊紀錄如何在Raspberry Pi上安裝PCSX ReARMed，它是我們所熟知的PS模擬器PCSX，但它是針對ARM CPU的特製版。</p>
 
 <!--more-->
 
-<h2>使用</h2>
+<h2>安裝過程</h2>
 
-<h3>下載原始碼</h3>
+<p>下面的範例是直接在RPi上編譯，過程中沒有用到Cross Compile所以編譯時間會比較久。</p>
 
-<pre><code>git clone git://github.com/scarwu/NanoCLI.git
+<h3>安裝編譯環境</h3>
+
+<pre><code class="bash">sudo apt-get uptdate &amp;&amp; sudo apt-get upgrade
+sudo apt-get install git build-essential libpng-dev libx11-dev autoconf
 </code></pre>
 
-<h3>檔案配置</h3>
+<h3>編譯SDL</h3>
 
-<pre><code class="bash">.
-├── boot.php
-├── Command
-│   ├── Test
-│   │   ├── Help.php
-│   │   └── Read.php
-│   └── Test.php
-└── NanoCLI
-    ├── Command.php
-    ├── IO.php
-    └── Loader.php
+<pre><code class="bash">wget http://www.libsdl.org/release/SDL-1.2.15.tar.gz
+tar zxvf SDL-1.2.15.tar.gz
+cd SDL-1.2.15
+./autogen.sh
+./configure &amp;&amp; make
+sudo make install
 </code></pre>
 
-<h3>設定Boot</h3>
+<h3>編譯PCSX ReARMed</h3>
 
-<p>做為一個CLI應用程式首先要設定程式的進入點。</p>
-
-<pre><code class="php">&lt;?php
-/* Boot.php */
-
-// 載入 Loader
-require realpath(__DIR__ . '/../src/NanoCLI/Loader.php');
-
-use NanoCLI\Loader;
-
-// 設定程式目錄以及Namespace
-// 先設定NanoCLI的位置
-Loader::register('NanoCLI', realpath(__DIR__ . '/../src'));
-// 再設定相關指令的位置
-Loader::register('Test', realpath(__DIR__ . '/Command'));
-
-// 註冊autoload function
-spl_autoload_register('NanoCLI\Loader::load');
-
-// 初始化指令
-$test = new Test();
-$test-&gt;Init();
+<pre><code class="bash">git clone git://github.com/notaz/pcsx_rearmed.git
+cd pcsx_rearmed
+git submodule init &amp;&amp; git submodule update
+./configure
 </code></pre>
 
-<h3>實作指令 Test.php</h3>
+<p>編輯makefile，並將<code>-I/opt/vc/include/interface/vmcs_host/linux</code> 加入CFLAGS。</p>
 
-<p>上面的程式碼最後初始化了Test這個Class，再初始化之後NanoCLI會自動呼叫對應指令，所以在這邊我們顯來實作第一個指令。</p>
-
-<pre><code class="php">&lt;?php
-use NanoCLI\IO;
-
-// 繼承 NanoCLI\Command
-class Test extends NanoCLI\Command {
-
-    public function __construct() {
-        // 呼叫Parent Construct
-        parent::__construct();
-    }
-
-    public function run() {
-        // 讀取鍵盤輸入
-        IO::write('Enter your name: ');
-        $name = IO::read();
-
-        // 輸出結果
-        IO::writeln('Hi, ' . $name, 'green');
-    }
-}
+<pre><code class="bash"># add -I/opt/vc/include/interface/vmcs_host/linux to CFLAGS
+vim Makefile
+make
 </code></pre>
 
-<p><br />每個指令都要繼承NanoCLI\Command，然後記得要叫Parent Construct，這樣程式才會動，所以現在可以執行第一個程式了，應該會有以下的結果。</p>
+<h2>啟動</h2>
 
-<pre><code class="bash">php boot.php
-Enter your name: Scar
-Hi, Scar
+<p>在啟動前記得準備好搖桿以及遊戲映像檔。</p>
+
+<pre><code class="bash"># Start PCSX
+./pcsx
 </code></pre>
 
-<p><br />雖然在呼叫的時候沒有帶入任何參數但它也是一個指令，它就像是一般程式的main一樣的作用，所以可以將上面範例程式的 <code>run()</code> 改成自動呼叫help指令以防止使用者不知道要如何去使用你的程式。</p>
+<h3>擷圖</h3>
 
-<pre><code class="php">&lt;?php
-use NanoCLI\IO;
+<p><img src="http://scar.simcz.tw/images/playing-ps-game-with-raspberry-pi/001.jpg" alt="PCSX ReARMed"></p>
 
-// 繼承 NanoCLI\Command
-class Test extends NanoCLI\Command {
-
-    public function __construct() {
-        // 呼叫Parent Construct
-        parent::__construct();
-    }
-
-    public function run() {
-        // 呼叫Help指令
-        $help = new Test\Help();
-        $help-&gt;run();
-    }
-}
-</code></pre>
-
-<p><strong>待續</strong></p>
+<p><img src="http://scar.simcz.tw/images/playing-ps-game-with-raspberry-pi/002.jpg" alt="PCSX ReARMed"></p>
 </div>
 	</article>
 		<!-- DISQUS -->
@@ -208,10 +140,10 @@ class Test extends NanoCLI\Command {
 	</script>
 		<div class="bar">
 		<span class="new">
-			<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2"><< NanoCLI - PHP CLI開發工具 (2)</a>		</span>
+					</span>
 		<span class="old">
-			<a href="/article/2013/01/09/php-phar-create-and-use">Phar建立與使用 >></a>		</span>
-		<span class="count">9 / 26</span>
+			<a href="/article/2013/05/16/try-android-studio-v01">試用Android Studio v0.1 >></a>		</span>
+		<span class="count">1 / 26</span>
 	</div>
 </div>
 <script type="text/javascript">
