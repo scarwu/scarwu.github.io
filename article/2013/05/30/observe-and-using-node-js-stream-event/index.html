@@ -199,7 +199,7 @@ var client = net.connect({
 
 <p>使用<code>data</code>這個事件時就會將stream切換至<code>old mode</code>，在此模式下可呼叫<code>rs.pause()</code>及<code>rs.resume()</code>這兩個function來控制<code>Readable Stream</code>。</p>
 
-<p>所謂的<code>old mode</code>是NodeJS v0.10為了就程式的謙容性(<a href="http://nodejs.org/api/stream.html#stream_compatibility">Compatibility</a>)所產生的。</p>
+<p>所謂的<code>old mode</code>是NodeJS v0.10為了舊程式的謙容性(<a href="http://nodejs.org/api/stream.html#stream_compatibility">Compatibility</a>)所產生的。</p>
 
 <pre><code class="javascript">rs.on('data', function (chunk) {
     console.log('rs data');
