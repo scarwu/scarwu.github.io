@@ -124,13 +124,13 @@ var ws = fs.createWriteStream('/path/to/file');
 
 // HTTP Server
 // req is readable stream
-// res is readable stream
+// res is writeable stream
 http.createServer(function (req, res) {
     // do something
 }).listen(80);
 
 // HTTP Client
-// req is readable stream
+// req is writeable stream
 // res is readable stream
 var req = http.request({
     hostname: '127.0.0.1',
