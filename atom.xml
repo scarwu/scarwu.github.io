@@ -4,16 +4,16 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:4b90ae9c-0f81-4e3f-3512-11fe6ecceaa0</id>
-	<updated>2013-06-05T19:01:04+08:00</updated>
+	<id>urn:uuid:612c1451-94da-4d5f-935c-008c6e9efd28</id>
+	<updated>2013-06-27T13:37:02+08:00</updated>
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:f7fd82f3-9916-cfb9-da2c-abf56f0b04ab</id>
+		<id>urn:uuid:33ce43f4-d6d2-e399-cc43-bde0c606617d</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
-&lt;p&gt;在NodeJS使用廣泛的就是&lt;code&gt;Event I/O&lt;/code&gt;的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。&lt;/p&gt;
+&lt;p&gt;在NodeJS使用廣泛的就是&lt;code&gt;Event-driven&lt;/code&gt;的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。&lt;/p&gt;
 
 &lt;p&gt;所以今天的主題為NodeJS中Stream的行為觀察，在先前專案中大量使用Stream的功能，所以這邊就寫下一些使用心得。&lt;/p&gt;
 
@@ -26,7 +26,7 @@
 	<entry>
 		<title>用Raspberry Pi玩PS遊戲</title>
 		<link href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi" />
-		<id>urn:uuid:00c26915-f8d3-ffca-21a5-526674be0282</id>
+		<id>urn:uuid:f3fe73e7-9e53-e77e-9666-6be71a8be0ed</id>
 		<updated>2013-05-29T21:07:49+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -43,7 +43,7 @@
 	<entry>
 		<title>試用Android Studio v0.1</title>
 		<link href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01" />
-		<id>urn:uuid:01019b90-fbc8-a999-7c0d-77895fb987ee</id>
+		<id>urn:uuid:af8761d4-5b7b-3cf9-b73c-5d18c98ab6ef</id>
 		<updated>2013-05-16T15:29:46+08:00</updated>
 		<summary type="html">&lt;p&gt;今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。&lt;/p&gt;
 
@@ -62,7 +62,7 @@
 	<entry>
 		<title>NodeJS - dgram error with EBADF</title>
 		<link href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF" />
-		<id>urn:uuid:d9b08bba-ed55-156b-0e16-a23d375ae854</id>
+		<id>urn:uuid:7f66213e-a0d3-f44c-a69f-d8b1aaf681ef</id>
 		<updated>2013-04-29T21:28:17+08:00</updated>
 		<summary type="html">&lt;p&gt;最近把NodeJS從原本的&lt;code&gt;v0.8.x&lt;/code&gt;更新到最新的&lt;code&gt;v0.10.x&lt;/code&gt;，結果程式就炸了！程式就給我吐出&lt;code&gt;Error: setBroadcast EBADF&lt;/code&gt;，結果是&lt;code&gt;dgram&lt;/code&gt;炸了，不管是&lt;code&gt;setBroadcast&lt;/code&gt;或者是&lt;code&gt;setTTL&lt;/code&gt;都一樣會炸掉，問Google大神也問不出答案。&lt;/p&gt;
 
@@ -90,7 +90,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
 		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
-		<id>urn:uuid:67a8358b-cc11-0993-d1ef-f6776a4cda7c</id>
+		<id>urn:uuid:807df5c9-b732-cbf9-3172-77db17833a35</id>
 		<updated>2013-04-28T17:42:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
