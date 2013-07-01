@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:f9621dfd-1b7d-9c81-05a1-3e4da75a2efa</id>
-	<updated>2013-07-01T19:44:46+08:00</updated>
+	<id>urn:uuid:0cd18447-3768-9b0a-0721-749aa4208314</id>
+	<updated>2013-07-01T21:03:23+08:00</updated>
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:de07808a-5d0c-67e0-d172-637d243a3bc2</id>
+		<id>urn:uuid:e22eea09-b031-ea82-9545-3ce1a1fa8274</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -26,7 +26,7 @@
 	<entry>
 		<title>用Raspberry Pi玩PS遊戲</title>
 		<link href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi" />
-		<id>urn:uuid:4005dbee-7a9e-b284-eef6-26ae3aca298a</id>
+		<id>urn:uuid:d46d545f-62ea-562c-00a4-881abf751877</id>
 		<updated>2013-05-29T21:07:49+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -43,7 +43,7 @@
 	<entry>
 		<title>試用Android Studio v0.1</title>
 		<link href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01" />
-		<id>urn:uuid:cfd77e05-3f1a-f43d-c519-7f4f3ec82ff1</id>
+		<id>urn:uuid:3565fb2f-bc74-b122-cce8-c766f347fd38</id>
 		<updated>2013-05-16T15:29:46+08:00</updated>
 		<summary type="html">&lt;p&gt;今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。&lt;/p&gt;
 
@@ -62,7 +62,7 @@
 	<entry>
 		<title>NodeJS - dgram error with EBADF</title>
 		<link href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF" />
-		<id>urn:uuid:7c1407d2-4643-5357-5833-e7afa95f63a1</id>
+		<id>urn:uuid:7e2246d1-e87e-74f2-0b4d-5ae3dbe79792</id>
 		<updated>2013-04-29T21:28:17+08:00</updated>
 		<summary type="html">&lt;p&gt;最近把NodeJS從原本的&lt;code&gt;v0.8.x&lt;/code&gt;更新到最新的&lt;code&gt;v0.10.x&lt;/code&gt;，結果程式就炸了！程式就給我吐出&lt;code&gt;Error: setBroadcast EBADF&lt;/code&gt;，結果是&lt;code&gt;dgram&lt;/code&gt;炸了，不管是&lt;code&gt;setBroadcast&lt;/code&gt;或者是&lt;code&gt;setTTL&lt;/code&gt;都一樣會炸掉，問Google大神也問不出答案。&lt;/p&gt;
 
@@ -90,7 +90,7 @@ client.send(message, 0, message.length, port, ip, callback);
 	<entry>
 		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
 		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
-		<id>urn:uuid:3ebcf78b-0682-273e-2f7a-fc562e32e14c</id>
+		<id>urn:uuid:8239fdcc-7089-290b-8d63-e7c3c867f825</id>
 		<updated>2013-04-28T17:42:53+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
