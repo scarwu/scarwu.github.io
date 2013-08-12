@@ -163,7 +163,7 @@ HADOOP_HOME="/opt/hadoop"
 
 <h4>/etc/hosts</h4>
 
-<p>在這邊設定<code>Host Name</code>與<code>IP</code>的對應，另外SSH的<code>Authorized Keys</code>就自行設定吧。</p>
+<p>設定<code>Host Name</code>與<code>IP</code>的對應，另外SSH的<code>Authorized Keys</code>就自行設定吧。</p>
 
 <pre><code class="bash">192.168.1.1 node01
 192.168.1.2 node02
@@ -172,7 +172,7 @@ HADOOP_HOME="/opt/hadoop"
 
 <h4>/opt/hadoop/conf/core-site.xml</h4>
 
-<p>在這邊設定HDFS的<code>Name Node</code>設定給node01以及Hadoop的暫存路徑。</p>
+<p>設定HDFS的<code>Name Node</code>設定給node01以及Hadoop的暫存路徑。</p>
 
 <pre><code class="xml">&lt;configuration&gt;
   &lt;property&gt;
@@ -189,7 +189,7 @@ HADOOP_HOME="/opt/hadoop"
 
 <h4>/opt/hadoop/conf/hdfs-site.xml</h4>
 
-<p>這邊設定<code>HDFS</code>的檔案複製數量。</p>
+<p>設定<code>HDFS</code>的檔案複製數量。</p>
 
 <pre><code class="xml">&lt;configuration&gt;
   &lt;property&gt;
@@ -201,7 +201,7 @@ HADOOP_HOME="/opt/hadoop"
 
 <h4>/opt/hadoop/conf/mapred-site.xml</h4>
 
-<p>在這邊指定Job Tracker的位置，設定<code>node01</code>當作master。</p>
+<p>指定Job Tracker的位置，設定<code>node01</code>當作master。</p>
 
 <pre><code class="xml">&lt;configuration&gt;
   &lt;property&gt;
@@ -224,7 +224,7 @@ node03
 
 <h3>啟動</h3>
 
-<p>當上面的設定都結束之後，就可以用<code>rsync</code>將Hadoop同步到各個節點上了。</p>
+<p>當上面的設定都結束之後，就可以用<code>rsync</code>將<code>/opt/hadoop</code>的檔案同步到各個節點上了。</p>
 
 <p>接著可以使用以下指令檢查Hadoop的版本。</p>
 
