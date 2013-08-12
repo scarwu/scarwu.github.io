@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:6368b97e-9d98-e869-edf4-1035dcfd1751</id>
-	<updated>2013-08-13T01:20:09+08:00</updated>
+	<id>urn:uuid:379db360-bd41-9700-a331-c195138cd054</id>
+	<updated>2013-08-13T01:24:18+08:00</updated>
 	<entry>
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:f3717b80-ec9e-8397-cd28-8344d584c8fa</id>
+		<id>urn:uuid:85d08e48-33c0-f565-389e-6028c6d090e4</id>
 		<updated>2013-08-13T01:04:43+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -28,7 +28,7 @@
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:9f4f7be0-aec9-7fec-b703-9b236913ec0c</id>
+		<id>urn:uuid:96851527-e14e-ca90-6591-2520389e00de</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -45,7 +45,7 @@
 	<entry>
 		<title>用Raspberry Pi玩PS遊戲</title>
 		<link href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi" />
-		<id>urn:uuid:30619426-d93c-18b4-9081-bdd7fd0a0a72</id>
+		<id>urn:uuid:aea79db1-c32d-ca0c-d9d9-d80f67559b49</id>
 		<updated>2013-05-29T21:07:49+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -62,7 +62,7 @@
 	<entry>
 		<title>試用Android Studio v0.1</title>
 		<link href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01" />
-		<id>urn:uuid:9911100f-46bb-7018-6758-f7f77d38aa2a</id>
+		<id>urn:uuid:7a63d8d9-16ef-91d7-ae32-78dc900ad62b</id>
 		<updated>2013-05-16T15:29:46+08:00</updated>
 		<summary type="html">&lt;p&gt;今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。&lt;/p&gt;
 
@@ -81,7 +81,7 @@
 	<entry>
 		<title>NodeJS - dgram error with EBADF</title>
 		<link href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF" />
-		<id>urn:uuid:eb9dbd79-3c35-d4ba-9cfb-98e0f542480f</id>
+		<id>urn:uuid:0df0b97a-539d-51ca-a0c6-83f5b240d366</id>
 		<updated>2013-04-29T21:28:17+08:00</updated>
 		<summary type="html">&lt;p&gt;最近把NodeJS從原本的&lt;code&gt;v0.8.x&lt;/code&gt;更新到最新的&lt;code&gt;v0.10.x&lt;/code&gt;，結果程式就炸了！程式就給我吐出&lt;code&gt;Error: setBroadcast EBADF&lt;/code&gt;，結果是&lt;code&gt;dgram&lt;/code&gt;炸了，不管是&lt;code&gt;setBroadcast&lt;/code&gt;或者是&lt;code&gt;setTTL&lt;/code&gt;都一樣會炸掉，問Google大神也問不出答案。&lt;/p&gt;
 

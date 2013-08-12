@@ -165,9 +165,9 @@ HADOOP_HOME="/opt/hadoop"
 
 <p>在這邊設定<code>Host Name</code>與<code>IP</code>的對應，另外SSH的<code>Authorized Keys</code>就自行設定吧。</p>
 
-<pre><code class="bash">node01 192.168.1.1
-node02 192.168.1.2
-node03 192.168.1.3
+<pre><code class="bash">192.168.1.1 node01
+192.168.1.2 node02
+192.168.1.3 node03
 </code></pre>
 
 <h4>/opt/hadoop/conf/core-site.xml</h4>
@@ -192,10 +192,10 @@ node03 192.168.1.3
 <p>這邊設定<code>HDFS</code>的檔案複製數量。</p>
 
 <pre><code class="xml">&lt;configuration&gt;
- &lt;property&gt;
-   &lt;name&gt;dfs.replication&lt;/name&gt;
-   &lt;value&gt;3&lt;/value&gt;
- &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;3&lt;/value&gt;
+  &lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre>
 
