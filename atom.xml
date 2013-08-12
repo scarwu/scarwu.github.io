@@ -4,12 +4,31 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:103a7be0-e36e-781e-2687-029254403e50</id>
-	<updated>2013-07-15T00:20:13+08:00</updated>
+	<id>urn:uuid:6368b97e-9d98-e869-edf4-1035dcfd1751</id>
+	<updated>2013-08-13T01:20:09+08:00</updated>
+	<entry>
+		<title>Hadoop安裝與設定</title>
+		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
+		<id>urn:uuid:f3717b80-ec9e-8397-cd28-8344d584c8fa</id>
+		<updated>2013-08-13T01:04:43+08:00</updated>
+		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;Hadoop這套工具主要用做於平行運算，它其中包含兩個部份&lt;code&gt;MapReduce&lt;/code&gt;以及&lt;code&gt;HDFS&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;MapReduce&lt;/code&gt;的部份主要是用做於平行運算、而&lt;code&gt;HDFS&lt;/code&gt;則是一套分散分散式檔案系統，用來儲存於平行運算時所需的大量資料。&lt;/p&gt;
+
+&lt;p&gt;由於某些原因必須使用到&lt;code&gt;Hadoop&lt;/code&gt;中的&lt;code&gt;HDFS&lt;/code&gt;來測試一些項目所以這邊就粗略紀錄一下&lt;code&gt;Hadoop&lt;/code&gt;的安裝過程。&lt;/p&gt;
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:32397b61-ba92-0cc6-cd2c-59d85bd1f8b8</id>
+		<id>urn:uuid:9f4f7be0-aec9-7fec-b703-9b236913ec0c</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -26,7 +45,7 @@
 	<entry>
 		<title>用Raspberry Pi玩PS遊戲</title>
 		<link href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi" />
-		<id>urn:uuid:c6c2d1a9-5e36-f9f4-5988-7a2d307df395</id>
+		<id>urn:uuid:30619426-d93c-18b4-9081-bdd7fd0a0a72</id>
 		<updated>2013-05-29T21:07:49+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -43,7 +62,7 @@
 	<entry>
 		<title>試用Android Studio v0.1</title>
 		<link href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01" />
-		<id>urn:uuid:c2f02e10-a13c-fb80-0f0b-4bd4d42bdfcd</id>
+		<id>urn:uuid:9911100f-46bb-7018-6758-f7f77d38aa2a</id>
 		<updated>2013-05-16T15:29:46+08:00</updated>
 		<summary type="html">&lt;p&gt;今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。&lt;/p&gt;
 
@@ -62,7 +81,7 @@
 	<entry>
 		<title>NodeJS - dgram error with EBADF</title>
 		<link href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF" />
-		<id>urn:uuid:e4e302a2-067b-6224-d3e2-4ef110e138b2</id>
+		<id>urn:uuid:eb9dbd79-3c35-d4ba-9cfb-98e0f542480f</id>
 		<updated>2013-04-29T21:28:17+08:00</updated>
 		<summary type="html">&lt;p&gt;最近把NodeJS從原本的&lt;code&gt;v0.8.x&lt;/code&gt;更新到最新的&lt;code&gt;v0.10.x&lt;/code&gt;，結果程式就炸了！程式就給我吐出&lt;code&gt;Error: setBroadcast EBADF&lt;/code&gt;，結果是&lt;code&gt;dgram&lt;/code&gt;炸了，不管是&lt;code&gt;setBroadcast&lt;/code&gt;或者是&lt;code&gt;setTTL&lt;/code&gt;都一樣會炸掉，問Google大神也問不出答案。&lt;/p&gt;
 
@@ -80,21 +99,6 @@ client.bind(port);
 client.setBroadcast(true);
 client.send(message, 0, message.length, port, ip, callback);
 &lt;/code&gt;&lt;/pre&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>Apache - mod_vhost_alias與mod_userdir設定</title>
-		<link href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config" />
-		<id>urn:uuid:83154992-110c-5e2a-dc51-c027993d1f68</id>
-		<updated>2013-04-28T17:42:53+08:00</updated>
-		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;Apache是常用的網頁伺服器，而&lt;code&gt;userdir&lt;/code&gt;這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以&lt;code&gt;http://examaple.com/~username&lt;/code&gt;的形式呈現。另外&lt;code&gt;vhost_alias&lt;/code&gt;則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設&lt;code&gt;http://a.example.com&lt;/code&gt;與&lt;code&gt;b.examle.com&lt;/code&gt;都指向&lt;code&gt;192.168.1.1&lt;/code&gt;，那麼Apache就可以根據域名來挑選網頁的根目錄&lt;code&gt;/var/www/a&lt;/code&gt;或是&lt;code&gt;/var/www/b&lt;/code&gt;來呈現不同的內容。&lt;/p&gt;
 
 </summary>
 		<author>

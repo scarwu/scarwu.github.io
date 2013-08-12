@@ -40,6 +40,47 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2012/09/12/sqlite3-multi-thread-in-python">SQLite3 Multi-Thread in Python</a></h1>
+		<div class="info">
+			<div class="date">
+				<span class="icon icon-calendar"></span>
+				<a href="/archive/2012">2012-09-12</a>			</div>
+			<div class="category">
+				<span class="icon icon-folder-close"></span>
+				<a href="/category/IT">IT</a>			</div>
+			<div class="tag">
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Python">Python</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/SQLite">SQLite</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Note">Note</a></span>
+				<br />
+							</div>
+			<div class="comments">
+				<span class="icon icon-comment"></span>
+				<a href="/article/2012/09/12/sqlite3-multi-thread-in-python/#disqus_thread">0 Comment</a>
+			</div>
+			<hr>
+			<div class="social_tool">
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/09/12/sqlite3-multi-thread-in-python/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2012/09/12/sqlite3-multi-thread-in-python/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			</div>
+		</div>
+		<div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
+但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
+
+<h3>Error Code</h3>
+
+<pre><code class="bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
+</code></pre>
+
+</div>
+		<a class="more" href="/article/2012/09/12/sqlite3-multi-thread-in-python">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04">Install Xhprof on Ubuntu 12.04</a></h1>
 		<div class="info">
 			<div class="date">
@@ -263,63 +304,6 @@ function hideAds() {
 </div>
 		<a class="more" href="/article/2012/07/18/diablo-3-calculator-readme">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2012/05/07/pointless-readme">Pointless使用說明</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2012">2012-05-07</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/PHP">PHP</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Works">Works</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Pointless">Pointless</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2012/05/07/pointless-readme/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/05/07/pointless-readme/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2012/05/07/pointless-readme/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
-
-<h2>系統要求:</h2>
-
-<ul>
-<li>PHP 5.3+</li>
-<li>Command Line Interface</li>
-</ul>
-
-<h2>支援:</h2>
-
-<ul>
-<li>Github CNAME</li>
-<li>Google Analystics</li>
-<li>DISQUS</li>
-</ul>
-
-<h2>外部程式:</h2>
-
-<ul>
-<li><a href="http://michelf.com/projects/php-markdown/">PHP Makrdown</a></li>
-<li><a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a></li>
-</ul>
-
-</div>
-		<a class="more" href="/article/2012/05/07/pointless-readme">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 			<a href="/page/3"><< Newer Posts</a>		</span>
@@ -389,14 +373,14 @@ function hideAds() {
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="/archive/2013">2013(11)</a></span>
+				<span class="item"><a href="/archive/2013">2013(12)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
 			</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(25)</a></span>
+				<span class="item"><a href="/category/IT">IT(26)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 				<span class="item"><a href="/category/Life">Life(1)</a></span>
 			</div>
@@ -404,28 +388,29 @@ function hideAds() {
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
 				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
-				<span class="item"><a href="/tag/Note">Note(12)</a></span>
+				<span class="item"><a href="/tag/Note">Note(13)</a></span>
 				<span class="item"><a href="/tag/JavaScript">JavaScript(6)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(4)</a></span>
+				<span class="item"><a href="/tag/Ubuntu">Ubuntu(3)</a></span>
 				<span class="item"><a href="/tag/Android">Android(3)</a></span>
-				<span class="item"><a href="/tag/Linux">Linux(3)</a></span>
-				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
-				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
-				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
-				<span class="item"><a href="/tag/NodeJS">NodeJS(2)</a></span>
-				<span class="item"><a href="/tag/Python">Python(2)</a></span>
-				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
 				<span class="item"><a href="/tag/Works">Works(2)</a></span>
-				<span class="item"><a href="/tag/Ubuntu">Ubuntu(2)</a></span>
+				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
+				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
+				<span class="item"><a href="/tag/Python">Python(2)</a></span>
+				<span class="item"><a href="/tag/NodeJS">NodeJS(2)</a></span>
+				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
+				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
 				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
-				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
-				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
 				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
+				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
 				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
+				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
 				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
+				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
 				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
 				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
-				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
 				<span class="item"><a href="/tag/3C">3C(1)</a></span>
+				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
 				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
 				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
 				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
