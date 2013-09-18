@@ -40,6 +40,61 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">NanoCLI - PHP CLI開發工具 (2)</a></h1>
+		<div class="info">
+			<div class="date">
+				<span class="icon icon-calendar"></span>
+				<a href="/archive/2013">2013-03-16</a>			</div>
+			<div class="category">
+				<span class="icon icon-folder-close"></span>
+				<a href="/category/IT">IT</a>			</div>
+			<div class="tag">
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/PHP">PHP</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/NanoCLI">NanoCLI</a></span>
+				<br />
+							</div>
+			<div class="comments">
+				<span class="icon icon-comment"></span>
+				<a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/#disqus_thread">0 Comment</a>
+			</div>
+			<hr>
+			<div class="social_tool">
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			</div>
+		</div>
+		<div class="content"><p>上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。</p>
+
+<h2>使用</h2>
+
+<h3>實作指令 Help.php</h3>
+
+<p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
+
+<pre><code class="php">&lt;?php
+// 設定namespace
+namespace Test;
+
+use NanoCLI\IO;
+
+class Help extends NanoCLI\Command {
+    public function __construct() {
+        parent::__construct();
+    }
+
+    public function run() {
+        IO::writeln("This is Command: help\n");
+    }
+}
+</code></pre>
+
+</div>
+		<a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1">NanoCLI - PHP CLI開發工具 (1)</a></h1>
 		<div class="info">
 			<div class="date">
@@ -209,43 +264,6 @@ main() {
 </div>
 		<a class="more" href="/article/2012/12/08/facebook-virus-ksum-exe">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2012/09/20/extend-sqlite-to-support-regexp">讓SQLite支援REGEXP語法</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2012">2012-09-20</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/PHP">PHP</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Python">Python</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Note">Note</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2012/09/20/extend-sqlite-to-support-regexp/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/09/20/extend-sqlite-to-support-regexp/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2012/09/20/extend-sqlite-to-support-regexp/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>在使用 MySQL 的時候 REGEXP 正規表示式查詢好用又強大，雖然 SQLite 官方說有支援但其實意思是要使用者寫函式去擴充 SQLite。</p>
-
-<p>因為最近寫 PHP, Python 都有用到 SQLite 所以就順便做一下使用筆記。</p>
-
-</div>
-		<a class="more" href="/article/2012/09/20/extend-sqlite-to-support-regexp">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 			<a href="/page/2"><< Newer Posts</a>		</span>
@@ -315,14 +333,14 @@ main() {
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="/archive/2013">2013(12)</a></span>
+				<span class="item"><a href="/archive/2013">2013(13)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
 			</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(26)</a></span>
+				<span class="item"><a href="/category/IT">IT(27)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 				<span class="item"><a href="/category/Life">Life(1)</a></span>
 			</div>
@@ -330,32 +348,33 @@ main() {
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
 				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
-				<span class="item"><a href="/tag/Note">Note(13)</a></span>
+				<span class="item"><a href="/tag/Note">Note(14)</a></span>
 				<span class="item"><a href="/tag/JavaScript">JavaScript(6)</a></span>
-				<span class="item"><a href="/tag/Linux">Linux(4)</a></span>
-				<span class="item"><a href="/tag/Ubuntu">Ubuntu(3)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(5)</a></span>
 				<span class="item"><a href="/tag/Android">Android(3)</a></span>
-				<span class="item"><a href="/tag/Works">Works(2)</a></span>
-				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
-				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
-				<span class="item"><a href="/tag/Python">Python(2)</a></span>
-				<span class="item"><a href="/tag/NodeJS">NodeJS(2)</a></span>
+				<span class="item"><a href="/tag/Ubuntu">Ubuntu(3)</a></span>
 				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
 				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
+				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
+				<span class="item"><a href="/tag/Works">Works(2)</a></span>
+				<span class="item"><a href="/tag/Python">Python(2)</a></span>
+				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
+				<span class="item"><a href="/tag/NodeJS">NodeJS(2)</a></span>
+				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
 				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
-				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
-				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
-				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
+				<span class="item"><a href="/tag/Arch%20Linux">Arch Linux(1)</a></span>
 				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
+				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
+				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
+				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
+				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
 				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
 				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
 				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
-				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
-				<span class="item"><a href="/tag/3C">3C(1)</a></span>
-				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
-				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
 				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
-				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
+				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
+				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
+				<span class="item"><a href="/tag/3C">3C(1)</a></span>
 			</div>
 </div>		</div>
 	</div>
