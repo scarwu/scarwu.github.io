@@ -40,6 +40,132 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2012/08/19/hack-php-to-support-put-fileupload">讓PHP支援PUT FileUpload</a></h1>
+		<div class="info">
+			<div class="date">
+				<span class="icon icon-calendar"></span>
+				<a href="/archive/2012">2012-08-19</a>			</div>
+			<div class="category">
+				<span class="icon icon-folder-close"></span>
+				<a href="/category/IT">IT</a>			</div>
+			<div class="tag">
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/PHP">PHP</a></span>
+				<br />
+							</div>
+			<div class="comments">
+				<span class="icon icon-comment"></span>
+				<a href="/article/2012/08/19/hack-php-to-support-put-fileupload/#disqus_thread">0 Comment</a>
+			</div>
+			<hr>
+			<div class="social_tool">
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/08/19/hack-php-to-support-put-fileupload/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2012/08/19/hack-php-to-support-put-fileupload/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			</div>
+		</div>
+		<div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
+
+<pre><code class="php">&lt;?php
+// do something...
+
+$put_data = file_get_contents('php://input');
+
+// handle put data...
+</code></pre>
+
+<p><br />
+簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
+
+<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
+
+</div>
+		<a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload">More</a>
+	</article>
+		<article>
+		<h1 class="title"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">隱藏Facebook廣告 (Google Chrome)</a></h1>
+		<div class="info">
+			<div class="date">
+				<span class="icon icon-calendar"></span>
+				<a href="/archive/2012">2012-07-19</a>			</div>
+			<div class="category">
+				<span class="icon icon-folder-close"></span>
+				<a href="/category/IT">IT</a>			</div>
+			<div class="tag">
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Facebook">Facebook</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/JavaScript">JavaScript</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Chrome">Chrome</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Tools">Tools</a></span>
+				<br />
+							</div>
+			<div class="comments">
+				<span class="icon icon-comment"></span>
+				<a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/#disqus_thread">0 Comment</a>
+			</div>
+			<hr>
+			<div class="social_tool">
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/07/19/hidden-facebook-ads-with-google-chrome/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2012/07/19/hidden-facebook-ads-with-google-chrome/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			</div>
+		</div>
+		<div class="content"><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
+
+<p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<del>放心本人為人正直不會亂放病毒。</del></p>
+
+<p>下面就附上Source Code，然後Extension本身是用Javascript寫得，<del>Oguma水美媒</del>就這麼簡單。</p>
+
+<h4><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h4>
+
+<pre><code class="javascript">// ==UserScript==
+// @name           Facebook Ads Blocker
+// @version        0.2.2
+// @author         Scar Wu
+// @namespace      http://scar.simcz.tw
+// @description    Hidden Facebook Ads
+// @include        *
+// ==/UserScript==
+
+window.onload = function() {
+    hideAds();
+};
+
+document.addEventListener('DOMNodeInserted', function() {
+    hideAds();
+});
+
+function hideAds() {
+    if(document.location.host == 'www.facebook.com') {
+        var pagelet_side_ads = document.getElementById('pagelet_side_ads');
+        if(pagelet_side_ads != undefined)
+            pagelet_side_ads.innerHTML = null;
+
+        var ego_column = document.getElementsByClassName('ego_column');
+        if(ego_column != undefined &amp;&amp; ego_column.length &gt; 0) {
+            for(var index in ego_column) {
+                if(ego_column[index].getElementsByClassName('adsCategoryTitleLink') != undefined) {
+                    ego_column[index].innerHTML = null;
+                    break;
+                }
+            }
+        }
+
+        var fbTimelineSideAds = document.getElementsByClassName('fbTimelineSideAds');
+        for(var index in fbTimelineSideAds) {
+            fbTimelineSideAds[index].innerHTML = null;
+        }
+    }
+}
+</code></pre>
+</div>
+		<a class="more" href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2012/07/18/diablo-3-calculator-readme">Diablo 3 計算機使用說明</a></h1>
 		<div class="info">
 			<div class="date">
@@ -177,103 +303,12 @@
 </div>
 		<a class="more" href="/article/2012/04/27/about-pointless-static-blog-generator">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-2">實作一個小型Router use PHP (2)</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2012">2012-04-23</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/PHP">PHP</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2012/04/23/implement-a-small-router-use-php-2/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-2/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-2/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
-
-<pre><code class="php">&lt;?php
-// filename: router.php
-class router {
-    public function __construct() {
-        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
-        $this-&gt;url = $_SERVER['PATH_INFO'];
-    }
-
-    public function add($route, $callback) {
-        $this-&gt;rules[] = array(
-            'route' =&gt; $route,
-            'callback' =&gt; $callback
-        );
-    }
-
-    public function run() {
-        foreach($this-&gt;rules as $rule) {
-            if($rule['route'] == $this-&gt;url) {
-                $rule['callback']();
-                break;
-            }
-        }
-    }
-}
-</code></pre>
-
-</div>
-		<a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-2">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-1">實作一個小型Router use PHP (1)</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2012">2012-04-23</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/PHP">PHP</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2012/04/23/implement-a-small-router-use-php-1/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-1/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-1/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
-
-<p>首先建立一個PHP程式 server.php</p>
-
-<pre><code class="php">&lt;?php
-// filename: server.php
-print_r($_SERVER);
-</code></pre>
-
-</div>
-		<a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-1">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 			<a href="/page/4"><< Newer Posts</a>		</span>
 		<span class="old">
 			<a href="/page/6">Older Posts >></a>		</span>
-		<span class="count">5 / 6</span>
+		<span class="count">5 / 7</span>
 	</div>
 </div>
 <script type="text/javascript">
@@ -337,26 +372,26 @@ print_r($_SERVER);
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="/archive/2013">2013(13)</a></span>
+				<span class="item"><a href="/archive/2013">2013(15)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
 			</div>
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(27)</a></span>
+				<span class="item"><a href="/category/IT">IT(29)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 				<span class="item"><a href="/category/Life">Life(1)</a></span>
 			</div>
 </div><div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
+				<span class="item"><a href="/tag/Note">Note(15)</a></span>
 				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
-				<span class="item"><a href="/tag/Note">Note(14)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(7)</a></span>
 				<span class="item"><a href="/tag/JavaScript">JavaScript(6)</a></span>
-				<span class="item"><a href="/tag/Linux">Linux(5)</a></span>
+				<span class="item"><a href="/tag/Ubuntu">Ubuntu(4)</a></span>
 				<span class="item"><a href="/tag/Android">Android(3)</a></span>
-				<span class="item"><a href="/tag/Ubuntu">Ubuntu(3)</a></span>
 				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
 				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
 				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
@@ -364,20 +399,21 @@ print_r($_SERVER);
 				<span class="item"><a href="/tag/Python">Python(2)</a></span>
 				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
 				<span class="item"><a href="/tag/NodeJS">NodeJS(2)</a></span>
-				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
+				<span class="item"><a href="/tag/Arch%20Linux">Arch Linux(2)</a></span>
 				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
-				<span class="item"><a href="/tag/Arch%20Linux">Arch Linux(1)</a></span>
-				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
+				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
+				<span class="item"><a href="/tag/ThinkPad">ThinkPad(1)</a></span>
 				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
 				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
+				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
 				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
 				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
-				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
-				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
 				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
-				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
+				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
+				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
 				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
 				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
+				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
 				<span class="item"><a href="/tag/3C">3C(1)</a></span>
 			</div>
 </div>		</div>

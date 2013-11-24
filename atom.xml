@@ -4,12 +4,41 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:a069f9a9-f954-b20c-a19d-0b75102953fd</id>
-	<updated>2013-09-19T07:58:06+08:00</updated>
+	<id>urn:uuid:2f7bb40f-ae4f-f938-29c2-49989fef6762</id>
+	<updated>2013-11-24T22:35:20+08:00</updated>
+	<entry>
+		<title>修正Ubuntu 13.10小紅點問題</title>
+		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
+		<id>urn:uuid:30224cea-dc1a-5615-0c33-4cb89f88e0ee</id>
+		<updated>2013-11-24T15:41:34+08:00</updated>
+		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;上次才說把筆電的作業系統換成&lt;code&gt;Arch Linux&lt;/code&gt;，由於某些因素現在又換回&lt;code&gt;Ubuntu&lt;/code&gt;了...這次想說換成新版的&lt;code&gt;Ubuntu&lt;/code&gt;，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。&lt;/p&gt;
+
+&lt;p&gt;這次一定要把它修好，小紅點中鍵滾輪這樣好用的東西變成半殘可不是辦法，請示過Google大神找了一些文章，其實大部分也滿零散的，所以我在這邊依照我實際遇到的問題整理一下。&lt;/p&gt;
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
+	<entry>
+		<title>Arch Linux - LXDE桌面環境安裝</title>
+		<link href="http://scar.simcz.tw/article/2013/09/20/archlinux-lxde-desktop-install" />
+		<id>urn:uuid:3f8813e6-aaee-27c6-42f6-1b21edc5dc60</id>
+		<updated>2013-09-20T17:43:31+08:00</updated>
+		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>Arch Linux - 基礎安裝</title>
 		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
-		<id>urn:uuid:1eed9e07-63f2-5897-c87f-2fae4af6c3b1</id>
+		<id>urn:uuid:a333d640-5e06-aff3-b597-be756a0ded73</id>
 		<updated>2013-09-19T10:11:46+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -28,7 +57,7 @@
 	<entry>
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:cf8fb0f5-df02-31a1-55f5-af4d465ef023</id>
+		<id>urn:uuid:0cfd318f-e952-ab69-8a7d-70552167a968</id>
 		<updated>2013-08-13T01:04:43+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -47,49 +76,13 @@
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:a9ef9e69-12d2-0ded-cf60-e16b6f8db3e3</id>
+		<id>urn:uuid:9facb453-c775-882d-fa6a-0ec3d255cc68</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;在NodeJS使用廣泛的就是&lt;code&gt;Event-driven&lt;/code&gt;的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。&lt;/p&gt;
 
 &lt;p&gt;所以今天的主題為NodeJS中Stream的行為觀察，在先前專案中大量使用Stream的功能，所以這邊就寫下一些使用心得。&lt;/p&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>用Raspberry Pi玩PS遊戲</title>
-		<link href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi" />
-		<id>urn:uuid:fad24cda-da55-886c-9bab-343eaf1e2617</id>
-		<updated>2013-05-29T21:07:49+08:00</updated>
-		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;Raspberry Pi小巧好用拿來打電動很剛好，當作PS遊戲模擬器也是游刃有餘。&lt;/p&gt;
-
-&lt;p&gt;所以在這邊紀錄如何在Raspberry Pi上安裝PCSX ReARMed，它是我們所熟知的PS模擬器PCSX，但它是針對ARM CPU的特製版。&lt;/p&gt;
-
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>試用Android Studio v0.1</title>
-		<link href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01" />
-		<id>urn:uuid:11e4f119-13b3-ada8-c564-4fd6925f6cc3</id>
-		<updated>2013-05-16T15:29:46+08:00</updated>
-		<summary type="html">&lt;p&gt;今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。&lt;/p&gt;
-
-&lt;p&gt;不知道Android Studio它會不會像&lt;code&gt;Eclipse + ADT&lt;/code&gt;一樣一戳就爆炸呢？之前在接案開發Android APP還有相關的教學課程上&lt;code&gt;Eclipse + ADT&lt;/code&gt;真的不太穩定。不知道Android Studio會不會比較好用，另外Android Studio是用IntelliJ IDEA為基礎修改的現在的版號是&lt;code&gt;v0.1&lt;/code&gt;，Google官方對它的介紹為：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;Android Studio is a new Android development environment based on IntelliJ IDEA. Similar to Eclipse with the ADT Plugin, Android Studio provides integrated Android developer tools for development and debugging.&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
 
 </summary>
 		<author>
