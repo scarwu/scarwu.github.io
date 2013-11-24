@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:2f7bb40f-ae4f-f938-29c2-49989fef6762</id>
-	<updated>2013-11-24T22:35:20+08:00</updated>
+	<id>urn:uuid:7839ff4f-b065-6db8-1aee-50863ff7dfeb</id>
+	<updated>2013-11-24T22:37:09+08:00</updated>
 	<entry>
 		<title>修正Ubuntu 13.10小紅點問題</title>
 		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
-		<id>urn:uuid:30224cea-dc1a-5615-0c33-4cb89f88e0ee</id>
+		<id>urn:uuid:d8f74707-e56b-a72c-06fe-ece5b1ea75b6</id>
 		<updated>2013-11-24T15:41:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -24,21 +24,9 @@
 		</author>
 	</entry>
 	<entry>
-		<title>Arch Linux - LXDE桌面環境安裝</title>
-		<link href="http://scar.simcz.tw/article/2013/09/20/archlinux-lxde-desktop-install" />
-		<id>urn:uuid:3f8813e6-aaee-27c6-42f6-1b21edc5dc60</id>
-		<updated>2013-09-20T17:43:31+08:00</updated>
-		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
 		<title>Arch Linux - 基礎安裝</title>
 		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
-		<id>urn:uuid:a333d640-5e06-aff3-b597-be756a0ded73</id>
+		<id>urn:uuid:68ad2de8-15ea-ffaa-e1d7-31ddbbab1677</id>
 		<updated>2013-09-19T10:11:46+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -57,7 +45,7 @@
 	<entry>
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:0cfd318f-e952-ab69-8a7d-70552167a968</id>
+		<id>urn:uuid:c32b831d-8c8c-e76a-008c-d96853cf5eb7</id>
 		<updated>2013-08-13T01:04:43+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -76,13 +64,30 @@
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:9facb453-c775-882d-fa6a-0ec3d255cc68</id>
+		<id>urn:uuid:0769792c-eea4-e6c7-360d-543648f0e999</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;在NodeJS使用廣泛的就是&lt;code&gt;Event-driven&lt;/code&gt;的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。&lt;/p&gt;
 
 &lt;p&gt;所以今天的主題為NodeJS中Stream的行為觀察，在先前專案中大量使用Stream的功能，所以這邊就寫下一些使用心得。&lt;/p&gt;
+
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
+	<entry>
+		<title>用Raspberry Pi玩PS遊戲</title>
+		<link href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi" />
+		<id>urn:uuid:93a03863-e611-1be0-b078-887c3e05e48d</id>
+		<updated>2013-05-29T21:07:49+08:00</updated>
+		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;Raspberry Pi小巧好用拿來打電動很剛好，當作PS遊戲模擬器也是游刃有餘。&lt;/p&gt;
+
+&lt;p&gt;所以在這邊紀錄如何在Raspberry Pi上安裝PCSX ReARMed，它是我們所熟知的PS模擬器PCSX，但它是針對ARM CPU的特製版。&lt;/p&gt;
 
 </summary>
 		<author>
