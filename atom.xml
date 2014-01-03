@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:5f356613-b404-0335-389f-db29e72084e0</id>
-	<updated>2014-01-03T16:42:26+08:00</updated>
+	<id>urn:uuid:db63e70c-1f06-5990-1a1e-c1eb5014f6f9</id>
+	<updated>2014-01-03T16:45:36+08:00</updated>
 	<entry>
 		<title>Express + Jade/LESS/Coffee with LiveReload</title>
 		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
-		<id>urn:uuid:8ea4b806-0b63-4dde-eda9-efd108b93e8b</id>
+		<id>urn:uuid:0fe15f02-6ad3-48b5-4ae4-10de3de4af78</id>
 		<updated>2014-01-03T11:23:52+08:00</updated>
 		<summary type="html">&lt;h2&gt;廢話&lt;/h2&gt;
 
@@ -17,209 +17,6 @@
 
 &lt;p&gt;平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用&lt;code&gt;Express&lt;/code&gt;來搭配其它東西來開發網站。這邊用到的套件有&lt;code&gt;Jade&lt;/code&gt;、&lt;code&gt;LESS&lt;/code&gt;、&lt;code&gt;CoffeeScript&lt;/code&gt;以及&lt;code&gt;LiveReload&lt;/code&gt;。&lt;/p&gt;
 
-&lt;h3&gt;&lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot;&gt;Express&lt;/a&gt;&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;web applicaion framework for node&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;可用於建立網站應用程式。是一套流行的&lt;code&gt;NodeJS&lt;/code&gt;套件。&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;http://jade-lang.com/&quot; target=&quot;_blank&quot;&gt;Jade&lt;/a&gt;&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;Node Template Engine&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;http://lesscss.org/&quot; target=&quot;_blank&quot;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;The dynamic stylesheet language&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;支援&lt;code&gt;Variable&lt;/code&gt;、&lt;code&gt;Mixin&lt;/code&gt;、&lt;code&gt;Nested Rule&lt;/code&gt;...等，並可以編譯成&lt;code&gt;CSS&lt;/code&gt;供瀏覽器使用。&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;http://coffeescript.org/&quot; target=&quot;_blank&quot;&gt;CoffeeScript&lt;/a&gt;&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;CoffeeScript is a little language that compiles into JavaScript&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;它將&lt;code&gt;JavaScript&lt;/code&gt;的語法簡化，並提供一些新的特性來強化，可產生出符合規定且嚴謹的&lt;code&gt;JavaScript&lt;/code&gt;程式碼。&lt;/p&gt;
-
-&lt;p&gt;它剛出來的時候超夯的，只是我一直都沒有去使用它。&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;http://livereload.com/&quot; target=&quot;_blank&quot;&gt;LiveReload&lt;/a&gt;&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;a happy land where browsers don&#039;t need a Refresh button&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;寫網頁最常做的事情就是不斷、不斷、不斷的Refresh頁面，它可以在檔案存檔的當下就自動幫你更新頁面，讓你可以即時看見更改後的結果。&lt;/p&gt;
-
-&lt;p&gt;它有很多的版本，這邊用到的是&lt;code&gt;NodeJS&lt;/code&gt;的版本。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/napcs/node-livereload/&quot; target=&quot;_blank&quot;&gt;node-livereload&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;產生並修改專案&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;Express&lt;/code&gt;本身預設的樣板引擎是&lt;code&gt;Jade&lt;/code&gt;，另外內建就能支援&lt;code&gt;LESS&lt;/code&gt;的middleware，在指令中加入參數&lt;code&gt;-c less&lt;/code&gt;就可以了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;express -c less /path/to/project
-cd /path/to/project
-
-vim .package.json
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;package.json&lt;/h3&gt;
-
-&lt;p&gt;接著修改&lt;code&gt;package.json&lt;/code&gt;，加入&lt;code&gt;connect-coffee-script&lt;/code&gt;、&lt;code&gt;livereload&lt;/code&gt;套件設定。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;{
-    &quot;name&quot;: &quot;application-name&quot;,
-    &quot;version&quot;: &quot;0.0.1&quot;,
-    &quot;private&quot;: true,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;node app.js&quot;
-    },
-    &quot;dependencies&quot;: {
-        &quot;express&quot;: &quot;3.4.7&quot;,
-        &quot;jade&quot;: &quot;*&quot;,
-        &quot;less-middleware&quot;: &quot;*&quot;
-        &quot;connect-coffee-script&quot;: &quot;*&quot;,
-        &quot;livereload&quot;: &quot;*&quot;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最後就可以用&lt;code&gt;npm&lt;/code&gt;安裝套件了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;npm install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;app.js&lt;/h3&gt;
-
-&lt;p&gt;接下來開始修改&lt;code&gt;app.js&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;首先修改&lt;code&gt;LESS Middleware&lt;/code&gt;的設定，將輸出&lt;code&gt;CSS&lt;/code&gt;檔案的資料夾設定到&lt;code&gt;/tmp&lt;/code&gt;，並且將壓縮設定開啟。&lt;/p&gt;
-
-&lt;p&gt;接著加入&lt;code&gt;CoffeeScript Middleware&lt;/code&gt;的設定，同樣也是指定輸出資料夾為&lt;code&gt;/tmp&lt;/code&gt;。最後將剛剛的輸出路徑&lt;code&gt;/tmp&lt;/code&gt;加入到靜態檔案的路徑中。&lt;/p&gt;
-
-&lt;p&gt;將&lt;code&gt;Middleware&lt;/code&gt;輸出檔案的路徑指定到&lt;code&gt;/tmp&lt;/code&gt;有個好處，這樣設定&lt;code&gt;Git Ignore&lt;/code&gt;就可以直接忽略掉這個資料夾，而且輸出的檔案也不會跟原始檔案混雜。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
-
-app.use(require(&#039;less-middleware&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;),
-    compress: true
-}));
-app.use(require(&#039;connect-coffee-script&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;)
-}));
-
-app.use(express.static(path.join(__dirname, &#039;public&#039;)));
-app.use(express.static(path.join(__dirname, &#039;tmp&#039;)));
-
-...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;加入新的&lt;code&gt;Route rules&lt;/code&gt;讓&lt;code&gt;LESS&lt;/code&gt;及&lt;code&gt;CoffeeScript&lt;/code&gt;的原始檔無法被讀取。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
-
-app.all(&#039;*.(coffee|less)&#039;, function (req, res) {
-    res.send(404);
-});
-app.get(&#039;/&#039;, routes.index);
-app.get(&#039;/users&#039;, user.list);
-
-...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;加入&lt;code&gt;LiveReload&lt;/code&gt;的設定，讓它能夠認得&lt;code&gt;Jade&lt;/code&gt;、&lt;code&gt;LESS&lt;/code&gt;以及&lt;code&gt;CoffeeScript&lt;/code&gt;的支援。
-&lt;code&gt;Jade&lt;/code&gt;是放在&lt;code&gt;/views&lt;/code&gt;裡，而&lt;code&gt;LESS&lt;/code&gt;、&lt;code&gt;CoffeeScript&lt;/code&gt;則是放在&lt;code&gt;/public&lt;/code&gt;裡，所以讓s&lt;code&gt;LiveReload&lt;/code&gt;個別去監聽資料夾內檔案的變化。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
-
-var livereload = require(&#039;livereload&#039;).createServer({
-    exts: [&#039;jade&#039;, &#039;less&#039;, &#039;coffee&#039;]
-});
-
-livereload.watch(__dirname + &#039;/public&#039;);
-livereload.watch(__dirname + &#039;/views&#039;);
-
-...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最後別忘了幫瀏覽器安裝&lt;code&gt;LiveReload&lt;/code&gt;的&lt;code&gt;extension&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)&quot; target=&quot;_blank&quot;&gt;LiveReload Extensions&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;結語&lt;/h2&gt;
-
-&lt;p&gt;最後只要將&lt;code&gt;express&lt;/code&gt;啟動，並將瀏覽器的&lt;code&gt;LiveReload Extension&lt;/code&gt;連線打它就可以開始開發了。&lt;/p&gt;
-
-&lt;p&gt;下面是&lt;code&gt;app.js&lt;/code&gt;完整的檔案。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var express = require(&#039;express&#039;);
-var routes = require(&#039;./routes&#039;);
-var user = require(&#039;./routes/user&#039;);
-var http = require(&#039;http&#039;);
-var path = require(&#039;path&#039;);
-
-var app = express();
-
-// all environments
-app.set(&#039;port&#039;, process.env.PORT || 3000);
-app.set(&#039;views&#039;, path.join(__dirname, &#039;views&#039;));
-app.set(&#039;view engine&#039;, &#039;jade&#039;);
-app.use(express.favicon());
-app.use(express.logger(&#039;dev&#039;));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(app.router);
-
-app.use(require(&#039;less-middleware&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;),
-    compress: true
-}));
-app.use(require(&#039;connect-coffee-script&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;)
-}));
-
-app.use(express.static(path.join(__dirname, &#039;public&#039;)));
-app.use(express.static(path.join(__dirname, &#039;tmp&#039;)));
-
-// development only
-if (&#039;development&#039; == app.get(&#039;env&#039;)) {
-  app.use(express.errorHandler());
-}
-
-app.all(&#039;*.(coffee|less)&#039;, function (req, res) {
-    res.send(404);
-});
-app.get(&#039;/&#039;, routes.index);
-app.get(&#039;/users&#039;, user.list);
-
-http.createServer(app).listen(app.get(&#039;port&#039;), function(){
-  console.log(&#039;Express server listening on port &#039; + app.get(&#039;port&#039;));
-});
-
-// LiveReload
-var livereload = require(&#039;livereload&#039;).createServer({
-    exts: [&#039;jade&#039;, &#039;less&#039;, &#039;coffee&#039;]
-});
-
-livereload.watch(__dirname + &#039;/public&#039;);
-livereload.watch(__dirname + &#039;/views&#039;);
-&lt;/code&gt;&lt;/pre&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
@@ -229,7 +26,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>修正Ubuntu 13.10小紅點問題</title>
 		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
-		<id>urn:uuid:c46b1f8c-f240-a799-37f2-3b9c62937943</id>
+		<id>urn:uuid:fb043200-e14c-de88-f978-93e164bc87a1</id>
 		<updated>2013-11-24T15:41:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -246,7 +43,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>Arch Linux - 基礎安裝</title>
 		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
-		<id>urn:uuid:dc7c2021-81f6-5805-38f3-40a6f90a243b</id>
+		<id>urn:uuid:74bcfb0b-8bbc-f7ae-ca66-4435f1ef9950</id>
 		<updated>2013-09-19T10:11:46+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -265,7 +62,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:cf918f54-a10c-fab7-609b-b50392c70ee0</id>
+		<id>urn:uuid:3c713f1b-d749-44ca-f83f-c7c8a90153e2</id>
 		<updated>2013-08-13T01:04:43+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -284,7 +81,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:ce5ca46e-97d7-df87-5a35-a93500656bf5</id>
+		<id>urn:uuid:3f951b4b-3f81-02e7-6aee-6f29c16d5c01</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
