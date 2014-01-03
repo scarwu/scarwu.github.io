@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:90cfe81a-7247-b962-a0ee-dec8eb4cea46</id>
-	<updated>2014-01-03T16:36:21+08:00</updated>
+	<id>urn:uuid:5f356613-b404-0335-389f-db29e72084e0</id>
+	<updated>2014-01-03T16:42:26+08:00</updated>
 	<entry>
 		<title>Express + Jade/LESS/Coffee with LiveReload</title>
 		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
-		<id>urn:uuid:30028b53-a033-44ea-d5ef-0d2461812a45</id>
+		<id>urn:uuid:8ea4b806-0b63-4dde-eda9-efd108b93e8b</id>
 		<updated>2014-01-03T11:23:52+08:00</updated>
 		<summary type="html">&lt;h2&gt;廢話&lt;/h2&gt;
 
@@ -17,7 +17,7 @@
 
 &lt;p&gt;平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用&lt;code&gt;Express&lt;/code&gt;來搭配其它東西來開發網站。這邊用到的套件有&lt;code&gt;Jade&lt;/code&gt;、&lt;code&gt;LESS&lt;/code&gt;、&lt;code&gt;CoffeeScript&lt;/code&gt;以及&lt;code&gt;LiveReload&lt;/code&gt;。&lt;/p&gt;
 
-&lt;h3&gt;&lt;a href=&quot;http://expressjs.com/&quot;&gt;Express&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot;&gt;Express&lt;/a&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&quot;web applicaion framework for node&quot;&lt;/p&gt;
@@ -25,7 +25,7 @@
 
 &lt;p&gt;可用於建立網站應用程式。是一套流行的&lt;code&gt;NodeJS&lt;/code&gt;套件。&lt;/p&gt;
 
-&lt;h3&gt;&lt;a href=&quot;http://jade-lang.com/&quot;&gt;Jade&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a href=&quot;http://jade-lang.com/&quot; target=&quot;_blank&quot;&gt;Jade&lt;/a&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&quot;Node Template Engine&quot;&lt;/p&gt;
@@ -33,7 +33,7 @@
 
 &lt;p&gt;擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。&lt;/p&gt;
 
-&lt;h3&gt;&lt;a href=&quot;http://lesscss.org/&quot;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a href=&quot;http://lesscss.org/&quot; target=&quot;_blank&quot;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&quot;The dynamic stylesheet language&quot;&lt;/p&gt;
@@ -41,7 +41,7 @@
 
 &lt;p&gt;支援&lt;code&gt;Variable&lt;/code&gt;、&lt;code&gt;Mixin&lt;/code&gt;、&lt;code&gt;Nested Rule&lt;/code&gt;...等，並可以編譯成&lt;code&gt;CSS&lt;/code&gt;供瀏覽器使用。&lt;/p&gt;
 
-&lt;h3&gt;&lt;a href=&quot;http://coffeescript.org/&quot;&gt;CoffeeScript&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a href=&quot;http://coffeescript.org/&quot; target=&quot;_blank&quot;&gt;CoffeeScript&lt;/a&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&quot;CoffeeScript is a little language that compiles into JavaScript&quot;&lt;/p&gt;
@@ -51,7 +51,7 @@
 
 &lt;p&gt;它剛出來的時候超夯的，只是我一直都沒有去使用它。&lt;/p&gt;
 
-&lt;h3&gt;LiveReload&lt;/h3&gt;
+&lt;h3&gt;&lt;a href=&quot;http://livereload.com/&quot; target=&quot;_blank&quot;&gt;LiveReload&lt;/a&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&quot;a happy land where browsers don&#039;t need a Refresh button&quot;&lt;/p&gt;
@@ -61,7 +61,7 @@
 
 &lt;p&gt;它有很多的版本，這邊用到的是&lt;code&gt;NodeJS&lt;/code&gt;的版本。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/napcs/node-livereload&quot;&gt;node-livereload&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/napcs/node-livereload/&quot; target=&quot;_blank&quot;&gt;node-livereload&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;產生並修改專案&lt;/h2&gt;
 
@@ -157,7 +157,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 
 &lt;p&gt;最後別忘了幫瀏覽器安裝&lt;code&gt;LiveReload&lt;/code&gt;的&lt;code&gt;extension&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-&quot;&gt;Bowser Extension&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)&quot; target=&quot;_blank&quot;&gt;LiveReload Extensions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;結語&lt;/h2&gt;
 
@@ -229,7 +229,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>修正Ubuntu 13.10小紅點問題</title>
 		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
-		<id>urn:uuid:1800db0f-2d50-a64e-8678-957cb7328d37</id>
+		<id>urn:uuid:c46b1f8c-f240-a799-37f2-3b9c62937943</id>
 		<updated>2013-11-24T15:41:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -246,7 +246,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>Arch Linux - 基礎安裝</title>
 		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
-		<id>urn:uuid:1bdc1886-867e-3606-545f-e2cb69cfa9ee</id>
+		<id>urn:uuid:dc7c2021-81f6-5805-38f3-40a6f90a243b</id>
 		<updated>2013-09-19T10:11:46+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -265,7 +265,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:5d9b8836-8151-624c-b48a-37db5d2fc385</id>
+		<id>urn:uuid:cf918f54-a10c-fab7-609b-b50392c70ee0</id>
 		<updated>2013-08-13T01:04:43+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -284,7 +284,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:c2a5995b-6532-6598-7878-3fc5d9c035f6</id>
+		<id>urn:uuid:ce5ca46e-97d7-df87-5a35-a93500656bf5</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
