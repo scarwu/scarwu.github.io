@@ -40,6 +40,248 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2014/01/03/express-jade-less-coffee-with-livereload">Express + Jade/LESS/Coffee with LiveReload</a></h1>
+		<div class="info">
+			<div class="date">
+				<span class="icon icon-calendar"></span>
+				<a href="/archive/2014">2014-01-03</a>			</div>
+			<div class="category">
+				<span class="icon icon-folder-close"></span>
+				<a href="/category/IT">IT</a>			</div>
+			<div class="tag">
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/NodeJS">NodeJS</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/JavaScript">JavaScript</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Express">Express</a></span>
+				<br />
+							</div>
+			<div class="comments">
+				<span class="icon icon-comment"></span>
+				<a href="/article/2014/01/03/express-jade-less-coffee-with-livereload/#disqus_thread">0 Comment</a>
+			</div>
+			<hr>
+			<div class="social_tool">
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			</div>
+		</div>
+		<div class="content"><h2>廢話</h2>
+
+<p>2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！</p>
+
+<p>平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用<code>Express</code>來搭配其它東西來開發網站。這邊用到的套件有<code>Jade</code>、<code>LESS</code>、<code>CoffeeScript</code>以及<code>LiveReload</code>。</p>
+
+<h3><a href="http://expressjs.com/">Express</a></h3>
+
+<blockquote>
+  <p>"web applicaion framework for node"</p>
+</blockquote>
+
+<p>可用於建立網站應用程式。是一套流行的<code>NodeJS</code>套件。</p>
+
+<h3><a href="http://jade-lang.com/">Jade</a></h3>
+
+<blockquote>
+  <p>"Node Template Engine"</p>
+</blockquote>
+
+<p>擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。</p>
+
+<h3><a href="http://lesscss.org/">LESS</a></h3>
+
+<blockquote>
+  <p>"The dynamic stylesheet language"</p>
+</blockquote>
+
+<p>支援<code>Variable</code>、<code>Mixin</code>、<code>Nested Rule</code>...等，並可以編譯成<code>CSS</code>供瀏覽器使用。</p>
+
+<h3><a href="http://coffeescript.org/">CoffeeScript</a></h3>
+
+<blockquote>
+  <p>"CoffeeScript is a little language that compiles into JavaScript"</p>
+</blockquote>
+
+<p>它將<code>JavaScript</code>的語法簡化，並提供一些新的特性來強化，可產生出符合規定且嚴謹的<code>JavaScript</code>程式碼。</p>
+
+<p>它剛出來的時候超夯的，只是我一直都沒有去使用它。</p>
+
+<h3>LiveReload</h3>
+
+<blockquote>
+  <p>"a happy land where browsers don't need a Refresh button"</p>
+</blockquote>
+
+<p>寫網頁最常做的事情就是不斷、不斷、不斷的Refresh頁面，它可以在檔案存檔的當下就自動幫你更新頁面，讓你可以即時看見更改後的結果。</p>
+
+<p>它有很多的版本，這邊用到的是<code>NodeJS</code>的版本。</p>
+
+<p><a href="https://github.com/napcs/node-livereload">node-livereload</a></p>
+
+<h2>產生並修改專案</h2>
+
+<p><code>Express</code>本身預設的樣板引擎是<code>Jade</code>，另外內建就能支援<code>LESS</code>的middleware，在指令中加入參數<code>-c less</code>就可以了。</p>
+
+<pre><code class="bash">express -c less /path/to/project
+cd /path/to/project
+
+vim .package.json
+</code></pre>
+
+<h3>package.json</h3>
+
+<p>接著修改<code>package.json</code>，加入<code>connect-coffee-script</code>、<code>livereload</code>套件設定。</p>
+
+<pre><code class="json">{
+    "name": "application-name",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "3.4.7",
+        "jade": "*",
+        "less-middleware": "*"
+        "connect-coffee-script": "*",
+        "livereload": "*"
+    }
+}
+</code></pre>
+
+<p>最後就可以用<code>npm</code>安裝套件了。</p>
+
+<pre><code class="bash">npm install
+</code></pre>
+
+<h3>app.js</h3>
+
+<p>接下來開始修改<code>app.js</code>。</p>
+
+<p>首先修改<code>LESS Middleware</code>的設定，將輸出<code>CSS</code>檔案的資料夾設定到<code>/tmp</code>，並且將壓縮設定開啟。</p>
+
+<p>接著加入<code>CoffeeScript Middleware</code>的設定，同樣也是指定輸出資料夾為<code>/tmp</code>。最後將剛剛的輸出路徑<code>/tmp</code>加入到靜態檔案的路徑中。</p>
+
+<p>將<code>Middleware</code>輸出檔案的路徑指定到<code>/tmp</code>有個好處，這樣設定<code>Git Ignore</code>就可以直接忽略掉這個資料夾，而且輸出的檔案也不會跟原始檔案混雜。</p>
+
+<pre><code class="javascript">...
+
+app.use(require('less-middleware') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp'),
+    compress: true
+}));
+app.use(require('connect-coffee-script') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp')
+}));
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'tmp')));
+
+...
+</code></pre>
+
+<p>加入新的<code>Route rules</code>讓<code>LESS</code>及<code>CoffeeScript</code>的原始檔無法被讀取。</p>
+
+<pre><code class="javascript">...
+
+app.all('*.(coffee|less)', function (req, res) {
+    res.send(404);
+});
+app.get('/', routes.index);
+app.get('/users', user.list);
+
+...
+</code></pre>
+
+<p>加入<code>LiveReload</code>的設定，讓它能夠認得<code>Jade</code>、<code>LESS</code>以及<code>CoffeeScript</code>的支援。
+<code>Jade</code>是放在<code>/views</code>裡，而<code>LESS</code>、<code>CoffeeScript</code>則是放在<code>/public</code>裡，所以讓s<code>LiveReload</code>個別去監聽資料夾內檔案的變化。</p>
+
+<pre><code class="javascript">...
+
+var livereload = require('livereload').createServer({
+    exts: ['jade', 'less', 'coffee']
+});
+
+livereload.watch(__dirname + '/public');
+livereload.watch(__dirname + '/views');
+
+...
+</code></pre>
+
+<p>最後別忘了幫瀏覽器安裝<code>LiveReload</code>的<code>extension</code>。</p>
+
+<p><a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">Bowser Extension</a></p>
+
+<h2>結語</h2>
+
+<p>最後只要將<code>express</code>啟動，並將瀏覽器的<code>LiveReload Extension</code>連線打它就可以開始開發了。</p>
+
+<p>下面是<code>app.js</code>完整的檔案。</p>
+
+<pre><code class="javascript">var express = require('express');
+var routes = require('./routes');
+var user = require('./routes/user');
+var http = require('http');
+var path = require('path');
+
+var app = express();
+
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+app.use(app.router);
+
+app.use(require('less-middleware') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp'),
+    compress: true
+}));
+app.use(require('connect-coffee-script') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp')
+}));
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'tmp')));
+
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+}
+
+app.all('*.(coffee|less)', function (req, res) {
+    res.send(404);
+});
+app.get('/', routes.index);
+app.get('/users', user.list);
+
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
+
+// LiveReload
+var livereload = require('livereload').createServer({
+    exts: ['jade', 'less', 'coffee']
+});
+
+livereload.watch(__dirname + '/public');
+livereload.watch(__dirname + '/views');
+</code></pre>
+</div>
+		<a class="more" href="/article/2014/01/03/express-jade-less-coffee-with-livereload">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2013/11/24/fix-ubuntu-trakpoint-problem">修正Ubuntu 13.10小紅點問題</a></h1>
 		<div class="info">
 			<div class="date">
@@ -202,48 +444,12 @@
 </div>
 		<a class="more" href="/article/2013/05/30/observe-and-using-node-js-stream-event">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi">用Raspberry Pi玩PS遊戲</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2013">2013-05-29</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Linux">Linux</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Raspberry%20Pi">Raspberry Pi</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><h2>前言</h2>
-
-<p>Raspberry Pi小巧好用拿來打電動很剛好，當作PS遊戲模擬器也是游刃有餘。</p>
-
-<p>所以在這邊紀錄如何在Raspberry Pi上安裝PCSX ReARMed，它是我們所熟知的PS模擬器PCSX，但它是針對ARM CPU的特製版。</p>
-
-</div>
-		<a class="more" href="/article/2013/05/29/playing-ps-game-with-raspberry-pi">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 					</span>
 		<span class="old">
 			<a href="/page/2">Older Posts >></a>		</span>
-		<span class="count">1 / 6</span>
+		<span class="count">1 / 7</span>
 	</div>
 </div>
 <script type="text/javascript">
@@ -307,6 +513,7 @@
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
+				<span class="item"><a href="/archive/2014">2014(1)</a></span>
 				<span class="item"><a href="/archive/2013">2013(14)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
@@ -314,41 +521,42 @@
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(28)</a></span>
+				<span class="item"><a href="/category/IT">IT(29)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 				<span class="item"><a href="/category/Life">Life(1)</a></span>
 			</div>
 </div><div class="tag">
 	<div class="title"><a href="/tag">Tag</a></div>
 	<div class="content">
-				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
 				<span class="item"><a href="/tag/Note">Note(14)</a></span>
-				<span class="item"><a href="/tag/JavaScript">JavaScript(6)</a></span>
+				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
+				<span class="item"><a href="/tag/JavaScript">JavaScript(7)</a></span>
 				<span class="item"><a href="/tag/Linux">Linux(6)</a></span>
 				<span class="item"><a href="/tag/Ubuntu">Ubuntu(4)</a></span>
+				<span class="item"><a href="/tag/NodeJS">NodeJS(3)</a></span>
 				<span class="item"><a href="/tag/Android">Android(3)</a></span>
 				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
-				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
-				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
-				<span class="item"><a href="/tag/Works">Works(2)</a></span>
 				<span class="item"><a href="/tag/Python">Python(2)</a></span>
+				<span class="item"><a href="/tag/Works">Works(2)</a></span>
+				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
+				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
 				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
-				<span class="item"><a href="/tag/NodeJS">NodeJS(2)</a></span>
+				<span class="item"><a href="/tag/Arch%20Linux">Arch Linux(1)</a></span>
 				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
 				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
-				<span class="item"><a href="/tag/Arch%20Linux">Arch Linux(1)</a></span>
 				<span class="item"><a href="/tag/ThinkPad">ThinkPad(1)</a></span>
+				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
 				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
 				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
-				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
 				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
 				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
-				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
-				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
 				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
+				<span class="item"><a href="/tag/Express">Express(1)</a></span>
+				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
+				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
+				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
 				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
 				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
-				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
 				<span class="item"><a href="/tag/3C">3C(1)</a></span>
 			</div>
 </div>		</div>
