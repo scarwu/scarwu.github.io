@@ -4,19 +4,224 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:62822cc5-6732-feca-c13d-d93ade1a42c5</id>
-	<updated>2014-01-07T15:19:16+08:00</updated>
+	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
+	<updated>2014-01-08T00:12:25+08:00</updated>
 	<entry>
 		<title>Express + Jade/LESS/Coffee with LiveReload</title>
 		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
-		<id>urn:uuid:1f3e9fa4-41b2-b07b-75eb-988c0c843cba</id>
-		<updated>2014-01-03T11:23:52+08:00</updated>
+		<id>urn:uuid:e6b3a8b3-2368-4ead-4c48-8048c7cf69df</id>
+		<updated>2014-01-08T00:12:25+08:00</updated>
 		<summary type="html">&lt;h2&gt;廢話&lt;/h2&gt;
 
 &lt;p&gt;2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！&lt;/p&gt;
 
 &lt;p&gt;平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用&lt;code&gt;Express&lt;/code&gt;來搭配其它東西來開發網站。這邊用到的套件有&lt;code&gt;Jade&lt;/code&gt;、&lt;code&gt;LESS&lt;/code&gt;、&lt;code&gt;CoffeeScript&lt;/code&gt;以及&lt;code&gt;LiveReload&lt;/code&gt;。&lt;/p&gt;
 
+&lt;!--more--&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot;&gt;Express&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&quot;web applicaion framework for node&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可用於建立網站應用程式。是一套流行的&lt;code&gt;NodeJS&lt;/code&gt;套件。&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://jade-lang.com/&quot; target=&quot;_blank&quot;&gt;Jade&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&quot;Node Template Engine&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://lesscss.org/&quot; target=&quot;_blank&quot;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&quot;The dynamic stylesheet language&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;支援&lt;code&gt;Variable&lt;/code&gt;、&lt;code&gt;Mixin&lt;/code&gt;、&lt;code&gt;Nested Rule&lt;/code&gt;...等，並可以編譯成&lt;code&gt;CSS&lt;/code&gt;供瀏覽器使用。&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://coffeescript.org/&quot; target=&quot;_blank&quot;&gt;CoffeeScript&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&quot;CoffeeScript is a little language that compiles into JavaScript&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;它將&lt;code&gt;JavaScript&lt;/code&gt;的語法簡化，並提供一些新的特性來強化，可產生出符合規定且嚴謹的&lt;code&gt;JavaScript&lt;/code&gt;程式碼。&lt;/p&gt;
+
+&lt;p&gt;它剛出來的時候超夯的，只是我一直都沒有去使用它。&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://livereload.com/&quot; target=&quot;_blank&quot;&gt;LiveReload&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&quot;a happy land where browsers don&#039;t need a Refresh button&quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;寫網頁最常做的事情就是不斷、不斷、不斷的Refresh頁面，它可以在檔案存檔的當下就自動幫你更新頁面，讓你可以即時看見更改後的結果。&lt;/p&gt;
+
+&lt;p&gt;它有很多的版本，這邊用到的是&lt;code&gt;NodeJS&lt;/code&gt;的版本。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/napcs/node-livereload/&quot; target=&quot;_blank&quot;&gt;node-livereload&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;產生並修改專案&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Express&lt;/code&gt;本身預設的樣板引擎是&lt;code&gt;Jade&lt;/code&gt;，另外內建就能支援&lt;code&gt;LESS&lt;/code&gt;的middleware，在指令中加入參數&lt;code&gt;-c less&lt;/code&gt;就可以了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;express -c less /path/to/project
+cd /path/to/project
+
+vim .package.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;package.json&lt;/h3&gt;
+
+&lt;p&gt;接著修改&lt;code&gt;package.json&lt;/code&gt;，加入&lt;code&gt;connect-coffee-script&lt;/code&gt;、&lt;code&gt;livereload&lt;/code&gt;套件設定。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;{
+    &quot;name&quot;: &quot;application-name&quot;,
+    &quot;version&quot;: &quot;0.0.1&quot;,
+    &quot;private&quot;: true,
+    &quot;scripts&quot;: {
+        &quot;start&quot;: &quot;node app.js&quot;
+    },
+    &quot;dependencies&quot;: {
+        &quot;express&quot;: &quot;3.4.7&quot;,
+        &quot;jade&quot;: &quot;*&quot;,
+        &quot;less-middleware&quot;: &quot;*&quot;
+        &quot;connect-coffee-script&quot;: &quot;*&quot;,
+        &quot;livereload&quot;: &quot;*&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最後就可以用&lt;code&gt;npm&lt;/code&gt;安裝套件了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;app.js&lt;/h3&gt;
+
+&lt;p&gt;接下來開始修改&lt;code&gt;app.js&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;首先修改&lt;code&gt;LESS Middleware&lt;/code&gt;的設定，將輸出&lt;code&gt;CSS&lt;/code&gt;檔案的資料夾設定到&lt;code&gt;/tmp&lt;/code&gt;，並且將壓縮設定開啟。&lt;/p&gt;
+
+&lt;p&gt;接著加入&lt;code&gt;CoffeeScript Middleware&lt;/code&gt;的設定，同樣也是指定輸出資料夾為&lt;code&gt;/tmp&lt;/code&gt;。最後將剛剛的輸出路徑&lt;code&gt;/tmp&lt;/code&gt;加入到靜態檔案的路徑中。&lt;/p&gt;
+
+&lt;p&gt;將&lt;code&gt;Middleware&lt;/code&gt;輸出檔案的路徑指定到&lt;code&gt;/tmp&lt;/code&gt;有個好處，這樣設定&lt;code&gt;Git Ignore&lt;/code&gt;就可以直接忽略掉這個資料夾，而且輸出的檔案也不會跟原始檔案混雜。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
+
+app.use(require(&#039;less-middleware&#039;) ({ 
+    src: path.join(__dirname, &#039;public&#039;),
+    dest: path.join(__dirname, &#039;tmp&#039;),
+    compress: true
+}));
+app.use(require(&#039;connect-coffee-script&#039;) ({ 
+    src: path.join(__dirname, &#039;public&#039;),
+    dest: path.join(__dirname, &#039;tmp&#039;)
+}));
+
+app.use(express.static(path.join(__dirname, &#039;public&#039;)));
+app.use(express.static(path.join(__dirname, &#039;tmp&#039;)));
+
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;加入新的&lt;code&gt;Route rules&lt;/code&gt;讓&lt;code&gt;LESS&lt;/code&gt;及&lt;code&gt;CoffeeScript&lt;/code&gt;的原始檔無法被讀取。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
+
+app.all(&#039;*.(coffee|less)&#039;, function (req, res) {
+    res.send(404);
+});
+app.get(&#039;/&#039;, routes.index);
+app.get(&#039;/users&#039;, user.list);
+
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;加入&lt;code&gt;LiveReload&lt;/code&gt;的設定，讓它能夠認得&lt;code&gt;Jade&lt;/code&gt;、&lt;code&gt;LESS&lt;/code&gt;以及&lt;code&gt;CoffeeScript&lt;/code&gt;的支援。
+&lt;code&gt;Jade&lt;/code&gt;是放在&lt;code&gt;/views&lt;/code&gt;裡，而&lt;code&gt;LESS&lt;/code&gt;、&lt;code&gt;CoffeeScript&lt;/code&gt;則是放在&lt;code&gt;/public&lt;/code&gt;裡，所以讓s&lt;code&gt;LiveReload&lt;/code&gt;個別去監聽資料夾內檔案的變化。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
+
+var livereload = require(&#039;livereload&#039;).createServer({
+    exts: [&#039;jade&#039;, &#039;less&#039;, &#039;coffee&#039;]
+});
+
+livereload.watch(__dirname + &#039;/public&#039;);
+livereload.watch(__dirname + &#039;/views&#039;);
+
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最後別忘了幫瀏覽器安裝&lt;code&gt;LiveReload&lt;/code&gt;的&lt;code&gt;extension&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)&quot; target=&quot;_blank&quot;&gt;LiveReload Extensions&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;結語&lt;/h2&gt;
+
+&lt;p&gt;最後只要將&lt;code&gt;express&lt;/code&gt;啟動，並將瀏覽器的&lt;code&gt;LiveReload Extension&lt;/code&gt;連線打它就可以開始開發了。&lt;/p&gt;
+
+&lt;p&gt;下面是&lt;code&gt;app.js&lt;/code&gt;完整的檔案。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var express = require(&#039;express&#039;);
+var routes = require(&#039;./routes&#039;);
+var user = require(&#039;./routes/user&#039;);
+var http = require(&#039;http&#039;);
+var path = require(&#039;path&#039;);
+
+var app = express();
+
+// all environments
+app.set(&#039;port&#039;, process.env.PORT || 3000);
+app.set(&#039;views&#039;, path.join(__dirname, &#039;views&#039;));
+app.set(&#039;view engine&#039;, &#039;jade&#039;);
+app.use(express.favicon());
+app.use(express.logger(&#039;dev&#039;));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+app.use(app.router);
+
+app.use(require(&#039;less-middleware&#039;) ({ 
+    src: path.join(__dirname, &#039;public&#039;),
+    dest: path.join(__dirname, &#039;tmp&#039;),
+    compress: true
+}));
+app.use(require(&#039;connect-coffee-script&#039;) ({ 
+    src: path.join(__dirname, &#039;public&#039;),
+    dest: path.join(__dirname, &#039;tmp&#039;)
+}));
+
+app.use(express.static(path.join(__dirname, &#039;public&#039;)));
+app.use(express.static(path.join(__dirname, &#039;tmp&#039;)));
+
+// development only
+if (&#039;development&#039; == app.get(&#039;env&#039;)) {
+  app.use(express.errorHandler());
+}
+
+app.all(&#039;*.(coffee|less)&#039;, function (req, res) {
+    res.send(404);
+});
+app.get(&#039;/&#039;, routes.index);
+app.get(&#039;/users&#039;, user.list);
+
+http.createServer(app).listen(app.get(&#039;port&#039;), function(){
+  console.log(&#039;Express server listening on port &#039; + app.get(&#039;port&#039;));
+});
+
+// LiveReload
+var livereload = require(&#039;livereload&#039;).createServer({
+    exts: [&#039;jade&#039;, &#039;less&#039;, &#039;coffee&#039;]
+});
+
+livereload.watch(__dirname + &#039;/public&#039;);
+livereload.watch(__dirname + &#039;/views&#039;);
+&lt;/code&gt;&lt;/pre&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
@@ -26,14 +231,61 @@
 	<entry>
 		<title>修正Ubuntu 13.10小紅點問題</title>
 		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
-		<id>urn:uuid:21ccb3ec-bcbc-d4a9-2c2d-10fc285be864</id>
-		<updated>2013-11-24T15:41:34+08:00</updated>
+		<id>urn:uuid:16b2685d-ee94-918a-fa81-480de55bdf41</id>
+		<updated>2014-01-08T00:12:25+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;上次才說把筆電的作業系統換成&lt;code&gt;Arch Linux&lt;/code&gt;，由於某些因素現在又換回&lt;code&gt;Ubuntu&lt;/code&gt;了...這次想說換成新版的&lt;code&gt;Ubuntu&lt;/code&gt;，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。&lt;/p&gt;
 
 &lt;p&gt;這次一定要把它修好，小紅點中鍵滾輪這樣好用的東西變成半殘可不是辦法，請示過Google大神找了一些文章，其實大部分也滿零散的，所以我在這邊依照我實際遇到的問題整理一下。&lt;/p&gt;
 
+&lt;!--more--&gt;
+
+&lt;h2&gt;問題修正&lt;/h2&gt;
+
+&lt;h3&gt;修正小紅點滾輪&lt;/h3&gt;
+
+&lt;p&gt;我的&lt;code&gt;ThinkPad&lt;/code&gt;是後期出的&lt;code&gt;Edge&lt;/code&gt;系列，所以他的&lt;code&gt;TrackPoint&lt;/code&gt;在系統的變名稱上也跟歷代的&lt;code&gt;TPPS/2 IBM TrackPoint&lt;/code&gt;不同，我的&lt;code&gt;E420s&lt;/code&gt;的&lt;code&gt;TrackPoint&lt;/code&gt;在系統中顯示的是&lt;code&gt;PS/2 Generic Mouse&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;只要將&lt;code&gt;PS/2 Generic Mouse&lt;/code&gt;填入&lt;code&gt;/usr/share/X11/xorg.conf.d/11-evdev-trackpoint.conf&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# trackpoint users want wheel emulation
+
+Section &quot;InputClass&quot;
+    Identifier  &quot;trackpoint catchall&quot;
+    MatchIsPointer  &quot;true&quot;
+    MatchProduct    &quot;TrackPoint|DualPoint Stick|PS/2 Generic Mouse&quot;
+    MatchDevicePath &quot;/dev/input/event*&quot;
+    Option  &quot;Emulate3Buttons&quot;   &quot;true&quot;
+    Option  &quot;EmulateWheel&quot;  &quot;true&quot;
+    Option  &quot;EmulateWheelButton&quot;    &quot;2&quot;
+    Option  &quot;XAxisMapping&quot;  &quot;6 7&quot;
+    Option  &quot;YAxisMapping&quot;  &quot;4 5&quot;
+EndSection
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;修正小紅點失靈&lt;/h3&gt;
+
+&lt;p&gt;這問題從我在使用&lt;code&gt;Ubuntu 12.04&lt;/code&gt;的時候就時常發生，通常只要重新開機或者是將無線滑鼠拔插一下又或者是按幾下&lt;code&gt;TrackPoint&lt;/code&gt;的左右鍵就可恢復。&lt;/p&gt;
+
+&lt;p&gt;主要的問題在於小紅點的驅動載入有問題，所以需要等待，也可能是因為這樣所以會被辨識成&lt;code&gt;PS/2 Generic Mouse&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;要修復這種情形很簡單，只要把&lt;code&gt;/etc/modprobe.d/trackpoint-elantech.conf&lt;/code&gt;填入以下內容即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;options psmouse proto=bare
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然後執行指令&lt;code&gt;sudo modprobe -rv psmouse &amp;amp;&amp;amp; sudo modprobe -v psmouse&lt;/code&gt;或是重新開機就完成了。&lt;/p&gt;
+
+&lt;p&gt;不過這樣作還是有缺點，使用這種解決方案會使得沒辦法取消觸控版，那這樣我還是慢慢等小紅點的驅動載入。&lt;/p&gt;
+
+&lt;h3&gt;取消觸控版功能&lt;/h3&gt;
+
+&lt;p&gt;最後就是把實在是有夠難用的觸控版關閉的時候了，利用系統內建的&lt;code&gt;Mouse &amp;amp; Touchpad&lt;/code&gt;把&lt;code&gt;Touchpad&lt;/code&gt;的開關關閉就行了。&lt;/p&gt;
+
+&lt;h2&gt;結語&lt;/h2&gt;
+
+&lt;p&gt;這樣小紅點終於不是半殘，星爺表示：大師兄回來了！&lt;/p&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
@@ -43,8 +295,8 @@
 	<entry>
 		<title>Arch Linux - 基礎安裝</title>
 		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
-		<id>urn:uuid:ef047a43-e0f9-14fc-dcbf-bafc81371728</id>
-		<updated>2013-09-19T10:11:46+08:00</updated>
+		<id>urn:uuid:af9a94f9-13f3-998b-2ac7-a10d42f97e9e</id>
+		<updated>2014-01-08T00:12:25+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;自從&lt;code&gt;Ubuntu 5.04&lt;/code&gt;開始我就一直使用Ubuntu系列的相關發行版，但是這幾年下來它真的是越來越肥大，且多了許多不必要的預設程式。而身為一個Linux使用者以及相關開發者的我來說，當然希望自己所使用的環境越簡單越好、甚至能夠完全掌握。&lt;/p&gt;
@@ -53,6 +305,147 @@
 
 &lt;p&gt;這邊我將我的安裝過程整理出來。&lt;/p&gt;
 
+&lt;!--more--&gt;
+
+&lt;h2&gt;初始設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 讀取鍵盤對應表
+loadkeys us
+
+# 設定DHCP網路
+dhcpcd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;基本上網路的設定，視個人的網路環境而定，可以參照 &lt;a href=&quot;https://wiki.archlinux.org/index.php/Configuring_network&quot;&gt;Network Configuration&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2&gt;硬碟分割&lt;/h2&gt;
+
+&lt;p&gt;每個人的環境不同，硬碟的分配方式也會不同，在這邊只有基礎的切割。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 切割 partition
+fdisk /dev/sda
+
+# 格式化 partition，這邊是格式化成Ext4
+mkfs.ext4 /dev/sda1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;基礎系統安裝&lt;/h2&gt;
+
+&lt;p&gt;將硬碟設定完成之後就可以開始安裝&lt;code&gt;Arch Linux&lt;/code&gt;的基礎系統了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 掛載磁碟分割區
+mount -t ext4 /dev/sda1 /mnt
+
+# 安裝基礎資料
+pacstrap /mnt base
+
+# 開啟Swap磁區
+swapon -s
+
+# 更新檔案系統列表
+genfstab -p /mnt &amp;gt; /mnt/etc/fstab
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;安裝基礎套件&lt;/h2&gt;
+
+&lt;p&gt;我在這邊只有列了幾個我常用到的套件，有需要的話可以自行加入並安裝。&lt;/p&gt;
+
+&lt;p&gt;要找套件可以使用&lt;code&gt;pacman -Ss &amp;lt;package&amp;gt;&lt;/code&gt;指令。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 切換系統根目錄
+arch-root /mnt
+
+# 安裝基礎套件
+pacman -Syu
+pacman -S vim git zsh wget mlocate openssh sudo net-tools grub
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;系統設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 修改主機名稱
+vim /etc/hostname
+
+# 修改系統時區，在這邊我設定的是台北時間
+ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
+# 新增系統語系
+# 把 local.gen 中的 en-US.UTF8, zh-TW.UTF8, zh-TW.Big5 前面的井字號移除
+vim /etc/local.gen
+locale-gen
+
+# 修改系統語系
+vim /etc/locale.conf
+
+# 加入這兩行
+LANG=en-US.UTF8
+LC_COLLATE=C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;設定使用者帳號&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 加入新使用者定設定密碼
+useradd &amp;lt;username&amp;gt;
+passwd &amp;lt;username&amp;gt;
+
+# 將使用者加入sudoer清單
+vim /etc/sudoers
+
+# 加入此行
+&amp;lt;username&amp;gt; ALL=(ALL) ALL
+
+# 為了安全起見請設定root密碼
+passwd root
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;安裝開機引導程式&lt;/h2&gt;
+
+&lt;p&gt;我習慣使用&lt;code&gt;GRUB&lt;/code&gt;當作我的開機引導程式。&lt;/p&gt;
+
+&lt;p&gt;如果在這邊安裝&lt;code&gt;GRUB&lt;/code&gt;後還是無法開機的話可以參考 &lt;a href=&quot;https://wiki.archlinux.org/index.php/GRUB&quot;&gt;GRUB&lt;/a&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;modprobe dm-mod
+mkinitcpio -p linux
+grub-mkconfig &amp;gt; /boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;安裝 yaourt (Yet AnOther User Repository Tool)&lt;/h2&gt;
+
+&lt;p&gt;yaourt能夠自動抓取AUR(Arch User Repository)上的套件並且安裝，讓使用者不用手動安裝AUR上的套件。&lt;/p&gt;
+
+&lt;p&gt;請參考 &lt;a href=&quot;https://wiki.archlinux.org/index.php/AUR&quot;&gt;AUR&lt;/a&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;vim /etc/pacman.conf
+
+# 加入以下三行
+[archlinuxfr]
+Server = http://repo.archlinux.fr/x86_64
+SigLevel = Optional TrustAll
+
+# 更新pacman套件庫並安裝yaourt
+pacman -Syu
+pacman -S yaourt base-devel
+
+# 使用yaourt更新系統
+yaourt -Syua
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;完成&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;exit
+sync
+
+# 卸載硬碟分割區
+umount /mnt
+
+# 重新啟動系統
+reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到此就完成了基礎的系統安裝，然後重新開機後你將得......一個黑白畫面。&lt;/p&gt;
+
+&lt;p&gt;接下來還要安裝桌面環境，而在&lt;code&gt;Arch Linux&lt;/code&gt;中一樣有常見的&lt;code&gt;Gnome&lt;/code&gt;、&lt;code&gt;KDE&lt;/code&gt;等桌面環境可以安裝。&lt;/p&gt;
+
+&lt;p&gt;桌面環境安裝在下次的安裝紀錄中會提到。&lt;/p&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
@@ -62,8 +455,8 @@
 	<entry>
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:0501cfa2-b52d-ecf4-cf86-2866df2ba3ac</id>
-		<updated>2013-08-13T01:04:43+08:00</updated>
+		<id>urn:uuid:88490577-9856-a9b4-2f97-512a7affb71d</id>
+		<updated>2014-01-08T00:12:25+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;Hadoop這套工具主要用做於平行運算，它其中包含兩個部份&lt;code&gt;MapReduce&lt;/code&gt;以及&lt;code&gt;HDFS&lt;/code&gt;。&lt;/p&gt;
@@ -72,6 +465,172 @@
 
 &lt;p&gt;由於某些原因必須使用到&lt;code&gt;Hadoop&lt;/code&gt;中的&lt;code&gt;HDFS&lt;/code&gt;來測試一些項目所以這邊就粗略紀錄一下&lt;code&gt;Hadoop&lt;/code&gt;的安裝過程。&lt;/p&gt;
 
+&lt;!--more--&gt;
+
+&lt;h2&gt;JDK安裝&lt;/h2&gt;
+
+&lt;p&gt;由於Hadoop本身是使用&lt;code&gt;Java&lt;/code&gt;來實作，所以在執行Hadoop之前我們必須先行安裝&lt;code&gt;Java Development Kit(JDK)&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3&gt;下載JDK&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;JDK Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;根據你所使用的作業系統去選擇版本，在這邊我是用的是&lt;code&gt;Ubuntu Linux 64bit&lt;/code&gt;的版本。&lt;/p&gt;
+
+&lt;p&gt;將JDK下載下來後，將JDK解壓縮到你想放置的位置，一般來說都會放在&lt;code&gt;/opt&lt;/code&gt;目錄底下。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;tar zxvf jdk-7u25-linux-x64.tar.gz
+sudo mv jdk-7u25-linux-x64 /opt/jdk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;修改環境變數&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 修改
+sudo vim /etc/environment
+
+# 填入以下內容
+PATH=$PATH:&quot;/opt/jdk/bin&quot;
+CLASS_PATH=&quot;/opt/jdk/lib&quot;
+JAVA_HOME=&quot;/opt/jdk&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;只要上面的指令能顯示出正確版號，就已經完成JDK的設定了。&lt;/p&gt;
+
+&lt;h2&gt;Hadoop安裝與設定&lt;/h2&gt;
+
+&lt;p&gt;在實際的環境中我使用到了3台虛擬機器當作節點，所以以下是多節點的設定。&lt;/p&gt;
+
+&lt;h3&gt;下載Hadoop&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/hadoop/common/&quot;&gt;Hadoop Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hadoop目前分為幾個版次，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.1.X - current stable version, 1.1 release&lt;/li&gt;
+&lt;li&gt;1.2.X - current beta version, 1.2 release&lt;/li&gt;
+&lt;li&gt;2.X.X - current alpha version&lt;/li&gt;
+&lt;li&gt;0.23.X - simmilar to 2.X.X but missing NN HA.&lt;/li&gt;
+&lt;li&gt;0.22.X - does not include security&lt;/li&gt;
+&lt;li&gt;0.20.203.X - old legacy stable version&lt;/li&gt;
+&lt;li&gt;0.20.X - old legacy version&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一般來說我們選擇&lt;code&gt;Stable Version&lt;/code&gt;就可以了，Hadoop下載完成後一樣可以解壓縮放置在&lt;code&gt;/opt&lt;/code&gt;下。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;tar zxvf hadoop-1.1.2.tar.gz
+sudo mv hadoop-1.1.2 /opt/hadoop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;修改環境變數&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 修改
+sudo vim /etc/environment
+
+# 填入以下內容
+PATH=$PATH:&quot;/opt/hadoop/bin&quot;
+HADOOP_HOME=&quot;/opt/hadoop&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;修改Hadoop設定檔&lt;/h3&gt;
+
+&lt;h4&gt;/opt/hadoop/conf/hadoop-env.sh&lt;/h4&gt;
+
+&lt;p&gt;設定Hadoop的啟動環境，在檔案中修改這一行加入&lt;code&gt;JAVA_HOME&lt;/code&gt;的路徑。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;export JAVA_HOME=/opt/jdk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果執行後會出現&lt;code&gt;$HADOOP_HOME is deprecated&lt;/code&gt;可以加入下面這一行。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;export HADOOP_HOME_WARN_SUPPRESS=&quot;TRUE&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;/etc/hosts&lt;/h4&gt;
+
+&lt;p&gt;設定&lt;code&gt;Host Name&lt;/code&gt;與&lt;code&gt;IP&lt;/code&gt;的對應，另外SSH的&lt;code&gt;Authorized Keys&lt;/code&gt;就自行設定吧。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;192.168.1.1 node01
+192.168.1.2 node02
+192.168.1.3 node03
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;/opt/hadoop/conf/core-site.xml&lt;/h4&gt;
+
+&lt;p&gt;設定HDFS的&lt;code&gt;Name Node&lt;/code&gt;設定給node01以及Hadoop的暫存路徑。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;configuration&amp;gt;
+  &amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;fs.default.name&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;hdfs://node01:9000&amp;lt;/value&amp;gt;
+  &amp;lt;/property&amp;gt;
+  &amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;hadoop.tmp.dir&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;/tmp/hadoop/hadoop-${user.name}&amp;lt;/value&amp;gt;
+    &amp;lt;description&amp;gt;A base for other temporary directories.&amp;lt;/description&amp;gt;
+  &amp;lt;/property&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;/opt/hadoop/conf/hdfs-site.xml&lt;/h4&gt;
+
+&lt;p&gt;設定&lt;code&gt;HDFS&lt;/code&gt;的檔案複製數量。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;configuration&amp;gt;
+  &amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;dfs.replication&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;3&amp;lt;/value&amp;gt;
+  &amp;lt;/property&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;/opt/hadoop/conf/mapred-site.xml&lt;/h4&gt;
+
+&lt;p&gt;指定Job Tracker的位置，設定&lt;code&gt;node01&lt;/code&gt;當作master。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;configuration&amp;gt;
+  &amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;mapred.job.tracker&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;node01:9001&amp;lt;/value&amp;gt;
+  &amp;lt;/property&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;master&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;txt&quot;&gt;node01
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;slave&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;txt&quot;&gt;node02
+node03
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;啟動&lt;/h3&gt;
+
+&lt;p&gt;當上面的設定都結束之後，就可以用&lt;code&gt;rsync&lt;/code&gt;將&lt;code&gt;/opt/hadoop&lt;/code&gt;的檔案同步到各個節點上了。&lt;/p&gt;
+
+&lt;p&gt;接著可以使用以下指令檢查Hadoop的版本。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;hadoop version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在第一次啟動Hadoop之前必須先格式化HDFS。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;hadoop namenode -format
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接著啟動Hadoop。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;start-all.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;打完收工&lt;/h2&gt;
+
+&lt;p&gt;在這篇就單純紀錄安裝Hadoop的一些過程，但實際上我使用到的部份就只有HDFS，MapReduce的話目前沒有能夠拿來算的數據。&lt;/p&gt;
+
+&lt;p&gt;另外最近有點忙網誌已經很久沒動了，而且最近光打這篇紀錄就拖了半個月以上。&lt;/p&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
@@ -81,14 +640,237 @@
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:65bf0103-8268-be86-d896-d1de00cf04c0</id>
-		<updated>2013-05-30T15:57:01+08:00</updated>
+		<id>urn:uuid:3233ec66-3dad-f080-6331-f7aeb7cde17c</id>
+		<updated>2014-01-08T00:12:25+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;在NodeJS使用廣泛的就是&lt;code&gt;Event-driven&lt;/code&gt;的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。&lt;/p&gt;
 
 &lt;p&gt;所以今天的主題為NodeJS中Stream的行為觀察，在先前專案中大量使用Stream的功能，所以這邊就寫下一些使用心得。&lt;/p&gt;
 
+&lt;!--more--&gt;
+
+&lt;h2&gt;Stream模組簡介&lt;/h2&gt;
+
+&lt;p&gt;Stream是一個NodeJS中的模組，主要用作於資料的讀寫，它可以被其它的模組所繼承，而成為該模組的一部分基礎。&lt;/p&gt;
+
+&lt;h3&gt;Stream的種類&lt;/h3&gt;
+
+&lt;p&gt;斯斯有三種、Stream也有三種，分別是&lt;code&gt;Readable&lt;/code&gt;(可讀取)、&lt;code&gt;Wirteable&lt;/code&gt;(可寫入)以及&lt;code&gt;Duplex&lt;/code&gt;(雙向，可讀寫)這三種。&lt;/p&gt;
+
+&lt;p&gt;不同種類的Stream所對應到的事件也不相同，分別如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Readable
+
+&lt;ul&gt;
+&lt;li&gt;readable&lt;/li&gt;
+&lt;li&gt;end&lt;/li&gt;
+&lt;li&gt;data&lt;/li&gt;
+&lt;li&gt;error&lt;/li&gt;
+&lt;li&gt;close&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Writeable
+
+&lt;ul&gt;
+&lt;li&gt;drain&lt;/li&gt;
+&lt;li&gt;error&lt;/li&gt;
+&lt;li&gt;close&lt;/li&gt;
+&lt;li&gt;finish&lt;/li&gt;
+&lt;li&gt;pipe&lt;/li&gt;
+&lt;li&gt;unpipe&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;那上面只列了&lt;code&gt;Readable&lt;/code&gt;以及&lt;code&gt;Writeable&lt;/code&gt;，而&lt;code&gt;Duplex&lt;/code&gt;則是&lt;code&gt;Readable&lt;/code&gt;與&lt;code&gt;Writeable&lt;/code&gt;的綜合體，它有&lt;code&gt;Readable&lt;/code&gt;與&lt;code&gt;Writeable&lt;/code&gt;個別所擁有的Event。&lt;/p&gt;
+
+&lt;h3&gt;繼承Stream的模組&lt;/h3&gt;
+
+&lt;p&gt;前面有說到Stream可被繼承，所以在NodeJS中有使用到Stream的模組分別是&lt;code&gt;File System&lt;/code&gt;、&lt;code&gt;HTTP/HTTPS&lt;/code&gt;及&lt;code&gt;Net&lt;/code&gt;，以及它裡面是使用到哪一種類型的Stream以下有一些範例供參考。&lt;/p&gt;
+
+&lt;h4&gt;File System&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var fs = require(&#039;fs&#039;);
+
+// rs is readable stream
+var rs = fs.createReadStream(&#039;/path/to/file&#039;);
+
+// ws is writeable stream
+var ws = fs.createWriteStream(&#039;/path/to/file&#039;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;HTTP/HTTPS&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var http = require(&#039;http&#039;);
+
+// HTTP Server
+// req is readable stream
+// res is writeable stream
+http.createServer(function (req, res) {
+    // do something
+}).listen(80);
+
+// HTTP Client
+// req is writeable stream
+// res is readable stream
+var req = http.request({
+    hostname: &#039;127.0.0.1&#039;,
+    port: 80,
+    path: &#039;/&#039;,
+    method: &#039;GET&#039;
+}, function (res) {
+    // do something
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;Net&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var net = require(&#039;net&#039;);
+
+// TCP Server
+// socket is duplex stream
+net.createServer(function (socket) {
+    // do something
+}).listen(3000);
+
+// TCP Client
+// client is duplex stream
+var client = net.connect({
+    port: 3000,
+    host: &#039;127.0.0.1&#039;
+}, function () {
+    // do something
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Stream事件行為&lt;/h2&gt;
+
+&lt;p&gt;沒事多看文件，多看文件沒事。NodeJS的文件對於事件有些簡單的敘述以及使用方式可以參考，這邊就針對資料傳輸的部份做些說明。&lt;/p&gt;
+
+&lt;p&gt;在這邊我使用&lt;code&gt;File System&lt;/code&gt;模組作為範例，觀察Stream呼叫事件的行為，我先在&lt;code&gt;/tmp&lt;/code&gt;底下產生一個測試檔&lt;code&gt;a&lt;/code&gt;供下面的範例所使用。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;dd if=/dev/urandom of=/tmp/a bs=256k count=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;範例的動作很單純就是將檔案讀出然後在寫入的檔案，然後觀察事件何時會觸發。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var fs = require(&#039;fs&#039;),
+    rs = fs.createReadStream(&#039;/tmp/a&#039;),
+    ws = fs.createWriteStream(&#039;/tmp/b&#039;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Readable Stream Event&lt;/h3&gt;
+
+&lt;h4&gt;readable&lt;/h4&gt;
+
+&lt;p&gt;當&lt;code&gt;Buffer&lt;/code&gt;中已有資料且準備好讀取，這個事件就會被觸發，這時候可以使用&lt;code&gt;rs.read()&lt;/code&gt;將資料讀出。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;rs.on(&#039;readable&#039;, function () {
+    console.log(&#039;rs readable&#039;);
+
+    var chunk = rs.read();
+    ws.write(chunk);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;data&lt;/h4&gt;
+
+&lt;p&gt;當&lt;code&gt;Buffer&lt;/code&gt;中已有資料且可以使用時就會出發此事件，並將&lt;code&gt;Buffer&lt;/code&gt;中的資料傳送到&lt;code&gt;callback function&lt;/code&gt;中。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code&gt;data&lt;/code&gt;這個事件時就會將stream切換至&lt;code&gt;old mode&lt;/code&gt;，在此模式下可呼叫&lt;code&gt;rs.pause()&lt;/code&gt;及&lt;code&gt;rs.resume()&lt;/code&gt;這兩個function來控制&lt;code&gt;Readable Stream&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;所謂的&lt;code&gt;old mode&lt;/code&gt;是NodeJS v0.10為了舊程式的謙容性(&lt;a href=&quot;http://nodejs.org/api/stream.html#stream_compatibility&quot;&gt;Compatibility&lt;/a&gt;)所產生的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;rs.on(&#039;data&#039;, function (chunk) {
+    console.log(&#039;rs data&#039;);
+
+    ws.write(chunk);
+
+    // rs.pause();
+    // rs.resume();
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;end&lt;/h4&gt;
+
+&lt;p&gt;當&lt;code&gt;Reabable Stream&lt;/code&gt;中所有的資料都讀取出來後則會觸發此事件(在&lt;code&gt;TCP&lt;/code&gt;則是用&lt;code&gt;FIN&lt;/code&gt;結束連線時觸發)，這時候&lt;code&gt;data&lt;/code&gt;事件將不再被觸發。&lt;/p&gt;
+
+&lt;h4&gt;close&lt;/h4&gt;
+
+&lt;p&gt;當系統底層的資源被關閉時會觸發，但不一定每個Stream都會觸發。但是&lt;code&gt;File System&lt;/code&gt;會觸發。&lt;/p&gt;
+
+&lt;h3&gt;Writeable Stream Event&lt;/h3&gt;
+
+&lt;h4&gt;drain&lt;/h4&gt;
+
+&lt;p&gt;當&lt;code&gt;ws.write()&lt;/code&gt;返回&lt;code&gt;false&lt;/code&gt;時，表示寫入用的緩衝區已滿，當緩衝區再次被清空時將會觸發&lt;code&gt;drain&lt;/code&gt;事件。&lt;/p&gt;
+
+&lt;h4&gt;close&lt;/h4&gt;
+
+&lt;p&gt;同&lt;code&gt;Readable Stream Event&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4&gt;pipe/unpipe&lt;/h4&gt;
+
+&lt;p&gt;當&lt;code&gt;Readable Stream&lt;/code&gt;使用&lt;code&gt;pipe()&lt;/code&gt;時，&lt;code&gt;Writeable Stream&lt;/code&gt;的&lt;code&gt;pipe&lt;/code&gt;事件將會被觸發。反之，如果&lt;code&gt;Readable Stream&lt;/code&gt;呼叫&lt;code&gt;unpipe()&lt;/code&gt;關閉管道時，&lt;code&gt;Writeable Stream&lt;/code&gt;的&lt;code&gt;unpipe&lt;/code&gt;事件將會被觸發。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;ws.on(&#039;pipe&#039;, function () {
+    console.log(&#039;ws pipe&#039;);
+});
+
+ws.on(&#039;unpipe&#039;, function () {
+    console.log(&#039;ws unpipe&#039;);
+});
+
+rs.pipe(ws);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;finish&lt;/h4&gt;
+
+&lt;p&gt;通常當&lt;code&gt;Readable Stream&lt;/code&gt;讀取出所有的資料後，我們就會去呼叫&lt;code&gt;callback function&lt;/code&gt;，但是&lt;code&gt;Writeable&lt;/code&gt;不一定也跟著完成寫入所有的資料，有時候我們必須要等待完成寫入有資料才呼叫&lt;code&gt;callback function&lt;/code&gt;，所以我們需要&lt;code&gt;finish&lt;/code&gt;這個事件。&lt;/p&gt;
+
+&lt;p&gt;但是&lt;code&gt;finish&lt;/code&gt;並不會自動觸發，我們必須透過呼叫&lt;code&gt;ws.end()&lt;/code&gt;去觸發它，所以我們可以在&lt;code&gt;Readable&lt;/code&gt;的&lt;code&gt;end&lt;/code&gt;事件中去呼叫它。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;rs.on(&#039;end&#039;, function (chunk) {
+    console.log(&#039;rs end&#039;);
+
+    ws.end();
+});
+
+ws.on(&#039;finish&#039;, function () {
+    console.log(&#039;ws finish&#039;);
+
+    callback &amp;amp;&amp;amp; callback();
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;總結&lt;/h2&gt;
+
+&lt;p&gt;總結以上的範例，我們可以發現資料的存取以及寫入的方法有三種且視情況而定，如果在寫入資料的同時需要針對資料做處理或是檢查，則可以使用&lt;code&gt;1.&lt;/code&gt;或是&lt;code&gt;2.&lt;/code&gt;的方式，如果只是單純的資料傳輸則使用&lt;code&gt;3.&lt;/code&gt;會比較方便。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;// 1.
+rs.on(&#039;readable&#039;, function () {
+    ws.write(rs.read());
+});
+
+// 2.
+rs.on(&#039;data&#039;, function (chunk) {
+    ws.write(chunk);
+});
+
+// 3.
+rs.pipe(ws);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;另外上面所提昇增進效能的部份則是指，使用串流的方式傳輸資料可以不需要像是傳統的&lt;code&gt;Web Server&lt;/code&gt;必須先將資料暫存在硬碟中然後再視情形對資料做處理或搬移。&lt;/p&gt;
+
+&lt;p&gt;在資料進來的同時就可以即時對於資料做處理，並且可以將資料隨使用情境做多層的傳遞，例如&lt;code&gt;Read File&lt;/code&gt; -&gt; &lt;code&gt;HTTP Request&lt;/code&gt; -&gt; &lt;code&gt;TCP Server&lt;/code&gt; -&gt; &lt;code&gt;Write File&lt;/code&gt;這樣的流程，它將檔案使用&lt;code&gt;HTTP&lt;/code&gt;傳送出去，然後在&lt;code&gt;Web Server&lt;/code&gt;接收到資料的同時做處理，然後再使用&lt;code&gt;TCP&lt;/code&gt;協定將檔案傳送給其它裝置並寫入硬碟。&lt;/p&gt;
+
+&lt;p&gt;將Stream的事件弄清楚後，對於資料的傳遞就能更隨自己的意願做處理，也能將以上的流程實做出來。&lt;/p&gt;
+
+&lt;h3&gt;Reference&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://nodejs.org/api/&quot;&gt;Node.js Manual &amp;amp; Documentation&lt;/a&gt;&lt;/p&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
