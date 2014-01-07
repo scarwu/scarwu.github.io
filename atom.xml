@@ -4,12 +4,12 @@
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
-	<id>urn:uuid:f3a24472-47df-ea16-7040-d85985317051</id>
-	<updated>2014-01-07T15:05:03+08:00</updated>
+	<id>urn:uuid:62822cc5-6732-feca-c13d-d93ade1a42c5</id>
+	<updated>2014-01-07T15:19:16+08:00</updated>
 	<entry>
 		<title>Express + Jade/LESS/Coffee with LiveReload</title>
 		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
-		<id>urn:uuid:326dddaf-bb4a-a5c0-13e2-bcecb2bad62b</id>
+		<id>urn:uuid:1f3e9fa4-41b2-b07b-75eb-988c0c843cba</id>
 		<updated>2014-01-03T11:23:52+08:00</updated>
 		<summary type="html">&lt;h2&gt;廢話&lt;/h2&gt;
 
@@ -26,7 +26,7 @@
 	<entry>
 		<title>修正Ubuntu 13.10小紅點問題</title>
 		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
-		<id>urn:uuid:4f7ec1b2-f312-bfdf-afc2-11ea5f9cf335</id>
+		<id>urn:uuid:21ccb3ec-bcbc-d4a9-2c2d-10fc285be864</id>
 		<updated>2013-11-24T15:41:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -43,7 +43,7 @@
 	<entry>
 		<title>Arch Linux - 基礎安裝</title>
 		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
-		<id>urn:uuid:42de5386-958f-987c-9bd5-1f9829081424</id>
+		<id>urn:uuid:ef047a43-e0f9-14fc-dcbf-bafc81371728</id>
 		<updated>2013-09-19T10:11:46+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -62,7 +62,7 @@
 	<entry>
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:be52cfdd-704b-6795-ac07-3a3d083b67a5</id>
+		<id>urn:uuid:0501cfa2-b52d-ecf4-cf86-2866df2ba3ac</id>
 		<updated>2013-08-13T01:04:43+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
@@ -81,7 +81,7 @@
 	<entry>
 		<title>NodeJS - Stream行為觀察與事件使用</title>
 		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:27aba77e-2a6d-8ac9-af89-a7238960eee3</id>
+		<id>urn:uuid:65bf0103-8268-be86-d896-d1de00cf04c0</id>
 		<updated>2013-05-30T15:57:01+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
