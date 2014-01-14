@@ -5,12 +5,43 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-01-08T00:12:25+08:00</updated>
+	<updated>2014-01-14T08:53:19+08:00</updated>
+	<entry>
+		<title>ZSH - history-search-backward/forward</title>
+		<link href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward" />
+		<id>urn:uuid:c104f70b-f01c-0610-f999-ddf6e584f625</id>
+		<updated>2014-01-14T08:50:49+08:00</updated>
+		<summary type="html">&lt;p&gt;原本&lt;code&gt;oh-my-zsh&lt;/code&gt;在&lt;code&gt;Ubuntu 12.04 LTS&lt;/code&gt;以及&lt;code&gt;Arch Linux&lt;/code&gt;用好好的&lt;code&gt;history-search-backward&lt;/code&gt;、&lt;code&gt;history-search-forward&lt;/code&gt;，到了&lt;code&gt;Ubuntu 13.10&lt;/code&gt;就不能用了，查了一下&lt;code&gt;ZSH&lt;/code&gt;雖然版號不一樣，不知道是不是因為發行版影響，因為&lt;code&gt;Arch Linux&lt;/code&gt;的&lt;code&gt;ZSH&lt;/code&gt;版本還比&lt;code&gt;Ubuntu 13.10&lt;/code&gt;新。&lt;/p&gt;
+
+&lt;p&gt;下面是各個發行版的&lt;code&gt;Z Shell&lt;/code&gt;版號。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Ubuntu 12.04 LTS : 4.3.17
+Ubuntu 12.10     : 5.0.0
+Ubuntu 13.04     : 5.0.0
+Ubuntu 13.10     : 5.0.2
+Arch Linux       : 5.0.5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;算了至少功能沒有那就自己加上去，在&lt;code&gt;~/.zshrc&lt;/code&gt;中加入以下兩行就行了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bindkey &quot;${key[Up]}&quot; history-search-backward
+bindkey &quot;${key[Down]}&quot; history-search-forward
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接著重起&lt;code&gt;terminal&lt;/code&gt;或是&lt;code&gt;source .zshrc&lt;/code&gt;一切就完成了。&lt;/p&gt;
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>Express + Jade/LESS/Coffee with LiveReload</title>
 		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
 		<id>urn:uuid:e6b3a8b3-2368-4ead-4c48-8048c7cf69df</id>
-		<updated>2014-01-08T00:12:25+08:00</updated>
+		<updated>2014-01-03T11:23:52+08:00</updated>
 		<summary type="html">&lt;h2&gt;廢話&lt;/h2&gt;
 
 &lt;p&gt;2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！&lt;/p&gt;
@@ -232,7 +263,7 @@ livereload.watch(__dirname + &#039;/views&#039;);
 		<title>修正Ubuntu 13.10小紅點問題</title>
 		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
 		<id>urn:uuid:16b2685d-ee94-918a-fa81-480de55bdf41</id>
-		<updated>2014-01-08T00:12:25+08:00</updated>
+		<updated>2013-11-24T15:41:34+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;上次才說把筆電的作業系統換成&lt;code&gt;Arch Linux&lt;/code&gt;，由於某些因素現在又換回&lt;code&gt;Ubuntu&lt;/code&gt;了...這次想說換成新版的&lt;code&gt;Ubuntu&lt;/code&gt;，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。&lt;/p&gt;
@@ -296,7 +327,7 @@ EndSection
 		<title>Arch Linux - 基礎安裝</title>
 		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
 		<id>urn:uuid:af9a94f9-13f3-998b-2ac7-a10d42f97e9e</id>
-		<updated>2014-01-08T00:12:25+08:00</updated>
+		<updated>2013-09-19T10:11:46+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;自從&lt;code&gt;Ubuntu 5.04&lt;/code&gt;開始我就一直使用Ubuntu系列的相關發行版，但是這幾年下來它真的是越來越肥大，且多了許多不必要的預設程式。而身為一個Linux使用者以及相關開發者的我來說，當然希望自己所使用的環境越簡單越好、甚至能夠完全掌握。&lt;/p&gt;
@@ -456,7 +487,7 @@ reboot
 		<title>Hadoop安裝與設定</title>
 		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
 		<id>urn:uuid:88490577-9856-a9b4-2f97-512a7affb71d</id>
-		<updated>2014-01-08T00:12:25+08:00</updated>
+		<updated>2013-08-13T01:04:43+08:00</updated>
 		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;Hadoop這套工具主要用做於平行運算，它其中包含兩個部份&lt;code&gt;MapReduce&lt;/code&gt;以及&lt;code&gt;HDFS&lt;/code&gt;。&lt;/p&gt;
@@ -631,246 +662,6 @@ node03
 &lt;p&gt;在這篇就單純紀錄安裝Hadoop的一些過程，但實際上我使用到的部份就只有HDFS，MapReduce的話目前沒有能夠拿來算的數據。&lt;/p&gt;
 
 &lt;p&gt;另外最近有點忙網誌已經很久沒動了，而且最近光打這篇紀錄就拖了半個月以上。&lt;/p&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>NodeJS - Stream行為觀察與事件使用</title>
-		<link href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event" />
-		<id>urn:uuid:3233ec66-3dad-f080-6331-f7aeb7cde17c</id>
-		<updated>2014-01-08T00:12:25+08:00</updated>
-		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;在NodeJS使用廣泛的就是&lt;code&gt;Event-driven&lt;/code&gt;的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。&lt;/p&gt;
-
-&lt;p&gt;所以今天的主題為NodeJS中Stream的行為觀察，在先前專案中大量使用Stream的功能，所以這邊就寫下一些使用心得。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2&gt;Stream模組簡介&lt;/h2&gt;
-
-&lt;p&gt;Stream是一個NodeJS中的模組，主要用作於資料的讀寫，它可以被其它的模組所繼承，而成為該模組的一部分基礎。&lt;/p&gt;
-
-&lt;h3&gt;Stream的種類&lt;/h3&gt;
-
-&lt;p&gt;斯斯有三種、Stream也有三種，分別是&lt;code&gt;Readable&lt;/code&gt;(可讀取)、&lt;code&gt;Wirteable&lt;/code&gt;(可寫入)以及&lt;code&gt;Duplex&lt;/code&gt;(雙向，可讀寫)這三種。&lt;/p&gt;
-
-&lt;p&gt;不同種類的Stream所對應到的事件也不相同，分別如下：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Readable
-
-&lt;ul&gt;
-&lt;li&gt;readable&lt;/li&gt;
-&lt;li&gt;end&lt;/li&gt;
-&lt;li&gt;data&lt;/li&gt;
-&lt;li&gt;error&lt;/li&gt;
-&lt;li&gt;close&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Writeable
-
-&lt;ul&gt;
-&lt;li&gt;drain&lt;/li&gt;
-&lt;li&gt;error&lt;/li&gt;
-&lt;li&gt;close&lt;/li&gt;
-&lt;li&gt;finish&lt;/li&gt;
-&lt;li&gt;pipe&lt;/li&gt;
-&lt;li&gt;unpipe&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;那上面只列了&lt;code&gt;Readable&lt;/code&gt;以及&lt;code&gt;Writeable&lt;/code&gt;，而&lt;code&gt;Duplex&lt;/code&gt;則是&lt;code&gt;Readable&lt;/code&gt;與&lt;code&gt;Writeable&lt;/code&gt;的綜合體，它有&lt;code&gt;Readable&lt;/code&gt;與&lt;code&gt;Writeable&lt;/code&gt;個別所擁有的Event。&lt;/p&gt;
-
-&lt;h3&gt;繼承Stream的模組&lt;/h3&gt;
-
-&lt;p&gt;前面有說到Stream可被繼承，所以在NodeJS中有使用到Stream的模組分別是&lt;code&gt;File System&lt;/code&gt;、&lt;code&gt;HTTP/HTTPS&lt;/code&gt;及&lt;code&gt;Net&lt;/code&gt;，以及它裡面是使用到哪一種類型的Stream以下有一些範例供參考。&lt;/p&gt;
-
-&lt;h4&gt;File System&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var fs = require(&#039;fs&#039;);
-
-// rs is readable stream
-var rs = fs.createReadStream(&#039;/path/to/file&#039;);
-
-// ws is writeable stream
-var ws = fs.createWriteStream(&#039;/path/to/file&#039;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;HTTP/HTTPS&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var http = require(&#039;http&#039;);
-
-// HTTP Server
-// req is readable stream
-// res is writeable stream
-http.createServer(function (req, res) {
-    // do something
-}).listen(80);
-
-// HTTP Client
-// req is writeable stream
-// res is readable stream
-var req = http.request({
-    hostname: &#039;127.0.0.1&#039;,
-    port: 80,
-    path: &#039;/&#039;,
-    method: &#039;GET&#039;
-}, function (res) {
-    // do something
-});
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;Net&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var net = require(&#039;net&#039;);
-
-// TCP Server
-// socket is duplex stream
-net.createServer(function (socket) {
-    // do something
-}).listen(3000);
-
-// TCP Client
-// client is duplex stream
-var client = net.connect({
-    port: 3000,
-    host: &#039;127.0.0.1&#039;
-}, function () {
-    // do something
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;Stream事件行為&lt;/h2&gt;
-
-&lt;p&gt;沒事多看文件，多看文件沒事。NodeJS的文件對於事件有些簡單的敘述以及使用方式可以參考，這邊就針對資料傳輸的部份做些說明。&lt;/p&gt;
-
-&lt;p&gt;在這邊我使用&lt;code&gt;File System&lt;/code&gt;模組作為範例，觀察Stream呼叫事件的行為，我先在&lt;code&gt;/tmp&lt;/code&gt;底下產生一個測試檔&lt;code&gt;a&lt;/code&gt;供下面的範例所使用。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;dd if=/dev/urandom of=/tmp/a bs=256k count=1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;範例的動作很單純就是將檔案讀出然後在寫入的檔案，然後觀察事件何時會觸發。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var fs = require(&#039;fs&#039;),
-    rs = fs.createReadStream(&#039;/tmp/a&#039;),
-    ws = fs.createWriteStream(&#039;/tmp/b&#039;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;Readable Stream Event&lt;/h3&gt;
-
-&lt;h4&gt;readable&lt;/h4&gt;
-
-&lt;p&gt;當&lt;code&gt;Buffer&lt;/code&gt;中已有資料且準備好讀取，這個事件就會被觸發，這時候可以使用&lt;code&gt;rs.read()&lt;/code&gt;將資料讀出。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;rs.on(&#039;readable&#039;, function () {
-    console.log(&#039;rs readable&#039;);
-
-    var chunk = rs.read();
-    ws.write(chunk);
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;data&lt;/h4&gt;
-
-&lt;p&gt;當&lt;code&gt;Buffer&lt;/code&gt;中已有資料且可以使用時就會出發此事件，並將&lt;code&gt;Buffer&lt;/code&gt;中的資料傳送到&lt;code&gt;callback function&lt;/code&gt;中。&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code&gt;data&lt;/code&gt;這個事件時就會將stream切換至&lt;code&gt;old mode&lt;/code&gt;，在此模式下可呼叫&lt;code&gt;rs.pause()&lt;/code&gt;及&lt;code&gt;rs.resume()&lt;/code&gt;這兩個function來控制&lt;code&gt;Readable Stream&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;所謂的&lt;code&gt;old mode&lt;/code&gt;是NodeJS v0.10為了舊程式的謙容性(&lt;a href=&quot;http://nodejs.org/api/stream.html#stream_compatibility&quot;&gt;Compatibility&lt;/a&gt;)所產生的。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;rs.on(&#039;data&#039;, function (chunk) {
-    console.log(&#039;rs data&#039;);
-
-    ws.write(chunk);
-
-    // rs.pause();
-    // rs.resume();
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;end&lt;/h4&gt;
-
-&lt;p&gt;當&lt;code&gt;Reabable Stream&lt;/code&gt;中所有的資料都讀取出來後則會觸發此事件(在&lt;code&gt;TCP&lt;/code&gt;則是用&lt;code&gt;FIN&lt;/code&gt;結束連線時觸發)，這時候&lt;code&gt;data&lt;/code&gt;事件將不再被觸發。&lt;/p&gt;
-
-&lt;h4&gt;close&lt;/h4&gt;
-
-&lt;p&gt;當系統底層的資源被關閉時會觸發，但不一定每個Stream都會觸發。但是&lt;code&gt;File System&lt;/code&gt;會觸發。&lt;/p&gt;
-
-&lt;h3&gt;Writeable Stream Event&lt;/h3&gt;
-
-&lt;h4&gt;drain&lt;/h4&gt;
-
-&lt;p&gt;當&lt;code&gt;ws.write()&lt;/code&gt;返回&lt;code&gt;false&lt;/code&gt;時，表示寫入用的緩衝區已滿，當緩衝區再次被清空時將會觸發&lt;code&gt;drain&lt;/code&gt;事件。&lt;/p&gt;
-
-&lt;h4&gt;close&lt;/h4&gt;
-
-&lt;p&gt;同&lt;code&gt;Readable Stream Event&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h4&gt;pipe/unpipe&lt;/h4&gt;
-
-&lt;p&gt;當&lt;code&gt;Readable Stream&lt;/code&gt;使用&lt;code&gt;pipe()&lt;/code&gt;時，&lt;code&gt;Writeable Stream&lt;/code&gt;的&lt;code&gt;pipe&lt;/code&gt;事件將會被觸發。反之，如果&lt;code&gt;Readable Stream&lt;/code&gt;呼叫&lt;code&gt;unpipe()&lt;/code&gt;關閉管道時，&lt;code&gt;Writeable Stream&lt;/code&gt;的&lt;code&gt;unpipe&lt;/code&gt;事件將會被觸發。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;ws.on(&#039;pipe&#039;, function () {
-    console.log(&#039;ws pipe&#039;);
-});
-
-ws.on(&#039;unpipe&#039;, function () {
-    console.log(&#039;ws unpipe&#039;);
-});
-
-rs.pipe(ws);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;finish&lt;/h4&gt;
-
-&lt;p&gt;通常當&lt;code&gt;Readable Stream&lt;/code&gt;讀取出所有的資料後，我們就會去呼叫&lt;code&gt;callback function&lt;/code&gt;，但是&lt;code&gt;Writeable&lt;/code&gt;不一定也跟著完成寫入所有的資料，有時候我們必須要等待完成寫入有資料才呼叫&lt;code&gt;callback function&lt;/code&gt;，所以我們需要&lt;code&gt;finish&lt;/code&gt;這個事件。&lt;/p&gt;
-
-&lt;p&gt;但是&lt;code&gt;finish&lt;/code&gt;並不會自動觸發，我們必須透過呼叫&lt;code&gt;ws.end()&lt;/code&gt;去觸發它，所以我們可以在&lt;code&gt;Readable&lt;/code&gt;的&lt;code&gt;end&lt;/code&gt;事件中去呼叫它。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;rs.on(&#039;end&#039;, function (chunk) {
-    console.log(&#039;rs end&#039;);
-
-    ws.end();
-});
-
-ws.on(&#039;finish&#039;, function () {
-    console.log(&#039;ws finish&#039;);
-
-    callback &amp;amp;&amp;amp; callback();
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;總結&lt;/h2&gt;
-
-&lt;p&gt;總結以上的範例，我們可以發現資料的存取以及寫入的方法有三種且視情況而定，如果在寫入資料的同時需要針對資料做處理或是檢查，則可以使用&lt;code&gt;1.&lt;/code&gt;或是&lt;code&gt;2.&lt;/code&gt;的方式，如果只是單純的資料傳輸則使用&lt;code&gt;3.&lt;/code&gt;會比較方便。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;// 1.
-rs.on(&#039;readable&#039;, function () {
-    ws.write(rs.read());
-});
-
-// 2.
-rs.on(&#039;data&#039;, function (chunk) {
-    ws.write(chunk);
-});
-
-// 3.
-rs.pipe(ws);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;另外上面所提昇增進效能的部份則是指，使用串流的方式傳輸資料可以不需要像是傳統的&lt;code&gt;Web Server&lt;/code&gt;必須先將資料暫存在硬碟中然後再視情形對資料做處理或搬移。&lt;/p&gt;
-
-&lt;p&gt;在資料進來的同時就可以即時對於資料做處理，並且可以將資料隨使用情境做多層的傳遞，例如&lt;code&gt;Read File&lt;/code&gt; -&gt; &lt;code&gt;HTTP Request&lt;/code&gt; -&gt; &lt;code&gt;TCP Server&lt;/code&gt; -&gt; &lt;code&gt;Write File&lt;/code&gt;這樣的流程，它將檔案使用&lt;code&gt;HTTP&lt;/code&gt;傳送出去，然後在&lt;code&gt;Web Server&lt;/code&gt;接收到資料的同時做處理，然後再使用&lt;code&gt;TCP&lt;/code&gt;協定將檔案傳送給其它裝置並寫入硬碟。&lt;/p&gt;
-
-&lt;p&gt;將Stream的事件弄清楚後，對於資料的傳遞就能更隨自己的意願做處理，也能將以上的流程實做出來。&lt;/p&gt;
-
-&lt;h3&gt;Reference&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://nodejs.org/api/&quot;&gt;Node.js Manual &amp;amp; Documentation&lt;/a&gt;&lt;/p&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
