@@ -48,6 +48,47 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2013/09/19/archlinux-based-install">Arch Linux - 基礎安裝</a></h1>
+		<div class="info">
+			<div class="date">
+				<span class="icon icon-calendar"></span>
+				<a href="/archive/2013">2013-09-19</a>			</div>
+			<div class="category">
+				<span class="icon icon-folder-close"></span>
+				<a href="/category/IT">IT</a>			</div>
+			<div class="tag">
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Linux">Linux</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Arch%20Linux">Arch Linux</a></span>
+				<br />
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/Note">Note</a></span>
+				<br />
+							</div>
+			<div class="comments">
+				<span class="icon icon-comment"></span>
+				<a href="/article/2013/09/19/archlinux-based-install/#disqus_thread">0 Comment</a>
+			</div>
+			<hr>
+			<div class="social_tool">
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			</div>
+		</div>
+		<div class="content"><h2>前言</h2>
+
+<p>自從<code>Ubuntu 5.04</code>開始我就一直使用Ubuntu系列的相關發行版，但是這幾年下來它真的是越來越肥大，且多了許多不必要的預設程式。而身為一個Linux使用者以及相關開發者的我來說，當然希望自己所使用的環境越簡單越好、甚至能夠完全掌握。</p>
+
+<p>所以我開始有更換使用環境的念頭，而剛好幾年前曾經試著安裝過的<code>Arch Linux</code>符合我的需求，所以經過幾次測試確認系統穩定之後便著手更換系統。</p>
+
+<p>這邊我將我的安裝過程整理出來。</p>
+
+</div>
+		<a class="more" href="/article/2013/09/19/archlinux-based-install">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2013/08/13/hadoop-install-and-setup">Hadoop安裝與設定</a></h1>
 		<div class="info">
 			<div class="date">
@@ -204,56 +245,6 @@
 </div>
 		<a class="more" href="/article/2013/05/16/try-android-studio-v01">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/04/29/node-js-dgram-error-with-EBADF">NodeJS - dgram error with EBADF</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2013">2013-04-29</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/NodeJS">NodeJS</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/JavaScript">JavaScript</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Note">Note</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2013/04/29/node-js-dgram-error-with-EBADF/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>最近把NodeJS從原本的<code>v0.8.x</code>更新到最新的<code>v0.10.x</code>，結果程式就炸了！程式就給我吐出<code>Error: setBroadcast EBADF</code>，結果是<code>dgram</code>炸了，不管是<code>setBroadcast</code>或者是<code>setTTL</code>都一樣會炸掉，問Google大神也問不出答案。</p>
-
-<p>然後我就查了一下<code>EBADF</code>到底是什麼意思，它是一個socket的錯誤碼，原文是<code>The socket argument is not a valid file descriptor.</code>，意思是非法的socket代號，我們來看原本炸掉的程式碼。</p>
-
-<pre><code class="javascript">#!/usr/bin/env node
-
-'use strict';
-
-var dgram = require('dgram'),
-    ip = '127.0.0.1',
-    port = 9000;
-
-client.bind(port);
-client.setBroadcast(true);
-client.send(message, 0, message.length, port, ip, callback);
-</code></pre>
-
-</div>
-		<a class="more" href="/article/2013/04/29/node-js-dgram-error-with-EBADF">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 			<a href="/page/1"><< Newer Posts</a>		</span>
@@ -323,7 +314,7 @@ client.send(message, 0, message.length, port, ip, callback);
 </div><div class="archive">
 	<div class="title"><a href="/archive">Archive</a></div>
 	<div class="content">
-				<span class="item"><a href="/archive/2014">2014(3)</a></span>
+				<span class="item"><a href="/archive/2014">2014(4)</a></span>
 				<span class="item"><a href="/archive/2013">2013(14)</a></span>
 				<span class="item"><a href="/archive/2012">2012(14)</a></span>
 				<span class="item"><a href="/archive/2011">2011(2)</a></span>
@@ -331,7 +322,7 @@ client.send(message, 0, message.length, port, ip, callback);
 </div><div class="category">
 	<div class="title"><a href="/category">Category</a></div>
 	<div class="content">
-				<span class="item"><a href="/category/IT">IT(31)</a></span>
+				<span class="item"><a href="/category/IT">IT(32)</a></span>
 				<span class="item"><a href="/category/Game">Game(1)</a></span>
 				<span class="item"><a href="/category/Life">Life(1)</a></span>
 			</div>
@@ -340,35 +331,36 @@ client.send(message, 0, message.length, port, ip, callback);
 	<div class="content">
 				<span class="item"><a href="/tag/Note">Note(16)</a></span>
 				<span class="item"><a href="/tag/PHP">PHP(14)</a></span>
+				<span class="item"><a href="/tag/Linux">Linux(8)</a></span>
 				<span class="item"><a href="/tag/JavaScript">JavaScript(7)</a></span>
-				<span class="item"><a href="/tag/Linux">Linux(7)</a></span>
 				<span class="item"><a href="/tag/Ubuntu">Ubuntu(6)</a></span>
 				<span class="item"><a href="/tag/NodeJS">NodeJS(3)</a></span>
 				<span class="item"><a href="/tag/Android">Android(3)</a></span>
+				<span class="item"><a href="/tag/Python">Python(2)</a></span>
+				<span class="item"><a href="/tag/Chrome">Chrome(2)</a></span>
+				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
 				<span class="item"><a href="/tag/Facebook">Facebook(2)</a></span>
+				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
 				<span class="item"><a href="/tag/Works">Works(2)</a></span>
 				<span class="item"><a href="/tag/Pointless">Pointless(2)</a></span>
-				<span class="item"><a href="/tag/Tools">Tools(2)</a></span>
-				<span class="item"><a href="/tag/Python">Python(2)</a></span>
-				<span class="item"><a href="/tag/NanoCLI">NanoCLI(2)</a></span>
-				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
-				<span class="item"><a href="/tag/ThinkPad">ThinkPad(1)</a></span>
-				<span class="item"><a href="/tag/Chrome">Chrome(1)</a></span>
-				<span class="item"><a href="/tag/Express">Express(1)</a></span>
-				<span class="item"><a href="/tag/ZSH">ZSH(1)</a></span>
+				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
 				<span class="item"><a href="/tag/Mobile%20Web">Mobile Web(1)</a></span>
 				<span class="item"><a href="/tag/iOS">iOS(1)</a></span>
 				<span class="item"><a href="/tag/HTML5">HTML5(1)</a></span>
-				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
-				<span class="item"><a href="/tag/Arch%20Linux">Arch Linux(1)</a></span>
-				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
-				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
-				<span class="item"><a href="/tag/3C">3C(1)</a></span>
-				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
-				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
-				<span class="item"><a href="/tag/Windows">Windows(1)</a></span>
 				<span class="item"><a href="/tag/Virus">Virus(1)</a></span>
+				<span class="item"><a href="/tag/Diablo%20III">Diablo III(1)</a></span>
+				<span class="item"><a href="/tag/SQLite">SQLite(1)</a></span>
 				<span class="item"><a href="/tag/Toy">Toy(1)</a></span>
+				<span class="item"><a href="/tag/ThinkPad">ThinkPad(1)</a></span>
+				<span class="item"><a href="/tag/Express">Express(1)</a></span>
+				<span class="item"><a href="/tag/ZSH">ZSH(1)</a></span>
+				<span class="item"><a href="/tag/WebGL">WebGL(1)</a></span>
+				<span class="item"><a href="/tag/Arch%20Linux">Arch Linux(1)</a></span>
+				<span class="item"><a href="/tag/Hadoop">Hadoop(1)</a></span>
+				<span class="item"><a href="/tag/3C">3C(1)</a></span>
+				<span class="item"><a href="/tag/Apache">Apache(1)</a></span>
+				<span class="item"><a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a></span>
+				<span class="item"><a href="/tag/C/C%2B%2B">C/C++(1)</a></span>
 			</div>
 </div>		</div>
 	</div>

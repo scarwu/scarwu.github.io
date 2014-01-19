@@ -5,7 +5,53 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-01-19T11:25:42+08:00</updated>
+	<updated>2014-01-19T14:21:43+08:00</updated>
+	<entry>
+		<title>Chrome - Enable Hardware Graphics</title>
+		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics" />
+		<id>urn:uuid:a3b360b7-5d6e-9c12-8a64-7f83e97a6a7c</id>
+		<updated>2014-01-19T12:48:58+08:00</updated>
+		<summary type="html">&lt;h2&gt;難得&lt;/h2&gt;
+
+&lt;p&gt;很難得可以在一天內發兩篇文章，在上一篇文末提到&lt;code&gt;WebGL&lt;/code&gt;打不開的問題，那是個誤會，真的。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;Chrome&lt;/code&gt;的&lt;code&gt;chrome://flags&lt;/code&gt;裡有一個選項&lt;code&gt;Override software rendering list&lt;/code&gt;可以開啟硬體加速，在更新驅動程式前我怎樣試都不行，所以我就以為沒有用。&lt;/p&gt;
+
+&lt;p&gt;其實在驅動程式更新之後就已經可以使用了，只是硬體加速還要另外開啟，讓我產生&lt;code&gt;WebGL&lt;/code&gt;無法開啟的錯覺。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2&gt;正常啟用流程&lt;/h2&gt;
+
+&lt;p&gt;我們可以在&lt;code&gt;Chrome&lt;/code&gt;中使用&lt;code&gt;chrome://gpu&lt;/code&gt;這個連結去確認是否有開啟硬加速，在一般情況下都是呈現下方的狀態。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/gpu001.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;更據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。&lt;/p&gt;
+
+&lt;p&gt;在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，&lt;code&gt;WebGL&lt;/code&gt;也已經可以使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/gpu002.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;最後將&lt;code&gt;chrome://flags&lt;/code&gt;中的&lt;code&gt;Override software rendering list&lt;/code&gt;啟動，並重新開啟&lt;code&gt;Chrome&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/flags001.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/flags002.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;最後就會得一片綠油油的正常狀態。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/gpu003.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;爽&lt;/h2&gt;
+
+&lt;p&gt;接下就爽爽用&lt;code&gt;Chrome&lt;/code&gt;上的硬體加速吧。&lt;/p&gt;
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>Ubuntu 13.10 install AMD Catalyst 13.12</title>
 		<link href="http://scar.simcz.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12" />
@@ -462,166 +508,6 @@ EndSection
 &lt;h2&gt;結語&lt;/h2&gt;
 
 &lt;p&gt;這樣小紅點終於不是半殘，星爺表示：大師兄回來了！&lt;/p&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>Arch Linux - 基礎安裝</title>
-		<link href="http://scar.simcz.tw/article/2013/09/19/archlinux-based-install" />
-		<id>urn:uuid:af9a94f9-13f3-998b-2ac7-a10d42f97e9e</id>
-		<updated>2013-09-19T10:11:46+08:00</updated>
-		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;自從&lt;code&gt;Ubuntu 5.04&lt;/code&gt;開始我就一直使用Ubuntu系列的相關發行版，但是這幾年下來它真的是越來越肥大，且多了許多不必要的預設程式。而身為一個Linux使用者以及相關開發者的我來說，當然希望自己所使用的環境越簡單越好、甚至能夠完全掌握。&lt;/p&gt;
-
-&lt;p&gt;所以我開始有更換使用環境的念頭，而剛好幾年前曾經試著安裝過的&lt;code&gt;Arch Linux&lt;/code&gt;符合我的需求，所以經過幾次測試確認系統穩定之後便著手更換系統。&lt;/p&gt;
-
-&lt;p&gt;這邊我將我的安裝過程整理出來。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2&gt;初始設定&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 讀取鍵盤對應表
-loadkeys us
-
-# 設定DHCP網路
-dhcpcd
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;基本上網路的設定，視個人的網路環境而定，可以參照 &lt;a href=&quot;https://wiki.archlinux.org/index.php/Configuring_network&quot;&gt;Network Configuration&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2&gt;硬碟分割&lt;/h2&gt;
-
-&lt;p&gt;每個人的環境不同，硬碟的分配方式也會不同，在這邊只有基礎的切割。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 切割 partition
-fdisk /dev/sda
-
-# 格式化 partition，這邊是格式化成Ext4
-mkfs.ext4 /dev/sda1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;基礎系統安裝&lt;/h2&gt;
-
-&lt;p&gt;將硬碟設定完成之後就可以開始安裝&lt;code&gt;Arch Linux&lt;/code&gt;的基礎系統了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 掛載磁碟分割區
-mount -t ext4 /dev/sda1 /mnt
-
-# 安裝基礎資料
-pacstrap /mnt base
-
-# 開啟Swap磁區
-swapon -s
-
-# 更新檔案系統列表
-genfstab -p /mnt &amp;gt; /mnt/etc/fstab
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;安裝基礎套件&lt;/h2&gt;
-
-&lt;p&gt;我在這邊只有列了幾個我常用到的套件，有需要的話可以自行加入並安裝。&lt;/p&gt;
-
-&lt;p&gt;要找套件可以使用&lt;code&gt;pacman -Ss &amp;lt;package&amp;gt;&lt;/code&gt;指令。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 切換系統根目錄
-arch-root /mnt
-
-# 安裝基礎套件
-pacman -Syu
-pacman -S vim git zsh wget mlocate openssh sudo net-tools grub
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;系統設定&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 修改主機名稱
-vim /etc/hostname
-
-# 修改系統時區，在這邊我設定的是台北時間
-ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
-
-# 新增系統語系
-# 把 local.gen 中的 en-US.UTF8, zh-TW.UTF8, zh-TW.Big5 前面的井字號移除
-vim /etc/local.gen
-locale-gen
-
-# 修改系統語系
-vim /etc/locale.conf
-
-# 加入這兩行
-LANG=en-US.UTF8
-LC_COLLATE=C
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;設定使用者帳號&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 加入新使用者定設定密碼
-useradd &amp;lt;username&amp;gt;
-passwd &amp;lt;username&amp;gt;
-
-# 將使用者加入sudoer清單
-vim /etc/sudoers
-
-# 加入此行
-&amp;lt;username&amp;gt; ALL=(ALL) ALL
-
-# 為了安全起見請設定root密碼
-passwd root
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;安裝開機引導程式&lt;/h2&gt;
-
-&lt;p&gt;我習慣使用&lt;code&gt;GRUB&lt;/code&gt;當作我的開機引導程式。&lt;/p&gt;
-
-&lt;p&gt;如果在這邊安裝&lt;code&gt;GRUB&lt;/code&gt;後還是無法開機的話可以參考 &lt;a href=&quot;https://wiki.archlinux.org/index.php/GRUB&quot;&gt;GRUB&lt;/a&gt;。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;modprobe dm-mod
-mkinitcpio -p linux
-grub-mkconfig &amp;gt; /boot/grub/grub.cfg
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;安裝 yaourt (Yet AnOther User Repository Tool)&lt;/h2&gt;
-
-&lt;p&gt;yaourt能夠自動抓取AUR(Arch User Repository)上的套件並且安裝，讓使用者不用手動安裝AUR上的套件。&lt;/p&gt;
-
-&lt;p&gt;請參考 &lt;a href=&quot;https://wiki.archlinux.org/index.php/AUR&quot;&gt;AUR&lt;/a&gt;。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;vim /etc/pacman.conf
-
-# 加入以下三行
-[archlinuxfr]
-Server = http://repo.archlinux.fr/x86_64
-SigLevel = Optional TrustAll
-
-# 更新pacman套件庫並安裝yaourt
-pacman -Syu
-pacman -S yaourt base-devel
-
-# 使用yaourt更新系統
-yaourt -Syua
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;完成&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;exit
-sync
-
-# 卸載硬碟分割區
-umount /mnt
-
-# 重新啟動系統
-reboot
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;到此就完成了基礎的系統安裝，然後重新開機後你將得......一個黑白畫面。&lt;/p&gt;
-
-&lt;p&gt;接下來還要安裝桌面環境，而在&lt;code&gt;Arch Linux&lt;/code&gt;中一樣有常見的&lt;code&gt;Gnome&lt;/code&gt;、&lt;code&gt;KDE&lt;/code&gt;等桌面環境可以安裝。&lt;/p&gt;
-
-&lt;p&gt;桌面環境安裝在下次的安裝紀錄中會提到。&lt;/p&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
