@@ -5,7 +5,152 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-01-14T08:53:19+08:00</updated>
+	<updated>2014-01-19T11:25:42+08:00</updated>
+	<entry>
+		<title>Ubuntu 13.10 install AMD Catalyst 13.12</title>
+		<link href="http://scar.simcz.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12" />
+		<id>urn:uuid:d2c45662-8551-28ca-e998-b7c95093c3e4</id>
+		<updated>2014-01-19T10:30:55+08:00</updated>
+		<summary type="html">&lt;h2&gt;不解&lt;/h2&gt;
+
+&lt;p&gt;不知道為什麼，只要碰到顯示卡驅動程式的安裝，我就很容易讓我的機器爆炸，這一定有問題，所以還是趕快把這次成功安裝的過程記錄下來，避免之後又爆了。&lt;/p&gt;
+
+&lt;p&gt;安裝驅動有這麼難嗎？很難，因為每次都爆炸XD&lt;/p&gt;
+
+&lt;p&gt;平常我也不想去更新的我的顯示卡驅動，但是&lt;code&gt;Chrome&lt;/code&gt;告訴我&lt;code&gt;ATI/AMD cards with older or third-party drivers&lt;/code&gt;，我只是想開啟&lt;code&gt;WebGL&lt;/code&gt;而已，為了能夠用&lt;code&gt;WebGL&lt;/code&gt;還是更新吧。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2&gt;安裝套件&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade -y
+sudo apt-get install cdbs dh-make dkms execstack dh-modaliases linux-headers-generic libqtgui4
+
+# for x86_64 (64bit)
+sudo apt-get install lib32gcc1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;下載 AMD Catalyst&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir amd-catalyst &amp;amp;&amp;amp; cd amd-catalyst
+wget --referer=&#039;http://support.amd.com/en-us/download/desktop?os=Linux+x86&#039; http://www2.ati.com/drivers/linux/amd-catalyst-13.12-linux-x86.x86_64.zip
+unzip amd-catalyst-13.12-linux-x86.x86_64.zip
+chmod +x amd-catalyst-13.12-linux-x86.x86_64.run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;編譯套件&lt;/h2&gt;
+
+&lt;h3&gt;Patch kcl_acpi.c&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;./amd-catalyst-13.12-linux-x86.x86_64.run --extract catalyst
+
+cd catalyst
+vim common/lib/modules/fglrx/build_mod/kcl_acpi.c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;把&lt;code&gt;kcl_acpi.c&lt;/code&gt;第990行以後的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;#if LINUX_VERSION_CODE &amp;gt;= KERNEL_VERSION(3,6,3)    
+    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;amp;hdr, &amp;amp;tbl_size)))
+#else
+    tbl_size = 0x7fffffff;
+    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;amp;hdr)))
+#endif
+    {
+        return KCL_ACPI_ERROR;
+    }    
+    ((acpi_table_handler)handler)(hdr);
+    return KCL_ACPI_OK;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;換成這個&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;#if LINUX_VERSION_CODE &amp;gt;= KERNEL_VERSION(3,6,3)    
+    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;amp;hdr, &amp;amp;tbl_size)))
+#else
+    tbl_size = 0x7fffffff;
+    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;amp;hdr)))
+#endif
+    {
+        return KCL_ACPI_ERROR;
+    }
+#if LINUX_VERSION_CODE &amp;gt;= KERNEL_VERSION(3,9,1)
+    ((acpi_tbl_table_handler)handler)(hdr);
+#else
+    ((acpi_table_handler)handler)(hdr);
+#endif
+    return KCL_ACPI_OK;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;開始編譯&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ./ati-installer.sh 13.251 --buildpkg Ubuntu/saucy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;安裝 .deb 檔&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ..
+sudo dpkg -i fglrx*.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;設定環境&lt;/h2&gt;
+
+&lt;h3&gt;產生新的 xorg.conf&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo amdconfig --initial -f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;選擇系統驅動程式&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;# choice /usr/lib/fglrx/ld.so.conf
+sudo update-alternatives --config x86_64-linux-gnu_gl_conf
+sudo ldconfig
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接下來就開心重新開機吧！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;確認是否安裝成功可以用下面的指令做檢查&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fglrxinfo
+fgl_glxgears
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;更新失敗&lt;/h3&gt;
+
+&lt;p&gt;人生中難免會有風險，如果你重新開機後，發現螢幕上有國防布的話，那只好用以下方式修復&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo cp /etx/X11/xorg.conf.original /etc/X11/xorg.conf
+
+# choice /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf
+sudo update-alternatives --config x86_64-linux-gnu_gl_conf
+sudo ldconfig
+
+sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;最後&lt;/h2&gt;
+
+&lt;p&gt;更新驅動就花了我兩個早上，終於更新成功了，但是&lt;code&gt;Chrome&lt;/code&gt;的&lt;code&gt;WebGL&lt;/code&gt;還是不給開...&lt;/p&gt;
+
+&lt;p&gt;這一定有誤會。&lt;/p&gt;
+
+&lt;h3&gt;Reference&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;* &amp;lt;a href=&quot;http://support.amd.com/en-us/download&quot; target=&quot;_blank&quot;&amp;gt;Download Driver - AMD Graphics Drivers and Software&amp;lt;/a&amp;gt;
+* &amp;lt;a href=&quot;http://wiki.cchtml.com/index.php/Ubuntu_Saucy_Installation_Guide&quot; target=&quot;_blank&quot;&amp;gt;Unoffical AMD Linux Community - Ubuntu Saucy Installation Guide&amp;lt;/a&amp;gt;
+* &amp;lt;a href=&quot;https://gist.github.com/moldcraft/8116528&quot; target=&quot;_blank&quot;&amp;gt;Install AMD Catalyst 13.12 Driver with patch on Ubuntu 13.10&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</summary>
+		<author>
+			<name>ScarWu</name>
+			<uri>http://scar.simcz.tw/</uri>
+		</author>
+	</entry>
 	<entry>
 		<title>ZSH - history-search-backward/forward</title>
 		<link href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward" />
@@ -477,191 +622,6 @@ reboot
 &lt;p&gt;接下來還要安裝桌面環境，而在&lt;code&gt;Arch Linux&lt;/code&gt;中一樣有常見的&lt;code&gt;Gnome&lt;/code&gt;、&lt;code&gt;KDE&lt;/code&gt;等桌面環境可以安裝。&lt;/p&gt;
 
 &lt;p&gt;桌面環境安裝在下次的安裝紀錄中會提到。&lt;/p&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
-	</entry>
-	<entry>
-		<title>Hadoop安裝與設定</title>
-		<link href="http://scar.simcz.tw/article/2013/08/13/hadoop-install-and-setup" />
-		<id>urn:uuid:88490577-9856-a9b4-2f97-512a7affb71d</id>
-		<updated>2013-08-13T01:04:43+08:00</updated>
-		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;Hadoop這套工具主要用做於平行運算，它其中包含兩個部份&lt;code&gt;MapReduce&lt;/code&gt;以及&lt;code&gt;HDFS&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;MapReduce&lt;/code&gt;的部份主要是用做於平行運算、而&lt;code&gt;HDFS&lt;/code&gt;則是一套分散分散式檔案系統，用來儲存於平行運算時所需的大量資料。&lt;/p&gt;
-
-&lt;p&gt;由於某些原因必須使用到&lt;code&gt;Hadoop&lt;/code&gt;中的&lt;code&gt;HDFS&lt;/code&gt;來測試一些項目所以這邊就粗略紀錄一下&lt;code&gt;Hadoop&lt;/code&gt;的安裝過程。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2&gt;JDK安裝&lt;/h2&gt;
-
-&lt;p&gt;由於Hadoop本身是使用&lt;code&gt;Java&lt;/code&gt;來實作，所以在執行Hadoop之前我們必須先行安裝&lt;code&gt;Java Development Kit(JDK)&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3&gt;下載JDK&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;JDK Download&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;根據你所使用的作業系統去選擇版本，在這邊我是用的是&lt;code&gt;Ubuntu Linux 64bit&lt;/code&gt;的版本。&lt;/p&gt;
-
-&lt;p&gt;將JDK下載下來後，將JDK解壓縮到你想放置的位置，一般來說都會放在&lt;code&gt;/opt&lt;/code&gt;目錄底下。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;tar zxvf jdk-7u25-linux-x64.tar.gz
-sudo mv jdk-7u25-linux-x64 /opt/jdk
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;修改環境變數&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 修改
-sudo vim /etc/environment
-
-# 填入以下內容
-PATH=$PATH:&quot;/opt/jdk/bin&quot;
-CLASS_PATH=&quot;/opt/jdk/lib&quot;
-JAVA_HOME=&quot;/opt/jdk&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;只要上面的指令能顯示出正確版號，就已經完成JDK的設定了。&lt;/p&gt;
-
-&lt;h2&gt;Hadoop安裝與設定&lt;/h2&gt;
-
-&lt;p&gt;在實際的環境中我使用到了3台虛擬機器當作節點，所以以下是多節點的設定。&lt;/p&gt;
-
-&lt;h3&gt;下載Hadoop&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.apache.org/dyn/closer.cgi/hadoop/common/&quot;&gt;Hadoop Download&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Hadoop目前分為幾個版次，如下：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1.1.X - current stable version, 1.1 release&lt;/li&gt;
-&lt;li&gt;1.2.X - current beta version, 1.2 release&lt;/li&gt;
-&lt;li&gt;2.X.X - current alpha version&lt;/li&gt;
-&lt;li&gt;0.23.X - simmilar to 2.X.X but missing NN HA.&lt;/li&gt;
-&lt;li&gt;0.22.X - does not include security&lt;/li&gt;
-&lt;li&gt;0.20.203.X - old legacy stable version&lt;/li&gt;
-&lt;li&gt;0.20.X - old legacy version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;一般來說我們選擇&lt;code&gt;Stable Version&lt;/code&gt;就可以了，Hadoop下載完成後一樣可以解壓縮放置在&lt;code&gt;/opt&lt;/code&gt;下。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;tar zxvf hadoop-1.1.2.tar.gz
-sudo mv hadoop-1.1.2 /opt/hadoop
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;修改環境變數&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;# 修改
-sudo vim /etc/environment
-
-# 填入以下內容
-PATH=$PATH:&quot;/opt/hadoop/bin&quot;
-HADOOP_HOME=&quot;/opt/hadoop&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;修改Hadoop設定檔&lt;/h3&gt;
-
-&lt;h4&gt;/opt/hadoop/conf/hadoop-env.sh&lt;/h4&gt;
-
-&lt;p&gt;設定Hadoop的啟動環境，在檔案中修改這一行加入&lt;code&gt;JAVA_HOME&lt;/code&gt;的路徑。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;export JAVA_HOME=/opt/jdk
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果執行後會出現&lt;code&gt;$HADOOP_HOME is deprecated&lt;/code&gt;可以加入下面這一行。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;export HADOOP_HOME_WARN_SUPPRESS=&quot;TRUE&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;/etc/hosts&lt;/h4&gt;
-
-&lt;p&gt;設定&lt;code&gt;Host Name&lt;/code&gt;與&lt;code&gt;IP&lt;/code&gt;的對應，另外SSH的&lt;code&gt;Authorized Keys&lt;/code&gt;就自行設定吧。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;192.168.1.1 node01
-192.168.1.2 node02
-192.168.1.3 node03
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;/opt/hadoop/conf/core-site.xml&lt;/h4&gt;
-
-&lt;p&gt;設定HDFS的&lt;code&gt;Name Node&lt;/code&gt;設定給node01以及Hadoop的暫存路徑。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;configuration&amp;gt;
-  &amp;lt;property&amp;gt;
-    &amp;lt;name&amp;gt;fs.default.name&amp;lt;/name&amp;gt;
-    &amp;lt;value&amp;gt;hdfs://node01:9000&amp;lt;/value&amp;gt;
-  &amp;lt;/property&amp;gt;
-  &amp;lt;property&amp;gt;
-    &amp;lt;name&amp;gt;hadoop.tmp.dir&amp;lt;/name&amp;gt;
-    &amp;lt;value&amp;gt;/tmp/hadoop/hadoop-${user.name}&amp;lt;/value&amp;gt;
-    &amp;lt;description&amp;gt;A base for other temporary directories.&amp;lt;/description&amp;gt;
-  &amp;lt;/property&amp;gt;
-&amp;lt;/configuration&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;/opt/hadoop/conf/hdfs-site.xml&lt;/h4&gt;
-
-&lt;p&gt;設定&lt;code&gt;HDFS&lt;/code&gt;的檔案複製數量。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;configuration&amp;gt;
-  &amp;lt;property&amp;gt;
-    &amp;lt;name&amp;gt;dfs.replication&amp;lt;/name&amp;gt;
-    &amp;lt;value&amp;gt;3&amp;lt;/value&amp;gt;
-  &amp;lt;/property&amp;gt;
-&amp;lt;/configuration&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;/opt/hadoop/conf/mapred-site.xml&lt;/h4&gt;
-
-&lt;p&gt;指定Job Tracker的位置，設定&lt;code&gt;node01&lt;/code&gt;當作master。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;configuration&amp;gt;
-  &amp;lt;property&amp;gt;
-    &amp;lt;name&amp;gt;mapred.job.tracker&amp;lt;/name&amp;gt;
-    &amp;lt;value&amp;gt;node01:9001&amp;lt;/value&amp;gt;
-  &amp;lt;/property&amp;gt;
-&amp;lt;/configuration&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;master&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;txt&quot;&gt;node01
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;slave&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;txt&quot;&gt;node02
-node03
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;啟動&lt;/h3&gt;
-
-&lt;p&gt;當上面的設定都結束之後，就可以用&lt;code&gt;rsync&lt;/code&gt;將&lt;code&gt;/opt/hadoop&lt;/code&gt;的檔案同步到各個節點上了。&lt;/p&gt;
-
-&lt;p&gt;接著可以使用以下指令檢查Hadoop的版本。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;hadoop version
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在第一次啟動Hadoop之前必須先格式化HDFS。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;hadoop namenode -format
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;接著啟動Hadoop。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;start-all.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;打完收工&lt;/h2&gt;
-
-&lt;p&gt;在這篇就單純紀錄安裝Hadoop的一些過程，但實際上我使用到的部份就只有HDFS，MapReduce的話目前沒有能夠拿來算的數據。&lt;/p&gt;
-
-&lt;p&gt;另外最近有點忙網誌已經很久沒動了，而且最近光打這篇紀錄就拖了半個月以上。&lt;/p&gt;
 </summary>
 		<author>
 			<name>ScarWu</name>
