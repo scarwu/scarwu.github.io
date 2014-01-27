@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>ScarShow | 刀疤說</title>
+	<title><![CDATA[ScarShow | 刀疤說]]></title>
 	<subtitle>I know that I don't know</subtitle>
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-01-19T20:53:15+08:00</updated>
+	<updated>2014-01-27T17:47:02+08:00</updated>
+	<author>
+		<name><![CDATA[ScarWu]]></name>
+		<uri>http://scar.simcz.tw/</uri>
+	</author>
 	<entry>
-		<title>Chrome - Enable Hardware Graphics</title>
+		<title type="html"><![CDATA[Chrome - Enable Hardware Graphics]]></title>
 		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics" />
 		<id>urn:uuid:a3b360b7-5d6e-9c12-8a64-7f83e97a6a7c</id>
 		<updated>2014-01-19T12:48:58+08:00</updated>
-		<summary type="html">&lt;h2&gt;難得&lt;/h2&gt;
+		<summary type="html"><![CDATA[&lt;h2&gt;難得&lt;/h2&gt;
 
 &lt;p&gt;很難得可以在一天內發兩篇文章，在上一篇文末提到&lt;code&gt;WebGL&lt;/code&gt;打不開的問題，那是個誤會，真的。&lt;/p&gt;
 
@@ -46,18 +50,14 @@
 &lt;h2&gt;爽&lt;/h2&gt;
 
 &lt;p&gt;接下就爽爽用&lt;code&gt;Chrome&lt;/code&gt;上的硬體加速吧。&lt;/p&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
+]]></summary>
 	</entry>
 	<entry>
-		<title>Ubuntu 13.10 install AMD Catalyst 13.12</title>
+		<title type="html"><![CDATA[Ubuntu 13.10 install AMD Catalyst 13.12]]></title>
 		<link href="http://scar.simcz.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12" />
 		<id>urn:uuid:d2c45662-8551-28ca-e998-b7c95093c3e4</id>
 		<updated>2014-01-19T10:30:55+08:00</updated>
-		<summary type="html">&lt;h2&gt;不解&lt;/h2&gt;
+		<summary type="html"><![CDATA[&lt;h2&gt;不解&lt;/h2&gt;
 
 &lt;p&gt;不知道為什麼，只要碰到顯示卡驅動程式的安裝，我就很容易讓我的機器爆炸，這一定有問題，所以還是趕快把這次成功安裝的過程記錄下來，避免之後又爆了。&lt;/p&gt;
 
@@ -192,18 +192,14 @@ sudo reboot
 &lt;li&gt;&lt;a href=&quot;http://wiki.cchtml.com/index.php/Ubuntu_Saucy_Installation_Guide&quot; target=&quot;_blank&quot;&gt;Unoffical AMD Linux Community - Ubuntu Saucy Installation Guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://gist.github.com/moldcraft/8116528&quot; target=&quot;_blank&quot;&gt;Install AMD Catalyst 13.12 Driver with patch on Ubuntu 13.10&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
+]]></summary>
 	</entry>
 	<entry>
-		<title>ZSH - history-search-backward/forward</title>
+		<title type="html"><![CDATA[ZSH - history-search-backward/forward]]></title>
 		<link href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward" />
 		<id>urn:uuid:c104f70b-f01c-0610-f999-ddf6e584f625</id>
 		<updated>2014-01-14T08:50:49+08:00</updated>
-		<summary type="html">&lt;p&gt;原本&lt;code&gt;oh-my-zsh&lt;/code&gt;在&lt;code&gt;Ubuntu 12.04 LTS&lt;/code&gt;以及&lt;code&gt;Arch Linux&lt;/code&gt;用好好的&lt;code&gt;history-search-backward&lt;/code&gt;、&lt;code&gt;history-search-forward&lt;/code&gt;，到了&lt;code&gt;Ubuntu 13.10&lt;/code&gt;就不能用了，查了一下&lt;code&gt;ZSH&lt;/code&gt;雖然版號不一樣，不知道是不是因為發行版影響，因為&lt;code&gt;Arch Linux&lt;/code&gt;的&lt;code&gt;ZSH&lt;/code&gt;版本還比&lt;code&gt;Ubuntu 13.10&lt;/code&gt;新。&lt;/p&gt;
+		<summary type="html"><![CDATA[&lt;p&gt;原本&lt;code&gt;oh-my-zsh&lt;/code&gt;在&lt;code&gt;Ubuntu 12.04 LTS&lt;/code&gt;以及&lt;code&gt;Arch Linux&lt;/code&gt;用好好的&lt;code&gt;history-search-backward&lt;/code&gt;、&lt;code&gt;history-search-forward&lt;/code&gt;，到了&lt;code&gt;Ubuntu 13.10&lt;/code&gt;就不能用了，查了一下&lt;code&gt;ZSH&lt;/code&gt;雖然版號不一樣，不知道是不是因為發行版影響，因為&lt;code&gt;Arch Linux&lt;/code&gt;的&lt;code&gt;ZSH&lt;/code&gt;版本還比&lt;code&gt;Ubuntu 13.10&lt;/code&gt;新。&lt;/p&gt;
 
 &lt;p&gt;下面是各個發行版的&lt;code&gt;Z Shell&lt;/code&gt;版號。&lt;/p&gt;
 
@@ -223,18 +219,14 @@ bindkey &quot;${key[Down]}&quot; history-search-forward
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;接著重起&lt;code&gt;terminal&lt;/code&gt;或是&lt;code&gt;source .zshrc&lt;/code&gt;一切就完成了。&lt;/p&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
+]]></summary>
 	</entry>
 	<entry>
-		<title>Express + Jade/LESS/Coffee with LiveReload</title>
+		<title type="html"><![CDATA[Express + Jade/LESS/Coffee with LiveReload]]></title>
 		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
 		<id>urn:uuid:e6b3a8b3-2368-4ead-4c48-8048c7cf69df</id>
 		<updated>2014-01-03T11:23:52+08:00</updated>
-		<summary type="html">&lt;h2&gt;廢話&lt;/h2&gt;
+		<summary type="html"><![CDATA[&lt;h2&gt;廢話&lt;/h2&gt;
 
 &lt;p&gt;2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！&lt;/p&gt;
 
@@ -445,18 +437,14 @@ var livereload = require(&#039;livereload&#039;).createServer({
 livereload.watch(__dirname + &#039;/public&#039;);
 livereload.watch(__dirname + &#039;/views&#039;);
 &lt;/code&gt;&lt;/pre&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
+]]></summary>
 	</entry>
 	<entry>
-		<title>修正Ubuntu 13.10小紅點問題</title>
+		<title type="html"><![CDATA[修正Ubuntu 13.10小紅點問題]]></title>
 		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
 		<id>urn:uuid:16b2685d-ee94-918a-fa81-480de55bdf41</id>
 		<updated>2013-11-24T15:41:34+08:00</updated>
-		<summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+		<summary type="html"><![CDATA[&lt;h2&gt;前言&lt;/h2&gt;
 
 &lt;p&gt;上次才說把筆電的作業系統換成&lt;code&gt;Arch Linux&lt;/code&gt;，由於某些因素現在又換回&lt;code&gt;Ubuntu&lt;/code&gt;了...這次想說換成新版的&lt;code&gt;Ubuntu&lt;/code&gt;，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。&lt;/p&gt;
 
@@ -509,10 +497,6 @@ EndSection
 &lt;h2&gt;結語&lt;/h2&gt;
 
 &lt;p&gt;這樣小紅點終於不是半殘，星爺表示：大師兄回來了！&lt;/p&gt;
-</summary>
-		<author>
-			<name>ScarWu</name>
-			<uri>http://scar.simcz.tw/</uri>
-		</author>
+]]></summary>
 	</entry>
 </feed>
