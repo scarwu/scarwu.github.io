@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-02-21T14:47:13+08:00</updated>
+	<updated>2014-02-21T16:08:09+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -15,41 +15,41 @@
 		<link href="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults" />
 		<id>urn:uuid:7d40cfb8-50e2-e5eb-c0ae-02e69b0effae</id>
 		<updated>2014-02-21T08:03:01+08:00</updated>
-		<summary type="html"><![CDATA[&lt;h2&gt;怪事&lt;/h2&gt;
+		<summary type="html"><![CDATA[<h2>怪事</h2>
 
-&lt;p&gt;在開發&lt;code&gt;Pointless&lt;/code&gt;到現在的兩年期間內，初期其實都還算順利，直到最近幾個月遇到了兩次&lt;code&gt;Segmentation Fault&lt;/code&gt;，終於我遇的不是&lt;code&gt;PHP&lt;/code&gt;的&lt;code&gt;Syntax Error&lt;/code&gt;，而是&lt;code&gt;PHP&lt;/code&gt;的&lt;code&gt;Bugs&lt;/code&gt;或是其中函式庫的問題。&lt;/p&gt;
+<p>在開發<code>Pointless</code>到現在的兩年期間內，初期其實都還算順利，直到最近幾個月遇到了兩次<code>Segmentation Fault</code>，終於我遇的不是<code>PHP</code>的<code>Syntax Error</code>，而是<code>PHP</code>的<code>Bugs</code>或是其中函式庫的問題。</p>
 
-&lt;p&gt;寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在&lt;code&gt;OS X&lt;/code&gt;上用&lt;code&gt;PHPBrew&lt;/code&gt;編出的&lt;code&gt;PHP VM&lt;/code&gt;，另一次就是最近在&lt;code&gt;Ubuntu 13.10&lt;/code&gt;及&lt;code&gt;Ubuntu 12.04 LTS&lt;/code&gt;上還是用&lt;code&gt;PHPBrew&lt;/code&gt;所編出的&lt;code&gt;PHP&lt;/code&gt;。&lt;/p&gt;
+<p>寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在<code>OS X</code>上用<code>PHPBrew</code>編出的<code>PHP</code>，另一次就是最近在<code>Ubuntu 13.10</code>及<code>Ubuntu 12.04 LTS</code>上還是用<code>PHPBrew</code>所編出的<code>PHP</code>。</p>
 
-&lt;p&gt;題外話，話說&lt;code&gt;PHPBrew&lt;/code&gt;超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。&lt;/p&gt;
+<p>題外話，話說<code>PHPBrew</code>超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;h2&gt;在OS X的那次&lt;/h2&gt;
+<h2>在OS X的那次</h2>
 
-&lt;p&gt;我先後在不同的兩台&lt;code&gt;Mac Air&lt;/code&gt;測試過都會發生錯誤，在文章數量小的情況下不會有問題，但是文章只要一多就會發生錯誤。&lt;/p&gt;
+<p>我先後在不同的兩台<code>Mac Air</code>測試過都會發生錯誤，在文章數量小的情況下不會有問題，但是文章只要一多就會發生錯誤。</p>
 
-&lt;p&gt;而出錯的地方就是用來將資料及樣板結合的&lt;code&gt;bindData()&lt;/code&gt;其中只有&lt;code&gt;include&lt;/code&gt;以及&lt;code&gt;Output Buffer&lt;/code&gt;等函式，但我檢查不出是&lt;code&gt;PHP VM&lt;/code&gt;編譯時的哪支有問題所以作罷。&lt;/p&gt;
+<p>而出錯的地方就是用來將資料及樣板結合的<code>bindData()</code>其中只有<code>include</code>以及<code>Output Buffer</code>等函式，但我檢查不出是<code>PHP VM</code>編譯時的哪支有問題所以作罷。</p>
 
-&lt;p&gt;還因為這樣，當時還有人評論說這個部落格只要文章超過140字元就會爆炸。但這不是我的錯，這一定有誤會。&lt;/p&gt;
+<p>還因為這樣，當時還有人評論說這個部落格只要文章超過140字元就會爆炸。但這不是我的錯，這一定有誤會。</p>
 
-&lt;h2&gt;在Ubuntu的這次&lt;/h2&gt;
+<h2>在Ubuntu的這次</h2>
 
-&lt;p&gt;最近，其實就是上禮拜，我再忙著把&lt;code&gt;Pointless&lt;/code&gt;升級成支援&lt;code&gt;PHP 5.4&lt;/code&gt;所以將系統中&lt;code&gt;PHP 5.4.12&lt;/code&gt;升級到&lt;code&gt;PHP 5.4.25&lt;/code&gt;以及&lt;code&gt;PHP 5.5.5&lt;/code&gt;升級到&lt;code&gt;PHP 5.5.9&lt;/code&gt;。&lt;/p&gt;
+<p>最近，其實就是上禮拜，我再忙著把<code>Pointless</code>升級成支援<code>PHP 5.4</code>所以將系統中<code>PHP 5.4.12</code>升級到<code>PHP 5.4.25</code>以及<code>PHP 5.5.5</code>升級到<code>PHP 5.5.9</code>。</p>
 
-&lt;p&gt;但是&lt;code&gt;PHP&lt;/code&gt;在&lt;code&gt;./configure&lt;/code&gt;的時候會出現&lt;code&gt;configure: error: Could not find libpcre.(a|so) in /usr&lt;/code&gt;而失敗，把出現問題的檔案補上後，可以正常編譯了。&lt;/p&gt;
+<p>但是<code>PHP</code>在<code>./configure</code>的時候會出現<code>configure: error: Could not find libpcre.(a|so) in /usr</code>而失敗，把出現問題的檔案補上後，可以正常編譯了。</p>
 
-&lt;p&gt;當我正開心要作測試的時候，他就爆了。這次的問題出現在剛剛的&lt;code&gt;PCRE Library&lt;/code&gt;上，只要我在程式中使用&lt;code&gt;preg_match()&lt;/code&gt;然後所輸入的字串太長就會爆炸。&lt;/p&gt;
+<p>當我正開心要作測試的時候，他就爆了。這次的問題出現在剛剛的<code>PCRE Library</code>上，只要我在程式中使用<code>preg_match()</code>然後所輸入的字串太長就會爆炸。</p>
 
-&lt;p&gt;所以我就重新編譯了新的&lt;code&gt;PCRE Library&lt;/code&gt;，想當然爾&lt;code&gt;./configure&lt;/code&gt;還是找不到檔案，手動補上檔案後在同樣的地方還是爆了...。最後我在另外一台機器上編譯同樣的檔案，使用同樣的&lt;code&gt;./configure&lt;/code&gt;設定結果還是一樣。&lt;/p&gt;
+<p>所以我就重新編譯了新的<code>PCRE Library</code>，想當然爾<code>./configure</code>還是找不到檔案，手動補上檔案後在同樣的地方還是爆了...。最後我在另外一台機器上編譯同樣的檔案，使用同樣的<code>./configure</code>設定結果還是一樣。</p>
 
-&lt;h1&gt;結論&lt;/h1&gt;
+<h1>結論</h1>
 
-&lt;p&gt;&lt;code&gt;Mac OS X&lt;/code&gt;系統預設的函式庫跟我正常使用的&lt;code&gt;Ubuntu&lt;/code&gt;一定有哪邊不一樣。&lt;/p&gt;
+<p><code>Mac OS X</code>系統預設的函式庫跟我正常使用的<code>Ubuntu</code>一定有哪邊不一樣。</p>
 
-&lt;p&gt;&lt;code&gt;Ubuntu&lt;/code&gt;幾個月前的所使用的函式庫跟現在跟更新後的&lt;code&gt;Ubuntu&lt;/code&gt;的函式庫一定有哪邊不一樣。&lt;/p&gt;
+<p><code>Ubuntu</code>幾個月前的所使用的函式庫跟現在跟更新後的<code>Ubuntu</code>的函式庫一定有哪邊不一樣。</p>
 
-&lt;p&gt;到底哪裡不一樣？我還要再查查。&lt;/p&gt;
+<p>到底哪裡不一樣？我還要再查查。</p>
 ]]></summary>
 	</entry>
 	<entry>
@@ -57,41 +57,41 @@
 		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics" />
 		<id>urn:uuid:a3b360b7-5d6e-9c12-8a64-7f83e97a6a7c</id>
 		<updated>2014-01-19T12:48:58+08:00</updated>
-		<summary type="html"><![CDATA[&lt;h2&gt;難得&lt;/h2&gt;
+		<summary type="html"><![CDATA[<h2>難得</h2>
 
-&lt;p&gt;很難得可以在一天內發兩篇文章，在上一篇文末提到&lt;code&gt;WebGL&lt;/code&gt;打不開的問題，那是個誤會，真的。&lt;/p&gt;
+<p>很難得可以在一天內發兩篇文章，在上一篇文末提到<code>WebGL</code>打不開的問題，那是個誤會，真的。</p>
 
-&lt;p&gt;在&lt;code&gt;Chrome&lt;/code&gt;的&lt;code&gt;chrome://flags&lt;/code&gt;裡有一個選項&lt;code&gt;Override software rendering list&lt;/code&gt;可以開啟硬體加速，在更新驅動程式前我怎樣試都不行，所以我就以為沒有用。&lt;/p&gt;
+<p>在<code>Chrome</code>的<code>chrome://flags</code>裡有一個選項<code>Override software rendering list</code>可以開啟硬體加速，在更新驅動程式前我怎樣試都不行，所以我就以為沒有用。</p>
 
-&lt;p&gt;其實在驅動程式更新之後就已經可以使用了，只是硬體加速還要另外開啟，讓我產生&lt;code&gt;WebGL&lt;/code&gt;無法開啟的錯覺。&lt;/p&gt;
+<p>其實在驅動程式更新之後就已經可以使用了，只是硬體加速還要另外開啟，讓我產生<code>WebGL</code>無法開啟的錯覺。</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;h2&gt;正常啟用流程&lt;/h2&gt;
+<h2>正常啟用流程</h2>
 
-&lt;p&gt;我們可以在&lt;code&gt;Chrome&lt;/code&gt;中使用&lt;code&gt;chrome://gpu&lt;/code&gt;這個連結去確認是否有開啟硬加速，在一般情況下都是呈現下方的狀態。&lt;/p&gt;
+<p>我們可以在<code>Chrome</code>中使用<code>chrome://gpu</code>這個連結去確認是否有開啟硬加速，在一般情況下都是呈現下方的狀態。</p>
 
-&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/gpu001.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+<p><img src="/images/chrome-enable-hardware-graphics/gpu001.jpg" alt="Hardware Graphics"></p>
 
-&lt;p&gt;更據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。&lt;/p&gt;
+<p>更據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。</p>
 
-&lt;p&gt;在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，&lt;code&gt;WebGL&lt;/code&gt;也已經可以使用。&lt;/p&gt;
+<p>在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，<code>WebGL</code>也已經可以使用。</p>
 
-&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/gpu002.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+<p><img src="/images/chrome-enable-hardware-graphics/gpu002.jpg" alt="Hardware Graphics"></p>
 
-&lt;p&gt;最後將&lt;code&gt;chrome://flags&lt;/code&gt;中的&lt;code&gt;Override software rendering list&lt;/code&gt;啟動，並重新開啟&lt;code&gt;Chrome&lt;/code&gt;。&lt;/p&gt;
+<p>最後將<code>chrome://flags</code>中的<code>Override software rendering list</code>啟動，並重新開啟<code>Chrome</code>。</p>
 
-&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/flags001.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+<p><img src="/images/chrome-enable-hardware-graphics/flags001.jpg" alt="Hardware Graphics"></p>
 
-&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/flags002.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+<p><img src="/images/chrome-enable-hardware-graphics/flags002.jpg" alt="Hardware Graphics"></p>
 
-&lt;p&gt;最後就會得一片綠油油的正常狀態。&lt;/p&gt;
+<p>最後就會得一片綠油油的正常狀態。</p>
 
-&lt;p&gt;&lt;img src=&quot;/images/chrome-enable-hardware-graphics/gpu003.jpg&quot; alt=&quot;Hardware Graphics&quot;&gt;&lt;/p&gt;
+<p><img src="/images/chrome-enable-hardware-graphics/gpu003.jpg" alt="Hardware Graphics"></p>
 
-&lt;h2&gt;爽&lt;/h2&gt;
+<h2>爽</h2>
 
-&lt;p&gt;接下就爽爽用&lt;code&gt;Chrome&lt;/code&gt;上的硬體加速吧。&lt;/p&gt;
+<p>接下就爽爽用<code>Chrome</code>上的硬體加速吧。</p>
 ]]></summary>
 	</entry>
 	<entry>
@@ -99,50 +99,50 @@
 		<link href="http://scar.simcz.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12" />
 		<id>urn:uuid:d2c45662-8551-28ca-e998-b7c95093c3e4</id>
 		<updated>2014-01-19T10:30:55+08:00</updated>
-		<summary type="html"><![CDATA[&lt;h2&gt;不解&lt;/h2&gt;
+		<summary type="html"><![CDATA[<h2>不解</h2>
 
-&lt;p&gt;不知道為什麼，只要碰到顯示卡驅動程式的安裝，我就很容易讓我的機器爆炸，這一定有問題，所以還是趕快把這次成功安裝的過程記錄下來，避免之後又爆了。&lt;/p&gt;
+<p>不知道為什麼，只要碰到顯示卡驅動程式的安裝，我就很容易讓我的機器爆炸，這一定有問題，所以還是趕快把這次成功安裝的過程記錄下來，避免之後又爆了。</p>
 
-&lt;p&gt;安裝驅動有這麼難嗎？很難，因為每次都爆炸XD&lt;/p&gt;
+<p>安裝驅動有這麼難嗎？很難，因為每次都爆炸XD</p>
 
-&lt;p&gt;平常我也不想去更新的我的顯示卡驅動，但是&lt;code&gt;Chrome&lt;/code&gt;告訴我&lt;code&gt;ATI/AMD cards with older or third-party drivers&lt;/code&gt;，我只是想開啟&lt;code&gt;WebGL&lt;/code&gt;而已，為了能夠用&lt;code&gt;WebGL&lt;/code&gt;還是更新吧。&lt;/p&gt;
+<p>平常我也不想去更新的我的顯示卡驅動，但是<code>Chrome</code>告訴我<code>ATI/AMD cards with older or third-party drivers</code>，我只是想開啟<code>WebGL</code>而已，為了能夠用<code>WebGL</code>還是更新吧。</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;h2&gt;安裝套件&lt;/h2&gt;
+<h2>安裝套件</h2>
 
-&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade -y
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y
 sudo apt-get install cdbs dh-make dkms execstack dh-modaliases linux-headers-generic libqtgui4
 
 # for x86_64 (64bit)
 sudo apt-get install lib32gcc1
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h2&gt;下載 AMD Catalyst&lt;/h2&gt;
+<h2>下載 AMD Catalyst</h2>
 
-&lt;pre&gt;&lt;code&gt;mkdir amd-catalyst &amp;amp;&amp;amp; cd amd-catalyst
-wget --referer=&#039;http://support.amd.com/en-us/download/desktop?os=Linux+x86&#039; http://www2.ati.com/drivers/linux/amd-catalyst-13.12-linux-x86.x86_64.zip
+<pre><code>mkdir amd-catalyst &amp;&amp; cd amd-catalyst
+wget --referer='http://support.amd.com/en-us/download/desktop?os=Linux+x86' http://www2.ati.com/drivers/linux/amd-catalyst-13.12-linux-x86.x86_64.zip
 unzip amd-catalyst-13.12-linux-x86.x86_64.zip
 chmod +x amd-catalyst-13.12-linux-x86.x86_64.run
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h2&gt;編譯套件&lt;/h2&gt;
+<h2>編譯套件</h2>
 
-&lt;h3&gt;Patch kcl_acpi.c&lt;/h3&gt;
+<h3>Patch kcl_acpi.c</h3>
 
-&lt;pre&gt;&lt;code&gt;./amd-catalyst-13.12-linux-x86.x86_64.run --extract catalyst
+<pre><code>./amd-catalyst-13.12-linux-x86.x86_64.run --extract catalyst
 
 cd catalyst
 vim common/lib/modules/fglrx/build_mod/kcl_acpi.c
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;把&lt;code&gt;kcl_acpi.c&lt;/code&gt;第990行以後的&lt;/p&gt;
+<p>把<code>kcl_acpi.c</code>第990行以後的</p>
 
-&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;#if LINUX_VERSION_CODE &amp;gt;= KERNEL_VERSION(3,6,3)    
-    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;amp;hdr, &amp;amp;tbl_size)))
+<pre><code class="c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
+    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;hdr, &amp;tbl_size)))
 #else
     tbl_size = 0x7fffffff;
-    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;amp;hdr)))
+    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;hdr)))
 #endif
     {
         return KCL_ACPI_ERROR;
@@ -150,90 +150,90 @@ vim common/lib/modules/fglrx/build_mod/kcl_acpi.c
     ((acpi_table_handler)handler)(hdr);
     return KCL_ACPI_OK;
 }
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;換成這個&lt;/p&gt;
+<p>換成這個</p>
 
-&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;#if LINUX_VERSION_CODE &amp;gt;= KERNEL_VERSION(3,6,3)    
-    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;amp;hdr, &amp;amp;tbl_size)))
+<pre><code class="c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
+    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;hdr, &amp;tbl_size)))
 #else
     tbl_size = 0x7fffffff;
-    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;amp;hdr)))
+    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;hdr)))
 #endif
     {
         return KCL_ACPI_ERROR;
     }
-#if LINUX_VERSION_CODE &amp;gt;= KERNEL_VERSION(3,9,1)
+#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,9,1)
     ((acpi_tbl_table_handler)handler)(hdr);
 #else
     ((acpi_table_handler)handler)(hdr);
 #endif
     return KCL_ACPI_OK;
 }
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h3&gt;開始編譯&lt;/h3&gt;
+<h3>開始編譯</h3>
 
-&lt;pre&gt;&lt;code&gt;sudo ./ati-installer.sh 13.251 --buildpkg Ubuntu/saucy
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>sudo ./ati-installer.sh 13.251 --buildpkg Ubuntu/saucy
+</code></pre>
 
-&lt;h3&gt;安裝 .deb 檔&lt;/h3&gt;
+<h3>安裝 .deb 檔</h3>
 
-&lt;pre&gt;&lt;code&gt;cd ..
+<pre><code>cd ..
 sudo dpkg -i fglrx*.deb
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h2&gt;設定環境&lt;/h2&gt;
+<h2>設定環境</h2>
 
-&lt;h3&gt;產生新的 xorg.conf&lt;/h3&gt;
+<h3>產生新的 xorg.conf</h3>
 
-&lt;pre&gt;&lt;code&gt;sudo amdconfig --initial -f
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>sudo amdconfig --initial -f
+</code></pre>
 
-&lt;h3&gt;選擇系統驅動程式&lt;/h3&gt;
+<h3>選擇系統驅動程式</h3>
 
-&lt;pre&gt;&lt;code&gt;# choice /usr/lib/fglrx/ld.so.conf
+<pre><code># choice /usr/lib/fglrx/ld.so.conf
 sudo update-alternatives --config x86_64-linux-gnu_gl_conf
 sudo ldconfig
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;接下來就開心重新開機吧！&lt;/p&gt;
+<p>接下來就開心重新開機吧！</p>
 
-&lt;pre&gt;&lt;code&gt;sudo reboot
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>sudo reboot
+</code></pre>
 
-&lt;p&gt;確認是否安裝成功可以用下面的指令做檢查&lt;/p&gt;
+<p>確認是否安裝成功可以用下面的指令做檢查</p>
 
-&lt;pre&gt;&lt;code&gt;fglrxinfo
+<pre><code>fglrxinfo
 fgl_glxgears
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h3&gt;更新失敗&lt;/h3&gt;
+<h3>更新失敗</h3>
 
-&lt;p&gt;人生中難免會有風險，如果你重新開機後，發現螢幕上有國防布的話，那只好用以下方式修復&lt;/p&gt;
+<p>人生中難免會有風險，如果你重新開機後，發現螢幕上有國防布的話，那只好用以下方式修復</p>
 
-&lt;pre&gt;&lt;code&gt;sudo cp /etx/X11/xorg.conf.original /etc/X11/xorg.conf
+<pre><code>sudo cp /etx/X11/xorg.conf.original /etc/X11/xorg.conf
 
 # choice /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf
 sudo update-alternatives --config x86_64-linux-gnu_gl_conf
 sudo ldconfig
 
 sudo reboot
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h2&gt;最後&lt;/h2&gt;
+<h2>最後</h2>
 
-&lt;p&gt;更新驅動就花了我兩個早上，終於更新成功了，但是&lt;code&gt;Chrome&lt;/code&gt;的&lt;code&gt;WebGL&lt;/code&gt;還是不給開...&lt;/p&gt;
+<p>更新驅動就花了我兩個早上，終於更新成功了，但是<code>Chrome</code>的<code>WebGL</code>還是不給開...</p>
 
-&lt;p&gt;這一定有誤會。&lt;/p&gt;
+<p>這一定有誤會。</p>
 
-&lt;h3&gt;Reference&lt;/h3&gt;
+<h3>Reference</h3>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://support.amd.com/en-us/download&quot; target=&quot;_blank&quot;&gt;Download Driver - AMD Graphics Drivers and Software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://wiki.cchtml.com/index.php/Ubuntu_Saucy_Installation_Guide&quot; target=&quot;_blank&quot;&gt;Unoffical AMD Linux Community - Ubuntu Saucy Installation Guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://gist.github.com/moldcraft/8116528&quot; target=&quot;_blank&quot;&gt;Install AMD Catalyst 13.12 Driver with patch on Ubuntu 13.10&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+<li><a href="http://support.amd.com/en-us/download" target="_blank">Download Driver - AMD Graphics Drivers and Software</a></li>
+<li><a href="http://wiki.cchtml.com/index.php/Ubuntu_Saucy_Installation_Guide" target="_blank">Unoffical AMD Linux Community - Ubuntu Saucy Installation Guide</a></li>
+<li><a href="https://gist.github.com/moldcraft/8116528" target="_blank">Install AMD Catalyst 13.12 Driver with patch on Ubuntu 13.10</a></li>
+</ul>
 ]]></summary>
 	</entry>
 	<entry>
@@ -241,26 +241,26 @@ sudo reboot
 		<link href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward" />
 		<id>urn:uuid:c104f70b-f01c-0610-f999-ddf6e584f625</id>
 		<updated>2014-01-14T08:50:49+08:00</updated>
-		<summary type="html"><![CDATA[&lt;p&gt;原本&lt;code&gt;oh-my-zsh&lt;/code&gt;在&lt;code&gt;Ubuntu 12.04 LTS&lt;/code&gt;以及&lt;code&gt;Arch Linux&lt;/code&gt;用好好的&lt;code&gt;history-search-backward&lt;/code&gt;、&lt;code&gt;history-search-forward&lt;/code&gt;，到了&lt;code&gt;Ubuntu 13.10&lt;/code&gt;就不能用了，查了一下&lt;code&gt;ZSH&lt;/code&gt;雖然版號不一樣，不知道是不是因為發行版影響，因為&lt;code&gt;Arch Linux&lt;/code&gt;的&lt;code&gt;ZSH&lt;/code&gt;版本還比&lt;code&gt;Ubuntu 13.10&lt;/code&gt;新。&lt;/p&gt;
+		<summary type="html"><![CDATA[<p>原本<code>oh-my-zsh</code>在<code>Ubuntu 12.04 LTS</code>以及<code>Arch Linux</code>用好好的<code>history-search-backward</code>、<code>history-search-forward</code>，到了<code>Ubuntu 13.10</code>就不能用了，查了一下<code>ZSH</code>雖然版號不一樣，不知道是不是因為發行版影響，因為<code>Arch Linux</code>的<code>ZSH</code>版本還比<code>Ubuntu 13.10</code>新。</p>
 
-&lt;p&gt;下面是各個發行版的&lt;code&gt;Z Shell&lt;/code&gt;版號。&lt;/p&gt;
+<p>下面是各個發行版的<code>Z Shell</code>版號。</p>
 
-&lt;pre&gt;&lt;code&gt;Ubuntu 12.04 LTS : 4.3.17
+<pre><code>Ubuntu 12.04 LTS : 4.3.17
 Ubuntu 12.10     : 5.0.0
 Ubuntu 13.04     : 5.0.0
 Ubuntu 13.10     : 5.0.2
 Arch Linux       : 5.0.5
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;p&gt;算了至少功能沒有那就自己加上去，在&lt;code&gt;~/.zshrc&lt;/code&gt;中加入以下兩行就行了。&lt;/p&gt;
+<p>算了至少功能沒有那就自己加上去，在<code>~/.zshrc</code>中加入以下兩行就行了。</p>
 
-&lt;pre&gt;&lt;code&gt;bindkey &quot;${key[Up]}&quot; history-search-backward
-bindkey &quot;${key[Down]}&quot; history-search-forward
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>bindkey "${key[Up]}" history-search-backward
+bindkey "${key[Down]}" history-search-forward
+</code></pre>
 
-&lt;p&gt;接著重起&lt;code&gt;terminal&lt;/code&gt;或是&lt;code&gt;source .zshrc&lt;/code&gt;一切就完成了。&lt;/p&gt;
+<p>接著重起<code>terminal</code>或是<code>source .zshrc</code>一切就完成了。</p>
 ]]></summary>
 	</entry>
 	<entry>
@@ -268,217 +268,217 @@ bindkey &quot;${key[Down]}&quot; history-search-forward
 		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
 		<id>urn:uuid:e6b3a8b3-2368-4ead-4c48-8048c7cf69df</id>
 		<updated>2014-01-03T11:23:52+08:00</updated>
-		<summary type="html"><![CDATA[&lt;h2&gt;廢話&lt;/h2&gt;
+		<summary type="html"><![CDATA[<h2>廢話</h2>
 
-&lt;p&gt;2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！&lt;/p&gt;
+<p>2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！</p>
 
-&lt;p&gt;平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用&lt;code&gt;Express&lt;/code&gt;來搭配其它東西來開發網站。這邊用到的套件有&lt;code&gt;Jade&lt;/code&gt;、&lt;code&gt;LESS&lt;/code&gt;、&lt;code&gt;CoffeeScript&lt;/code&gt;以及&lt;code&gt;LiveReload&lt;/code&gt;。&lt;/p&gt;
+<p>平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用<code>Express</code>來搭配其它東西來開發網站。這邊用到的套件有<code>Jade</code>、<code>LESS</code>、<code>CoffeeScript</code>以及<code>LiveReload</code>。</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;h3&gt;&lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot;&gt;Express&lt;/a&gt;&lt;/h3&gt;
+<h3><a href="http://expressjs.com/" target="_blank">Express</a></h3>
 
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;web applicaion framework for node&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>"web applicaion framework for node"</p>
+</blockquote>
 
-&lt;p&gt;可用於建立網站應用程式。是一套流行的&lt;code&gt;NodeJS&lt;/code&gt;套件。&lt;/p&gt;
+<p>可用於建立網站應用程式。是一套流行的<code>NodeJS</code>套件。</p>
 
-&lt;h3&gt;&lt;a href=&quot;http://jade-lang.com/&quot; target=&quot;_blank&quot;&gt;Jade&lt;/a&gt;&lt;/h3&gt;
+<h3><a href="http://jade-lang.com/" target="_blank">Jade</a></h3>
 
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;Node Template Engine&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>"Node Template Engine"</p>
+</blockquote>
 
-&lt;p&gt;擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。&lt;/p&gt;
+<p>擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。</p>
 
-&lt;h3&gt;&lt;a href=&quot;http://lesscss.org/&quot; target=&quot;_blank&quot;&gt;LESS&lt;/a&gt;&lt;/h3&gt;
+<h3><a href="http://lesscss.org/" target="_blank">LESS</a></h3>
 
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;The dynamic stylesheet language&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>"The dynamic stylesheet language"</p>
+</blockquote>
 
-&lt;p&gt;支援&lt;code&gt;Variable&lt;/code&gt;、&lt;code&gt;Mixin&lt;/code&gt;、&lt;code&gt;Nested Rule&lt;/code&gt;...等，並可以編譯成&lt;code&gt;CSS&lt;/code&gt;供瀏覽器使用。&lt;/p&gt;
+<p>支援<code>Variable</code>、<code>Mixin</code>、<code>Nested Rule</code>...等，並可以編譯成<code>CSS</code>供瀏覽器使用。</p>
 
-&lt;h3&gt;&lt;a href=&quot;http://coffeescript.org/&quot; target=&quot;_blank&quot;&gt;CoffeeScript&lt;/a&gt;&lt;/h3&gt;
+<h3><a href="http://coffeescript.org/" target="_blank">CoffeeScript</a></h3>
 
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;CoffeeScript is a little language that compiles into JavaScript&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>"CoffeeScript is a little language that compiles into JavaScript"</p>
+</blockquote>
 
-&lt;p&gt;它將&lt;code&gt;JavaScript&lt;/code&gt;的語法簡化，並提供一些新的特性來強化，可產生出符合規定且嚴謹的&lt;code&gt;JavaScript&lt;/code&gt;程式碼。&lt;/p&gt;
+<p>它將<code>JavaScript</code>的語法簡化，並提供一些新的特性來強化，可產生出符合規定且嚴謹的<code>JavaScript</code>程式碼。</p>
 
-&lt;p&gt;它剛出來的時候超夯的，只是我一直都沒有去使用它。&lt;/p&gt;
+<p>它剛出來的時候超夯的，只是我一直都沒有去使用它。</p>
 
-&lt;h3&gt;&lt;a href=&quot;http://livereload.com/&quot; target=&quot;_blank&quot;&gt;LiveReload&lt;/a&gt;&lt;/h3&gt;
+<h3><a href="http://livereload.com/" target="_blank">LiveReload</a></h3>
 
-&lt;blockquote&gt;
-  &lt;p&gt;&quot;a happy land where browsers don&#039;t need a Refresh button&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>"a happy land where browsers don't need a Refresh button"</p>
+</blockquote>
 
-&lt;p&gt;寫網頁最常做的事情就是不斷、不斷、不斷的Refresh頁面，它可以在檔案存檔的當下就自動幫你更新頁面，讓你可以即時看見更改後的結果。&lt;/p&gt;
+<p>寫網頁最常做的事情就是不斷、不斷、不斷的Refresh頁面，它可以在檔案存檔的當下就自動幫你更新頁面，讓你可以即時看見更改後的結果。</p>
 
-&lt;p&gt;它有很多的版本，這邊用到的是&lt;code&gt;NodeJS&lt;/code&gt;的版本。&lt;/p&gt;
+<p>它有很多的版本，這邊用到的是<code>NodeJS</code>的版本。</p>
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/napcs/node-livereload/&quot; target=&quot;_blank&quot;&gt;node-livereload&lt;/a&gt;&lt;/p&gt;
+<p><a href="https://github.com/napcs/node-livereload/" target="_blank">node-livereload</a></p>
 
-&lt;h2&gt;產生並修改專案&lt;/h2&gt;
+<h2>產生並修改專案</h2>
 
-&lt;p&gt;&lt;code&gt;Express&lt;/code&gt;本身預設的樣板引擎是&lt;code&gt;Jade&lt;/code&gt;，另外內建就能支援&lt;code&gt;LESS&lt;/code&gt;的middleware，在指令中加入參數&lt;code&gt;-c less&lt;/code&gt;就可以了。&lt;/p&gt;
+<p><code>Express</code>本身預設的樣板引擎是<code>Jade</code>，另外內建就能支援<code>LESS</code>的middleware，在指令中加入參數<code>-c less</code>就可以了。</p>
 
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;express -c less /path/to/project
+<pre><code class="bash">express -c less /path/to/project
 cd /path/to/project
 
 vim .package.json
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;h3&gt;package.json&lt;/h3&gt;
+<h3>package.json</h3>
 
-&lt;p&gt;接著修改&lt;code&gt;package.json&lt;/code&gt;，加入&lt;code&gt;connect-coffee-script&lt;/code&gt;、&lt;code&gt;livereload&lt;/code&gt;套件設定。&lt;/p&gt;
+<p>接著修改<code>package.json</code>，加入<code>connect-coffee-script</code>、<code>livereload</code>套件設定。</p>
 
-&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;{
-    &quot;name&quot;: &quot;application-name&quot;,
-    &quot;version&quot;: &quot;0.0.1&quot;,
-    &quot;private&quot;: true,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;node app.js&quot;
+<pre><code class="json">{
+    "name": "application-name",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
     },
-    &quot;dependencies&quot;: {
-        &quot;express&quot;: &quot;3.4.7&quot;,
-        &quot;jade&quot;: &quot;*&quot;,
-        &quot;less-middleware&quot;: &quot;*&quot;
-        &quot;connect-coffee-script&quot;: &quot;*&quot;,
-        &quot;livereload&quot;: &quot;*&quot;
+    "dependencies": {
+        "express": "3.4.7",
+        "jade": "*",
+        "less-middleware": "*"
+        "connect-coffee-script": "*",
+        "livereload": "*"
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;最後就可以用&lt;code&gt;npm&lt;/code&gt;安裝套件了。&lt;/p&gt;
+<p>最後就可以用<code>npm</code>安裝套件了。</p>
 
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;npm install
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code class="bash">npm install
+</code></pre>
 
-&lt;h3&gt;app.js&lt;/h3&gt;
+<h3>app.js</h3>
 
-&lt;p&gt;接下來開始修改&lt;code&gt;app.js&lt;/code&gt;。&lt;/p&gt;
+<p>接下來開始修改<code>app.js</code>。</p>
 
-&lt;p&gt;首先修改&lt;code&gt;LESS Middleware&lt;/code&gt;的設定，將輸出&lt;code&gt;CSS&lt;/code&gt;檔案的資料夾設定到&lt;code&gt;/tmp&lt;/code&gt;，並且將壓縮設定開啟。&lt;/p&gt;
+<p>首先修改<code>LESS Middleware</code>的設定，將輸出<code>CSS</code>檔案的資料夾設定到<code>/tmp</code>，並且將壓縮設定開啟。</p>
 
-&lt;p&gt;接著加入&lt;code&gt;CoffeeScript Middleware&lt;/code&gt;的設定，同樣也是指定輸出資料夾為&lt;code&gt;/tmp&lt;/code&gt;。最後將剛剛的輸出路徑&lt;code&gt;/tmp&lt;/code&gt;加入到靜態檔案的路徑中。&lt;/p&gt;
+<p>接著加入<code>CoffeeScript Middleware</code>的設定，同樣也是指定輸出資料夾為<code>/tmp</code>。最後將剛剛的輸出路徑<code>/tmp</code>加入到靜態檔案的路徑中。</p>
 
-&lt;p&gt;將&lt;code&gt;Middleware&lt;/code&gt;輸出檔案的路徑指定到&lt;code&gt;/tmp&lt;/code&gt;有個好處，這樣設定&lt;code&gt;Git Ignore&lt;/code&gt;就可以直接忽略掉這個資料夾，而且輸出的檔案也不會跟原始檔案混雜。&lt;/p&gt;
+<p>將<code>Middleware</code>輸出檔案的路徑指定到<code>/tmp</code>有個好處，這樣設定<code>Git Ignore</code>就可以直接忽略掉這個資料夾，而且輸出的檔案也不會跟原始檔案混雜。</p>
 
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
+<pre><code class="javascript">...
 
-app.use(require(&#039;less-middleware&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;),
+app.use(require('less-middleware') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp'),
     compress: true
 }));
-app.use(require(&#039;connect-coffee-script&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;)
+app.use(require('connect-coffee-script') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp')
 }));
 
-app.use(express.static(path.join(__dirname, &#039;public&#039;)));
-app.use(express.static(path.join(__dirname, &#039;tmp&#039;)));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'tmp')));
 
 ...
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;加入新的&lt;code&gt;Route rules&lt;/code&gt;讓&lt;code&gt;LESS&lt;/code&gt;及&lt;code&gt;CoffeeScript&lt;/code&gt;的原始檔無法被讀取。&lt;/p&gt;
+<p>加入新的<code>Route rules</code>讓<code>LESS</code>及<code>CoffeeScript</code>的原始檔無法被讀取。</p>
 
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
+<pre><code class="javascript">...
 
-app.all(&#039;*.(coffee|less)&#039;, function (req, res) {
+app.all('*.(coffee|less)', function (req, res) {
     res.send(404);
 });
-app.get(&#039;/&#039;, routes.index);
-app.get(&#039;/users&#039;, user.list);
+app.get('/', routes.index);
+app.get('/users', user.list);
 
 ...
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;加入&lt;code&gt;LiveReload&lt;/code&gt;的設定，讓它能夠認得&lt;code&gt;Jade&lt;/code&gt;、&lt;code&gt;LESS&lt;/code&gt;以及&lt;code&gt;CoffeeScript&lt;/code&gt;的支援。
-&lt;code&gt;Jade&lt;/code&gt;是放在&lt;code&gt;/views&lt;/code&gt;裡，而&lt;code&gt;LESS&lt;/code&gt;、&lt;code&gt;CoffeeScript&lt;/code&gt;則是放在&lt;code&gt;/public&lt;/code&gt;裡，所以讓s&lt;code&gt;LiveReload&lt;/code&gt;個別去監聽資料夾內檔案的變化。&lt;/p&gt;
+<p>加入<code>LiveReload</code>的設定，讓它能夠認得<code>Jade</code>、<code>LESS</code>以及<code>CoffeeScript</code>的支援。
+<code>Jade</code>是放在<code>/views</code>裡，而<code>LESS</code>、<code>CoffeeScript</code>則是放在<code>/public</code>裡，所以讓s<code>LiveReload</code>個別去監聽資料夾內檔案的變化。</p>
 
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;...
+<pre><code class="javascript">...
 
-var livereload = require(&#039;livereload&#039;).createServer({
-    exts: [&#039;jade&#039;, &#039;less&#039;, &#039;coffee&#039;]
+var livereload = require('livereload').createServer({
+    exts: ['jade', 'less', 'coffee']
 });
 
-livereload.watch(__dirname + &#039;/public&#039;);
-livereload.watch(__dirname + &#039;/views&#039;);
+livereload.watch(__dirname + '/public');
+livereload.watch(__dirname + '/views');
 
 ...
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;最後別忘了幫瀏覽器安裝&lt;code&gt;LiveReload&lt;/code&gt;的&lt;code&gt;extension&lt;/code&gt;。&lt;/p&gt;
+<p>最後別忘了幫瀏覽器安裝<code>LiveReload</code>的<code>extension</code>。</p>
 
-&lt;p&gt;&lt;a href=&quot;http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)&quot; target=&quot;_blank&quot;&gt;LiveReload Extensions&lt;/a&gt;&lt;/p&gt;
+<p><a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)" target="_blank">LiveReload Extensions</a></p>
 
-&lt;h2&gt;結語&lt;/h2&gt;
+<h2>結語</h2>
 
-&lt;p&gt;最後只要將&lt;code&gt;express&lt;/code&gt;啟動，並將瀏覽器的&lt;code&gt;LiveReload Extension&lt;/code&gt;連線打它就可以開始開發了。&lt;/p&gt;
+<p>最後只要將<code>express</code>啟動，並將瀏覽器的<code>LiveReload Extension</code>連線打它就可以開始開發了。</p>
 
-&lt;p&gt;下面是&lt;code&gt;app.js&lt;/code&gt;完整的檔案。&lt;/p&gt;
+<p>下面是<code>app.js</code>完整的檔案。</p>
 
-&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;var express = require(&#039;express&#039;);
-var routes = require(&#039;./routes&#039;);
-var user = require(&#039;./routes/user&#039;);
-var http = require(&#039;http&#039;);
-var path = require(&#039;path&#039;);
+<pre><code class="javascript">var express = require('express');
+var routes = require('./routes');
+var user = require('./routes/user');
+var http = require('http');
+var path = require('path');
 
 var app = express();
 
 // all environments
-app.set(&#039;port&#039;, process.env.PORT || 3000);
-app.set(&#039;views&#039;, path.join(__dirname, &#039;views&#039;));
-app.set(&#039;view engine&#039;, &#039;jade&#039;);
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 app.use(express.favicon());
-app.use(express.logger(&#039;dev&#039;));
+app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 
-app.use(require(&#039;less-middleware&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;),
+app.use(require('less-middleware') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp'),
     compress: true
 }));
-app.use(require(&#039;connect-coffee-script&#039;) ({ 
-    src: path.join(__dirname, &#039;public&#039;),
-    dest: path.join(__dirname, &#039;tmp&#039;)
+app.use(require('connect-coffee-script') ({ 
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'tmp')
 }));
 
-app.use(express.static(path.join(__dirname, &#039;public&#039;)));
-app.use(express.static(path.join(__dirname, &#039;tmp&#039;)));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'tmp')));
 
 // development only
-if (&#039;development&#039; == app.get(&#039;env&#039;)) {
+if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.all(&#039;*.(coffee|less)&#039;, function (req, res) {
+app.all('*.(coffee|less)', function (req, res) {
     res.send(404);
 });
-app.get(&#039;/&#039;, routes.index);
-app.get(&#039;/users&#039;, user.list);
+app.get('/', routes.index);
+app.get('/users', user.list);
 
-http.createServer(app).listen(app.get(&#039;port&#039;), function(){
-  console.log(&#039;Express server listening on port &#039; + app.get(&#039;port&#039;));
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
 });
 
 // LiveReload
-var livereload = require(&#039;livereload&#039;).createServer({
-    exts: [&#039;jade&#039;, &#039;less&#039;, &#039;coffee&#039;]
+var livereload = require('livereload').createServer({
+    exts: ['jade', 'less', 'coffee']
 });
 
-livereload.watch(__dirname + &#039;/public&#039;);
-livereload.watch(__dirname + &#039;/views&#039;);
-&lt;/code&gt;&lt;/pre&gt;
+livereload.watch(__dirname + '/public');
+livereload.watch(__dirname + '/views');
+</code></pre>
 ]]></summary>
 	</entry>
 </feed>
