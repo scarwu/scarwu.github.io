@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-02-21T14:42:11+08:00</updated>
+	<updated>2014-02-21T14:47:13+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -22,6 +22,8 @@
 &lt;p&gt;寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在&lt;code&gt;OS X&lt;/code&gt;上用&lt;code&gt;PHPBrew&lt;/code&gt;編出的&lt;code&gt;PHP VM&lt;/code&gt;，另一次就是最近在&lt;code&gt;Ubuntu 13.10&lt;/code&gt;及&lt;code&gt;Ubuntu 12.04 LTS&lt;/code&gt;上還是用&lt;code&gt;PHPBrew&lt;/code&gt;所編出的&lt;code&gt;PHP&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;題外話，話說&lt;code&gt;PHPBrew&lt;/code&gt;超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2&gt;在OS X的那次&lt;/h2&gt;
 
