@@ -4,15 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="description" content="記錄學習過程、生活以及一些想說的話。">
-	<meta name="keywords" content="ScarShow,刀疤說,ScarWu,刀疤,ubuntu,xhporof,install">
+	<meta name="keywords" content="ScarShow,刀疤說,ScarWu,刀疤,pointless,php,phpbrew">
 
 	<meta name="og:url" content="http://scar.simcz.tw/">
-	<meta name="og:title" content="Install Xhprof on Ubuntu 12.04 | ScarShow | 刀疤說">
+	<meta name="og:title" content="Pointless所遭遇到的Segmentation Faults | ScarShow | 刀疤說">
 	<meta name="og:description" content="記錄學習過程、生活以及一些想說的話。">
 	<meta name="og:image" content="http://scar.simcz.tw/images/icon.jpg">
 	<meta name="og:type" content="blog">
 
-	<title>Install Xhprof on Ubuntu 12.04 | ScarShow | 刀疤說</title>
+	<title>Pointless所遭遇到的Segmentation Faults | ScarShow | 刀疤說</title>
 	
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 	<link rel="stylesheet" href="/theme/main.css">
@@ -48,116 +48,65 @@
 	<div id="main">
 		<div id="container"><div id="article">
 	<article>
-		<h1 class="title">Install Xhprof on Ubuntu 12.04</h1>
+		<h1 class="title">Pointless所遭遇到的Segmentation Faults</h1>
 		<div class="info">
 			<div class="date">
 				<span class="icon icon-calendar"></span>
-				<a href="/archive/2012">2012-08-26</a>			</div>
+				<a href="/archive/2014">2014-02-21</a>			</div>
 			<div class="category">
 				<span class="icon icon-folder-close"></span>
 				<a href="/category/IT">IT</a>			</div>
 			<div class="tag">
 								<span class="icon icon-tag"></span>
-				<span><a href="/tag/PHP">PHP</a></span>
+				<span><a href="/tag/Pointless">Pointless</a></span>
 				<br />
 								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Note">Note</a></span>
+				<span><a href="/tag/PHP">PHP</a></span>
 				<br />
 							</div>
 			<div class="comments">
 				<span class="icon icon-comment"></span>
-				<a href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/#disqus_thread">0 Comment</a>
+				<a href="/article/2014/02/21/pointless-with-segmentation-faults/#disqus_thread">0 Comment</a>
 			</div>
 			<hr>
 			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/08/26/install-xphrof-on-ubuntu-12-04/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2012/08/26/install-xphrof-on-ubuntu-12-04/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
 			</div>
 		</div>
-		<div class="content"><p>最近有想要分析自己程式碼的衝動，就想起了 Facebook 所撰寫的 Xhprof，因為在安裝途中有點小問題，所以就紀錄一下完整的安裝過程</p>
+		<div class="content"><h2>怪事</h2>
 
-<h2>安裝</h2>
+<p>在開發<code>Pointless</code>到現在的兩年期間內，初期其實都還算順利，直到最近幾個月遇到了兩次<code>Segmentation Fault</code>，終於我遇的不是<code>PHP</code>的<code>Syntax Error</code>，而是<code>PHP</code>的<code>Bugs</code>或是其中函式庫的問題。</p>
 
-<h3>編譯環境</h3>
+<p>寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在<code>OS X</code>上用<code>PHPBrew</code>編出的<code>PHP VM</code>，另一次就是最近在<code>Ubuntu 13.10</code>及<code>Ubuntu 12.04 LTS</code>上還是用<code>PHPBrew</code>所編出的<code>PHP</code>。</p>
 
-<pre><code class="bash">sudo apt-get build-dep php5
-sudo apt-get install php5-dev
-</code></pre>
+<p>題外話，話說<code>PHPBrew</code>超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。</p>
 
-<h3>Xhprof</h3>
+<h2>在OS X的那次</h2>
 
-<pre><code class="bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
-tar -zxvf xhprof-0.9.2.tgz
-cd xhprof-0.9.2
-</code></pre>
+<p>我先後在不同的兩台<code>Mac Air</code>測試過都會發生錯誤，在文章數量小的情況下不會有問題，但是文章只要一多就會發生錯誤。</p>
 
-<p><br />複製 xhprof 所需要用到的程式到你的 web 根目錄</p>
+<p>而出錯的地方就是用來將資料及樣板結合的<code>bindData()</code>其中只有<code>include</code>以及<code>Output Buffer</code>等函式，但我檢查不出是<code>PHP VM</code>編譯時的哪支有問題所以作罷。</p>
 
-<pre><code class="bash">cp -a xhprof_html xhprof_lib /path/to/htdocs
-</code></pre>
+<p>還因為這樣，當時還有人評論說這個部落格只要文章超過140字元就會爆炸。但這不是我的錯，這一定有誤會。</p>
 
-<!--more-->
+<h2>在Ubuntu的這次</h2>
 
-<p><br />對 xhprof.c 進行Patch</p>
+<p>最近，其實就是上禮拜，我再忙著把<code>Pointless</code>升級成支援<code>PHP 5.4</code>所以將系統中<code>PHP 5.4.12</code>升級到<code>PHP 5.4.25</code>以及<code>PHP 5.5.5</code>升級到<code>PHP 5.5.9</code>。</p>
 
-<pre><code class="bash">curl https://github.com/facebook/xhprof/commit/a6bae51236.diff | patch -p1
-</code></pre>
+<p>但是<code>PHP</code>在<code>./configure</code>的時候會出現<code>configure: error: Could not find libpcre.(a|so) in /usr</code>而失敗，把出現問題的檔案補上後，可以正常編譯了。</p>
 
-<p><br />開始編譯並安裝</p>
+<p>當我正開心要作測試的時候，他就爆了。這次的問題出現在剛剛的<code>PCRE Library</code>上，只要我在程式中使用<code>preg_match()</code>然後所輸入的字串太長就會爆炸。</p>
 
-<pre><code class="bash">cd extension
-phpize
-./configure
-make
-sudo make install
-</code></pre>
+<p>所以我就重新編譯了新的<code>PCRE Library</code>，想當然爾<code>./configure</code>還是找不到檔案，手動補上檔案後在同樣的地方還是爆了...。最後我在另外一台機器上編譯同樣的檔案，使用同樣的<code>./configure</code>設定結果還是一樣。</p>
 
-<p><br />修改 php.ini 設定檔</p>
+<h1>結論</h1>
 
-<pre><code class="ini">[xhprof]
-extension=xhprof.so
-xhprof.output_dir=/tmp
-</code></pre>
+<p><code>Mac OS X</code>系統預設的函式庫跟我正常使用的<code>Ubuntu</code>一定有哪邊不一樣。</p>
 
-<h3>Graphviz，這是用來繪製結果需要用到的套件</h3>
+<p><code>Ubuntu</code>幾個月前的所使用的函式庫跟現在跟更新後的<code>Ubuntu</code>的函式庫一定有哪邊不一樣。</p>
 
-<pre><code class="bash">sudo apt-get install graphviz
-</code></pre>
-
-<h3>使用</h3>
-
-<p>重新啟動 Web Service，然後將的程式碼加入需要測試的檔案中，並執行程式</p>
-
-<pre><code class="php">&lt;?php
-xhprof_enable();
-
-// 待測程式碼
-
-$xhprof_data = xhprof_disable();
-
-include_once "xhprof_lib/utils/xhprof_lib.php";
-include_once "xhprof_lib/utils/xhprof_runs.php";
-
-$xhprof_runs = new XHProfRuns_Default();
-$xhprof_name = 'xhprof_foo';
-
-// 產生一個連結連至 Xhprof 統計結果
-echo sprintf(
-    '&lt;a href="xhprof_html/index.php?run=%s&amp;source=%s"&gt;summary&lt;/a&gt;',
-    $xhprof_runs-&gt;save_run($xhprof_data, $xhprof_name),
-    $xhprof_name
-);
-</code></pre>
-
-<h2>輸出結果</h2>
-
-<h3>Summary</h3>
-
-<p><img src="/images/install-xhprof-on-ubuntu-12-04/001.jpg"></p>
-
-<h3>Callgraph</h3>
-
-<p><img src="/images/install-xhprof-on-ubuntu-12-04/002.jpg"></p>
+<p>到底哪裡不一樣？我還要再查查。</p>
 </div>
 	</article>
 		<div id="disqus_thread"></div>
@@ -179,11 +128,11 @@ echo sprintf(
 	</script>
 		<div class="bar">
 		<span class="new">
-			<a href="/article/2012/09/12/sqlite3-multi-thread-in-python"><< SQLite3 Multi-Thread in Python</a>		</span>
+					</span>
 		<span class="old">
-			<a href="/article/2012/08/19/hack-php-to-support-put-fileupload">讓PHP支援PUT FileUpload >></a>		</span>
+			<a href="/article/2014/01/19/chrome-enable-hardware-graphics">Chrome - Enable Hardware Graphics >></a>		</span>
 		<span class="count">
-			24 / 35		</span>
+			1 / 35		</span>
 	</div>
 </div>
 <script type="text/javascript">

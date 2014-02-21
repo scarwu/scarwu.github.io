@@ -5,11 +5,51 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-02-20T20:51:04+08:00</updated>
+	<updated>2014-02-21T14:42:11+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[Pointless所遭遇到的Segmentation Faults]]></title>
+		<link href="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults" />
+		<id>urn:uuid:7d40cfb8-50e2-e5eb-c0ae-02e69b0effae</id>
+		<updated>2014-02-21T08:03:01+08:00</updated>
+		<summary type="html"><![CDATA[&lt;h2&gt;怪事&lt;/h2&gt;
+
+&lt;p&gt;在開發&lt;code&gt;Pointless&lt;/code&gt;到現在的兩年期間內，初期其實都還算順利，直到最近幾個月遇到了兩次&lt;code&gt;Segmentation Fault&lt;/code&gt;，終於我遇的不是&lt;code&gt;PHP&lt;/code&gt;的&lt;code&gt;Syntax Error&lt;/code&gt;，而是&lt;code&gt;PHP&lt;/code&gt;的&lt;code&gt;Bugs&lt;/code&gt;或是其中函式庫的問題。&lt;/p&gt;
+
+&lt;p&gt;寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在&lt;code&gt;OS X&lt;/code&gt;上用&lt;code&gt;PHPBrew&lt;/code&gt;編出的&lt;code&gt;PHP VM&lt;/code&gt;，另一次就是最近在&lt;code&gt;Ubuntu 13.10&lt;/code&gt;及&lt;code&gt;Ubuntu 12.04 LTS&lt;/code&gt;上還是用&lt;code&gt;PHPBrew&lt;/code&gt;所編出的&lt;code&gt;PHP&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;題外話，話說&lt;code&gt;PHPBrew&lt;/code&gt;超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。&lt;/p&gt;
+
+&lt;h2&gt;在OS X的那次&lt;/h2&gt;
+
+&lt;p&gt;我先後在不同的兩台&lt;code&gt;Mac Air&lt;/code&gt;測試過都會發生錯誤，在文章數量小的情況下不會有問題，但是文章只要一多就會發生錯誤。&lt;/p&gt;
+
+&lt;p&gt;而出錯的地方就是用來將資料及樣板結合的&lt;code&gt;bindData()&lt;/code&gt;其中只有&lt;code&gt;include&lt;/code&gt;以及&lt;code&gt;Output Buffer&lt;/code&gt;等函式，但我檢查不出是&lt;code&gt;PHP VM&lt;/code&gt;編譯時的哪支有問題所以作罷。&lt;/p&gt;
+
+&lt;p&gt;還因為這樣，當時還有人評論說這個部落格只要文章超過140字元就會爆炸。但這不是我的錯，這一定有誤會。&lt;/p&gt;
+
+&lt;h2&gt;在Ubuntu的這次&lt;/h2&gt;
+
+&lt;p&gt;最近，其實就是上禮拜，我再忙著把&lt;code&gt;Pointless&lt;/code&gt;升級成支援&lt;code&gt;PHP 5.4&lt;/code&gt;所以將系統中&lt;code&gt;PHP 5.4.12&lt;/code&gt;升級到&lt;code&gt;PHP 5.4.25&lt;/code&gt;以及&lt;code&gt;PHP 5.5.5&lt;/code&gt;升級到&lt;code&gt;PHP 5.5.9&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;但是&lt;code&gt;PHP&lt;/code&gt;在&lt;code&gt;./configure&lt;/code&gt;的時候會出現&lt;code&gt;configure: error: Could not find libpcre.(a|so) in /usr&lt;/code&gt;而失敗，把出現問題的檔案補上後，可以正常編譯了。&lt;/p&gt;
+
+&lt;p&gt;當我正開心要作測試的時候，他就爆了。這次的問題出現在剛剛的&lt;code&gt;PCRE Library&lt;/code&gt;上，只要我在程式中使用&lt;code&gt;preg_match()&lt;/code&gt;然後所輸入的字串太長就會爆炸。&lt;/p&gt;
+
+&lt;p&gt;所以我就重新編譯了新的&lt;code&gt;PCRE Library&lt;/code&gt;，想當然爾&lt;code&gt;./configure&lt;/code&gt;還是找不到檔案，手動補上檔案後在同樣的地方還是爆了...。最後我在另外一台機器上編譯同樣的檔案，使用同樣的&lt;code&gt;./configure&lt;/code&gt;設定結果還是一樣。&lt;/p&gt;
+
+&lt;h1&gt;結論&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;Mac OS X&lt;/code&gt;系統預設的函式庫跟我正常使用的&lt;code&gt;Ubuntu&lt;/code&gt;一定有哪邊不一樣。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Ubuntu&lt;/code&gt;幾個月前的所使用的函式庫跟現在跟更新後的&lt;code&gt;Ubuntu&lt;/code&gt;的函式庫一定有哪邊不一樣。&lt;/p&gt;
+
+&lt;p&gt;到底哪裡不一樣？我還要再查查。&lt;/p&gt;
+]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[Chrome - Enable Hardware Graphics]]></title>
 		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics" />
@@ -437,66 +477,6 @@ var livereload = require(&#039;livereload&#039;).createServer({
 livereload.watch(__dirname + &#039;/public&#039;);
 livereload.watch(__dirname + &#039;/views&#039;);
 &lt;/code&gt;&lt;/pre&gt;
-]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[修正Ubuntu 13.10小紅點問題]]></title>
-		<link href="http://scar.simcz.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem" />
-		<id>urn:uuid:16b2685d-ee94-918a-fa81-480de55bdf41</id>
-		<updated>2013-11-24T15:41:34+08:00</updated>
-		<summary type="html"><![CDATA[&lt;h2&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;上次才說把筆電的作業系統換成&lt;code&gt;Arch Linux&lt;/code&gt;，由於某些因素現在又換回&lt;code&gt;Ubuntu&lt;/code&gt;了...這次想說換成新版的&lt;code&gt;Ubuntu&lt;/code&gt;，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。&lt;/p&gt;
-
-&lt;p&gt;這次一定要把它修好，小紅點中鍵滾輪這樣好用的東西變成半殘可不是辦法，請示過Google大神找了一些文章，其實大部分也滿零散的，所以我在這邊依照我實際遇到的問題整理一下。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2&gt;問題修正&lt;/h2&gt;
-
-&lt;h3&gt;修正小紅點滾輪&lt;/h3&gt;
-
-&lt;p&gt;我的&lt;code&gt;ThinkPad&lt;/code&gt;是後期出的&lt;code&gt;Edge&lt;/code&gt;系列，所以他的&lt;code&gt;TrackPoint&lt;/code&gt;在系統的變名稱上也跟歷代的&lt;code&gt;TPPS/2 IBM TrackPoint&lt;/code&gt;不同，我的&lt;code&gt;E420s&lt;/code&gt;的&lt;code&gt;TrackPoint&lt;/code&gt;在系統中顯示的是&lt;code&gt;PS/2 Generic Mouse&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;只要將&lt;code&gt;PS/2 Generic Mouse&lt;/code&gt;填入&lt;code&gt;/usr/share/X11/xorg.conf.d/11-evdev-trackpoint.conf&lt;/code&gt;即可。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# trackpoint users want wheel emulation
-
-Section &quot;InputClass&quot;
-    Identifier  &quot;trackpoint catchall&quot;
-    MatchIsPointer  &quot;true&quot;
-    MatchProduct    &quot;TrackPoint|DualPoint Stick|PS/2 Generic Mouse&quot;
-    MatchDevicePath &quot;/dev/input/event*&quot;
-    Option  &quot;Emulate3Buttons&quot;   &quot;true&quot;
-    Option  &quot;EmulateWheel&quot;  &quot;true&quot;
-    Option  &quot;EmulateWheelButton&quot;    &quot;2&quot;
-    Option  &quot;XAxisMapping&quot;  &quot;6 7&quot;
-    Option  &quot;YAxisMapping&quot;  &quot;4 5&quot;
-EndSection
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;修正小紅點失靈&lt;/h3&gt;
-
-&lt;p&gt;這問題從我在使用&lt;code&gt;Ubuntu 12.04&lt;/code&gt;的時候就時常發生，通常只要重新開機或者是將無線滑鼠拔插一下又或者是按幾下&lt;code&gt;TrackPoint&lt;/code&gt;的左右鍵就可恢復。&lt;/p&gt;
-
-&lt;p&gt;主要的問題在於小紅點的驅動載入有問題，所以需要等待，也可能是因為這樣所以會被辨識成&lt;code&gt;PS/2 Generic Mouse&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;要修復這種情形很簡單，只要把&lt;code&gt;/etc/modprobe.d/trackpoint-elantech.conf&lt;/code&gt;填入以下內容即可。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;options psmouse proto=bare
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然後執行指令&lt;code&gt;sudo modprobe -rv psmouse &amp;amp;&amp;amp; sudo modprobe -v psmouse&lt;/code&gt;或是重新開機就完成了。&lt;/p&gt;
-
-&lt;p&gt;不過這樣作還是有缺點，使用這種解決方案會使得沒辦法取消觸控版，那這樣我還是慢慢等小紅點的驅動載入。&lt;/p&gt;
-
-&lt;h3&gt;取消觸控版功能&lt;/h3&gt;
-
-&lt;p&gt;最後就是把實在是有夠難用的觸控版關閉的時候了，利用系統內建的&lt;code&gt;Mouse &amp;amp; Touchpad&lt;/code&gt;把&lt;code&gt;Touchpad&lt;/code&gt;的開關關閉就行了。&lt;/p&gt;
-
-&lt;h2&gt;結語&lt;/h2&gt;
-
-&lt;p&gt;這樣小紅點終於不是半殘，星爺表示：大師兄回來了！&lt;/p&gt;
 ]]></summary>
 	</entry>
 </feed>
