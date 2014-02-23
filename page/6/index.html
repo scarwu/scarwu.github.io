@@ -48,6 +48,48 @@
 	<div id="main">
 		<div id="container"><div id="page">
 		<article>
+		<h1 class="title"><a href="/article/2012/08/19/hack-php-to-support-put-fileupload">讓PHP支援PUT FileUpload</a></h1>
+		<div class="info">
+			<div class="date">
+				<span class="icon icon-calendar"></span>
+				<a href="/archive/2012">2012-08-19</a>			</div>
+			<div class="category">
+				<span class="icon icon-folder-close"></span>
+				<a href="/category/IT">IT</a>			</div>
+			<div class="tag">
+								<span class="icon icon-tag"></span>
+				<span><a href="/tag/PHP">PHP</a></span>
+				<br />
+							</div>
+			<div class="comments">
+				<span class="icon icon-comment"></span>
+				<a href="/article/2012/08/19/hack-php-to-support-put-fileupload/#disqus_thread">0 Comment</a>
+			</div>
+			<hr>
+			<div class="social_tool">
+				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/08/19/hack-php-to-support-put-fileupload/" data-size="medium"></div>
+				<div class="fb-like" href="http://scar.simcz.tw/article/2012/08/19/hack-php-to-support-put-fileupload/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+			</div>
+		</div>
+		<div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
+
+<pre><code class="php">&lt;?php
+// do something...
+
+$put_data = file_get_contents('php://input');
+
+// handle put data...
+</code></pre>
+
+<p><br />
+簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
+
+<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
+
+</div>
+		<a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload">More</a>
+	</article>
+		<article>
 		<h1 class="title"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome">隱藏Facebook廣告 (Google Chrome)</a></h1>
 		<div class="info">
 			<div class="date">
@@ -269,68 +311,13 @@ function hideAds() {
 </div>
 		<a class="more" href="/article/2012/04/27/about-pointless-static-blog-generator">More</a>
 	</article>
-		<article>
-		<h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-2">實作一個小型Router use PHP (2)</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2012">2012-04-23</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/PHP">PHP</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2012/04/23/implement-a-small-router-use-php-2/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-2/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2012/04/23/implement-a-small-router-use-php-2/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
-
-<pre><code class="php">&lt;?php
-// filename: router.php
-class router {
-    public function __construct() {
-        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
-        $this-&gt;url = $_SERVER['PATH_INFO'];
-    }
-
-    public function add($route, $callback) {
-        $this-&gt;rules[] = array(
-            'route' =&gt; $route,
-            'callback' =&gt; $callback
-        );
-    }
-
-    public function run() {
-        foreach($this-&gt;rules as $rule) {
-            if($rule['route'] == $this-&gt;url) {
-                $rule['callback']();
-                break;
-            }
-        }
-    }
-}
-</code></pre>
-
-</div>
-		<a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-2">More</a>
-	</article>
 		<div class="bar">
 		<span class="new">
 			<a href="/page/5"><< Newer Posts</a>		</span>
 		<span class="old">
 			<a href="/page/7">Older Posts >></a>		</span>
 		<span class="count">
-			6 / 7		</span>
+			6 / 8		</span>
 	</div>
 </div>
 <script type="text/javascript">
@@ -397,7 +384,7 @@ class router {
 		<a href="/archive">Archive</a>	</div>
 	<div class="content">
 				<span class="item">
-						<a href="/archive/2014">2014(5)</a>		</span>
+						<a href="/archive/2014">2014(6)</a>		</span>
 				<span class="item">
 						<a href="/archive/2013">2013(14)</a>		</span>
 				<span class="item">
@@ -412,7 +399,7 @@ class router {
 				<span class="item">
 						<a href="/category/Game">Game(1)</a>		</span>
 				<span class="item">
-						<a href="/category/IT">IT(33)</a>		</span>
+						<a href="/category/IT">IT(34)</a>		</span>
 				<span class="item">
 						<a href="/category/Life">Life(1)</a>		</span>
 			</div>
@@ -447,7 +434,7 @@ class router {
 				<span class="item">
 						<a href="/tag/JavaScript">JavaScript(7)</a>		</span>
 				<span class="item">
-						<a href="/tag/Linux">Linux(8)</a>		</span>
+						<a href="/tag/Linux">Linux(9)</a>		</span>
 				<span class="item">
 						<a href="/tag/Mobile%20Web">Mobile Web(1)</a>		</span>
 				<span class="item">
@@ -455,9 +442,11 @@ class router {
 				<span class="item">
 						<a href="/tag/NodeJS">NodeJS(3)</a>		</span>
 				<span class="item">
-						<a href="/tag/Note">Note(16)</a>		</span>
+						<a href="/tag/Note">Note(17)</a>		</span>
 				<span class="item">
-						<a href="/tag/PHP">PHP(15)</a>		</span>
+						<a href="/tag/PHP">PHP(16)</a>		</span>
+				<span class="item">
+						<a href="/tag/PHPBrew">PHPBrew(1)</a>		</span>
 				<span class="item">
 						<a href="/tag/Pointless">Pointless(3)</a>		</span>
 				<span class="item">
@@ -473,7 +462,7 @@ class router {
 				<span class="item">
 						<a href="/tag/Toy">Toy(1)</a>		</span>
 				<span class="item">
-						<a href="/tag/Ubuntu">Ubuntu(6)</a>		</span>
+						<a href="/tag/Ubuntu">Ubuntu(7)</a>		</span>
 				<span class="item">
 						<a href="/tag/Virus">Virus(1)</a>		</span>
 				<span class="item">

@@ -5,11 +5,64 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-02-21T16:08:09+08:00</updated>
+	<updated>2014-02-23T17:58:13+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[Ubuntu內建PCRE Library所造成的PHP Segmentation Fualt]]></title>
+		<link href="http://scar.simcz.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fualt" />
+		<id>urn:uuid:fd032889-eea4-5ed8-c83b-efb70e3a2370</id>
+		<updated>2014-02-23T15:22:14+08:00</updated>
+		<summary type="html"><![CDATA[<h2>接續</h2>
+
+<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合<del>。</p>
+
+<p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
+
+<p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>
+
+<!--more-->
+
+<h2>觀察 ./configure 設定配置</h2>
+
+<p>我找了一個之前編譯的正常<code>PHP</code>所使用的配置，現在有問題的配置做比對。其中發現<code>PCRE</code>的設定方式不相同。</p>
+
+<p>舊的配置關於<code>PCRE</code>的部份只有<code>--with-pcre-regex</code>，而新的配置則是<code>--with-pcre-regex=/usr --with-pcre-dir=/usr</code>。</p>
+
+<p>新的<code>--with-pcre-regex=/usr</code>其實不影響執行，真正有問題的部份出在於<code>--with-pcre-regex</code>與<code>--with-pcre-regex=/usr</code>的對於實際編時所引入的函式庫不同。</p>
+
+<p><code>--with-pcre-regex</code>所代表的是編譯時引入<code>PHP</code>內建的<code>PCRE</code>函式庫，而<code>--with-pcre-regex=/usr</code>所代表的是引入外部的<code>PCRE</code>函式庫。</p>
+
+<p>造成的原因是因為<code>PHPBrew</code>的版次問題所造成，它會檢查系統中是否已經有<code>PCRE</code>函式庫，如果已經存在就會自動在<code>--with-pcre-regex</code>後面加上<code>prefix</code>。</p>
+
+<h2>使用不同的函式庫</h2>
+
+<p>為了要測試原因是否是系統內建的問題，或者是只要引入外部<code>PCRE</code>就會出錯，所以我就另外編譯了新的<code>PCRE</code>函式庫作為測試。</p>
+
+<ul>
+<li>PCRE版本
+
+<ul>
+<li>8.31-2 <code>Ubuntu 13.10</code>內建</li>
+<li>8.32 <code>PHP 5.4.25</code>內建</li>
+<li>8.34 自行編譯最新版</li>
+</ul></li>
+</ul>
+
+<p>編譯過程我就省略，<code>PHP 5.4.25</code>以及自行編譯的<code>PCRE</code>都可以正常執行。最後結果就是系統內建的<code>PCRE</code>有問題，並且連帶系統內建的<code>PHP 5.5.3</code>都會出現同樣的問題。</p>
+
+<h2>解決方案</h2>
+
+<p>雖然不知道內建的<code>PCRE</code>究竟是哪邊出問題，不過我有兩種解決方法。不是移除系統內建的<code>PCRE</code>讓<code>PHP</code>用本身的函式庫，就是使用自行編譯的<code>PCRE</code>。</p>
+
+<p>下面我就把我的<code>PHPBrew</code>安裝設定公開出來，因為我是使用自行編譯的<code>PCRE</code>所以在最後要指定函式庫位置。</p>
+
+<pre><code>phpbrew -d install 5.4.25 +default+db+openssl+iconv -- --with-pcre-regex=/opt/pcre
+</code></pre>
+]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[Pointless所遭遇到的Segmentation Faults]]></title>
 		<link href="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults" />
@@ -261,224 +314,6 @@ bindkey "${key[Down]}" history-search-forward
 </code></pre>
 
 <p>接著重起<code>terminal</code>或是<code>source .zshrc</code>一切就完成了。</p>
-]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[Express + Jade/LESS/Coffee with LiveReload]]></title>
-		<link href="http://scar.simcz.tw/article/2014/01/03/express-jade-less-coffee-with-livereload" />
-		<id>urn:uuid:e6b3a8b3-2368-4ead-4c48-8048c7cf69df</id>
-		<updated>2014-01-03T11:23:52+08:00</updated>
-		<summary type="html"><![CDATA[<h2>廢話</h2>
-
-<p>2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！</p>
-
-<p>平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用<code>Express</code>來搭配其它東西來開發網站。這邊用到的套件有<code>Jade</code>、<code>LESS</code>、<code>CoffeeScript</code>以及<code>LiveReload</code>。</p>
-
-<!--more-->
-
-<h3><a href="http://expressjs.com/" target="_blank">Express</a></h3>
-
-<blockquote>
-  <p>"web applicaion framework for node"</p>
-</blockquote>
-
-<p>可用於建立網站應用程式。是一套流行的<code>NodeJS</code>套件。</p>
-
-<h3><a href="http://jade-lang.com/" target="_blank">Jade</a></h3>
-
-<blockquote>
-  <p>"Node Template Engine"</p>
-</blockquote>
-
-<p>擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。</p>
-
-<h3><a href="http://lesscss.org/" target="_blank">LESS</a></h3>
-
-<blockquote>
-  <p>"The dynamic stylesheet language"</p>
-</blockquote>
-
-<p>支援<code>Variable</code>、<code>Mixin</code>、<code>Nested Rule</code>...等，並可以編譯成<code>CSS</code>供瀏覽器使用。</p>
-
-<h3><a href="http://coffeescript.org/" target="_blank">CoffeeScript</a></h3>
-
-<blockquote>
-  <p>"CoffeeScript is a little language that compiles into JavaScript"</p>
-</blockquote>
-
-<p>它將<code>JavaScript</code>的語法簡化，並提供一些新的特性來強化，可產生出符合規定且嚴謹的<code>JavaScript</code>程式碼。</p>
-
-<p>它剛出來的時候超夯的，只是我一直都沒有去使用它。</p>
-
-<h3><a href="http://livereload.com/" target="_blank">LiveReload</a></h3>
-
-<blockquote>
-  <p>"a happy land where browsers don't need a Refresh button"</p>
-</blockquote>
-
-<p>寫網頁最常做的事情就是不斷、不斷、不斷的Refresh頁面，它可以在檔案存檔的當下就自動幫你更新頁面，讓你可以即時看見更改後的結果。</p>
-
-<p>它有很多的版本，這邊用到的是<code>NodeJS</code>的版本。</p>
-
-<p><a href="https://github.com/napcs/node-livereload/" target="_blank">node-livereload</a></p>
-
-<h2>產生並修改專案</h2>
-
-<p><code>Express</code>本身預設的樣板引擎是<code>Jade</code>，另外內建就能支援<code>LESS</code>的middleware，在指令中加入參數<code>-c less</code>就可以了。</p>
-
-<pre><code class="bash">express -c less /path/to/project
-cd /path/to/project
-
-vim .package.json
-</code></pre>
-
-<h3>package.json</h3>
-
-<p>接著修改<code>package.json</code>，加入<code>connect-coffee-script</code>、<code>livereload</code>套件設定。</p>
-
-<pre><code class="json">{
-    "name": "application-name",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "express": "3.4.7",
-        "jade": "*",
-        "less-middleware": "*"
-        "connect-coffee-script": "*",
-        "livereload": "*"
-    }
-}
-</code></pre>
-
-<p>最後就可以用<code>npm</code>安裝套件了。</p>
-
-<pre><code class="bash">npm install
-</code></pre>
-
-<h3>app.js</h3>
-
-<p>接下來開始修改<code>app.js</code>。</p>
-
-<p>首先修改<code>LESS Middleware</code>的設定，將輸出<code>CSS</code>檔案的資料夾設定到<code>/tmp</code>，並且將壓縮設定開啟。</p>
-
-<p>接著加入<code>CoffeeScript Middleware</code>的設定，同樣也是指定輸出資料夾為<code>/tmp</code>。最後將剛剛的輸出路徑<code>/tmp</code>加入到靜態檔案的路徑中。</p>
-
-<p>將<code>Middleware</code>輸出檔案的路徑指定到<code>/tmp</code>有個好處，這樣設定<code>Git Ignore</code>就可以直接忽略掉這個資料夾，而且輸出的檔案也不會跟原始檔案混雜。</p>
-
-<pre><code class="javascript">...
-
-app.use(require('less-middleware') ({ 
-    src: path.join(__dirname, 'public'),
-    dest: path.join(__dirname, 'tmp'),
-    compress: true
-}));
-app.use(require('connect-coffee-script') ({ 
-    src: path.join(__dirname, 'public'),
-    dest: path.join(__dirname, 'tmp')
-}));
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'tmp')));
-
-...
-</code></pre>
-
-<p>加入新的<code>Route rules</code>讓<code>LESS</code>及<code>CoffeeScript</code>的原始檔無法被讀取。</p>
-
-<pre><code class="javascript">...
-
-app.all('*.(coffee|less)', function (req, res) {
-    res.send(404);
-});
-app.get('/', routes.index);
-app.get('/users', user.list);
-
-...
-</code></pre>
-
-<p>加入<code>LiveReload</code>的設定，讓它能夠認得<code>Jade</code>、<code>LESS</code>以及<code>CoffeeScript</code>的支援。
-<code>Jade</code>是放在<code>/views</code>裡，而<code>LESS</code>、<code>CoffeeScript</code>則是放在<code>/public</code>裡，所以讓s<code>LiveReload</code>個別去監聽資料夾內檔案的變化。</p>
-
-<pre><code class="javascript">...
-
-var livereload = require('livereload').createServer({
-    exts: ['jade', 'less', 'coffee']
-});
-
-livereload.watch(__dirname + '/public');
-livereload.watch(__dirname + '/views');
-
-...
-</code></pre>
-
-<p>最後別忘了幫瀏覽器安裝<code>LiveReload</code>的<code>extension</code>。</p>
-
-<p><a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)" target="_blank">LiveReload Extensions</a></p>
-
-<h2>結語</h2>
-
-<p>最後只要將<code>express</code>啟動，並將瀏覽器的<code>LiveReload Extension</code>連線打它就可以開始開發了。</p>
-
-<p>下面是<code>app.js</code>完整的檔案。</p>
-
-<pre><code class="javascript">var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
-
-var app = express();
-
-// all environments
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(app.router);
-
-app.use(require('less-middleware') ({ 
-    src: path.join(__dirname, 'public'),
-    dest: path.join(__dirname, 'tmp'),
-    compress: true
-}));
-app.use(require('connect-coffee-script') ({ 
-    src: path.join(__dirname, 'public'),
-    dest: path.join(__dirname, 'tmp')
-}));
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'tmp')));
-
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
-
-app.all('*.(coffee|less)', function (req, res) {
-    res.send(404);
-});
-app.get('/', routes.index);
-app.get('/users', user.list);
-
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
-
-// LiveReload
-var livereload = require('livereload').createServer({
-    exts: ['jade', 'less', 'coffee']
-});
-
-livereload.watch(__dirname + '/public');
-livereload.watch(__dirname + '/views');
-</code></pre>
 ]]></summary>
 	</entry>
 </feed>
