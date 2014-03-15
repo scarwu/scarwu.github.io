@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-02-24T10:33:23+08:00</updated>
+	<updated>2014-03-15T16:11:24+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -126,7 +126,7 @@
 
 <p><img src="/images/chrome-enable-hardware-graphics/gpu001.jpg" alt="Hardware Graphics"></p>
 
-<p>更據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。</p>
+<p>根據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。</p>
 
 <p>在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，<code>WebGL</code>也已經可以使用。</p>
 
