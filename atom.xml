@@ -5,11 +5,78 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-03-16T15:06:35+08:00</updated>
+	<updated>2014-04-22T01:46:55+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[Ubuntu 14.04 中文修正]]></title>
+		<link href="http://scar.simcz.tw/article/2014/04/22/fix-ubuntu-14-04-zh-font-selector" />
+		<id>urn:uuid:d84710b9-5588-0de5-3ef3-fa1beb844c78</id>
+		<updated>2014-04-22T01:02:53+08:00</updated>
+		<summary type="html"><![CDATA[<h2>前言</h2>
+
+<p>很高興<code>Ubuntu</code>釋出了新的長期支援版本<code>Ubuntu 14.04 LTS</code>，終於在新的版本中輸入法的切換終於正常了。</p>
+
+<p>另外很不幸的，在<code>Ubuntu 14.04 LTS</code>釋出前的一個月中，我所架設的 <a href="ftp://ftp.csie.chu.edu.tw">ftp.csie.chu.edu.tw</a> 因為不可抗拒之因素導致伺服器下線，進而造成它在台灣預設來源庫名單中除名，這件事讓我非常失志。</p>
+
+<p>好，回到正題，我習慣使用英文界面，但是我又希望看見漂亮的中文字體。但是在這一版更新完語言套件之後你卻會得到一個預設字體是<code>標楷體</code>以及<code>細明體</code>的中文顯示...，頓時讓人回到<code>Big5</code>網頁的感覺。</p>
+
+<p>我還是喜歡看<code>文泉譯微米黑</code>或者是類似的字體，但是這次的修改方式跟上幾版不太一樣，所以我就在這紀錄一下。</p>
+
+<!--more-->
+
+<h2><del>開幹</del> 動手做</h2>
+
+<pre><code class="bash">cd /etc/fonts/conf.d
+</code></pre>
+
+<p>我們先把<code>Console</code>的路徑指向<code>/etc/fonts/conf.d</code>，這個路徑底下的檔案基本上是設定的檔軟連結，而真正的設定檔則是放在<code>/etc/fonts/conf.avail</code>。</p>
+
+<h3>刪除不必要之設定檔</h3>
+
+<pre><code class="bash">sudo rm 25-arphic-ukai-render.conf 35-arphic-ukai-aliases.conf 41-arphic-ukai.conf 65-fonts-arphic-ukai.conf 75-arphic-ukai-select.conf 90-arphic-ukai-embolden.conf 25-arphic-uming-render.conf 35-arphic-uming-aliases.conf 41-arphic-uming.conf 64-arphic-uming.conf 65-fonts-arphic-uming.conf 90-arphic-uming-embolden.conf
+</code></pre>
+
+<p>這邊所刪除檔案的是關於<code>標楷體</code>以及<code>細明體</code>的設定檔。</p>
+
+<pre><code class="bash">sudo rm 69-language-selector-zh-cn.conf 69-language-selector-zh-hk.conf 69-language-selector-zh-mo.conf 69-language-selector-zh-sg.conf
+</code></pre>
+
+<p>接著我們再刪除除了台灣以外的中文設定檔。(這邊就端看所需要的是那一地區的中文來做保留。)</p>
+
+<p>上面的動作都做完以後，恭喜我們得到了一個預設字體是<code>文泉譯正黑體</code>的中文界面...，如果不愛<code>文泉譯正黑體</code>下面則是<code>文泉譯微米黑</code>的修改方式。</p>
+
+<h3>修改設定檔</h3>
+
+<h4>65-nonlatin.conf</h4>
+
+<p>首先我們先修改非拉丁字體的設定檔，加上文泉譯微米黑的設定。</p>
+
+<pre><code class="bash">sudo vim 65-nonlatin.conf
+</code></pre>
+
+<p><code>&lt;family&gt;WenQuanYi Micro Hei&lt;/family&gt;</code>加在<code>sans-serif</code>的區塊裡。</p>
+
+<p><code>&lt;family&gt;WenQuanYi Micro Hei Mono&lt;/family&gt;</code>則是加在<code>monospace</code>區塊裡。</p>
+
+<h4>69-language-selector-zh-tw.conf</h4>
+
+<p>最後我們修改中文字體選擇器的設定檔。</p>
+
+<pre><code class="bash">sudo vim 69-language-selector-zh-tw.conf
+</code></pre>
+
+<p><code>&lt;stinrg&gt;WenQuanYi Micro Hei&lt;/string&gt;</code>一樣是加在<code>sans-serif</code>裡。</p>
+
+<p><code>&lt;stinrg&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;</code>則也是加在<code>monospace</code>裡。</p>
+
+<h2>打完收工</h2>
+
+<p>記得千萬不要手殘在<code>Console</code>中輸入<code>sudo fc-cache -fv</code>或是<code>sudo fc-font -v</code>，別怪我沒提醒你。</p>
+]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[Ubuntu內建PCRE Library所造成的PHP Segmentation Fault]]></title>
 		<link href="http://scar.simcz.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault" />
@@ -103,48 +170,6 @@
 <p><code>Ubuntu</code>幾個月前的所使用的函式庫跟現在跟更新後的<code>Ubuntu</code>的函式庫一定有哪邊不一樣。</p>
 
 <p>到底哪裡不一樣？我還要再查查。</p>
-]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[Chrome - Enable Hardware Graphics]]></title>
-		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics" />
-		<id>urn:uuid:a3b360b7-5d6e-9c12-8a64-7f83e97a6a7c</id>
-		<updated>2014-01-19T12:48:58+08:00</updated>
-		<summary type="html"><![CDATA[<h2>難得</h2>
-
-<p>很難得可以在一天內發兩篇文章，在上一篇文末提到<code>WebGL</code>打不開的問題，那是個誤會，真的。</p>
-
-<p>在<code>Chrome</code>的<code>chrome://flags</code>裡有一個選項<code>Override software rendering list</code>可以開啟硬體加速，在更新驅動程式前我怎樣試都不行，所以我就以為沒有用。</p>
-
-<p>其實在驅動程式更新之後就已經可以使用了，只是硬體加速還要另外開啟，讓我產生<code>WebGL</code>無法開啟的錯覺。</p>
-
-<!--more-->
-
-<h2>正常啟用流程</h2>
-
-<p>我們可以在<code>Chrome</code>中使用<code>chrome://gpu</code>這個連結去確認是否有開啟硬加速，在一般情況下都是呈現下方的狀態。</p>
-
-<p><img src="/images/chrome-enable-hardware-graphics/gpu001.jpg" alt="Hardware Graphics"></p>
-
-<p>根據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。</p>
-
-<p>在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，<code>WebGL</code>也已經可以使用。</p>
-
-<p><img src="/images/chrome-enable-hardware-graphics/gpu002.jpg" alt="Hardware Graphics"></p>
-
-<p>最後將<code>chrome://flags</code>中的<code>Override software rendering list</code>啟動，並重新開啟<code>Chrome</code>。</p>
-
-<p><img src="/images/chrome-enable-hardware-graphics/flags001.jpg" alt="Hardware Graphics"></p>
-
-<p><img src="/images/chrome-enable-hardware-graphics/flags002.jpg" alt="Hardware Graphics"></p>
-
-<p>最後就會得一片綠油油的正常狀態。</p>
-
-<p><img src="/images/chrome-enable-hardware-graphics/gpu003.jpg" alt="Hardware Graphics"></p>
-
-<h2>爽</h2>
-
-<p>接下就爽爽用<code>Chrome</code>上的硬體加速吧。</p>
 ]]></summary>
 	</entry>
 	<entry>
@@ -290,30 +315,45 @@ sudo reboot
 ]]></summary>
 	</entry>
 	<entry>
-		<title type="html"><![CDATA[ZSH - history-search-backward/forward]]></title>
-		<link href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward" />
-		<id>urn:uuid:c104f70b-f01c-0610-f999-ddf6e584f625</id>
-		<updated>2014-01-14T08:50:49+08:00</updated>
-		<summary type="html"><![CDATA[<p>原本<code>oh-my-zsh</code>在<code>Ubuntu 12.04 LTS</code>以及<code>Arch Linux</code>用好好的<code>history-search-backward</code>、<code>history-search-forward</code>，到了<code>Ubuntu 13.10</code>就不能用了，查了一下<code>ZSH</code>雖然版號不一樣，不知道是不是因為發行版影響，因為<code>Arch Linux</code>的<code>ZSH</code>版本還比<code>Ubuntu 13.10</code>新。</p>
+		<title type="html"><![CDATA[Chrome - Enable Hardware Graphics]]></title>
+		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics" />
+		<id>urn:uuid:a3b360b7-5d6e-9c12-8a64-7f83e97a6a7c</id>
+		<updated>2014-01-19T12:48:58+08:00</updated>
+		<summary type="html"><![CDATA[<h2>難得</h2>
 
-<p>下面是各個發行版的<code>Z Shell</code>版號。</p>
+<p>很難得可以在一天內發兩篇文章，在上一篇文末提到<code>WebGL</code>打不開的問題，那是個誤會，真的。</p>
 
-<pre><code>Ubuntu 12.04 LTS : 4.3.17
-Ubuntu 12.10     : 5.0.0
-Ubuntu 13.04     : 5.0.0
-Ubuntu 13.10     : 5.0.2
-Arch Linux       : 5.0.5
-</code></pre>
+<p>在<code>Chrome</code>的<code>chrome://flags</code>裡有一個選項<code>Override software rendering list</code>可以開啟硬體加速，在更新驅動程式前我怎樣試都不行，所以我就以為沒有用。</p>
+
+<p>其實在驅動程式更新之後就已經可以使用了，只是硬體加速還要另外開啟，讓我產生<code>WebGL</code>無法開啟的錯覺。</p>
 
 <!--more-->
 
-<p>算了至少功能沒有那就自己加上去，在<code>~/.zshrc</code>中加入以下兩行就行了。</p>
+<h2>正常啟用流程</h2>
 
-<pre><code>bindkey "${key[Up]}" history-search-backward
-bindkey "${key[Down]}" history-search-forward
-</code></pre>
+<p>我們可以在<code>Chrome</code>中使用<code>chrome://gpu</code>這個連結去確認是否有開啟硬加速，在一般情況下都是呈現下方的狀態。</p>
 
-<p>接著重起<code>terminal</code>或是<code>source .zshrc</code>一切就完成了。</p>
+<p><img src="/images/chrome-enable-hardware-graphics/gpu001.jpg" alt="Hardware Graphics"></p>
+
+<p>根據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。</p>
+
+<p>在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，<code>WebGL</code>也已經可以使用。</p>
+
+<p><img src="/images/chrome-enable-hardware-graphics/gpu002.jpg" alt="Hardware Graphics"></p>
+
+<p>最後將<code>chrome://flags</code>中的<code>Override software rendering list</code>啟動，並重新開啟<code>Chrome</code>。</p>
+
+<p><img src="/images/chrome-enable-hardware-graphics/flags001.jpg" alt="Hardware Graphics"></p>
+
+<p><img src="/images/chrome-enable-hardware-graphics/flags002.jpg" alt="Hardware Graphics"></p>
+
+<p>最後就會得一片綠油油的正常狀態。</p>
+
+<p><img src="/images/chrome-enable-hardware-graphics/gpu003.jpg" alt="Hardware Graphics"></p>
+
+<h2>爽</h2>
+
+<p>接下就爽爽用<code>Chrome</code>上的硬體加速吧。</p>
 ]]></summary>
 	</entry>
 </feed>
