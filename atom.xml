@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-04-22T02:04:44+08:00</updated>
+	<updated>2014-04-22T09:05:36+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -36,15 +36,15 @@
 
 <h3>刪除不必要之設定檔</h3>
 
+<p>這邊所刪除檔案的是關於<code>標楷體</code>以及<code>細明體</code>的設定檔。</p>
+
 <pre><code class="bash">sudo rm 25-arphic-ukai-render.conf 35-arphic-ukai-aliases.conf 41-arphic-ukai.conf 65-fonts-arphic-ukai.conf 75-arphic-ukai-select.conf 90-arphic-ukai-embolden.conf 25-arphic-uming-render.conf 35-arphic-uming-aliases.conf 41-arphic-uming.conf 64-arphic-uming.conf 65-fonts-arphic-uming.conf 90-arphic-uming-embolden.conf
 </code></pre>
 
-<p>這邊所刪除檔案的是關於<code>標楷體</code>以及<code>細明體</code>的設定檔。</p>
+<p>接著我們再刪除除了台灣以外的中文設定檔。(這邊就端看所需要的是那一地區的中文來做保留。)</p>
 
 <pre><code class="bash">sudo rm 69-language-selector-zh-cn.conf 69-language-selector-zh-hk.conf 69-language-selector-zh-mo.conf 69-language-selector-zh-sg.conf
 </code></pre>
-
-<p>接著我們再刪除除了台灣以外的中文設定檔。(這邊就端看所需要的是那一地區的中文來做保留。)</p>
 
 <p>上面的動作都做完以後，恭喜我們得到了一個預設字體是<code>文泉驛正黑</code>的中文界面...，如果不愛<code>文泉驛正黑</code>下面則是<code>文泉驛微米黑</code>的修改方式。</p>
 
@@ -59,7 +59,25 @@
 
 <p><code>&lt;family&gt;WenQuanYi Micro Hei&lt;/family&gt;</code>加在<code>sans-serif</code>的區塊裡。</p>
 
+<pre><code class="xml">&lt;alias&gt;
+    &lt;family&gt;sans-serif&lt;/family&gt;
+    &lt;prefer&gt;
+        &lt;family&gt;WenQuanYi Micro Hei&lt;/family&gt;
+        &lt;family&gt;Nachlieli&lt;/family&gt; &lt;!-- hebrew --&gt;
+        &lt;family&gt;Lucida Sans Unicode&lt;/family&gt;
+        ...
+</code></pre>
+
 <p><code>&lt;family&gt;WenQuanYi Micro Hei Mono&lt;/family&gt;</code>則是加在<code>monospace</code>區塊裡。</p>
+
+<pre><code class="xml">&lt;alias&gt;
+    &lt;family&gt;monospace&lt;/family&gt;
+    &lt;prefer&gt;
+        &lt;family&gt;WenQuanYi Micro Hei Mono&lt;/family&gt;
+        &lt;family&gt;Miriam Mono&lt;/family&gt; &lt;!-- hebrew --&gt;
+        &lt;family&gt;VL Gothic&lt;/family&gt;
+        ...
+</code></pre>
 
 <h4>69-language-selector-zh-tw.conf</h4>
 
@@ -70,7 +88,35 @@
 
 <p><code>&lt;stinrg&gt;WenQuanYi Micro Hei&lt;/string&gt;</code>一樣是加在<code>sans-serif</code>裡。</p>
 
+<pre><code class="xml">&lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+        &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="lang"&gt;
+        &lt;string&gt;zh-tw&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+        &lt;stinrg&gt;WenQuanYi Micro Hei&lt;/string&gt;
+        &lt;string&gt;Droid Sans Fallback&lt;/string&gt;
+        &lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
+        ...
+</code></pre>
+
 <p><code>&lt;stinrg&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;</code>則也是加在<code>monospace</code>裡。</p>
+
+<pre><code class="xml">&lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+        &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="lang"&gt;
+        &lt;string&gt;zh-tw&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+        &lt;stinrg&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;
+        &lt;string&gt;Droid Sans Fallback&lt;/string&gt;
+        &lt;string&gt;WenQuanYi Zen Hei Mono&lt;/string&gt;
+        ...
+</code></pre>
 
 <h2>打完收工</h2>
 
