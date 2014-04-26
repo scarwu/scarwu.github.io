@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-04-22T09:05:36+08:00</updated>
+	<updated>2014-04-26T15:33:16+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -32,7 +32,7 @@
 <pre><code class="bash">cd /etc/fonts/conf.d
 </code></pre>
 
-<p>我們先把<code>Console</code>的路徑指向<code>/etc/fonts/conf.d</code>，這個路徑底下的檔案基本上是設定的檔軟連結，而真正的設定檔則是放在<code>/etc/fonts/conf.avail</code>。</p>
+<p>我們先把<code>Console</code>的路徑指向<code>/etc/fonts/conf.d</code>，這個路徑底下的檔案基本上是設定檔的軟連結，而真正的設定檔則是放在<code>/etc/fonts/conf.avail</code>。</p>
 
 <h3>刪除不必要之設定檔</h3>
 

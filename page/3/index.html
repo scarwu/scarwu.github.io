@@ -1,155 +1,143 @@
 <!doctype html>
 <html lang="zh-tw">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="description" content="記錄學習過程、生活以及一些想說的話。">
-	<meta name="keywords" content="ScarShow,刀疤說,ScarWu,刀疤">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="記錄學習過程、生活以及一些想說的話。">
+    <meta name="keywords" content="ScarShow,刀疤說,ScarWu,刀疤">
 
-	<meta name="og:url" content="http://scar.simcz.tw/">
-	<meta name="og:title" content="ScarShow | 刀疤說">
-	<meta name="og:description" content="記錄學習過程、生活以及一些想說的話。">
-	<meta name="og:image" content="http://scar.simcz.tw/images/icon.jpg">
-	<meta name="og:type" content="blog">
+    <meta property="og:url" content="http://scar.simcz.tw/">
+    <meta property="og:title" content="ScarShow | 刀疤說">
+    <meta property="og:description" content="記錄學習過程、生活以及一些想說的話。">
+    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
+    <meta property="og:type" content="blog">
 
-	<title>ScarShow | 刀疤說</title>
-	
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-	<link rel="stylesheet" href="/theme/main.css">
-	<link rel="canonical" href="http://scar.simcz.tw/scar.simcz.tw/">
-	<link rel="author" href="https://plus.google.com/+ScarWu">
-	<link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
-	<link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
+    <title>ScarShow | 刀疤說</title>
+
+    <link rel="stylesheet" href="/theme/main.css">
+    <link rel="canonical" href="http://scar.simcz.tw/scar.simcz.tw/">
+    <link rel="author" href="https://plus.google.com/+ScarWu">
+    <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
+    <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
 </head>
 <body>
-	<header>
-		<hgroup>
-			<h1><a href="/">ScarShow</a></h1>
-			<hr />
-			<h2>I know that I don't know</h2>
-		</hgroup>
-	</header>
-	<nav>
-		<span class="left">
-			<a href="/about">About</a>
-			<a href="/works">Works</a>
-			<a href="/contact">Contact</a>
-		</span>
-		<span class="home">
-			<a href="/">Home</a>
-			<span class="arrow"></span>
-		</span>
-		<span class="right">
-			<a href="/archive">Archive</a>
-			<a href="/category">Category</a>
-			<a href="/tag">Tag</a>
-		</span>
-	</nav>
-	<div id="main">
-		<div id="container"><div id="page">
-		<article>
-		<h1 class="title"><a href="/article/2013/05/30/observe-and-using-node-js-stream-event">NodeJS - Stream行為觀察與事件使用</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2013">2013-05-30</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/JavaScript">JavaScript</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/NodeJS">NodeJS</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Note">Note</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2013/05/30/observe-and-using-node-js-stream-event/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><h2>前言</h2>
+    <header>
+        <hgroup>
+            <h1><a href="/">ScarShow</a></h1>
+            <hr />
+            <h2>I know that I don't know</h2>
+        </hgroup>
+    </header>
+    <nav>
+        <span class="left">
+            <a href="/about">About</a>
+            <a href="/works">Works</a>
+        </span>
+        <span class="home">
+            <a href="/">Home</a>
+            <span class="arrow"></span>
+        </span>
+        <span class="right">
+            <a href="/archive">Archive</a>
+            <a href="/tag">Tag</a>
+        </span>
+    </nav>
+    <div id="main">
+        <div id="container"><div id="page">
+        <article>
+        <h1 class="title"><a href="/article/2013/05/30/observe-and-using-node-js-stream-event">NodeJS - Stream行為觀察與事件使用</a></h1>
+        <div class="info">
+            <div class="date">
+                <span class="fa fa-calendar"></span>
+                <a href="/archive/2013">2013-05-30</a>            </div>
+            <div class="tag">
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/JavaScript">JavaScript</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/NodeJS">NodeJS</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Note">Note</a></span>
+                <br />
+                            </div>
+            <div class="comments">
+                <span class="fa fa-comment"></span>
+                <a href="/article/2013/05/30/observe-and-using-node-js-stream-event/#disqus_thread">0 Comment</a>
+            </div>
+            <hr>
+            <div class="social_tool">
+                <div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event/" data-size="medium"></div>
+                <div class="fb-like" href="http://scar.simcz.tw/article/2013/05/30/observe-and-using-node-js-stream-event/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+            </div>
+        </div>
+        <div class="content"><h2>前言</h2>
 
 <p>在NodeJS使用廣泛的就是<code>Event-driven</code>的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。</p>
 
 <p>所以今天的主題為NodeJS中Stream的行為觀察，在先前專案中大量使用Stream的功能，所以這邊就寫下一些使用心得。</p>
 
 </div>
-		<a class="more" href="/article/2013/05/30/observe-and-using-node-js-stream-event">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi">用Raspberry Pi玩PS遊戲</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2013">2013-05-29</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Linux">Linux</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Raspberry%20Pi">Raspberry Pi</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><h2>前言</h2>
+        <a class="more" href="/article/2013/05/30/observe-and-using-node-js-stream-event">More</a>
+    </article>
+        <article>
+        <h1 class="title"><a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi">用Raspberry Pi玩PS遊戲</a></h1>
+        <div class="info">
+            <div class="date">
+                <span class="fa fa-calendar"></span>
+                <a href="/archive/2013">2013-05-29</a>            </div>
+            <div class="tag">
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Linux">Linux</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Raspberry%20Pi">Raspberry Pi</a></span>
+                <br />
+                            </div>
+            <div class="comments">
+                <span class="fa fa-comment"></span>
+                <a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi/#disqus_thread">0 Comment</a>
+            </div>
+            <hr>
+            <div class="social_tool">
+                <div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-size="medium"></div>
+                <div class="fb-like" href="http://scar.simcz.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+            </div>
+        </div>
+        <div class="content"><h2>前言</h2>
 
 <p>Raspberry Pi小巧好用拿來打電動很剛好，當作PS遊戲模擬器也是游刃有餘。</p>
 
 <p>所以在這邊紀錄如何在Raspberry Pi上安裝PCSX ReARMed，它是我們所熟知的PS模擬器PCSX，但它是針對ARM CPU的特製版。</p>
 
 </div>
-		<a class="more" href="/article/2013/05/29/playing-ps-game-with-raspberry-pi">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/05/16/try-android-studio-v01">試用Android Studio v0.1</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2013">2013-05-16</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Android">Android</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Note">Note</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2013/05/16/try-android-studio-v01/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。</p>
+        <a class="more" href="/article/2013/05/29/playing-ps-game-with-raspberry-pi">More</a>
+    </article>
+        <article>
+        <h1 class="title"><a href="/article/2013/05/16/try-android-studio-v01">試用Android Studio v0.1</a></h1>
+        <div class="info">
+            <div class="date">
+                <span class="fa fa-calendar"></span>
+                <a href="/archive/2013">2013-05-16</a>            </div>
+            <div class="tag">
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Android">Android</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Note">Note</a></span>
+                <br />
+                            </div>
+            <div class="comments">
+                <span class="fa fa-comment"></span>
+                <a href="/article/2013/05/16/try-android-studio-v01/#disqus_thread">0 Comment</a>
+            </div>
+            <hr>
+            <div class="social_tool">
+                <div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01/" data-size="medium"></div>
+                <div class="fb-like" href="http://scar.simcz.tw/article/2013/05/16/try-android-studio-v01/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+            </div>
+        </div>
+        <div class="content"><p>今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。</p>
 
 <p>不知道Android Studio它會不會像<code>Eclipse + ADT</code>一樣一戳就爆炸呢？之前在接案開發Android APP還有相關的教學課程上<code>Eclipse + ADT</code>真的不太穩定。不知道Android Studio會不會比較好用，另外Android Studio是用IntelliJ IDEA為基礎修改的現在的版號是<code>v0.1</code>，Google官方對它的介紹為：</p>
 
@@ -158,39 +146,36 @@
 </blockquote>
 
 </div>
-		<a class="more" href="/article/2013/05/16/try-android-studio-v01">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/04/29/node-js-dgram-error-with-EBADF">NodeJS - dgram error with EBADF</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2013">2013-04-29</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/JavaScript">JavaScript</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/NodeJS">NodeJS</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Note">Note</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2013/04/29/node-js-dgram-error-with-EBADF/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><p>最近把NodeJS從原本的<code>v0.8.x</code>更新到最新的<code>v0.10.x</code>，結果程式就炸了！程式就給我吐出<code>Error: setBroadcast EBADF</code>，結果是<code>dgram</code>炸了，不管是<code>setBroadcast</code>或者是<code>setTTL</code>都一樣會炸掉，問Google大神也問不出答案。</p>
+        <a class="more" href="/article/2013/05/16/try-android-studio-v01">More</a>
+    </article>
+        <article>
+        <h1 class="title"><a href="/article/2013/04/29/node-js-dgram-error-with-EBADF">NodeJS - dgram error with EBADF</a></h1>
+        <div class="info">
+            <div class="date">
+                <span class="fa fa-calendar"></span>
+                <a href="/archive/2013">2013-04-29</a>            </div>
+            <div class="tag">
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/JavaScript">JavaScript</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/NodeJS">NodeJS</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Note">Note</a></span>
+                <br />
+                            </div>
+            <div class="comments">
+                <span class="fa fa-comment"></span>
+                <a href="/article/2013/04/29/node-js-dgram-error-with-EBADF/#disqus_thread">0 Comment</a>
+            </div>
+            <hr>
+            <div class="social_tool">
+                <div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" data-size="medium"></div>
+                <div class="fb-like" href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+            </div>
+        </div>
+        <div class="content"><p>最近把NodeJS從原本的<code>v0.8.x</code>更新到最新的<code>v0.10.x</code>，結果程式就炸了！程式就給我吐出<code>Error: setBroadcast EBADF</code>，結果是<code>dgram</code>炸了，不管是<code>setBroadcast</code>或者是<code>setTTL</code>都一樣會炸掉，問Google大神也問不出答案。</p>
 
 <p>然後我就查了一下<code>EBADF</code>到底是什麼意思，它是一個socket的錯誤碼，原文是<code>The socket argument is not a valid file descriptor.</code>，意思是非法的socket代號，我們來看原本炸掉的程式碼。</p>
 
@@ -208,222 +193,202 @@ client.send(message, 0, message.length, port, ip, callback);
 </code></pre>
 
 </div>
-		<a class="more" href="/article/2013/04/29/node-js-dgram-error-with-EBADF">More</a>
-	</article>
-		<article>
-		<h1 class="title"><a href="/article/2013/04/28/apache-vhost-and-userdir-config">Apache - mod_vhost_alias與mod_userdir設定</a></h1>
-		<div class="info">
-			<div class="date">
-				<span class="icon icon-calendar"></span>
-				<a href="/archive/2013">2013-04-28</a>			</div>
-			<div class="category">
-				<span class="icon icon-folder-close"></span>
-				<a href="/category/IT">IT</a>			</div>
-			<div class="tag">
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Apache">Apache</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Linux">Linux</a></span>
-				<br />
-								<span class="icon icon-tag"></span>
-				<span><a href="/tag/Ubuntu">Ubuntu</a></span>
-				<br />
-							</div>
-			<div class="comments">
-				<span class="icon icon-comment"></span>
-				<a href="/article/2013/04/28/apache-vhost-and-userdir-config/#disqus_thread">0 Comment</a>
-			</div>
-			<hr>
-			<div class="social_tool">
-				<div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-size="medium"></div>
-				<div class="fb-like" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
-			</div>
-		</div>
-		<div class="content"><h2>前言</h2>
+        <a class="more" href="/article/2013/04/29/node-js-dgram-error-with-EBADF">More</a>
+    </article>
+        <article>
+        <h1 class="title"><a href="/article/2013/04/28/apache-vhost-and-userdir-config">Apache - mod_vhost_alias與mod_userdir設定</a></h1>
+        <div class="info">
+            <div class="date">
+                <span class="fa fa-calendar"></span>
+                <a href="/archive/2013">2013-04-28</a>            </div>
+            <div class="tag">
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Apache">Apache</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Linux">Linux</a></span>
+                <br />
+                                <span class="fa fa-tag"></span>
+                <span><a href="/tag/Ubuntu">Ubuntu</a></span>
+                <br />
+                            </div>
+            <div class="comments">
+                <span class="fa fa-comment"></span>
+                <a href="/article/2013/04/28/apache-vhost-and-userdir-config/#disqus_thread">0 Comment</a>
+            </div>
+            <hr>
+            <div class="social_tool">
+                <div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-size="medium"></div>
+                <div class="fb-like" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+            </div>
+        </div>
+        <div class="content"><h2>前言</h2>
 
 <p>Apache是常用的網頁伺服器，而<code>userdir</code>這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以<code>http://examaple.com/~username</code>的形式呈現。另外<code>vhost_alias</code>則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設<code>http://a.example.com</code>與<code>b.examle.com</code>都指向<code>192.168.1.1</code>，那麼Apache就可以根據域名來挑選網頁的根目錄<code>/var/www/a</code>或是<code>/var/www/b</code>來呈現不同的內容。</p>
 
 </div>
-		<a class="more" href="/article/2013/04/28/apache-vhost-and-userdir-config">More</a>
-	</article>
-		<div class="bar">
-		<span class="new">
-			<a href="/page/2"><< Newer Posts</a>		</span>
-		<span class="old">
-			<a href="/page/4">Older Posts >></a>		</span>
-		<span class="count">
-			3 / 8		</span>
-	</div>
+        <a class="more" href="/article/2013/04/28/apache-vhost-and-userdir-config">More</a>
+    </article>
+        <div class="bar">
+        <span class="new">
+            <a href="/page/2"><< Newer Posts</a>        </span>
+        <span class="old">
+            <a href="/page/4">Older Posts >></a>        </span>
+        <span class="count">
+            3 / 8        </span>
+    </div>
 </div>
 <script type="text/javascript">
-	var disqus_shortname = 'scarshow';
-	(function() {
-		var count = document.createElement('script');
-		count.async = true;
-		count.type = 'text/javascript';
-		count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
-	}());
+    var disqus_shortname = 'scarshow';
+    (function() {
+        var count = document.createElement('script');
+        count.async = true;
+        count.type = 'text/javascript';
+        count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
+    }());
 </script>
 <script type="text/javascript">
-	(function() {
-		var po = document.createElement('script');
-		po.type = 'text/javascript';
-		po.async = true;
-		po.src = 'https://apis.google.com/js/plusone.js';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(po, s);
-	})();
+    (function() {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
 </script>
 <div id="fb-root"></div>
 <script>
-	(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s);
-		js.id = id;
-		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script></div>
-		<div id="side">
-			<form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
-				<input type="hidden" name="q" value="site:scar.simcz.tw" />
-				<input type="text" name="q" placeholder="Search" />
-				<input type="submit" />
-			</form>
-			<div class="about">
-	<div class="title">
-		<a href="/about">About</a>	</div>
-	<div class="content">
-		<img class="avatar" src="http://avatars.plurk.com/3891981-big26.jpg" alt="ScarWu" />
-		<p class="name">刀疤</p>
-		<p class="says">別人都覺得我多才多藝，但其實我只是略懂略懂。</p>
-		<div class="social_icon">
-			<a href="/atom.xml" target="_blank">
-				<img src="/theme/icons/rss.png" alt="RSS" />
-			</a>
-			<a href="https://github.com/ScarWu" target="_blank">
-				<img src="/theme/icons/github.png" alt="Github" />
-			</a>
-			<a href="https://plus.google.com/108940352426915109637" target="_blank">
-				<img src="/theme/icons/google_plus.png" alt="Google+" />
-			</a>
-			<a href="http://www.plurk.com/ScarWu" target="_blank">
-				<img src="/theme/icons/plurk.png" alt="Plurk" />
-			</a>
-		</div>
-	</div>
+        <div id="side">
+            <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
+                <input type="hidden" name="q" value="site:scar.simcz.tw" />
+                <input type="text" name="q" placeholder="Search" />
+                <input type="submit" />
+            </form>
+            <div class="about">
+    <div class="title">
+        <a href="/about">About</a>    </div>
+    <div class="content">
+        <img class="avatar" src="http://avatars.plurk.com/3891981-big26.jpg" alt="ScarWu" />
+        <p class="name">刀疤</p>
+        <p class="says">別人都覺得我多才多藝，但其實我只是略懂略懂。</p>
+        <div class="social_icon">
+            <a class="fa fa-rss" href="/atom.xml" target="_blank"></a>
+            <br />
+            <a class="fa fa-github" href="https://github.com/ScarWu" target="_blank"></a>
+            <a class="fa fa-facebook-square" href="https://www.facebook.com/ScarWu" target="_blank"></a>
+            <a class="fa fa-google-plus-square" href="https://plus.google.com/108940352426915109637" target="_blank"></a>
+            <a class="fa fa-envelope" href="mailto://xneriscool@gmail.com" target="_blank"></a>
+        </div>
+    </div>
 </div><div class="archive">
-	<div class="title">
-		<a href="/archive">Archive</a>	</div>
-	<div class="content">
-				<span class="item">
-						<a href="/archive/2014">2014(7)</a>		</span>
-				<span class="item">
-						<a href="/archive/2013">2013(14)</a>		</span>
-				<span class="item">
-						<a href="/archive/2012">2012(14)</a>		</span>
-				<span class="item">
-						<a href="/archive/2011">2011(2)</a>		</span>
-			</div>
-</div><div class="category">
-	<div class="title">
-		<a href="/category">Category</a>	</div>
-	<div class="content">
-				<span class="item">
-						<a href="/category/Game">Game(1)</a>		</span>
-				<span class="item">
-						<a href="/category/IT">IT(35)</a>		</span>
-				<span class="item">
-						<a href="/category/Life">Life(1)</a>		</span>
-			</div>
+    <div class="title">
+        <a href="/archive">Archive</a>    </div>
+    <div class="content">
+                <span class="item">
+                        <a href="/archive/2014">2014(7)</a>        </span>
+                <span class="item">
+                        <a href="/archive/2013">2013(14)</a>        </span>
+                <span class="item">
+                        <a href="/archive/2012">2012(14)</a>        </span>
+                <span class="item">
+                        <a href="/archive/2011">2011(2)</a>        </span>
+            </div>
 </div><div class="tag">
-	<div class="title">
-		<a href="/tag">Tag</a>	</div>
-	<div class="content">
-				<span class="item">
-						<a href="/tag/3C">3C(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Android">Android(3)</a>		</span>
-				<span class="item">
-						<a href="/tag/Apache">Apache(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Arch%20Linux">Arch Linux(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/C/C%2B%2B">C/C++(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Chrome">Chrome(2)</a>		</span>
-				<span class="item">
-						<a href="/tag/Diablo%20III">Diablo III(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Express">Express(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Facebook">Facebook(2)</a>		</span>
-				<span class="item">
-						<a href="/tag/HTML5">HTML5(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Hadoop">Hadoop(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/JavaScript">JavaScript(7)</a>		</span>
-				<span class="item">
-						<a href="/tag/Linux">Linux(10)</a>		</span>
-				<span class="item">
-						<a href="/tag/Mobile%20Web">Mobile Web(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/NanoCLI">NanoCLI(2)</a>		</span>
-				<span class="item">
-						<a href="/tag/NodeJS">NodeJS(3)</a>		</span>
-				<span class="item">
-						<a href="/tag/Note">Note(18)</a>		</span>
-				<span class="item">
-						<a href="/tag/PHP">PHP(16)</a>		</span>
-				<span class="item">
-						<a href="/tag/PHPBrew">PHPBrew(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Pointless">Pointless(3)</a>		</span>
-				<span class="item">
-						<a href="/tag/Python">Python(2)</a>		</span>
-				<span class="item">
-						<a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/SQLite">SQLite(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/ThinkPad">ThinkPad(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Tools">Tools(2)</a>		</span>
-				<span class="item">
-						<a href="/tag/Toy">Toy(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Ubuntu">Ubuntu(8)</a>		</span>
-				<span class="item">
-						<a href="/tag/Virus">Virus(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/WebGL">WebGL(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Windows">Windows(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/Works">Works(2)</a>		</span>
-				<span class="item">
-						<a href="/tag/ZSH">ZSH(1)</a>		</span>
-				<span class="item">
-						<a href="/tag/iOS">iOS(1)</a>		</span>
-			</div>
-</div>		</div>
-	</div>
-	<footer>
-		<span>Copyright &copy; Scar Wu</span>
-		<p>Powered by Pointless</p>
-	</footer>
+    <div class="title">
+        <a href="/tag">Tag</a>    </div>
+    <div class="content">
+                <span class="item">
+                        <a href="/tag/3C">3C(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Android">Android(3)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Apache">Apache(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Arch%20Linux">Arch Linux(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/C/C%2B%2B">C/C++(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Chrome">Chrome(2)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Diablo%20III">Diablo III(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Express">Express(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Facebook">Facebook(2)</a>        </span>
+                <span class="item">
+                        <a href="/tag/HTML5">HTML5(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Hadoop">Hadoop(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/JavaScript">JavaScript(7)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Linux">Linux(10)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Mobile%20Web">Mobile Web(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/NanoCLI">NanoCLI(2)</a>        </span>
+                <span class="item">
+                        <a href="/tag/NodeJS">NodeJS(3)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Note">Note(18)</a>        </span>
+                <span class="item">
+                        <a href="/tag/PHP">PHP(16)</a>        </span>
+                <span class="item">
+                        <a href="/tag/PHPBrew">PHPBrew(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Pointless">Pointless(3)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Python">Python(2)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Raspberry%20Pi">Raspberry Pi(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/SQLite">SQLite(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/ThinkPad">ThinkPad(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Tools">Tools(2)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Toy">Toy(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Ubuntu">Ubuntu(8)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Virus">Virus(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/WebGL">WebGL(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Windows">Windows(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Works">Works(2)</a>        </span>
+                <span class="item">
+                        <a href="/tag/ZSH">ZSH(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/iOS">iOS(1)</a>        </span>
+            </div>
+</div>        </div>
+    </div>
+    <footer>
+        <span>Copyright &copy; Scar Wu</span>
+        <p>Powered by Pointless</p>
+    </footer>
 
-	<script src="/theme/main.js"></script>
-		<script>
-		var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
-			var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-			g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-			s.parentNode.insertBefore(g, s)
-		} (document, 'script'));
-	</script>
-	</body>
+    <script src="/theme/main.js"></script>
+        <script>
+        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g, s)
+        } (document, 'script'));
+    </script>
+    </body>
 </html>
