@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-04-26T16:28:11+08:00</updated>
+	<updated>2014-05-03T14:10:50+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -86,7 +86,7 @@
 <pre><code class="bash">sudo vim 69-language-selector-zh-tw.conf
 </code></pre>
 
-<p><code>&lt;stinrg&gt;WenQuanYi Micro Hei&lt;/string&gt;</code>一樣是加在<code>sans-serif</code>裡。</p>
+<p><code>&lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;</code>一樣是加在<code>sans-serif</code>裡。</p>
 
 <pre><code class="xml">&lt;match target="pattern"&gt;
     &lt;test qual="any" name="family"&gt;
@@ -96,13 +96,13 @@
         &lt;string&gt;zh-tw&lt;/string&gt;
     &lt;/test&gt;
     &lt;edit name="family" mode="prepend" binding="strong"&gt;
-        &lt;stinrg&gt;WenQuanYi Micro Hei&lt;/string&gt;
+        &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
         &lt;string&gt;Droid Sans Fallback&lt;/string&gt;
         &lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
         ...
 </code></pre>
 
-<p><code>&lt;stinrg&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;</code>則也是加在<code>monospace</code>裡。</p>
+<p><code>&lt;string&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;</code>則也是加在<code>monospace</code>裡。</p>
 
 <pre><code class="xml">&lt;match target="pattern"&gt;
     &lt;test qual="any" name="family"&gt;
@@ -112,7 +112,7 @@
         &lt;string&gt;zh-tw&lt;/string&gt;
     &lt;/test&gt;
     &lt;edit name="family" mode="prepend" binding="strong"&gt;
-        &lt;stinrg&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;
+        &lt;string&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;
         &lt;string&gt;Droid Sans Fallback&lt;/string&gt;
         &lt;string&gt;WenQuanYi Zen Hei Mono&lt;/string&gt;
         ...
