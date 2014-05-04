@@ -176,7 +176,23 @@
 
 <h2>打完收工</h2>
 
-<p>記得千萬不要手殘在<code>Console</code>中輸入<code>sudo fc-cache -fv</code>或是<code>sudo fc-font -v</code>，別怪我沒提醒你。</p>
+<p><del>記得千萬不要手殘在<code>Console</code>中輸入<code>sudo fc-cache -fv</code>或是<code>sudo fc-font -v</code>，別怪我沒提醒你。</del></p>
+
+<p>不打上面的指令更新字型快取的原因是因為它有機會造成<code>Chrome</code>的分頁標籤變成亂碼，不過我已經查到方法的可以修復了。</p>
+
+<h4>/etc/fonts/conf.d/49-sansserif.conf</h4>
+
+<p>打開這個文件，然後將<code>sans-serif</code>改成你要的字型就可以了。</p>
+
+<p>這樣你愛怎麼下<code>sudo fc-cache -fv</code>或是<code>sudo fc-cache -v</code>都隨便你。</p>
+
+<pre><code class="xml">        &lt;edit name="family" mode="append_last"&gt;
+            &lt;!--string&gt;sans-serif&lt;/string--&gt;
+            &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
+        &lt;/edit&gt;
+    &lt;/match&gt;
+&lt;/fontconfig&gt;
+</code></pre>
 </div>
     </article>
         <div id="disqus_thread"></div>
