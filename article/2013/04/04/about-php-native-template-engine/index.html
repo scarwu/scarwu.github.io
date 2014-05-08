@@ -103,7 +103,7 @@
 &lt;/ol&gt;
 </code></pre>
 
-<p>上面示範了<code>if():</code>以及<code>foreach():</code>的語法，它基本使用上就跟我們在PHP中的寫法差不多，每個語法都必須在<code>&lt;?php ?&gt;</code>的標籤中，不過稍有不同的是語法後面都要加上<code>:</code>以及在區塊的最後加上<code>&lt;?php endxxx; ?&gt;</code>結束語法來作結尾。然而變數的輸出可以使用一般的<code>&lt;?php echo $variable; ?&gt;</code>，也可以使用在PHP中稱為<code>Short Tag</code>的特殊標籤<code>&lt;?=$variable?&gt;</code>，如果你的<code>PHP</code>是<code>PHP 5.4</code>之前的版本，請去<code>php.ini</code>把<code>Short Tag</code>的支援打開。</p>
+<p>上面示範了<code>if():</code>以及<code>foreach():</code>的語法，它基本使用上就跟我們在PHP中的寫法差不多，每個語法都必須在<code>&lt;?php ?&gt;</code>的標籤中，不過稍有不同的是語法後面都要加上<code>:</code>以及在區塊的最後加上<code>&lt;?php endxxx; ?&gt;</code>結束語法來作結尾。然而變數的輸出可以使用一般的<code>&lt;?php echo $variable; ?&gt;</code>，也可以使用在PHP中稱為<code>Short Tag</code>的特殊標籤<code>&lt;?=$variable?&gt;</code>，如果你的<code>PHP</code>是<code>PHP 5.4</code>之前的版本，請修改<code>php.ini</code>將<code>Short Tag</code>的支援打開。</p>
 
 <pre><code class="ini">short_open_tag = On
 </code></pre>
@@ -202,6 +202,8 @@ echo $html;
 <p>當然現成的樣板引擎當然有它的好處，但如果你想要附屬的好用功能當然還是可以用，比較起那些炫目簡短的語法，但我還是會選擇原生的語法(雖然醜了點)，廣告台詞說了這麼一句：<code>天然ㄟ尚好</code>，畢竟人家都已經做好放在那邊而且速度又比較快，也沒有什麼理由不用，如果要簡單的附加功能大不了自己寫也是可以的。</p>
 
 <p><strong>我還是強調一下，要不要用樣板引擎，這全憑個人選擇。</strong></p>
+
+<p><strong>Update: 2014/05/08</strong></p>
 </div>
     </article>
         <div id="disqus_thread"></div>
