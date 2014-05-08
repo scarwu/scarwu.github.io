@@ -19,15 +19,6 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
-
-    <script>
-        function loadExtendJS(src, async) {
-            var s = document.createElement('script');
-            if (async == true) s.async = async; s.src = src;
-            var e = document.getElementsByTagName('script')[0];
-            e.parentNode.insertBefore(s, e);
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -250,10 +241,27 @@
         <p>Powered by Pointless</p>
     </footer>
 
-    <script src="/theme/main.js"></script>
-        <script>
-        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
+    <script>
+        function loadExtendJS(src, async) {
+            var s = document.createElement('script');
+            s.src = src; if (async == true) s.async = true;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+                var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
         loadExtendJS(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
+                        var disqus_shortname = 'scarshow';
+        if (document.getElementById('disqus_comments')) {
+            loadExtendJS('http://' + disqus_shortname + '.disqus.com/count.js', true);
+        }
+        if (document.getElementById('disqus_thread')) {
+            loadExtendJS('http://' + disqus_shortname + '.disqus.com/embed.js', true);
+        }
+                if (document.getElementById('social_tool')) {
+            loadExtendJS('https://apis.google.com/js/plusone.js', true);
+            loadExtendJS('//connect.facebook.net/en_US/all.js#xfbml=1', true);
+        }
     </script>
-    </body>
+    <script src="/theme/main.js"></script>
+</body>
 </html>

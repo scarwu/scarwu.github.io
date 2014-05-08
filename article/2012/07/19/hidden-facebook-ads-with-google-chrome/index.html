@@ -19,15 +19,6 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
-
-    <script>
-        function loadExtendJS(src, async) {
-            var s = document.createElement('script');
-            if (async == true) s.async = async; s.src = src;
-            var e = document.getElementsByTagName('script')[0];
-            e.parentNode.insertBefore(s, e);
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -73,12 +64,12 @@
                 <span><a href="/tag/Tools">Tools</a></span>
                 <br />
                             </div>
-            <div class="comments">
+                        <div id="disqus_comments">
                 <span class="fa fa-comment"></span>
                 <a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/#disqus_thread">0 Comment</a>
             </div>
-            <hr>
-            <div class="social_tool">
+                        <hr>
+            <div id="social_tool">
                 <div class="g-plusone" data-href="http://scar.simcz.tw/article/2012/07/19/hidden-facebook-ads-with-google-chrome/" data-size="medium"></div>
                 <div class="fb-like" href="http://scar.simcz.tw/article/2012/07/19/hidden-facebook-ads-with-google-chrome/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
             </div>
@@ -143,14 +134,7 @@ function hideAds() {
             28 / 37        </span>
     </div>
 </div>
-<div id="fb-root"></div>
-<script>
-        var disqus_shortname = 'scarshow';
-    loadExtendJS('http://' + disqus_shortname + '.disqus.com/count.js', true);
-    loadExtendJS('http://' + disqus_shortname + '.disqus.com/embed.js', true);
-        loadExtendJS('https://apis.google.com/js/plusone.js', true);
-    loadExtendJS('//connect.facebook.net/en_US/all.js#xfbml=1');
-</script></div>
+<div id="fb-root"></div></div>
         <div id="side">
             <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
                 <input type="hidden" name="q" value="site:scar.simcz.tw" />
@@ -264,10 +248,27 @@ function hideAds() {
         <p>Powered by Pointless</p>
     </footer>
 
-    <script src="/theme/main.js"></script>
-        <script>
-        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
+    <script>
+        function loadExtendJS(src, async) {
+            var s = document.createElement('script');
+            s.src = src; if (async == true) s.async = true;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+                var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
         loadExtendJS(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
+                        var disqus_shortname = 'scarshow';
+        if (document.getElementById('disqus_comments')) {
+            loadExtendJS('http://' + disqus_shortname + '.disqus.com/count.js', true);
+        }
+        if (document.getElementById('disqus_thread')) {
+            loadExtendJS('http://' + disqus_shortname + '.disqus.com/embed.js', true);
+        }
+                if (document.getElementById('social_tool')) {
+            loadExtendJS('https://apis.google.com/js/plusone.js', true);
+            loadExtendJS('//connect.facebook.net/en_US/all.js#xfbml=1', true);
+        }
     </script>
-    </body>
+    <script src="/theme/main.js"></script>
+</body>
 </html>
