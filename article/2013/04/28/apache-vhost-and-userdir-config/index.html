@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:description" name="description" content="Apache是常用的網頁伺服器，而userdir這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以http://examaple.com/~username的形式呈現。另外vhost_alias則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設http://a.example.com與b.examle.com都指向192.168.1.1，那麼Apache就可以根據域名來挑選網頁的根目錄/var/www/a或是/var/www/b來呈現不同的內容。">
     <meta property="og:title" content="Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說">
-    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config">
+    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/">
     <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
     <meta property="og:type" content="blog">
 
     <title>Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說</title>
 
     <link rel="stylesheet" href="/theme/main.css">
-    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config">
+    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/">
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
@@ -60,12 +60,12 @@
                             </div>
                         <div id="disqus_comments">
                 <span class="fa fa-comment"></span>
-                <a href="/article/2013/04/28/apache-vhost-and-userdir-config/#disqus_thread">0 Comment</a>
+                <a href="/article/2013/04/28/apache-vhost-and-userdir-config//#disqus_thread">0 Comment</a>
             </div>
                         <hr>
             <div id="social_tool">
-                <div class="g-plusone" data-href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-size="medium"></div>
-                <div class="fb-like" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-action="like"></div>
+                <div class="g-plusone" data-href="http://scar.simcz.tw//article/2013/04/28/apache-vhost-and-userdir-config/" data-size="medium"></div>
+                <div class="fb-like" data-href="http://scar.simcz.tw//article/2013/04/28/apache-vhost-and-userdir-config/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
             </div>
         </div>
         <div class="content"><h2>前言</h2>
@@ -211,9 +211,9 @@ sudo ln -s ../mod-available/userdir.conf
         <div id="disqus_thread"></div>
         <div class="bar">
         <span class="new">
-            <a href="/article/2013/04/29/node-js-dgram-error-with-EBADF"><< NodeJS - dgram error with EBADF</a>        </span>
+            <a href="/article/2013/04/29/node-js-dgram-error-with-EBADF/"><< NodeJS - dgram error with EBADF</a>        </span>
         <span class="old">
-            <a href="/article/2013/04/19/shopping-record">敗家紀錄 >></a>        </span>
+            <a href="/article/2013/04/19/shopping-record/">敗家紀錄 >></a>        </span>
         <span class="count">
             15 / 37        </span>
     </div>
@@ -350,7 +350,7 @@ sudo ln -s ../mod-available/userdir.conf
         }
                 if (document.getElementById('social_tool')) {
             loadExtendJS('https://apis.google.com/js/plusone.js', true);
-            loadExtendJS('//connect.facebook.net/en_US/all.js#xfbml=1', true);
+            loadExtendJS('//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1403512429930397&version=v2.0', true);
         }
     </script>
     <script src="/theme/main.js"></script>

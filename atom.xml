@@ -5,15 +5,15 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-05-09T01:43:15+08:00</updated>
+	<updated>2014-05-09T02:43:38+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
 	</author>
 	<entry>
 		<title type="html"><![CDATA[Ubuntu 14.04 LTS 中文修正]]></title>
-		<link href="http://scar.simcz.tw/article/2014/04/22/fix-ubuntu-14-04-lts-zh-font-selector" />
-		<id>urn:uuid:13004681-6283-52a0-9c4b-473afc7952b9</id>
+		<link href="http://scar.simcz.tw/article/2014/04/22/fix-ubuntu-14-04-lts-zh-font-selector/" />
+		<id>urn:uuid:d754ac2a-27a9-c507-ba1e-691e304feed9</id>
 		<updated>2014-04-22T01:02:53+08:00</updated>
 		<summary type="html"><![CDATA[<h2>前言</h2>
 
@@ -143,8 +143,8 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Ubuntu內建PCRE Library所造成的PHP Segmentation Fault]]></title>
-		<link href="http://scar.simcz.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault" />
-		<id>urn:uuid:0101401e-1da7-af6d-627d-9be87c4bb29f</id>
+		<link href="http://scar.simcz.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/" />
+		<id>urn:uuid:9c6fe9d4-f272-a151-b70c-85a2798de930</id>
 		<updated>2014-02-23T15:22:14+08:00</updated>
 		<summary type="html"><![CDATA[<h2>接續</h2>
 
@@ -196,8 +196,8 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Pointless所遭遇到的Segmentation Faults]]></title>
-		<link href="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults" />
-		<id>urn:uuid:7d40cfb8-50e2-e5eb-c0ae-02e69b0effae</id>
+		<link href="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults/" />
+		<id>urn:uuid:e16b71f6-7c17-48af-d429-faf16564a56b</id>
 		<updated>2014-02-21T08:03:01+08:00</updated>
 		<summary type="html"><![CDATA[<h2>怪事</h2>
 
@@ -238,8 +238,8 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Chrome - Enable Hardware Graphics]]></title>
-		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics" />
-		<id>urn:uuid:a3b360b7-5d6e-9c12-8a64-7f83e97a6a7c</id>
+		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics/" />
+		<id>urn:uuid:be5efe37-3cce-6273-edfc-c51b30429dbd</id>
 		<updated>2014-01-19T12:48:58+08:00</updated>
 		<summary type="html"><![CDATA[<h2>難得</h2>
 
@@ -280,8 +280,8 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Ubuntu 13.10 install AMD Catalyst 13.12]]></title>
-		<link href="http://scar.simcz.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12" />
-		<id>urn:uuid:d2c45662-8551-28ca-e998-b7c95093c3e4</id>
+		<link href="http://scar.simcz.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12/" />
+		<id>urn:uuid:7955a0bb-e567-c341-a8d5-ad8a5e9956a0</id>
 		<updated>2014-01-19T10:30:55+08:00</updated>
 		<summary type="html"><![CDATA[<h2>不解</h2>
 
