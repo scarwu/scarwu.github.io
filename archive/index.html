@@ -19,6 +19,15 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/archive/2014images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/archive/2014favicon.ico" />
+
+    <script>
+        function loadExtendJS(src, async) {
+            var s = document.createElement('script');
+            if (async == true) s.async = async; s.src = src;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -243,11 +252,8 @@
 
     <script src="/theme/main.js"></script>
         <script>
-        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
-            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s)
-        } (document, 'script'));
+        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
+        loadExtendJS(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
     </script>
     </body>
 </html>

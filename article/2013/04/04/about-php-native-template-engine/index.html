@@ -19,6 +19,15 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
+
+    <script>
+        function loadExtendJS(src, async) {
+            var s = document.createElement('script');
+            if (async == true) s.async = async; s.src = src;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -94,7 +103,10 @@
 &lt;/ol&gt;
 </code></pre>
 
-<p>上面示範了<code>if():</code>以及<code>foreach():</code>的語法，它基本使用上就跟我們在PHP中的寫法差不多，每個語法都必須在<code>&lt;?php ?&gt;</code>的標籤中，不過稍有不同的是語法後面都要加上<code>:</code>以及在區塊的最後加上<code>&lt;?php endxxx; ?&gt;</code>結束語法來作結尾。然而變數的輸出可以使用一般的<code>&lt;?php echo $variable; ?&gt;</code>，也可以使用在PHP中稱為Short Tag的特殊標籤<code>&lt;?=$variable?&gt;</code>。</p>
+<p>上面示範了<code>if():</code>以及<code>foreach():</code>的語法，它基本使用上就跟我們在PHP中的寫法差不多，每個語法都必須在<code>&lt;?php ?&gt;</code>的標籤中，不過稍有不同的是語法後面都要加上<code>:</code>以及在區塊的最後加上<code>&lt;?php endxxx; ?&gt;</code>結束語法來作結尾。然而變數的輸出可以使用一般的<code>&lt;?php echo $variable; ?&gt;</code>，也可以使用在PHP中稱為<code>Short Tag</code>的特殊標籤<code>&lt;?=$variable?&gt;</code>，如果你的<code>PHP</code>是<code>PHP 5.4</code>之前的版本，請去<code>php.ini</code>把<code>Short Tag</code>的支援打開。</p>
+
+<pre><code class="ini">short_open_tag = On
+</code></pre>
 
 <p>在這邊我們要注意的是，PHP只做邏輯判斷並且印出事先就處理好的變數內容，並且盡量少用PHP印出HTML的標籤，這樣做的話會讓樣板更乾淨。</p>
 
@@ -147,7 +159,7 @@ echo $html;
             &lt;/tr&gt;
             &lt;?php foreach($data as $student): ?&gt;
             &lt;tr&gt;
-                &lt;td&gt;&lt;?=$data['id']?&gt;&lt;/td&gt;&lt;td&gt;&lt;?=$data['name']?&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;?=$student['id']?&gt;&lt;/td&gt;&lt;td&gt;&lt;?=$sudent['name']?&gt;&lt;/td&gt;
             &lt;/tr&gt;
             &lt;?php endforeach; ?&gt;
         &lt;/table&gt;
@@ -193,22 +205,6 @@ echo $html;
 </div>
     </article>
         <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'scarshow';
-        (function() {
-            var embed = document.createElement('script');
-            embed.type = 'text/javascript';
-            embed.async = true;
-            embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
-
-            var count = document.createElement('script');
-            count.async = true;
-            count.type = 'text/javascript';
-            count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
-        }());
-    </script>
         <div class="bar">
         <span class="new">
             <a href="/article/2013/04/19/shopping-record"><< 敗家紀錄</a>        </span>
@@ -218,26 +214,13 @@ echo $html;
             17 / 37        </span>
     </div>
 </div>
-<script type="text/javascript">
-    (function() {
-        var po = document.createElement('script');
-        po.type = 'text/javascript';
-        po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(po, s);
-    })();
-</script>
 <div id="fb-root"></div>
 <script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        var disqus_shortname = 'scarshow';
+    loadExtendJS('http://' + disqus_shortname + '.disqus.com/count.js', true);
+    loadExtendJS('http://' + disqus_shortname + '.disqus.com/embed.js', true);
+        loadExtendJS('https://apis.google.com/js/plusone.js', true);
+    loadExtendJS('//connect.facebook.net/en_US/all.js#xfbml=1');
 </script></div>
         <div id="side">
             <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
@@ -354,11 +337,8 @@ echo $html;
 
     <script src="/theme/main.js"></script>
         <script>
-        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
-            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s)
-        } (document, 'script'));
+        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
+        loadExtendJS(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
     </script>
     </body>
 </html>

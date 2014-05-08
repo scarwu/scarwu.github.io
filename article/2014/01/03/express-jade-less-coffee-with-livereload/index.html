@@ -19,6 +19,15 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
+
+    <script>
+        function loadExtendJS(src, async) {
+            var s = document.createElement('script');
+            if (async == true) s.async = async; s.src = src;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -285,22 +294,6 @@ livereload.watch(__dirname + '/views');
 </div>
     </article>
         <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'scarshow';
-        (function() {
-            var embed = document.createElement('script');
-            embed.type = 'text/javascript';
-            embed.async = true;
-            embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
-
-            var count = document.createElement('script');
-            count.async = true;
-            count.type = 'text/javascript';
-            count.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(count);
-        }());
-    </script>
         <div class="bar">
         <span class="new">
             <a href="/article/2014/01/14/zsh-history-search-backward-and-forward"><< ZSH - history-search-backward/forward</a>        </span>
@@ -310,26 +303,13 @@ livereload.watch(__dirname + '/views');
             7 / 37        </span>
     </div>
 </div>
-<script type="text/javascript">
-    (function() {
-        var po = document.createElement('script');
-        po.type = 'text/javascript';
-        po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(po, s);
-    })();
-</script>
 <div id="fb-root"></div>
 <script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        var disqus_shortname = 'scarshow';
+    loadExtendJS('http://' + disqus_shortname + '.disqus.com/count.js', true);
+    loadExtendJS('http://' + disqus_shortname + '.disqus.com/embed.js', true);
+        loadExtendJS('https://apis.google.com/js/plusone.js', true);
+    loadExtendJS('//connect.facebook.net/en_US/all.js#xfbml=1');
 </script></div>
         <div id="side">
             <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
@@ -446,11 +426,8 @@ livereload.watch(__dirname + '/views');
 
     <script src="/theme/main.js"></script>
         <script>
-        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
-            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s)
-        } (document, 'script'));
+        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
+        loadExtendJS(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
     </script>
     </body>
 </html>

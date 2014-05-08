@@ -19,6 +19,15 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
+
+    <script>
+        function loadExtendJS(src, async) {
+            var s = document.createElement('script');
+            if (async == true) s.async = async; s.src = src;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -80,17 +89,12 @@
 </div>
     </article>
         <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'scarshow';
-        (function() {
-            var embed = document.createElement('script');
-            embed.async = true;
-            embed.type = 'text/javascript';
-            embed.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(embed);
-        })();
-    </script>
-    </div></div>
+    </div>
+<script>
+    var disqus_shortname = 'scarshow';
+    loadExtendJS('http://' + disqus_shortname + '.disqus.com/embed.js', true);
+</script>
+</div>
         <div id="side">
             <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
                 <input type="hidden" name="q" value="site:scar.simcz.tw" />
@@ -206,11 +210,8 @@
 
     <script src="/theme/main.js"></script>
         <script>
-        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']]; (function(d, t) {
-            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s)
-        } (document, 'script'));
+        var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
+        loadExtendJS(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
     </script>
     </body>
 </html>
