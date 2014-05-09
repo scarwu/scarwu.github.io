@@ -18,14 +18,14 @@
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
 </head>
 <body>
-    <header>
+    <header id="header">
         <hgroup>
             <h1><a href="/">ScarShow</a></h1>
             <hr />
             <h2>I know that I don't know</h2>
         </hgroup>
     </header>
-    <nav>
+    <nav id="nav">
         <span class="left">
             <a href="/about/">About</a>
             <a href="/works/">Works</a>
@@ -40,8 +40,8 @@
         </span>
     </nav>
     <div id="main">
-        <div id="container"><div id="page">
-        <article>
+        <div id="container"><div id="container_page">
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/05/07/pointless-readme/">Pointless使用說明</a></h1>
         <div class="info">
             <div class="date">
@@ -102,7 +102,7 @@
 </div>
         <a class="more" href="/article/2012/05/07/pointless-readme/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/04/27/about-pointless-static-blog-generator/">關於Pointless靜態部落格產生器</a></h1>
         <div class="info">
             <div class="date">
@@ -141,7 +141,7 @@
 </div>
         <a class="more" href="/article/2012/04/27/about-pointless-static-blog-generator/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-2/">實作一個小型Router use PHP (2)</a></h1>
         <div class="info">
             <div class="date">
@@ -200,7 +200,7 @@ class router {
 </div>
         <a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-2/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-1/">實作一個小型Router use PHP (1)</a></h1>
         <div class="info">
             <div class="date">
@@ -240,7 +240,7 @@ print_r($_SERVER);
 </div>
         <a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-1/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10/">HipHop building on Ubuntu 11.10</a></h1>
         <div class="info">
             <div class="date">
@@ -289,7 +289,7 @@ print_r($_SERVER);
 </div>
         <a class="more" href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10/">More</a>
     </article>
-        <div class="bar">
+        <div id="paging">
         <span class="new">
             <a href="/page/6/"><< Newer Posts</a>        </span>
         <span class="old">
@@ -300,12 +300,12 @@ print_r($_SERVER);
 </div>
 <div id="fb-root"></div></div>
         <div id="side">
-            <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
+            <form id="side_search" action="http://www.google.com/search?q=as" target="_blank" method="get">
                 <input type="hidden" name="q" value="site:scar.simcz.tw" />
                 <input type="text" name="q" placeholder="Search" />
                 <input type="submit" />
             </form>
-            <div class="about">
+            <div id="side_about">
     <div class="title">
         <a href="/about/">About</a>    </div>
     <div class="content">
@@ -321,7 +321,7 @@ print_r($_SERVER);
             <a class="fa fa-plurk" href="http://www.plurk.com/ScarWu" target="_blank"></a>
         </div>
     </div>
-</div><div class="archive">
+</div><div id="side_archive">
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
@@ -334,7 +334,7 @@ print_r($_SERVER);
                 <span class="item">
                         <a href="/archive/2011/">2011(2)</a>        </span>
             </div>
-</div><div class="tag">
+</div><div id="side_tag">
     <div class="title">
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
@@ -409,7 +409,7 @@ print_r($_SERVER);
             </div>
 </div>        </div>
     </div>
-    <footer>
+    <footer id="footer">
         <span>Copyright &copy; Scar Wu</span>
         <p>Powered by Pointless</p>
     </footer>

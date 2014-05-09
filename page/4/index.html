@@ -18,14 +18,14 @@
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
 </head>
 <body>
-    <header>
+    <header id="header">
         <hgroup>
             <h1><a href="/">ScarShow</a></h1>
             <hr />
             <h2>I know that I don't know</h2>
         </hgroup>
     </header>
-    <nav>
+    <nav id="nav">
         <span class="left">
             <a href="/about/">About</a>
             <a href="/works/">Works</a>
@@ -40,8 +40,8 @@
         </span>
     </nav>
     <div id="main">
-        <div id="container"><div id="page">
-        <article>
+        <div id="container"><div id="container_page">
+        <article class="post_block">
         <h1 class="title"><a href="/article/2013/04/28/apache-vhost-and-userdir-config/">Apache - mod_vhost_alias與mod_userdir設定</a></h1>
         <div class="info">
             <div class="date">
@@ -82,7 +82,7 @@
 </div>
         <a class="more" href="/article/2013/04/28/apache-vhost-and-userdir-config/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2013/04/19/shopping-record/">敗家紀錄</a></h1>
         <div class="info">
             <div class="date">
@@ -120,7 +120,7 @@
 </div>
         <a class="more" href="/article/2013/04/19/shopping-record/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2013/04/04/about-php-native-template-engine/">關於PHP原生樣板引擎</a></h1>
         <div class="info">
             <div class="date">
@@ -163,7 +163,7 @@
 </div>
         <a class="more" href="/article/2013/04/04/about-php-native-template-engine/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2013/04/02/php-concatenate-string/">PHP字串連接</a></h1>
         <div class="info">
             <div class="date">
@@ -234,7 +234,7 @@ echo 'Hi $name';    // Hi $name
 </div>
         <a class="more" href="/article/2013/04/02/php-concatenate-string/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">NanoCLI - PHP CLI開發工具 (2)</a></h1>
         <div class="info">
             <div class="date">
@@ -293,7 +293,7 @@ class Help extends NanoCLI\Command {
 </div>
         <a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">More</a>
     </article>
-        <div class="bar">
+        <div id="paging">
         <span class="new">
             <a href="/page/3/"><< Newer Posts</a>        </span>
         <span class="old">
@@ -304,12 +304,12 @@ class Help extends NanoCLI\Command {
 </div>
 <div id="fb-root"></div></div>
         <div id="side">
-            <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
+            <form id="side_search" action="http://www.google.com/search?q=as" target="_blank" method="get">
                 <input type="hidden" name="q" value="site:scar.simcz.tw" />
                 <input type="text" name="q" placeholder="Search" />
                 <input type="submit" />
             </form>
-            <div class="about">
+            <div id="side_about">
     <div class="title">
         <a href="/about/">About</a>    </div>
     <div class="content">
@@ -325,7 +325,7 @@ class Help extends NanoCLI\Command {
             <a class="fa fa-plurk" href="http://www.plurk.com/ScarWu" target="_blank"></a>
         </div>
     </div>
-</div><div class="archive">
+</div><div id="side_archive">
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
@@ -338,7 +338,7 @@ class Help extends NanoCLI\Command {
                 <span class="item">
                         <a href="/archive/2011/">2011(2)</a>        </span>
             </div>
-</div><div class="tag">
+</div><div id="side_tag">
     <div class="title">
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
@@ -413,7 +413,7 @@ class Help extends NanoCLI\Command {
             </div>
 </div>        </div>
     </div>
-    <footer>
+    <footer id="footer">
         <span>Copyright &copy; Scar Wu</span>
         <p>Powered by Pointless</p>
     </footer>

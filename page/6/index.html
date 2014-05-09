@@ -18,14 +18,14 @@
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
 </head>
 <body>
-    <header>
+    <header id="header">
         <hgroup>
             <h1><a href="/">ScarShow</a></h1>
             <hr />
             <h2>I know that I don't know</h2>
         </hgroup>
     </header>
-    <nav>
+    <nav id="nav">
         <span class="left">
             <a href="/about/">About</a>
             <a href="/works/">Works</a>
@@ -40,8 +40,8 @@
         </span>
     </nav>
     <div id="main">
-        <div id="container"><div id="page">
-        <article>
+        <div id="container"><div id="container_page">
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/09/12/sqlite3-multi-thread-in-python/">SQLite3 Multi-Thread in Python</a></h1>
         <div class="info">
             <div class="date">
@@ -86,7 +86,7 @@
 </div>
         <a class="more" href="/article/2012/09/12/sqlite3-multi-thread-in-python/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/">Install Xhprof on Ubuntu 12.04</a></h1>
         <div class="info">
             <div class="date">
@@ -142,7 +142,7 @@ cd xhprof-0.9.2
 </div>
         <a class="more" href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/08/19/hack-php-to-support-put-fileupload/">讓PHP支援PUT FileUpload</a></h1>
         <div class="info">
             <div class="date">
@@ -188,7 +188,7 @@ $put_data = file_get_contents('php://input');
 </div>
         <a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/">隱藏Facebook廣告 (Google Chrome)</a></h1>
         <div class="info">
             <div class="date">
@@ -276,7 +276,7 @@ function hideAds() {
 </div>
         <a class="more" href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/">More</a>
     </article>
-        <article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/07/18/diablo-3-calculator-readme/">Diablo 3 計算機使用說明</a></h1>
         <div class="info">
             <div class="date">
@@ -326,7 +326,7 @@ function hideAds() {
 </div>
         <a class="more" href="/article/2012/07/18/diablo-3-calculator-readme/">More</a>
     </article>
-        <div class="bar">
+        <div id="paging">
         <span class="new">
             <a href="/page/5/"><< Newer Posts</a>        </span>
         <span class="old">
@@ -337,12 +337,12 @@ function hideAds() {
 </div>
 <div id="fb-root"></div></div>
         <div id="side">
-            <form class="search" action="http://www.google.com/search?q=as" target="_blank" method="get">
+            <form id="side_search" action="http://www.google.com/search?q=as" target="_blank" method="get">
                 <input type="hidden" name="q" value="site:scar.simcz.tw" />
                 <input type="text" name="q" placeholder="Search" />
                 <input type="submit" />
             </form>
-            <div class="about">
+            <div id="side_about">
     <div class="title">
         <a href="/about/">About</a>    </div>
     <div class="content">
@@ -358,7 +358,7 @@ function hideAds() {
             <a class="fa fa-plurk" href="http://www.plurk.com/ScarWu" target="_blank"></a>
         </div>
     </div>
-</div><div class="archive">
+</div><div id="side_archive">
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
@@ -371,7 +371,7 @@ function hideAds() {
                 <span class="item">
                         <a href="/archive/2011/">2011(2)</a>        </span>
             </div>
-</div><div class="tag">
+</div><div id="side_tag">
     <div class="title">
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
@@ -446,7 +446,7 @@ function hideAds() {
             </div>
 </div>        </div>
     </div>
-    <footer>
+    <footer id="footer">
         <span>Copyright &copy; Scar Wu</span>
         <p>Powered by Pointless</p>
     </footer>
