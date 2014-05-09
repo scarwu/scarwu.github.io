@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="zh-tw">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="最近把NodeJS從原本的v0.8.x更新到最新的v0.10.x，結果程式就炸了！程式就給我吐出Error: setBroadcast EBADF，結果是dgram炸了，不管是setBroadcast或者是setTTL都一樣會炸掉，問Google大神也問不出答案。">
-    <meta property="og:title" content="NodeJS - dgram error with EBADF | ScarShow | 刀疤說">
-    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/">
-    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
-    <meta property="og:type" content="blog">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:description" name="description" content="最近把NodeJS從原本的v0.8.x更新到最新的v0.10.x，結果程式就炸了！程式就給我吐出Error: setBroadcast EBADF，結果是dgram炸了，不管是setBroadcast或者是setTTL都一樣會炸掉，問Google大神也問不出答案。" />
+    <meta property="og:title" content="NodeJS - dgram error with EBADF | ScarShow | 刀疤說" />
+    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" />
+    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg" />
+    <meta property="og:type" content="blog" />
 
     <title>NodeJS - dgram error with EBADF | ScarShow | 刀疤說</title>
 
-    <link rel="stylesheet" href="/theme/main.css">
-    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/">
-    <link rel="author" href="https://plus.google.com/+ScarWu">
+    <link rel="stylesheet" href="/theme/main.css" />
+    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/" />
+    <link rel="author" href="https://plus.google.com/+ScarWu" />
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
 </head>
@@ -127,11 +127,13 @@ client.bind(port, function () {
 </div>
 <div id="fb-root"></div></div>
         <div id="side">
-            <form id="side_search" action="http://www.google.com/search?q=as" target="_blank" method="get">
-                <input type="hidden" name="q" value="site:scar.simcz.tw" />
-                <input type="text" name="q" placeholder="Search" />
-                <input type="submit" />
-            </form>
+            <div id="side_search">
+                <form action="http://www.google.com/search?q=as" target="_blank" method="get">
+                    <input type="hidden" name="q" value="site:scar.simcz.tw" />
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="submit" />
+                </form>
+            </div>
             <div id="side_about">
     <div class="title">
         <a href="/about/">About</a>    </div>

@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="zh-tw">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="原本oh-my-zsh在Ubuntu 12.04 LTS以及Arch Linux用好好的history-search-backward、history-search-forward，到了Ubuntu 13.10就不能用了，查了一下ZSH雖然版號不一樣，不知道是不是因為發行版影響，因為Arch Linux的ZSH版本還比Ubuntu 13.10新。">
-    <meta property="og:title" content="ZSH - history-search-backward/forward | ScarShow | 刀疤說">
-    <meta property="og:url" content="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/">
-    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
-    <meta property="og:type" content="blog">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:description" name="description" content="原本oh-my-zsh在Ubuntu 12.04 LTS以及Arch Linux用好好的history-search-backward、history-search-forward，到了Ubuntu 13.10就不能用了，查了一下ZSH雖然版號不一樣，不知道是不是因為發行版影響，因為Arch Linux的ZSH版本還比Ubuntu 13.10新。" />
+    <meta property="og:title" content="ZSH - history-search-backward/forward | ScarShow | 刀疤說" />
+    <meta property="og:url" content="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/" />
+    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg" />
+    <meta property="og:type" content="blog" />
 
     <title>ZSH - history-search-backward/forward | ScarShow | 刀疤說</title>
 
-    <link rel="stylesheet" href="/theme/main.css">
-    <link rel="canonical" href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/">
-    <link rel="author" href="https://plus.google.com/+ScarWu">
+    <link rel="stylesheet" href="/theme/main.css" />
+    <link rel="canonical" href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/" />
+    <link rel="author" href="https://plus.google.com/+ScarWu" />
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
 </head>
@@ -109,11 +109,13 @@ bindkey "${key[Down]}" history-search-forward
 </div>
 <div id="fb-root"></div></div>
         <div id="side">
-            <form id="side_search" action="http://www.google.com/search?q=as" target="_blank" method="get">
-                <input type="hidden" name="q" value="site:scar.simcz.tw" />
-                <input type="text" name="q" placeholder="Search" />
-                <input type="submit" />
-            </form>
+            <div id="side_search">
+                <form action="http://www.google.com/search?q=as" target="_blank" method="get">
+                    <input type="hidden" name="q" value="site:scar.simcz.tw" />
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="submit" />
+                </form>
+            </div>
             <div id="side_about">
     <div class="title">
         <a href="/about/">About</a>    </div>

@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="zh-tw">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="Apache是常用的網頁伺服器，而userdir這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以http://examaple.com/~username的形式呈現。另外vhost_alias則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設http://a.example.com與b.examle.com都指向192.168.1.1，那麼Apache就可以根據域名來挑選網頁的根目錄/var/www/a或是/var/www/b來呈現不同的內容。">
-    <meta property="og:title" content="Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說">
-    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/">
-    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
-    <meta property="og:type" content="blog">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:description" name="description" content="Apache是常用的網頁伺服器，而userdir這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以http://examaple.com/~username的形式呈現。另外vhost_alias則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設http://a.example.com與b.examle.com都指向192.168.1.1，那麼Apache就可以根據域名來挑選網頁的根目錄/var/www/a或是/var/www/b來呈現不同的內容。" />
+    <meta property="og:title" content="Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說" />
+    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" />
+    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg" />
+    <meta property="og:type" content="blog" />
 
     <title>Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說</title>
 
-    <link rel="stylesheet" href="/theme/main.css">
-    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/">
-    <link rel="author" href="https://plus.google.com/+ScarWu">
+    <link rel="stylesheet" href="/theme/main.css" />
+    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" />
+    <link rel="author" href="https://plus.google.com/+ScarWu" />
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
 </head>
@@ -227,11 +227,13 @@ sudo ln -s ../mod-available/userdir.conf
 </div>
 <div id="fb-root"></div></div>
         <div id="side">
-            <form id="side_search" action="http://www.google.com/search?q=as" target="_blank" method="get">
-                <input type="hidden" name="q" value="site:scar.simcz.tw" />
-                <input type="text" name="q" placeholder="Search" />
-                <input type="submit" />
-            </form>
+            <div id="side_search">
+                <form action="http://www.google.com/search?q=as" target="_blank" method="get">
+                    <input type="hidden" name="q" value="site:scar.simcz.tw" />
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="submit" />
+                </form>
+            </div>
             <div id="side_about">
     <div class="title">
         <a href="/about/">About</a>    </div>
