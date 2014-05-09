@@ -295,7 +295,7 @@ livereload.watch(__dirname + '/views');
         <span class="old">
             <a href="/article/2013/11/24/fix-ubuntu-trakpoint-problem/">修正Ubuntu 13.10小紅點問題 >></a>        </span>
         <span class="count">
-            7 / 37        </span>
+            8 / 38        </span>
     </div>
 </div>
 <div id="fb-root"></div></div>
@@ -326,7 +326,7 @@ livereload.watch(__dirname + '/views');
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/archive/2014/">2014(7)</a>        </span>
+                        <a href="/archive/2014/">2014(8)</a>        </span>
                 <span class="item">
                         <a href="/archive/2013/">2013(14)</a>        </span>
                 <span class="item">
@@ -357,11 +357,11 @@ livereload.watch(__dirname + '/views');
                 <span class="item">
                         <a href="/tag/Facebook/">Facebook(2)</a>        </span>
                 <span class="item">
-                        <a href="/tag/HTML5/">HTML5(1)</a>        </span>
+                        <a href="/tag/HTML5/">HTML5(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Hadoop/">Hadoop(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/JavaScript/">JavaScript(7)</a>        </span>
+                        <a href="/tag/JavaScript/">JavaScript(8)</a>        </span>
                 <span class="item">
                         <a href="/tag/Linux/">Linux(10)</a>        </span>
                 <span class="item">
@@ -382,6 +382,8 @@ livereload.watch(__dirname + '/views');
                         <a href="/tag/Python/">Python(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Raspberry%20Pi/">Raspberry Pi(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/RequireJS/">RequireJS(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/SQLite/">SQLite(1)</a>        </span>
                 <span class="item">
@@ -413,25 +415,25 @@ livereload.watch(__dirname + '/views');
     </footer>
 
     <script>
-        function loadExtendJS(src, async) {
+        function asyncLoad(src) {
             var s = document.createElement('script');
-            s.src = src; if (async == true) s.async = true;
+            s.src = src; s.async = true;
             var e = document.getElementsByTagName('script')[0];
             e.parentNode.insertBefore(s, e);
         }
                 var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
-        loadExtendJS(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
+        asyncLoad(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
                         var disqus_shortname = 'scarshow';
         if (document.getElementById('disqus_comments')) {
-            loadExtendJS('http://' + disqus_shortname + '.disqus.com/count.js', true);
+            asyncLoad('http://' + disqus_shortname + '.disqus.com/count.js');
         }
         if (document.getElementById('disqus_thread')) {
-            loadExtendJS('http://' + disqus_shortname + '.disqus.com/embed.js', true);
+            asyncLoad('http://' + disqus_shortname + '.disqus.com/embed.js');
         }
                 if (document.getElementById('social_tool')) {
-            loadExtendJS('https://apis.google.com/js/plusone.js', true);
-            loadExtendJS('//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1403512429930397&version=v2.0', true);
-            loadExtendJS(('https:' == location.protocol ? 'https' : 'http') + '://platform.twitter.com/widgets.js', true);
+            asyncLoad('https://apis.google.com/js/plusone.js');
+            asyncLoad('//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1403512429930397&version=v2.0');
+            asyncLoad(('https:' == location.protocol ? 'https' : 'http') + '://platform.twitter.com/widgets.js');
         }
     </script>
     <script src="/theme/main.js"></script>

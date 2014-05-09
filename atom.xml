@@ -5,11 +5,99 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-05-09T05:06:04+08:00</updated>
+	<updated>2014-05-09T19:48:31+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[HTML中JavaScript的載入問題]]></title>
+		<link href="http://scar.simcz.tw/article/2014/05/09/html-javascript-load-problem/" />
+		<id>urn:uuid:6403076a-b8ec-f834-6768-80ba3eab263e</id>
+		<updated>2014-05-09T00:09:14+08:00</updated>
+		<summary type="html"><![CDATA[<h2>前言</h2>
+
+<p>一般在瀏覽器中對於<code>HTML</code>的解析順序是由上而下的，所以在傳統的網頁設計中我們一般都會將<code>&lt;scritp&gt;</code>標籤放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這樣能確保<code>JavaScript</code>盡早被執行到。</p>
+
+<p>但是隨著近年來網頁不再只是網頁，而漸漸成為了<code>Web Application</code>，因為如此所以使用到的<code>JavaScript</code>就變得越來越大，這時候<code>JavaScript</code>的載入就是個問題。</p>
+
+<!--more-->
+
+<h2>阻塞 (Blocking)</h2>
+
+<p>在傳統的瀏覽器中，每當解析到了<code>&lt;script&gt;</code>標籤時瀏覽器的繪製就會停頓下來，然後去下載並執行<code>JavaScript</code>中的內容，過多的<code>JavaScript</code>內容會造成阻塞問題，便是瀏覽器停頓一段時間等待<code>JavaScript</code>都執行完畢後，才開始繪製剩下的網頁內容。</p>
+
+<p>上面提到，一般會將<code>&lt;script&gt;</code>標前放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這會造成網頁在一片空白的情況下停頓徐久。</p>
+
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;script&gt;&lt;/script&gt;
+        &lt;script&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!--something--&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>所以現在會建議將<code>&lt;script&gt;</code>放置在<code>&lt;body&gt;&lt;/body&gt;</code>的尾端，等待瀏覽器將大部分的內容都繪製出來之後再去執行<code>JavaScript</code>，這樣比較不會造成使用者的觀感不佳。</p>
+
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;!--something--&gt;
+
+        &lt;script&gt;&lt;/script&gt;
+        &lt;script&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>async, defer 屬性</h2>
+
+<p>雖然可以將<code>&lt;script&gt;</code>放置在<code>&lt;body&gt;&lt;/body&gt;</code>的尾端，來減少使用者觀感不佳，但是實際上放置在尾端還是會有阻塞(Blocking)的問題，這個問題依舊沒有解決。</p>
+
+<p>所以在<code>HTML5</code>終究提出了新的<code>async</code>以及<code>defer</code>屬性來解決阻塞(Blocking)的問題，在<code>&lt;script&gt;</code>中加上這兩個屬性就可以讓有支援的瀏覽器，以非同步的方式下載<code>JavaScript</code>並執行其內容。</p>
+
+<pre><code class="html">&lt;script src="file.js"&gt;&lt;/script&gt;
+&lt;script src="file.js" defer&gt;&lt;/script&gt;
+&lt;script src="file.js" async&gt;&lt;/script&gt;
+</code></pre>
+
+<p><code>&lt;script&gt;</code>，停止網頁繪製，等待<code>JavaScript</code>下載並執行完，再繼續網頁繪製。</p>
+
+<p><code>&lt;script defer&gt;</code>，不停止網頁繪製，<code>JavaScript</code>的下載會同時進行，等待網頁繪製完成會再執行<code>JavaScript</code>。</p>
+
+<p><code>&lt;script async&gt;</code>，不停止網頁繪製，<code>JavaScript</code>的下載會同時進行，當<code>JavaScript</code>下載完成後，再停止網頁繪製並執行<code>JavaScript</code>，等待執行完成後再繼續網頁繪製。</p>
+
+<p>Peter Beverloo在他的網誌上有繪製一張時序圖，用來說明這兩個新的屬性與傳統的載入方式有什麼不同，可參考下方連結。</p>
+
+<ul>
+<li><a href="http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/" target="_blank">Asynchronous and deferred JavaScript execution explained</a></li>
+</ul>
+
+<h2>RequireJS</h2>
+
+<p><code>async</code>與<code>defer</code>屬性可以解決阻塞問題，但也引起了一個新的問題，那就是以非同步方是執行的<code>JavaScript</code>的執行順序並不是依照<code>&lt;script&gt;</code>在HTML上的順序，而是誰先下載好就先執行誰，如果你的<code>JavaScript</code>的設計在執行上有相依性的問題就有機會因為執行順序的不同而爆炸。</p>
+
+<p>因此<code>RequireJS</code>的出現能夠解決此問題，它可以以非同步方式載入<code>JavaScript</code>，並且也可以解決<code>JavaScript</code>檔案之前的相依性問題，並讓<code>JavaScript</code>模組化。</p>
+
+<p>在這並沒有要說明使用方式，可以參考網路上現有的文件，如下。</p>
+
+<ul>
+<li><a href="http://requirejs.org/" target="_blank">How to get started with RequireJS</a></li>
+<li><a href="http://www.jaceju.net/blog/archives/beginning-requirejs/" target="_blank">初探 RequireJS</a></li>
+<li><a href="http://ithelp.ithome.com.tw/question/10120521" target="_blank">實用 JavaScript 工具庫：RequireJS</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank">Javascript模块化编程（三）：require.js的用法</a></li>
+</ul>
+
+<h2>小結</h2>
+
+<p>上面提出的幾種解決方法，但是在實作時也不用全用上，依照當下的實作規模來做取捨，雖然沒有提到但是在製作<code>Mobile Web</code>時要更加注意<code>JavaScript</code>載入(以及其他多媒體檔案的載入)，因<code>3G</code>或是<code>Wifi</code>並沒有比有線網路來的快速，所以網頁讀取時的停頓感會更加的放大，這點必須注意。</p>
+]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[Ubuntu 14.04 LTS 中文修正]]></title>
 		<link href="http://scar.simcz.tw/article/2014/04/22/fix-ubuntu-14-04-lts-zh-font-selector/" />
@@ -276,148 +364,6 @@
 <h2>爽</h2>
 
 <p>接下就爽爽用<code>Chrome</code>上的硬體加速吧。</p>
-]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[Ubuntu 13.10 install AMD Catalyst 13.12]]></title>
-		<link href="http://scar.simcz.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12/" />
-		<id>urn:uuid:7955a0bb-e567-c341-a8d5-ad8a5e9956a0</id>
-		<updated>2014-01-19T10:30:55+08:00</updated>
-		<summary type="html"><![CDATA[<h2>不解</h2>
-
-<p>不知道為什麼，只要碰到顯示卡驅動程式的安裝，我就很容易讓我的機器爆炸，這一定有問題，所以還是趕快把這次成功安裝的過程記錄下來，避免之後又爆了。</p>
-
-<p>安裝驅動有這麼難嗎？很難，因為每次都爆炸XD</p>
-
-<p>平常我也不想去更新的我的顯示卡驅動，但是<code>Chrome</code>告訴我<code>ATI/AMD cards with older or third-party drivers</code>，我只是想開啟<code>WebGL</code>而已，為了能夠用<code>WebGL</code>還是更新吧。</p>
-
-<!--more-->
-
-<h2>安裝套件</h2>
-
-<pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y
-sudo apt-get install cdbs dh-make dkms execstack dh-modaliases linux-headers-generic libqtgui4
-
-# for x86_64 (64bit)
-sudo apt-get install lib32gcc1
-</code></pre>
-
-<h2>下載 AMD Catalyst</h2>
-
-<pre><code>mkdir amd-catalyst &amp;&amp; cd amd-catalyst
-wget --referer='http://support.amd.com/en-us/download/desktop?os=Linux+x86' http://www2.ati.com/drivers/linux/amd-catalyst-13.12-linux-x86.x86_64.zip
-unzip amd-catalyst-13.12-linux-x86.x86_64.zip
-chmod +x amd-catalyst-13.12-linux-x86.x86_64.run
-</code></pre>
-
-<h2>編譯套件</h2>
-
-<h3>Patch kcl_acpi.c</h3>
-
-<pre><code>./amd-catalyst-13.12-linux-x86.x86_64.run --extract catalyst
-
-cd catalyst
-vim common/lib/modules/fglrx/build_mod/kcl_acpi.c
-</code></pre>
-
-<p>把<code>kcl_acpi.c</code>第990行以後的</p>
-
-<pre><code class="c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
-    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;hdr, &amp;tbl_size)))
-#else
-    tbl_size = 0x7fffffff;
-    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;hdr)))
-#endif
-    {
-        return KCL_ACPI_ERROR;
-    }    
-    ((acpi_table_handler)handler)(hdr);
-    return KCL_ACPI_OK;
-}
-</code></pre>
-
-<p>換成這個</p>
-
-<pre><code class="c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
-    if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;hdr, &amp;tbl_size)))
-#else
-    tbl_size = 0x7fffffff;
-    if (!ACPI_SUCCESS(acpi_get_table(id, 0, &amp;hdr)))
-#endif
-    {
-        return KCL_ACPI_ERROR;
-    }
-#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,9,1)
-    ((acpi_tbl_table_handler)handler)(hdr);
-#else
-    ((acpi_table_handler)handler)(hdr);
-#endif
-    return KCL_ACPI_OK;
-}
-</code></pre>
-
-<h3>開始編譯</h3>
-
-<pre><code>sudo ./ati-installer.sh 13.251 --buildpkg Ubuntu/saucy
-</code></pre>
-
-<h3>安裝 .deb 檔</h3>
-
-<pre><code>cd ..
-sudo dpkg -i fglrx*.deb
-</code></pre>
-
-<h2>設定環境</h2>
-
-<h3>產生新的 xorg.conf</h3>
-
-<pre><code>sudo amdconfig --initial -f
-</code></pre>
-
-<h3>選擇系統驅動程式</h3>
-
-<pre><code># choice /usr/lib/fglrx/ld.so.conf
-sudo update-alternatives --config x86_64-linux-gnu_gl_conf
-sudo ldconfig
-</code></pre>
-
-<p>接下來就開心重新開機吧！</p>
-
-<pre><code>sudo reboot
-</code></pre>
-
-<p>確認是否安裝成功可以用下面的指令做檢查</p>
-
-<pre><code>fglrxinfo
-fgl_glxgears
-</code></pre>
-
-<h3>更新失敗</h3>
-
-<p>人生中難免會有風險，如果你重新開機後，發現螢幕上有國防布的話，那只好用以下方式修復</p>
-
-<pre><code>sudo cp /etx/X11/xorg.conf.original /etc/X11/xorg.conf
-
-# choice /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf
-sudo update-alternatives --config x86_64-linux-gnu_gl_conf
-sudo ldconfig
-
-sudo reboot
-</code></pre>
-
-<h2>最後</h2>
-
-<p>更新驅動就花了我兩個早上，終於更新成功了，但是<code>Chrome</code>的<code>WebGL</code>還是不給開...</p>
-
-<p>這一定有誤會。</p>
-
-<h3>Reference</h3>
-
-<ul>
-<li><a href="http://support.amd.com/en-us/download" target="_blank">Download Driver - AMD Graphics Drivers and Software</a></li>
-<li><a href="http://wiki.cchtml.com/index.php/Ubuntu_Saucy_Installation_Guide" target="_blank">Unoffical AMD Linux Community - Ubuntu Saucy Installation Guide</a></li>
-<li><a href="https://gist.github.com/moldcraft/8116528" target="_blank">Install AMD Catalyst 13.12 Driver with patch on Ubuntu 13.10</a></li>
-</ul>
 ]]></summary>
 	</entry>
 </feed>
