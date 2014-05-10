@@ -4,24 +4,14 @@ require([
     '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
     '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js'
 ], function() {
-    hljs.tabReplace = '    ';
-
-    // $('pre > code').each(function () {
-    //     var count = $(this).text().split('\n').length;
-    //     var line = $('<div>').attr('class', 'line').html(Array(count).join('<span></span>'));
-    //     $(this).parent().append(line).end();
-
-    //     hljs.highlightBlock($(this)[0]);
-    // });
-
     $('pre').each(function() {
-        var td = $('<td>').append($(this).clone());
-        var tr = $('<tr>').append(td);
-        var table = $('<table>').append(tr);
-        var code = $('<div>').attr('class', 'code').append(table);
+        var td = $('<td>').append($(this).clone()),
+            tr = $('<tr>').append(td),
+            table = $('<table>').append(tr),
+            code = $('<div>').attr('class', 'code').append(table);
 
-        var count = $(this).find('code').text().split('\n').length;
-        var line = $('<div>').attr('class', 'line').html(Array(count).join('<span></span>'));
+        var count = $(this).find('code').text().split('\n').length,
+            line = $('<div>').attr('class', 'line').html(Array(count).join('<span></span>'));
 
         var viewer = $('<div>').attr('class', 'viewer').append(line).append(code);
 
