@@ -25,7 +25,7 @@ require([
 
         var viewer = $('<div>').attr('class', 'viewer').append(line).append(code);
 
-        $(this).parent().append(viewer);
+        $(this).after(viewer);
         $(this).remove();
 
         hljs.highlightBlock(viewer[0]);
