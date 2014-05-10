@@ -1,27 +1,27 @@
 <!doctype html>
 <html lang="zh-tw">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta property="og:description" name="description" content="Apache是常用的網頁伺服器，而userdir這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以http://examaple.com/~username的形式呈現。另外vhost_alias則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設http://a.example.com與b.examle.com都指向192.168.1.1，那麼Apache就可以根據域名來挑選網頁的根目錄/var/www/a或是/var/www/b來呈現不同的內容。" />
-    <meta property="og:title" content="Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說" />
-    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" />
-    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg" />
-    <meta property="og:type" content="blog" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:description" name="description" content="Apache是常用的網頁伺服器，而userdir這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以http://examaple.com/~username的形式呈現。另外vhost_alias則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設http://a.example.com與b.examle.com都指向192.168.1.1，那麼Apache就可以根據域名來挑選網頁的根目錄/var/www/a或是/var/www/b來呈現不同的內容。">
+    <meta property="og:title" content="Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說">
+    <meta property="og:url" content="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/">
+    <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
+    <meta property="og:type" content="blog">
 
     <title>Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說</title>
 
-    <link rel="stylesheet" href="/theme/main.css" />
-    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/" />
-    <link rel="author" href="https://plus.google.com/+ScarWu" />
-    <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg" />
-    <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico" />
+    <link rel="stylesheet" href="/theme/main.css">
+    <link rel="canonical" href="http://scar.simcz.tw/article/2013/04/28/apache-vhost-and-userdir-config/">
+    <link rel="author" href="https://plus.google.com/+ScarWu">
+    <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg">
+    <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico">
 </head>
 <body>
     <header id="header">
         <hgroup>
             <h1><a href="/">ScarShow</a></h1>
-            <hr />
+            <hr>
             <h2>I know that I don't know</h2>
         </hgroup>
     </header>
@@ -50,13 +50,13 @@
             <div class="tag">
                                 <span class="fa fa-tag"></span>
                 <span><a href="/tag/Apache/">Apache</a></span>
-                <br />
+                <br>
                                 <span class="fa fa-tag"></span>
                 <span><a href="/tag/Linux/">Linux</a></span>
-                <br />
+                <br>
                                 <span class="fa fa-tag"></span>
                 <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
-                <br />
+                <br>
                             </div>
                         <div id="disqus_comments">
                 <span class="fa fa-comment"></span>
@@ -83,7 +83,7 @@
 
 <h2>啟用Module</h2>
 
-<p>一般在Apache安裝完成後這兩個Module通常都是未啟用的，所以在使用前必須去啟用它在這邊我們所使用Ubuntu 12.04 LTS作為預設環境，在Ubuntu中有兩種啟用方式。</p>
+<p>一般在<code>Apache</code>安裝完成後這兩個<code>Module</code>通常都是未啟用的，所以在使用前必須去啟用它在這邊我們所使用<code>Ubuntu 12.04 LTS</code>作為預設環境，在<code>Ubuntu</code>中有兩種啟用方式。</p>
 
 <h3>內建指令</h3>
 
@@ -196,11 +196,11 @@ sudo ln -s ../mod-available/userdir.conf
 
 <p><code>vhost_alias</code>的設定必須包含在<code>&lt;VirtualHost *:80&gt;&lt;/VirtualHost&gt;</code>之中，並且加入對應的域名設定<code>ServerName example.com</code>，這樣vhost_alias才會生效。</p>
 
-<p>接著我們將<code>userdir</code>的設定加入需要使用的Virtual Host的設定檔中，<code>UserDir htdocs /home/*/htdocs</code>用來指定使用者的網頁根目錄名稱以及目錄位置、<code>UserDir diabled root</code>則是讓root不能使用User Directory。</p>
+<p>接著我們將<code>userdir</code>的設定加入需要使用的<code>Virtual Host</code>的設定檔中，<code>UserDir htdocs /home/*/htdocs</code>用來指定使用者的網頁根目錄名稱以及目錄位置、<code>UserDir diabled root</code>則是讓<code>root</code>不能使用<code>User Directory</code>。</p>
 
-<p>接著我們將系統內建的User Directory設定取消，把<code>/etc/apache2/mod-enabled/userdir.conf</code>刪除或是將內容註解都可以。</p>
+<p>接著我們將系統內建的<code>User Directory</code>設定取消，把<code>/etc/apache2/mod-enabled/userdir.conf</code>刪除或是將內容註解都可以。</p>
 
-<p>最後重新啟動Apache就完成設定了。</p>
+<p>最後重新啟動<code>Apache</code>就完成設定了。</p>
 
 <pre><code class="bash">sudo service apache2 restart
 </code></pre>
@@ -229,16 +229,16 @@ sudo ln -s ../mod-available/userdir.conf
         <div id="side">
             <div id="side_search">
                 <form action="http://www.google.com/search?q=as" target="_blank" method="get">
-                    <input type="hidden" name="q" value="site:scar.simcz.tw" />
-                    <input type="text" name="q" placeholder="Search" />
-                    <input type="submit" />
+                    <input type="hidden" name="q" value="site:scar.simcz.tw">
+                    <input type="text" name="q" placeholder="Search">
+                    <input type="submit">
                 </form>
             </div>
             <div id="side_about">
     <div class="title">
         <a href="/about/">About</a>    </div>
     <div class="content">
-        <img class="avatar" src="http://avatars.plurk.com/3891981-big26.jpg" alt="ScarWu" />
+        <img class="avatar" src="http://avatars.plurk.com/3891981-big26.jpg" alt="ScarWu">
         <p class="name">刀疤</p>
         <p class="says">別人都覺得我多才多藝，但其實我只是略懂略懂。</p>
         <div class="social_icon">
@@ -365,6 +365,7 @@ sudo ln -s ../mod-available/userdir.conf
             asyncLoad(('https:' == location.protocol ? 'https' : 'http') + '://platform.twitter.com/widgets.js');
         }
     </script>
-    <script src="/theme/main.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js" async></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js" data-main="/theme/main" async></script>
 </body>
 </html>
