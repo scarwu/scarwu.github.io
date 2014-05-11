@@ -73,46 +73,30 @@
             </div>
         </div>
         <div class="content"><p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
-
 <h2>系統要求:</h2>
-
 <ul>
 <li>PHP 5.3+</li>
 <li>Command Line Interface</li>
 </ul>
-
 <h2>支援:</h2>
-
 <ul>
 <li>Github CNAME</li>
 <li>Google Analystics</li>
 <li>DISQUS</li>
 </ul>
-
 <h2>外部程式:</h2>
-
 <ul>
 <li><a href="http://michelf.com/projects/php-markdown/">PHP Makrdown</a></li>
 <li><a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a></li>
 </ul>
 
-<!--more-->
-
 <h2>如何安裝:</h2>
-
 <h3>使用 git 從 github 上下載</h3>
-
-<pre><code class="bash">git clone git://github.com/scarwu/Pointless.git
-</code></pre>
-
+<pre><code class="language-bash">git clone git://github.com/scarwu/Pointless.git</code></pre>
 <h3>將以下指令加入<code>.bashrc</code>或是<code>.zshrc</code>檔案中</h3>
-
-<pre><code class="bash">export PATH=$PATH:/path/to/Pointless/Bin/
-</code></pre>
-
+<pre><code class="language-bash">export PATH=$PATH:/path/to/Pointless/Bin/</code></pre>
 <h2>poi 指令:</h2>
-
-<pre><code class="bash">help            - 顯示幫助.
+<pre><code class="language-bash">help            - 顯示幫助.
 init            - 初始化Pointless
 gen (all)       - 產生靜態部落格
 gen css         - 單獨產生及壓縮CSS
@@ -122,19 +106,12 @@ article (list)  - 列出所有文章
 article add     - 新增文章
 blogpage (list) - 列出所以靜態頁面
 blogpage add    - 新增靜態頁面
-deploy          - 佈署部落格
-</code></pre>
-
+deploy          - 佈署部落格</code></pre>
 <h3>初始化部落格</h3>
-
-<pre><code class="bash">./init.sh
-</code></pre>
-
+<pre><code class="language-bash">./init.sh</code></pre>
 <p>初始化後的資料放置在<code>/path/to/Pointless/Blog/</code>，並且也生成了靜態資料放置在<code>/path/to/Pointless/Blog/Public</code>中。</p>
-
 <h3>而產生出的Blog資料夾檔案結構為</h3>
-
-<pre><code class="bash">Blog
+<pre><code class="language-bash">Blog
 ├── Config.php    (部落格個設定檔，包含部落格的基本設定)
 ├── Markdown      (MD檔的存放資料夾)
 │   ├── Article   (放置文章)
@@ -144,19 +121,12 @@ deploy          - 佈署部落格
 └── UI            (部落格頁面的樣式設定)
     ├── Resource  (放置CSS, Javascript及圖片)
     ├── Script    (產生樣板用的資料)
-    └── Template  (網頁樣板)
-</code></pre>
-
+    └── Template  (網頁樣板)</code></pre>
 <h2>新增文章:</h2>
-
-<pre><code class="bash">poi article add
-</code></pre>
-
+<pre><code class="language-bash">poi article add</code></pre>
 <p>然後填入相對應的資料然後手動使用文字編輯器去修改內容</p>
-
 <h3>Markdown內容</h3>
-
-<pre><code class="markdown">-----
+<pre><code class="language-markdown">-----
 {
     "title": "Welcome",
     "url": "Welcome",
@@ -167,20 +137,13 @@ deploy          - 佈署部落格
 }
 -----
 Hi, Welcome to my blog!
-=======================
-</code></pre>
-
+=======================</code></pre>
 <p>文章資訊由 <code>-----</code> 所包圍，而文章資訊是使用JSON格式紀錄可以手動修改，另外 tag 是使用<code>|</code>所隔開，而在<code>-----</code>之後就可以開始寫文章了。
 部落格靜態頁面亦同。</p>
-
 <h2>結束</h2>
-
 <p>可能還有一些重要的東西忘了寫...有問題再留言吧，畢竟現在這個工具目前只有我一個人在用。</p>
-
 <p>如果對於程式有什麼提議或發現BUG的話也可以在Github上發個Issue。</p>
-
-<p><strong>Update: 2012/08/20</strong></p>
-</div>
+<p><strong>Update: 2012/08/20</strong></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

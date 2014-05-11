@@ -73,26 +73,16 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>在NodeJS使用廣泛的就是<code>Event-driven</code>的機制，當此機制與串流功能相結合後，便能大幅增進資料傳輸的效能。</p>
-
 <p>所以今天的主題為NodeJS中Stream的行為觀察，在先前專案中大量使用Stream的功能，所以這邊就寫下一些使用心得。</p>
 
-<!--more-->
-
 <h2>Stream模組簡介</h2>
-
 <p>Stream是一個NodeJS中的模組，主要用作於資料的讀寫，它可以被其它的模組所繼承，而成為該模組的一部分基礎。</p>
-
 <h3>Stream的種類</h3>
-
 <p>斯斯有三種、Stream也有三種，分別是<code>Readable</code>(可讀取)、<code>Wirteable</code>(可寫入)以及<code>Duplex</code>(雙向，可讀寫)這三種。</p>
-
 <p>不同種類的Stream所對應到的事件也不相同，分別如下：</p>
-
 <ul>
 <li>Readable
-
 <ul>
 <li>readable</li>
 <li>end</li>
@@ -101,7 +91,6 @@
 <li>close</li>
 </ul></li>
 <li>Writeable
-
 <ul>
 <li>drain</li>
 <li>error</li>
@@ -111,27 +100,19 @@
 <li>unpipe</li>
 </ul></li>
 </ul>
-
 <p>那上面只列了<code>Readable</code>以及<code>Writeable</code>，而<code>Duplex</code>則是<code>Readable</code>與<code>Writeable</code>的綜合體，它有<code>Readable</code>與<code>Writeable</code>個別所擁有的Event。</p>
-
 <h3>繼承Stream的模組</h3>
-
 <p>前面有說到Stream可被繼承，所以在NodeJS中有使用到Stream的模組分別是<code>File System</code>、<code>HTTP/HTTPS</code>及<code>Net</code>，以及它裡面是使用到哪一種類型的Stream以下有一些範例供參考。</p>
-
 <h4>File System</h4>
-
-<pre><code class="javascript">var fs = require('fs');
+<pre><code class="language-javascript">var fs = require('fs');
 
 // rs is readable stream
 var rs = fs.createReadStream('/path/to/file');
 
 // ws is writeable stream
-var ws = fs.createWriteStream('/path/to/file');
-</code></pre>
-
+var ws = fs.createWriteStream('/path/to/file');</code></pre>
 <h4>HTTP/HTTPS</h4>
-
-<pre><code class="javascript">var http = require('http');
+<pre><code class="language-javascript">var http = require('http');
 
 // HTTP Server
 // req is readable stream
@@ -151,12 +132,9 @@ var req = http.request({
 }, function (res) {
     // do something
 });
-
 </code></pre>
-
 <h4>Net</h4>
-
-<pre><code class="javascript">var net = require('net');
+<pre><code class="language-javascript">var net = require('net');
 
 // TCP Server
 // socket is duplex stream
@@ -171,80 +149,48 @@ var client = net.connect({
     host: '127.0.0.1'
 }, function () {
     // do something
-});
-</code></pre>
-
+});</code></pre>
 <h2>Stream事件行為</h2>
-
 <p>沒事多看文件，多看文件沒事。NodeJS的文件對於事件有些簡單的敘述以及使用方式可以參考，這邊就針對資料傳輸的部份做些說明。</p>
-
 <p>在這邊我使用<code>File System</code>模組作為範例，觀察Stream呼叫事件的行為，我先在<code>/tmp</code>底下產生一個測試檔<code>a</code>供下面的範例所使用。</p>
-
-<pre><code class="bash">dd if=/dev/urandom of=/tmp/a bs=256k count=1
-</code></pre>
-
+<pre><code class="language-bash">dd if=/dev/urandom of=/tmp/a bs=256k count=1</code></pre>
 <p>範例的動作很單純就是將檔案讀出然後在寫入的檔案，然後觀察事件何時會觸發。</p>
-
-<pre><code class="javascript">var fs = require('fs'),
+<pre><code class="language-javascript">var fs = require('fs'),
     rs = fs.createReadStream('/tmp/a'),
-    ws = fs.createWriteStream('/tmp/b');
-</code></pre>
-
+    ws = fs.createWriteStream('/tmp/b');</code></pre>
 <h3>Readable Stream Event</h3>
-
 <h4>readable</h4>
-
 <p>當<code>Buffer</code>中已有資料且準備好讀取，這個事件就會被觸發，這時候可以使用<code>rs.read()</code>將資料讀出。</p>
-
-<pre><code class="javascript">rs.on('readable', function () {
+<pre><code class="language-javascript">rs.on('readable', function () {
     console.log('rs readable');
 
     var chunk = rs.read();
     ws.write(chunk);
-});
-</code></pre>
-
+});</code></pre>
 <h4>data</h4>
-
 <p>當<code>Buffer</code>中已有資料且可以使用時就會出發此事件，並將<code>Buffer</code>中的資料傳送到<code>callback function</code>中。</p>
-
 <p>使用<code>data</code>這個事件時就會將stream切換至<code>old mode</code>，在此模式下可呼叫<code>rs.pause()</code>及<code>rs.resume()</code>這兩個function來控制<code>Readable Stream</code>。</p>
-
 <p>所謂的<code>old mode</code>是NodeJS v0.10為了舊程式的謙容性(<a href="http://nodejs.org/api/stream.html#stream_compatibility">Compatibility</a>)所產生的。</p>
-
-<pre><code class="javascript">rs.on('data', function (chunk) {
+<pre><code class="language-javascript">rs.on('data', function (chunk) {
     console.log('rs data');
 
     ws.write(chunk);
 
     // rs.pause();
     // rs.resume();
-});
-</code></pre>
-
+});</code></pre>
 <h4>end</h4>
-
 <p>當<code>Reabable Stream</code>中所有的資料都讀取出來後則會觸發此事件(在<code>TCP</code>則是用<code>FIN</code>結束連線時觸發)，這時候<code>data</code>事件將不再被觸發。</p>
-
 <h4>close</h4>
-
 <p>當系統底層的資源被關閉時會觸發，但不一定每個Stream都會觸發。但是<code>File System</code>會觸發。</p>
-
 <h3>Writeable Stream Event</h3>
-
 <h4>drain</h4>
-
 <p>當<code>ws.write()</code>返回<code>false</code>時，表示寫入用的緩衝區已滿，當緩衝區再次被清空時將會觸發<code>drain</code>事件。</p>
-
 <h4>close</h4>
-
 <p>同<code>Readable Stream Event</code>。</p>
-
 <h4>pipe/unpipe</h4>
-
 <p>當<code>Readable Stream</code>使用<code>pipe()</code>時，<code>Writeable Stream</code>的<code>pipe</code>事件將會被觸發。反之，如果<code>Readable Stream</code>呼叫<code>unpipe()</code>關閉管道時，<code>Writeable Stream</code>的<code>unpipe</code>事件將會被觸發。</p>
-
-<pre><code class="javascript">ws.on('pipe', function () {
+<pre><code class="language-javascript">ws.on('pipe', function () {
     console.log('ws pipe');
 });
 
@@ -252,16 +198,11 @@ ws.on('unpipe', function () {
     console.log('ws unpipe');
 });
 
-rs.pipe(ws);
-</code></pre>
-
+rs.pipe(ws);</code></pre>
 <h4>finish</h4>
-
 <p>通常當<code>Readable Stream</code>讀取出所有的資料後，我們就會去呼叫<code>callback function</code>，但是<code>Writeable</code>不一定也跟著完成寫入所有的資料，有時候我們必須要等待完成寫入有資料才呼叫<code>callback function</code>，所以我們需要<code>finish</code>這個事件。</p>
-
 <p>但是<code>finish</code>並不會自動觸發，我們必須透過呼叫<code>ws.end()</code>去觸發它，所以我們可以在<code>Readable</code>的<code>end</code>事件中去呼叫它。</p>
-
-<pre><code class="javascript">rs.on('end', function (chunk) {
+<pre><code class="language-javascript">rs.on('end', function (chunk) {
     console.log('rs end');
 
     ws.end();
@@ -271,14 +212,10 @@ ws.on('finish', function () {
     console.log('ws finish');
 
     callback &amp;&amp; callback();
-});
-</code></pre>
-
+});</code></pre>
 <h2>總結</h2>
-
 <p>總結以上的範例，我們可以發現資料的存取以及寫入的方法有三種且視情況而定，如果在寫入資料的同時需要針對資料做處理或是檢查，則可以使用<code>1.</code>或是<code>2.</code>的方式，如果只是單純的資料傳輸則使用<code>3.</code>會比較方便。</p>
-
-<pre><code class="javascript">// 1.
+<pre><code class="language-javascript">// 1.
 rs.on('readable', function () {
     ws.write(rs.read());
 });
@@ -289,19 +226,12 @@ rs.on('data', function (chunk) {
 });
 
 // 3.
-rs.pipe(ws);
-</code></pre>
-
+rs.pipe(ws);</code></pre>
 <p>另外上面所提昇增進效能的部份則是指，使用串流的方式傳輸資料可以不需要像是傳統的<code>Web Server</code>必須先將資料暫存在硬碟中然後再視情形對資料做處理或搬移。</p>
-
 <p>在資料進來的同時就可以即時對於資料做處理，並且可以將資料隨使用情境做多層的傳遞，例如<code>Read File</code> -> <code>HTTP Request</code> -> <code>TCP Server</code> -> <code>Write File</code>這樣的流程，它將檔案使用<code>HTTP</code>傳送出去，然後在<code>Web Server</code>接收到資料的同時做處理，然後再使用<code>TCP</code>協定將檔案傳送給其它裝置並寫入硬碟。</p>
-
 <p>將Stream的事件弄清楚後，對於資料的傳遞就能更隨自己的意願做處理，也能將以上的流程實做出來。</p>
-
 <h3>Reference</h3>
-
-<p><a href="http://nodejs.org/api/">Node.js Manual &amp; Documentation</a></p>
-</div>
+<p><a href="http://nodejs.org/api/">Node.js Manual &amp; Documentation</a></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

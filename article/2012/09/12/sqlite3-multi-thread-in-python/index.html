@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="查了一下官方的文件發現，在 Connect 的時候有這個選項check_same_thread=False，只要在連的時設定為 False 就可以了。">
+    <meta property="og:description" name="description" content="最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)，但在開始將 Thread 一個一個都啟動並同時存取就爆了。">
     <meta property="og:title" content="SQLite3 Multi-Thread in Python | ScarShow | 刀疤說">
     <meta property="og:url" content="http://scar.simcz.tw/article/2012/09/12/sqlite3-multi-thread-in-python/">
     <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
@@ -72,31 +72,19 @@
                 </div>
             </div>
         </div>
-        <div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
-但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
-
+        <div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)，但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
 <h3>Error Code</h3>
-
-<pre><code class="bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
-</code></pre>
-
-<!--more-->
+<pre><code class="language-bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx</code></pre>
 
 <p>查了一下官方的文件發現，在 Connect 的時候有這個選項<code>check_same_thread=False</code>，只要在連的時設定為 False 就可以了。</p>
-
 <h3>Sample Code</h3>
-
-<pre><code class="python">import sqlite3
+<pre><code class="language-python">import sqlite3
 
 conn = sqlite3.connect(path, check_same_thread=False)
 conn.execute('Do something')
-conn.close()
-</code></pre>
-
+conn.close()</code></pre>
 <p>原因是在於SQLite在執行的時候會檢查Thread ID是否跟Cerate SQLite Connect的Thread ID相同，如果不相同他就吐出錯誤訊息。大概是要的防止SQLite的Deadlock問題，確保他在同Thread下循序執行SQL不會產生衝突。</p>
-
-<p>這個設定則是把檢查Thread ID的機制關閉這樣在執行程式的時候就不會吐出錯誤了。</p>
-</div>
+<p>這個設定則是把檢查Thread ID的機制關閉這樣在執行程式的時候就不會吐出錯誤了。</p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

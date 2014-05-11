@@ -67,24 +67,15 @@
             </div>
         </div>
         <div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
-
 <p>首先建立一個PHP程式 server.php</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 // filename: server.php
-print_r($_SERVER);
-</code></pre>
-
-<!--more-->
+print_r($_SERVER);</code></pre>
 
 <p>然後我們用curl來發送請求來觀察PHP到底收到了什麼訊息</p>
-
-<pre><code class="bash">curl -X GET "localhost/server.php/segement/input" -d "param=test" -G
-</code></pre>
-
+<pre><code class="language-bash">curl -X GET "localhost/server.php/segement/input" -d "param=test" -G</code></pre>
 <p>底下是curl輸出之結果</p>
-
-<pre><code class="bash">Array
+<pre><code class="language-bash">Array
 (
     [HTTP_USER_AGENT] =&gt; curl/7.21.6 (x86_64-pc-linux-gnu) libcurl/7.21.6 OpenSSL/1.0.0e zlib/1.2.3.4 libidn/1.22 librtmp/2.3
     [HTTP_HOST] =&gt; localhost
@@ -111,16 +102,11 @@ print_r($_SERVER);
     [PATH_TRANSLATED] =&gt; /var/www/segement/input
     [PHP_SELF] =&gt; /server.php/segement/input
     [REQUEST_TIME] =&gt; 1335154750
-)
-</code></pre>
-
+)</code></pre>
 <p>根據 $_SERVER 的內容中我們挑出能用的部份，REQUEST_METHOD 就是HTTP請求時的Method而 PATH_INFO 、PHP_SELF 及 REQUEST_URI 則可以用來當作比對用的URL。PATH_INFO的內容<code>/segement/input</code>完全符合需求，另外的 PHP_SELF 及 REQUEST_URI 要做額外的處理才能使用。</p>
-
 <p>還有一件值得一提的事情，上面三個變數Apache都有、Nginx少 PATH_INFO 而IIS則少 REQUEST_URI。</p>
-
 <p>接下來就開始實作了，實做一個Router我們需要上面提到的HTTP Method、URL以及Route Rule及Callback，原理很簡單當Method及URL與Route rule互相Match的時候就會去呼叫Callback執行相對應的動作。首先新增一個名為router的class把一些基本的架構制定出來</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
@@ -135,15 +121,10 @@ class router {
     public function run() {
         // compare
     }
-}
-</code></pre>
-
+}</code></pre>
 <p>以上的class提供一些基本的功能，當class被new時自動取得Method及URL，再用add加入Route Rule及Callback，接來下就可以用run讓Router <del>跑路</del> 啟動了。</p>
-
 <p>那麼比對怎樣做，<del>直接用 == 字串比對就好啦</del> 比較好的做好是使用正規表達式去比對字串。</p>
-
-<p><strong>待續...</strong></p>
-</div>
+<p><strong>待續...</strong></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

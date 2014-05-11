@@ -73,42 +73,27 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>自從<code>Ubuntu 5.04</code>開始我就一直使用Ubuntu系列的相關發行版，但是這幾年下來它真的是越來越肥大，且多了許多不必要的預設程式。而身為一個Linux使用者以及相關開發者的我來說，當然希望自己所使用的環境越簡單越好、甚至能夠完全掌握。</p>
-
 <p>所以我開始有更換使用環境的念頭，而剛好幾年前曾經試著安裝過的<code>Arch Linux</code>符合我的需求，所以經過幾次測試確認系統穩定之後便著手更換系統。</p>
-
 <p>這邊我將我的安裝過程整理出來。</p>
 
-<!--more-->
-
 <h2>初始設定</h2>
-
-<pre><code class="bash"># 讀取鍵盤對應表
+<pre><code class="language-bash"># 讀取鍵盤對應表
 loadkeys us
 
 # 設定DHCP網路
-dhcpcd
-</code></pre>
-
+dhcpcd</code></pre>
 <p>基本上網路的設定，視個人的網路環境而定，可以參照 <a href="https://wiki.archlinux.org/index.php/Configuring_network">Network Configuration</a>。</p>
-
 <h2>硬碟分割</h2>
-
 <p>每個人的環境不同，硬碟的分配方式也會不同，在這邊只有基礎的切割。</p>
-
-<pre><code class="bash"># 切割 partition
+<pre><code class="language-bash"># 切割 partition
 fdisk /dev/sda
 
 # 格式化 partition，這邊是格式化成Ext4
-mkfs.ext4 /dev/sda1
-</code></pre>
-
+mkfs.ext4 /dev/sda1</code></pre>
 <h2>基礎系統安裝</h2>
-
 <p>將硬碟設定完成之後就可以開始安裝<code>Arch Linux</code>的基礎系統了。</p>
-
-<pre><code class="bash"># 掛載磁碟分割區
+<pre><code class="language-bash"># 掛載磁碟分割區
 mount -t ext4 /dev/sda1 /mnt
 
 # 安裝基礎資料
@@ -118,26 +103,18 @@ pacstrap /mnt base
 swapon -s
 
 # 更新檔案系統列表
-genfstab -p /mnt &gt; /mnt/etc/fstab
-</code></pre>
-
+genfstab -p /mnt &gt; /mnt/etc/fstab</code></pre>
 <h2>安裝基礎套件</h2>
-
 <p>我在這邊只有列了幾個我常用到的套件，有需要的話可以自行加入並安裝。</p>
-
 <p>要找套件可以使用<code>pacman -Ss &lt;package&gt;</code>指令。</p>
-
 <pre><code># 切換系統根目錄
 arch-root /mnt
 
 # 安裝基礎套件
 pacman -Syu
-pacman -S vim git zsh wget mlocate openssh sudo net-tools grub
-</code></pre>
-
+pacman -S vim git zsh wget mlocate openssh sudo net-tools grub</code></pre>
 <h2>系統設定</h2>
-
-<pre><code class="bash"># 修改主機名稱
+<pre><code class="language-bash"># 修改主機名稱
 vim /etc/hostname
 
 # 修改系統時區，在這邊我設定的是台北時間
@@ -153,12 +130,9 @@ vim /etc/locale.conf
 
 # 加入這兩行
 LANG=en-US.UTF8
-LC_COLLATE=C
-</code></pre>
-
+LC_COLLATE=C</code></pre>
 <h2>設定使用者帳號</h2>
-
-<pre><code class="bash"># 加入新使用者定設定密碼
+<pre><code class="language-bash"># 加入新使用者定設定密碼
 useradd &lt;username&gt;
 passwd &lt;username&gt;
 
@@ -169,27 +143,17 @@ vim /etc/sudoers
 &lt;username&gt; ALL=(ALL) ALL
 
 # 為了安全起見請設定root密碼
-passwd root
-</code></pre>
-
+passwd root</code></pre>
 <h2>安裝開機引導程式</h2>
-
 <p>我習慣使用<code>GRUB</code>當作我的開機引導程式。</p>
-
 <p>如果在這邊安裝<code>GRUB</code>後還是無法開機的話可以參考 <a href="https://wiki.archlinux.org/index.php/GRUB">GRUB</a>。</p>
-
-<pre><code class="bash">modprobe dm-mod
+<pre><code class="language-bash">modprobe dm-mod
 mkinitcpio -p linux
-grub-mkconfig &gt; /boot/grub/grub.cfg
-</code></pre>
-
+grub-mkconfig &gt; /boot/grub/grub.cfg</code></pre>
 <h2>安裝 yaourt (Yet AnOther User Repository Tool)</h2>
-
 <p>yaourt能夠自動抓取AUR(Arch User Repository)上的套件並且安裝，讓使用者不用手動安裝AUR上的套件。</p>
-
 <p>請參考 <a href="https://wiki.archlinux.org/index.php/AUR">AUR</a>。</p>
-
-<pre><code class="bash">vim /etc/pacman.conf
+<pre><code class="language-bash">vim /etc/pacman.conf
 
 # 加入以下三行
 [archlinuxfr]
@@ -201,27 +165,19 @@ pacman -Syu
 pacman -S yaourt base-devel
 
 # 使用yaourt更新系統
-yaourt -Syua
-</code></pre>
-
+yaourt -Syua</code></pre>
 <h2>完成</h2>
-
-<pre><code class="bash">exit
+<pre><code class="language-bash">exit
 sync
 
 # 卸載硬碟分割區
 umount /mnt
 
 # 重新啟動系統
-reboot
-</code></pre>
-
+reboot</code></pre>
 <p>到此就完成了基礎的系統安裝，然後重新開機後你將得......一個黑白畫面。</p>
-
 <p>接下來還要安裝桌面環境，而在<code>Arch Linux</code>中一樣有常見的<code>Gnome</code>、<code>KDE</code>等桌面環境可以安裝。</p>
-
-<p>桌面環境安裝在下次的安裝紀錄中會提到。</p>
-</div>
+<p>桌面環境安裝在下次的安裝紀錄中會提到。</p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

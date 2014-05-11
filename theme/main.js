@@ -10,7 +10,7 @@ require([
             table = $('<table>').append(tr),
             code = $('<div>').attr('class', 'code').append(table);
 
-        var count = $(this).find('code').text().split('\n').length,
+        var count = $(this).find('code').text().split('\n').length + 1,
             line = $('<div>').attr('class', 'line').html(Array(count).join('<span></span>'));
 
         var viewer = $('<div>').attr('class', 'viewer').append(line).append(code);

@@ -70,68 +70,36 @@
             </div>
         </div>
         <div class="content"><p>這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題</p>
-
 <h2>Phar</h2>
-
 <p>Phar(PHP Archive)它是PHP的extension，就像是Java的jar一樣可以用來打包程式碼，可讓專案易於散佈並安裝使用</p>
 
-<!--more-->
-
 <h2>包裝PHP Source</h2>
-
-<pre><code class="php">&lt;?php
-$phar = new Phar('bin/pointless.phar');
-</code></pre>
-
+<pre><code class="language-php">&lt;?php
+$phar = new Phar('bin/pointless.phar');</code></pre>
 <p>指定Phar的路徑以及名稱，需要注意的是結尾一定要用<code>.phar</code></p>
-
-<pre><code class="php">$phar-&gt;setAlias('poi.phar');
-</code></pre>
-
+<pre><code class="language-php">$phar-&gt;setAlias('poi.phar');</code></pre>
 <p><code>Alias</code>用來設定Phar檔的別名</p>
-
-<pre><code class="php">$phar-&gt;setStub("&lt;?php Phar::mapPhar('poi.phar'); define('ROOT', 'phar://poi.phar/'); require ROOT. 'Boot.php'; __HALT_COMPILER(); ?&gt;");
-</code></pre>
-
+<pre><code class="language-php">$phar-&gt;setStub("&lt;?php Phar::mapPhar('poi.phar'); define('ROOT', 'phar://poi.phar/'); require ROOT. 'Boot.php'; __HALT_COMPILER(); ?&gt;");</code></pre>
 <p><code>Stub</code>的用途是，如果你不是在PHP檔案中引用Phar檔案，而是直接用Phar作為執行檔，它就會以Stub作為預設的呼叫對象</p>
-
 <p>而在Stub中用到的<code>mapPhar</code>的作用是指定並註冊為你所設定的Phar檔，Phar會使用執行檔的名稱作為註冊的依據</p>
-
-<pre><code class="php">$phar-&gt;buildFromDirectory(dirname(__FILE__) . '/pointless');
-</code></pre>
-
+<pre><code class="language-php">$phar-&gt;buildFromDirectory(dirname(__FILE__) . '/pointless');</code></pre>
 <p><code>buildFromDirectory</code>則是指定要打包成Phar檔的資料夾</p>
-
-<pre><code class="php">$phar-&gt;compressFiles(Phar::GZ);
-</code></pre>
-
+<pre><code class="language-php">$phar-&gt;compressFiles(Phar::GZ);</code></pre>
 <p><code>compressFiles</code>設定Phar的打包格式，除了<code>Phar::GZ</code>還有<code>Phar::BZ2</code></p>
-
-<pre><code class="php">$phar-&gt;stopBuffering();
-</code></pre>
-
+<pre><code class="language-php">$phar-&gt;stopBuffering();</code></pre>
 <p><code>stopBuffering</code>用來將打包好的Phar檔寫入磁碟</p>
-
 <h2>使用方式</h2>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 Phar::mapPhar('poi.phar');
 require 'phar://poi.phar/Boot.php';
 
 $boot = new Boot();
-$boot-&gt;run();
-</code></pre>
-
+$boot-&gt;run();</code></pre>
 <p>假設在原本打包的資料夾的根目錄下有個叫做Boot.php的檔案，可以這樣呼叫並使用</p>
-
-<pre><code class="bash">php ./pointless.phar
-</code></pre>
-
+<pre><code class="language-bash">php ./pointless.phar</code></pre>
 <p>如果是直接當成可執行檔，可以這樣使用，如果要直接執行那麼就要在Stub中的第一行加入<code>#!/usr/bin/env php</code></p>
-
 <h3>Example</h3>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 $stub = &lt;&lt;&lt;EOF
 #!/usr/bin/env php
 &lt;?php
@@ -146,38 +114,28 @@ $phar-&gt;setAlias('poi.phar');
 $phar-&gt;setStub($stub);
 $phar-&gt;buildFromDirectory(dirname(__FILE__) . '/pointless');
 $phar-&gt;compressFiles(Phar::GZ);
-$phar-&gt;stopBuffering();
-</code></pre>
-
+$phar-&gt;stopBuffering();</code></pre>
 <h2>注意</h2>
-
-<pre><code class="bash">PHP Fatal error:  Uncaught exception 'UnexpectedValueException' with message 'creating archive "poi.phar" disabled by the php.ini setting phar.readonly' in /path/to/build.php:20
+<pre><code class="language-bash">PHP Fatal error:  Uncaught exception 'UnexpectedValueException' with message 'creating archive "poi.phar" disabled by the php.ini setting phar.readonly' in /path/to/build.php:20
 Stack trace:
 #0 /path/to/build.php(20): Phar-&gt;__construct('poi.phar')
 #1 {main}
-  thrown in /path/to/build.php on line 20
-</code></pre>
-
+  thrown in /path/to/build.php on line 20</code></pre>
 <p>如果在打包Phar時發生以上錯誤，那麼就去把<code>php.ini</code>中的Phar設定改為以下內容</p>
-
-<pre><code class="ini">[Phar]
+<pre><code class="language-ini">[Phar]
 ; http://php.net/phar.readonly
 phar.readonly = Off
 
 ; http://php.net/phar.require-hash
 ;phar.require_hash = On
 
-;phar.cache_list =
-</code></pre>
-
+;phar.cache_list =</code></pre>
 <h3>Reference</h3>
-
 <ul>
 <li><a href="http://php.net/manual/en/book.phar.php">PHP: Phar</a></li>
 <li><a href="http://www.jaceju.net/blog/archives/344/">[PHP] PHP 5.3 的新特色： Phar</a></li>
 <li><a href="http://www.ibm.com/developerworks/cn/opensource/os-php-5.3new4/">PHP V5.3 中的新特性，第 4 部分: 创建并使用 Phar 归档</a></li>
-</ul>
-</div>
+</ul></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

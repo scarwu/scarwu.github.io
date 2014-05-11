@@ -73,9 +73,7 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>Apache是常用的網頁伺服器，而<code>userdir</code>這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以<code>http://examaple.com/~username</code>的形式呈現。另外<code>vhost_alias</code>則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設<code>http://a.example.com</code>與<code>b.examle.com</code>都指向<code>192.168.1.1</code>，那麼Apache就可以根據域名來挑選網頁的根目錄<code>/var/www/a</code>或是<code>/var/www/b</code>來呈現不同的內容。</p>
-
 </div>
         <a class="more" href="/article/2013/04/28/apache-vhost-and-userdir-config/">More</a>
     </article>
@@ -111,9 +109,7 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>自從上研究所之後，想買得東西突然就多了起來，小朋友就一個個出走，這邊就紀錄一下這研究所兩年間究竟買了哪些東西...。</p>
-
 </div>
         <a class="more" href="/article/2013/04/19/shopping-record/">More</a>
     </article>
@@ -146,17 +142,12 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>想寫一個簡單的網頁程式，但現在市面上PHP的樣板引擎百百種，那該選什麼樣的樣板引擎來搭配好呢？...等等先不說這個，你有聽說過PHP本身也是樣板引擎嗎？沒錯它是。</p>
-
 <p>在這之前我們先看看Wikipedia是怎麼解釋樣板引擎：</p>
-
 <blockquote>
-  <p>"A (web) template engine is software that is designed to process web templates and content information to produce output web documents. It runs in the context of a template system."</p>
+<p>"A (web) template engine is software that is designed to process web templates and content information to produce output web documents. It runs in the context of a template system."</p>
 </blockquote>
-
 <p>它說明了樣板引擎的功能是將內容資訊與網頁樣板結合，然後產生出網頁文件的這一個行為。將網頁的內容與網頁樣板切開，這個不用幾行程式碼PHP就可以做到。</p>
-
 </div>
         <a class="more" href="/article/2013/04/04/about-php-native-template-engine/">More</a>
     </article>
@@ -189,18 +180,12 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>在PHP中字串連接的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式<code>strcat()</code>來連接兩個字元陣列，而在Java中我們可以使用<code>+</code>運算子來做字串的連接。</p>
-
 <p>而PHP呢？PHP不同與上述語言，它則使用<code>.</code>運算子來連接字串，而且除了<code>.</code>以外還有許多不同的方式也可以連接字串。</p>
-
 <h2>基本使用</h2>
-
 <h3>字串宣告</h3>
-
 <p>在PHP當中可以使用<code>'</code>或者是<code>"</code>來宣告字串，但是這兩個符號宣告出的字串其實是不相同的。</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 $str = "Hi, I am Tony.\nNice to meet you.";
 echo $str;
 // Hi, I am Tony.
@@ -208,26 +193,18 @@ echo $str;
 
 $str = 'Hi, I am Tony.\nNice to meet you.';
 echo $str;
-// Hi, i am Tony,\nNice to meet you.
-</code></pre>
-
+// Hi, i am Tony,\nNice to meet you.</code></pre>
 <p>由上面範例可以得知使用<code>"</code>宣告的字串可以讓跳脫字元發揮出作用，而使用<code>'</code>宣告的字串則是純字串你輸入什麼就輸出什麼。</p>
-
 <h3>字串連接</h3>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 $name = 'Tony';
 
 echo "Hi " . $name; // Hi Tony
 echo 'Hi ' . $name; // Hi Tony
 echo "Hi $name";    // Hi Tony
-echo 'Hi $name';    // Hi $name
-</code></pre>
-
+echo 'Hi $name';    // Hi $name</code></pre>
 <p>那麼字串與變數的連接，在<code>"</code>可以很彈性的使用變數，而<code>'</code>只能夠使用<code>.</code>來做連接，而兩者都可以使用格式化輸出<code>sprintf()</code>但這邊就先不提。</p>
-
 <p>由上面得知<code>"</code>可以很彈性的連接變數，那麼它除了變數的連接外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。</p>
-
 </div>
         <a class="more" href="/article/2013/04/02/php-concatenate-string/">More</a>
     </article>
@@ -263,14 +240,10 @@ echo 'Hi $name';    // Hi $name
             </div>
         </div>
         <div class="content"><p>上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。</p>
-
 <h2>使用</h2>
-
 <h3>實作指令 Help.php</h3>
-
 <p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 // 設定namespace
 namespace Test;
 
@@ -284,9 +257,7 @@ class Help extends NanoCLI\Command {
     public function run() {
         IO::writeln("This is Command: help\n");
     }
-}
-</code></pre>
-
+}</code></pre>
 </div>
         <a class="more" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">More</a>
     </article>

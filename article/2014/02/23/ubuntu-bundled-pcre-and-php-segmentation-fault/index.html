@@ -79,52 +79,31 @@
             </div>
         </div>
         <div class="content"><h2>接續</h2>
-
 <p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
-
 <p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
-
 <p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>
 
-<!--more-->
-
 <h2>觀察 ./configure 設定配置</h2>
-
 <p>我找了一個之前編譯的正常<code>PHP</code>所使用的配置，現在有問題的配置做比對。其中發現<code>PCRE</code>的設定方式不相同。</p>
-
 <p>舊的配置關於<code>PCRE</code>的部份只有<code>--with-pcre-regex</code>，而新的配置則是<code>--with-pcre-regex=/usr --with-pcre-dir=/usr</code>。</p>
-
 <p>新的<code>--with-pcre-regex=/usr</code>其實不影響執行，真正有問題的部份出在於<code>--with-pcre-regex</code>與<code>--with-pcre-regex=/usr</code>的對於實際編時所引入的函式庫不同。</p>
-
 <p><code>--with-pcre-regex</code>所代表的是編譯時引入<code>PHP</code>內建的<code>PCRE</code>函式庫，而<code>--with-pcre-regex=/usr</code>所代表的是引入外部的<code>PCRE</code>函式庫。</p>
-
 <p>造成的原因是因為<code>PHPBrew</code>的版次問題所造成，它會檢查系統中是否已經有<code>PCRE</code>函式庫，如果已經存在就會自動在<code>--with-pcre-regex</code>後面加上<code>prefix</code>。</p>
-
 <h2>使用不同的函式庫</h2>
-
 <p>為了要測試原因是否是系統內建的問題，或者是只要引入外部<code>PCRE</code>就會出錯，所以我就另外編譯了新的<code>PCRE</code>函式庫作為測試。</p>
-
 <ul>
 <li>PCRE版本
-
 <ul>
 <li>8.31-2 <code>Ubuntu 13.10</code>內建</li>
 <li>8.32 <code>PHP 5.4.25</code>內建</li>
 <li>8.34 自行編譯最新版</li>
 </ul></li>
 </ul>
-
 <p>編譯過程我就省略，<code>PHP 5.4.25</code>以及自行編譯的<code>PCRE</code>都可以正常執行。最後結果就是系統內建的<code>PCRE</code>有問題，並且連帶系統內建的<code>PHP 5.5.3</code>都會出現同樣的問題。</p>
-
 <h2>解決方案</h2>
-
 <p>雖然不知道內建的<code>PCRE</code>究竟是哪邊出問題，不過我有兩種解決方法。不是移除系統內建的<code>PCRE</code>讓<code>PHP</code>用本身的函式庫，就是使用自行編譯的<code>PCRE</code>。</p>
-
 <p>下面我就把我的<code>PHPBrew</code>安裝設定公開出來，因為我是使用自行編譯的<code>PCRE</code>所以在最後要指定函式庫位置。</p>
-
-<pre><code>phpbrew -d install 5.4.25 +default+db+openssl+iconv -- --with-pcre-regex=/opt/pcre
-</code></pre>
-</div>
+<pre><code>phpbrew -d install 5.4.25 +default+db+openssl+iconv -- --with-pcre-regex=/opt/pcre</code></pre></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

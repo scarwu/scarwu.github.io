@@ -70,15 +70,10 @@
             </div>
         </div>
         <div class="content"><p>關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。</p>
-
 <p>約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。</p>
-
 <h2>系統要求</h2>
-
 <p>PHP 5.3+</p>
-
 <h2>功能</h2>
-
 <ul>
 <li>指令呼叫 (ex. <code>$ ./cli.php command</code>)</li>
 <li>指令選項 (ex. <code>$ ./cli.php command -v -al</code>)</li>
@@ -88,18 +83,11 @@
 <li>Namespace 以及 Autoload</li>
 </ul>
 
-<!--more-->
-
 <h2>使用</h2>
-
 <h3>下載原始碼</h3>
-
-<pre><code>git clone git://github.com/scarwu/NanoCLI.git
-</code></pre>
-
+<pre><code>git clone git://github.com/scarwu/NanoCLI.git</code></pre>
 <h3>檔案配置</h3>
-
-<pre><code class="bash">.
+<pre><code class="language-bash">.
 ├── boot.php
 ├── Command
 │   ├── Test
@@ -109,14 +97,10 @@
 └── NanoCLI
     ├── Command.php
     ├── IO.php
-    └── Loader.php
-</code></pre>
-
+    └── Loader.php</code></pre>
 <h3>設定Boot</h3>
-
 <p>做為一個CLI應用程式首先要設定程式的進入點。</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 /* Boot.php */
 
 // 載入 Loader
@@ -135,14 +119,10 @@ spl_autoload_register('NanoCLI\Loader::load');
 
 // 初始化指令
 $test = new Test();
-$test-&gt;Init();
-</code></pre>
-
+$test-&gt;Init();</code></pre>
 <h3>實作指令 Test.php</h3>
-
 <p>上面的程式碼最後初始化了Test這個Class，再初始化之後NanoCLI會自動呼叫對應指令，所以在這邊我們顯來實作第一個指令。</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 use NanoCLI\IO;
 
 // 繼承 NanoCLI\Command
@@ -161,19 +141,13 @@ class Test extends NanoCLI\Command {
         // 輸出結果
         IO::writeln('Hi, ' . $name, 'green');
     }
-}
-</code></pre>
-
+}</code></pre>
 <p><br>每個指令都要繼承<code>NanoCLI\Command</code>，然後記得要叫<code>Parent Construct</code>，這樣程式才會動，所以現在可以執行第一個程式了，應該會有以下的結果。</p>
-
-<pre><code class="bash">php boot.php
+<pre><code class="language-bash">php boot.php
 Enter your name: Scar
-Hi, Scar
-</code></pre>
-
+Hi, Scar</code></pre>
 <p><br>雖然在呼叫的時候沒有帶入任何參數但它也是一個指令，它就像是一般程式的main一樣的作用，所以可以將上面範例程式的<code>run()</code>改成自動呼叫help指令以防止使用者不知道要如何去使用你的程式。</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 use NanoCLI\IO;
 
 // 繼承 NanoCLI\Command
@@ -189,11 +163,8 @@ class Test extends NanoCLI\Command {
         $help = new Test\Help();
         $help-&gt;run();
     }
-}
-</code></pre>
-
-<p><strong>待續...</strong></p>
-</div>
+}</code></pre>
+<p><strong>待續...</strong></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

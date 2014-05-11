@@ -73,22 +73,14 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>上次才說把筆電的作業系統換成<code>Arch Linux</code>，由於某些因素現在又換回<code>Ubuntu</code>了...這次想說換成新版的<code>Ubuntu</code>，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。</p>
-
 <p>這次一定要把它修好，小紅點中鍵滾輪這樣好用的東西變成半殘可不是辦法，請示過Google大神找了一些文章，其實大部分也滿零散的，所以我在這邊依照我實際遇到的問題整理一下。</p>
 
-<!--more-->
-
 <h2>問題修正</h2>
-
 <h3>修正小紅點滾輪</h3>
-
 <p>我的<code>ThinkPad</code>是後期出的<code>Edge</code>系列，所以他的<code>TrackPoint</code>在系統的變名稱上也跟歷代的<code>TPPS/2 IBM TrackPoint</code>不同，我的<code>E420s</code>的<code>TrackPoint</code>在系統中顯示的是<code>PS/2 Generic Mouse</code>。</p>
-
 <p>只要將<code>PS/2 Generic Mouse</code>填入<code>/usr/share/X11/xorg.conf.d/11-evdev-trackpoint.conf</code>即可。</p>
-
-<pre><code># trackpoint users want wheel emulation
+<pre><code class="language-conf"># trackpoint users want wheel emulation
 
 Section "InputClass"
     Identifier  "trackpoint catchall"
@@ -100,32 +92,18 @@ Section "InputClass"
     Option  "EmulateWheelButton"    "2"
     Option  "XAxisMapping"  "6 7"
     Option  "YAxisMapping"  "4 5"
-EndSection
-</code></pre>
-
+EndSection</code></pre>
 <h3>修正小紅點失靈</h3>
-
 <p>這問題從我在使用<code>Ubuntu 12.04</code>的時候就時常發生，通常只要重新開機或者是將無線滑鼠拔插一下又或者是按幾下<code>TrackPoint</code>的左右鍵就可恢復。</p>
-
 <p>主要的問題在於小紅點的驅動載入有問題，所以需要等待，也可能是因為這樣所以會被辨識成<code>PS/2 Generic Mouse</code>。</p>
-
 <p>要修復這種情形很簡單，只要把<code>/etc/modprobe.d/trackpoint-elantech.conf</code>填入以下內容即可。</p>
-
-<pre><code>options psmouse proto=bare
-</code></pre>
-
+<pre><code class="language-conf">options psmouse proto=bare</code></pre>
 <p>然後執行指令<code>sudo modprobe -rv psmouse &amp;&amp; sudo modprobe -v psmouse</code>或是重新開機就完成了。</p>
-
 <p>不過這樣作還是有缺點，使用這種解決方案會使得沒辦法取消觸控版，那這樣我還是慢慢等小紅點的驅動載入。</p>
-
 <h3>取消觸控版功能</h3>
-
 <p>最後就是把實在是有夠難用的觸控版關閉的時候了，利用系統內建的<code>Mouse &amp; Touchpad</code>把<code>Touchpad</code>的開關關閉就行了。</p>
-
 <h2>結語</h2>
-
-<p>這樣小紅點終於不是半殘，星爺表示：大師兄回來了！</p>
-</div>
+<p>這樣小紅點終於不是半殘，星爺表示：大師兄回來了！</p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

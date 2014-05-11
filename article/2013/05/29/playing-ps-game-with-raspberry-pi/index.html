@@ -70,62 +70,37 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>Raspberry Pi小巧好用拿來打電動很剛好，當作PS遊戲模擬器也是游刃有餘。</p>
-
 <p>所以在這邊紀錄如何在Raspberry Pi上安裝PCSX ReARMed，它是我們所熟知的PS模擬器PCSX，但它是針對ARM CPU的特製版。</p>
 
-<!--more-->
-
 <h2>安裝過程</h2>
-
 <p>下面的範例是直接在RPi上編譯，過程中沒有用到Cross Compile所以編譯時間會比較久。</p>
-
 <h3>安裝編譯環境</h3>
-
-<pre><code class="bash">sudo apt-get uptdate &amp;&amp; sudo apt-get upgrade
-sudo apt-get install git build-essential libpng-dev libx11-dev autoconf
-</code></pre>
-
+<pre><code class="language-bash">sudo apt-get uptdate &amp;&amp; sudo apt-get upgrade
+sudo apt-get install git build-essential libpng-dev libx11-dev autoconf</code></pre>
 <h3>編譯SDL</h3>
-
-<pre><code class="bash">wget http://www.libsdl.org/release/SDL-1.2.15.tar.gz
+<pre><code class="language-bash">wget http://www.libsdl.org/release/SDL-1.2.15.tar.gz
 tar zxvf SDL-1.2.15.tar.gz
 cd SDL-1.2.15
 ./autogen.sh
 ./configure &amp;&amp; make
-sudo make install
-</code></pre>
-
+sudo make install</code></pre>
 <h3>編譯PCSX ReARMed</h3>
-
-<pre><code class="bash">git clone git://github.com/notaz/pcsx_rearmed.git
+<pre><code class="language-bash">git clone git://github.com/notaz/pcsx_rearmed.git
 cd pcsx_rearmed
 git submodule init &amp;&amp; git submodule update
-./configure
-</code></pre>
-
+./configure</code></pre>
 <p>編輯makefile，並將<code>-I/opt/vc/include/interface/vmcs_host/linux</code> 加入CFLAGS。</p>
-
-<pre><code class="bash"># add -I/opt/vc/include/interface/vmcs_host/linux to CFLAGS
+<pre><code class="language-bash"># add -I/opt/vc/include/interface/vmcs_host/linux to CFLAGS
 vim Makefile
-make
-</code></pre>
-
+make</code></pre>
 <h2>啟動</h2>
-
 <p>在啟動前記得準備好搖桿以及遊戲映像檔。</p>
-
-<pre><code class="bash"># Start PCSX
-./pcsx
-</code></pre>
-
+<pre><code class="language-bash"># Start PCSX
+./pcsx</code></pre>
 <h3>擷圖</h3>
-
 <p><img src="http://scar.simcz.tw/images/playing-ps-game-with-raspberry-pi/001.jpg" alt="PCSX ReARMed"></p>
-
-<p><img src="http://scar.simcz.tw/images/playing-ps-game-with-raspberry-pi/002.jpg" alt="PCSX ReARMed"></p>
-</div>
+<p><img src="http://scar.simcz.tw/images/playing-ps-game-with-raspberry-pi/002.jpg" alt="PCSX ReARMed"></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

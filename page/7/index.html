@@ -73,29 +73,22 @@
             </div>
         </div>
         <div class="content"><p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
-
 <h2>系統要求:</h2>
-
 <ul>
 <li>PHP 5.3+</li>
 <li>Command Line Interface</li>
 </ul>
-
 <h2>支援:</h2>
-
 <ul>
 <li>Github CNAME</li>
 <li>Google Analystics</li>
 <li>DISQUS</li>
 </ul>
-
 <h2>外部程式:</h2>
-
 <ul>
 <li><a href="http://michelf.com/projects/php-markdown/">PHP Makrdown</a></li>
 <li><a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a></li>
 </ul>
-
 </div>
         <a class="more" href="/article/2012/05/07/pointless-readme/">More</a>
     </article>
@@ -134,7 +127,6 @@
             </div>
         </div>
         <div class="content"><p>最近這些日子裡，放在腦中三年之久的想法被激起了，三年前因為大學專題要想題目去實做，曾經想過寫一個部落格系統並且可以把存在資料庫的資料轉換成靜態的HTML檔案，但當時用這個題目好像不太好，就像是部份的資管系學生專題都是寫一個購物車就結束這樣，可能會被認為沒什麼挑戰性，之後索性就把題目改成了Facebook Game(當時很夯)，三年後的今天有因為種種因素又讓我想實現當年的想法。</p>
-
 </div>
         <a class="more" href="/article/2012/04/27/about-pointless-static-blog-generator/">More</a>
     </article>
@@ -167,8 +159,7 @@
             </div>
         </div>
         <div class="content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 // filename: router.php
 class router {
     public function __construct() {
@@ -191,9 +182,7 @@ class router {
             }
         }
     }
-}
-</code></pre>
-
+}</code></pre>
 </div>
         <a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-2/">More</a>
     </article>
@@ -226,14 +215,10 @@ class router {
             </div>
         </div>
         <div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
-
 <p>首先建立一個PHP程式 server.php</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 // filename: server.php
-print_r($_SERVER);
-</code></pre>
-
+print_r($_SERVER);</code></pre>
 </div>
         <a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-1/">More</a>
     </article>
@@ -275,14 +260,9 @@ print_r($_SERVER);
             </div>
         </div>
         <div class="content"><p>最近有個專案有機會用到Facebook所提出的HipHop for PHP，它可以將PHP程式碼轉為C++並編譯成可執行檔用來加速處理效能，在這邊筆記一下安裝過程。</p>
-
 <p>refrence: <a href="https://github.com/facebook/hiphop-php/wiki/Building-and-Installing-on-Ubuntu-11.10">Building and Installing on Ubuntu 11.10</a></p>
-
 <h2>先將系統的編譯環境用apt安裝好</h2>
-
-<pre><code class="bash">sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0
-</code></pre>
-
+<pre><code class="language-bash">sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0</code></pre>
 </div>
         <a class="more" href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10/">More</a>
     </article>

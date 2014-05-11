@@ -76,31 +76,20 @@
             </div>
         </div>
         <div class="content"><p>前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：</p>
-
-<pre><code class="c">#include &lt;stdio.h&gt;
+<pre><code class="language-c">#include &lt;stdio.h&gt;
 
 main() {
     int n = 0;
     n = ++n + ++n + ++n + ++n;
 
     printf("%d", n);
-}
-</code></pre>
-
-<!--more-->
+}</code></pre>
 
 <p>它算出來的結果是<code>11</code>跟實際上的結果有些許的不同，一般來說答案應該是：</p>
-
-<pre><code>10 = 1 + 2 + 3 + 4
-</code></pre>
-
+<pre><code>10 = 1 + 2 + 3 + 4</code></pre>
 <p>測試了一下會發現實際上變數中的數值卻是，跟所想的有出入：</p>
-
-<pre><code>11 = 2 + 2 + 3 + 4
-</code></pre>
-
+<pre><code>11 = 2 + 2 + 3 + 4</code></pre>
 <p>什麼? 為什麼<code>1</code>變成了<code>2</code>，一定有哪邊有誤會，所以就用 GCC 把組合語言輸出看一下到底哪邊出問題了，發現其中一段程式碼：</p>
-
 <pre><code>; ...
 
 movl    $0, -4(%rbp)   ; rbp = 0
@@ -117,36 +106,26 @@ addl    -4(%rbp), %eax ; eax = 4 + 3 = 7
 addl    $1, -4(%rbp)   ; rbp = 3 + 1 = 4
 addl    %eax, -4(%rbp) ; rbp = 4 + 7 = 11
 
-; ...
-</code></pre>
-
+; ...</code></pre>
 <p>程式在遞增並相加的時候有點問題，所以才造成<code>11</code>這個結果，再試了一下C++也是一樣，所以這時候我在想其他語言應該沒有這個問題吧? 所以就多試了一些語言，像是 PHP 及 Javascript，另外還多試了 Visual C++ 及 C#，執行結果如下：</p>
-
 <h3>PHP</h3>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 
 $n = 0;
 $n = ++$n + ++$n + ++$n + ++$n;
 
 // 10 = 1 + 2 + 3 + 4
-echo $n;
-</code></pre>
-
+echo $n;</code></pre>
 <h3>Javascript</h3>
-
-<pre><code class="javascript">'use strict';
+<pre><code class="language-javascript">'use strict';
 
 var n = 0;
 n = ++n + ++n + ++n + ++n;
 
 // 10 = 1 + 2 + 3 + 4
-console.log(n); 
-</code></pre>
-
+console.log(n); </code></pre>
 <h3>Visual C++</h3>
-
-<pre><code class="cpp">#include "stdafx.h"
+<pre><code class="language-cpp">#include "stdafx.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -157,12 +136,9 @@ int _tmain(int argc, _TCHAR* argv[])
     printf("%d", n);
 
     return 0;
-}
-</code></pre>
-
+}</code></pre>
 <h3>C Shape</h3>
-
-<pre><code class="cs">using System;
+<pre><code class="language-cs">using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -180,23 +156,14 @@ namespace ConsoleApplication1
             System.Console.Write(n);
         }
     }
-}
-</code></pre>
-
+}</code></pre>
 <h2>結論</h2>
-
 <p>從測試的結果來看 PHP、Javascript 及 C# 與預期的答案相符，不過 Visual C++ 的結果就不是這樣了，Visual C++ 算出來是<code>16</code>，不過形成原因也比較滿合理的，所以這還是各家編譯器設計的問題。</p>
-
 <p><del>但 C/C++ 的結果是 feature 嗎...? XD</del></p>
-
 <p>但其實這是所謂的未定義行為(Undefined Behavior)，因每個語言的編譯程式的設計不同所造成問題，而在語言中也沒有明確定義所造成的行為。但是正常來說只要知道因起問題的程式是甚饃就可以了，但是不知道為什麼在學校裡的教授卻特別喜愛拿出老考學生，要求學生去背編譯結果這是沒有意義的。</p>
-
 <p>但除了運算子的問題之外還有其他問題也是歸類於未定義行為，可以參考以下的連結。</p>
-
 <p><a href="http://en.wikipedia.org/wiki/Undefined_behavior" target="">Wikipedia: Undifined Behavior</a></p>
-
-<p><strong>Update: 2014/03/16</strong></p>
-</div>
+<p><strong>Update: 2014/03/16</strong></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

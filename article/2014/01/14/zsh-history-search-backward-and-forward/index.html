@@ -73,26 +73,17 @@
             </div>
         </div>
         <div class="content"><p>原本<code>oh-my-zsh</code>在<code>Ubuntu 12.04 LTS</code>以及<code>Arch Linux</code>用好好的<code>history-search-backward</code>、<code>history-search-forward</code>，到了<code>Ubuntu 13.10</code>就不能用了，查了一下<code>ZSH</code>雖然版號不一樣，不知道是不是因為發行版影響，因為<code>Arch Linux</code>的<code>ZSH</code>版本還比<code>Ubuntu 13.10</code>新。</p>
-
 <p>下面是各個發行版的<code>Z Shell</code>版號。</p>
-
 <pre><code>Ubuntu 12.04 LTS : 4.3.17
 Ubuntu 12.10     : 5.0.0
 Ubuntu 13.04     : 5.0.0
 Ubuntu 13.10     : 5.0.2
-Arch Linux       : 5.0.5
-</code></pre>
-
-<!--more-->
+Arch Linux       : 5.0.5</code></pre>
 
 <p>算了至少功能沒有那就自己加上去，在<code>~/.zshrc</code>中加入以下兩行就行了。</p>
-
 <pre><code>bindkey "${key[Up]}" history-search-backward
-bindkey "${key[Down]}" history-search-forward
-</code></pre>
-
-<p>接著重起<code>terminal</code>或是<code>source .zshrc</code>一切就完成了。</p>
-</div>
+bindkey "${key[Down]}" history-search-forward</code></pre>
+<p>接著重起<code>terminal</code>或是<code>source .zshrc</code>一切就完成了。</p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

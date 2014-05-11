@@ -73,79 +73,45 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>很高興<code>Ubuntu</code>釋出了新的長期支援版本<code>Ubuntu 14.04 LTS</code>，終於在新的版本中輸入法的切換終於正常了。</p>
-
 <p>另外很不幸的，在<code>Ubuntu 14.04 LTS</code>釋出前的一個月中，我所架設的 <a href="ftp://ftp.csie.chu.edu.tw">ftp.csie.chu.edu.tw</a> 因為不可抗拒之因素導致伺服器下線，進而造成它在台灣預設來源庫名單中除名，這件事讓我非常失志。</p>
-
 <p>好，回到正題，我習慣使用英文界面，但是我又希望看見漂亮的中文字體。但是在這一版更新完語言套件之後你卻會得到一個預設字體是<code>標楷體</code>以及<code>細明體</code>的中文顯示...，頓時讓人回到<code>Big5</code>網頁的感覺。</p>
-
 <p>我還是喜歡看<code>文泉驛微米黑</code>或者是類似的字體，但是這次的修改方式跟上幾版不太一樣，所以我就在這紀錄一下。</p>
 
-<!--more-->
-
 <h2><del>開幹</del> 動手做</h2>
-
-<pre><code class="bash">cd /etc/fonts/conf.d
-</code></pre>
-
+<pre><code class="language-bash">cd /etc/fonts/conf.d</code></pre>
 <p>我們先把<code>Console</code>的路徑指向<code>/etc/fonts/conf.d</code>，這個路徑底下的檔案基本上是設定檔的軟連結，而真正的設定檔則是放在<code>/etc/fonts/conf.avail</code>。</p>
-
 <h3>刪除不必要之設定檔</h3>
-
 <p>這邊所刪除檔案的是關於<code>標楷體</code>以及<code>細明體</code>的設定檔。</p>
-
-<pre><code class="bash">sudo rm 25-arphic-ukai-render.conf 35-arphic-ukai-aliases.conf 41-arphic-ukai.conf 65-fonts-arphic-ukai.conf 75-arphic-ukai-select.conf 90-arphic-ukai-embolden.conf 25-arphic-uming-render.conf 35-arphic-uming-aliases.conf 41-arphic-uming.conf 64-arphic-uming.conf 65-fonts-arphic-uming.conf 90-arphic-uming-embolden.conf
-</code></pre>
-
+<pre><code class="language-bash">sudo rm 25-arphic-ukai-render.conf 35-arphic-ukai-aliases.conf 41-arphic-ukai.conf 65-fonts-arphic-ukai.conf 75-arphic-ukai-select.conf 90-arphic-ukai-embolden.conf 25-arphic-uming-render.conf 35-arphic-uming-aliases.conf 41-arphic-uming.conf 64-arphic-uming.conf 65-fonts-arphic-uming.conf 90-arphic-uming-embolden.conf</code></pre>
 <p>接著我們再刪除除了台灣以外的中文設定檔。(這邊就端看所需要的是那一地區的中文來做保留。)</p>
-
-<pre><code class="bash">sudo rm 69-language-selector-zh-cn.conf 69-language-selector-zh-hk.conf 69-language-selector-zh-mo.conf 69-language-selector-zh-sg.conf
-</code></pre>
-
+<pre><code class="language-bash">sudo rm 69-language-selector-zh-cn.conf 69-language-selector-zh-hk.conf 69-language-selector-zh-mo.conf 69-language-selector-zh-sg.conf</code></pre>
 <p>上面的動作都做完以後，恭喜我們得到了一個預設字體是<code>文泉驛正黑</code>的中文界面...，如果不愛<code>文泉驛正黑</code>下面則是<code>文泉驛微米黑</code>的修改方式。</p>
-
 <h3>修改設定檔</h3>
-
 <h4>65-nonlatin.conf</h4>
-
 <p>首先我們先修改非拉丁字體的設定檔，加上<code>文泉驛微米黑</code>的設定。</p>
-
-<pre><code class="bash">sudo vim 65-nonlatin.conf
-</code></pre>
-
+<pre><code class="language-bash">sudo vim 65-nonlatin.conf</code></pre>
 <p><code>&lt;family&gt;WenQuanYi Micro Hei&lt;/family&gt;</code>加在<code>sans-serif</code>的區塊裡。</p>
-
-<pre><code class="xml">&lt;alias&gt;
+<pre><code class="language-xml">&lt;alias&gt;
     &lt;family&gt;sans-serif&lt;/family&gt;
     &lt;prefer&gt;
         &lt;family&gt;WenQuanYi Micro Hei&lt;/family&gt;
         &lt;family&gt;Nachlieli&lt;/family&gt; &lt;!-- hebrew --&gt;
         &lt;family&gt;Lucida Sans Unicode&lt;/family&gt;
-        ...
-</code></pre>
-
+        ...</code></pre>
 <p><code>&lt;family&gt;WenQuanYi Micro Hei Mono&lt;/family&gt;</code>則是加在<code>monospace</code>區塊裡。</p>
-
-<pre><code class="xml">&lt;alias&gt;
+<pre><code class="language-xml">&lt;alias&gt;
     &lt;family&gt;monospace&lt;/family&gt;
     &lt;prefer&gt;
         &lt;family&gt;WenQuanYi Micro Hei Mono&lt;/family&gt;
         &lt;family&gt;Miriam Mono&lt;/family&gt; &lt;!-- hebrew --&gt;
         &lt;family&gt;VL Gothic&lt;/family&gt;
-        ...
-</code></pre>
-
+        ...</code></pre>
 <h4>69-language-selector-zh-tw.conf</h4>
-
 <p>最後我們修改中文字體選擇器的設定檔。</p>
-
-<pre><code class="bash">sudo vim 69-language-selector-zh-tw.conf
-</code></pre>
-
+<pre><code class="language-bash">sudo vim 69-language-selector-zh-tw.conf</code></pre>
 <p><code>&lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;</code>一樣是加在<code>sans-serif</code>裡。</p>
-
-<pre><code class="xml">&lt;match target="pattern"&gt;
+<pre><code class="language-xml">&lt;match target="pattern"&gt;
     &lt;test qual="any" name="family"&gt;
         &lt;string&gt;sans-serif&lt;/string&gt;
     &lt;/test&gt;
@@ -156,12 +122,9 @@
         &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
         &lt;string&gt;Droid Sans Fallback&lt;/string&gt;
         &lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
-        ...
-</code></pre>
-
+        ...</code></pre>
 <p><code>&lt;string&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;</code>則也是加在<code>monospace</code>裡。</p>
-
-<pre><code class="xml">&lt;match target="pattern"&gt;
+<pre><code class="language-xml">&lt;match target="pattern"&gt;
     &lt;test qual="any" name="family"&gt;
         &lt;string&gt;monospace&lt;/string&gt;
     &lt;/test&gt;
@@ -172,31 +135,20 @@
         &lt;string&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;
         &lt;string&gt;Droid Sans Fallback&lt;/string&gt;
         &lt;string&gt;WenQuanYi Zen Hei Mono&lt;/string&gt;
-        ...
-</code></pre>
-
+        ...</code></pre>
 <h2>打完收工</h2>
-
 <p><del>記得千萬不要手殘在<code>Console</code>中輸入<code>sudo fc-cache -fv</code>或是<code>sudo fc-font -v</code>，別怪我沒提醒你。</del></p>
-
 <p>不打上面的指令更新字型快取的原因是因為它有機會造成<code>Chrome</code>的分頁標籤變成亂碼，不過我已經查到方法的可以修復了。</p>
-
 <h4>/etc/fonts/conf.d/49-sansserif.conf</h4>
-
 <p>打開這個文件，然後將<code>sans-serif</code>改成你要的字型就可以了。</p>
-
 <p>這樣你愛怎麼下<code>sudo fc-cache -fv</code>或是<code>sudo fc-cache -v</code>都隨便你。</p>
-
-<pre><code class="xml">        &lt;edit name="family" mode="append_last"&gt;
+<pre><code class="language-xml">        &lt;edit name="family" mode="append_last"&gt;
             &lt;!--string&gt;sans-serif&lt;/string--&gt;
             &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
         &lt;/edit&gt;
     &lt;/match&gt;
-&lt;/fontconfig&gt;
-</code></pre>
-
-<p><strong>Update: 2014/05/04</strong></p>
-</div>
+&lt;/fontconfig&gt;</code></pre>
+<p><strong>Update: 2014/05/04</strong></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

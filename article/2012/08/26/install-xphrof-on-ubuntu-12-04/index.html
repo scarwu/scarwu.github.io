@@ -70,60 +70,34 @@
             </div>
         </div>
         <div class="content"><p>最近有想要分析自己程式碼的衝動，就想起了<code>Facebook</code>所撰寫的<code>Xhprof</code>，因為在安裝途中有點小問題，所以就紀錄一下完整的安裝過程。</p>
-
 <h2>安裝</h2>
-
 <h3>編譯環境</h3>
-
-<pre><code class="bash">sudo apt-get build-dep php5
-sudo apt-get install php5-dev
-</code></pre>
-
+<pre><code class="language-bash">sudo apt-get build-dep php5
+sudo apt-get install php5-dev</code></pre>
 <h3>Xhprof</h3>
-
-<pre><code class="bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+<pre><code class="language-bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
 tar -zxvf xhprof-0.9.2.tgz
-cd xhprof-0.9.2
-</code></pre>
-
+cd xhprof-0.9.2</code></pre>
 <p><br>複製<code>xhprof</code>所需要用到的程式到你的 web 根目錄。</p>
-
-<pre><code class="bash">cp -a xhprof_html xhprof_lib /path/to/htdocs
-</code></pre>
-
-<!--more-->
+<pre><code class="language-bash">cp -a xhprof_html xhprof_lib /path/to/htdocs</code></pre>
 
 <p><br>對<code>xhprof.c</code>進行Patch。</p>
-
-<pre><code class="bash">curl https://github.com/facebook/xhprof/commit/a6bae51236.diff | patch -p1
-</code></pre>
-
+<pre><code class="language-bash">curl https://github.com/facebook/xhprof/commit/a6bae51236.diff | patch -p1</code></pre>
 <p><br>開始編譯並安裝。</p>
-
-<pre><code class="bash">cd extension
+<pre><code class="language-bash">cd extension
 phpize
 ./configure
 make
-sudo make install
-</code></pre>
-
+sudo make install</code></pre>
 <p><br>修改<code>php.ini</code>設定檔。</p>
-
-<pre><code class="ini">[xhprof]
+<pre><code class="language-ini">[xhprof]
 extension=xhprof.so
-xhprof.output_dir=/tmp
-</code></pre>
-
+xhprof.output_dir=/tmp</code></pre>
 <h3><code>Graphviz</code>，這是用來繪製結果需要用到的套件。</h3>
-
-<pre><code class="bash">sudo apt-get install graphviz
-</code></pre>
-
+<pre><code class="language-bash">sudo apt-get install graphviz</code></pre>
 <h3>使用</h3>
-
 <p>重新啟動<code>Web Service</code>，然後將的程式碼加入需要測試的檔案中，並執行程式。</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 xhprof_enable();
 
 // 待測程式碼
@@ -141,19 +115,12 @@ echo sprintf(
     '&lt;a href="xhprof_html/index.php?run=%s&amp;source=%s"&gt;summary&lt;/a&gt;',
     $xhprof_runs-&gt;save_run($xhprof_data, $xhprof_name),
     $xhprof_name
-);
-</code></pre>
-
+);</code></pre>
 <h2>輸出結果</h2>
-
 <h3>Summary</h3>
-
 <p><img src="/images/install-xhprof-on-ubuntu-12-04/001.jpg"></p>
-
 <h3>Callgraph</h3>
-
-<p><img src="/images/install-xhprof-on-ubuntu-12-04/002.jpg"></p>
-</div>
+<p><img src="/images/install-xhprof-on-ubuntu-12-04/002.jpg"></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

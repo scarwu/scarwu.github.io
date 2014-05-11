@@ -73,45 +73,29 @@
             </div>
         </div>
         <div class="content"><h2>不解</h2>
-
 <p>不知道為什麼，只要碰到顯示卡驅動程式的安裝，我就很容易讓我的機器爆炸，這一定有問題，所以還是趕快把這次成功安裝的過程記錄下來，避免之後又爆了。</p>
-
 <p>安裝驅動有這麼難嗎？很難，因為每次都爆炸XD</p>
-
 <p>平常我也不想去更新的我的顯示卡驅動，但是<code>Chrome</code>告訴我<code>ATI/AMD cards with older or third-party drivers</code>，我只是想開啟<code>WebGL</code>而已，為了能夠用<code>WebGL</code>還是更新吧。</p>
 
-<!--more-->
-
 <h2>安裝套件</h2>
-
 <pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y
 sudo apt-get install cdbs dh-make dkms execstack dh-modaliases linux-headers-generic libqtgui4
 
 # for x86_64 (64bit)
-sudo apt-get install lib32gcc1
-</code></pre>
-
+sudo apt-get install lib32gcc1</code></pre>
 <h2>下載 AMD Catalyst</h2>
-
 <pre><code>mkdir amd-catalyst &amp;&amp; cd amd-catalyst
 wget --referer='http://support.amd.com/en-us/download/desktop?os=Linux+x86' http://www2.ati.com/drivers/linux/amd-catalyst-13.12-linux-x86.x86_64.zip
 unzip amd-catalyst-13.12-linux-x86.x86_64.zip
-chmod +x amd-catalyst-13.12-linux-x86.x86_64.run
-</code></pre>
-
+chmod +x amd-catalyst-13.12-linux-x86.x86_64.run</code></pre>
 <h2>編譯套件</h2>
-
 <h3>Patch kcl_acpi.c</h3>
-
 <pre><code>./amd-catalyst-13.12-linux-x86.x86_64.run --extract catalyst
 
 cd catalyst
-vim common/lib/modules/fglrx/build_mod/kcl_acpi.c
-</code></pre>
-
+vim common/lib/modules/fglrx/build_mod/kcl_acpi.c</code></pre>
 <p>把<code>kcl_acpi.c</code>第990行以後的</p>
-
-<pre><code class="c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
+<pre><code class="language-c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
     if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;hdr, &amp;tbl_size)))
 #else
     tbl_size = 0x7fffffff;
@@ -122,12 +106,9 @@ vim common/lib/modules/fglrx/build_mod/kcl_acpi.c
     }    
     ((acpi_table_handler)handler)(hdr);
     return KCL_ACPI_OK;
-}
-</code></pre>
-
+}</code></pre>
 <p>換成這個</p>
-
-<pre><code class="c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
+<pre><code class="language-c">#if LINUX_VERSION_CODE &gt;= KERNEL_VERSION(3,6,3)    
     if (!ACPI_SUCCESS(acpi_get_table_with_size(id, 0, &amp;hdr, &amp;tbl_size)))
 #else
     tbl_size = 0x7fffffff;
@@ -142,72 +123,42 @@ vim common/lib/modules/fglrx/build_mod/kcl_acpi.c
     ((acpi_table_handler)handler)(hdr);
 #endif
     return KCL_ACPI_OK;
-}
-</code></pre>
-
+}</code></pre>
 <h3>開始編譯</h3>
-
-<pre><code>sudo ./ati-installer.sh 13.251 --buildpkg Ubuntu/saucy
-</code></pre>
-
+<pre><code>sudo ./ati-installer.sh 13.251 --buildpkg Ubuntu/saucy</code></pre>
 <h3>安裝 .deb 檔</h3>
-
 <pre><code>cd ..
-sudo dpkg -i fglrx*.deb
-</code></pre>
-
+sudo dpkg -i fglrx*.deb</code></pre>
 <h2>設定環境</h2>
-
 <h3>產生新的 xorg.conf</h3>
-
-<pre><code>sudo amdconfig --initial -f
-</code></pre>
-
+<pre><code>sudo amdconfig --initial -f</code></pre>
 <h3>選擇系統驅動程式</h3>
-
 <pre><code># choice /usr/lib/fglrx/ld.so.conf
 sudo update-alternatives --config x86_64-linux-gnu_gl_conf
-sudo ldconfig
-</code></pre>
-
+sudo ldconfig</code></pre>
 <p>接下來就開心重新開機吧！</p>
-
-<pre><code>sudo reboot
-</code></pre>
-
+<pre><code>sudo reboot</code></pre>
 <p>確認是否安裝成功可以用下面的指令做檢查</p>
-
 <pre><code>fglrxinfo
-fgl_glxgears
-</code></pre>
-
+fgl_glxgears</code></pre>
 <h3>更新失敗</h3>
-
 <p>人生中難免會有風險，如果你重新開機後，發現螢幕上有國防布的話，那只好用以下方式修復</p>
-
 <pre><code>sudo cp /etx/X11/xorg.conf.original /etc/X11/xorg.conf
 
 # choice /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf
 sudo update-alternatives --config x86_64-linux-gnu_gl_conf
 sudo ldconfig
 
-sudo reboot
-</code></pre>
-
+sudo reboot</code></pre>
 <h2>最後</h2>
-
 <p>更新驅動就花了我兩個早上，終於更新成功了，但是<code>Chrome</code>的<code>WebGL</code>還是不給開...</p>
-
 <p>這一定有誤會。</p>
-
 <h3>Reference</h3>
-
 <ul>
 <li><a href="http://support.amd.com/en-us/download" target="_blank">Download Driver - AMD Graphics Drivers and Software</a></li>
 <li><a href="http://wiki.cchtml.com/index.php/Ubuntu_Saucy_Installation_Guide" target="_blank">Unoffical AMD Linux Community - Ubuntu Saucy Installation Guide</a></li>
 <li><a href="https://gist.github.com/moldcraft/8116528" target="_blank">Install AMD Catalyst 13.12 Driver with patch on Ubuntu 13.10</a></li>
-</ul>
-</div>
+</ul></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

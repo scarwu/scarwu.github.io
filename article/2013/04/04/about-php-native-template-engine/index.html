@@ -67,24 +67,16 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>想寫一個簡單的網頁程式，但現在市面上PHP的樣板引擎百百種，那該選什麼樣的樣板引擎來搭配好呢？...等等先不說這個，你有聽說過PHP本身也是樣板引擎嗎？沒錯它是。</p>
-
 <p>在這之前我們先看看Wikipedia是怎麼解釋樣板引擎：</p>
-
 <blockquote>
-  <p>"A (web) template engine is software that is designed to process web templates and content information to produce output web documents. It runs in the context of a template system."</p>
+<p>"A (web) template engine is software that is designed to process web templates and content information to produce output web documents. It runs in the context of a template system."</p>
 </blockquote>
-
 <p>它說明了樣板引擎的功能是將內容資訊與網頁樣板結合，然後產生出網頁文件的這一個行為。將網頁的內容與網頁樣板切開，這個不用幾行程式碼PHP就可以做到。</p>
 
-<!--more-->
-
 <h2>替換語法</h2>
-
 <p>不用其他樣板引擎那樣炫目的結構語法，PHP就有內建控制結構的替換語法，PHP官方手冊這邊就有寫了 <a href="http://php.net/manual/en/control-structures.alternative-syntax.php">Alternative syntax for control structures</a> ，PHP內建的替換語法包含if, while, for, foreach以及switch這些耳熟能詳的語法，我們可以這樣去使用它：</p>
-
-<pre><code class="php">&lt;?php if($scores &gt;= 60): ?&gt;
+<pre><code class="language-php">&lt;?php if($scores &gt;= 60): ?&gt;
 &lt;span&gt;Congratulation!&lt;/span&gt;
 &lt;?php endif; ?&gt;
 
@@ -92,21 +84,13 @@
     &lt;?php foreach($list as $name): ?&gt;
     &lt;li&gt;&lt;?=$name?&gt;&lt;/li&gt;
     &lt;?php endforeach; ?&gt;
-&lt;/ol&gt;
-</code></pre>
-
+&lt;/ol&gt;</code></pre>
 <p>上面示範了<code>if():</code>以及<code>foreach():</code>的語法，它基本使用上就跟我們在PHP中的寫法差不多，每個語法都必須在<code>&lt;?php ?&gt;</code>的標籤中，不過稍有不同的是語法後面都要加上<code>:</code>以及在區塊的最後加上<code>&lt;?php endxxx; ?&gt;</code>結束語法來作結尾。然而變數的輸出可以使用一般的<code>&lt;?php echo $variable; ?&gt;</code>，也可以使用在PHP中稱為<code>Short Tag</code>的特殊標籤<code>&lt;?=$variable?&gt;</code>，如果你的<code>PHP</code>是<code>PHP 5.4</code>之前的版本，請修改<code>php.ini</code>將<code>Short Tag</code>的支援打開。</p>
-
-<pre><code class="ini">short_open_tag = On
-</code></pre>
-
+<pre><code class="language-ini">short_open_tag = On</code></pre>
 <p>在這邊我們要注意的是，PHP只做邏輯判斷並且印出事先就處理好的變數內容，並且盡量少用PHP印出HTML的標籤，這樣做的話會讓樣板更乾淨。</p>
-
 <h2>資料處理與讀取樣板</h2>
-
 <p>讓資料與樣板切割最快也最徹底的方式就是分檔，但是分檔完之後還是要將樣板與資料做結合，所以動手做一個render來將樣板跟資料做結合吧！</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 function render($template, $data) {
     ob_start();
     include $template;
@@ -114,18 +98,12 @@ function render($template, $data) {
     ob_end_clean();
 
     return $result;
-}
-</code></pre>
-
+}</code></pre>
 <p>這個<code>render</code>函式是利用output buffer來取得資料與樣板結合後的HTML文件，並且將HTML回傳。</p>
-
 <h2>使用範例</h2>
-
 <p>我們這邊假設寫一個呈現學生清單的網頁，並且分為兩個網頁一個是處理資料<code>student_info.php</code>還有它所讀取的網頁樣板<code>list_template.php</code>。</p>
-
 <h4>student_info.php</h4>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 // query database
 
 $info = array(
@@ -135,12 +113,9 @@ $info = array(
 );
 
 $html = render('list_template.php', $info);
-echo $html;
-</code></pre>
-
+echo $html;</code></pre>
 <h4>list_template.php</h4>
-
-<pre><code class="php">&lt;html&gt;
+<pre><code class="language-php">&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Student List&lt;/title&gt;
     &lt;/head&gt;
@@ -156,12 +131,9 @@ echo $html;
             &lt;?php endforeach; ?&gt;
         &lt;/table&gt;
     &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
+&lt;/html&gt;</code></pre>
 <h3>輸出結果</h3>
-
-<pre><code class="html">&lt;html&gt;
+<pre><code class="language-html">&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Student List&lt;/title&gt;
     &lt;/head&gt;
@@ -184,19 +156,12 @@ echo $html;
 
         &lt;/table&gt;
     &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
+&lt;/html&gt;</code></pre>
 <p><del>就這樣沒了。</del></p>
-
 <h2>不負責結論</h2>
-
 <p>當然現成的樣板引擎當然有它的好處，但如果你想要附屬的好用功能當然還是可以用，比較起那些炫目簡短的語法，但我還是會選擇原生的語法(雖然醜了點)，廣告台詞說了這麼一句：<code>天然ㄟ尚好</code>，畢竟人家都已經做好放在那邊而且速度又比較快，也沒有什麼理由不用，如果要簡單的附加功能大不了自己寫也是可以的。</p>
-
 <p><strong>我還是強調一下，要不要用樣板引擎，這全憑個人選擇。</strong></p>
-
-<p><strong>Update: 2014/05/08</strong></p>
-</div>
+<p><strong>Update: 2014/05/08</strong></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

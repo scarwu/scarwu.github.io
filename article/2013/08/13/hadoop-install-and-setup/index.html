@@ -76,54 +76,32 @@
             </div>
         </div>
         <div class="content"><h2>前言</h2>
-
 <p>Hadoop這套工具主要用做於平行運算，它其中包含兩個部份<code>MapReduce</code>以及<code>HDFS</code>。</p>
-
 <p><code>MapReduce</code>的部份主要是用做於平行運算、而<code>HDFS</code>則是一套分散分散式檔案系統，用來儲存於平行運算時所需的大量資料。</p>
-
 <p>由於某些原因必須使用到<code>Hadoop</code>中的<code>HDFS</code>來測試一些項目所以這邊就粗略紀錄一下<code>Hadoop</code>的安裝過程。</p>
 
-<!--more-->
-
 <h2>JDK安裝</h2>
-
 <p>由於Hadoop本身是使用<code>Java</code>來實作，所以在執行Hadoop之前我們必須先行安裝<code>Java Development Kit(JDK)</code>。</p>
-
 <h3>下載JDK</h3>
-
 <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK Download</a></p>
-
 <p>根據你所使用的作業系統去選擇版本，在這邊我是用的是<code>Ubuntu Linux 64bit</code>的版本。</p>
-
 <p>將JDK下載下來後，將JDK解壓縮到你想放置的位置，一般來說都會放在<code>/opt</code>目錄底下。</p>
-
-<pre><code class="bash">tar zxvf jdk-7u25-linux-x64.tar.gz
-sudo mv jdk-7u25-linux-x64 /opt/jdk
-</code></pre>
-
+<pre><code class="language-bash">tar zxvf jdk-7u25-linux-x64.tar.gz
+sudo mv jdk-7u25-linux-x64 /opt/jdk</code></pre>
 <h3>修改環境變數</h3>
-
-<pre><code class="bash"># 修改
+<pre><code class="language-bash"># 修改
 sudo vim /etc/environment
 
 # 填入以下內容
 PATH=$PATH:"/opt/jdk/bin"
 CLASS_PATH="/opt/jdk/lib"
-JAVA_HOME="/opt/jdk"
-</code></pre>
-
+JAVA_HOME="/opt/jdk"</code></pre>
 <p>只要上面的指令能顯示出正確版號，就已經完成JDK的設定了。</p>
-
 <h2>Hadoop安裝與設定</h2>
-
 <p>在實際的環境中我使用到了3台虛擬機器當作節點，所以以下是多節點的設定。</p>
-
 <h3>下載Hadoop</h3>
-
 <p><a href="http://www.apache.org/dyn/closer.cgi/hadoop/common/">Hadoop Download</a></p>
-
 <p>Hadoop目前分為幾個版次，如下：</p>
-
 <ul>
 <li>1.1.X - current stable version, 1.1 release</li>
 <li>1.2.X - current beta version, 1.2 release</li>
@@ -133,51 +111,30 @@ JAVA_HOME="/opt/jdk"
 <li>0.20.203.X - old legacy stable version</li>
 <li>0.20.X - old legacy version</li>
 </ul>
-
 <p>一般來說我們選擇<code>Stable Version</code>就可以了，Hadoop下載完成後一樣可以解壓縮放置在<code>/opt</code>下。</p>
-
-<pre><code class="bash">tar zxvf hadoop-1.1.2.tar.gz
-sudo mv hadoop-1.1.2 /opt/hadoop
-</code></pre>
-
+<pre><code class="language-bash">tar zxvf hadoop-1.1.2.tar.gz
+sudo mv hadoop-1.1.2 /opt/hadoop</code></pre>
 <h3>修改環境變數</h3>
-
-<pre><code class="bash"># 修改
+<pre><code class="language-bash"># 修改
 sudo vim /etc/environment
 
 # 填入以下內容
 PATH=$PATH:"/opt/hadoop/bin"
-HADOOP_HOME="/opt/hadoop"
-</code></pre>
-
+HADOOP_HOME="/opt/hadoop"</code></pre>
 <h3>修改Hadoop設定檔</h3>
-
 <h4>/opt/hadoop/conf/hadoop-env.sh</h4>
-
 <p>設定Hadoop的啟動環境，在檔案中修改這一行加入<code>JAVA_HOME</code>的路徑。</p>
-
-<pre><code class="bash">export JAVA_HOME=/opt/jdk
-</code></pre>
-
+<pre><code class="language-bash">export JAVA_HOME=/opt/jdk</code></pre>
 <p>如果執行後會出現<code>$HADOOP_HOME is deprecated</code>可以加入下面這一行。</p>
-
-<pre><code class="bash">export HADOOP_HOME_WARN_SUPPRESS="TRUE"
-</code></pre>
-
+<pre><code class="language-bash">export HADOOP_HOME_WARN_SUPPRESS="TRUE"</code></pre>
 <h4>/etc/hosts</h4>
-
 <p>設定<code>Host Name</code>與<code>IP</code>的對應，另外SSH的<code>Authorized Keys</code>就自行設定吧。</p>
-
-<pre><code class="bash">192.168.1.1 node01
+<pre><code class="language-bash">192.168.1.1 node01
 192.168.1.2 node02
-192.168.1.3 node03
-</code></pre>
-
+192.168.1.3 node03</code></pre>
 <h4>/opt/hadoop/conf/core-site.xml</h4>
-
 <p>設定HDFS的<code>Name Node</code>設定給node01以及Hadoop的暫存路徑。</p>
-
-<pre><code class="xml">&lt;configuration&gt;
+<pre><code class="language-xml">&lt;configuration&gt;
   &lt;property&gt;
     &lt;name&gt;fs.default.name&lt;/name&gt;
     &lt;value&gt;hdfs://node01:9000&lt;/value&gt;
@@ -187,69 +144,39 @@ HADOOP_HOME="/opt/hadoop"
     &lt;value&gt;/tmp/hadoop/hadoop-${user.name}&lt;/value&gt;
     &lt;description&gt;A base for other temporary directories.&lt;/description&gt;
   &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
-
+&lt;/configuration&gt;</code></pre>
 <h4>/opt/hadoop/conf/hdfs-site.xml</h4>
-
 <p>設定<code>HDFS</code>的檔案複製數量。</p>
-
-<pre><code class="xml">&lt;configuration&gt;
+<pre><code class="language-xml">&lt;configuration&gt;
   &lt;property&gt;
     &lt;name&gt;dfs.replication&lt;/name&gt;
     &lt;value&gt;3&lt;/value&gt;
   &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
-
+&lt;/configuration&gt;</code></pre>
 <h4>/opt/hadoop/conf/mapred-site.xml</h4>
-
 <p>指定Job Tracker的位置，設定<code>node01</code>當作master。</p>
-
-<pre><code class="xml">&lt;configuration&gt;
+<pre><code class="language-xml">&lt;configuration&gt;
   &lt;property&gt;
     &lt;name&gt;mapred.job.tracker&lt;/name&gt;
     &lt;value&gt;node01:9001&lt;/value&gt;
   &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
-
+&lt;/configuration&gt;</code></pre>
 <h4>master</h4>
-
-<pre><code class="txt">node01
-</code></pre>
-
+<pre><code class="language-txt">node01</code></pre>
 <h4>slave</h4>
-
-<pre><code class="txt">node02
-node03
-</code></pre>
-
+<pre><code class="language-txt">node02
+node03</code></pre>
 <h3>啟動</h3>
-
 <p>當上面的設定都結束之後，就可以用<code>rsync</code>將<code>/opt/hadoop</code>的檔案同步到各個節點上了。</p>
-
 <p>接著可以使用以下指令檢查Hadoop的版本。</p>
-
-<pre><code class="bash">hadoop version
-</code></pre>
-
+<pre><code class="language-bash">hadoop version</code></pre>
 <p>在第一次啟動Hadoop之前必須先格式化HDFS。</p>
-
-<pre><code class="bash">hadoop namenode -format
-</code></pre>
-
+<pre><code class="language-bash">hadoop namenode -format</code></pre>
 <p>接著啟動Hadoop。</p>
-
-<pre><code class="bash">start-all.sh
-</code></pre>
-
+<pre><code class="language-bash">start-all.sh</code></pre>
 <h2>打完收工</h2>
-
 <p>在這篇就單純紀錄安裝Hadoop的一些過程，但實際上我使用到的部份就只有HDFS，MapReduce的話目前沒有能夠拿來算的數據。</p>
-
-<p>另外最近有點忙網誌已經很久沒動了，而且最近光打這篇紀錄就拖了半個月以上。</p>
-</div>
+<p>另外最近有點忙網誌已經很久沒動了，而且最近光打這篇紀錄就拖了半個月以上。</p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

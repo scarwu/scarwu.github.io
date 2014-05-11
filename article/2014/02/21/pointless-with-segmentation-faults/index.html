@@ -70,41 +70,23 @@
             </div>
         </div>
         <div class="content"><h2>怪事</h2>
-
 <p>在開發<code>Pointless</code>到現在的兩年期間內，初期其實都還算順利，直到最近幾個月遇到了兩次<code>Segmentation Fault</code>，終於我遇的不是<code>PHP</code>的<code>Syntax Error</code>，而是<code>PHP</code>的<code>Bugs</code>或是其中函式庫的問題。</p>
-
 <p>寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在<code>OS X</code>上用<code>PHPBrew</code>編出的<code>PHP</code>，另一次就是最近在<code>Ubuntu 13.10</code>及<code>Ubuntu 12.04 LTS</code>上還是用<code>PHPBrew</code>所編出的<code>PHP</code>。</p>
-
 <p>題外話，話說<code>PHPBrew</code>超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。</p>
 
-<!--more-->
-
 <h2>在OS X的那次</h2>
-
 <p>我先後在不同的兩台<code>Mac Air</code>測試過都會發生錯誤，在文章數量小的情況下不會有問題，但是文章只要一多就會發生錯誤。</p>
-
 <p>而出錯的地方就是用來將資料及樣板結合的<code>bindData()</code>其中只有<code>include</code>以及<code>Output Buffer</code>等函式，但我檢查不出是<code>PHP VM</code>編譯時的哪支有問題所以作罷。</p>
-
 <p>還因為這樣，當時還有人評論說這個部落格只要文章超過140字元就會爆炸。但這不是我的錯，這一定有誤會。</p>
-
 <h2>在Ubuntu的這次</h2>
-
 <p>最近，其實就是上禮拜，我再忙著把<code>Pointless</code>升級成支援<code>PHP 5.4</code>所以將系統中<code>PHP 5.4.12</code>升級到<code>PHP 5.4.25</code>以及<code>PHP 5.5.5</code>升級到<code>PHP 5.5.9</code>。</p>
-
 <p>但是<code>PHP</code>在<code>./configure</code>的時候會出現<code>configure: error: Could not find libpcre.(a|so) in /usr</code>而失敗，把出現問題的檔案補上後，可以正常編譯了。</p>
-
 <p>當我正開心要作測試的時候，他就爆了。這次的問題出現在剛剛的<code>PCRE Library</code>上，只要我在程式中使用<code>preg_match()</code>然後所輸入的字串太長就會爆炸。</p>
-
 <p>所以我就重新編譯了新的<code>PCRE Library</code>，想當然爾<code>./configure</code>還是找不到檔案，手動補上檔案後在同樣的地方還是爆了...。最後我在另外一台機器上編譯同樣的檔案，使用同樣的<code>./configure</code>設定結果還是一樣。</p>
-
 <h1>結論</h1>
-
 <p><code>Mac OS X</code>系統預設的函式庫跟我正常使用的<code>Ubuntu</code>一定有哪邊不一樣。</p>
-
 <p><code>Ubuntu</code>幾個月前的所使用的函式庫跟現在跟更新後的<code>Ubuntu</code>的函式庫一定有哪邊不一樣。</p>
-
-<p>到底哪裡不一樣？我還要再查查。</p>
-</div>
+<p>到底哪裡不一樣？我還要再查查。</p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

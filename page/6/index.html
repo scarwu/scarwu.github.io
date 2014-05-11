@@ -72,14 +72,9 @@
                 </div>
             </div>
         </div>
-        <div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)。
-但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
-
+        <div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)，但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
 <h3>Error Code</h3>
-
-<pre><code class="bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx
-</code></pre>
-
+<pre><code class="language-bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx</code></pre>
 </div>
         <a class="more" href="/article/2012/09/12/sqlite3-multi-thread-in-python/">More</a>
     </article>
@@ -115,27 +110,16 @@
             </div>
         </div>
         <div class="content"><p>最近有想要分析自己程式碼的衝動，就想起了<code>Facebook</code>所撰寫的<code>Xhprof</code>，因為在安裝途中有點小問題，所以就紀錄一下完整的安裝過程。</p>
-
 <h2>安裝</h2>
-
 <h3>編譯環境</h3>
-
-<pre><code class="bash">sudo apt-get build-dep php5
-sudo apt-get install php5-dev
-</code></pre>
-
+<pre><code class="language-bash">sudo apt-get build-dep php5
+sudo apt-get install php5-dev</code></pre>
 <h3>Xhprof</h3>
-
-<pre><code class="bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+<pre><code class="language-bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
 tar -zxvf xhprof-0.9.2.tgz
-cd xhprof-0.9.2
-</code></pre>
-
+cd xhprof-0.9.2</code></pre>
 <p><br>複製<code>xhprof</code>所需要用到的程式到你的 web 根目錄。</p>
-
-<pre><code class="bash">cp -a xhprof_html xhprof_lib /path/to/htdocs
-</code></pre>
-
+<pre><code class="language-bash">cp -a xhprof_html xhprof_lib /path/to/htdocs</code></pre>
 </div>
         <a class="more" href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/">More</a>
     </article>
@@ -168,20 +152,15 @@ cd xhprof-0.9.2
             </div>
         </div>
         <div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
-
-<pre><code class="php">&lt;?php
+<pre><code class="language-php">&lt;?php
 // do something...
 
 $put_data = file_get_contents('php://input');
 
-// handle put data...
-</code></pre>
-
+// handle put data...</code></pre>
 <p><br>
 簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
-
 <p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
-
 </div>
         <a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload/">More</a>
     </article>
@@ -223,14 +202,10 @@ $put_data = file_get_contents('php://input');
             </div>
         </div>
         <div class="content"><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
-
 <p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<del>放心本人為人正直不會亂放病毒。</del></p>
-
 <p>下面就附上Source Code，然後Extension本身是用Javascript寫得，<del>Oguma水美媒</del>就這麼簡單。</p>
-
 <h4><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h4>
-
-<pre><code class="javascript">// ==UserScript==
+<pre><code class="language-javascript">// ==UserScript==
 // @name           Facebook Ads Blocker
 // @version        0.2.2
 // @author         Scar Wu
@@ -268,9 +243,7 @@ function hideAds() {
             fbTimelineSideAds[index].innerHTML = null;
         }
     }
-}
-</code></pre>
-</div>
+}</code></pre></div>
         <a class="more" href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/">More</a>
     </article>
         <article class="post_block">
@@ -308,18 +281,14 @@ function hideAds() {
             </div>
         </div>
         <div class="content"><p>關於此<a href="/Diablo3Calculator/">計算機</a>主要是用來計算暗黑破壞神3中裝備所提供的DPS效益。</p>
-
 <p><del>因為我也是Diablo的忠實玩家，所以寫出這個計算機是很合理的。</del></p>
-
 <h2>主要功能</h2>
-
 <ul>
 <li>提供裝備的交叉比較，基於現階段拍賣場無法顯示裝備所帶來的增益</li>
 <li>提供5組裝備設定檔，並可以自由匯入匯出</li>
 <li>5組設定檔間也可以互相比較</li>
 <li>可獨立顯示各裝備所帶來的DPS增益 (與該部位的白裝做比較)</li>
 </ul>
-
 </div>
         <a class="more" href="/article/2012/07/18/diablo-3-calculator-readme/">More</a>
     </article>
