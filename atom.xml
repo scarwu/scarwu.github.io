@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-05-11T02:59:26+08:00</updated>
+	<updated>2014-05-11T20:03:21+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -236,7 +236,7 @@
 		<updated>2014-02-23T15:22:14+08:00</updated>
 		<summary type="html"><![CDATA[<h2>接續</h2>
 
-<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合<del>。</p>
+<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
 
 <p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
 

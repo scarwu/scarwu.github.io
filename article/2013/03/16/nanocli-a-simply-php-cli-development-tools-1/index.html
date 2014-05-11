@@ -55,12 +55,12 @@
                 <span><a href="/tag/PHP/">PHP</a></span>
                 <br>
                             </div>
-                        <div id="disqus_comments">
+                        <div class="disqus_comments">
                 <span class="fa fa-comment"></span>
                 <a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
-            <div id="social_tool">
+            <div class="social_tool">
                 <div class="twitter">
                     <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/" data-text="NanoCLI - PHP CLI開發工具 (1) | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
@@ -336,13 +336,13 @@ class Test extends NanoCLI\Command {
                 var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
         asyncLoad(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
                         var disqus_shortname = 'scarshow';
-        if (document.getElementById('disqus_comments')) {
+        if (document.getElementsByTagName('disqus_comments')) {
             asyncLoad('http://' + disqus_shortname + '.disqus.com/count.js');
         }
         if (document.getElementById('disqus_thread')) {
             asyncLoad('http://' + disqus_shortname + '.disqus.com/embed.js');
         }
-                if (document.getElementById('social_tool')) {
+                if (document.getElementsByTagName('social_tool')) {
             asyncLoad('https://apis.google.com/js/plusone.js');
             asyncLoad('//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1403512429930397&version=v2.0');
             asyncLoad(('https:' == location.protocol ? 'https' : 'http') + '://platform.twitter.com/widgets.js');

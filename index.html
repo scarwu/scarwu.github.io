@@ -58,12 +58,12 @@
                 <span><a href="/tag/RequireJS/">RequireJS</a></span>
                 <br>
                             </div>
-                        <div id="disqus_comments">
+                        <div class="disqus_comments">
                 <span class="fa fa-comment"></span>
                 <a href="/article/2014/05/09/html-javascript-load-problem/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
-            <div id="social_tool">
+            <div class="social_tool">
                 <div class="twitter">
                     <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2014/05/09/html-javascript-load-problem/" data-text="HTML中JavaScript的載入問題 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
@@ -101,12 +101,12 @@
                 <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
                 <br>
                             </div>
-                        <div id="disqus_comments">
+                        <div class="disqus_comments">
                 <span class="fa fa-comment"></span>
                 <a href="/article/2014/04/22/fix-ubuntu-14-04-lts-zh-font-selector/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
-            <div id="social_tool">
+            <div class="social_tool">
                 <div class="twitter">
                     <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2014/04/22/fix-ubuntu-14-04-lts-zh-font-selector/" data-text="Ubuntu 14.04 LTS 中文修正 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
@@ -154,12 +154,12 @@
                 <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
                 <br>
                             </div>
-                        <div id="disqus_comments">
+                        <div class="disqus_comments">
                 <span class="fa fa-comment"></span>
                 <a href="/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
-            <div id="social_tool">
+            <div class="social_tool">
                 <div class="twitter">
                     <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/" data-text="Ubuntu內建PCRE Library所造成的PHP Segmentation Fault | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
@@ -173,7 +173,7 @@
         </div>
         <div class="content"><h2>接續</h2>
 
-<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合<del>。</p>
+<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
 
 <p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
 
@@ -196,12 +196,12 @@
                 <span><a href="/tag/Pointless/">Pointless</a></span>
                 <br>
                             </div>
-                        <div id="disqus_comments">
+                        <div class="disqus_comments">
                 <span class="fa fa-comment"></span>
                 <a href="/article/2014/02/21/pointless-with-segmentation-faults/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
-            <div id="social_tool">
+            <div class="social_tool">
                 <div class="twitter">
                     <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2014/02/21/pointless-with-segmentation-faults/" data-text="Pointless所遭遇到的Segmentation Faults | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
@@ -241,12 +241,12 @@
                 <span><a href="/tag/WebGL/">WebGL</a></span>
                 <br>
                             </div>
-                        <div id="disqus_comments">
+                        <div class="disqus_comments">
                 <span class="fa fa-comment"></span>
                 <a href="/article/2014/01/19/chrome-enable-hardware-graphics/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
-            <div id="social_tool">
+            <div class="social_tool">
                 <div class="twitter">
                     <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics/" data-text="Chrome - Enable Hardware Graphics | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
@@ -406,13 +406,13 @@
                 var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
         asyncLoad(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
                         var disqus_shortname = 'scarshow';
-        if (document.getElementById('disqus_comments')) {
+        if (document.getElementsByTagName('disqus_comments')) {
             asyncLoad('http://' + disqus_shortname + '.disqus.com/count.js');
         }
         if (document.getElementById('disqus_thread')) {
             asyncLoad('http://' + disqus_shortname + '.disqus.com/embed.js');
         }
-                if (document.getElementById('social_tool')) {
+                if (document.getElementsByTagName('social_tool')) {
             asyncLoad('https://apis.google.com/js/plusone.js');
             asyncLoad('//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1403512429930397&version=v2.0');
             asyncLoad(('https:' == location.protocol ? 'https' : 'http') + '://platform.twitter.com/widgets.js');
