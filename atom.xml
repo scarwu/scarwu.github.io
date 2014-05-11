@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-05-12T00:43:20+08:00</updated>
+	<updated>2014-05-12T00:49:36+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -16,7 +16,7 @@
 		<id>urn:uuid:6403076a-b8ec-f834-6768-80ba3eab263e</id>
 		<updated>2014-05-09T00:09:14+08:00</updated>
 		<summary type="html"><![CDATA[<h2>前言</h2>
-<p>一般在瀏覽器中對於<code>HTML</code>的解析順序是由上而下的，所以在傳統的網頁設計中我們一般都會將<code>&lt;scritp&gt;</code>標籤放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這樣能確保<code>JavaScript</code>盡早被執行到。</p>
+<p>一般在瀏覽器中對於<code>HTML</code>的解析順序是由上而下的，所以在傳統的網頁設計中我們一般都會將<code>&lt;script&gt;</code>標籤放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這樣能確保<code>JavaScript</code>盡早被執行到。</p>
 <p>但是隨著近年來網頁不再只是網頁，而漸漸成為了<code>Web Application</code>，因為如此所以使用到的<code>JavaScript</code>就變得越來越大，這時候<code>JavaScript</code>的載入就是個問題。</p>
 
 <h2>阻塞 (Blocking)</h2>
