@@ -79,7 +79,7 @@
 <p>refrence: <a href="https://github.com/facebook/hiphop-php/wiki/Building-and-Installing-on-Ubuntu-11.10">Building and Installing on Ubuntu 11.10</a></p>
 <h2>先將系統的編譯環境用apt安裝好</h2>
 <pre><code class="language-bash">sudo apt-get install git-core cmake g++ libboost-dev libmysqlclient-dev libxml2-dev libmcrypt-dev libicu-dev openssl build-essential binutils-dev libcap-dev libgd2-xpm-dev zlib1g-dev libtbb-dev libonig-dev libpcre3-dev autoconf libtool libcurl4-openssl-dev libboost-system-dev libboost-program-options-dev libboost-filesystem-dev wget memcached libreadline-dev libncurses-dev libmemcached-dev libbz2-dev libc-client2007e-dev php5-mcrypt php5-imagick libgoogle-perftools-dev libcloog-ppl0</code></pre>
-
+<!--more-->
 <h2>接著從GitHub將hiphop-php clone下來</h2>
 <pre><code class="language-bash">mkdir dev
 cd dev
@@ -109,12 +109,8 @@ patch -p1 &lt; libcurl.fb-changes.diff
 ./configure --prefix=$CMAKE_PREFIX_PATH</code></pre>
 <p>將以下兩的檔案用連結中的檔案置換掉</p>
 <ul>
-    <li>
-        <a href="https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c">curl-7.21.2/lib/ssluse.c</a>
-    </li>
-    <li>
-        <a href="https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp">hiphop-php/src/runtime/ext/extension.cpp</a>
-    </li>
+<li><a href="https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c">21.2/lib/ssluse.c</a></li>
+<li><a href="https://raw.github.com/h4ck3rm1k3/hiphop-php/0628599b4b03dff6b33bc2ea31de09f236ea6452/src/runtime/ext/extension.cpp">hiphop-php/src/runtime/ext/extension.cpp</a></li>
 </ul>
 <pre><code class="language-bash">rm "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c
 wget https://raw.github.com/bagder/curl/26b487a5d6ed9da5bc8e4a134a88d3125884b852/lib/ssluse.c -O "$CMAKE_PREFIX_PATH"/curl-7.21.2/lib/ssluse.c

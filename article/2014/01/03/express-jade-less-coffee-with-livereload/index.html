@@ -75,35 +75,37 @@
         <div class="content"><h2>廢話</h2>
 <p>2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！</p>
 <p>平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用<code>Express</code>來搭配其它東西來開發網站。這邊用到的套件有<code>Jade</code>、<code>LESS</code>、<code>CoffeeScript</code>以及<code>LiveReload</code>。</p>
-
-<h3><a href="http://expressjs.com/" target="_blank">Express</a></h3>
+<!--more-->
+<h3><a href="http://expressjs.com/">Express</a></h3>
 <blockquote>
 <p>"web applicaion framework for node"</p>
 </blockquote>
 <p>可用於建立網站應用程式。是一套流行的<code>NodeJS</code>套件。</p>
-<h3><a href="http://jade-lang.com/" target="_blank">Jade</a></h3>
+<h3><a href="http://jade-lang.com/">Jade</a></h3>
 <blockquote>
 <p>"Node Template Engine"</p>
 </blockquote>
 <p>擁有自己一套簡潔語法以及新的特性，用來產生HTML格式。</p>
-<h3><a href="http://lesscss.org/" target="_blank">LESS</a></h3>
+<h3><a href="http://lesscss.org/">LESS</a></h3>
 <blockquote>
 <p>"The dynamic stylesheet language"</p>
 </blockquote>
 <p>支援<code>Variable</code>、<code>Mixin</code>、<code>Nested Rule</code>...等，並可以編譯成<code>CSS</code>供瀏覽器使用。</p>
-<h3><a href="http://coffeescript.org/" target="_blank">CoffeeScript</a></h3>
+<h3><a href="http://coffeescript.org/">CoffeeScript</a></h3>
 <blockquote>
 <p>"CoffeeScript is a little language that compiles into JavaScript"</p>
 </blockquote>
 <p>它將<code>JavaScript</code>的語法簡化，並提供一些新的特性來強化，可產生出符合規定且嚴謹的<code>JavaScript</code>程式碼。</p>
 <p>它剛出來的時候超夯的，只是我一直都沒有去使用它。</p>
-<h3><a href="http://livereload.com/" target="_blank">LiveReload</a></h3>
+<h3><a href="http://livereload.com/">LiveReload</a></h3>
 <blockquote>
 <p>"a happy land where browsers don't need a Refresh button"</p>
 </blockquote>
 <p>寫網頁最常做的事情就是不斷、不斷、不斷的Refresh頁面，它可以在檔案存檔的當下就自動幫你更新頁面，讓你可以即時看見更改後的結果。</p>
 <p>它有很多的版本，這邊用到的是<code>NodeJS</code>的版本。</p>
-<p><a href="https://github.com/napcs/node-livereload/" target="_blank">node-livereload</a></p>
+<ul>
+<li><a href="https://github.com/napcs/node-livereload/">node-livereload</a></li>
+</ul>
 <h2>產生並修改專案</h2>
 <p><code>Express</code>本身預設的樣板引擎是<code>Jade</code>，另外內建就能支援<code>LESS</code>的middleware，在指令中加入參數<code>-c less</code>就可以了。</p>
 <pre><code class="language-bash">express -c less /path/to/project
@@ -174,7 +176,7 @@ livereload.watch(__dirname + '/views');
 ...</code></pre>
 <p>最後別忘了幫瀏覽器安裝<code>LiveReload</code>的<code>extension</code>。</p>
 <ul>
-<li><a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)" target="_blank">LiveReload Extensions</a></li>
+<li><a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">LiveReload Extensions</a></li>
 </ul>
 <h2>結語</h2>
 <p>最後只要將<code>express</code>啟動，並將瀏覽器的<code>LiveReload Extension</code>連線打它就可以開始開發了。</p>

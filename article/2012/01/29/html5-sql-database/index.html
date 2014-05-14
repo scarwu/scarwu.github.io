@@ -75,7 +75,7 @@
         <div class="content"><p>HTML5提供了許多的新功能其中一項就是Local端的儲存功能，在Javascript中的函示分別為window.openDatabase及window.localStorage，window.openDatabase相較於Cookie有很大的不同，而window.localStorage比較相近於Cookie是一種key-value的儲存方式。</p>
 <p>使用window.openDatabase的方法，這是在Local端建立一個SQL資料庫</p>
 <pre><code class="language-javascript">var db = window.openDatabase(name, version, display_name, size);</code></pre>
-
+<!--more-->
 <p>接著就可以下達SQL指令，使用以下的方式</p>
 <pre><code class="language-javascript">db.transaction(query, error, success);
 var query = function(tx) {

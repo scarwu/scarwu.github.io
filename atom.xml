@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-05-12T00:49:36+08:00</updated>
+	<updated>2014-05-15T01:37:22+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -18,7 +18,7 @@
 		<summary type="html"><![CDATA[<h2>前言</h2>
 <p>一般在瀏覽器中對於<code>HTML</code>的解析順序是由上而下的，所以在傳統的網頁設計中我們一般都會將<code>&lt;script&gt;</code>標籤放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這樣能確保<code>JavaScript</code>盡早被執行到。</p>
 <p>但是隨著近年來網頁不再只是網頁，而漸漸成為了<code>Web Application</code>，因為如此所以使用到的<code>JavaScript</code>就變得越來越大，這時候<code>JavaScript</code>的載入就是個問題。</p>
-
+<!--more-->
 <h2>阻塞 (Blocking)</h2>
 <p>在傳統的瀏覽器中，每當解析到了<code>&lt;script&gt;</code>標籤時瀏覽器的繪製就會停頓下來，然後去下載並執行<code>JavaScript</code>中的內容，過多的<code>JavaScript</code>內容會造成阻塞問題，便是瀏覽器停頓一段時間等待<code>JavaScript</code>都執行完畢後，才開始繪製剩下的網頁內容。</p>
 <p>上面提到，一般會將<code>&lt;script&gt;</code>標前放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這會造成網頁在一片空白的情況下停頓許久。</p>
@@ -54,17 +54,17 @@
 <p><code>&lt;script async&gt;</code>，不停止網頁繪製，<code>JavaScript</code>的下載會同時進行，當<code>JavaScript</code>下載完成後，再停止網頁繪製並執行<code>JavaScript</code>，等待執行完成後再繼續網頁繪製。</p>
 <p>Peter Beverloo在他的網誌上有繪製一張時序圖，用來說明這兩個新的屬性與傳統的載入方式有什麼不同，可參考下方連結。</p>
 <ul>
-<li><a href="http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/" target="_blank">Asynchronous and deferred JavaScript execution explained</a></li>
+<li><a href="http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/">Asynchronous and deferred JavaScript execution explained</a></li>
 </ul>
 <h2>RequireJS</h2>
 <p><code>async</code>與<code>defer</code>屬性可以解決阻塞問題，但也引起了一個新的問題，那就是以非同步方是執行的<code>JavaScript</code>的執行順序並不是依照<code>&lt;script&gt;</code>在HTML上的順序，而是誰先下載好就先執行誰，如果你的<code>JavaScript</code>的設計在執行上有相依性的問題就有機會因為執行順序的不同而爆炸。</p>
 <p>因此<code>RequireJS</code>的出現能夠解決此問題，它可以以非同步方式載入<code>JavaScript</code>，並且也可以解決<code>JavaScript</code>檔案之前的相依性問題，並讓<code>JavaScript</code>模組化。</p>
 <p>在這並沒有要說明使用方式，可以參考網路上現有的文件，如下。</p>
 <ul>
-<li><a href="http://requirejs.org/" target="_blank">How to get started with RequireJS</a></li>
-<li><a href="http://www.jaceju.net/blog/archives/beginning-requirejs/" target="_blank">初探 RequireJS</a></li>
-<li><a href="http://ithelp.ithome.com.tw/question/10120521" target="_blank">實用 JavaScript 工具庫：RequireJS</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank">Javascript模块化编程（三）：require.js的用法</a></li>
+<li><a href="http://requirejs.org/">How to get started with RequireJS</a></li>
+<li><a href="http://www.jaceju.net/blog/archives/beginning-requirejs/">初探 RequireJS</a></li>
+<li><a href="http://ithelp.ithome.com.tw/question/10120521">實用 JavaScript 工具庫：RequireJS</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html">Javascript模块化编程（三）：require.js的用法</a></li>
 </ul>
 <h2>小結</h2>
 <p>上面提出的幾種解決方法，但是在實作時也不用全用上，依照當下的實作規模來做取捨，雖然沒有提到但是在製作<code>Mobile Web</code>時要更加注意<code>JavaScript</code>載入(以及其他多媒體檔案的載入)，因<code>3G</code>或是<code>Wifi</code>並沒有比有線網路來的快速，所以網頁讀取時的停頓感會更加的放大，這點必須注意。</p>]]></summary>
@@ -79,7 +79,7 @@
 <p>另外很不幸的，在<code>Ubuntu 14.04 LTS</code>釋出前的一個月中，我所架設的 <a href="ftp://ftp.csie.chu.edu.tw">ftp.csie.chu.edu.tw</a> 因為不可抗拒之因素導致伺服器下線，進而造成它在台灣預設來源庫名單中除名，這件事讓我非常失志。</p>
 <p>好，回到正題，我習慣使用英文界面，但是我又希望看見漂亮的中文字體。但是在這一版更新完語言套件之後你卻會得到一個預設字體是<code>標楷體</code>以及<code>細明體</code>的中文顯示...，頓時讓人回到<code>Big5</code>網頁的感覺。</p>
 <p>我還是喜歡看<code>文泉驛微米黑</code>或者是類似的字體，但是這次的修改方式跟上幾版不太一樣，所以我就在這紀錄一下。</p>
-
+<!--more-->
 <h2><del>開幹</del> 動手做</h2>
 <pre><code class="language-bash">cd /etc/fonts/conf.d</code></pre>
 <p>我們先把<code>Console</code>的路徑指向<code>/etc/fonts/conf.d</code>，這個路徑底下的檔案基本上是設定檔的軟連結，而真正的設定檔則是放在<code>/etc/fonts/conf.avail</code>。</p>
@@ -161,7 +161,7 @@
 <p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
 <p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
 <p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>
-
+<!--more-->
 <h2>觀察 ./configure 設定配置</h2>
 <p>我找了一個之前編譯的正常<code>PHP</code>所使用的配置，現在有問題的配置做比對。其中發現<code>PCRE</code>的設定方式不相同。</p>
 <p>舊的配置關於<code>PCRE</code>的部份只有<code>--with-pcre-regex</code>，而新的配置則是<code>--with-pcre-regex=/usr --with-pcre-dir=/usr</code>。</p>
@@ -193,7 +193,7 @@
 <p>在開發<code>Pointless</code>到現在的兩年期間內，初期其實都還算順利，直到最近幾個月遇到了兩次<code>Segmentation Fault</code>，終於我遇的不是<code>PHP</code>的<code>Syntax Error</code>，而是<code>PHP</code>的<code>Bugs</code>或是其中函式庫的問題。</p>
 <p>寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在<code>OS X</code>上用<code>PHPBrew</code>編出的<code>PHP</code>，另一次就是最近在<code>Ubuntu 13.10</code>及<code>Ubuntu 12.04 LTS</code>上還是用<code>PHPBrew</code>所編出的<code>PHP</code>。</p>
 <p>題外話，話說<code>PHPBrew</code>超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。</p>
-
+<!--more-->
 <h2>在OS X的那次</h2>
 <p>我先後在不同的兩台<code>Mac Air</code>測試過都會發生錯誤，在文章數量小的情況下不會有問題，但是文章只要一多就會發生錯誤。</p>
 <p>而出錯的地方就是用來將資料及樣板結合的<code>bindData()</code>其中只有<code>include</code>以及<code>Output Buffer</code>等函式，但我檢查不出是<code>PHP VM</code>編譯時的哪支有問題所以作罷。</p>
@@ -217,18 +217,18 @@
 <p>很難得可以在一天內發兩篇文章，在上一篇文末提到<code>WebGL</code>打不開的問題，那是個誤會，真的。</p>
 <p>在<code>Chrome</code>的<code>chrome://flags</code>裡有一個選項<code>Override software rendering list</code>可以開啟硬體加速，在更新驅動程式前我怎樣試都不行，所以我就以為沒有用。</p>
 <p>其實在驅動程式更新之後就已經可以使用了，只是硬體加速還要另外開啟，讓我產生<code>WebGL</code>無法開啟的錯覺。</p>
-
+<!--more-->
 <h2>正常啟用流程</h2>
 <p>我們可以在<code>Chrome</code>中使用<code>chrome://gpu</code>這個連結去確認是否有開啟硬加速，在一般情況下都是呈現下方的狀態。</p>
-<p><img src="/images/chrome-enable-hardware-graphics/gpu001.jpg" alt="Hardware Graphics"></p>
+<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/gpu001.jpg" /></p>
 <p>根據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。</p>
 <p>在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，<code>WebGL</code>也已經可以使用。</p>
-<p><img src="/images/chrome-enable-hardware-graphics/gpu002.jpg" alt="Hardware Graphics"></p>
+<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/gpu002.jpg" /></p>
 <p>最後將<code>chrome://flags</code>中的<code>Override software rendering list</code>啟動，並重新開啟<code>Chrome</code>。</p>
-<p><img src="/images/chrome-enable-hardware-graphics/flags001.jpg" alt="Hardware Graphics"></p>
-<p><img src="/images/chrome-enable-hardware-graphics/flags002.jpg" alt="Hardware Graphics"></p>
+<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/flags001.jpg" /></p>
+<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/flags002.jpg" /></p>
 <p>最後就會得一片綠油油的正常狀態。</p>
-<p><img src="/images/chrome-enable-hardware-graphics/gpu003.jpg" alt="Hardware Graphics"></p>
+<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/gpu003.jpg" /></p>
 <h2>爽</h2>
 <p>接下就爽爽用<code>Chrome</code>上的硬體加速吧。</p>]]></summary>
 	</entry>

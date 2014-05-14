@@ -21,6 +21,8 @@ require([
         hljs.highlightBlock(viewer[0]);
     });
 
+    $('#container .content a').attr('target', '_blank');
+
     $(window).keydown(function(e) {
         switch(e.keyCode) {
             case 37:

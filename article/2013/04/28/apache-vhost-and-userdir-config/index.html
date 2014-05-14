@@ -74,7 +74,7 @@
         </div>
         <div class="content"><h2>前言</h2>
 <p>Apache是常用的網頁伺服器，而<code>userdir</code>這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以<code>http://examaple.com/~username</code>的形式呈現。另外<code>vhost_alias</code>則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設<code>http://a.example.com</code>與<code>b.examle.com</code>都指向<code>192.168.1.1</code>，那麼Apache就可以根據域名來挑選網頁的根目錄<code>/var/www/a</code>或是<code>/var/www/b</code>來呈現不同的內容。</p>
-
+<!--more-->
 <h2>啟用Module</h2>
 <p>一般在<code>Apache</code>安裝完成後這兩個<code>Module</code>通常都是未啟用的，所以在使用前必須去啟用它在這邊我們所使用<code>Ubuntu 12.04 LTS</code>作為預設環境，在<code>Ubuntu</code>中有兩種啟用方式。</p>
 <h3>內建指令</h3>

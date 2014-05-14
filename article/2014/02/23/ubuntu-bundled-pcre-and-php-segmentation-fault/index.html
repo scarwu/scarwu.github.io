@@ -82,7 +82,7 @@
 <p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
 <p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
 <p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>
-
+<!--more-->
 <h2>觀察 ./configure 設定配置</h2>
 <p>我找了一個之前編譯的正常<code>PHP</code>所使用的配置，現在有問題的配置做比對。其中發現<code>PCRE</code>的設定方式不相同。</p>
 <p>舊的配置關於<code>PCRE</code>的部份只有<code>--with-pcre-regex</code>，而新的配置則是<code>--with-pcre-regex=/usr --with-pcre-dir=/usr</code>。</p>

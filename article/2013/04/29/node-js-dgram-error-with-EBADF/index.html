@@ -85,7 +85,7 @@ var dgram = require('dgram'),
 client.bind(port);
 client.setBroadcast(true);
 client.send(message, 0, message.length, port, ip, callback);</code></pre>
-
+<!--more-->
 <p>接著我就想到會不會是因為EventI/O，所以函式執行完成的先後順序不一致而造成socket的錯誤，雖然已經先執行<code>bind</code>了，但是<code>setBroadcast</code>還是有可能比<code>bind</code>還要先完成。</p>
 <p>所以就簡單修改一下程式碼，果不其然它就正常執行了。</p>
 <pre><code class="language-javascript">#!/usr/bin/env node

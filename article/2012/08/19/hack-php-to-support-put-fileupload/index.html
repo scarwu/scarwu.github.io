@@ -76,7 +76,7 @@ $put_data = file_get_contents('php://input');
 <p><br>
 簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
 <p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
-
+<!--more-->
 <p>結果發現在 main/SAPI.c 中的 sapi_activate Function 中有這麼一段Code</p>
 <pre><code class="language-php">/* main/SAPI.c:456 */
 if (SG(request_info).content_type &amp;&amp; !strcmp(SG(request_info).request_method, "POST"))) {

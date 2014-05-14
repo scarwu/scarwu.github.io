@@ -80,7 +80,7 @@ tar -zxvf xhprof-0.9.2.tgz
 cd xhprof-0.9.2</code></pre>
 <p><br>複製<code>xhprof</code>所需要用到的程式到你的 web 根目錄。</p>
 <pre><code class="language-bash">cp -a xhprof_html xhprof_lib /path/to/htdocs</code></pre>
-
+<!--more-->
 <p><br>對<code>xhprof.c</code>進行Patch。</p>
 <pre><code class="language-bash">curl https://github.com/facebook/xhprof/commit/a6bae51236.diff | patch -p1</code></pre>
 <p><br>開始編譯並安裝。</p>
@@ -118,9 +118,9 @@ echo sprintf(
 );</code></pre>
 <h2>輸出結果</h2>
 <h3>Summary</h3>
-<p><img src="/images/install-xhprof-on-ubuntu-12-04/001.jpg"></p>
+<p><img alt="Summary" src="/images/install-xhprof-on-ubuntu-12-04/001.jpg" /></p>
 <h3>Callgraph</h3>
-<p><img src="/images/install-xhprof-on-ubuntu-12-04/002.jpg"></p></div>
+<p><img alt="Callgraph" src="/images/install-xhprof-on-ubuntu-12-04/002.jpg" /></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">

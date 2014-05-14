@@ -73,7 +73,7 @@
 <p>在開發<code>Pointless</code>到現在的兩年期間內，初期其實都還算順利，直到最近幾個月遇到了兩次<code>Segmentation Fault</code>，終於我遇的不是<code>PHP</code>的<code>Syntax Error</code>，而是<code>PHP</code>的<code>Bugs</code>或是其中函式庫的問題。</p>
 <p>寫直譯式語言可以遇到語言的錯誤還滿猛的，一次是在<code>OS X</code>上用<code>PHPBrew</code>編出的<code>PHP</code>，另一次就是最近在<code>Ubuntu 13.10</code>及<code>Ubuntu 12.04 LTS</code>上還是用<code>PHPBrew</code>所編出的<code>PHP</code>。</p>
 <p>題外話，話說<code>PHPBrew</code>超好用的，可以在不同版本的下作切換，對於開發來說實在是很棒。</p>
-
+<!--more-->
 <h2>在OS X的那次</h2>
 <p>我先後在不同的兩台<code>Mac Air</code>測試過都會發生錯誤，在文章數量小的情況下不會有問題，但是文章只要一多就會發生錯誤。</p>
 <p>而出錯的地方就是用來將資料及樣板結合的<code>bindData()</code>其中只有<code>include</code>以及<code>Output Buffer</code>等函式，但我檢查不出是<code>PHP VM</code>編譯時的哪支有問題所以作罷。</p>
