@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="原本oh-my-zsh在Ubuntu 12.04 LTS以及Arch Linux用好好的history-search-backward、history-search-forward，到了Ubuntu 13.10就不能用了，查了一下ZSH雖然版號不一樣，不知道是不是因為發行版影響，因為Arch Linux的ZSH版本還比Ubuntu 13.10新。">
-    <meta property="og:title" content="ZSH - history-search-backward/forward | ScarShow | 刀疤說">
-    <meta property="og:url" content="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/">
+    <meta property="og:description" name="description" content="久違的文章，我竟然長達半年沒有寫文章，最近退伍又很剛好找到工作了。又有一堆雜事可以做，我想之後應該有一堆東西可以紀錄吧。">
+    <meta property="og:title" content="MySQL/MariaDB 5.5 Replication Setting | ScarShow | 刀疤說">
+    <meta property="og:url" content="http://scar.simcz.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/">
     <meta property="og:image" content="http://scar.simcz.tw/images/icon.jpg">
     <meta property="og:type" content="blog">
 
-    <title>ZSH - history-search-backward/forward | ScarShow | 刀疤說</title>
+    <title>MySQL/MariaDB 5.5 Replication Setting | ScarShow | 刀疤說</title>
 
     <link rel="stylesheet" href="/theme/main.css">
-    <link rel="canonical" href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/">
+    <link rel="canonical" href="http://scar.simcz.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/">
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.simcz.tw/images/icon.jpg">
     <link rel="shortcut icon" href="http://scar.simcz.tw/favicon.ico">
@@ -39,58 +39,152 @@
     <div id="main">
         <div id="container"><div id="container_article">
     <article class="post_block">
-        <h1 class="title">ZSH - history-search-backward/forward</h1>
+        <h1 class="title">MySQL/MariaDB 5.5 Replication Setting</h1>
         <div class="info">
             <div class="date">
                 <i class="fa fa-calendar"></i>
-                <a href="/archive/2014/">2014-01-14</a>            </div>
+                <a href="/archive/2014/">2014-11-12</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
-                <a href="/tag/Note/">Note</a>            </div>
+                <a href="/tag/Linux/">Linux</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
-                <a href="/tag/Ubuntu/">Ubuntu</a>            </div>
+                <a href="/tag/MariaDB/">MariaDB</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
-                <a href="/tag/ZSH/">ZSH</a>            </div>
+                <a href="/tag/MySQL/">MySQL</a>            </div>
                                     <div class="disqus_comments">
                 <i class="fa fa-comment"></i>
-                <a href="/article/2014/01/14/zsh-history-search-backward-and-forward/#disqus_thread">0 Comment</a>
+                <a href="/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/" data-text="ZSH - history-search-backward/forward | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button" data-url="http://scar.simcz.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/" data-text="MySQL/MariaDB 5.5 Replication Setting | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like" data-href="http://scar.simcz.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.simcz.tw/article/2014/01/14/zsh-history-search-backward-and-forward/" data-size="medium"></div>
+                    <div class="g-plusone" data-href="http://scar.simcz.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/" data-size="medium"></div>
                 </div>
             </div>
         </div>
-        <div class="content"><p>原本<code>oh-my-zsh</code>在<code>Ubuntu 12.04 LTS</code>以及<code>Arch Linux</code>用好好的<code>history-search-backward</code>、<code>history-search-forward</code>，到了<code>Ubuntu 13.10</code>就不能用了，查了一下<code>ZSH</code>雖然版號不一樣，不知道是不是因為發行版影響，因為<code>Arch Linux</code>的<code>ZSH</code>版本還比<code>Ubuntu 13.10</code>新。</p>
-<p>下面是各個發行版的<code>Z Shell</code>版號。</p>
-<pre><code>Ubuntu 12.04 LTS : 4.3.17
-Ubuntu 12.10     : 5.0.0
-Ubuntu 13.04     : 5.0.0
-Ubuntu 13.10     : 5.0.2
-Arch Linux       : 5.0.5</code></pre>
-<!--more-->
-<p>算了至少功能沒有那就自己加上去，在<code>~/.zshrc</code>中加入以下兩行就行了。</p>
-<pre><code>bindkey "${key[Up]}" history-search-backward
-bindkey "${key[Down]}" history-search-forward</code></pre>
-<p>接著重起<code>terminal</code>或是<code>source .zshrc</code>一切就完成了。</p></div>
+        <div class="content"><p>久違的文章，我竟然長達半年沒有寫文章，最近退伍又很剛好找到工作了。又有一堆雜事可以做，我想之後應該有一堆東西可以紀錄吧。</p>
+<p>最近忙著幫公司架設<code>Raid</code>跟備份機制，這邊就紀錄一下<code>MySQL Replication</code>的流程，雖然說是<code>MySQL</code>但是公司實際上是用<code>MariaDB</code>但這不是重點，基本上操作是一樣的。</p>
+<p>在<code>Replication</code>的機制上<code>MySQL Server</code>分為<code>Master</code>與<code>Slave</code>，在一般的應用中主要還是用於負載平衡，但在這邊我只是要用於備份。</p>
+<h2>設定 Master 資料庫</h2>
+<p>首先先在<code>Master</code>的<code>my.cnf</code>的設定檔案中加上以下設定：</p>
+<pre><code class="language-conf"># my.cnf
+[mysqld]
+server-id=1
+log-bin=/path/to/mysql-bin</code></pre>
+<p><code>server-id</code>在伺服器中必須是唯一值，數值大小是 1 ~ 2<sup>32</sup>-1，<code>log-bin</code>則是設定<code>Binary Log</code>的路徑。</p>
+<p>如果想要針對特定的資料庫做複寫或不要複寫到<code>Slave</code>，可以再另外加上以下的設定。</p>
+<pre><code class="language-conf"># 要複寫的
+binlog-do-db=db1
+binlog-do-db=db2
+# 不要複寫的
+binlog-ignore-db=db3
+binlog-ignore-db=db4</code></pre>
+<p>當設定完成之後重新啟動<code>Master</code>。</p>
+<pre><code class="language-bash">service mysql restart</code></pre>
+<p>接著登入伺服器使用指令<code>SHOW MASTER STATUS</code>觀看<code>Master</code>的狀態。</p>
+<pre><code class="language-sql">mysql &gt; SHOW MASTER STATUS;
++------------------+----------+--------------+------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
++------------------+----------+--------------+------------------+
+| mysql-bin.000008 | 5723     | db1,db2      | db3,db4          |
++------------------+----------+--------------+------------------+</code></pre>
+<p>接著為<code>Master</code>加上<code>Slave</code>用來<code>Replication</code>的專用帳號，將<code>USER_NAME</code>、<code>USER_PASS</code>及<code>SLAVE_HOST</code>換成你的資料。</p>
+<pre><code class="language-sql">CREATE USER 'USER_NAME'@'SLAVE_HOST' IDENTIFIED BY 'USER_PASS';
+GRANT REPLICATION SLAVE ON *.* TO 'USER_NAME'@'SLAVE_HOST';
+FLUSH PRIVILEGES;</code></pre>
+<p>最後將資料庫的資料匯出，然後傳送到<code>Slave</code>接著下面的<code>Slave</code>資料庫設定步驟。這邊的參數<code>--master-data</code>是匯出時一同匯出<code>Master</code>的資料包含<code>Log file</code>及<code>Log position</code>，而<code>--all-databases</code>是指整個資料庫，其中不包含<code>information_schema</code>及<code>performance_schema</code>但有<code>mysql</code>資料庫。</p>
+<pre><code class="language-bash">mysqldump -u root -p --master-data --all-databases &gt; all_db.sql</code></pre>
+<h2>設定 Slave 資料庫</h2>
+<p>將剛剛的從<code>Master</code>傳送過來的檔案匯入<code>Slave</code>之中，如果不想要將<code>Slave</code>的使用者權限覆蓋過去的話，請將檔案中有關於<code>mysql</code>資料庫的指令移除。</p>
+<pre><code class="language-bash">mysql -u root -p &lt; all_db.sql</code></pre>
+<p>同樣也是設定將<code>Slave</code>加上<code>server-id</code>設定。</p>
+<pre><code class="language-conf"># my.cnf
+[mysqld]
+server-id=2</code></pre>
+<p>設定指定資料庫是否被<code>Master</code>複寫。</p>
+<pre><code class="language-conf"># 要複寫的
+replicate-do-db=db1
+replicate-do-db=db2
+# 不要複寫的
+replicate-ignore-db=db3
+replicate-ignore-db=db4</code></pre>
+<p>設定完成後重新啟動<code>Slave</code>。</p>
+<pre><code class="language-bash">service mysql restart</code></pre>
+<p>然後在登入前先去看剛剛匯入的檔案，找出以下的<code>query</code>，把這邊的<code>Log File</code>跟<code>Log Position</code>記錄下來等一下會用到。</p>
+<pre><code class="language-sql">CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.00008', MASTER_LOG_POS=5723;</code></pre>
+<p>接著登入<code>Slave</code>，然後用以下指令讓<code>Slave</code>對應到<code>Master</code>，請記得先修改<code>USER_NAME</code>及<code>USER_PASS</code>為剛剛在<code>Master</code>所輸入的帳密，<code>MASTER_HOST</code>為<code>Master</code>的網路位置，最後將<code>LOG_FILE</code>及<code>LOG_POS</code>修改為剛剛所記錄下來的資料。</p>
+<pre><code class="language-sql">CHANGE MASTER TO
+    MASTER_HOST='MASTER_HOST',
+    MASTER_USER='USER_NAME',
+    MASTER_PASSWORD='USER_PASS',
+    MASTER_PORT=3306,
+    MASTER_LOG_FILE='LOG_FILE',
+    MASTER_LOG_POS=LOG_POS,
+    MASTER_CONNECT_RETRY=10;</code></pre>
+<p>接著啟動<code>Slave</code>的<code>Replication</code>機制。</p>
+<pre><code class="language-sql">START SLAVE;</code></pre>
+<p>最後使用<code>SHOW SLAVE STATUS \G;</code>來觀看<code>Slave</code>的狀態，如果<code>Replication</code>正確的話應該會長下面這樣。</p>
+<pre><code class="language-sql">mysql &gt; SHOW SLAVE STATUS \G;
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: MASTER_HOST
+                  Master_User: USER_NAME
+                  Master_Port: 3306
+                Connect_Retry: 10
+              Master_Log_File: mysql-bin.000009
+          Read_Master_Log_Pos: 6635
+               Relay_Log_File: db1-relay-bin.000002
+                Relay_Log_Pos: 156
+        Relay_Master_Log_File: mysql-bin.000008
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB: 
+          Replicate_Ignore_DB: 
+           Replicate_Do_Table: 
+       Replicate_Ignore_Table: 
+      Replicate_Wild_Do_Table: 
+  Replicate_Wild_Ignore_Table: 
+                   Last_Errno: 0
+                   Last_Error: 
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 90650
+              Relay_Log_Space: 6164
+              Until_Condition: None
+               Until_Log_File: 
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File: 
+           Master_SSL_CA_Path: 
+              Master_SSL_Cert: 
+            Master_SSL_Cipher: 
+               Master_SSL_Key: 
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error: 
+               Last_SQL_Errno: 0
+               Last_SQL_Error: 
+  Replicate_Ignore_Server_Ids: 
+             Master_Server_Id: 1</code></pre>
+<h2>收工</h2>
+<p>說明就到這邊，可以另外在<code>Master</code>更動幾筆資料，看看是否<code>Slave</code>是否也會同樣做動來驗證。</p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">
         <span class="new">
-            <a href="/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12/"><< Ubuntu 13.10 install AMD Catalyst 13.12</a>        </span>
+                    </span>
         <span class="old">
-            <a href="/article/2014/01/03/express-jade-less-coffee-with-livereload/">Express + Jade/LESS/Coffee with LiveReload >></a>        </span>
+            <a href="/article/2014/05/09/html-javascript-load-problem/">HTML中JavaScript的載入問題 >></a>        </span>
         <span class="count">
-            8 / 39        </span>
+            1 / 39        </span>
     </div>
 </div>
 <div id="fb-root"></div></div>

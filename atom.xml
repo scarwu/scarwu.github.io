@@ -5,11 +5,123 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-05-15T09:36:40+08:00</updated>
+	<updated>2014-11-12T17:37:36+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[MySQL/MariaDB 5.5 Replication Setting]]></title>
+		<link href="http://scar.simcz.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/" />
+		<id>urn:uuid:d3432628-f1e3-3ea0-00ad-770159d1f9fc</id>
+		<updated>2014-11-12T11:21:31+08:00</updated>
+		<summary type="html"><![CDATA[<p>久違的文章，我竟然長達半年沒有寫文章，最近退伍又很剛好找到工作了。又有一堆雜事可以做，我想之後應該有一堆東西可以紀錄吧。</p>
+<p>最近忙著幫公司架設<code>Raid</code>跟備份機制，這邊就紀錄一下<code>MySQL Replication</code>的流程，雖然說是<code>MySQL</code>但是公司實際上是用<code>MariaDB</code>但這不是重點，基本上操作是一樣的。</p>
+<p>在<code>Replication</code>的機制上<code>MySQL Server</code>分為<code>Master</code>與<code>Slave</code>，在一般的應用中主要還是用於負載平衡，但在這邊我只是要用於備份。</p>
+<h2>設定 Master 資料庫</h2>
+<p>首先先在<code>Master</code>的<code>my.cnf</code>的設定檔案中加上以下設定：</p>
+<pre><code class="language-conf"># my.cnf
+[mysqld]
+server-id=1
+log-bin=/path/to/mysql-bin</code></pre>
+<p><code>server-id</code>在伺服器中必須是唯一值，數值大小是 1 ~ 2<sup>32</sup>-1，<code>log-bin</code>則是設定<code>Binary Log</code>的路徑。</p>
+<p>如果想要針對特定的資料庫做複寫或不要複寫到<code>Slave</code>，可以再另外加上以下的設定。</p>
+<pre><code class="language-conf"># 要複寫的
+binlog-do-db=db1
+binlog-do-db=db2
+# 不要複寫的
+binlog-ignore-db=db3
+binlog-ignore-db=db4</code></pre>
+<p>當設定完成之後重新啟動<code>Master</code>。</p>
+<pre><code class="language-bash">service mysql restart</code></pre>
+<p>接著登入伺服器使用指令<code>SHOW MASTER STATUS</code>觀看<code>Master</code>的狀態。</p>
+<pre><code class="language-sql">mysql &gt; SHOW MASTER STATUS;
++------------------+----------+--------------+------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
++------------------+----------+--------------+------------------+
+| mysql-bin.000008 | 5723     | db1,db2      | db3,db4          |
++------------------+----------+--------------+------------------+</code></pre>
+<p>接著為<code>Master</code>加上<code>Slave</code>用來<code>Replication</code>的專用帳號，將<code>USER_NAME</code>、<code>USER_PASS</code>及<code>SLAVE_HOST</code>換成你的資料。</p>
+<pre><code class="language-sql">CREATE USER 'USER_NAME'@'SLAVE_HOST' IDENTIFIED BY 'USER_PASS';
+GRANT REPLICATION SLAVE ON *.* TO 'USER_NAME'@'SLAVE_HOST';
+FLUSH PRIVILEGES;</code></pre>
+<p>最後將資料庫的資料匯出，然後傳送到<code>Slave</code>接著下面的<code>Slave</code>資料庫設定步驟。這邊的參數<code>--master-data</code>是匯出時一同匯出<code>Master</code>的資料包含<code>Log file</code>及<code>Log position</code>，而<code>--all-databases</code>是指整個資料庫，其中不包含<code>information_schema</code>及<code>performance_schema</code>但有<code>mysql</code>資料庫。</p>
+<pre><code class="language-bash">mysqldump -u root -p --master-data --all-databases &gt; all_db.sql</code></pre>
+<h2>設定 Slave 資料庫</h2>
+<p>將剛剛的從<code>Master</code>傳送過來的檔案匯入<code>Slave</code>之中，如果不想要將<code>Slave</code>的使用者權限覆蓋過去的話，請將檔案中有關於<code>mysql</code>資料庫的指令移除。</p>
+<pre><code class="language-bash">mysql -u root -p &lt; all_db.sql</code></pre>
+<p>同樣也是設定將<code>Slave</code>加上<code>server-id</code>設定。</p>
+<pre><code class="language-conf"># my.cnf
+[mysqld]
+server-id=2</code></pre>
+<p>設定指定資料庫是否被<code>Master</code>複寫。</p>
+<pre><code class="language-conf"># 要複寫的
+replicate-do-db=db1
+replicate-do-db=db2
+# 不要複寫的
+replicate-ignore-db=db3
+replicate-ignore-db=db4</code></pre>
+<p>設定完成後重新啟動<code>Slave</code>。</p>
+<pre><code class="language-bash">service mysql restart</code></pre>
+<p>然後在登入前先去看剛剛匯入的檔案，找出以下的<code>query</code>，把這邊的<code>Log File</code>跟<code>Log Position</code>記錄下來等一下會用到。</p>
+<pre><code class="language-sql">CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.00008', MASTER_LOG_POS=5723;</code></pre>
+<p>接著登入<code>Slave</code>，然後用以下指令讓<code>Slave</code>對應到<code>Master</code>，請記得先修改<code>USER_NAME</code>及<code>USER_PASS</code>為剛剛在<code>Master</code>所輸入的帳密，<code>MASTER_HOST</code>為<code>Master</code>的網路位置，最後將<code>LOG_FILE</code>及<code>LOG_POS</code>修改為剛剛所記錄下來的資料。</p>
+<pre><code class="language-sql">CHANGE MASTER TO
+    MASTER_HOST='MASTER_HOST',
+    MASTER_USER='USER_NAME',
+    MASTER_PASSWORD='USER_PASS',
+    MASTER_PORT=3306,
+    MASTER_LOG_FILE='LOG_FILE',
+    MASTER_LOG_POS=LOG_POS,
+    MASTER_CONNECT_RETRY=10;</code></pre>
+<p>接著啟動<code>Slave</code>的<code>Replication</code>機制。</p>
+<pre><code class="language-sql">START SLAVE;</code></pre>
+<p>最後使用<code>SHOW SLAVE STATUS \G;</code>來觀看<code>Slave</code>的狀態，如果<code>Replication</code>正確的話應該會長下面這樣。</p>
+<pre><code class="language-sql">mysql &gt; SHOW SLAVE STATUS \G;
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: MASTER_HOST
+                  Master_User: USER_NAME
+                  Master_Port: 3306
+                Connect_Retry: 10
+              Master_Log_File: mysql-bin.000009
+          Read_Master_Log_Pos: 6635
+               Relay_Log_File: db1-relay-bin.000002
+                Relay_Log_Pos: 156
+        Relay_Master_Log_File: mysql-bin.000008
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB: 
+          Replicate_Ignore_DB: 
+           Replicate_Do_Table: 
+       Replicate_Ignore_Table: 
+      Replicate_Wild_Do_Table: 
+  Replicate_Wild_Ignore_Table: 
+                   Last_Errno: 0
+                   Last_Error: 
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 90650
+              Relay_Log_Space: 6164
+              Until_Condition: None
+               Until_Log_File: 
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File: 
+           Master_SSL_CA_Path: 
+              Master_SSL_Cert: 
+            Master_SSL_Cipher: 
+               Master_SSL_Key: 
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error: 
+               Last_SQL_Errno: 0
+               Last_SQL_Error: 
+  Replicate_Ignore_Server_Ids: 
+             Master_Server_Id: 1</code></pre>
+<h2>收工</h2>
+<p>說明就到這邊，可以另外在<code>Master</code>更動幾筆資料，看看是否<code>Slave</code>是否也會同樣做動來驗證。</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[HTML中JavaScript的載入問題]]></title>
 		<link href="http://scar.simcz.tw/article/2014/05/09/html-javascript-load-problem/" />
@@ -207,29 +319,5 @@
 <p><code>Mac OS X</code>系統預設的函式庫跟我正常使用的<code>Ubuntu</code>一定有哪邊不一樣。</p>
 <p><code>Ubuntu</code>幾個月前的所使用的函式庫跟現在跟更新後的<code>Ubuntu</code>的函式庫一定有哪邊不一樣。</p>
 <p>到底哪裡不一樣？我還要再查查。</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[Chrome - Enable Hardware Graphics]]></title>
-		<link href="http://scar.simcz.tw/article/2014/01/19/chrome-enable-hardware-graphics/" />
-		<id>urn:uuid:be5efe37-3cce-6273-edfc-c51b30429dbd</id>
-		<updated>2014-01-19T12:48:58+08:00</updated>
-		<summary type="html"><![CDATA[<h2>難得</h2>
-<p>很難得可以在一天內發兩篇文章，在上一篇文末提到<code>WebGL</code>打不開的問題，那是個誤會，真的。</p>
-<p>在<code>Chrome</code>的<code>chrome://flags</code>裡有一個選項<code>Override software rendering list</code>可以開啟硬體加速，在更新驅動程式前我怎樣試都不行，所以我就以為沒有用。</p>
-<p>其實在驅動程式更新之後就已經可以使用了，只是硬體加速還要另外開啟，讓我產生<code>WebGL</code>無法開啟的錯覺。</p>
-<!--more-->
-<h2>正常啟用流程</h2>
-<p>我們可以在<code>Chrome</code>中使用<code>chrome://gpu</code>這個連結去確認是否有開啟硬加速，在一般情況下都是呈現下方的狀態。</p>
-<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/gpu001.jpg" /></p>
-<p>根據上面所顯示的問題並去解決，就能開啟硬體加速，首先更據目前所用的作業統以及顯示卡，更新相對應的驅動程式。</p>
-<p>在我的系統上，更新驅動程式後的狀態如下圖，原本紅紅一片的狀態逐漸變為正常了，<code>WebGL</code>也已經可以使用。</p>
-<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/gpu002.jpg" /></p>
-<p>最後將<code>chrome://flags</code>中的<code>Override software rendering list</code>啟動，並重新開啟<code>Chrome</code>。</p>
-<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/flags001.jpg" /></p>
-<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/flags002.jpg" /></p>
-<p>最後就會得一片綠油油的正常狀態。</p>
-<p><img alt="Hardware Graphics" src="/images/chrome-enable-hardware-graphics/gpu003.jpg" /></p>
-<h2>爽</h2>
-<p>接下就爽爽用<code>Chrome</code>上的硬體加速吧。</p>]]></summary>
 	</entry>
 </feed>
