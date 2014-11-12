@@ -5,7 +5,7 @@
 	<link href="http://scar.simcz.tw/atom.xml" rel="self" />
 	<link href="http://scar.simcz.tw/" />
 	<id>urn:uuid:2678fdc5-5c0a-82f6-3383-a3112866cd7f</id>
-	<updated>2014-11-12T17:37:36+08:00</updated>
+	<updated>2014-11-12T17:38:46+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.simcz.tw/</uri>
@@ -18,6 +18,7 @@
 		<summary type="html"><![CDATA[<p>久違的文章，我竟然長達半年沒有寫文章，最近退伍又很剛好找到工作了。又有一堆雜事可以做，我想之後應該有一堆東西可以紀錄吧。</p>
 <p>最近忙著幫公司架設<code>Raid</code>跟備份機制，這邊就紀錄一下<code>MySQL Replication</code>的流程，雖然說是<code>MySQL</code>但是公司實際上是用<code>MariaDB</code>但這不是重點，基本上操作是一樣的。</p>
 <p>在<code>Replication</code>的機制上<code>MySQL Server</code>分為<code>Master</code>與<code>Slave</code>，在一般的應用中主要還是用於負載平衡，但在這邊我只是要用於備份。</p>
+<!--more-->
 <h2>設定 Master 資料庫</h2>
 <p>首先先在<code>Master</code>的<code>my.cnf</code>的設定檔案中加上以下設定：</p>
 <pre><code class="language-conf"># my.cnf
