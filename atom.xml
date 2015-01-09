@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2015-01-10T01:41:30+08:00</updated>
+	<updated>2015-01-10T01:55:38+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -25,7 +25,7 @@
 <p><img alt="HHKB Pro2" src="/images/happy-hacking-keyboard-pro2-unboxing/003.jpg" /></p>
 <p>因為網路上的照片很多，所以就沒有多照了。</p>
 <h2>使用</h2>
-<p>我將後面的開關設定為 <code>101110</code> ，這樣的 Layout 跟本的使用習慣比較相近，實際上使用了幾天，因為還沒有完全熟悉所以開發程式的速度受了一點影響。</p>
+<p>我將後面的開關設定為 <code>101110</code> ，這樣的 <code>Layout</code> 原本的使用習慣比較相近，實際上使用了幾天，因為還沒有完全熟悉所以開發程式的速度受了一點影響。</p>
 <p>但先不管網路上的評論說這隻鍵盤比較適合哪一種的作業系統或這是哪一種的文字編輯器，但在我實際的使用上它的確是隻很特殊的鍵盤，不管是在手感或者是按鍵的編排。</p>
 <p>使用上的深刻感受，就非的 <code>Ctrl</code> 及 <code>Fn</code> 鍵莫屬，因為將按鍵上移，在使用組合鍵時小拇指終於不用用很鱉的姿勢去按組合鍵，這樣小拇指也能夠比較放鬆。</p>
 <p>另外就是手感，它的段落比較明顯，在使用上感覺比較重手，相較平常工作用的 <code>FILCO Ninja 茶軸</code> 來說，但是按鍵的聲音有比較小聲一點，原本茶軸是是 "卡卡卡" 現在這隻是 "豆豆豆"。</p>
