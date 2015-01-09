@@ -11,6 +11,17 @@
 
     <title>ScarShow | 刀疤說</title>
 
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-30675094-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+
     <link rel="stylesheet" href="/theme/main.css">
     <link rel="canonical" href="http://scar.tw/page/8/">
     <link rel="author" href="https://plus.google.com/+ScarWu">
@@ -38,6 +49,41 @@
     </nav>
     <div id="main">
         <div id="container"><div id="container_page">
+        <article class="post_block">
+        <h1 class="title"><a href="/article/2012/04/23/implement-a-small-router-use-php-1/">實作一個小型Router use PHP (1)</a></h1>
+        <div class="info">
+            <div class="date">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2012/">2012-04-23</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/PHP/">PHP</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2012/04/23/implement-a-small-router-use-php-1/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button" data-url="http://scar.tw/article/2012/04/23/implement-a-small-router-use-php-1/" data-text="實作一個小型Router use PHP (1) | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like" data-href="http://scar.tw/article/2012/04/23/implement-a-small-router-use-php-1/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone" data-href="http://scar.tw/article/2012/04/23/implement-a-small-router-use-php-1/" data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
+<p>首先建立一個PHP程式 server.php</p>
+<pre><code class="language-php">&lt;?php
+// filename: server.php
+print_r($_SERVER);</code></pre>
+</div>
+        <a class="more" href="/article/2012/04/23/implement-a-small-router-use-php-1/">More</a>
+    </article>
         <article class="post_block">
         <h1 class="title"><a href="/article/2012/03/07/hiphop-building-on-ubuntu-11-10/">HipHop building on Ubuntu 11.10</a></h1>
         <div class="info">
@@ -253,6 +299,8 @@
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
                 <span class="item">
+                        <a href="/archive/2015/">2015(1)</a>        </span>
+                <span class="item">
                         <a href="/archive/2014/">2014(9)</a>        </span>
                 <span class="item">
                         <a href="/archive/2013/">2013(14)</a>        </span>
@@ -266,7 +314,7 @@
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/tag/3C/">3C(1)</a>        </span>
+                        <a href="/tag/3C/">3C(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Android/">Android(3)</a>        </span>
                 <span class="item">
@@ -284,11 +332,15 @@
                 <span class="item">
                         <a href="/tag/Facebook/">Facebook(2)</a>        </span>
                 <span class="item">
+                        <a href="/tag/HHKB/">HHKB(1)</a>        </span>
+                <span class="item">
                         <a href="/tag/HTML5/">HTML5(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Hadoop/">Hadoop(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/JavaScript/">JavaScript(8)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Keyboard/">Keyboard(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Linux/">Linux(11)</a>        </span>
                 <span class="item">
@@ -352,9 +404,7 @@
             var e = document.getElementsByTagName('script')[0];
             e.parentNode.insertBefore(s, e);
         }
-                var _gaq = [['_setAccount', 'UA-30675094-1'], ['_trackPageview']];
-        asyncLoad(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js');
-                        var disqus_shortname = 'scarshow';
+                var disqus_shortname = 'scarshow';
         if (document.getElementsByTagName('disqus_comments')) {
             asyncLoad('http://' + disqus_shortname + '.disqus.com/count.js');
         }
