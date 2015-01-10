@@ -5,11 +5,37 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2015-01-10T01:55:38+08:00</updated>
+	<updated>2015-01-11T04:08:58+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[Polaroid Cube 開箱與四驅車實拍]]></title>
+		<link href="http://scar.tw/article/2015/01/11/polaroid-cube-unboxing-and-mini4wd/" />
+		<id>urn:uuid:3bbbdcb6-9f30-c9b6-916c-36cf262eb0eb</id>
+		<updated>2015-01-11T02:57:05+08:00</updated>
+		<summary type="html"><![CDATA[<p>其實這一篇是遲來的開箱文，事實上我已經入手 <code>Polaroid Cube</code> 一段時間了，去年九月的時候就跟朋友一起在國外預購了，大約兩個月後送達，我買了攝影機本體之外還多買了一個攝影腳架的雲台，朋友則是買防水殼，就我的部份折合台幣外加運費大約是 <code>3.8k</code> 台幣，比現在在台灣上市的價格要便宜，事實上在台灣買比較貴的原因出在配件貴滿多的，而本體價格其實沒差多少。</p>
+<p>當初買這個攝影機其實是我想將它安裝在四驅車上，讓它用第一人稱去錄跑道的實況，另外就是它很小放在四驅車上真的很剛好，並不會像 <code>GoPro</code> 旁邊會凸出來或是像行車記錄器那樣過長。</p>
+<!--more-->
+<h2>實體</h2>
+<p>包裝很簡單，就一個透明盒子裝著，而下方則是吸附在金屬板上，沒錯在本體的下方有磁鐵可以任意吸附在金屬表面。</p>
+<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/001.jpg" /></p>
+<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/002.jpg" /></p>
+<p>將 <code>Polaroid Cube</code> 放上腳架整個就很小巧，另外他底座是可以拆卸的且可以跟其他配件互通，不過卻很不好拆卸。</p>
+<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/003.jpg" /></p>
+<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/004.jpg" /></p>
+<h2>四驅車</h2>
+<p>我特別製作了一個車殼可以讓它安裝在上面，下面的金屬板是包裝盒中的一部分，我把它拿來加工，擴孔並導腳讓它可以使用皿型螺絲使底部貼合。</p>
+<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/005.jpg" /></p>
+<p>另外為了造型另外將軟殼切了個洞讓 <code>Polaroid Cube</code> 可以穿過去，附帶一提的是因為它本身有廣角所以不會有車殼過高擋住畫面的問題，車殼只會出現在畫面的下方一點的位置。</p>
+<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/006.jpg" /></p>
+<h2>實際拍攝</h2>
+<p>在我的播放清單中還有其它的影片這邊就先放上一段，因為是用四驅車的視角所以看起來車速會特別的快，如有感覺噁心想吐就多看幾次就會好了。</p>
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/3g-2XQ0g1l8" frameborder="0" allowfullscreen></iframe></p>
+<h2>感謝</h2>
+<p>最後在這邊特別感謝新竹快樂堂熱血車友 <a href="https://www.facebook.com/adzg9900">阿臣</a> 贊助了我一盒 <code>ITEM 18613</code>以及一堆零件讓我弄好了這台車。</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[HHKB Pro2 開箱]]></title>
 		<link href="http://scar.tw/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/" />
@@ -287,37 +313,5 @@ Master_SSL_Verify_Server_Cert: No
     &lt;/match&gt;
 &lt;/fontconfig&gt;</code></pre>
 <p><strong>Update: 2014/05/04</strong></p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[Ubuntu內建PCRE Library所造成的PHP Segmentation Fault]]></title>
-		<link href="http://scar.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/" />
-		<id>urn:uuid:15f2dac7-f7d0-e0e3-6032-51fa94b3fb3f</id>
-		<updated>2014-02-23T15:22:14+08:00</updated>
-		<summary type="html"><![CDATA[<h2>接續</h2>
-<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
-<p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
-<p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>
-<!--more-->
-<h2>觀察 ./configure 設定配置</h2>
-<p>我找了一個之前編譯的正常<code>PHP</code>所使用的配置，現在有問題的配置做比對。其中發現<code>PCRE</code>的設定方式不相同。</p>
-<p>舊的配置關於<code>PCRE</code>的部份只有<code>--with-pcre-regex</code>，而新的配置則是<code>--with-pcre-regex=/usr --with-pcre-dir=/usr</code>。</p>
-<p>新的<code>--with-pcre-regex=/usr</code>其實不影響執行，真正有問題的部份出在於<code>--with-pcre-regex</code>與<code>--with-pcre-regex=/usr</code>的對於實際編時所引入的函式庫不同。</p>
-<p><code>--with-pcre-regex</code>所代表的是編譯時引入<code>PHP</code>內建的<code>PCRE</code>函式庫，而<code>--with-pcre-regex=/usr</code>所代表的是引入外部的<code>PCRE</code>函式庫。</p>
-<p>造成的原因是因為<code>PHPBrew</code>的版次問題所造成，它會檢查系統中是否已經有<code>PCRE</code>函式庫，如果已經存在就會自動在<code>--with-pcre-regex</code>後面加上<code>prefix</code>。</p>
-<h2>使用不同的函式庫</h2>
-<p>為了要測試原因是否是系統內建的問題，或者是只要引入外部<code>PCRE</code>就會出錯，所以我就另外編譯了新的<code>PCRE</code>函式庫作為測試。</p>
-<ul>
-<li>PCRE版本
-<ul>
-<li>8.31-2 <code>Ubuntu 13.10</code>內建</li>
-<li>8.32 <code>PHP 5.4.25</code>內建</li>
-<li>8.34 自行編譯最新版</li>
-</ul></li>
-</ul>
-<p>編譯過程我就省略，<code>PHP 5.4.25</code>以及自行編譯的<code>PCRE</code>都可以正常執行。最後結果就是系統內建的<code>PCRE</code>有問題，並且連帶系統內建的<code>PHP 5.5.3</code>都會出現同樣的問題。</p>
-<h2>解決方案</h2>
-<p>雖然不知道內建的<code>PCRE</code>究竟是哪邊出問題，不過我有兩種解決方法。不是移除系統內建的<code>PCRE</code>讓<code>PHP</code>用本身的函式庫，就是使用自行編譯的<code>PCRE</code>。</p>
-<p>下面我就把我的<code>PHPBrew</code>安裝設定公開出來，因為我是使用自行編譯的<code>PCRE</code>所以在最後要指定函式庫位置。</p>
-<pre><code>phpbrew -d install 5.4.25 +default+db+openssl+iconv -- --with-pcre-regex=/opt/pcre</code></pre>]]></summary>
 	</entry>
 </feed>

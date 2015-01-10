@@ -50,6 +50,57 @@
     <div id="main">
         <div id="container"><div id="container_page">
         <article class="post_block">
+        <h1 class="title"><a href="/article/2012/12/13/increment-operator-in-few-programming-language/">關於一些程式語言裡的遞增運算子</a></h1>
+        <div class="info">
+            <div class="date">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2012/">2012-12-13</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/C/C%2B%2B/">C/C++</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/JavaScript/">JavaScript</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Note/">Note</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/PHP/">PHP</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2012/12/13/increment-operator-in-few-programming-language/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button" data-url="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/" data-text="關於一些程式語言裡的遞增運算子 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like" data-href="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone" data-href="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/" data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><p>前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+main() {
+    int n = 0;
+    n = ++n + ++n + ++n + ++n;
+
+    printf("%d", n);
+}</code></pre>
+</div>
+        <a class="more" href="/article/2012/12/13/increment-operator-in-few-programming-language/">More</a>
+    </article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/12/08/facebook-virus-ksum-exe/">Facebook病毒 - YouNaked.JPG.exe</a></h1>
         <div class="info">
             <div class="date">
@@ -215,53 +266,13 @@ cd xhprof-0.9.2</code></pre>
 </div>
         <a class="more" href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/">More</a>
     </article>
-        <article class="post_block">
-        <h1 class="title"><a href="/article/2012/08/19/hack-php-to-support-put-fileupload/">讓PHP支援PUT FileUpload</a></h1>
-        <div class="info">
-            <div class="date">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2012/">2012-08-19</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/PHP/">PHP</a></span>
-            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2012/08/19/hack-php-to-support-put-fileupload/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2012/08/19/hack-php-to-support-put-fileupload/" data-text="讓PHP支援PUT FileUpload | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2012/08/19/hack-php-to-support-put-fileupload/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2012/08/19/hack-php-to-support-put-fileupload/" data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
-<pre><code class="language-php">&lt;?php
-// do something...
-
-$put_data = file_get_contents('php://input');
-
-// handle put data...</code></pre>
-<p><br>
-簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
-<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
-</div>
-        <a class="more" href="/article/2012/08/19/hack-php-to-support-put-fileupload/">More</a>
-    </article>
         <div id="paging">
         <span class="new">
             <a href="/page/5/"><< Newer Posts</a>        </span>
         <span class="old">
             <a href="/page/7/">Older Posts >></a>        </span>
         <span class="count">
-            6 / 8        </span>
+            6 / 9        </span>
     </div>
 </div>
 <div id="fb-root"></div></div>
@@ -295,7 +306,7 @@ $put_data = file_get_contents('php://input');
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/archive/2015/">2015(1)</a>        </span>
+                        <a href="/archive/2015/">2015(2)</a>        </span>
                 <span class="item">
                         <a href="/archive/2014/">2014(9)</a>        </span>
                 <span class="item">
@@ -310,7 +321,7 @@ $put_data = file_get_contents('php://input');
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/tag/3C/">3C(2)</a>        </span>
+                        <a href="/tag/3C/">3C(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/Android/">Android(3)</a>        </span>
                 <span class="item">
@@ -342,6 +353,8 @@ $put_data = file_get_contents('php://input');
                 <span class="item">
                         <a href="/tag/MariaDB/">MariaDB(1)</a>        </span>
                 <span class="item">
+                        <a href="/tag/Mini%204WD/">Mini 4WD(1)</a>        </span>
+                <span class="item">
                         <a href="/tag/Mobile%20Web/">Mobile Web(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/MySQL/">MySQL(1)</a>        </span>
@@ -358,6 +371,8 @@ $put_data = file_get_contents('php://input');
                 <span class="item">
                         <a href="/tag/Pointless/">Pointless(3)</a>        </span>
                 <span class="item">
+                        <a href="/tag/Polaroid%20Cube/">Polaroid Cube(1)</a>        </span>
+                <span class="item">
                         <a href="/tag/Python/">Python(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Raspberry%20Pi/">Raspberry Pi(1)</a>        </span>
@@ -370,7 +385,7 @@ $put_data = file_get_contents('php://input');
                 <span class="item">
                         <a href="/tag/Tools/">Tools(2)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Toy/">Toy(1)</a>        </span>
+                        <a href="/tag/Toy/">Toy(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Ubuntu/">Ubuntu(8)</a>        </span>
                 <span class="item">
