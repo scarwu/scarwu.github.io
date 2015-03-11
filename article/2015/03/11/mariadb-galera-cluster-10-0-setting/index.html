@@ -133,11 +133,6 @@ wsrep_sst_method = rsync</code></pre>
 <pre><code class="language-bash">sudo service mysql start --wsrep-new-cluster</code></pre>
 <h4>Other Cluster Node</h4>
 <pre><code class="language-bash">sudo service mysql start</code></pre>
-<h3>Fix Bug</h3>
-<p>If you shutdown cluster node with failed, then try to copy this file <code>/etc/mysql/debian.cnf</code> from first node to other node.
-And try again.</p>
-<pre><code class="language-bash">sudo service mysql stop
-[FAIL] Stopping MariaDB database server: mysqld failed!</code></pre>
 <h2>Finally</h2>
 <p>Have Fun!</p></div>
     </article>
