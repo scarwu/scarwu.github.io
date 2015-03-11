@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2015-03-11T14:25:10+08:00</updated>
+	<updated>2015-03-11T15:33:13+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -25,10 +25,10 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
 <pre><code class="language-bash">sudo apt-get install python-software-properties
 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian wheezy main'</code></pre>
+<!--more-->
 <h3>Install MariaDB Galera Cluster</h3>
 <pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
 sudo apt-get install mariadb-galera-cluster galera rsync</code></pre>
-<!--more-->
 <h2>Setting Cluster Node</h2>
 <h3>Create Cluster User for All Node</h3>
 <pre><code class="language-sql">GRANT USAGE ON *.* to CLUSTER_USER@'%' IDENTIFIED BY 'CLUSTER_PASS';
@@ -56,15 +56,16 @@ wsrep_sst_auth = CLUSTER_USER:CLUSTER_PASS
 wsrep_sst_method = rsync</code></pre>
 <h3>Start Cluster Node</h3>
 <h4>First Cluster Node</h4>
-<pre><code class="language-bash">node01$ sudo service mysql start --wsrep-new-cluster</code></pre>
+<pre><code class="language-bash">sudo service mysql start --wsrep-new-cluster</code></pre>
 <h4>Other Cluster Node</h4>
-<pre><code class="language-bash">node02$ sudo service mysql start</code></pre>
+<pre><code class="language-bash">sudo service mysql start</code></pre>
 <h3>Fix Bug</h3>
-<pre><code class="language-bash">node02$ sudo service mysql stop
-[FAIL] Stopping MariaDB database server: mysqld failed!</code></pre>
-<p>If you shutdown cluster node failed, then try to copy this file from first node to other node.
+<p>If you shutdown cluster node with failed, then try to copy this file <code>/etc/mysql/debian.cnf</code> from first node to other node.
 And try again.</p>
-<pre><code>/etc/mysql/debian.cnf</code></pre>]]></summary>
+<pre><code class="language-bash">sudo service mysql stop
+[FAIL] Stopping MariaDB database server: mysqld failed!</code></pre>
+<h2>Finally</h2>
+<p>Have Fun!</p>]]></summary>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Polaroid Cube 開箱與四驅車實拍]]></title>
