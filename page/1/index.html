@@ -91,12 +91,16 @@
                 </div>
             </div>
         </div>
-        <div class="content"><p>OS: Ubuntu Trusty64</p>
-<h2>Setting Environment</h2>
+        <div class="content"><h2>Setting Environment</h2>
 <h3>Repository</h3>
+<h4>Ubuntu Trusty</h4>
 <pre><code class="language-bash">sudo apt-get install software-properties-common
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/ubuntu trusty main'</code></pre>
+<h4>Debian Wheezy</h4>
+<pre><code class="language-bash">sudo apt-get install python-software-properties
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian wheezy main'</code></pre>
 <h3>Install MariaDB Galera Cluster</h3>
 <pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
 sudo apt-get install mariadb-galera-cluster galera rsync</code></pre>

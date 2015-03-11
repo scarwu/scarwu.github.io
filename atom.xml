@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2015-03-11T13:57:19+08:00</updated>
+	<updated>2015-03-11T14:22:55+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -15,12 +15,16 @@
 		<link href="http://scar.tw/article/2015/03/11/mariadb-galera-cluster-10-0-setting/" />
 		<id>urn:uuid:2368b3d3-8d8d-18e9-153a-888f8d3d01f5</id>
 		<updated>2015-03-11T12:37:00+08:00</updated>
-		<summary type="html"><![CDATA[<p>OS: Ubuntu Trusty64</p>
-<h2>Setting Environment</h2>
+		<summary type="html"><![CDATA[<h2>Setting Environment</h2>
 <h3>Repository</h3>
+<h4>Ubuntu Trusty</h4>
 <pre><code class="language-bash">sudo apt-get install software-properties-common
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/ubuntu trusty main'</code></pre>
+<h4>Debian Wheezy</h4>
+<pre><code class="language-bash">sudo apt-get install python-software-properties
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian wheezy main'</code></pre>
 <h3>Install MariaDB Galera Cluster</h3>
 <pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
 sudo apt-get install mariadb-galera-cluster galera rsync</code></pre>
@@ -50,12 +54,13 @@ wsrep_cluster_name = "CLUSTER_NAME"
 wsrep_cluster_address = "gcomm://OTHER_NODE_IP:4567"
 wsrep_sst_auth = CLUSTER_USER:CLUSTER_PASS
 wsrep_sst_method = rsync</code></pre>
-<h3>Start First Cluster Node</h3>
-<pre><code class="language-bash">sudo service mysql start --wsrep-new-cluster</code></pre>
-<h3>Start Other Cluster Node</h3>
-<pre><code class="language-bash">sudo service mysql start</code></pre>
+<h3>Start Cluster Node</h3>
+<h4>First Cluster Node</h4>
+<pre><code class="language-bash">node01$ sudo service mysql start --wsrep-new-cluster</code></pre>
+<h4>Other Cluster Node</h4>
+<pre><code class="language-bash">node02$ sudo service mysql start</code></pre>
 <h3>Fix Bug</h3>
-<pre><code class="language-bash">sudo service mysql stop
+<pre><code class="language-bash">node02$ sudo service mysql stop
 [FAIL] Stopping MariaDB database server: mysqld failed!</code></pre>
 <p>If you shutdown cluster node failed, then try to copy this file from first node to other node.
 And try again.</p>
