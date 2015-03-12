@@ -102,7 +102,7 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
 <!--more-->
 <h3>Install MariaDB Galera Cluster</h3>
 <pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
-sudo apt-get install mariadb-galera-cluster galera rsync</code></pre>
+sudo apt-get install mariadb-galera-server galera rsync</code></pre>
 <h2>Setting Cluster Node</h2>
 <h3>Create Cluster User for All Node</h3>
 <pre><code class="language-sql">GRANT USAGE ON *.* to CLUSTER_USER@'%' IDENTIFIED BY 'CLUSTER_PASS';

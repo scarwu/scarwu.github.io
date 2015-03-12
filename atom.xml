@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2015-03-11T16:24:44+08:00</updated>
+	<updated>2015-03-12T09:53:22+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -28,7 +28,7 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
 <!--more-->
 <h3>Install MariaDB Galera Cluster</h3>
 <pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
-sudo apt-get install mariadb-galera-cluster galera rsync</code></pre>
+sudo apt-get install mariadb-galera-server galera rsync</code></pre>
 <h2>Setting Cluster Node</h2>
 <h3>Create Cluster User for All Node</h3>
 <pre><code class="language-sql">GRANT USAGE ON *.* to CLUSTER_USER@'%' IDENTIFIED BY 'CLUSTER_PASS';
