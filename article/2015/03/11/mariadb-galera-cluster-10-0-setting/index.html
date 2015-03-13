@@ -128,11 +128,21 @@ wsrep_cluster_name = "CLUSTER_NAME"
 wsrep_cluster_address = "gcomm://OTHER_NODE_IP:4567"
 wsrep_sst_auth = CLUSTER_USER:CLUSTER_PASS
 wsrep_sst_method = rsync</code></pre>
+<h3>Open 3 Ports in Firewall</h3>
+<ul>
+<li>3306: MariaDB</li>
+<li>4444: RSync</li>
+<li>4567: Galera Cluster</li>
+</ul>
 <h3>Start Cluster Node</h3>
 <h4>First Cluster Node</h4>
 <pre><code class="language-bash">sudo service mysql start --wsrep-new-cluster</code></pre>
 <h4>Other Cluster Node</h4>
 <pre><code class="language-bash">sudo service mysql start</code></pre>
+<h3>Fix Bug</h3>
+<p>If you shutdown cluster node with failed, then copy <code>/etc/mysql/debian.cnf</code> from the first node to the other node.</p>
+<pre><code class="language-bash">sudo service mysql stop
+[FAIL] Stopping MariaDB database server: mysqld failed!</code></pre>
 <h2>Finally</h2>
 <p>Have Fun!</p></div>
     </article>
