@@ -236,7 +236,7 @@ rs.on('data', function (chunk) {
 // 3.
 rs.pipe(ws);</code></pre>
 <p>另外上面所提昇增進效能的部份則是指，使用串流的方式傳輸資料可以不需要像是傳統的<code>Web Server</code>必須先將資料暫存在硬碟中然後再視情形對資料做處理或搬移。</p>
-<p>在資料進來的同時就可以即時對於資料做處理，並且可以將資料隨使用情境做多層的傳遞，例如<code>Read File</code> -> <code>HTTP Request</code> -> <code>TCP Server</code> -> <code>Write File</code>這樣的流程，它將檔案使用<code>HTTP</code>傳送出去，然後在<code>Web Server</code>接收到資料的同時做處理，然後再使用<code>TCP</code>協定將檔案傳送給其它裝置並寫入硬碟。</p>
+<p>在資料進來的同時就可以即時對於資料做處理，並且可以將資料隨使用情境做多層的傳遞，例如<code>Read File</code> -&gt; <code>HTTP Request</code> -&gt; <code>TCP Server</code> -&gt; <code>Write File</code>這樣的流程，它將檔案使用<code>HTTP</code>傳送出去，然後在<code>Web Server</code>接收到資料的同時做處理，然後再使用<code>TCP</code>協定將檔案傳送給其它裝置並寫入硬碟。</p>
 <p>將Stream的事件弄清楚後，對於資料的傳遞就能更隨自己的意願做處理，也能將以上的流程實做出來。</p>
 <h3>Reference</h3>
 <p><a href="http://nodejs.org/api/">Node.js Manual &amp; Documentation</a></p></div>
@@ -248,7 +248,7 @@ rs.pipe(ws);</code></pre>
         <span class="old">
             <a href="/article/2013/05/29/playing-ps-game-with-raspberry-pi/">用Raspberry Pi玩PS遊戲 >></a>        </span>
         <span class="count">
-            16 / 42        </span>
+            17 / 43        </span>
     </div>
 </div>
 <div id="fb-root"></div></div>
@@ -282,6 +282,8 @@ rs.pipe(ws);</code></pre>
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
                 <span class="item">
+                        <a href="/archive/2016/">2016(1)</a>        </span>
+                <span class="item">
                         <a href="/archive/2015/">2015(3)</a>        </span>
                 <span class="item">
                         <a href="/archive/2014/">2014(9)</a>        </span>
@@ -297,7 +299,11 @@ rs.pipe(ws);</code></pre>
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/tag/3C/">3C(3)</a>        </span>
+                        <a href="/tag/3C/">3C(4)</a>        </span>
+                <span class="item">
+                        <a href="/tag/AS200V/">AS200V(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/AT9902/">AT9902(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Android/">Android(3)</a>        </span>
                 <span class="item">
@@ -310,6 +316,8 @@ rs.pipe(ws);</code></pre>
                         <a href="/tag/Chrome/">Chrome(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Cluster/">Cluster(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/DIY/">DIY(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Debian/">Debian(1)</a>        </span>
                 <span class="item">

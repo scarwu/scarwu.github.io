@@ -2,426 +2,446 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>http://scar.tw/works/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/404.html</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/about/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
+	</url>
+	<url>
+		<loc>http://scar.tw/article/2016/03/03/sony-as200v-reduce-wind-noise/</loc>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2015/03/11/mariadb-galera-cluster-10-0-setting/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2015/01/11/polaroid-cube-unboxing-and-mini4wd/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/05/09/html-javascript-load-problem/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/04/22/fix-ubuntu-14-04-lts-zh-font-selector/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/02/21/pointless-with-segmentation-faults/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/01/19/chrome-enable-hardware-graphics/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/01/19/ubuntu-13-10-install-amd-catalyst-13-12/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/01/14/zsh-history-search-backward-and-forward/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2014/01/03/express-jade-less-coffee-with-livereload/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/09/19/archlinux-based-install/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/08/13/hadoop-install-and-setup/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/05/30/observe-and-using-node-js-stream-event/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/05/29/playing-ps-game-with-raspberry-pi/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/05/16/try-android-studio-v01/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/04/29/node-js-dgram-error-with-EBADF/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/04/28/apache-vhost-and-userdir-config/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/04/19/shopping-record/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/04/04/about-php-native-template-engine/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/04/02/php-concatenate-string/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2013/01/09/php-phar-create-and-use/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/12/08/facebook-virus-ksum-exe/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/09/20/extend-sqlite-to-support-regexp/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/09/12/sqlite3-multi-thread-in-python/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/08/26/install-xphrof-on-ubuntu-12-04/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/08/19/hack-php-to-support-put-fileupload/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/07/19/hidden-facebook-ads-with-google-chrome/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/07/18/diablo-3-calculator-readme/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/05/07/pointless-readme/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/04/27/about-pointless-static-blog-generator/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/04/23/implement-a-small-router-use-php-2/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/04/23/implement-a-small-router-use-php-1/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/03/07/hiphop-building-on-ubuntu-11-10/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2012/01/29/html5-sql-database/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2011/10/31/ios-rotation-resize-fix/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/article/2011/09/26/android-develop-env-setting/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/1/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/2/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/3/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/4/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/5/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/6/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/7/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/8/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page/9/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/page</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
+	</url>
+	<url>
+		<loc>http://scar.tw/archive/2016/</loc>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/archive/2015/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/archive/2014/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/archive/2013/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/archive/2012/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/archive/2011/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/archive</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/3C/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
+	</url>
+	<url>
+		<loc>http://scar.tw/tag/AS200V/</loc>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
+	</url>
+	<url>
+		<loc>http://scar.tw/tag/AT9902/</loc>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Android/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Apache/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Arch Linux/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/C/C++/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Chrome/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Cluster/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
+	</url>
+	<url>
+		<loc>http://scar.tw/tag/DIY/</loc>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Debian/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Diablo III/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Express/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Facebook/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/HHKB/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/HTML5/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Hadoop/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/JavaScript/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Keyboard/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Linux/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/MariaDB/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Mini 4WD/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Mobile Web/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/MySQL/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/NanoCLI/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/NodeJS/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Note/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/PHP/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/PHPBrew/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Pointless/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Polaroid Cube/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Python/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Raspberry Pi/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/RequireJS/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/SQLite/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/ThinkPad/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Tools/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Toy/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Ubuntu/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Virus/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/WebGL/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Windows/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/Works/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/ZSH/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag/iOS/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/tag</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/atom.xml</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 	<url>
 		<loc>http://scar.tw/</loc>
-		<lastmod>2015-04-09T11:40:50+08:00</lastmod>
+		<lastmod>2016-03-04T13:23:45+08:00</lastmod>
 	</url>
 </urlset>

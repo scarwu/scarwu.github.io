@@ -5,11 +5,65 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2015-04-09T11:40:50+08:00</updated>
+	<updated>2016-03-04T13:23:45+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[Sony AS200V 防風對策]]></title>
+		<link href="http://scar.tw/article/2016/03/03/sony-as200v-reduce-wind-noise/" />
+		<id>urn:uuid:29d9fb7e-641e-202c-cb46-36df003323f6</id>
+		<updated>2016-03-03T09:31:55+08:00</updated>
+		<summary type="html"><![CDATA[<p>從去年開七月入手 AS200V 後，風切的問題就一直困擾我，有試過在機身的麥克風上加上海綿，但是收音的位置在前方會一直撞風，效果還是很差。</p>
+<p>另外有看過網路上有人使用附贈的防水殼去改造，但使用上卻比不上裸機那樣方便，通常我會使用外部電源長時間錄影並且頻繁傳輸檔案，用防水殼就稍嫌礙事。</p>
+<p>有想過外接麥克風，但是 AS200V 不像 X1000V 那樣將標準的雲台接孔做在機身上，需要另外使用轉接座才能連接安全帽支架，轉接座就會壓在防水蓋上擋住接麥克風的接孔，無法外接。</p>
+<p><strong>BUT!!</strong></p>
+<p>有天晚上靈感來了，將該買了材料買一買就開幹了！</p>
+<!--more-->
+<p>材料清單：</p>
+<ul>
+<li>3.5mm 插頭</li>
+<li>3.5mm 插座</li>
+<li>音響線材</li>
+<li>領夾式麥克風</li>
+<li>粉撲</li>
+</ul>
+<h2>機身改造</h2>
+<p>將保護蓋打開並將機身上的螺絲轉下後就可以把保護蓋拆下了。</p>
+<p>因為沒了蓋子所以要另外對線材接口用膠帶貼上做基本處理，只留下 MIC 的接口。</p>
+<p>將蓋子去除後，機身跟雲台轉接座之間就騰出大約 2mm 的空間可以塞入線材。</p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/001.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<h2>製作轉接線材</h2>
+<p>將電子材料的 3.5mm 接頭額外加工，將接點磨至 2mm 符合騰出的空間，就可以開始焊接了。</p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/002.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<p>這邊要注意的是線材寬度也不能超過 2mm，另外因為接頭的接點都被磨薄了，所以接點跟接點間要特別防止短路的問題，我是另外用遮蓋膠帶去處理。</p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/003.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/004.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<p>最後在另一端焊接上插孔並做絕緣處理就完成了。</p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/005.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<h2>組合</h2>
+<p>這邊我選用的外接麥克風是 audio-technica 的 AT9902，因為它剛好可以夾在鼻罩上。</p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/006.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<p>將該接的線接一接，把麥克風放在適合的位置，再將多餘的線塞到帽體內就完成了。</p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/007.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/008.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/009.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<h2>自製防風罩</h2>
+<p>外接麥克風首次測試後差點沒吐血，因為是指向性麥克風在安全帽內同樣有風流通，所以風切聲依然嚴重。</p>
+<p>最後決定去十元商店買了粉撲盒，將粉撲另外加工成防風罩裝在麥克風上，測試結果收音非常清晰，在比較高速的時候引擎聲也能錄到。</p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/010.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<p><img src="/images/sony-as200v-reduce-wind-noise/011.jpg" alt="AS200V Reduce Wind Noise" /></p>
+<h2>測試影片</h2>
+<p>AS200V 內建麥克風</p>
+<iframe src="https://www.youtube.com/embed/-snNlAPUZN0" frameborder="0" allowfullscreen></iframe>
+<p>AS200V 內建麥克風 (加海綿)</p>
+<iframe src="https://www.youtube.com/embed/HOaBnsi9Rp8" frameborder="0" allowfullscreen></iframe>
+<p>AS200V + AT9902</p>
+<iframe src="https://www.youtube.com/embed/EGXAc48it74" frameborder="0" allowfullscreen></iframe>
+<p>AS200V + AT9902 (加防風罩)</p>
+<iframe src="https://www.youtube.com/embed/gAJE67qSbIE" frameborder="0" allowfullscreen></iframe>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[MariaDB Galera Cluster 10.0 Setting]]></title>
 		<link href="http://scar.tw/article/2015/03/11/mariadb-galera-cluster-10-0-setting/" />
@@ -82,19 +136,19 @@ wsrep_sst_method = rsync</code></pre>
 <!--more-->
 <h2>實體</h2>
 <p>包裝很簡單，就一個透明盒子裝著，而下方則是吸附在金屬板上，沒錯在本體的下方有磁鐵可以任意吸附在金屬表面。</p>
-<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/001.jpg" /></p>
-<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/002.jpg" /></p>
+<p><img src="/images/polaroid-cube-and-mini4wd/001.jpg" alt="Polaroid Cube" /></p>
+<p><img src="/images/polaroid-cube-and-mini4wd/002.jpg" alt="Polaroid Cube" /></p>
 <p>將 <code>Polaroid Cube</code> 放上腳架整個就很小巧，另外他底座是可以拆卸的且可以跟其他配件互通，不過卻很不好拆卸。</p>
-<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/003.jpg" /></p>
-<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/004.jpg" /></p>
+<p><img src="/images/polaroid-cube-and-mini4wd/003.jpg" alt="Polaroid Cube" /></p>
+<p><img src="/images/polaroid-cube-and-mini4wd/004.jpg" alt="Polaroid Cube" /></p>
 <h2>四驅車</h2>
 <p>我特別製作了一個車殼可以讓它安裝在上面，下面的金屬板是包裝盒中的一部分，我把它拿來加工，擴孔並導腳讓它可以使用皿型螺絲使底部貼合。</p>
-<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/005.jpg" /></p>
+<p><img src="/images/polaroid-cube-and-mini4wd/005.jpg" alt="Polaroid Cube" /></p>
 <p>另外為了造型另外將軟殼切了個洞讓 <code>Polaroid Cube</code> 可以穿過去，附帶一提的是因為它本身有廣角所以不會有車殼過高擋住畫面的問題，車殼只會出現在畫面的下方一點的位置。</p>
-<p><img alt="Polaroid Cube" src="/images/polaroid-cube-and-mini4wd/006.jpg" /></p>
+<p><img src="/images/polaroid-cube-and-mini4wd/006.jpg" alt="Polaroid Cube" /></p>
 <h2>實際拍攝</h2>
 <p>在我的播放清單中還有其它的影片這邊就先放上一段，因為是用四驅車的視角所以看起來車速會特別的快，如有感覺噁心想吐就多看幾次就會好了。</p>
-<p><iframe width="560" height="315" src="//www.youtube.com/embed/3g-2XQ0g1l8" frameborder="0" allowfullscreen></iframe></p>
+<iframe width="560" height="315" src="//www.youtube.com/embed/3g-2XQ0g1l8" frameborder="0" allowfullscreen></iframe>
 <h2>感謝</h2>
 <p>最後在這邊特別感謝新竹快樂堂熱血車友 <a href="https://www.facebook.com/adzg9900">阿臣</a> 贊助了我一盒 <code>ITEM 18613</code>以及一堆零件讓我弄好了這台車。</p>]]></summary>
 	</entry>
@@ -108,15 +162,15 @@ wsrep_sst_method = rsync</code></pre>
 <!--more-->
 <h2>實照</h2>
 <p>盒子就跟我的 <code>CM Storm Quick Fire Rapid 紅軸</code> 差不多大了，拆開之後小很多，我買的是灰色墨刻型號是 <code>PD-KB400D</code> ，沒有買無刻的原因是因為整隻都灰色的不好看...，有點顏色比較好，另外就是實在上墨刻的顏色在視覺上滿低調的。</p>
-<p><img alt="HHKB Pro2" src="/images/happy-hacking-keyboard-pro2-unboxing/001.jpg" /></p>
-<p><img alt="HHKB Pro2" src="/images/happy-hacking-keyboard-pro2-unboxing/002.jpg" /></p>
-<p><img alt="HHKB Pro2" src="/images/happy-hacking-keyboard-pro2-unboxing/003.jpg" /></p>
+<p><img src="/images/happy-hacking-keyboard-pro2-unboxing/001.jpg" alt="HHKB Pro2" /></p>
+<p><img src="/images/happy-hacking-keyboard-pro2-unboxing/002.jpg" alt="HHKB Pro2" /></p>
+<p><img src="/images/happy-hacking-keyboard-pro2-unboxing/003.jpg" alt="HHKB Pro2" /></p>
 <p>因為網路上的照片很多，所以就沒有多照了。</p>
 <h2>使用</h2>
 <p>我將後面的開關設定為 <code>101110</code> ，這樣的 <code>Layout</code> 原本的使用習慣比較相近，實際上使用了幾天，因為還沒有完全熟悉所以開發程式的速度受了一點影響。</p>
 <p>但先不管網路上的評論說這隻鍵盤比較適合哪一種的作業系統或這是哪一種的文字編輯器，但在我實際的使用上它的確是隻很特殊的鍵盤，不管是在手感或者是按鍵的編排。</p>
 <p>使用上的深刻感受，就非的 <code>Ctrl</code> 及 <code>Fn</code> 鍵莫屬，因為將按鍵上移，在使用組合鍵時小拇指終於不用用很鱉的姿勢去按組合鍵，這樣小拇指也能夠比較放鬆。</p>
-<p>另外就是手感，它的段落比較明顯，在使用上感覺比較重手，相較平常工作用的 <code>FILCO Ninja 茶軸</code> 來說，但是按鍵的聲音有比較小聲一點，原本茶軸是是 "卡卡卡" 現在這隻是 "豆豆豆"。</p>
+<p>另外就是手感，它的段落比較明顯，在使用上感覺比較重手，相較平常工作用的 <code>FILCO Ninja 茶軸</code> 來說，但是按鍵的聲音有比較小聲一點，原本茶軸是是 &quot;卡卡卡&quot; 現在這隻是 &quot;豆豆豆&quot;。</p>
 <p>關於保護部份，因為它沒有防塵蓋所以我使用完之後都把它收進抽屜去，雖然日本有專用防塵袋及防塵蓋但也不便宜，得另外再找找看其它替代方案了。</p>
 <h2>最後</h2>
 <p>因為我這幾天都在用 <code>HHKB Pro2</code>，所以就把原本的鍵盤借給了同事，沒想到他用了兩天就馬上入坑了，但這時候一定要澄清說我只是在推薦好東西。</p>]]></summary>
@@ -233,64 +287,5 @@ Master_SSL_Verify_Server_Cert: No
              Master_Server_Id: 1</code></pre>
 <h2>收工</h2>
 <p>說明就到這邊，可以另外在<code>Master</code>更動幾筆資料，看看是否<code>Slave</code>是否也會同樣做動來驗證。</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[HTML中JavaScript的載入問題]]></title>
-		<link href="http://scar.tw/article/2014/05/09/html-javascript-load-problem/" />
-		<id>urn:uuid:6ee60399-2dc7-b6aa-100c-18920fb1a3e8</id>
-		<updated>2014-05-09T00:09:14+08:00</updated>
-		<summary type="html"><![CDATA[<h2>前言</h2>
-<p>一般在瀏覽器中對於<code>HTML</code>的解析順序是由上而下的，所以在傳統的網頁設計中我們一般都會將<code>&lt;script&gt;</code>標籤放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這樣能確保<code>JavaScript</code>盡早被執行到。</p>
-<p>但是隨著近年來網頁不再只是網頁，而漸漸成為了<code>Web Application</code>，因為如此所以使用到的<code>JavaScript</code>就變得越來越大，這時候<code>JavaScript</code>的載入就是個問題。</p>
-<!--more-->
-<h2>阻塞 (Blocking)</h2>
-<p>在傳統的瀏覽器中，每當解析到了<code>&lt;script&gt;</code>標籤時瀏覽器的繪製就會停頓下來，然後去下載並執行<code>JavaScript</code>中的內容，過多的<code>JavaScript</code>內容會造成阻塞問題，便是瀏覽器停頓一段時間等待<code>JavaScript</code>都執行完畢後，才開始繪製剩下的網頁內容。</p>
-<p>上面提到，一般會將<code>&lt;script&gt;</code>標前放置在<code>&lt;head&gt;&lt;/head&gt;</code>中，這會造成網頁在一片空白的情況下停頓許久。</p>
-<pre><code class="language-html">&lt;html&gt;
-    &lt;head&gt;
-        &lt;script&gt;&lt;/script&gt;
-        &lt;script&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;!--something--&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<p>所以現在會建議將<code>&lt;script&gt;</code>放置在<code>&lt;body&gt;&lt;/body&gt;</code>的尾端，等待瀏覽器將大部分的內容都繪製出來之後再去執行<code>JavaScript</code>，這樣比較不會造成使用者的觀感不佳。</p>
-<pre><code class="language-html">&lt;html&gt;
-    &lt;head&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-
-        &lt;!--something--&gt;
-
-        &lt;script&gt;&lt;/script&gt;
-        &lt;script&gt;&lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<h2>async, defer 屬性</h2>
-<p>雖然可以將<code>&lt;script&gt;</code>放置在<code>&lt;body&gt;&lt;/body&gt;</code>的尾端，來減少使用者觀感不佳，但是實際上放置在尾端還是會有阻塞(Blocking)的問題，這個問題依舊沒有解決。</p>
-<p>所以在<code>HTML5</code>終究提出了新的<code>async</code>以及<code>defer</code>屬性來解決阻塞(Blocking)的問題，在<code>&lt;script&gt;</code>中加上這兩個屬性就可以讓有支援的瀏覽器，以非同步的方式下載<code>JavaScript</code>並執行其內容。</p>
-<pre><code class="language-html">&lt;script src="file.js"&gt;&lt;/script&gt;
-&lt;script src="file.js" defer&gt;&lt;/script&gt;
-&lt;script src="file.js" async&gt;&lt;/script&gt;</code></pre>
-<p><code>&lt;script&gt;</code>，停止網頁繪製，等待<code>JavaScript</code>下載並執行完，再繼續網頁繪製。</p>
-<p><code>&lt;script defer&gt;</code>，不停止網頁繪製，<code>JavaScript</code>的下載會同時進行，等待網頁繪製完成會再執行<code>JavaScript</code>。</p>
-<p><code>&lt;script async&gt;</code>，不停止網頁繪製，<code>JavaScript</code>的下載會同時進行，當<code>JavaScript</code>下載完成後，再停止網頁繪製並執行<code>JavaScript</code>，等待執行完成後再繼續網頁繪製。</p>
-<p>Peter Beverloo在他的網誌上有繪製一張時序圖，用來說明這兩個新的屬性與傳統的載入方式有什麼不同，可參考下方連結。</p>
-<ul>
-<li><a href="http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/">Asynchronous and deferred JavaScript execution explained</a></li>
-</ul>
-<h2>RequireJS</h2>
-<p><code>async</code>與<code>defer</code>屬性可以解決阻塞問題，但也引起了一個新的問題，那就是以非同步方是執行的<code>JavaScript</code>的執行順序並不是依照<code>&lt;script&gt;</code>在HTML上的順序，而是誰先下載好就先執行誰，如果你的<code>JavaScript</code>的設計在執行上有相依性的問題就有機會因為執行順序的不同而爆炸。</p>
-<p>因此<code>RequireJS</code>的出現能夠解決此問題，它可以以非同步方式載入<code>JavaScript</code>，並且也可以解決<code>JavaScript</code>檔案之前的相依性問題，並讓<code>JavaScript</code>模組化。</p>
-<p>在這並沒有要說明使用方式，可以參考網路上現有的文件，如下。</p>
-<ul>
-<li><a href="http://requirejs.org/">How to get started with RequireJS</a></li>
-<li><a href="http://www.jaceju.net/blog/archives/beginning-requirejs/">初探 RequireJS</a></li>
-<li><a href="http://ithelp.ithome.com.tw/question/10120521">實用 JavaScript 工具庫：RequireJS</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html">Javascript模块化编程（三）：require.js的用法</a></li>
-</ul>
-<h2>小結</h2>
-<p>上面提出的幾種解決方法，但是在實作時也不用全用上，依照當下的實作規模來做取捨，雖然沒有提到但是在製作<code>Mobile Web</code>時要更加注意<code>JavaScript</code>載入(以及其他多媒體檔案的載入)，因<code>3G</code>或是<code>Wifi</code>並沒有比有線網路來的快速，所以網頁讀取時的停頓感會更加的放大，這點必須注意。</p>]]></summary>
 	</entry>
 </feed>
