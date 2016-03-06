@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-03-04T13:23:45+08:00</updated>
+	<updated>2016-03-06T20:36:31+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -56,13 +56,13 @@
 <p><img src="/images/sony-as200v-reduce-wind-noise/011.jpg" alt="AS200V Reduce Wind Noise" /></p>
 <h2>測試影片</h2>
 <p>AS200V 內建麥克風</p>
-<iframe src="https://www.youtube.com/embed/-snNlAPUZN0" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/-snNlAPUZN0" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 <p>AS200V 內建麥克風 (加海綿)</p>
-<iframe src="https://www.youtube.com/embed/HOaBnsi9Rp8" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/HOaBnsi9Rp8" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 <p>AS200V + AT9902</p>
-<iframe src="https://www.youtube.com/embed/EGXAc48it74" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/EGXAc48it74" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 <p>AS200V + AT9902 (加防風罩)</p>
-<iframe src="https://www.youtube.com/embed/gAJE67qSbIE" frameborder="0" allowfullscreen></iframe>]]></summary>
+<iframe src="https://www.youtube.com/embed/gAJE67qSbIE" width="560" height="315" frameborder="0" allowfullscreen></iframe>]]></summary>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[MariaDB Galera Cluster 10.0 Setting]]></title>
