@@ -103,7 +103,7 @@ sudo dpkg -i percona-release_0.1-3.jessie_all.deb
 sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5</code></pre>
 <!--more-->
 <h2>Install MariaDB &amp; XtraBackup</h2>
-<p>這邊而外安裝 <code>XtraBackup</code> 是讓 <code>wsrep_sst_method</code> 參數可以使用 <code>xtrabackup-v2</code> 來同步 (一般是使用 <code>rsync</code>)，好處是不會鎖表</p>
+<p>這邊額外安裝 <code>XtraBackup</code> 是讓 <code>wsrep_sst_method</code> 參數可以使用 <code>xtrabackup-v2</code> 來同步 (一般是使用 <code>rsync</code>)，好處是不會鎖表</p>
 <pre><code>sudo apt-get update
 sudo apt-get install -y mariadb-server percona-xtrabackup</code></pre>
 <h2>Upgrade MariaDB form 10.0 to 10.1 (Optional)</h2>
