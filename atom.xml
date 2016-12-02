@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-12-02T14:03:42+08:00</updated>
+	<updated>2016-12-02T14:37:19+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -92,7 +92,11 @@ innodb_buffer_pool_size     = 400M</code></pre>
 <h3>Master Node</h3>
 <pre><code>sudo service mysql bootstrap</code></pre>
 <h3>Salve Node</h3>
-<pre><code>sudo service msyql start</code></pre>]]></summary>
+<pre><code>sudo service msyql start</code></pre>
+<h2>Troubleshooting</h2>
+<ul>
+<li><a href="https://www.percona.com/blog/2014/12/30/diagnosing-sst-errors-with-percona-xtradb-cluster-for-mysql/">Diagnosing SST errors with Percona XtraDB Cluster for MySQL</a></li>
+</ul>]]></summary>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[NFS v4 簡易安裝]]></title>
