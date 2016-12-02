@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-12-02T13:52:40+08:00</updated>
+	<updated>2016-12-02T13:53:47+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -102,7 +102,7 @@ innodb_buffer_pool_size     = 400M</code></pre>
 		<summary type="html"><![CDATA[<p>筆記文，紀錄可行的方式，一段時間沒有用有機會會忘記。</p>
 <h2>Environment</h2>
 <ul>
-<li>Release: Ubuntu or Debian</li>
+<li>Linux distribution: <code>Ubuntu</code> or <code>Debian</code></li>
 <li>Server IP: <code>192.168.1.100</code></li>
 <li>Client IP: <code>192.168.1.101</code></li>
 </ul>
