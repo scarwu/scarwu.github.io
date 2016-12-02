@@ -5,11 +5,43 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-12-02T09:59:14+08:00</updated>
+	<updated>2016-12-02T10:19:33+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[NFS v4 簡易安裝]]></title>
+		<link href="http://scar.tw/article/2016/12/02/nfs-v4-easy-to-go/" />
+		<id>urn:uuid:9729c864-9422-312b-f91a-83bff31570d9</id>
+		<updated>2016-12-02T10:01:22+08:00</updated>
+		<summary type="html"><![CDATA[<p>筆記文，紀錄可行的方式，一段時間沒有用有機會會忘記。</p>
+<h2>Environment</h2>
+<ul>
+<li>Ubuntu or Debian</li>
+<li>IP
+<ul>
+<li>Server: <code>192.168.1.100</code></li>
+<li>Client: <code>192.168.1.101</code></li>
+</ul></li>
+</ul>
+<!--more-->
+<h2>Server Side</h2>
+<h3>Install Package</h3>
+<pre><code>sudo apt-get update
+sudo apt-get install nfs-kernel-server nfs-common</code></pre>
+<h3>修改 /etc/exports</h3>
+<p>開放路徑給某個 Client IP 或是網段連接，後面是連結用的設定參數。</p>
+<pre><code>/path/to/folder 192.168.1.101(rw,sync,no_subtree_check,all_squash,anonuid=1002,anongid=1002)</code></pre>
+<h3>設定 iptables</h3>
+<p>開放 UDP Port: <code>111</code>、<code>2049</code> 以及 <code>3000-65000</code>，IP 與上同。</p>
+<pre><code>iptables -A INPUT -s 192.168.1.101 -p UDP -m multiport --dport 111,2049,30000:65000 -j ACCEPT</code></pre>
+<h3>Restart Services</h3>
+<pre><code>sudo service nfs-kernel-server
+sudo service nfs-common</code></pre>
+<h2>Client Side</h2>
+<pre><code>mount -t nfs4 192.168.1.100:/path/to/remote /path/to/local</code></pre>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[Sony AS200V 防風對策]]></title>
 		<link href="http://scar.tw/article/2016/03/03/sony-as200v-reduce-wind-noise/" />
@@ -174,118 +206,5 @@ wsrep_sst_method = rsync</code></pre>
 <p>關於保護部份，因為它沒有防塵蓋所以我使用完之後都把它收進抽屜去，雖然日本有專用防塵袋及防塵蓋但也不便宜，得另外再找找看其它替代方案了。</p>
 <h2>最後</h2>
 <p>因為我這幾天都在用 <code>HHKB Pro2</code>，所以就把原本的鍵盤借給了同事，沒想到他用了兩天就馬上入坑了，但這時候一定要澄清說我只是在推薦好東西。</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[MySQL/MariaDB 5.5 Replication Setting]]></title>
-		<link href="http://scar.tw/article/2014/11/12/mysql-or-mariadb-5-5-replication-setting/" />
-		<id>urn:uuid:0323e681-0995-01d3-b9dc-18c6bd5777a8</id>
-		<updated>2014-11-12T11:21:31+08:00</updated>
-		<summary type="html"><![CDATA[<p>久違的文章，我竟然長達半年沒有寫文章，最近退伍又很剛好找到工作了。又有一堆雜事可以做，我想之後應該有一堆東西可以紀錄吧。</p>
-<p>最近忙著幫公司架設<code>Raid</code>跟備份機制，這邊就紀錄一下<code>MySQL Replication</code>的流程，雖然說是<code>MySQL</code>但是公司實際上是用<code>MariaDB</code>但這不是重點，基本上操作是一樣的。</p>
-<p>在<code>Replication</code>的機制上<code>MySQL Server</code>分為<code>Master</code>與<code>Slave</code>，在一般的應用中主要還是用於負載平衡，但在這邊我只是要用於備份。</p>
-<!--more-->
-<h2>設定 Master 資料庫</h2>
-<p>首先先在<code>Master</code>的<code>my.cnf</code>的設定檔案中加上以下設定：</p>
-<pre><code class="language-conf"># my.cnf
-[mysqld]
-server-id=1
-log-bin=/path/to/mysql-bin</code></pre>
-<p><code>server-id</code>在伺服器中必須是唯一值，數值大小是 1 ~ 2<sup>32</sup>-1，<code>log-bin</code>則是設定<code>Binary Log</code>的路徑。</p>
-<p>如果想要針對特定的資料庫做複寫或不要複寫到<code>Slave</code>，可以再另外加上以下的設定。</p>
-<pre><code class="language-conf"># 要複寫的
-binlog-do-db=db1
-binlog-do-db=db2
-# 不要複寫的
-binlog-ignore-db=db3
-binlog-ignore-db=db4</code></pre>
-<p>當設定完成之後重新啟動<code>Master</code>。</p>
-<pre><code class="language-bash">service mysql restart</code></pre>
-<p>接著登入伺服器使用指令<code>SHOW MASTER STATUS</code>觀看<code>Master</code>的狀態。</p>
-<pre><code class="language-sql">mysql &gt; SHOW MASTER STATUS;
-+------------------+----------+--------------+------------------+
-| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
-+------------------+----------+--------------+------------------+
-| mysql-bin.000008 | 5723     | db1,db2      | db3,db4          |
-+------------------+----------+--------------+------------------+</code></pre>
-<p>接著為<code>Master</code>加上<code>Slave</code>用來<code>Replication</code>的專用帳號，將<code>USER_NAME</code>、<code>USER_PASS</code>及<code>SLAVE_HOST</code>換成你的資料。</p>
-<pre><code class="language-sql">CREATE USER 'USER_NAME'@'SLAVE_HOST' IDENTIFIED BY 'USER_PASS';
-GRANT REPLICATION SLAVE ON *.* TO 'USER_NAME'@'SLAVE_HOST';
-FLUSH PRIVILEGES;</code></pre>
-<p>最後將資料庫的資料匯出，然後傳送到<code>Slave</code>接著下面的<code>Slave</code>資料庫設定步驟。這邊的參數<code>--master-data</code>是匯出時一同匯出<code>Master</code>的資料包含<code>Log file</code>及<code>Log position</code>，而<code>--all-databases</code>是指整個資料庫，其中不包含<code>information_schema</code>及<code>performance_schema</code>但有<code>mysql</code>資料庫。</p>
-<pre><code class="language-bash">mysqldump -u root -p --master-data --all-databases &gt; all_db.sql</code></pre>
-<h2>設定 Slave 資料庫</h2>
-<p>將剛剛的從<code>Master</code>傳送過來的檔案匯入<code>Slave</code>之中，如果不想要將<code>Slave</code>的使用者權限覆蓋過去的話，請將檔案中有關於<code>mysql</code>資料庫的指令移除。</p>
-<pre><code class="language-bash">mysql -u root -p &lt; all_db.sql</code></pre>
-<p>同樣也是設定將<code>Slave</code>加上<code>server-id</code>設定。</p>
-<pre><code class="language-conf"># my.cnf
-[mysqld]
-server-id=2</code></pre>
-<p>設定指定資料庫是否被<code>Master</code>複寫。</p>
-<pre><code class="language-conf"># 要複寫的
-replicate-do-db=db1
-replicate-do-db=db2
-# 不要複寫的
-replicate-ignore-db=db3
-replicate-ignore-db=db4</code></pre>
-<p>設定完成後重新啟動<code>Slave</code>。</p>
-<pre><code class="language-bash">service mysql restart</code></pre>
-<p>然後在登入前先去看剛剛匯入的檔案，找出以下的<code>query</code>，把這邊的<code>Log File</code>跟<code>Log Position</code>記錄下來等一下會用到。</p>
-<pre><code class="language-sql">CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.00008', MASTER_LOG_POS=5723;</code></pre>
-<p>接著登入<code>Slave</code>，然後用以下指令讓<code>Slave</code>對應到<code>Master</code>，請記得先修改<code>USER_NAME</code>及<code>USER_PASS</code>為剛剛在<code>Master</code>所輸入的帳密，<code>MASTER_HOST</code>為<code>Master</code>的網路位置，最後將<code>LOG_FILE</code>及<code>LOG_POS</code>修改為剛剛所記錄下來的資料。</p>
-<pre><code class="language-sql">CHANGE MASTER TO
-    MASTER_HOST='MASTER_HOST',
-    MASTER_USER='USER_NAME',
-    MASTER_PASSWORD='USER_PASS',
-    MASTER_PORT=3306,
-    MASTER_LOG_FILE='LOG_FILE',
-    MASTER_LOG_POS=LOG_POS,
-    MASTER_CONNECT_RETRY=10;</code></pre>
-<p>接著啟動<code>Slave</code>的<code>Replication</code>機制。</p>
-<pre><code class="language-sql">START SLAVE;</code></pre>
-<p>最後使用<code>SHOW SLAVE STATUS \G;</code>來觀看<code>Slave</code>的狀態，如果<code>Replication</code>正確的話應該會長下面這樣。</p>
-<pre><code class="language-sql">mysql &gt; SHOW SLAVE STATUS \G;
-*************************** 1. row ***************************
-               Slave_IO_State: Waiting for master to send event
-                  Master_Host: MASTER_HOST
-                  Master_User: USER_NAME
-                  Master_Port: 3306
-                Connect_Retry: 10
-              Master_Log_File: mysql-bin.000009
-          Read_Master_Log_Pos: 6635
-               Relay_Log_File: db1-relay-bin.000002
-                Relay_Log_Pos: 156
-        Relay_Master_Log_File: mysql-bin.000008
-             Slave_IO_Running: Yes
-            Slave_SQL_Running: Yes
-              Replicate_Do_DB: 
-          Replicate_Ignore_DB: 
-           Replicate_Do_Table: 
-       Replicate_Ignore_Table: 
-      Replicate_Wild_Do_Table: 
-  Replicate_Wild_Ignore_Table: 
-                   Last_Errno: 0
-                   Last_Error: 
-                 Skip_Counter: 0
-          Exec_Master_Log_Pos: 90650
-              Relay_Log_Space: 6164
-              Until_Condition: None
-               Until_Log_File: 
-                Until_Log_Pos: 0
-           Master_SSL_Allowed: No
-           Master_SSL_CA_File: 
-           Master_SSL_CA_Path: 
-              Master_SSL_Cert: 
-            Master_SSL_Cipher: 
-               Master_SSL_Key: 
-        Seconds_Behind_Master: 0
-Master_SSL_Verify_Server_Cert: No
-                Last_IO_Errno: 0
-                Last_IO_Error: 
-               Last_SQL_Errno: 0
-               Last_SQL_Error: 
-  Replicate_Ignore_Server_Ids: 
-             Master_Server_Id: 1</code></pre>
-<h2>收工</h2>
-<p>說明就到這邊，可以另外在<code>Master</code>更動幾筆資料，看看是否<code>Slave</code>是否也會同樣做動來驗證。</p>]]></summary>
 	</entry>
 </feed>
