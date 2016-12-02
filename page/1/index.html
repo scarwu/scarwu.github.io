@@ -49,11 +49,77 @@
     <div id="main">
         <div id="container"><div id="container_page">
         <article class="post_block">
+        <h1 class="title"><a href="/article/2016/12/02/mariadb-galera-cluster-10-1-setting/">MariaDB Galera Cluster 10.1 Setting</a></h1>
+        <div class="info">
+            <div class="date">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2016/">2016-12-02</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Cluster/">Cluster</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Debian/">Debian</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Linux/">Linux</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/MariaDB/">MariaDB</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/MySQL/">MySQL</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2016/12/02/mariadb-galera-cluster-10-1-setting/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button" data-url="http://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" data-text="MariaDB Galera Cluster 10.1 Setting | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like" data-href="http://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone" data-href="http://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><p>先前已經寫過 <code>10.0</code> 的的設定方式，MariaDB 升級成 <code>10.1</code> 後 <code>galera</code> 就已經內建在其中了，也不用額外安裝它的套件。</p>
+<h2>Environment</h2>
+<h3>Debian Jessie</h3>
+<pre><code># MariaDB
+sudo apt-get install python-software-properties
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian jessie main'
+
+# Percona XtraBackup
+wget https://repo.percona.com/apt/percona-release_0.1-3.jessie_all.deb
+sudo dpkg -i percona-release_0.1-3.jessie_all.deb
+sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5</code></pre>
+</div>
+        <a class="more" href="/article/2016/12/02/mariadb-galera-cluster-10-1-setting/">More</a>
+    </article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2016/12/02/nfs-v4-easy-to-go/">NFS v4 簡易安裝</a></h1>
         <div class="info">
             <div class="date">
                 <i class="fa fa-calendar"></i>
                 <a href="/archive/2016/">2016-12-02</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Debian/">Debian</a></span>
+            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <span><a href="/tag/Linux/">Linux</a></span>
@@ -65,6 +131,10 @@
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <span><a href="/tag/Note/">Note</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
             </div>
                                     <div class="disqus_comments">
                 <i class="fa fa-comment"></i>
@@ -247,46 +317,6 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
 </div>
         <a class="more" href="/article/2015/01/11/polaroid-cube-unboxing-and-mini4wd/">More</a>
     </article>
-        <article class="post_block">
-        <h1 class="title"><a href="/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/">HHKB Pro2 開箱</a></h1>
-        <div class="info">
-            <div class="date">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2015/">2015-01-09</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/3C/">3C</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/HHKB/">HHKB</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Keyboard/">Keyboard</a></span>
-            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/" data-text="HHKB Pro2 開箱 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/" data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><p>其實本來沒有打算要買這隻鍵盤的，但近日日幣的走勢實在是太讓人衝動，然後就衝了，原先是請朋友去日本順便幫我帶，不過去了大阪日本橋卻沒有找到，也謝謝他們幫我找。</p>
-<p>後來透過朋友介紹代購公司幫我代買，下訂之後大約兩星期就送到了，這樣折合台幣含運費大約七張小朋友，價格真的不是許多人能接受。</p>
-</div>
-        <a class="more" href="/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/">More</a>
-    </article>
         <div id="paging">
         <span class="new">
                     </span>
@@ -327,7 +357,7 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/archive/2016/">2016(2)</a>        </span>
+                        <a href="/archive/2016/">2016(3)</a>        </span>
                 <span class="item">
                         <a href="/archive/2015/">2015(3)</a>        </span>
                 <span class="item">
@@ -360,11 +390,11 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
                 <span class="item">
                         <a href="/tag/Chrome/">Chrome(2)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Cluster/">Cluster(1)</a>        </span>
+                        <a href="/tag/Cluster/">Cluster(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/DIY/">DIY(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Debian/">Debian(1)</a>        </span>
+                        <a href="/tag/Debian/">Debian(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/Diablo%20III/">Diablo III(1)</a>        </span>
                 <span class="item">
@@ -382,15 +412,15 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
                 <span class="item">
                         <a href="/tag/Keyboard/">Keyboard(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Linux/">Linux(13)</a>        </span>
+                        <a href="/tag/Linux/">Linux(14)</a>        </span>
                 <span class="item">
-                        <a href="/tag/MariaDB/">MariaDB(2)</a>        </span>
+                        <a href="/tag/MariaDB/">MariaDB(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/Mini%204WD/">Mini 4WD(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Mobile%20Web/">Mobile Web(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/MySQL/">MySQL(2)</a>        </span>
+                        <a href="/tag/MySQL/">MySQL(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/NFS/">NFS(1)</a>        </span>
                 <span class="item">
@@ -422,7 +452,7 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
                 <span class="item">
                         <a href="/tag/Toy/">Toy(2)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Ubuntu/">Ubuntu(9)</a>        </span>
+                        <a href="/tag/Ubuntu/">Ubuntu(11)</a>        </span>
                 <span class="item">
                         <a href="/tag/Virus/">Virus(1)</a>        </span>
                 <span class="item">
