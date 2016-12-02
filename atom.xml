@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-12-02T13:56:32+08:00</updated>
+	<updated>2016-12-02T14:03:42+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -33,7 +33,7 @@ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5</code></pre>
 <pre><code>sudo apt-get update
 sudo apt-get install -y mariadb-server percona-xtrabackup</code></pre>
 <h2>Upgrade MariaDB form 10.0 to 10.1 (Optional)</h2>
-<p><code>10.0</code> 與 <code>10.1</code> 之間無法組成 clsuter，所以勢必要將 <code>10.0</code> 升級，出了安裝套件之外還要使用 <code>mysql_upgrade</code> 將原有的資料庫升級</p>
+<p>如果你的 <code>MariaDB</code> 還是 <code>10.0</code> 版，你可以升級它，除了安裝套件之外還要使用 <code>mysql_upgrade</code> 將原有的資料庫升級</p>
 <pre><code>sudo apt-get update
 sudo apt-get remove -y mariadb-galera-server
 sduo apt-get install mariadb-server
