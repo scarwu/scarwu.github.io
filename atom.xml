@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-12-05T09:54:29+08:00</updated>
+	<updated>2016-12-05T14:53:47+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -96,6 +96,7 @@ innodb_buffer_pool_size     = 400M</code></pre>
 <h2>Troubleshooting</h2>
 <ul>
 <li><a href="https://www.percona.com/blog/2014/12/30/diagnosing-sst-errors-with-percona-xtradb-cluster-for-mysql/">Diagnosing SST errors with Percona XtraDB Cluster for MySQL</a></li>
+<li><a href="http://galeracluster.com/documentation-webpages/mysqlwsrepoptions.html">MYSQL WSREP OPTIONS</a></li>
 </ul>]]></summary>
 	</entry>
 	<entry>
