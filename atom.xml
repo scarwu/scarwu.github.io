@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-12-02T18:37:25+08:00</updated>
+	<updated>2016-12-05T09:54:29+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -91,7 +91,7 @@ innodb_buffer_pool_size     = 400M</code></pre>
 <h2>Start Cluster Node</h2>
 <h3>Master Node</h3>
 <pre><code>sudo service mysql bootstrap</code></pre>
-<h3>Salve Node</h3>
+<h3>Slave Node</h3>
 <pre><code>sudo service msyql start</code></pre>
 <h2>Troubleshooting</h2>
 <ul>
