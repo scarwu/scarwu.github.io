@@ -5,7 +5,7 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2016-12-05T14:53:47+08:00</updated>
+	<updated>2016-12-06T15:01:43+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
@@ -123,8 +123,11 @@ sudo apt-get install nfs-kernel-server nfs-common</code></pre>
 <p>開放 UDP Port: <code>111</code>、<code>2049</code> 以及 <code>3000-65000</code>，IP 與上同。</p>
 <pre><code>iptables -A INPUT -s 192.168.1.101 -p UDP -m multiport --dport 111,2049,30000:65000 -j ACCEPT</code></pre>
 <h3>Restart Services</h3>
-<pre><code>sudo service nfs-kernel-server
+<pre><code>sudo service rpcbind
+sudo service nfs-kernel-server
 sudo service nfs-common</code></pre>
+<h3>RPC Ports Check</h3>
+<pre><code>sudo rpcinfo -p</code></pre>
 <h2>Client Side</h2>
 <pre><code>mount -t nfs4 192.168.1.100:/path/to/remote /path/to/local</code></pre>]]></summary>
 	</entry>
