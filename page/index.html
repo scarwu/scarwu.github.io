@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="content"><p>最近在重構學生時代的作品 <code>Pointless</code> 讓它符合現代的技術，順便熟悉一下 <code>PHP7</code>新的功能。</p>
-<p>在 <code>Pointless</code> 中因為使用純文字的 <code>markdown</code> 格式來除存文章所以在絕大的機會睡使用到 <code>preg_*</code> 相關的函式。</p>
+<p>在 <code>Pointless</code> 中因為使用純文字的 <code>markdown</code> 格式來儲存文章所以有大量的機會會使用到 <code>preg_*</code> 相關的函式。</p>
 <p>在 <code>PHP7</code> 其中的一個改變就是在 <code>PCRE</code> 中加入了 <code>JIT</code> 功能，可以用來優化正規表示式的效能，但是礙於 stack 的容量有限所以在處理長度較長的字串的時候，很容易就超過預設的 <code>32K</code> 的限制產生出 <code>PREG_JIT_STACKLIMIT_ERROR</code>。</p>
 </div>
         <a class="more" href="/article/2017/01/14/php-7-preg-jit-stacklimit-error/">More</a>
