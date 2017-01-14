@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="上次才說把筆電的作業系統換成Arch Linux，由於某些因素現在又換回Ubuntu了...這次想說換成新版的Ubuntu，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。">
-    <meta property="og:title" content="修正Ubuntu 13.10小紅點問題 | ScarShow | 刀疤說">
-    <meta property="og:url" content="http://scar.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem/">
+    <meta property="og:description" name="description" content="最近在重構學生時代的作品 Pointless 讓它符合現代的技術，順便熟悉一下 PHP7新的功能。">
+    <meta property="og:title" content="PHP 7 PREG_JIT_STACKLIMIT_ERROR | ScarShow | 刀疤說">
+    <meta property="og:url" content="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/">
     <meta property="og:image" content="http://scar.tw/images/icon.jpg">
     <meta property="og:type" content="blog">
 
-    <title>修正Ubuntu 13.10小紅點問題 | ScarShow | 刀疤說</title>
+    <title>PHP 7 PREG_JIT_STACKLIMIT_ERROR | ScarShow | 刀疤說</title>
 
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -22,7 +22,7 @@
     </script>
     
     <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="canonical" href="http://scar.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem/">
+    <link rel="canonical" href="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/">
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="http://scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="http://scar.tw/favicon.ico">
@@ -49,78 +49,54 @@
     <div id="main">
         <div id="container"><div id="container_article">
     <article class="post_block">
-        <h1 class="title">修正Ubuntu 13.10小紅點問題</h1>
+        <h1 class="title">PHP 7 PREG_JIT_STACKLIMIT_ERROR</h1>
         <div class="info">
             <div class="date">
                 <i class="fa fa-calendar"></i>
-                <a href="/archive/2013/">2013-11-24</a>            </div>
+                <a href="/archive/2017/">2017-01-14</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
-                <a href="/tag/Linux/">Linux</a>            </div>
+                <a href="/tag/PHP/">PHP</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
-                <a href="/tag/ThinkPad/">ThinkPad</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <a href="/tag/Ubuntu/">Ubuntu</a>            </div>
+                <a href="/tag/Pointless/">Pointless</a>            </div>
                                     <div class="disqus_comments">
                 <i class="fa fa-comment"></i>
-                <a href="/article/2013/11/24/fix-ubuntu-trakpoint-problem/#disqus_thread">0 Comment</a>
+                <a href="/article/2017/01/14/php-7-preg-jit-stacklimit-error/#disqus_thread">0 Comment</a>
             </div>
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem/" data-text="修正Ubuntu 13.10小紅點問題 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button" data-url="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" data-text="PHP 7 PREG_JIT_STACKLIMIT_ERROR | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like" data-href="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2013/11/24/fix-ubuntu-trakpoint-problem/" data-size="medium"></div>
+                    <div class="g-plusone" data-href="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" data-size="medium"></div>
                 </div>
             </div>
         </div>
-        <div class="content"><h2>前言</h2>
-<p>上次才說把筆電的作業系統換成<code>Arch Linux</code>，由於某些因素現在又換回<code>Ubuntu</code>了...這次想說換成新版的<code>Ubuntu</code>，之前所遇到的小紅點時不時失效的問題，應該能夠隨著系統更新而解決，天不從人願它還是一樣。</p>
-<p>這次一定要把它修好，小紅點中鍵滾輪這樣好用的東西變成半殘可不是辦法，請示過Google大神找了一些文章，其實大部分也滿零散的，所以我在這邊依照我實際遇到的問題整理一下。</p>
+        <div class="content"><p>最近在重構學生時代的作品 <code>Pointless</code> 讓它符合現代的技術，順便熟悉一下 <code>PHP7</code>新的功能。</p>
+<p>在 <code>Pointless</code> 中因為使用純文字的 <code>markdown</code> 格式來除存文章所以在絕大的機會睡使用到 <code>preg_*</code> 相關的函式。</p>
+<p>在 <code>PHP7</code> 其中的一個改變就是在 <code>PCRE</code> 中加入了 <code>JIT</code> 功能，可以用來優化正規表示式的效能，但是礙於 stack 的容量有限所以在處理長度較長的字串的時候，很容易就超過預設的 <code>32K</code> 的限制產生出 <code>PREG_JIT_STACKLIMIT_ERROR</code>。</p>
 <!--more-->
-<h2>問題修正</h2>
-<h3>修正小紅點滾輪</h3>
-<p>我的<code>ThinkPad</code>是後期出的<code>Edge</code>系列，所以他的<code>TrackPoint</code>在系統的變名稱上也跟歷代的<code>TPPS/2 IBM TrackPoint</code>不同，我的<code>E420s</code>的<code>TrackPoint</code>在系統中顯示的是<code>PS/2 Generic Mouse</code>。</p>
-<p>只要將<code>PS/2 Generic Mouse</code>填入<code>/usr/share/X11/xorg.conf.d/11-evdev-trackpoint.conf</code>即可。</p>
-<pre><code class="language-conf"># trackpoint users want wheel emulation
-
-Section "InputClass"
-    Identifier  "trackpoint catchall"
-    MatchIsPointer  "true"
-    MatchProduct    "TrackPoint|DualPoint Stick|PS/2 Generic Mouse"
-    MatchDevicePath "/dev/input/event*"
-    Option  "Emulate3Buttons"   "true"
-    Option  "EmulateWheel"  "true"
-    Option  "EmulateWheelButton"    "2"
-    Option  "XAxisMapping"  "6 7"
-    Option  "YAxisMapping"  "4 5"
-EndSection</code></pre>
-<h3>修正小紅點失靈</h3>
-<p>這問題從我在使用<code>Ubuntu 12.04</code>的時候就時常發生，通常只要重新開機或者是將無線滑鼠拔插一下又或者是按幾下<code>TrackPoint</code>的左右鍵就可恢復。</p>
-<p>主要的問題在於小紅點的驅動載入有問題，所以需要等待，也可能是因為這樣所以會被辨識成<code>PS/2 Generic Mouse</code>。</p>
-<p>要修復這種情形很簡單，只要把<code>/etc/modprobe.d/trackpoint-elantech.conf</code>填入以下內容即可。</p>
-<pre><code class="language-conf">options psmouse proto=bare</code></pre>
-<p>然後執行指令<code>sudo modprobe -rv psmouse &amp;&amp; sudo modprobe -v psmouse</code>或是重新開機就完成了。</p>
-<p>不過這樣作還是有缺點，使用這種解決方案會使得沒辦法取消觸控版，那這樣我還是慢慢等小紅點的驅動載入。</p>
-<h3>取消觸控版功能</h3>
-<p>最後就是把實在是有夠難用的觸控版關閉的時候了，利用系統內建的<code>Mouse &amp; Touchpad</code>把<code>Touchpad</code>的開關關閉就行了。</p>
-<h2>結語</h2>
-<p>這樣小紅點終於不是半殘，星爺表示：大師兄回來了！</p></div>
+<h2>Solutions</h2>
+<p>當然解法可以直接將 <code>JIT</code> 關閉。</p>
+<pre><code>ini_set('pcre.jit', false);</code></pre>
+<p>另外一個解法則是去優化正規表示式，當然我採取直接關閉 <code>JIT</code> 的作法，當然這個作法並不好，但目前我應該不會去動表示式的部份，所以要立刻讓 <code>Pointless</code> 能在 <code>PHP7</code> 上正常運作就先這樣處裡。</p>
+<p>詳細的建議可以去看看 <code>Stackoverflow</code> 上的解說連結在下面的 <code>Reference</code> 中。</p>
+<h2>Reference</h2>
+<p><a href="http://stackoverflow.com/questions/39685883/php-preg-jit-stacklimit-error-inefficient-regex">PHP PREG_JIT_STACKLIMIT_ERROR - inefficient regex</a></p></div>
     </article>
         <div id="disqus_thread"></div>
         <div id="paging">
         <span class="new">
-            <a href="/article/2014/01/03/express-jade-less-coffee-with-livereload/"><< Express + Jade/LESS/Coffee with LiveReload</a>        </span>
+                    </span>
         <span class="old">
-            <a href="/article/2013/09/19/archlinux-based-install/">Arch Linux - 基礎安裝 >></a>        </span>
+            <a href="/article/2016/12/02/mariadb-galera-cluster-10-1-setting/">MariaDB Galera Cluster 10.1 Setting >></a>        </span>
         <span class="count">
-            17 / 46        </span>
+            1 / 46        </span>
     </div>
 </div>
 <div id="fb-root"></div></div>

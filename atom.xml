@@ -5,11 +5,28 @@
 	<link href="http://scar.tw/atom.xml" rel="self" />
 	<link href="http://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2017-01-14T03:25:47+08:00</updated>
+	<updated>2017-01-14T23:12:26+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>http://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[PHP 7 PREG_JIT_STACKLIMIT_ERROR]]></title>
+		<link href="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" />
+		<id>urn:uuid:0cd2e795-93c9-0818-1787-449576b4c22d</id>
+		<updated>2017-01-14T23:10:46+08:00</updated>
+		<summary type="html"><![CDATA[<p>最近在重構學生時代的作品 <code>Pointless</code> 讓它符合現代的技術，順便熟悉一下 <code>PHP7</code>新的功能。</p>
+<p>在 <code>Pointless</code> 中因為使用純文字的 <code>markdown</code> 格式來除存文章所以在絕大的機會睡使用到 <code>preg_*</code> 相關的函式。</p>
+<p>在 <code>PHP7</code> 其中的一個改變就是在 <code>PCRE</code> 中加入了 <code>JIT</code> 功能，可以用來優化正規表示式的效能，但是礙於 stack 的容量有限所以在處理長度較長的字串的時候，很容易就超過預設的 <code>32K</code> 的限制產生出 <code>PREG_JIT_STACKLIMIT_ERROR</code>。</p>
+<!--more-->
+<h2>Solutions</h2>
+<p>當然解法可以直接將 <code>JIT</code> 關閉。</p>
+<pre><code>ini_set('pcre.jit', false);</code></pre>
+<p>另外一個解法則是去優化正規表示式，當然我採取直接關閉 <code>JIT</code> 的作法，當然這個作法並不好，但目前我應該不會去動表示式的部份，所以要立刻讓 <code>Pointless</code> 能在 <code>PHP7</code> 上正常運作就先這樣處裡。</p>
+<p>詳細的建議可以去看看 <code>Stackoverflow</code> 上的解說連結在下面的 <code>Reference</code> 中。</p>
+<h2>Reference</h2>
+<p><a href="http://stackoverflow.com/questions/39685883/php-preg-jit-stacklimit-error-inefficient-regex">PHP PREG_JIT_STACKLIMIT_ERROR - inefficient regex</a></p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[MariaDB Galera Cluster 10.1 Setting]]></title>
 		<link href="http://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" />
@@ -246,31 +263,5 @@ wsrep_sst_method = rsync</code></pre>
 [FAIL] Stopping MariaDB database server: mysqld failed!</code></pre>
 <h2>Finally</h2>
 <p>Have Fun!</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[Polaroid Cube 開箱與四驅車實拍]]></title>
-		<link href="http://scar.tw/article/2015/01/11/polaroid-cube-unboxing-and-mini4wd/" />
-		<id>urn:uuid:3bbbdcb6-9f30-c9b6-916c-36cf262eb0eb</id>
-		<updated>2015-01-11T02:57:05+08:00</updated>
-		<summary type="html"><![CDATA[<p>其實這一篇是遲來的開箱文，事實上我已經入手 <code>Polaroid Cube</code> 一段時間了，去年九月的時候就跟朋友一起在國外預購了，大約兩個月後送達，我買了攝影機本體之外還多買了一個攝影腳架的雲台，朋友則是買防水殼，就我的部份折合台幣外加運費大約是 <code>3.8k</code> 台幣，比現在在台灣上市的價格要便宜，事實上在台灣買比較貴的原因出在配件貴滿多的，而本體價格其實沒差多少。</p>
-<p>當初買這個攝影機其實是我想將它安裝在四驅車上，讓它用第一人稱去錄跑道的實況，另外就是它很小放在四驅車上真的很剛好，並不會像 <code>GoPro</code> 旁邊會凸出來或是像行車記錄器那樣過長。</p>
-<!--more-->
-<h2>實體</h2>
-<p>包裝很簡單，就一個透明盒子裝著，而下方則是吸附在金屬板上，沒錯在本體的下方有磁鐵可以任意吸附在金屬表面。</p>
-<p><img src="/images/polaroid-cube-and-mini4wd/001.jpg" alt="Polaroid Cube" /></p>
-<p><img src="/images/polaroid-cube-and-mini4wd/002.jpg" alt="Polaroid Cube" /></p>
-<p>將 <code>Polaroid Cube</code> 放上腳架整個就很小巧，另外他底座是可以拆卸的且可以跟其他配件互通，不過卻很不好拆卸。</p>
-<p><img src="/images/polaroid-cube-and-mini4wd/003.jpg" alt="Polaroid Cube" /></p>
-<p><img src="/images/polaroid-cube-and-mini4wd/004.jpg" alt="Polaroid Cube" /></p>
-<h2>四驅車</h2>
-<p>我特別製作了一個車殼可以讓它安裝在上面，下面的金屬板是包裝盒中的一部分，我把它拿來加工，擴孔並導腳讓它可以使用皿型螺絲使底部貼合。</p>
-<p><img src="/images/polaroid-cube-and-mini4wd/005.jpg" alt="Polaroid Cube" /></p>
-<p>另外為了造型另外將軟殼切了個洞讓 <code>Polaroid Cube</code> 可以穿過去，附帶一提的是因為它本身有廣角所以不會有車殼過高擋住畫面的問題，車殼只會出現在畫面的下方一點的位置。</p>
-<p><img src="/images/polaroid-cube-and-mini4wd/006.jpg" alt="Polaroid Cube" /></p>
-<h2>實際拍攝</h2>
-<p>在我的播放清單中還有其它的影片這邊就先放上一段，因為是用四驅車的視角所以看起來車速會特別的快，如有感覺噁心想吐就多看幾次就會好了。</p>
-<iframe width="560" height="315" src="//www.youtube.com/embed/3g-2XQ0g1l8" frameborder="0" allowfullscreen></iframe>
-<h2>感謝</h2>
-<p>最後在這邊特別感謝新竹快樂堂熱血車友 <a href="https://www.facebook.com/adzg9900">阿臣</a> 贊助了我一盒 <code>ITEM 18613</code>以及一堆零件讓我弄好了這台車。</p>]]></summary>
 	</entry>
 </feed>

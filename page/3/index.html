@@ -49,6 +49,56 @@
     <div id="main">
         <div id="container"><div id="container_page">
         <article class="post_block">
+        <h1 class="title"><a href="/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/">Ubuntu內建PCRE Library所造成的PHP Segmentation Fault</a></h1>
+        <div class="info">
+            <div class="date">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2014/">2014-02-23</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Linux/">Linux</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Note/">Note</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/PHP/">PHP</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/PHPBrew/">PHPBrew</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button" data-url="http://scar.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/" data-text="Ubuntu內建PCRE Library所造成的PHP Segmentation Fault | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like" data-href="http://scar.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone" data-href="http://scar.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/" data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><h2>接續</h2>
+<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
+<p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
+<p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>
+</div>
+        <a class="more" href="/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/">More</a>
+    </article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2014/02/21/pointless-with-segmentation-faults/">Pointless所遭遇到的Segmentation Faults</a></h1>
         <div class="info">
             <div class="date">
@@ -215,54 +265,13 @@ Arch Linux       : 5.0.5</code></pre>
 </div>
         <a class="more" href="/article/2014/01/14/zsh-history-search-backward-and-forward/">More</a>
     </article>
-        <article class="post_block">
-        <h1 class="title"><a href="/article/2014/01/03/express-jade-less-coffee-with-livereload/">Express + Jade/LESS/Coffee with LiveReload</a></h1>
-        <div class="info">
-            <div class="date">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2014/">2014-01-03</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Express/">Express</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/JavaScript/">JavaScript</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/NodeJS/">NodeJS</a></span>
-            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2014/01/03/express-jade-less-coffee-with-livereload/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2014/01/03/express-jade-less-coffee-with-livereload/" data-text="Express + Jade/LESS/Coffee with LiveReload | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2014/01/03/express-jade-less-coffee-with-livereload/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2014/01/03/express-jade-less-coffee-with-livereload/" data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><h2>廢話</h2>
-<p>2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！</p>
-<p>平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用<code>Express</code>來搭配其它東西來開發網站。這邊用到的套件有<code>Jade</code>、<code>LESS</code>、<code>CoffeeScript</code>以及<code>LiveReload</code>。</p>
-</div>
-        <a class="more" href="/article/2014/01/03/express-jade-less-coffee-with-livereload/">More</a>
-    </article>
         <div id="paging">
         <span class="new">
             <a href="/page/2/"><< Newer Posts</a>        </span>
         <span class="old">
             <a href="/page/4/">Older Posts >></a>        </span>
         <span class="count">
-            3 / 9        </span>
+            3 / 10        </span>
     </div>
 </div>
 <div id="fb-root"></div></div>
@@ -291,6 +300,8 @@ Arch Linux       : 5.0.5</code></pre>
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
+                <span class="item">
+                        <a href="/archive/2017/">2017(1)</a>        </span>
                 <span class="item">
                         <a href="/archive/2016/">2016(3)</a>        </span>
                 <span class="item">
@@ -365,11 +376,11 @@ Arch Linux       : 5.0.5</code></pre>
                 <span class="item">
                         <a href="/tag/Note/">Note(19)</a>        </span>
                 <span class="item">
-                        <a href="/tag/PHP/">PHP(16)</a>        </span>
+                        <a href="/tag/PHP/">PHP(17)</a>        </span>
                 <span class="item">
                         <a href="/tag/PHPBrew/">PHPBrew(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Pointless/">Pointless(3)</a>        </span>
+                        <a href="/tag/Pointless/">Pointless(4)</a>        </span>
                 <span class="item">
                         <a href="/tag/Polaroid%20Cube/">Polaroid Cube(1)</a>        </span>
                 <span class="item">
