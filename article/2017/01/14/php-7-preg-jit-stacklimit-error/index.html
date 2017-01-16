@@ -82,7 +82,7 @@
 <p>在 <code>PHP7</code> 其中的一個改變就是在 <code>PCRE</code> 中加入了 <code>JIT</code> 功能，可以用來優化正規表示式的效能，但是礙於 stack 的容量有限所以在處理長度較長的字串的時候，很容易就超過預設的 <code>32K</code> 的限制產生出 <code>PREG_JIT_STACKLIMIT_ERROR</code>。</p>
 <!--more-->
 <h2>Solutions</h2>
-<p>當然解法可以直接將 <code>JIT</code> 關閉。</p>
+<p>當然解法可以直接將 <code>JIT</code> 關閉，當然這不建議。</p>
 <pre><code>ini_set('pcre.jit', false);</code></pre>
 <p>另外一個解法則是去優化正規表示式，當然我採取直接關閉 <code>JIT</code> 的作法，當然這個作法並不好，但目前我應該不會去動表示式的部份，所以要立刻讓 <code>Pointless</code> 能在 <code>PHP7</code> 上正常運作就先這樣處裡。</p>
 <p>詳細的建議可以去看看 <code>Stackoverflow</code> 上的解說連結在下面的 <code>Reference</code> 中。</p>
