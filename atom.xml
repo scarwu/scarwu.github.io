@@ -2,17 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title><![CDATA[ScarShow | 刀疤說]]></title>
 	<subtitle></subtitle>
-	<link href="http://scar.tw/atom.xml" rel="self" />
-	<link href="http://scar.tw/" />
+	<link href="https://scar.tw/atom.xml" rel="self" />
+	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-04-14T12:55:00+08:00</updated>
+	<updated>2018-04-14T13:03:56+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
-		<uri>http://scar.tw/</uri>
+		<uri>https://scar.tw/</uri>
 	</author>
 	<entry>
 		<title type="html"><![CDATA[2017 年末近況]]></title>
-		<link href="http://scar.tw/article/2017/11/26/about-late-of-2017/" />
+		<link href="https://scar.tw/article/2017/11/26/about-late-of-2017/" />
 		<id>urn:uuid:7b190959-4598-181d-9983-420bd0923c6c</id>
 		<updated>2017-11-26T02:51:07+08:00</updated>
 		<summary type="html"><![CDATA[<p>都要年末了，今年的發文也只有年初的一篇文章而已，自從出工作後發文就銳減了，明明很想說點什麼，但卻又沒發文章的動力。</p>
@@ -38,7 +38,7 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[PHP 7 PREG_JIT_STACKLIMIT_ERROR]]></title>
-		<link href="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" />
+		<link href="https://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" />
 		<id>urn:uuid:0cd2e795-93c9-0818-1787-449576b4c22d</id>
 		<updated>2017-01-14T23:10:46+08:00</updated>
 		<summary type="html"><![CDATA[<p>最近在重構學生時代的作品 <code>Pointless</code> 讓它符合現代的技術，順便熟悉一下 <code>PHP7</code>新的功能。</p>
@@ -55,7 +55,7 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[MariaDB Galera Cluster 10.1 Setting]]></title>
-		<link href="http://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" />
+		<link href="https://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" />
 		<id>urn:uuid:78046c09-e98e-0603-684a-d0a1a17dcc43</id>
 		<updated>2016-12-02T12:02:07+08:00</updated>
 		<summary type="html"><![CDATA[<p>先前已經寫過 <code>10.0</code> 的設定方式，MariaDB 升級成 <code>10.1</code> 後 <code>galera</code> 就已經內建在其中了，也不用額外安裝它的套件。</p>
@@ -144,7 +144,7 @@ innodb_buffer_pool_size     = 400M</code></pre>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[NFS v4 簡易安裝]]></title>
-		<link href="http://scar.tw/article/2016/12/02/nfs-v4-easy-to-go/" />
+		<link href="https://scar.tw/article/2016/12/02/nfs-v4-easy-to-go/" />
 		<id>urn:uuid:9729c864-9422-312b-f91a-83bff31570d9</id>
 		<updated>2016-12-02T10:01:22+08:00</updated>
 		<summary type="html"><![CDATA[<p>筆記文，紀錄可行的方式，一段時間沒有用有機會會忘記。</p>
@@ -176,7 +176,7 @@ sudo service nfs-common</code></pre>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Sony AS200V 防風對策]]></title>
-		<link href="http://scar.tw/article/2016/03/03/sony-as200v-reduce-wind-noise/" />
+		<link href="https://scar.tw/article/2016/03/03/sony-as200v-reduce-wind-noise/" />
 		<id>urn:uuid:29d9fb7e-641e-202c-cb46-36df003323f6</id>
 		<updated>2016-03-03T09:31:55+08:00</updated>
 		<summary type="html"><![CDATA[<p>從去年開七月入手 AS200V 後，風切的問題就一直困擾我，有試過在機身的麥克風上加上海綿，但是收音的位置在前方會一直撞風，效果還是很差。</p>
