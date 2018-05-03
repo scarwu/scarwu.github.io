@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-03T19:39:29+08:00</updated>
+	<updated>2018-05-03T19:46:33+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -62,7 +62,7 @@
 <p>關於期望值的計算公式，是透過各網站情報以及經由遊戲中推敲而來，準確度不一定百分之百，但可供參考。</p>
 <p><img src="/images/mhw-calculator-readme/013.jpg" alt="期望值區塊" /></p>
 <h3>分享裝備</h3>
-<p>直接將網址複製下來即可分享，目前沒有短網誌轉換功能，如有需要可使用以下網站轉換。</p>
+<p>直接將網址複製下來即可分享，目前沒有短網址轉換功能，如有需要可使用以下網站轉換。</p>
 <ul>
 <li><a href="https://goo.gl">Google URL Shortener</a></li>
 <li><a href="https://bitly.com">Bitly</a></li>
