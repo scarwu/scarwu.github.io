@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-03T19:33:03+08:00</updated>
+	<updated>2018-05-03T19:39:29+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -59,6 +59,7 @@
 <p>在下方技能的區域中有個 <i class="fa fa-eye"></i> 、 <i class="fa fa-eye-slash"></i> 圖示，代表著此項技能為被動技能，按下它將會反應或關閉技能效果在人物狀態上。</p>
 <p><img src="/images/mhw-calculator-readme/012.jpg" alt="技能區塊" /></p>
 <p>最下方額外資訊將會顯示此套裝備的期望值，另外可輸入四種屬性得知額外增加的期望值。</p>
+<p>關於期望值的計算公式，是透過各網站情報以及經由遊戲中推敲而來，準確度不一定百分之百，但可供參考。</p>
 <p><img src="/images/mhw-calculator-readme/013.jpg" alt="期望值區塊" /></p>
 <h3>分享裝備</h3>
 <p>直接將網址複製下來即可分享，目前沒有短網誌轉換功能，如有需要可使用以下網站轉換。</p>
