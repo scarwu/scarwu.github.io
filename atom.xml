@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-03T18:25:17+08:00</updated>
+	<updated>2018-05-03T18:31:06+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -61,7 +61,7 @@
 <p>最下方額外資訊將會顯示此套裝備的期望值，另外可輸入四種屬性得知額外增加的期望值。</p>
 <p><img src="/images/mhw-calculator-readme/013.jpg" alt="期望值區塊" /></p>
 <h3>分享裝備</h3>
-<p>直接將網址複製下來及可分享，目前沒有短網誌轉換功能，如有需要可使用以下網站轉換。</p>
+<p>直接將網址複製下來即可分享，目前沒有短網誌轉換功能，如有需要可使用以下網站轉換。</p>
 <ul>
 <li><a href="https://goo.gl">Google URL Shortener</a></li>
 <li><a href="https://bitly.com">Bitly</a></li>
