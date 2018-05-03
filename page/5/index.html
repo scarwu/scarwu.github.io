@@ -49,6 +49,52 @@
     <div id="main">
         <div id="container"><div id="container_page">
         <article class="post_block">
+        <h1 class="title"><a href="/article/2013/08/13/hadoop-install-and-setup/">Hadoop安裝與設定</a></h1>
+        <div class="info">
+            <div class="date">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2013/">2013-08-13</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Hadoop/">Hadoop</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Linux/">Linux</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Note/">Note</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2013/08/13/hadoop-install-and-setup/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button" data-url="http://scar.tw/article/2013/08/13/hadoop-install-and-setup/" data-text="Hadoop安裝與設定 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like" data-href="http://scar.tw/article/2013/08/13/hadoop-install-and-setup/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone" data-href="http://scar.tw/article/2013/08/13/hadoop-install-and-setup/" data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><h2>前言</h2>
+<p>Hadoop這套工具主要用做於平行運算，它其中包含兩個部份<code>MapReduce</code>以及<code>HDFS</code>。</p>
+<p><code>MapReduce</code>的部份主要是用做於平行運算、而<code>HDFS</code>則是一套分散分散式檔案系統，用來儲存於平行運算時所需的大量資料。</p>
+<p>由於某些原因必須使用到<code>Hadoop</code>中的<code>HDFS</code>來測試一些項目所以這邊就粗略紀錄一下<code>Hadoop</code>的安裝過程。</p>
+</div>
+        <a class="more" href="/article/2013/08/13/hadoop-install-and-setup/">More</a>
+    </article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2013/05/30/observe-and-using-node-js-stream-event/">NodeJS - Stream行為觀察與事件使用</a></h1>
         <div class="info">
             <div class="date">
@@ -216,46 +262,6 @@ client.send(message, 0, message.length, port, ip, callback);</code></pre>
 </div>
         <a class="more" href="/article/2013/04/29/node-js-dgram-error-with-EBADF/">More</a>
     </article>
-        <article class="post_block">
-        <h1 class="title"><a href="/article/2013/04/28/apache-vhost-and-userdir-config/">Apache - mod_vhost_alias與mod_userdir設定</a></h1>
-        <div class="info">
-            <div class="date">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2013/">2013-04-28</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Apache/">Apache</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Linux/">Linux</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Ubuntu/">Ubuntu</a></span>
-            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2013/04/28/apache-vhost-and-userdir-config/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-text="Apache - mod_vhost_alias與mod_userdir設定 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2013/04/28/apache-vhost-and-userdir-config/" data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><h2>前言</h2>
-<p>Apache是常用的網頁伺服器，而<code>userdir</code>這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以<code>http://examaple.com/~username</code>的形式呈現。另外<code>vhost_alias</code>則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設<code>http://a.example.com</code>與<code>b.examle.com</code>都指向<code>192.168.1.1</code>，那麼Apache就可以根據域名來挑選網頁的根目錄<code>/var/www/a</code>或是<code>/var/www/b</code>來呈現不同的內容。</p>
-</div>
-        <a class="more" href="/article/2013/04/28/apache-vhost-and-userdir-config/">More</a>
-    </article>
         <div id="paging">
         <span class="new">
             <a href="/page/4/"><< Newer Posts</a>        </span>
@@ -291,6 +297,8 @@ client.send(message, 0, message.length, port, ip, callback);</code></pre>
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
+                <span class="item">
+                        <a href="/archive/2018/">2018(1)</a>        </span>
                 <span class="item">
                         <a href="/archive/2017/">2017(2)</a>        </span>
                 <span class="item">
@@ -339,13 +347,15 @@ client.send(message, 0, message.length, port, ip, callback);</code></pre>
                 <span class="item">
                         <a href="/tag/Facebook/">Facebook(2)</a>        </span>
                 <span class="item">
+                        <a href="/tag/Game/">Game(2)</a>        </span>
+                <span class="item">
                         <a href="/tag/HHKB/">HHKB(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/HTML5/">HTML5(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Hadoop/">Hadoop(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/JavaScript/">JavaScript(8)</a>        </span>
+                        <a href="/tag/JavaScript/">JavaScript(9)</a>        </span>
                 <span class="item">
                         <a href="/tag/Keyboard/">Keyboard(1)</a>        </span>
                 <span class="item">
@@ -358,6 +368,8 @@ client.send(message, 0, message.length, port, ip, callback);</code></pre>
                         <a href="/tag/Mini%204WD/">Mini 4WD(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Mobile%20Web/">Mobile Web(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Monster%20Hunter%20World/">Monster Hunter World(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Motocycle/">Motocycle(1)</a>        </span>
                 <span class="item">
@@ -391,7 +403,7 @@ client.send(message, 0, message.length, port, ip, callback);</code></pre>
                 <span class="item">
                         <a href="/tag/ThinkPad/">ThinkPad(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Tools/">Tools(2)</a>        </span>
+                        <a href="/tag/Tools/">Tools(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/Toy/">Toy(2)</a>        </span>
                 <span class="item">

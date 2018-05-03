@@ -5,11 +5,76 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-01T01:52:14+08:00</updated>
+	<updated>2018-05-03T18:19:13+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[魔物獵人配裝計算機使用說明]]></title>
+		<link href="https://scar.tw/article/2018/05/02/mhw-calculator-readme/" />
+		<id>urn:uuid:ef117fcb-b214-279f-449a-c99f71175221</id>
+		<updated>2018-05-02T19:10:58+08:00</updated>
+		<summary type="html"><![CDATA[<p>基於現有工具不符合需求及身為一位老玩家的原因，最近花了點時間寫了這個<a href="https://scar.tv/MHWCalulator">計算機</a>。</p>
+<h2>主要功能</h2>
+<ul>
+<li>自動配裝</li>
+<li>裝備調整</li>
+<li>人物狀態</li>
+<li>期望值計算</li>
+<li>裝備分享</li>
+</ul>
+<!--more-->
+<h2>使用說明</h2>
+<p>計算機使用網頁開發，使用瀏覽器即可使用。</p>
+<p><img src="/images/mhw-calculator-readme/000.jpg" alt="計算機全貌" /></p>
+<h3>搜尋條件添加</h3>
+<p>可以選擇你所需求的套裝效果及技能效果，添加完成後即可使用搜尋功能找出適合的配裝，使用 <i class="fa fa-minus"></i> 、 <i class="fa fa-plus"></i> 與 <i class="fa fa-times"></i> 調整套裝需求、技能等級及刪除。點選上方的 <i class="fa fa-refresh"></i> 可以清空技能。</p>
+<p>搜尋的速度與搜尋的條件以及使用的設備有關。</p>
+<p><img src="/images/mhw-calculator-readme/001.jpg" alt="需求條件" /></p>
+<p>最上方的輸入區塊可以輸入相關的關鍵字，下方則會即時顯示內容。使用 <i class="fa fa-plus"></i> 及 <i class="fa fa-minus"></i> 新增刪除套裝或技能，<i class="fa fa-times"></i> 離開界面。</p>
+<p><img src="/images/mhw-calculator-readme/002.jpg" alt="套裝選擇" />
+<img src="/images/mhw-calculator-readme/003.jpg" alt="技能選擇" /></p>
+<h3>候選裝備使用</h3>
+<p>在這個區塊會顯示所有的候選裝備，最多列出25項，排列順序依照裝備數量及防禦力排序。</p>
+<p>在備選方塊中使用 <i class="fa fa-check"></i> 實裝到已選裝備中。</p>
+<p><img src="/images/mhw-calculator-readme/004.jpg" alt="候選裝備" /></p>
+<h3>裝備操作</h3>
+<p>在這個區塊中可以模擬在遊戲中的裝備穿脫，其中包含武器、頭、身、腰、腿、護石以及客製強化和鑲嵌槽。</p>
+<p>在方塊中的 <i class="fa fa-lock"></i> 、 <i class="fa fa-unlock-alt"></i> 可以將已選擇好的裝備鎖定並加入配裝的流程中，在這個部位就是使用此裝備， <i class="fa fa-times"></i> 可以刪除裝備，而上方的 <i class="fa fa-refresh"></i> 可以清空已選裝備。</p>
+<p><img src="/images/mhw-calculator-readme/005.jpg" alt="已選裝備" /></p>
+<p>點選武器方塊的標題可以選擇武器，這邊會列出所有衍生武器的最後一階段，這邊只會列出基本數值，其餘像是屬性瓶、榴彈瓶、音色、瓶及彈藥將不會顯示。</p>
+<p><img src="/images/mhw-calculator-readme/006.jpg" alt="武器選擇" /></p>
+<p>點選強化的內容框，可選擇客製強化，強化的次數與武器稀有度有關。</p>
+<p><img src="/images/mhw-calculator-readme/007.jpg" alt="強化選擇" /></p>
+<p>點選鑲嵌的內容框，可選擇裝飾珠，可裝備的裝飾珠根據鑲嵌槽的大小有關。</p>
+<p><img src="/images/mhw-calculator-readme/008.jpg" alt="鑲嵌選擇" /></p>
+<p>點選頭、身、手、腰及腿方塊標題可選擇相對應部位裝備，在這邊所顯示的防禦力則是強化後的最終防禦力。</p>
+<p><img src="/images/mhw-calculator-readme/009.jpg" alt="護甲選擇" /></p>
+<p>點選護石方塊標題可選擇護石。</p>
+<p><img src="/images/mhw-calculator-readme/010.jpg" alt="護石選擇" /></p>
+<h3>人物狀態及期望值</h3>
+<p>已選裝備會反應在人物狀態上，模擬在遊戲中的數值。</p>
+<p><img src="/images/mhw-calculator-readme/011.jpg" alt="人物狀態" /></p>
+<p>在下方技能的區域中有個 <i class="fa fa-eye"></i> 、 <i class="fa fa-eye-slash"></i> 圖示，代表著此項技能為被動技能，按下它將會反應或關閉技能效果在人物狀態上。</p>
+<p><img src="/images/mhw-calculator-readme/012.jpg" alt="技能區塊" /></p>
+<p>最下方額外資訊將會顯示此套裝備的期望值，另外可輸入四種屬性得知額外增加的期望值。</p>
+<p><img src="/images/mhw-calculator-readme/013.jpg" alt="期望值區塊" /></p>
+<h3>分享裝備</h3>
+<p>直接將網址複製下來及可分享，目前沒有短網誌轉換功能，如有需要可使用以下網站轉換。</p>
+<ul>
+<li><a href="https://goo.gl">Google URL Shortener</a></li>
+<li><a href="https://bitly.com">Bitly</a></li>
+<li><a href="https://ppt.cc">PTT 短網址</a></li>
+</ul>
+<h2>開發、使用問題及意見回報</h2>
+<p>如果有任何的開發及使用問題在底下留言或是到 <code>Github</code> 開 <code>Issue</code> 給我都行。</p>
+<ul>
+<li><a href="https://scar.tw/MHWCalculator">MHWCalculator Link</a></li>
+<li><a href="https://github.com/scarwu/MHWCalculator">MHWCalculator Github</a></li>
+<li><a href="https://github.com/scarwu/MHWCalculator/issues">MHWCalculator Issues</a></li>
+</ul>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[2017 年末近況]]></title>
 		<link href="https://scar.tw/article/2017/11/26/about-late-of-2017/" />
@@ -173,59 +238,5 @@ sudo service nfs-common</code></pre>
 <pre><code>sudo rpcinfo -p</code></pre>
 <h2>Client Side</h2>
 <pre><code>mount -t nfs4 192.168.1.100:/path/to/remote /path/to/local</code></pre>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[Sony AS200V 防風對策]]></title>
-		<link href="https://scar.tw/article/2016/03/03/sony-as200v-reduce-wind-noise/" />
-		<id>urn:uuid:29d9fb7e-641e-202c-cb46-36df003323f6</id>
-		<updated>2016-03-03T09:31:55+08:00</updated>
-		<summary type="html"><![CDATA[<p>從去年開七月入手 AS200V 後，風切的問題就一直困擾我，有試過在機身的麥克風上加上海綿，但是收音的位置在前方會一直撞風，效果還是很差。</p>
-<p>另外有看過網路上有人使用附贈的防水殼去改造，但使用上卻比不上裸機那樣方便，通常我會使用外部電源長時間錄影並且頻繁傳輸檔案，用防水殼就稍嫌礙事。</p>
-<p>有想過外接麥克風，但是 AS200V 不像 X1000V 那樣將標準的雲台接孔做在機身上，需要另外使用轉接座才能連接安全帽支架，轉接座就會壓在防水蓋上擋住接麥克風的接孔，無法外接。</p>
-<p><strong>BUT!!</strong></p>
-<p>有天晚上靈感來了，將該買了材料買一買就開幹了！</p>
-<!--more-->
-<p>材料清單：</p>
-<ul>
-<li>3.5mm 插頭</li>
-<li>3.5mm 插座</li>
-<li>音響線材</li>
-<li>領夾式麥克風</li>
-<li>粉撲</li>
-</ul>
-<h2>機身改造</h2>
-<p>將保護蓋打開並將機身上的螺絲轉下後就可以把保護蓋拆下了。</p>
-<p>因為沒了蓋子所以要另外對線材接口用膠帶貼上做基本處理，只留下 MIC 的接口。</p>
-<p>將蓋子去除後，機身跟雲台轉接座之間就騰出大約 2mm 的空間可以塞入線材。</p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/001.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<h2>製作轉接線材</h2>
-<p>將電子材料的 3.5mm 接頭額外加工，將接點磨至 2mm 符合騰出的空間，就可以開始焊接了。</p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/002.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<p>這邊要注意的是線材寬度也不能超過 2mm，另外因為接頭的接點都被磨薄了，所以接點跟接點間要特別防止短路的問題，我是另外用遮蓋膠帶去處理。</p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/003.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/004.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<p>最後在另一端焊接上插孔並做絕緣處理就完成了。</p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/005.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<h2>組合</h2>
-<p>這邊我選用的外接麥克風是 audio-technica 的 AT9902，因為它剛好可以夾在鼻罩上。</p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/006.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<p>將該接的線接一接，把麥克風放在適合的位置，再將多餘的線塞到帽體內就完成了。</p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/007.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/008.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/009.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<h2>自製防風罩</h2>
-<p>外接麥克風首次測試後差點沒吐血，因為是指向性麥克風在安全帽內同樣有風流通，所以風切聲依然嚴重。</p>
-<p>最後決定去十元商店買了粉撲盒，將粉撲另外加工成防風罩裝在麥克風上，測試結果收音非常清晰，在比較高速的時候引擎聲也能錄到。</p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/010.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<p><img src="/images/sony-as200v-reduce-wind-noise/011.jpg" alt="AS200V Reduce Wind Noise" /></p>
-<h2>測試影片</h2>
-<p>AS200V 內建麥克風</p>
-<iframe src="https://www.youtube.com/embed/-snNlAPUZN0" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-<p>AS200V 內建麥克風 (加海綿)</p>
-<iframe src="https://www.youtube.com/embed/HOaBnsi9Rp8" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-<p>AS200V + AT9902</p>
-<iframe src="https://www.youtube.com/embed/EGXAc48it74" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-<p>AS200V + AT9902 (加防風罩)</p>
-<iframe src="https://www.youtube.com/embed/gAJE67qSbIE" width="560" height="315" frameborder="0" allowfullscreen></iframe>]]></summary>
 	</entry>
 </feed>

@@ -49,6 +49,47 @@
     <div id="main">
         <div id="container"><div id="container_page">
         <article class="post_block">
+        <h1 class="title"><a href="/article/2012/09/12/sqlite3-multi-thread-in-python/">SQLite3 Multi-Thread in Python</a></h1>
+        <div class="info">
+            <div class="date">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2012/">2012-09-12</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Note/">Note</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Python/">Python</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/SQLite/">SQLite</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2012/09/12/sqlite3-multi-thread-in-python/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button" data-url="http://scar.tw/article/2012/09/12/sqlite3-multi-thread-in-python/" data-text="SQLite3 Multi-Thread in Python | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like" data-href="http://scar.tw/article/2012/09/12/sqlite3-multi-thread-in-python/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone" data-href="http://scar.tw/article/2012/09/12/sqlite3-multi-thread-in-python/" data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)，但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
+<h3>Error Code</h3>
+<pre><code class="language-bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx</code></pre>
+</div>
+        <a class="more" href="/article/2012/09/12/sqlite3-multi-thread-in-python/">More</a>
+    </article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/">Install Xhprof on Ubuntu 12.04</a></h1>
         <div class="info">
             <div class="date">
@@ -229,6 +270,10 @@ function hideAds() {
             </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
+                <span><a href="/tag/Game/">Game</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
                 <span><a href="/tag/JavaScript/">JavaScript</a></span>
             </div>
                         <div class="tag">
@@ -263,61 +308,6 @@ function hideAds() {
 </ul>
 </div>
         <a class="more" href="/article/2012/07/18/diablo-3-calculator-readme/">More</a>
-    </article>
-        <article class="post_block">
-        <h1 class="title"><a href="/article/2012/05/07/pointless-readme/">Pointless使用說明</a></h1>
-        <div class="info">
-            <div class="date">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2012/">2012-05-07</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/PHP/">PHP</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Pointless/">Pointless</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Works/">Works</a></span>
-            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2012/05/07/pointless-readme/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2012/05/07/pointless-readme/" data-text="Pointless使用說明 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2012/05/07/pointless-readme/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2012/05/07/pointless-readme/" data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><p>Pointless是由PHP撰寫的靜態部落格生成器，可將由Markdown撰寫的檔案轉為靜態網頁，不需要使用資料庫儲存網頁資訊，並且使用命令列模式操作。</p>
-<h2>系統要求:</h2>
-<ul>
-<li>PHP 5.3+</li>
-<li>Command Line Interface</li>
-</ul>
-<h2>支援:</h2>
-<ul>
-<li>Github CNAME</li>
-<li>Google Analystics</li>
-<li>DISQUS</li>
-</ul>
-<h2>外部程式:</h2>
-<ul>
-<li><a href="http://michelf.com/projects/php-markdown/">PHP Makrdown</a></li>
-<li><a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a></li>
-</ul>
-</div>
-        <a class="more" href="/article/2012/05/07/pointless-readme/">More</a>
     </article>
         <div id="paging">
         <span class="new">
@@ -354,6 +344,8 @@ function hideAds() {
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
+                <span class="item">
+                        <a href="/archive/2018/">2018(1)</a>        </span>
                 <span class="item">
                         <a href="/archive/2017/">2017(2)</a>        </span>
                 <span class="item">
@@ -402,13 +394,15 @@ function hideAds() {
                 <span class="item">
                         <a href="/tag/Facebook/">Facebook(2)</a>        </span>
                 <span class="item">
+                        <a href="/tag/Game/">Game(2)</a>        </span>
+                <span class="item">
                         <a href="/tag/HHKB/">HHKB(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/HTML5/">HTML5(2)</a>        </span>
                 <span class="item">
                         <a href="/tag/Hadoop/">Hadoop(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/JavaScript/">JavaScript(8)</a>        </span>
+                        <a href="/tag/JavaScript/">JavaScript(9)</a>        </span>
                 <span class="item">
                         <a href="/tag/Keyboard/">Keyboard(1)</a>        </span>
                 <span class="item">
@@ -421,6 +415,8 @@ function hideAds() {
                         <a href="/tag/Mini%204WD/">Mini 4WD(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Mobile%20Web/">Mobile Web(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Monster%20Hunter%20World/">Monster Hunter World(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Motocycle/">Motocycle(1)</a>        </span>
                 <span class="item">
@@ -454,7 +450,7 @@ function hideAds() {
                 <span class="item">
                         <a href="/tag/ThinkPad/">ThinkPad(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Tools/">Tools(2)</a>        </span>
+                        <a href="/tag/Tools/">Tools(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/Toy/">Toy(2)</a>        </span>
                 <span class="item">
