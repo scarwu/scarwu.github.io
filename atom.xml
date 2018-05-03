@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-03T18:23:55+08:00</updated>
+	<updated>2018-05-03T18:25:17+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -15,7 +15,7 @@
 		<link href="https://scar.tw/article/2018/05/02/mhw-calculator-readme/" />
 		<id>urn:uuid:ef117fcb-b214-279f-449a-c99f71175221</id>
 		<updated>2018-05-02T19:10:58+08:00</updated>
-		<summary type="html"><![CDATA[<p>基於現有工具不符合需求及身為一位老玩家的原因，最近花了點時間寫了這個<a href="https://scar.tw/MHWCalulator">計算機</a>。</p>
+		<summary type="html"><![CDATA[<p>基於現有工具不符合需求及身為一位老玩家的原因，最近花了點時間寫了這個<a href="https://scar.tw/MHWCalculator">計算機</a>。</p>
 <h2>主要功能</h2>
 <ul>
 <li>自動配裝</li>
