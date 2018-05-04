@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-04T13:30:52+08:00</updated>
+	<updated>2018-05-04T16:35:28+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -72,6 +72,14 @@
 <li><a href="https://scar.tw/MHWCalculator">配裝計算機連結</a></li>
 <li><a href="https://github.com/scarwu/MHWCalculator">Github</a></li>
 <li><a href="https://github.com/scarwu/MHWCalculator/issues">Github Issues</a></li>
+</ul>
+<hr />
+<h4>20180504 更新</h4>
+<ul>
+<li>修正杜賓α插槽遺漏問題</li>
+<li>新增蒼星之將套裝及武器</li>
+<li>備選套裝可調整顯示筆數</li>
+<li>技能界面將不再出現只有套裝效果能達成的技能</li>
 </ul>]]></summary>
 	</entry>
 	<entry>
