@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-04T13:17:47+08:00</updated>
+	<updated>2018-05-04T13:30:52+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -40,7 +40,7 @@
 <img src="/images/mhw-calculator-readme/003.jpg" alt="技能選擇" /></p>
 <h3>候選裝備使用</h3>
 <p>在這個區塊會顯示所有的候選裝備，最多列出25項，排列順序依照裝備數量及防禦力排序。</p>
-<p>在備選方塊中使用 <i class="fa fa-check"></i> 實裝到已選裝備中。</p>
+<p>在備選方塊中使用 <i class="fa fa-check"></i> 實裝到已選裝備，並且裝飾珠也會自動填入相對應的插槽中。</p>
 <p><img src="/images/mhw-calculator-readme/004.jpg" alt="候選裝備" /></p>
 <h3>裝備操作</h3>
 <p>在這個區塊中可以模擬在遊戲中的裝備穿脫，其中包含武器、頭、身、腰、腿、護石以及客製強化和鑲嵌槽。</p>
