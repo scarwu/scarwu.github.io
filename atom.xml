@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-04T16:35:28+08:00</updated>
+	<updated>2018-05-09T07:24:02+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -80,6 +80,13 @@
 <li>新增蒼星之將套裝及武器</li>
 <li>備選套裝可調整顯示筆數</li>
 <li>技能界面將不再出現只有套裝效果能達成的技能</li>
+</ul>
+<h4>20180509 更新</h4>
+<ul>
+<li>新增爛輝龍 R7 / R8 武器</li>
+<li>更新武器選擇界面</li>
+<li>已選裝備新增列表儲存/讀取裝備組</li>
+<li>優化搜尋演算法</li>
 </ul>]]></summary>
 	</entry>
 	<entry>
