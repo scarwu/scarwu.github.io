@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-05-09T08:31:45+08:00</updated>
+	<updated>2018-06-02T13:01:40+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -83,10 +83,15 @@
 </ul>
 <h4>20180509 更新</h4>
 <ul>
-<li>新增爛輝龍 R7/R8 武器</li>
+<li>新增絢輝龍 R7/R8 武器</li>
 <li>更新武器選擇界面</li>
 <li>已選裝備新增列表功能，可 儲存/讀取 裝備組</li>
 <li>優化搜尋演算法</li>
+</ul>
+<h4>20180602 更新</h4>
+<ul>
+<li>新增炎妃龍裝備</li>
+<li>可以在裝備選擇界面排除裝備，排除的裝備將不會加入演算法計算</li>
 </ul>]]></summary>
 	</entry>
 	<entry>
