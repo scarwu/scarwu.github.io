@@ -9022,6 +9022,7 @@ textarea {
         font-family: 'monospace', 'Courier';
         background: none;
         border: none;
+        color: #839496;
         border-radius: none; }
     #container .viewer .line {
       position: absolute;

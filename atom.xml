@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-08-17T17:34:12+08:00</updated>
+	<updated>2018-08-17T17:49:07+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -169,7 +169,7 @@
 		<summary type="html"><![CDATA[<p>先前已經寫過 <code>10.0</code> 的設定方式，MariaDB 升級成 <code>10.1</code> 後 <code>galera</code> 就已經內建在其中了，也不用額外安裝它的套件。</p>
 <h2>Environment</h2>
 <h3>Debian Jessie</h3>
-<pre><code># MariaDB
+<pre><code class="language-bash"># MariaDB
 sudo apt-get install python-software-properties
 sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian jessie main'
@@ -181,11 +181,11 @@ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5</code></pre>
 <!--more-->
 <h2>Install MariaDB &amp; XtraBackup</h2>
 <p>這邊額外安裝 <code>XtraBackup</code> 是讓 <code>wsrep_sst_method</code> 參數可以使用 <code>xtrabackup-v2</code> 來同步 (一般是使用 <code>rsync</code>)，好處是不會鎖表</p>
-<pre><code>sudo apt-get update
+<pre><code class="language-bash">sudo apt-get update
 sudo apt-get install -y mariadb-server percona-xtrabackup</code></pre>
 <h2>Upgrade MariaDB form 10.0 to 10.1 (Optional)</h2>
 <p>如果你的 <code>MariaDB</code> 還是 <code>10.0</code> 版，你可以升級它，除了安裝套件之外還要使用 <code>mysql_upgrade</code> 將原有的資料庫升級</p>
-<pre><code>sudo apt-get update
+<pre><code class="language-bash">sudo apt-get update
 sudo apt-get remove -y mariadb-galera-server
 sduo apt-get install mariadb-server
 
@@ -198,7 +198,7 @@ sudo mysql_upgrade -u root -p</code></pre>
 <li><code>CLUSTER_USER</code></li>
 <li><code>CLUSTER_PASS</code></li>
 </ul>
-<pre><code>GRANT USAGE ON *.* to CLUSTER_USER@'%' IDENTIFIED BY 'CLUSTER_PASS';
+<pre><code class="language-sql">GRANT USAGE ON *.* to CLUSTER_USER@'%' IDENTIFIED BY 'CLUSTER_PASS';
 GRANT ALL PRIVILEGES on *.* to CLUSTER_USER@'%';</code></pre>
 <h3>Modify /etc/mysql/conf.d/galera.cnf</h3>
 <p>以下參數請自行帶入</p>
@@ -241,9 +241,9 @@ innodb_buffer_pool_size     = 400M</code></pre>
 </ul>
 <h2>Start Cluster Node</h2>
 <h3>Master Node</h3>
-<pre><code>sudo service mysql bootstrap</code></pre>
+<pre><code class="language-bash">sudo service mysql bootstrap</code></pre>
 <h3>Slave Node</h3>
-<pre><code>sudo service msyql start</code></pre>
+<pre><code class="language-bash">sudo service msyql start</code></pre>
 <h2>Troubleshooting</h2>
 <ul>
 <li><a href="https://www.percona.com/blog/2014/12/30/diagnosing-sst-errors-with-percona-xtradb-cluster-for-mysql/">Diagnosing SST errors with Percona XtraDB Cluster for MySQL</a></li>
