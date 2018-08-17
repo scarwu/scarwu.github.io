@@ -1,16 +1,33 @@
 <!doctype html>
-<html lang="zh-TW">
+<html class="no-js" style="display: block !important;" lang="zh-TW">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:description" name="description" content="記錄學習過程、生活以及一些想說的話。">
     <meta property="og:title" content="ScarShow | 刀疤說">
-    <meta property="og:url" content="https://scar.tw/page/7/">
-    <meta property="og:image" content="https://scar.tw/images/icon.jpg">
+    <meta property="og:url" content="//scar.tw/page/7/">
+    <meta property="og:image" content="//scar.tw/images/icon.jpg">
     <meta property="og:type" content="blog">
 
     <title>ScarShow | 刀疤說</title>
 
+    <link rel="canonical" href="//scar.tw/page/7/">
+    <link rel="author" href="//plus.google.com/+ScarWu">
+    <link rel="image_src" href="//scar.tw/images/icon.jpg">
+    <link rel="shortcut icon" href="//scar.tw/favicon.ico">
+    <link rel="stylesheet" href="/assets/styles/theme.min.css">
+
+    <script src="/assets/scripts/vendor/modernizr.min.js"></script>
+    <script src="/assets/scripts/theme.min.js" async></script>
+
+    <script>
+        function asyncLoad(src) {
+            var s = document.createElement('script');
+            s.src = src; s.async = true;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+    </script>
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -20,40 +37,38 @@
         ga('create', 'UA-30675094-1', 'auto');
         ga('send', 'pageview');
     </script>
-    
-    <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="canonical" href="https://scar.tw/page/7/">
-    <link rel="author" href="https://plus.google.com/+ScarWu">
-    <link rel="image_src" href="https://scar.tw/images/icon.jpg">
-    <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-</head>
+    </head>
 <body>
     <hgroup id="header">
         <h1><a href="/">ScarShow</a></h1>
         <h2></h2>
     </hgroup>
+
     <nav id="nav">
         <span class="left">
-            <a href="/archive/">Archive</a>
-            <a href="/tag/">Tag</a>
+            <a href="/works/">Works</a>
         </span>
         <span class="home">
             <a href="/">Home</a>
             <span class="arrow"></span>
         </span>
         <span class="right">
-            <a href="/works/">Works</a>
             <a href="/atom.xml">RSS</a>
         </span>
     </nav>
+
     <div id="main">
-        <div id="container"><div id="container_page">
+        <div id="container">
+            <div id="container_page">
         <article class="post_block">
         <h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">NanoCLI - PHP CLI開發工具 (2)</a></h1>
         <div class="info">
-            <div class="date">
+            <div class="archive">
                 <i class="fa fa-calendar"></i>
                 <a href="/archive/2013/">2013-03-16</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <span><a href="/tag/NanoCLI/">NanoCLI</a></span>
@@ -69,13 +84,24 @@
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/" data-text="NanoCLI - PHP CLI開發工具 (2) | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button"
+                        data-url="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/"
+                        data-text="NanoCLI - PHP CLI開發工具 (2) | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like"
+                        data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/" data-size="medium"></div>
+                    <div class="g-plusone"
+                        data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/"
+                        data-size="medium"></div>
                 </div>
             </div>
         </div>
@@ -104,9 +130,12 @@ class Help extends NanoCLI\Command {
         <article class="post_block">
         <h1 class="title"><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/">NanoCLI - PHP CLI開發工具 (1)</a></h1>
         <div class="info">
-            <div class="date">
+            <div class="archive">
                 <i class="fa fa-calendar"></i>
                 <a href="/archive/2013/">2013-03-16</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <span><a href="/tag/NanoCLI/">NanoCLI</a></span>
@@ -122,13 +151,24 @@ class Help extends NanoCLI\Command {
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/" data-text="NanoCLI - PHP CLI開發工具 (1) | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button"
+                        data-url="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/"
+                        data-text="NanoCLI - PHP CLI開發工具 (1) | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like"
+                        data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/" data-size="medium"></div>
+                    <div class="g-plusone"
+                        data-href="http://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/"
+                        data-size="medium"></div>
                 </div>
             </div>
         </div>
@@ -151,9 +191,12 @@ class Help extends NanoCLI\Command {
         <article class="post_block">
         <h1 class="title"><a href="/article/2013/01/09/php-phar-create-and-use/">Phar建立與使用</a></h1>
         <div class="info">
-            <div class="date">
+            <div class="archive">
                 <i class="fa fa-calendar"></i>
                 <a href="/archive/2013/">2013-01-09</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <span><a href="/tag/Note/">Note</a></span>
@@ -169,13 +212,24 @@ class Help extends NanoCLI\Command {
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2013/01/09/php-phar-create-and-use/" data-text="Phar建立與使用 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button"
+                        data-url="http://scar.tw/article/2013/01/09/php-phar-create-and-use/"
+                        data-text="Phar建立與使用 | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2013/01/09/php-phar-create-and-use/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like"
+                        data-href="http://scar.tw/article/2013/01/09/php-phar-create-and-use/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2013/01/09/php-phar-create-and-use/" data-size="medium"></div>
+                    <div class="g-plusone"
+                        data-href="http://scar.tw/article/2013/01/09/php-phar-create-and-use/"
+                        data-size="medium"></div>
                 </div>
             </div>
         </div>
@@ -188,9 +242,12 @@ class Help extends NanoCLI\Command {
         <article class="post_block">
         <h1 class="title"><a href="/article/2012/12/13/increment-operator-in-few-programming-language/">關於一些程式語言裡的遞增運算子</a></h1>
         <div class="info">
-            <div class="date">
+            <div class="archive">
                 <i class="fa fa-calendar"></i>
                 <a href="/archive/2012/">2012-12-13</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <span><a href="/tag/C/C%2B%2B/">C/C++</a></span>
@@ -214,13 +271,24 @@ class Help extends NanoCLI\Command {
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/" data-text="關於一些程式語言裡的遞增運算子 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button"
+                        data-url="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/"
+                        data-text="關於一些程式語言裡的遞增運算子 | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like"
+                        data-href="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/" data-size="medium"></div>
+                    <div class="g-plusone"
+                        data-href="http://scar.tw/article/2012/12/13/increment-operator-in-few-programming-language/"
+                        data-size="medium"></div>
                 </div>
             </div>
         </div>
@@ -239,9 +307,12 @@ main() {
         <article class="post_block">
         <h1 class="title"><a href="/article/2012/12/08/facebook-virus-ksum-exe/">Facebook病毒 - YouNaked.JPG.exe</a></h1>
         <div class="info">
-            <div class="date">
+            <div class="archive">
                 <i class="fa fa-calendar"></i>
                 <a href="/archive/2012/">2012-12-08</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <span><a href="/tag/Facebook/">Facebook</a></span>
@@ -261,13 +332,24 @@ main() {
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2012/12/08/facebook-virus-ksum-exe/" data-text="Facebook病毒 - YouNaked.JPG.exe | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button"
+                        data-url="http://scar.tw/article/2012/12/08/facebook-virus-ksum-exe/"
+                        data-text="Facebook病毒 - YouNaked.JPG.exe | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2012/12/08/facebook-virus-ksum-exe/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like"
+                        data-href="http://scar.tw/article/2012/12/08/facebook-virus-ksum-exe/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2012/12/08/facebook-virus-ksum-exe/" data-size="medium"></div>
+                    <div class="g-plusone"
+                        data-href="http://scar.tw/article/2012/12/08/facebook-virus-ksum-exe/"
+                        data-size="medium"></div>
                 </div>
             </div>
         </div>
@@ -276,26 +358,23 @@ main() {
 </div>
         <a class="more" href="/article/2012/12/08/facebook-virus-ksum-exe/">More</a>
     </article>
-        <div id="paging">
-        <span class="new">
-            <a href="/page/6/"><< Newer Posts</a>        </span>
-        <span class="old">
-            <a href="/page/8/">Older Posts >></a>        </span>
-        <span class="count">
-            7 / 10        </span>
+    
+    <div id="paging">
+        <span class="new"><a href="/page/6/"><< Newer Posts</a></span>
+        <span class="old"><a href="/page/8/">Older Posts >></a></span>
+        <span class="count">7 / 10</span>
     </div>
-</div>
-<div id="fb-root"></div></div>
+</div>        </div>
         <div id="side">
             <div id="side_search">
                 <i class="fa fa-search"></i>
-                <form action="https://www.google.com/search?q=as" target="_blank" method="get">
+                <form action="//www.google.com/search?q=as" target="_blank" method="get">
                     <input type="hidden" name="q" value="site:scar.tw">
                     <input type="text" name="q" placeholder="Search">
                     <input type="submit">
                 </form>
             </div>
-            <div id="side_about">
+                        <div id="side_about">
     <div class="title">About</div>
     <div class="content">
         <img class="avatar" src="//avatars.plurk.com/3891981-big26.jpg" alt="ScarWu">
@@ -307,7 +386,7 @@ main() {
             <a class="fa fa-facebook-square" href="https://www.facebook.com/ScarWu" target="_blank"></a>
         </div>
     </div>
-</div><div id="side_archive">
+</div>                        <div id="side_archive">
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
@@ -328,7 +407,20 @@ main() {
                 <span class="item">
                         <a href="/archive/2011/">2011(2)</a>        </span>
             </div>
-</div><div id="side_tag">
+</div>                        <div id="side_category">
+    <div class="title">
+        <a href="/category/">Category</a>    </div>
+    <div class="content">
+                <span class="item">
+                        <a href="/category/IT/">IT(42)</a>        </span>
+                <span class="item">
+                        <a href="/category/Life/">Life(4)</a>        </span>
+                <span class="item">
+                        <a href="/category/Game/">Game(2)</a>        </span>
+                <span class="item">
+                        <a href="/category/3C/">3C(1)</a>        </span>
+            </div>
+</div>                        <div id="side_tag">
     <div class="title">
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
@@ -437,34 +529,33 @@ main() {
                 <span class="item">
                         <a href="/tag/iOS/">iOS(1)</a>        </span>
             </div>
-</div>        </div>
+</div>                    </div>
     </div>
+
     <footer id="footer">
         <span>Copyright &copy; Scar Wu</span>
         <p>Powered by Pointless</p>
     </footer>
 
-    <script>
-        function asyncLoad(src) {
-            var s = document.createElement('script');
-            s.src = src; s.async = true;
-            var e = document.getElementsByTagName('script')[0];
-            e.parentNode.insertBefore(s, e);
-        }
-                var disqus_shortname = 'scarshow';
+    <div id="fb-root"></div>
+
+        <script>
+        var disqusShortname = 'scarshow';
+
         if (document.getElementsByTagName('disqus_comments')) {
-            asyncLoad('//' + disqus_shortname + '.disqus.com/count.js');
+            asyncLoad('//' + disqusShortname + '.disqus.com/count.js');
         }
+
         if (document.getElementById('disqus_thread')) {
-            asyncLoad('//' + disqus_shortname + '.disqus.com/embed.js');
+            asyncLoad('//' + disqusShortname + '.disqus.com/embed.js');
         }
-                if (document.getElementsByTagName('social_tool')) {
-            asyncLoad('https://apis.google.com/js/plusone.js');
+    </script>
+        <script>
+        if (document.getElementsByTagName('social_tool')) {
+            asyncLoad('//apis.google.com/js/plusone.js');
             asyncLoad('//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1403512429930397&version=v2.0');
             asyncLoad('//platform.twitter.com/widgets.js');
         }
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js" async></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js" data-main="/assets/scripts" async></script>
 </body>
 </html>

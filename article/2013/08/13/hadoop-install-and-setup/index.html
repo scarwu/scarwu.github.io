@@ -1,16 +1,33 @@
 <!doctype html>
-<html lang="zh-TW">
+<html class="no-js" style="display: block !important;" lang="zh-TW">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:description" name="description" content="Hadoop這套工具主要用做於平行運算，它其中包含兩個部份MapReduce以及HDFS。">
     <meta property="og:title" content="Hadoop安裝與設定 | ScarShow | 刀疤說">
-    <meta property="og:url" content="https://scar.tw/article/2013/08/13/hadoop-install-and-setup/">
-    <meta property="og:image" content="https://scar.tw/images/icon.jpg">
+    <meta property="og:url" content="//scar.tw/article/2013/08/13/hadoop-install-and-setup/">
+    <meta property="og:image" content="//scar.tw/images/icon.jpg">
     <meta property="og:type" content="blog">
 
     <title>Hadoop安裝與設定 | ScarShow | 刀疤說</title>
 
+    <link rel="canonical" href="//scar.tw/article/2013/08/13/hadoop-install-and-setup/">
+    <link rel="author" href="//plus.google.com/+ScarWu">
+    <link rel="image_src" href="//scar.tw/images/icon.jpg">
+    <link rel="shortcut icon" href="//scar.tw/favicon.ico">
+    <link rel="stylesheet" href="/assets/styles/theme.min.css">
+
+    <script src="/assets/scripts/vendor/modernizr.min.js"></script>
+    <script src="/assets/scripts/theme.min.js" async></script>
+
+    <script>
+        function asyncLoad(src) {
+            var s = document.createElement('script');
+            s.src = src; s.async = true;
+            var e = document.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e);
+        }
+    </script>
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -20,40 +37,38 @@
         ga('create', 'UA-30675094-1', 'auto');
         ga('send', 'pageview');
     </script>
-    
-    <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="canonical" href="https://scar.tw/article/2013/08/13/hadoop-install-and-setup/">
-    <link rel="author" href="https://plus.google.com/+ScarWu">
-    <link rel="image_src" href="https://scar.tw/images/icon.jpg">
-    <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-</head>
+    </head>
 <body>
     <hgroup id="header">
         <h1><a href="/">ScarShow</a></h1>
         <h2></h2>
     </hgroup>
+
     <nav id="nav">
         <span class="left">
-            <a href="/archive/">Archive</a>
-            <a href="/tag/">Tag</a>
+            <a href="/works/">Works</a>
         </span>
         <span class="home">
             <a href="/">Home</a>
             <span class="arrow"></span>
         </span>
         <span class="right">
-            <a href="/works/">Works</a>
             <a href="/atom.xml">RSS</a>
         </span>
     </nav>
+
     <div id="main">
-        <div id="container"><div id="container_article">
+        <div id="container">
+            <div id="container_article">
     <article class="post_block">
         <h1 class="title">Hadoop安裝與設定</h1>
         <div class="info">
-            <div class="date">
+            <div class="archive">
                 <i class="fa fa-calendar"></i>
                 <a href="/archive/2013/">2013-08-13</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <a href="/tag/Hadoop/">Hadoop</a>            </div>
@@ -73,13 +88,24 @@
                         <hr>
             <div class="social_tool">
                 <div class="twitter">
-                    <a class="twitter-share-button" data-url="http://scar.tw/article/2013/08/13/hadoop-install-and-setup/" data-text="Hadoop安裝與設定 | ScarShow | 刀疤說" data-lang="en" data-via="xneriscool"></a>
+                    <a class="twitter-share-button"
+                        data-url="//scar.tw/article/2013/08/13/hadoop-install-and-setup/"
+                        data-text="Hadoop安裝與設定 | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
                 </div>
                 <div class="facebook">
-                    <div class="fb-like" data-href="http://scar.tw/article/2013/08/13/hadoop-install-and-setup/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <div class="fb-like"
+                        data-href="//scar.tw/article/2013/08/13/hadoop-install-and-setup/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
                 </div>
                 <div class="google">
-                    <div class="g-plusone" data-href="http://scar.tw/article/2013/08/13/hadoop-install-and-setup/" data-size="medium"></div>
+                    <div class="g-plusone"
+                        data-href="//scar.tw/article/2013/08/13/hadoop-install-and-setup/"
+                        data-size="medium"></div>
                 </div>
             </div>
         </div>
@@ -186,27 +212,25 @@ node03</code></pre>
 <p>在這篇就單純紀錄安裝Hadoop的一些過程，但實際上我使用到的部份就只有HDFS，MapReduce的話目前沒有能夠拿來算的數據。</p>
 <p>另外最近有點忙網誌已經很久沒動了，而且最近光打這篇紀錄就拖了半個月以上。</p></div>
     </article>
+
         <div id="disqus_thread"></div>
-        <div id="paging">
-        <span class="new">
-            <a href="/article/2013/09/19/archlinux-based-install/"><< Arch Linux - 基礎安裝</a>        </span>
-        <span class="old">
-            <a href="/article/2013/05/30/observe-and-using-node-js-stream-event/">NodeJS - Stream行為觀察與事件使用 >></a>        </span>
-        <span class="count">
-            22 / 49        </span>
+    
+    <div id="paging">
+        <span class="new"><a href="/article/2013/09/19/archlinux-based-install/"><< Arch Linux - 基礎安裝</a></span>
+        <span class="old"><a href="/article/2013/05/30/observe-and-using-node-js-stream-event/">NodeJS - Stream行為觀察與事件使用 >></a></span>
+        <span class="count">22 / 49</span>
     </div>
-</div>
-<div id="fb-root"></div></div>
+</div>        </div>
         <div id="side">
             <div id="side_search">
                 <i class="fa fa-search"></i>
-                <form action="https://www.google.com/search?q=as" target="_blank" method="get">
+                <form action="//www.google.com/search?q=as" target="_blank" method="get">
                     <input type="hidden" name="q" value="site:scar.tw">
                     <input type="text" name="q" placeholder="Search">
                     <input type="submit">
                 </form>
             </div>
-            <div id="side_about">
+                        <div id="side_about">
     <div class="title">About</div>
     <div class="content">
         <img class="avatar" src="//avatars.plurk.com/3891981-big26.jpg" alt="ScarWu">
@@ -218,7 +242,7 @@ node03</code></pre>
             <a class="fa fa-facebook-square" href="https://www.facebook.com/ScarWu" target="_blank"></a>
         </div>
     </div>
-</div><div id="side_archive">
+</div>                        <div id="side_archive">
     <div class="title">
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
@@ -239,7 +263,20 @@ node03</code></pre>
                 <span class="item">
                         <a href="/archive/2011/">2011(2)</a>        </span>
             </div>
-</div><div id="side_tag">
+</div>                        <div id="side_category">
+    <div class="title">
+        <a href="/category/">Category</a>    </div>
+    <div class="content">
+                <span class="item">
+                        <a href="/category/IT/">IT(42)</a>        </span>
+                <span class="item">
+                        <a href="/category/Life/">Life(4)</a>        </span>
+                <span class="item">
+                        <a href="/category/Game/">Game(2)</a>        </span>
+                <span class="item">
+                        <a href="/category/3C/">3C(1)</a>        </span>
+            </div>
+</div>                        <div id="side_tag">
     <div class="title">
         <a href="/tag/">Tag</a>    </div>
     <div class="content">
@@ -348,34 +385,33 @@ node03</code></pre>
                 <span class="item">
                         <a href="/tag/iOS/">iOS(1)</a>        </span>
             </div>
-</div>        </div>
+</div>                    </div>
     </div>
+
     <footer id="footer">
         <span>Copyright &copy; Scar Wu</span>
         <p>Powered by Pointless</p>
     </footer>
 
-    <script>
-        function asyncLoad(src) {
-            var s = document.createElement('script');
-            s.src = src; s.async = true;
-            var e = document.getElementsByTagName('script')[0];
-            e.parentNode.insertBefore(s, e);
-        }
-                var disqus_shortname = 'scarshow';
+    <div id="fb-root"></div>
+
+        <script>
+        var disqusShortname = 'scarshow';
+
         if (document.getElementsByTagName('disqus_comments')) {
-            asyncLoad('//' + disqus_shortname + '.disqus.com/count.js');
+            asyncLoad('//' + disqusShortname + '.disqus.com/count.js');
         }
+
         if (document.getElementById('disqus_thread')) {
-            asyncLoad('//' + disqus_shortname + '.disqus.com/embed.js');
+            asyncLoad('//' + disqusShortname + '.disqus.com/embed.js');
         }
-                if (document.getElementsByTagName('social_tool')) {
-            asyncLoad('https://apis.google.com/js/plusone.js');
+    </script>
+        <script>
+        if (document.getElementsByTagName('social_tool')) {
+            asyncLoad('//apis.google.com/js/plusone.js');
             asyncLoad('//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1403512429930397&version=v2.0');
             asyncLoad('//platform.twitter.com/widgets.js');
         }
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js" async></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js" data-main="/assets/scripts" async></script>
 </body>
 </html>

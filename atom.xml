@@ -2,17 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title><![CDATA[ScarShow | 刀疤說]]></title>
 	<subtitle></subtitle>
-	<link href="http://scar.tw/atom.xml" rel="self" />
-	<link href="http://scar.tw/" />
+	<link href="https://scar.tw/atom.xml" rel="self" />
+	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-08-14T21:35:06+08:00</updated>
+	<updated>2018-08-17T17:34:12+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
-		<uri>http://scar.tw/</uri>
+		<uri>https://scar.tw/</uri>
 	</author>
 	<entry>
 		<title type="html"><![CDATA[個人工具的改進]]></title>
-		<link href="http://scar.tw/article/2018/08/14/improve-my-tools/" />
+		<link href="https://scar.tw/article/2018/08/14/improve-my-tools/" />
 		<id>urn:uuid:4aa2ecbf-54f3-1dd8-ca69-6f2020988bb2</id>
 		<updated>2018-08-14T20:44:23+08:00</updated>
 		<summary type="html"><![CDATA[<p>最近對於自己個人用的工具有些想法，主要也是受到這些年工作的影響。在資訊這行業永遠有學不完的東西，這幾年也是學了很多新奇的東西，但也是因為這樣個人的工具也就成長有限。</p>
@@ -29,7 +29,7 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[魔物獵人配裝計算機使用說明]]></title>
-		<link href="http://scar.tw/article/2018/05/02/mhw-calculator-readme/" />
+		<link href="https://scar.tw/article/2018/05/02/mhw-calculator-readme/" />
 		<id>urn:uuid:ef117fcb-b214-279f-449a-c99f71175221</id>
 		<updated>2018-05-02T19:10:58+08:00</updated>
 		<summary type="html"><![CDATA[<p>基於現有工具不符合需求及最近有點時間，所以花了點時間寫了這個<a href="https://scar.tw/MHWCalculator">計算機</a>。</p>
@@ -120,7 +120,7 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[2017 年末近況]]></title>
-		<link href="http://scar.tw/article/2017/11/26/about-late-of-2017/" />
+		<link href="https://scar.tw/article/2017/11/26/about-late-of-2017/" />
 		<id>urn:uuid:7b190959-4598-181d-9983-420bd0923c6c</id>
 		<updated>2017-11-26T02:51:07+08:00</updated>
 		<summary type="html"><![CDATA[<p>都要年末了，今年的發文也只有年初的一篇文章而已，自從出工作後發文就銳減了，明明很想說點什麼，但卻又沒發文章的動力。</p>
@@ -146,7 +146,7 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[PHP 7 PREG_JIT_STACKLIMIT_ERROR]]></title>
-		<link href="http://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" />
+		<link href="https://scar.tw/article/2017/01/14/php-7-preg-jit-stacklimit-error/" />
 		<id>urn:uuid:0cd2e795-93c9-0818-1787-449576b4c22d</id>
 		<updated>2017-01-14T23:10:46+08:00</updated>
 		<summary type="html"><![CDATA[<p>最近在重構學生時代的作品 <code>Pointless</code> 讓它符合現代的技術，順便熟悉一下 <code>PHP7</code>新的功能。</p>
@@ -163,7 +163,7 @@
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[MariaDB Galera Cluster 10.1 Setting]]></title>
-		<link href="http://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" />
+		<link href="https://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" />
 		<id>urn:uuid:78046c09-e98e-0603-684a-d0a1a17dcc43</id>
 		<updated>2016-12-02T12:02:07+08:00</updated>
 		<summary type="html"><![CDATA[<p>先前已經寫過 <code>10.0</code> 的設定方式，MariaDB 升級成 <code>10.1</code> 後 <code>galera</code> 就已經內建在其中了，也不用額外安裝它的套件。</p>
