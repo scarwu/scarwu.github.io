@@ -61,6 +61,59 @@
         <div id="container">
             <div id="container_page">
         <article class="post_block">
+        <h1 class="title"><a href="/article/2013/05/16/try-android-studio-v01/">試用Android Studio v0.1</a></h1>
+        <div class="info">
+            <div class="archive">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2013/">2013-05-16</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Android/">Android</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Note/">Note</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2013/05/16/try-android-studio-v01/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button"
+                        data-url="http://scar.tw/article/2013/05/16/try-android-studio-v01/"
+                        data-text="試用Android Studio v0.1 | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like"
+                        data-href="http://scar.tw/article/2013/05/16/try-android-studio-v01/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone"
+                        data-href="http://scar.tw/article/2013/05/16/try-android-studio-v01/"
+                        data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><p>今天凌晨看了Google I/O的keynote，Google發表了Android Studio，再大會上展示了它擁有同時預覽在不同解析度上的界面編輯功能看起來很酷。就在剛剛我發現Andoird Developer上面已經可以下載了，馬上載下來安裝。</p>
+<p>不知道Android Studio它會不會像<code>Eclipse + ADT</code>一樣一戳就爆炸呢？之前在接案開發Android APP還有相關的教學課程上<code>Eclipse + ADT</code>真的不太穩定。不知道Android Studio會不會比較好用，另外Android Studio是用IntelliJ IDEA為基礎修改的現在的版號是<code>v0.1</code>，Google官方對它的介紹為：</p>
+<blockquote>
+<p>&quot;Android Studio is a new Android development environment based on IntelliJ IDEA. Similar to Eclipse with the ADT Plugin, Android Studio provides integrated Android developer tools for development and debugging.&quot;</p>
+</blockquote>
+</div>
+        <a class="more" href="/article/2013/05/16/try-android-studio-v01/">More</a>
+    </article>
+        <article class="post_block">
         <h1 class="title"><a href="/article/2013/04/29/node-js-dgram-error-with-EBADF/">NodeJS - dgram error with EBADF</a></h1>
         <div class="info">
             <div class="archive">
@@ -280,76 +333,6 @@ client.send(message, 0, message.length, port, ip, callback);</code></pre>
 </div>
         <a class="more" href="/article/2013/04/04/about-php-native-template-engine/">More</a>
     </article>
-        <article class="post_block">
-        <h1 class="title"><a href="/article/2013/04/02/php-concatenate-string/">PHP字串連接</a></h1>
-        <div class="info">
-            <div class="archive">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2013/">2013-04-02</a>            </div>
-            <div class="category">
-                <i class="fa fa-folder"></i>
-                <a href="/category/IT/">IT</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/PHP/">PHP</a></span>
-            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2013/04/02/php-concatenate-string/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button"
-                        data-url="http://scar.tw/article/2013/04/02/php-concatenate-string/"
-                        data-text="PHP字串連接 | ScarShow | 刀疤說"
-                        data-lang="en"
-                        data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like"
-                        data-href="http://scar.tw/article/2013/04/02/php-concatenate-string/"
-                        data-layout="button_count"
-                        data-action="like"
-                        data-show-faces="true"
-                        data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone"
-                        data-href="http://scar.tw/article/2013/04/02/php-concatenate-string/"
-                        data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><h2>前言</h2>
-<p>在PHP中字串連接的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式<code>strcat()</code>來連接兩個字元陣列，而在Java中我們可以使用<code>+</code>運算子來做字串的連接。</p>
-<p>而PHP呢？PHP不同與上述語言，它則使用<code>.</code>運算子來連接字串，而且除了<code>.</code>以外還有許多不同的方式也可以連接字串。</p>
-<h2>基本使用</h2>
-<h3>字串宣告</h3>
-<p>在PHP當中可以使用<code>'</code>或者是<code>"</code>來宣告字串，但是這兩個符號宣告出的字串其實是不相同的。</p>
-<pre><code class="language-php">&lt;?php
-$str = "Hi, I am Tony.\nNice to meet you.";
-echo $str;
-// Hi, I am Tony.
-// Nice to meet you.
-
-$str = 'Hi, I am Tony.\nNice to meet you.';
-echo $str;
-// Hi, i am Tony,\nNice to meet you.</code></pre>
-<p>由上面範例可以得知使用<code>"</code>宣告的字串可以讓跳脫字元發揮出作用，而使用<code>'</code>宣告的字串則是純字串你輸入什麼就輸出什麼。</p>
-<h3>字串連接</h3>
-<pre><code class="language-php">&lt;?php
-$name = 'Tony';
-
-echo "Hi " . $name; // Hi Tony
-echo 'Hi ' . $name; // Hi Tony
-echo "Hi $name";    // Hi Tony
-echo 'Hi $name';    // Hi $name</code></pre>
-<p>那麼字串與變數的連接，在<code>"</code>可以很彈性的使用變數，而<code>'</code>只能夠使用<code>.</code>來做連接，而兩者都可以使用格式化輸出<code>sprintf()</code>但這邊就先不提。</p>
-<p>由上面得知<code>"</code>可以很彈性的連接變數，那麼它除了變數的連接外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。</p>
-</div>
-        <a class="more" href="/article/2013/04/02/php-concatenate-string/">More</a>
-    </article>
     
     <div id="paging">
         <span class="new"><a href="/page/5/"><< Newer Posts</a></span>
@@ -383,7 +366,7 @@ echo 'Hi $name';    // Hi $name</code></pre>
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/archive/2018/">2018(2)</a>        </span>
+                        <a href="/archive/2018/">2018(3)</a>        </span>
                 <span class="item">
                         <a href="/archive/2017/">2017(2)</a>        </span>
                 <span class="item">
@@ -404,7 +387,7 @@ echo 'Hi $name';    // Hi $name</code></pre>
         <a href="/category/">Category</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/category/IT/">IT(42)</a>        </span>
+                        <a href="/category/IT/">IT(43)</a>        </span>
                 <span class="item">
                         <a href="/category/Life/">Life(4)</a>        </span>
                 <span class="item">
@@ -441,11 +424,13 @@ echo 'Hi $name';    // Hi $name</code></pre>
                 <span class="item">
                         <a href="/tag/Diablo%20III/">Diablo III(1)</a>        </span>
                 <span class="item">
+                        <a href="/tag/Docker/">Docker(1)</a>        </span>
+                <span class="item">
                         <a href="/tag/Express/">Express(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Facebook/">Facebook(2)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Game/">Game(2)</a>        </span>
+                        <a href="/tag/Game/">Game(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/HHKB/">HHKB(1)</a>        </span>
                 <span class="item">
@@ -475,13 +460,15 @@ echo 'Hi $name';    // Hi $name</code></pre>
                 <span class="item">
                         <a href="/tag/NanoCLI/">NanoCLI(3)</a>        </span>
                 <span class="item">
+                        <a href="/tag/Nginx/">Nginx(1)</a>        </span>
+                <span class="item">
                         <a href="/tag/NodeJS/">NodeJS(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/Note/">Note(19)</a>        </span>
                 <span class="item">
                         <a href="/tag/Oni/">Oni(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/PHP/">PHP(18)</a>        </span>
+                        <a href="/tag/PHP/">PHP(19)</a>        </span>
                 <span class="item">
                         <a href="/tag/PHPBrew/">PHPBrew(1)</a>        </span>
                 <span class="item">

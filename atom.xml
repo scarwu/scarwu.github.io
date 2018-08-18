@@ -5,11 +5,199 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-08-18T20:16:37+08:00</updated>
+	<updated>2018-08-19T00:26:50+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[使用 Docker 打造多 PHP 版本開發環境]]></title>
+		<link href="https://scar.tw/article/2018/08/19/using-docker-make-multiple-version-php-envs/" />
+		<id>urn:uuid:6bbadac1-7a9f-cc62-5cae-1fd6dc2996e4</id>
+		<updated>2018-08-19T00:20:12+08:00</updated>
+		<summary type="html"><![CDATA[<p>過去在這幾年間 <code>PHP</code> 終於從 <code>5.x</code> 升版到了 <code>7.x</code>，所以公司內的新專案也因應改版也順勢使用新版本，那原本的專案就保持舊版本或是之後有計畫升級新版本。</p>
+<p>但這樣就會造成環境混雜的問題，所以同時可能會有 <code>5.4</code>、<code>5.6</code> 或是 <code>7.0</code> 的專案需要開發。</p>
+<p>而在一般的開發環境之下，每台電腦就只能安裝單一版本的 <code>PHP</code>，就算有機會安裝多個環境也有機會造成環境污染，以及無法快速切換版本。</p>
+<p>所以利用 <code>Container</code> 的方式將不同的環境打包到個別的 <code>Image</code> 獨立運作，再利用 <code>PHP-FPM</code> 可以聆聽 <code>socket</code> 或是 <code>port</code> 的特性，以及 <code>Nginx</code> 的 <code>Proxy</code> 將請求送到不同的環境去執行。</p>
+<!--more-->
+<h2>撰寫 Dockerfile</h2>
+<p>這邊我們使用 <code>Alpine Linux</code> 作為 <code>Image</code> 的基底，再安裝上我們所需要的套件，下面就使用 <code>Nginx</code> 及 <code>PHP</code> 為範例，不同的 <code>PHP</code> 版本只需要透過修改 <code>Alpine Linux</code> 的版本來調整。</p>
+<h3>Nginx 1.14</h3>
+<pre><code class="language-dockerfile">FROM alpine:3.8
+MAINTAINER Scar Wu &lt;xneriscool@gmail.com&gt;
+WORKDIR /build
+
+RUN VERSION="1.14" \
+    &amp;&amp; NEED_APK="nginx&gt;$VERSION" \
+    &amp;&amp; apk --update add $NEED_APK
+
+RUN mkdir /volume \
+    &amp;&amp; mkdir /volume/log \
+    &amp;&amp; mkdir /volume/data \
+    &amp;&amp; mkdir /volume/config \
+
+    &amp;&amp; mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak \
+    &amp;&amp; ln -s /volume/config/nginx.conf /etc/nginx/nginx.conf
+
+VOLUME ["/volume/config", "/volume/data", "/volume/log"]
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+EXPOSE 80/tcp
+EXPOSE 443/tcp
+
+CMD /usr/sbin/nginx -g "daemon off;"</code></pre>
+<h3>PHP 5.6</h3>
+<pre><code class="language-dockerfile">FROM alpine:3.8
+MAINTAINER Scar Wu &lt;xneriscool@gmail.com&gt;
+WORKDIR /build
+
+RUN VERSION="5.6" \
+    &amp;&amp; NEED_APK="php5&gt;$VERSION php5-fpm&gt;$VERSION" \
+    &amp;&amp; apk --update add $NEED_APK
+
+ENV PHP_DIR /etc/php5
+
+RUN mkdir /volume \
+    &amp;&amp; mkdir /volume/log \
+    &amp;&amp; mkdir /volume/data \
+    &amp;&amp; mkdir /volume/config \
+
+    &amp;&amp; mv $PHP_DIR/php.ini $PHP_DIR/php.ini.bak \
+    &amp;&amp; ln -s /volume/config/php.ini $PHP_DIR/php.ini \
+
+    &amp;&amp; mv $PHP_DIR/php-fpm.conf $PHP_DIR/php-fpm.conf.bak \
+    &amp;&amp; ln -s /volume/config/php-fpm.conf $PHP_DIR/php-fpm.conf
+
+VOLUME ["/volume/config", "/volume/data", "/volume/log"]
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+RUN addgroup nginx \
+    &amp;&amp; adduser -D nginx -G nginx
+
+EXPOSE 9000/tcp
+
+CMD /usr/bin/php-fpm5 --nodaemonize</code></pre>
+<h3>PHP 7.2</h3>
+<pre><code class="language-dockerfile">FROM alpine:3.8
+MAINTAINER Scar Wu &lt;xneriscool@gmail.com&gt;
+WORKDIR /build
+
+RUN VERSION="7.2" \
+    &amp;&amp; NEED_APK="php7&gt;$VERSION php7-fpm&gt;$VERSION" \
+    &amp;&amp; apk --update add $NEED_APK
+
+ENV PHP_DIR /etc/php7
+
+RUN mkdir /volume \
+    &amp;&amp; mkdir /volume/log \
+    &amp;&amp; mkdir /volume/data \
+    &amp;&amp; mkdir /volume/config \
+
+    &amp;&amp; mv $PHP_DIR/php.ini $PHP_DIR/php.ini.bak \
+    &amp;&amp; ln -s /volume/config/php.ini $PHP_DIR/php.ini \
+
+    &amp;&amp; mv $PHP_DIR/php-fpm.conf $PHP_DIR/php-fpm.conf.bak \
+    &amp;&amp; ln -s /volume/config/php-fpm.conf $PHP_DIR/php-fpm.conf
+
+VOLUME ["/volume/config", "/volume/data", "/volume/log"]
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+RUN addgroup nginx \
+    &amp;&amp; adduser -D nginx -G nginx
+
+EXPOSE 9000/tcp
+
+CMD /usr/sbin/php-fpm7 --nodaemonize</code></pre>
+<h2>調整 Server Config</h2>
+<p>在這裡我們需要修改 <code>Nginx</code> 的 <code>FactCGI</code> 傳遞的方式，以及 <code>PHP-FPM</code> 的聆聽模式，<code>Nginx</code> 可以透過判斷 <code>request_uri</code> 的方式指定將不同的請求送到不同的 <code>PHP</code> 的版本。</p>
+<p>在這邊的設定檔案不是完整檔，只是表名設定的重點，完整的設定在我的 <code>Github</code> 上有，見下方連結。</p>
+<h3>Nginx: www.conf</h3>
+<pre><code class="language-nginx">server {
+    listen 80;
+
+    root /volume/data;
+    index index.html index.htm index.php;
+
+    charset utf-8;
+    autoindex off;
+
+    error_page 403 = 404;
+    error_page 404 /404.html;
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass PHP-7.2:9000;
+        fastcgi_index index.php;
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+
+        if ($request_uri = "/php56") {
+            fastcgi_pass PHP-5.6:9000;
+        }
+
+        if ($request_uri = "/php72") {
+            fastcgi_pass PHP-7.2:9000;
+        }
+    }
+}</code></pre>
+<h3>PHP-FPM: pools/main.conf</h3>
+<pre><code>[main]
+listen = 0.0.0.0:9000</code></pre>
+<h2>撰寫 Docker Compose File</h2>
+<p>利用 <code>Docker Compose</code> 將環境設定起來，這邊要注意的是將相對應資料夾掛到 <code>Container</code> 中，再來是 <code>external_links</code> 及 <code>depends_on</code> 的關聯設定。</p>
+<pre><code>version: '3'
+services:
+
+    nginx:
+        image: scarwu/demo-nginx:1.14
+        volumes:
+            - ./config/Nginx:/volume/config
+            - ./data:/volume/data
+            - ./log/nginx:/volume/log
+        ports:
+            - "80:80"
+        external_links:
+            - "php56:PHP-5.6"
+            - "php72:PHP-7.2"
+        depends_on:
+            - "php56"
+            - "php72"
+        restart: always
+
+    php56:
+        image: scarwu/demo-php:5.6
+        volumes:
+            - ./config/PHP-5.6:/volume/config
+            - ./data:/volume/data
+            - ./log/php56:/volume/log
+        restart: always
+
+    php72:
+        image: scarwu/demo-php:7.2
+        volumes:
+            - ./config/PHP-7.2:/volume/config
+            - ./data:/volume/data
+            - ./log/php72:/volume/log
+        restart: always</code></pre>
+<h2>Source Code</h2>
+<p>下面是範例專案，至於要怎樣投入到生產環境那就要看個人的調校了。</p>
+<p><a href="https://github.com/scarwu/MultiPHPEnvWithDocker">MultiPHPEnvWithDocker</a></p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[個人工具的改進]]></title>
 		<link href="https://scar.tw/article/2018/08/14/improve-my-tools/" />
@@ -160,94 +348,5 @@
 <p>詳細的建議可以去看看 <code>Stackoverflow</code> 上的解說連結在下面的 <code>Reference</code> 中。</p>
 <h2>Reference</h2>
 <p><a href="http://stackoverflow.com/questions/39685883/php-preg-jit-stacklimit-error-inefficient-regex">PHP PREG_JIT_STACKLIMIT_ERROR - inefficient regex</a></p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[MariaDB Galera Cluster 10.1 Setting]]></title>
-		<link href="https://scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/" />
-		<id>urn:uuid:78046c09-e98e-0603-684a-d0a1a17dcc43</id>
-		<updated>2016-12-02T12:02:07+08:00</updated>
-		<summary type="html"><![CDATA[<p>先前已經寫過 <code>10.0</code> 的設定方式，MariaDB 升級成 <code>10.1</code> 後 <code>galera</code> 就已經內建在其中了，也不用額外安裝它的套件。</p>
-<h2>Environment</h2>
-<h3>Debian Jessie</h3>
-<pre><code class="language-bash"># MariaDB
-sudo apt-get install python-software-properties
-sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
-sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian jessie main'
-
-# Percona XtraBackup
-wget https://repo.percona.com/apt/percona-release_0.1-3.jessie_all.deb
-sudo dpkg -i percona-release_0.1-3.jessie_all.deb
-sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5</code></pre>
-<!--more-->
-<h2>Install MariaDB &amp; XtraBackup</h2>
-<p>這邊額外安裝 <code>XtraBackup</code> 是讓 <code>wsrep_sst_method</code> 參數可以使用 <code>xtrabackup-v2</code> 來同步 (一般是使用 <code>rsync</code>)，好處是不會鎖表</p>
-<pre><code class="language-bash">sudo apt-get update
-sudo apt-get install -y mariadb-server percona-xtrabackup</code></pre>
-<h2>Upgrade MariaDB form 10.0 to 10.1 (Optional)</h2>
-<p>如果你的 <code>MariaDB</code> 還是 <code>10.0</code> 版，你可以升級它，除了安裝套件之外還要使用 <code>mysql_upgrade</code> 將原有的資料庫升級</p>
-<pre><code class="language-bash">sudo apt-get update
-sudo apt-get remove -y mariadb-galera-server
-sduo apt-get install mariadb-server
-
-# Upgrade old table
-sudo mysql_upgrade -u root -p</code></pre>
-<h2>Setting Cluster</h2>
-<h3>Add Cluster User</h3>
-<p>以下參數請自行帶入</p>
-<ul>
-<li><code>CLUSTER_USER</code></li>
-<li><code>CLUSTER_PASS</code></li>
-</ul>
-<pre><code class="language-sql">GRANT USAGE ON *.* to CLUSTER_USER@'%' IDENTIFIED BY 'CLUSTER_PASS';
-GRANT ALL PRIVILEGES on *.* to CLUSTER_USER@'%';</code></pre>
-<h3>Modify /etc/mysql/conf.d/galera.cnf</h3>
-<p>以下參數請自行帶入</p>
-<ul>
-<li><code>CLUSTER_NAME</code></li>
-<li><code>OTHER_NODE_IP</code></li>
-<li><code>NODE_IP</code></li>
-<li><code>NODE_NAME</code></li>
-<li><code>CLUSTER_USER</code></li>
-<li><code>CLUSTER_PASS</code></li>
-</ul>
-<pre><code>[galera]
-# Mandatory settings
-wsrep_on                    = ON
-wsrep_provider              = /usr/lib/galera/libgalera_smm.so
-wsrep_provider_options      = "gcache.size=2G"
-wsrep_cluster_name          = "CLUSTER_NAME"
-wsrep_cluster_address       = "gcomm://OTHER_NODE_IP:4567?pc.wait_prim=no"
-wsrep_node_address          = "NODE_IP"
-wsrep_node_name             = NODE_NAME
-wsrep_sst_auth              = CLUSTER_USER:CLUSTER_PASS
-wsrep_sst_method            = xtrabackup-v2
-
-bind-address                = 0.0.0.0
-binlog_format               = ROW
-query_cache_size            = 0
-query_cache_type            = 0
-default_storage_engine      = InnoDB
-
-innodb_autoinc_lock_mode    = 2
-innodb_log_file_size        = 48M
-innodb_data_file_path       = ibdata1:12M:autoextend
-innodb_buffer_pool_size     = 400M</code></pre>
-<h3>Firewall allow ports</h3>
-<ul>
-<li>3306: MariaDB</li>
-<li>4444: SST (RSync, XtraBackup)</li>
-<li>4567: Galera Cluster</li>
-<li>4568: IST</li>
-</ul>
-<h2>Start Cluster Node</h2>
-<h3>Master Node</h3>
-<pre><code class="language-bash">sudo service mysql bootstrap</code></pre>
-<h3>Slave Node</h3>
-<pre><code class="language-bash">sudo service msyql start</code></pre>
-<h2>Troubleshooting</h2>
-<ul>
-<li><a href="https://www.percona.com/blog/2014/12/30/diagnosing-sst-errors-with-percona-xtradb-cluster-for-mysql/">Diagnosing SST errors with Percona XtraDB Cluster for MySQL</a></li>
-<li><a href="http://galeracluster.com/documentation-webpages/mysqlwsrepoptions.html">MYSQL WSREP OPTIONS</a></li>
-</ul>]]></summary>
 	</entry>
 </feed>
