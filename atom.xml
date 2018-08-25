@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-08-22T12:40:47+08:00</updated>
+	<updated>2018-08-25T15:52:04+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -304,6 +304,11 @@ services:
 <ul>
 <li>新增麒麟γ及烏德爾γ套裝</li>
 <li>補完炎妃龍武器斬位</li>
+</ul>
+<h4>20180825 更新</h4>
+<ul>
+<li>新增潛水夫及獨角仙后裝備</li>
+<li>新增貝希摩斯裝備及武器</li>
 </ul>]]></summary>
 	</entry>
 	<entry>
