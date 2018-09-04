@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-08-25T15:52:04+08:00</updated>
+	<updated>2018-09-04T14:01:43+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -156,11 +156,11 @@ CMD /usr/sbin/php-fpm7 --nodaemonize</code></pre>
     }
 }</code></pre>
 <h3>PHP-FPM: pools/main.conf</h3>
-<pre><code>[main]
+<pre><code class="language-ini">[main]
 listen = 0.0.0.0:9000</code></pre>
 <h2>撰寫 Docker Compose File</h2>
 <p>利用 <code>Docker Compose</code> 將環境設定起來，這邊要注意的是將相對應資料夾掛到 <code>Container</code> 中，再來是 <code>external_links</code> 及 <code>depends_on</code> 的關聯設定。</p>
-<pre><code>version: '3'
+<pre><code class="language-yaml">version: '3'
 services:
 
     nginx:
@@ -309,6 +309,10 @@ services:
 <ul>
 <li>新增潛水夫及獨角仙后裝備</li>
 <li>新增貝希摩斯裝備及武器</li>
+</ul>
+<h4>20180904 更新</h4>
+<ul>
+<li>新增帝王γ及鋼龍γ套裝</li>
 </ul>]]></summary>
 	</entry>
 	<entry>

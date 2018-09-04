@@ -247,11 +247,11 @@ CMD /usr/sbin/php-fpm7 --nodaemonize</code></pre>
     }
 }</code></pre>
 <h3>PHP-FPM: pools/main.conf</h3>
-<pre><code>[main]
+<pre><code class="language-ini">[main]
 listen = 0.0.0.0:9000</code></pre>
 <h2>撰寫 Docker Compose File</h2>
 <p>利用 <code>Docker Compose</code> 將環境設定起來，這邊要注意的是將相對應資料夾掛到 <code>Container</code> 中，再來是 <code>external_links</code> 及 <code>depends_on</code> 的關聯設定。</p>
-<pre><code>version: '3'
+<pre><code class="language-yaml">version: '3'
 services:
 
     nginx:
