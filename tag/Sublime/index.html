@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="先前已經寫過 10.0 的設定方式，MariaDB 升級成 10.1 後 galera 就已經內建在其中了，也不用額外安裝它的套件。">
-    <meta property="og:title" content="MariaDB Galera Cluster 10.1 Setting | ScarShow | 刀疤說">
-    <meta property="og:url" content="//scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/">
+    <meta property="og:description" name="description" content="記錄學習過程、生活以及一些想說的話。">
+    <meta property="og:title" content="Tag: Sublime | ScarShow | 刀疤說">
+    <meta property="og:url" content="//scar.tw/tag/Sublime/">
     <meta property="og:image" content="//scar.tw/images/icon.jpg">
     <meta property="og:type" content="blog">
 
-    <title>MariaDB Galera Cluster 10.1 Setting | ScarShow | 刀疤說</title>
+    <title>Tag: Sublime | ScarShow | 刀疤說</title>
 
-    <link rel="canonical" href="//scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/">
+    <link rel="canonical" href="//scar.tw/tag/Sublime/">
     <link rel="author" href="//plus.google.com/+ScarWu">
     <link rel="image_src" href="//scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="//scar.tw/favicon.ico">
@@ -59,153 +59,29 @@
 
     <div id="main">
         <div id="container">
-            <div id="container_article">
+            <div id="container_tag">
     <article class="post_block">
-        <h1 class="title">MariaDB Galera Cluster 10.1 Setting</h1>
-        <div class="info">
-            <div class="archive">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2016/">2016-12-02</a>            </div>
-            <div class="category">
-                <i class="fa fa-folder"></i>
-                <a href="/category/IT/">IT</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <a href="/tag/Cluster/">Cluster</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <a href="/tag/Debian/">Debian</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <a href="/tag/Linux/">Linux</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <a href="/tag/MariaDB/">MariaDB</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <a href="/tag/MySQL/">MySQL</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <a href="/tag/Ubuntu/">Ubuntu</a>            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2016/12/02/mariadb-galera-cluster-10-1-setting/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button"
-                        data-url="//scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/"
-                        data-text="MariaDB Galera Cluster 10.1 Setting | ScarShow | 刀疤說"
-                        data-lang="en"
-                        data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like"
-                        data-href="//scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/"
-                        data-layout="button_count"
-                        data-action="like"
-                        data-show-faces="true"
-                        data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone"
-                        data-href="//scar.tw/article/2016/12/02/mariadb-galera-cluster-10-1-setting/"
-                        data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><p>先前已經寫過 <code>10.0</code> 的設定方式，MariaDB 升級成 <code>10.1</code> 後 <code>galera</code> 就已經內建在其中了，也不用額外安裝它的套件。</p>
-<h2>Environment</h2>
-<h3>Debian Jessie</h3>
-<pre><code class="language-bash"># MariaDB
-sudo apt-get install python-software-properties
-sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
-sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian jessie main'
-
-# Percona XtraBackup
-wget https://repo.percona.com/apt/percona-release_0.1-3.jessie_all.deb
-sudo dpkg -i percona-release_0.1-3.jessie_all.deb
-sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5</code></pre>
-<!--more-->
-<h2>Install MariaDB &amp; XtraBackup</h2>
-<p>這邊額外安裝 <code>XtraBackup</code> 是讓 <code>wsrep_sst_method</code> 參數可以使用 <code>xtrabackup-v2</code> 來同步 (一般是使用 <code>rsync</code>)，好處是不會鎖表</p>
-<pre><code class="language-bash">sudo apt-get update
-sudo apt-get install -y mariadb-server percona-xtrabackup</code></pre>
-<h2>Upgrade MariaDB form 10.0 to 10.1 (Optional)</h2>
-<p>如果你的 <code>MariaDB</code> 還是 <code>10.0</code> 版，你可以升級它，除了安裝套件之外還要使用 <code>mysql_upgrade</code> 將原有的資料庫升級</p>
-<pre><code class="language-bash">sudo apt-get update
-sudo apt-get remove -y mariadb-galera-server
-sduo apt-get install mariadb-server
-
-# Upgrade old table
-sudo mysql_upgrade -u root -p</code></pre>
-<h2>Setting Cluster</h2>
-<h3>Add Cluster User</h3>
-<p>以下參數請自行帶入</p>
-<ul>
-<li><code>CLUSTER_USER</code></li>
-<li><code>CLUSTER_PASS</code></li>
-</ul>
-<pre><code class="language-sql">GRANT USAGE ON *.* to CLUSTER_USER@'%' IDENTIFIED BY 'CLUSTER_PASS';
-GRANT ALL PRIVILEGES on *.* to CLUSTER_USER@'%';</code></pre>
-<h3>Modify /etc/mysql/conf.d/galera.cnf</h3>
-<p>以下參數請自行帶入</p>
-<ul>
-<li><code>CLUSTER_NAME</code></li>
-<li><code>OTHER_NODE_IP</code></li>
-<li><code>NODE_IP</code></li>
-<li><code>NODE_NAME</code></li>
-<li><code>CLUSTER_USER</code></li>
-<li><code>CLUSTER_PASS</code></li>
-</ul>
-<pre><code class="language-ini">[galera]
-# Mandatory settings
-wsrep_on                    = ON
-wsrep_provider              = /usr/lib/galera/libgalera_smm.so
-wsrep_provider_options      = "gcache.size=2G"
-wsrep_cluster_name          = "CLUSTER_NAME"
-wsrep_cluster_address       = "gcomm://OTHER_NODE_IP:4567?pc.wait_prim=no"
-wsrep_node_address          = "NODE_IP"
-wsrep_node_name             = NODE_NAME
-wsrep_sst_auth              = CLUSTER_USER:CLUSTER_PASS
-wsrep_sst_method            = xtrabackup-v2
-
-bind-address                = 0.0.0.0
-binlog_format               = ROW
-query_cache_size            = 0
-query_cache_type            = 0
-default_storage_engine      = InnoDB
-
-innodb_autoinc_lock_mode    = 2
-innodb_log_file_size        = 48M
-innodb_data_file_path       = ibdata1:12M:autoextend
-innodb_buffer_pool_size     = 400M</code></pre>
-<h3>Firewall allow ports</h3>
-<ul>
-<li>3306: MariaDB</li>
-<li>4444: SST (RSync, XtraBackup)</li>
-<li>4567: Galera Cluster</li>
-<li>4568: IST</li>
-</ul>
-<h2>Start Cluster Node</h2>
-<h3>Master Node</h3>
-<pre><code class="language-bash">sudo service mysql bootstrap</code></pre>
-<h3>Slave Node</h3>
-<pre><code class="language-bash">sudo service msyql start</code></pre>
-<h2>Troubleshooting</h2>
-<ul>
-<li><a href="https://www.percona.com/blog/2014/12/30/diagnosing-sst-errors-with-percona-xtradb-cluster-for-mysql/">Diagnosing SST errors with Percona XtraDB Cluster for MySQL</a></li>
-<li><a href="http://galeracluster.com/documentation-webpages/mysqlwsrepoptions.html">MYSQL WSREP OPTIONS</a></li>
-</ul></div>
+        <h1 class="title">Tag: Sublime</h1>
+        <div class="list">
+                        <section>
+                <h1><a href="/article/2018/10/01/hkkb-on-macbook/">HHKB on MacBook</a></h1>
+                <span>
+                    <i class="fa fa-calendar"></i>
+                    <a href="/archive/2018/">2018-10-01</a>                </span>
+                <span>
+                    <i class="fa fa-folder"></i>
+                    <a href="/category/IT/">IT</a>                </span>
+                <span>
+                    <i class="fa fa-tag"></i>
+                    <a href="/tag/Apple/">Apple</a>, <a href="/tag/HHKB/">HHKB</a>, <a href="/tag/MacBook/">MacBook</a>, <a href="/tag/Sublime/">Sublime</a>                </span>
+            </section>
+                    </div>
     </article>
 
-        <div id="disqus_thread"></div>
-    
     <div id="paging">
-        <span class="new"><a href="/article/2017/01/14/php-7-preg-jit-stacklimit-error/"><< PHP 7 PREG_JIT_STACKLIMIT_ERROR</a></span>
-        <span class="old"><a href="/article/2016/12/02/nfs-v4-easy-to-go/">NFS v4 簡易安裝 >></a></span>
-        <span class="count">7 / 51</span>
+        <span class="new"><a href="/tag/SQLite/"><< SQLite</a></span>
+        <span class="old"><a href="/tag/ThinkPad/">ThinkPad >></a></span>
+        <span class="count">45 / 55</span>
     </div>
 </div>        </div>
         <div id="side">

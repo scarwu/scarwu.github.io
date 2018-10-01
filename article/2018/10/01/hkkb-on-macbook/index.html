@@ -78,6 +78,9 @@
                         <div class="tag">
                 <i class="fa fa-tag"></i>
                 <a href="/tag/MacBook/">MacBook</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <a href="/tag/Sublime/">Sublime</a>            </div>
                                     <div class="disqus_comments">
                 <i class="fa fa-comment"></i>
                 <a href="/article/2018/10/01/hkkb-on-macbook/#disqus_thread">0 Comment</a>
@@ -120,6 +123,51 @@
 </ul>
 <p><img src="/images/hhkb-on-macbook/000.png" alt="對應設定" /></p>
 <p>最後可以用 <a href="http://keyboardchecker.com/">Keyboard Checker</a> 來測試一下按鍵對應。</p>
+<h2>同場加映 Sublime Text</h2>
+<p>如果你很習慣使用 <code>Home</code> 跟 <code>End</code> 來移動或選取的話抱歉這在 <code>macOS</code> 上是失效的。</p>
+<p>所以要在 <code>Sublime Text</code> 的 <code>Key Binding</code> 中加料像是下面那樣，這樣移動游標或是選取程式碼都會正常了就像原本習慣的那樣。</p>
+<pre><code class="language-json">[
+    {
+        "keys": [
+            "home"
+        ], 
+        "command": "move_to", 
+        "args": {
+            "to": "bol", 
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "end"
+        ], 
+        "command": "move_to", 
+        "args": {
+            "to": "eol", 
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "shift+home"
+        ], 
+        "command": "move_to", 
+        "args": {
+            "to": "bol", 
+            "extend": true
+        }
+    },
+    {
+        "keys": [
+            "shift+end"
+        ], 
+        "command": "move_to", 
+        "args": {
+            "to": "eol", 
+            "extend": true
+        }
+    }
+]</code></pre>
 <h2>完美？</h2>
 <p>不對！<code>macOS</code> 獨一無二的快捷鍵設定，完全跟 <code>Linux</code> 不同還是需要習慣。</p></div>
     </article>
@@ -277,6 +325,8 @@
                         <a href="/tag/RequireJS/">RequireJS(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/SQLite/">SQLite(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/Sublime/">Sublime(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/ThinkPad/">ThinkPad(1)</a>        </span>
                 <span class="item">
