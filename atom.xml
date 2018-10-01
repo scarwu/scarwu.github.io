@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-10-01T14:22:37+08:00</updated>
+	<updated>2018-10-01T14:35:21+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -28,6 +28,7 @@
 <li>Commnad -&gt; Option</li>
 </ul>
 <p><img src="/images/hhkb-on-macbook/000.png" alt="對應設定" /></p>
+<p>最後可以用 <a href="http://keyboardchecker.com/">Keyboard Checker</a> 來測試一下按鍵對應。</p>
 <h2>完美？</h2>
 <p>不對！<code>macOS</code> 獨一無二的快捷鍵設定，完全跟 <code>Linux</code> 不同還是需要習慣。</p>]]></summary>
 	</entry>
