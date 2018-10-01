@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-10-01T13:11:00+08:00</updated>
+	<updated>2018-10-01T13:12:30+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -26,7 +26,7 @@
 <li>Option -&gt; Control</li>
 <li>Commnad -&gt; Option</li>
 </ul>
-<p><img src="/images/hhkb-on-macbook/000.jpg" alt="對應設定" /></p>
+<p><img src="/images/hhkb-on-macbook/000.png" alt="對應設定" /></p>
 <h2>完美</h2>
 <p>完美？不對！還是要習慣 <code>macOS</code> 獨一無二的快捷鍵設定。</p>]]></summary>
 	</entry>
