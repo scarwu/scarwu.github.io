@@ -109,7 +109,10 @@
 <!--more-->
 <h2>Solutions</h2>
 <p>當然解法可以直接將 <code>JIT</code> 關閉，當然這不建議。</p>
-<pre><code>ini_set('pcre.jit', false);</code></pre>
+<h3>在程式中</h3>
+<pre><code class="language-php">ini_set('pcre.jit', 0);</code></pre>
+<h3>在 php-fpm 中</h3>
+<pre><code>php_value[pcre.jit] = 0</code></pre>
 <p>另外一個解法則是去優化正規表示式，當然我採取直接關閉 <code>JIT</code> 的作法，當然這個作法並不好，但目前我應該不會去動表示式的部份，所以要立刻讓 <code>Pointless</code> 能在 <code>PHP7</code> 上正常運作就先這樣處裡。</p>
 <p>詳細的建議可以去看看 <code>Stackoverflow</code> 上的解說連結在下面的 <code>Reference</code> 中。</p>
 <h2>Reference</h2>
