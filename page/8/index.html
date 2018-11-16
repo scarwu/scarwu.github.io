@@ -41,7 +41,7 @@
 <body>
     <hgroup id="header">
         <h1><a href="/">ScarShow</a></h1>
-        <h2></h2>
+        <h2>< IS ></h2>
     </hgroup>
 
     <nav id="nav">
@@ -60,6 +60,57 @@
     <div id="main">
         <div id="container">
             <div id="container_page">
+        <article class="post_block">
+        <h1 class="title"><a href="/article/2013/01/09/php-phar-create-and-use/">Phar建立與使用</a></h1>
+        <div class="info">
+            <div class="archive">
+                <i class="fa fa-calendar"></i>
+                <a href="/archive/2013/">2013-01-09</a>            </div>
+            <div class="category">
+                <i class="fa fa-folder"></i>
+                <a href="/category/IT/">IT</a>            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/Note/">Note</a></span>
+            </div>
+                        <div class="tag">
+                <i class="fa fa-tag"></i>
+                <span><a href="/tag/PHP/">PHP</a></span>
+            </div>
+                                    <div class="disqus_comments">
+                <i class="fa fa-comment"></i>
+                <a href="/article/2013/01/09/php-phar-create-and-use/#disqus_thread">0 Comment</a>
+            </div>
+                        <hr>
+            <div class="social_tool">
+                <div class="twitter">
+                    <a class="twitter-share-button"
+                        data-url="http://scar.tw/article/2013/01/09/php-phar-create-and-use/"
+                        data-text="Phar建立與使用 | ScarShow | 刀疤說"
+                        data-lang="en"
+                        data-via="xneriscool"></a>
+                </div>
+                <div class="facebook">
+                    <div class="fb-like"
+                        data-href="http://scar.tw/article/2013/01/09/php-phar-create-and-use/"
+                        data-layout="button_count"
+                        data-action="like"
+                        data-show-faces="true"
+                        data-share="false"></div>
+                </div>
+                <div class="google">
+                    <div class="g-plusone"
+                        data-href="http://scar.tw/article/2013/01/09/php-phar-create-and-use/"
+                        data-size="medium"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"><p>這幾天為了Pointless而嘗試使用Phar去包裝整套系統，但除了官方文件之外，中文的資源相當的少，所以我在這邊筆記一下使用方法與問題</p>
+<h2>Phar</h2>
+<p>Phar(PHP Archive)它是PHP的extension，就像是Java的jar一樣可以用來打包程式碼，可讓專案易於散佈並安裝使用</p>
+</div>
+        <a class="more" href="/article/2013/01/09/php-phar-create-and-use/">More</a>
+    </article>
         <article class="post_block">
         <h1 class="title"><a href="/article/2012/12/13/increment-operator-in-few-programming-language/">關於一些程式語言裡的遞增運算子</a></h1>
         <div class="info">
@@ -288,65 +339,6 @@ main() {
 </div>
         <a class="more" href="/article/2012/09/12/sqlite3-multi-thread-in-python/">More</a>
     </article>
-        <article class="post_block">
-        <h1 class="title"><a href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/">Install Xhprof on Ubuntu 12.04</a></h1>
-        <div class="info">
-            <div class="archive">
-                <i class="fa fa-calendar"></i>
-                <a href="/archive/2012/">2012-08-26</a>            </div>
-            <div class="category">
-                <i class="fa fa-folder"></i>
-                <a href="/category/IT/">IT</a>            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/Note/">Note</a></span>
-            </div>
-                        <div class="tag">
-                <i class="fa fa-tag"></i>
-                <span><a href="/tag/PHP/">PHP</a></span>
-            </div>
-                                    <div class="disqus_comments">
-                <i class="fa fa-comment"></i>
-                <a href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/#disqus_thread">0 Comment</a>
-            </div>
-                        <hr>
-            <div class="social_tool">
-                <div class="twitter">
-                    <a class="twitter-share-button"
-                        data-url="http://scar.tw/article/2012/08/26/install-xphrof-on-ubuntu-12-04/"
-                        data-text="Install Xhprof on Ubuntu 12.04 | ScarShow | 刀疤說"
-                        data-lang="en"
-                        data-via="xneriscool"></a>
-                </div>
-                <div class="facebook">
-                    <div class="fb-like"
-                        data-href="http://scar.tw/article/2012/08/26/install-xphrof-on-ubuntu-12-04/"
-                        data-layout="button_count"
-                        data-action="like"
-                        data-show-faces="true"
-                        data-share="false"></div>
-                </div>
-                <div class="google">
-                    <div class="g-plusone"
-                        data-href="http://scar.tw/article/2012/08/26/install-xphrof-on-ubuntu-12-04/"
-                        data-size="medium"></div>
-                </div>
-            </div>
-        </div>
-        <div class="content"><p>最近有想要分析自己程式碼的衝動，就想起了<code>Facebook</code>所撰寫的<code>Xhprof</code>，因為在安裝途中有點小問題，所以就紀錄一下完整的安裝過程。</p>
-<h2>安裝</h2>
-<h3>編譯環境</h3>
-<pre><code class="language-bash">sudo apt-get build-dep php5
-sudo apt-get install php5-dev</code></pre>
-<h3>Xhprof</h3>
-<pre><code class="language-bash">wget http://pecl.php.net/get/xhprof-0.9.2.tgz
-tar -zxvf xhprof-0.9.2.tgz
-cd xhprof-0.9.2</code></pre>
-<p><br>複製<code>xhprof</code>所需要用到的程式到你的 web 根目錄。</p>
-<pre><code class="language-bash">cp -a xhprof_html xhprof_lib /path/to/htdocs</code></pre>
-</div>
-        <a class="more" href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/">More</a>
-    </article>
     
     <div id="paging">
         <span class="new"><a href="/page/7/"><< Newer Posts</a></span>
@@ -380,7 +372,7 @@ cd xhprof-0.9.2</code></pre>
         <a href="/archive/">Archive</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/archive/2018/">2018(4)</a>        </span>
+                        <a href="/archive/2018/">2018(5)</a>        </span>
                 <span class="item">
                         <a href="/archive/2017/">2017(2)</a>        </span>
                 <span class="item">
@@ -401,7 +393,7 @@ cd xhprof-0.9.2</code></pre>
         <a href="/category/">Category</a>    </div>
     <div class="content">
                 <span class="item">
-                        <a href="/category/IT/">IT(38)</a>        </span>
+                        <a href="/category/IT/">IT(39)</a>        </span>
                 <span class="item">
                         <a href="/category/Life/">Life(7)</a>        </span>
                 <span class="item">
@@ -472,13 +464,15 @@ cd xhprof-0.9.2</code></pre>
                 <span class="item">
                         <a href="/tag/NFS/">NFS(1)</a>        </span>
                 <span class="item">
+                        <a href="/tag/NPM/">NPM(1)</a>        </span>
+                <span class="item">
                         <a href="/tag/NanoCLI/">NanoCLI(3)</a>        </span>
                 <span class="item">
                         <a href="/tag/Nginx/">Nginx(1)</a>        </span>
                 <span class="item">
-                        <a href="/tag/NodeJS/">NodeJS(3)</a>        </span>
+                        <a href="/tag/NodeJS/">NodeJS(4)</a>        </span>
                 <span class="item">
-                        <a href="/tag/Note/">Note(19)</a>        </span>
+                        <a href="/tag/Note/">Note(20)</a>        </span>
                 <span class="item">
                         <a href="/tag/Oni/">Oni(1)</a>        </span>
                 <span class="item">
@@ -499,6 +493,8 @@ cd xhprof-0.9.2</code></pre>
                         <a href="/tag/RequireJS/">RequireJS(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/SQLite/">SQLite(1)</a>        </span>
+                <span class="item">
+                        <a href="/tag/SemVer/">SemVer(1)</a>        </span>
                 <span class="item">
                         <a href="/tag/Sublime/">Sublime(1)</a>        </span>
                 <span class="item">

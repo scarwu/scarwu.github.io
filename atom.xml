@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title><![CDATA[ScarShow | 刀疤說]]></title>
-	<subtitle></subtitle>
+	<subtitle>< IS ></subtitle>
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-10-02T09:57:05+08:00</updated>
+	<updated>2018-11-17T00:05:10+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[套件版號與字元符號的意義]]></title>
+		<link href="https://scar.tw/article/2018/11/16/version-and-symbol-s-meaning/" />
+		<id>urn:uuid:7817be26-4d02-0ef7-4eb1-7a62a0f0d98b</id>
+		<updated>2018-11-16T12:20:38+08:00</updated>
+		<summary type="html"><![CDATA[<p>早在五、六年前因為各種套件工具的釋出，用來輔助開發專案的套件也越來越多。</p>
+<p>對於套件開發者而言，要讓每次改版所附加的版號更有意義也是很頭大的，而對於使用套件的人來說更新套件，更新到太新的套件版本不小心讓專案爆炸也是很頭大的。</p>
+<p>所以有些東西就這樣誕生了。</p>
+<!--more-->
+<h2>版號的意義</h2>
+<p><a href="https://semver.org/">SemVer</a></p>
+<p>對於撰寫套件的人這個規範就很重要了，它規範了版號擁有三層數字以及後缀詞的用法，格式如下：</p>
+<pre><code>major.minor.release-postfix</code></pre>
+<p><code>major</code> 作為套件的主版號，各版號間的功能並不相容。
+<code>minor</code> 次版號，當有功能被實作時並且相容於前一版。
+<code>release</code> 修訂號，通常用於錯誤修正。
+<code>postfix</code> 後缀詞，通常用來敘述版本，可不使用。</p>
+<h2>符號的意義</h2>
+<p>對於使用套件的人來說，這個就很重要了，前面說到的各種套件管理工具釋出的年代，其中最有名的工具就是 <code>NPM</code> 了，在那個 <code>node.js</code> 很紅，紅到就算是不穩定也還是硬拿來寫我碩士論文的年代。</p>
+<p>通常我們會看到這樣的版本敘述：</p>
+<pre><code>^1.24.5
+~2.4</code></pre>
+<p>這樣的符號常用的有以下幾種 <code>*</code>、<code>^</code> 及 <code>~</code>。</p>
+<p><code>*</code> (widecard) 表示所以版本都吃，所以後面不用加上任何版號。
+<code>^</code> (caret) 表示固定住主版號 <code>major</code> ，只更新有向下相容的新功能最新版本。
+<code>~</code> (tilde) 表示固定住主版號 <code>major</code> 及次版號 <code>minor</code>，只更新錯誤修正個新版本。</p>
+<p>然後還有像是 <code>&gt;</code> 及 <code>&lt;</code> 這類數學符號的用法，如果所使用套件的依賴關聯性很嚴格可能會用到，用來限制版本範圍。</p>
+<h2>最後</h2>
+<p>雖然上面有明確的規範了，但還是有機會爆炸的，人出來走跳總是要還的...像是 <code>React 16.6.2</code> XD</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[HHKB on MacBook]]></title>
 		<link href="https://scar.tw/article/2018/10/01/hkkb-on-macbook/" />
@@ -78,7 +108,7 @@
 <p>不對！<code>macOS</code> 獨一無二的快捷鍵設定，完全跟 <code>Linux</code> 不同還是需要習慣。</p>]]></summary>
 	</entry>
 	<entry>
-		<title type="html"><![CDATA[使用 Docker 打造多 PHP 版本開發環境]]></title>
+		<title type="html"><![CDATA[使用 Docker 打造多版本 PHP 開發環境]]></title>
 		<link href="https://scar.tw/article/2018/08/19/using-docker-make-multiple-version-php-envs/" />
 		<id>urn:uuid:6bbadac1-7a9f-cc62-5cae-1fd6dc2996e4</id>
 		<updated>2018-08-19T00:20:12+08:00</updated>
@@ -381,31 +411,5 @@ services:
 <ul>
 <li>新增帝王γ及鋼龍γ套裝</li>
 </ul>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[2017 年末近況]]></title>
-		<link href="https://scar.tw/article/2017/11/26/about-late-of-2017/" />
-		<id>urn:uuid:7b190959-4598-181d-9983-420bd0923c6c</id>
-		<updated>2017-11-26T02:51:07+08:00</updated>
-		<summary type="html"><![CDATA[<p>都要年末了，今年的發文也只有年初的一篇文章而已，自從出工作後發文就銳減了，明明很想說點什麼，但卻又沒發文章的動力。</p>
-<p>所以只好把最近一些想說的濃縮在這一篇裡。</p>
-<!--more-->
-<h2>重型機車</h2>
-<p>是的，今年是使用重型機車通勤的第三年。在這之前也騎了 <code>125cc</code> 總共六年的時間，自從出了一場小車禍後就在想有什麼更安全卻又一樣方便的通勤方式，我想我得出了一般台灣人難以接受的答案－重型機車。</p>
-<p>在台灣扭曲且奇葩的法規之下，這的確是個答案，能夠行駛內側車道且能夠正常左轉，另外在動力與制動力的性能上相較 <code>125cc</code> 好上許多。另外在新竹這種風大的地方將近兩百公斤的車重能夠對於騎乘的安定度帶來大幅的提昇。</p>
-<p>你問，為什麼不是買台車開？如果你的問題且唯一答案是這個，那可能要檢視一下自己的觀念及想法是否過於陳舊及僵固。說穿了不管是小客車或是重型機車終究只是交通工具，根據自身的情況選擇合適的交通工具這是一個值得思考的問題。</p>
-<p>最重要的是台灣的交通真的太糟糕了，真的必須重構。</p>
-<h2>攝影相關</h2>
-<p>前陣子從我爸那邊接收了一台 <code>Pentax MX</code> 底片機並附上鏡頭 <code>SMC Pentax-M 50mm F1.4</code>，目前機身正在維修中就快要修好了就缺幾樣材料而已，那鏡頭的話就是已經送洗回來了，不過中間的膠合鏡片變質嚴重霧化，我想應該找個時間自己處理一下。</p>
-<p>其實在高中以來就一直有在摸 <code>DSLR</code>，但並不是說非常的專業，因為都是隨拍居多另外沒錢所以人生中第一台購買的相機是 <code>Ricoh Caplio R7</code> 一台隨身數位相機。這次終於買下了 <code>Sony A7 II</code> 這台微型單眼，因為摸過了多台 <code>DSLR</code> 所以我知道那個體積跟重量是我無法接受的，少了反射鏡機構就獲得了重量上的減輕以及超短的鏡後距離，能夠輕易轉接其它接口的鏡頭，例如上面提到的 <code>SMC Pentax-M 50mm F1.4</code>。</p>
-<p>但轉接一般來說還是有缺點，通常都是電子轉接環的支援度不足或是轉接環完全沒有電子接點無法提供機身鏡頭資訊且只能手動對焦，但這影響不大，純手動鏡對我來說具有相當的樂趣。所以在之後鏡頭的選擇上則是原生鏡頭以及轉接手動鏡這兩個選項，中間那個半殘的電子轉接環就直接捨去。</p>
-<p>另外，如果有機會的話應該會再把 <code>Ricoh Caplio R7</code> 換成 <code>Ricoh GR II</code>，有台輕便且強大的隨身機跟單眼搭配當然是最好。</p>
-<h2>Pointless 專案</h2>
-<p>說實在的已經很久沒有在繼續開發了，不過這幾年間還是有改版一次，最近有個新想法，想把原本做在　<code>InkDrop</code> 這個難產專案裡面的 <code>GUI</code> 直接整合在 <code>Pointless</code> 裡。因為在這幾年自己的使用下來，在 <code>Command Line</code> 的模式下還是有一點彆扭，在多數情況下如果有個網頁介面也方便許多。</p>
-<p>在這幾年間靜態部落格專案真的非常多，我還是繼續作為一個興趣開發，雖然不是使用很新潮的語言為基底，但目標還是簡單易用，重點還是自己有寫文章的需求。</p>
-<h2>網誌</h2>
-<p>前陣子，仔細算了一下應該有三十幾篇文章沒有寫，這個數字快要是我的落格發文的一半以上。當然要把想法寫出來很難，要能夠條理把想法寫出來更難。</p>
-<p>我也不是很希望自己的文章過於簡短，因為那樣跟寫微網誌沒差多少，也更不希望靠著許多篇簡短的文章來衝流量。既然都是部落格了當然文章本身不能太隨便。</p>
-<p>希望惰性不會主宰一切。</p>]]></summary>
 	</entry>
 </feed>
