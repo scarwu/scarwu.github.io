@@ -65,11 +65,11 @@
 <h2>版號的意義</h2>
 <p><a href="https://semver.org/">SemVer</a></p>
 <p>對於撰寫套件的人這個規範就很重要了，它規範了版號擁有三層數字以及後缀詞的用法，格式如下：</p>
-<pre><code>major.minor.release-postfix</code></pre>
+<pre><code>major.minor.patch-metadata</code></pre>
 <p><code>major</code> 作為套件的主版號，各版號間的功能並不相容。
 <code>minor</code> 次版號，當有功能被實作時並且相容於前一版。
-<code>release</code> 修訂號，通常用於錯誤修正。
-<code>postfix</code> 後缀詞，通常用來敘述版本，可不使用。</p>
+<code>patch</code> 修訂號，通常用於錯誤修正。
+<code>metadata</code> 後缀詞，通常用來敘述版本，可不使用。</p>
 <h2>符號的意義</h2>
 <p>對於使用套件的人來說，這個就很重要了，前面說到的各種套件管理工具釋出的年代，其中最有名的工具就是 <code>NPM</code> 了，在那個 <code>node.js</code> 很紅，紅到就算是不穩定也還是硬拿來寫我碩士論文的年代。</p>
 <p>通常我們會看到這樣的版本敘述：</p>
@@ -81,7 +81,7 @@
 <code>~</code> (tilde) 表示固定住主版號 <code>major</code> 及次版號 <code>minor</code>，只更新錯誤修正個新版本。</p>
 <p>然後還有像是 <code>&gt;</code> 及 <code>&lt;</code> 這類數學符號的用法，如果所使用套件的依賴關聯性很嚴格可能會用到，用來限制版本範圍。</p>
 <h2>最後</h2>
-<p>雖然上面有明確的規範了，但還是有機會爆炸的，人出來走跳總是要還的...像是 <code>React 16.6.2</code> XD</p></div>
+<p>雖然上面有明確的規範了，但照著規範走還是有機會爆炸的，人出來走跳總是要還...像是最近更新修訂號就炸的 <code>React 16.6.2</code> XD</p></div>
         </article>
     </div>
 
