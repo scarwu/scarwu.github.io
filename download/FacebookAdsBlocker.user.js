@@ -2,7 +2,7 @@
 // @name           Facebook Ads Blocker
 // @version        0.2.2
 // @author         Scar Wu
-// @namespace      http://scar.simcz.tw
+// @namespace      https://scar.tw
 // @description    Hidden Facebook Ads
 // @include        *
 // ==/UserScript==

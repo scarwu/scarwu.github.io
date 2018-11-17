@@ -5,11 +5,30 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-11-17T00:05:10+08:00</updated>
+	<updated>2018-11-17T22:07:57+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[終於換部落樣式了]]></title>
+		<link href="https://scar.tw/article/2018/11/16/finally-i-change-blog-theme/" />
+		<id>urn:uuid:aff19176-d7fc-4218-fee2-d2be5f308eae</id>
+		<updated>2018-11-16T22:49:59+08:00</updated>
+		<summary type="html"><![CDATA[<p>在此紀念這歷史性的一刻，算一算長久來使用的樣式也有個五年多了，想當初這個樣式是我在 <code>Pointless</code> 開發初期的時候設計的我將它命名為 <code>Unique</code>，目的是讓它成為成為獨一無二的樣式(雖然後來還是開源了，不過我想應該也沒人用)。</p>
+<p>而最早的為 <code>Pointless</code> 開發的樣式我稱為 <code>Classic</code> 但說穿了其實就是仿照 <code>Wordpress</code> 的預設樣式，所以稱為 &quot;經典&quot;。</p>
+<p>現在這個樣式稱它為 <code>Nex</code> 意味著下一個世代，我將許多元素捨去或將其簡化，但這只是外觀而重要的是背後的運作也更符合現代。</p>
+<!--more-->
+<h2>樣式們</h2>
+<p>所有的樣式都有開源出來，這是傳統。</p>
+<ul>
+<li><a href="https://github.com/scarwu/PointlessTheme-Classic">Classic</a></li>
+<li><a href="https://github.com/scarwu/PointlessTheme-Unique">Unique</a></li>
+<li><a href="https://github.com/scarwu/PointlessTheme-Nex">Nex</a></li>
+</ul>
+<h2>後記</h2>
+<p>因為加了 <code>SSR</code>、<code>RWD</code> 等...，所以 <code>Nex</code> 這個樣板還在測試中，在 18 年尾巴的現在，明明工作中都用很熟的東西最後才用在自己身上，真的是意料之外啊。</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[套件版號與字元符號的意義]]></title>
 		<link href="https://scar.tw/article/2018/11/16/version-and-symbol-s-meaning/" />
@@ -311,105 +330,5 @@ services:
 <p>先將原本的樣式從專案中抽離，獨立成單一專案，再來引入 <code>Oni</code> 重構及前端工具協助開發。另外因應樣式重構，<code>Pointless</code> 同樣也會使用 <code>Oni</code> 進行重構，不管是指令本身或者是頁面產生流程也好。</p>
 <h2>部落格改版</h2>
 <p>最後，前面做了這麼多繁雜的事情目的就只有一個 — 就是部落格改版。讓部落格本身更現代化並完整支援手機樣式。在工作中做了這麼多支援手機樣式的網站，但自己的部落格卻不支援，真的是很神奇。</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[魔物獵人配裝計算機使用說明]]></title>
-		<link href="https://scar.tw/article/2018/05/02/mhw-calculator-readme/" />
-		<id>urn:uuid:ef117fcb-b214-279f-449a-c99f71175221</id>
-		<updated>2018-05-02T19:10:58+08:00</updated>
-		<summary type="html"><![CDATA[<p>基於現有工具不符合需求及最近有點時間，所以花了點時間寫了這個<a href="https://scar.tw/MHWCalculator">計算機</a>。</p>
-<ul>
-<li><a href="https://scar.tw/MHWCalculator">配裝計算機連結</a></li>
-</ul>
-<h2>主要功能</h2>
-<ul>
-<li>自動配裝</li>
-<li>裝備調整</li>
-<li>人物狀態</li>
-<li>期望值計算</li>
-<li>裝備分享</li>
-</ul>
-<!--more-->
-<h2>使用說明</h2>
-<p>計算機使用網頁開發，使用瀏覽器即可使用。</p>
-<p><img src="/images/mhw-calculator-readme/000.jpg" alt="計算機全貌" /></p>
-<h3>搜尋條件添加</h3>
-<p>可以選擇你所需求的套裝效果及技能效果，添加完成後即可使用搜尋功能找出適合的配裝，使用 <i class="fa fa-minus"></i> 、 <i class="fa fa-plus"></i> 與 <i class="fa fa-times"></i> 調整套裝需求、技能等級及刪除。點選上方的 <i class="fa fa-refresh"></i> 可以清空技能。</p>
-<p>搜尋的速度與搜尋的條件以及使用的設備有關。</p>
-<p><img src="/images/mhw-calculator-readme/001.jpg" alt="需求條件" /></p>
-<p>最上方的輸入區塊可以輸入相關的關鍵字，下方則會即時顯示內容。使用 <i class="fa fa-plus"></i> 及 <i class="fa fa-minus"></i> 新增刪除套裝或技能，<i class="fa fa-times"></i> 離開界面。</p>
-<p><img src="/images/mhw-calculator-readme/002.jpg" alt="套裝選擇" />
-<img src="/images/mhw-calculator-readme/003.jpg" alt="技能選擇" /></p>
-<h3>候選裝備使用</h3>
-<p>在這個區塊會顯示所有的候選裝備，最多列出25項，排列順序依照裝備數量及防禦力排序。</p>
-<p>在備選方塊中使用 <i class="fa fa-check"></i> 實裝到已選裝備，並且裝飾珠也會自動填入相對應的插槽中。</p>
-<p><img src="/images/mhw-calculator-readme/004.jpg" alt="候選裝備" /></p>
-<h3>裝備操作</h3>
-<p>在這個區塊中可以模擬在遊戲中的裝備穿脫，其中包含武器、頭、身、腰、腿、護石以及客製強化和鑲嵌槽。</p>
-<p>在方塊中的 <i class="fa fa-lock"></i> 、 <i class="fa fa-unlock-alt"></i> 可以將已選擇好的裝備鎖定並加入配裝的流程中，在這個部位就是使用此裝備， <i class="fa fa-times"></i> 可以刪除裝備，而上方的 <i class="fa fa-refresh"></i> 可以清空已選裝備。</p>
-<p><img src="/images/mhw-calculator-readme/005.jpg" alt="已選裝備" /></p>
-<p>點選武器方塊的標題可以選擇武器，這邊會列出所有衍生武器的最後一階段，這邊只會列出基本數值，其餘像是屬性瓶、榴彈瓶、音色、瓶及彈藥將不會顯示。</p>
-<p><img src="/images/mhw-calculator-readme/006.jpg" alt="武器選擇" /></p>
-<p>點選強化的內容框，可選擇客製強化，強化的次數與武器稀有度有關。</p>
-<p><img src="/images/mhw-calculator-readme/007.jpg" alt="強化選擇" /></p>
-<p>點選鑲嵌的內容框，可選擇裝飾珠，可裝備的裝飾珠根據鑲嵌槽的大小有關。</p>
-<p><img src="/images/mhw-calculator-readme/008.jpg" alt="鑲嵌選擇" /></p>
-<p>點選頭、身、手、腰及腿方塊標題可選擇相對應部位裝備，在這邊所顯示的防禦力則是強化後的最終防禦力。</p>
-<p><img src="/images/mhw-calculator-readme/009.jpg" alt="護甲選擇" /></p>
-<p>點選護石方塊標題可選擇護石。</p>
-<p><img src="/images/mhw-calculator-readme/010.jpg" alt="護石選擇" /></p>
-<h3>人物狀態及期望值</h3>
-<p>已選裝備會反應在人物狀態上，模擬在遊戲中的數值。</p>
-<p><img src="/images/mhw-calculator-readme/011.jpg" alt="人物狀態" /></p>
-<p>在下方技能的區域中有個 <i class="fa fa-eye"></i> 、 <i class="fa fa-eye-slash"></i> 圖示，代表著此項技能為被動技能，按下它將會反應或關閉技能效果在人物狀態上。</p>
-<p><img src="/images/mhw-calculator-readme/012.jpg" alt="技能區塊" /></p>
-<p>最下方額外資訊將會顯示此套裝備的期望值，另外可輸入四種屬性得知額外增加的期望值。</p>
-<p>關於期望值的計算公式，是透過各網站情報以及經由遊戲中推敲而來，準確度不一定百分之百，但可供參考。</p>
-<p><img src="/images/mhw-calculator-readme/013.jpg" alt="期望值區塊" /></p>
-<h3>分享裝備</h3>
-<p>直接將網址複製下來即可分享，目前沒有短網誌轉換功能，如有需要可使用其它現有服務。</p>
-<h2>開發、使用問題及意見回報</h2>
-<p>如果有任何的開發及使用問題可以在文章底下或者是到 <code>巴哈</code> 、 <code>PTT</code> 留言甚至是到 <code>Github</code> 開 <code>Issue</code> 或送 <code>PR (Pull Request)</code> 給我都行。</p>
-<ul>
-<li><a href="https://scar.tw/MHWCalculator">配裝計算機連結</a></li>
-<li><a href="https://github.com/scarwu/MHWCalculator">Github</a></li>
-<li><a href="https://github.com/scarwu/MHWCalculator/issues">Github Issues</a></li>
-<li><a href="https://forum.gamer.com.tw/C.php?bsn=5786&amp;snA=143767">巴哈姆特</a></li>
-<li><a href="https://www.ptt.cc/man/MH/D81D/DC26/M.1525516049.A.7FC.html">PTT</a></li>
-</ul>
-<hr />
-<h4>20180504 更新</h4>
-<ul>
-<li>修正杜賓α插槽遺漏問題</li>
-<li>新增蒼星之將套裝及武器</li>
-<li>備選套裝可調整顯示筆數</li>
-<li>技能界面將不再出現只有套裝效果能達成的技能</li>
-</ul>
-<h4>20180509 更新</h4>
-<ul>
-<li>新增絢輝龍 R7/R8 武器</li>
-<li>更新武器選擇界面</li>
-<li>已選裝備新增列表功能，可 儲存/讀取 裝備組</li>
-<li>優化搜尋演算法</li>
-</ul>
-<h4>20180602 更新</h4>
-<ul>
-<li>新增炎妃龍裝備</li>
-<li>可以在裝備選擇界面排除裝備，排除的裝備將不會加入演算法計算</li>
-</ul>
-<h4>20180626 更新</h4>
-<ul>
-<li>新增麒麟γ及烏德爾γ套裝</li>
-<li>補完炎妃龍武器斬位</li>
-</ul>
-<h4>20180825 更新</h4>
-<ul>
-<li>新增潛水夫及獨角仙后裝備</li>
-<li>新增貝希摩斯裝備及武器</li>
-</ul>
-<h4>20180904 更新</h4>
-<ul>
-<li>新增帝王γ及鋼龍γ套裝</li>
-</ul>]]></summary>
 	</entry>
 </feed>
