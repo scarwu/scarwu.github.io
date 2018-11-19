@@ -5,16 +5,16 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-11-19T15:42:45+08:00</updated>
+	<updated>2018-11-19T16:12:47+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
 	<entry>
-		<title type="html"><![CDATA[終於換部落樣式了]]></title>
+		<title type="html"><![CDATA[終於換部落格樣式了]]></title>
 		<link href="https://scar.tw/article/2018/11/17/finally-i-change-blog-theme/" />
 		<id>urn:uuid:979ceee5-bc1e-0825-20d3-68bb48625200</id>
-		<updated>2018-11-17T22:48:39+08:00</updated>
+		<updated>2018-11-19T16:12:42+08:00</updated>
 		<summary type="html"><![CDATA[<p>在此紀念這歷史性的一刻，算一算長久來使用的樣式也有個五年多了，想當初這個樣式是我在 <code>Pointless</code> 開發初期的時候設計的我將它命名為 <code>Unique</code>，目的是讓它成為成為獨一無二的樣式(雖然後來還是開源了，不過我想應該也沒人用)。</p>
 <p>而最早為 <code>Pointless</code> 開發的樣式我稱為 <code>Classic</code> 但說穿了其實就是仿照 <code>Wordpress</code> 的預設樣式，所以稱為 &quot;經典&quot;，現在這個樣式稱它為 <code>Nex</code> 意味著下一個世代，我將許多元素捨去或將其簡化，但這只是外觀而重要的是背後的運作也更符合現代。</p>
 <!--more-->
