@@ -5,11 +5,82 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2018-11-19T16:12:47+08:00</updated>
+	<updated>2018-12-17T02:23:47+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[GANSS 高斯 GM 108D 開箱]]></title>
+		<link href="https://scar.tw/article/2018/12/16/ganss-gm-108d-unboxing/" />
+		<id>urn:uuid:6f6f47b0-9e34-e0e8-b4a5-db1526bcfd71</id>
+		<updated>2018-12-17T02:20:42+08:00</updated>
+		<summary type="html"><![CDATA[<p>這是個有點意料之外的開箱，沒有想過會在鍵盤趴上抽到鍵盤，默默地參加了這麼多年的鍵盤趴，在這裡感謝老貓每年舉辦的活動每年都很熱鬧。</p>
+<p>先來說一下我平常用得鍵盤，一把是多年前開箱過的 <a href="/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/">HHKB Professional 2</a> 用於工作，作為一個長時間用鍵盤的工程師保護手腕很重要；而另外一把是自己組裝的 <code>60%</code> 無刻青軸並使用 <code>GH60</code> 編寫成 <code>HHKB Layout</code> 作為一般用途使用。</p>
+<p>下面就來介紹抽到的鍵盤。</p>
+<!--more-->
+<h2>外盒</h2>
+<p>這是把來自對岸有著 <code>Type-C</code> 有線及藍牙無線雙模式的 <code>100%</code> 鍵盤，外盒的印刷非常的簡潔，雖然在外盒上有點損傷，但不影響內容物。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/000.jpg" alt="正面" /></p>
+<p>品牌與系列 Logo。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/001.jpg" alt="高斯 Logo" /></p>
+<p><img src="/images/ganss-gm-108d-unboxing/002.jpg" alt="系列 Logo" /></p>
+<p>直接告訴你是使用 Cherry MX 軸。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/003.jpg" alt="使用 Cherry 軸" /></p>
+<h2>內容物</h2>
+<p><img src="/images/ganss-gm-108d-unboxing/010.jpg" alt="簡潔的包裝" /></p>
+<p>附件有說明書、<code>Type-C</code> 傳輸線、拔鍵器以及磁吸式的腳架。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/011.jpg" alt="說明書與配件" /></p>
+<p>鍵盤本體以及附贈的透明上蓋，附贈的上蓋跟 <code>FILCO</code> 的上蓋比起來薄且軟很多。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/012.jpg" alt="鍵盤本體" /></p>
+<h2>鍵盤配置</h2>
+<p>作為一把 <code>100%</code> 的鍵盤，在鍵帽的配色上很復古協調並且使用 <code>PBT</code> 材質並使用熱昇華處理質感很不錯，而在 <code>Layout</code> 配置上很一般，不過在右上角有額外的四顆快捷鍵。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/020.jpg" alt="輸入區" /></p>
+<p><img src="/images/ganss-gm-108d-unboxing/021.jpg" alt="功能區" /></p>
+<p>整隻鍵盤都使用 <code>Cherry MX 紅軸</code>，另外長軸的部分是使用衛星軸。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/022.jpg" alt="使用 Cherry 紅軸" /></p>
+<p>指示燈在切換無線模式後會亮起。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/023.jpg" alt="無線指示燈號" /></p>
+<p>在鍵盤的右下角有一個低調的 Logo。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/024.jpg" alt="鍵盤上的 Logo" /></p>
+<h2>鍵盤底部</h2>
+<p>底部非常的乾淨。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/030.jpg" alt="底部" /></p>
+<p>腳墊以及線槽。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/031.jpg" alt="軟墊" /></p>
+<p>無線模式的開關，在有線模式的 USB 供電下可以關閉。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/032.jpg" alt="無線開關" /></p>
+<p>鍵盤無線模式使用兩顆 AAA 電池供電，另外要注意的是電池蓋非常的鬆，很容易開啟也意味著容易不見，如果有攜帶鍵盤的需求需要注意一下。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/033.jpg" alt="電池槽" /></p>
+<p><img src="/images/ganss-gm-108d-unboxing/034.jpg" alt="使用 AAA 電池" /></p>
+<p>鍵盤上也有內建 USB Hub 的功能，分別在鍵盤本體的兩側各有一個 USB 的插孔。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/035.jpg" alt="左方 USB Hub" /></p>
+<p><img src="/images/ganss-gm-108d-unboxing/036.jpg" alt="右方 USB Hub" /></p>
+<h2>傳輸線</h2>
+<p>本體使用 <code>USB Type-C</code> 不是以往使用的 <code>Mini USB</code> 作為有線連接，近年也許多鍵盤開始改用 <code>USB Type-C</code>。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/040.jpg" alt="使用 USB Type-C" /></p>
+<p>這裡有點小問題，隨附的傳輸線有做出一個角度，應該是要配合左右方線槽的方向，但如果要從中間拉線的話，線材與鍵盤間會有輕微的物理干涉，也因為如此非常不容易插拔。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/041.jpg" alt="使用隨附傳輸線" /></p>
+<p><img src="/images/ganss-gm-108d-unboxing/042.jpg" alt="使用隨附傳輸線" /></p>
+<p>在這邊我就另外使用我擁有的其它 <code>Type-C</code> 線材來連接，使用 <code>Apple</code> 的 <code>Type-C</code> 傳輸線沒問題，但使用 <code>Sony</code> 手機附贈的 <code>Type-C</code> 傳輸線就出事了，這個線槽開得不夠大會卡線頭。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/043.jpg" alt="使用 Apple 傳輸線" /></p>
+<p><img src="/images/ganss-gm-108d-unboxing/044.jpg" alt="使用 Sony 傳輸線" /></p>
+<h2>腳架</h2>
+<p>鍵盤本體是沒有腳架可以調整高度的，如果要調整鍵盤的高度需要使用附贈的磁吸式腳架，它有分為高、矮兩種高度。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/050.jpg" alt="隨附腳架" /></p>
+<p>沒有使用腳架的話，鍵盤本體就有一定的角度了。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/051.jpg" alt="無腳架" /></p>
+<p>加上矮的腳架。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/052.jpg" alt="使用矮腳架" /></p>
+<p>換成高的腳架。</p>
+<p><img src="/images/ganss-gm-108d-unboxing/053.jpg" alt="使用高腳架" /></p>
+<p>還是不夠？就全上了吧！</p>
+<p><img src="/images/ganss-gm-108d-unboxing/054.jpg" alt="同時使用全部腳架" /></p>
+<h2>個人心得</h2>
+<p>它拿起來的重量很接近我另外一把 <code>FILCO Majestouch 2 NINJA</code>，但是打起來跟我另外一把紅軸的 <code>CM Storm Quick Fire Rapid</code> 不太一樣，打起來的聲音比較輕脆。對於已經使用習慣 <code>HHKB</code> 的我來說對於一般的鍵盤配列用起來會非常不習慣。</p>
+<p>以無線模式來說，對於不希望桌面太雜亂的人來說很有用的，但是如果是因為它擁有無線模式需要攜帶的人來說它就重了點，並竟是 <code>100%</code> 鍵盤需要攜帶還是推薦 <code>60%</code> 鍵盤。</p>
+<p>結論，這是把不錯的鍵盤但不適合我。</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[終於換部落格樣式了]]></title>
 		<link href="https://scar.tw/article/2018/11/17/finally-i-change-blog-theme/" />
@@ -312,22 +383,5 @@ services:
 <h2>Source Code</h2>
 <p>下面是範例專案，至於要怎樣投入到生產環境那就要看個人的調校了。</p>
 <p><a href="https://github.com/scarwu/MultiPHPEnvWithDocker">MultiPHPEnvWithDocker</a></p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[個人工具的改進]]></title>
-		<link href="https://scar.tw/article/2018/08/14/improve-my-tools/" />
-		<id>urn:uuid:4aa2ecbf-54f3-1dd8-ca69-6f2020988bb2</id>
-		<updated>2018-08-19T00:45:43+08:00</updated>
-		<summary type="html"><![CDATA[<p>最近對於自己個人用的工具有些想法，主要也是受到這些年工作的影響。在資訊這行業永遠有學不完的東西，這幾年也是學了很多新奇的東西，但也是因為這樣個人的工具也就成長有限。</p>
-<p>所以近期（其實已經開始了）會對於 <code>Github</code> 上的專案做些調整，目前頃向於將多的專案合而為一，然後再來重構有跟工具關聯的作品。</p>
-<p>目前計畫如下。</p>
-<!--more-->
-<h2>進一步完成框架</h2>
-<p><code>Oni</code> 是我在四年前寫的 <code>PHP Framework</code>，用這個專案為基底整合 <code>PHP CLI</code> 開發工具 <code>NanoCLI</code>、<code>REST</code> 風格的 <code>URL Router</code> 組件 <code>MessRouter</code> 以及其他的小工具，並且借鑿一些使用其他框架的經驗，整合成一個完整並適用於開發 <code>CLI</code> 與 <code>Web</code> 的框架。</p>
-<h2>樣式抽離與重構</h2>
-<p><code>Pointless</code> 是我一直用來寫文章的工具，從 <code>2012</code> 開發至今並沒有太大改動，所以有些痛點需要解決。在這幾年間前端的技術進步神速，所以需要將原本架構無法做到的功能交由現代工具整合。</p>
-<p>先將原本的樣式從專案中抽離，獨立成單一專案，再來引入 <code>Oni</code> 重構及前端工具協助開發。另外因應樣式重構，<code>Pointless</code> 同樣也會使用 <code>Oni</code> 進行重構，不管是指令本身或者是頁面產生流程也好。</p>
-<h2>部落格改版</h2>
-<p>最後，前面做了這麼多繁雜的事情目的就只有一個 — 就是部落格改版。讓部落格本身更現代化並完整支援手機樣式。在工作中做了這麼多支援手機樣式的網站，但自己的部落格卻不支援，真的是很神奇。</p>]]></summary>
 	</entry>
 </feed>
