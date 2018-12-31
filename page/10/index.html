@@ -15,9 +15,9 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="https://scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-    <link rel="stylesheet" href="/assets/styles/theme.min.css?1545051211">
+    <link rel="stylesheet" href="/assets/styles/theme.min.css?1546286852">
 
-    <script src="/assets/scripts/theme.min.js?1545051211" async></script>
+    <script src="/assets/scripts/theme.min.js?1546286852" async></script>
     <script>
         window._nx = {
             googleAnalytics: 'UA-30675094-1',
@@ -42,6 +42,67 @@
         <div class="nx-container">
             <div class="nx-page">
     <div class="nx-limiter">
+                <article class="nx-block">
+            <div class="nx-title">
+                <h1><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/">隱藏Facebook廣告 (Google Chrome)</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2012/">2012-07-19</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/Works/">Works</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/Chrome/">Chrome</a> <a href="/tag/Facebook/">Facebook</a> <a href="/tag/JavaScript/">JavaScript</a> <a href="/tag/Tools/">Tools</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><p>最近覺得Facebook側邊的廣告實在是很惱人，因為我用Chrome居多所以寫了一隻小小的Google Chrome Extension來解決這個問題。</p>
+<p>點底下的連結安裝後，他就會自動把廣告欄位隱藏起來。<del>放心本人為人正直不會亂放病毒。</del></p>
+<p>下面就附上Source Code，然後Extension本身是用Javascript寫得，<del>Oguma水美媒</del>就這麼簡單。</p>
+<h4><a href="/download/FacebookAdsBlocker.user.js">按這邊安裝</a></h4>
+<pre><code class="language-javascript">// ==UserScript==
+// @name           Facebook Ads Blocker
+// @version        0.2.2
+// @author         Scar Wu
+// @namespace      https://scar.tw
+// @description    Hidden Facebook Ads
+// @include        *
+// ==/UserScript==
+
+window.onload = function() {
+    hideAds();
+};
+
+document.addEventListener('DOMNodeInserted', function() {
+    hideAds();
+});
+
+function hideAds() {
+    if(document.location.host == 'www.facebook.com') {
+        var pagelet_side_ads = document.getElementById('pagelet_side_ads');
+        if(pagelet_side_ads != undefined)
+            pagelet_side_ads.innerHTML = null;
+
+        var ego_column = document.getElementsByClassName('ego_column');
+        if(ego_column != undefined &amp;&amp; ego_column.length &gt; 0) {
+            for(var index in ego_column) {
+                if(ego_column[index].getElementsByClassName('adsCategoryTitleLink') != undefined) {
+                    ego_column[index].innerHTML = null;
+                    break;
+                }
+            }
+        }
+
+        var fbTimelineSideAds = document.getElementsByClassName('fbTimelineSideAds');
+        for(var index in fbTimelineSideAds) {
+            fbTimelineSideAds[index].innerHTML = null;
+        }
+    }
+}</code></pre></div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/"></a>
+            </div>
+        </article>
                 <article class="nx-block">
             <div class="nx-title">
                 <h1><a href="/article/2012/07/18/diablo-3-calculator-readme/">Diablo 3 計算機使用說明</a></h1>
@@ -170,30 +231,6 @@ class router {
                 <a class="fa fa-angle-down" href="/article/2012/04/23/implement-a-small-router-use-php-2/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2012/04/23/implement-a-small-router-use-php-1/">實作一個小型Router use PHP (1)</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2012/">2012-04-23</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/PHP/">PHP</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><p>之前有個開發Framework的經驗，在REST的設計風格中，HTTP Method是操作Resource的動作，而URL則是需要操作的Resource本身。所以我們必須讓HTTP Method及URL對應到要執行的程式上，實做Router的需求就這樣產生。那麼以下是不專業的範例教學。</p>
-<p>首先建立一個PHP程式 server.php</p>
-<pre><code class="language-php">&lt;?php
-// filename: server.php
-print_r($_SERVER);</code></pre>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2012/04/23/implement-a-small-router-use-php-1/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
@@ -232,6 +269,8 @@ print_r($_SERVER);</code></pre>
         <h2><a href="/archive/">Archive</a></h2>
     </div>
     <div class="nx-content">
+                <span class="nx-item">
+                        <a href="/archive/2019/">2019</a>        </span>
                 <span class="nx-item">
                         <a href="/archive/2018/">2018</a>        </span>
                 <span class="nx-item">
@@ -299,6 +338,8 @@ print_r($_SERVER);</code></pre>
                         <a href="/tag/Express/">Express</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Facebook/">Facebook</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Feeling/">Feeling</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/HHKB/">HHKB</a>        </span>
                 <span class="nx-item">

@@ -15,9 +15,9 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="https://scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-    <link rel="stylesheet" href="/assets/styles/theme.min.css?1545051211">
+    <link rel="stylesheet" href="/assets/styles/theme.min.css?1546286852">
 
-    <script src="/assets/scripts/theme.min.js?1545051211" async></script>
+    <script src="/assets/scripts/theme.min.js?1546286852" async></script>
     <script>
         window._nx = {
             googleAnalytics: 'UA-30675094-1',
@@ -42,6 +42,51 @@
         <div class="nx-container">
             <div class="nx-page">
     <div class="nx-limiter">
+                <article class="nx-block">
+            <div class="nx-title">
+                <h1><a href="/article/2013/04/02/php-concatenate-string/">PHP字串連接</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2013/">2013-04-02</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/PHP/">PHP</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><h2>前言</h2>
+<p>在PHP中字串連接的方法與其它的語言有著非常的不同，我們都知道以C語言來說我們可以使用函式<code>strcat()</code>來連接兩個字元陣列，而在Java中我們可以使用<code>+</code>運算子來做字串的連接。</p>
+<p>而PHP呢？PHP不同與上述語言，它則使用<code>.</code>運算子來連接字串，而且除了<code>.</code>以外還有許多不同的方式也可以連接字串。</p>
+<h2>基本使用</h2>
+<h3>字串宣告</h3>
+<p>在PHP當中可以使用<code>'</code>或者是<code>"</code>來宣告字串，但是這兩個符號宣告出的字串其實是不相同的。</p>
+<pre><code class="language-php">&lt;?php
+$str = "Hi, I am Tony.\nNice to meet you.";
+echo $str;
+// Hi, I am Tony.
+// Nice to meet you.
+
+$str = 'Hi, I am Tony.\nNice to meet you.';
+echo $str;
+// Hi, i am Tony,\nNice to meet you.</code></pre>
+<p>由上面範例可以得知使用<code>"</code>宣告的字串可以讓跳脫字元發揮出作用，而使用<code>'</code>宣告的字串則是純字串你輸入什麼就輸出什麼。</p>
+<h3>字串連接</h3>
+<pre><code class="language-php">&lt;?php
+$name = 'Tony';
+
+echo "Hi " . $name; // Hi Tony
+echo 'Hi ' . $name; // Hi Tony
+echo "Hi $name";    // Hi Tony
+echo 'Hi $name';    // Hi $name</code></pre>
+<p>那麼字串與變數的連接，在<code>"</code>可以很彈性的使用變數，而<code>'</code>只能夠使用<code>.</code>來做連接，而兩者都可以使用格式化輸出<code>sprintf()</code>但這邊就先不提。</p>
+<p>由上面得知<code>"</code>可以很彈性的連接變數，那麼它除了變數的連接外，那與陣列、函式以及物件之間該如何連接以及可行性？我們看下面的範例。</p>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2013/04/02/php-concatenate-string/"></a>
+            </div>
+        </article>
                 <article class="nx-block">
             <div class="nx-title">
                 <h1><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">NanoCLI - PHP CLI開發工具 (2)</a></h1>
@@ -162,27 +207,6 @@ main() {
                 <a class="fa fa-angle-down" href="/article/2012/12/13/increment-operator-in-few-programming-language/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2012/12/08/facebook-virus-ksum-exe/">Facebook病毒 - YouNaked.JPG.exe</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2012/">2012-12-08</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/Facebook/">Facebook</a> <a href="/tag/Virus/">Virus</a> <a href="/tag/Windows/">Windows</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><p>今天在使用Facebook的時候看見了朋友的動態留言上有不尋常的連結，好齊心驅使下我就觀察看看有什麼行為。</p>
-<p>首先它的連結是一串縮址,點擊之後它會到向另一個頁面，並且自動下載一個檔案，但這只是下載而已，要去執行它病毒才會有作用。</p>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2012/12/08/facebook-virus-ksum-exe/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
@@ -221,6 +245,8 @@ main() {
         <h2><a href="/archive/">Archive</a></h2>
     </div>
     <div class="nx-content">
+                <span class="nx-item">
+                        <a href="/archive/2019/">2019</a>        </span>
                 <span class="nx-item">
                         <a href="/archive/2018/">2018</a>        </span>
                 <span class="nx-item">
@@ -288,6 +314,8 @@ main() {
                         <a href="/tag/Express/">Express</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Facebook/">Facebook</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Feeling/">Feeling</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/HHKB/">HHKB</a>        </span>
                 <span class="nx-item">

@@ -15,9 +15,9 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="https://scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-    <link rel="stylesheet" href="/assets/styles/theme.min.css?1545051211">
+    <link rel="stylesheet" href="/assets/styles/theme.min.css?1546286852">
 
-    <script src="/assets/scripts/theme.min.js?1545051211" async></script>
+    <script src="/assets/scripts/theme.min.js?1546286852" async></script>
     <script>
         window._nx = {
             googleAnalytics: 'UA-30675094-1',
@@ -42,6 +42,37 @@
         <div class="nx-container">
             <div class="nx-page">
     <div class="nx-limiter">
+                <article class="nx-block">
+            <div class="nx-title">
+                <h1><a href="/article/2016/12/02/mariadb-galera-cluster-10-1-setting/">MariaDB Galera Cluster 10.1 Setting</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2016/">2016-12-02</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/Cluster/">Cluster</a> <a href="/tag/Debian/">Debian</a> <a href="/tag/Linux/">Linux</a> <a href="/tag/MariaDB/">MariaDB</a> <a href="/tag/MySQL/">MySQL</a> <a href="/tag/Ubuntu/">Ubuntu</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><p>先前已經寫過 <code>10.0</code> 的設定方式，MariaDB 升級成 <code>10.1</code> 後 <code>galera</code> 就已經內建在其中了，也不用額外安裝它的套件。</p>
+<h2>Environment</h2>
+<h3>Debian Jessie</h3>
+<pre><code class="language-bash"># MariaDB
+sudo apt-get install python-software-properties
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.0/debian jessie main'
+
+# Percona XtraBackup
+wget https://repo.percona.com/apt/percona-release_0.1-3.jessie_all.deb
+sudo dpkg -i percona-release_0.1-3.jessie_all.deb
+sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5</code></pre>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2016/12/02/mariadb-galera-cluster-10-1-setting/"></a>
+            </div>
+        </article>
                 <article class="nx-block">
             <div class="nx-title">
                 <h1><a href="/article/2016/12/02/nfs-v4-easy-to-go/">NFS v4 簡易安裝</a></h1>
@@ -142,27 +173,6 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
                 <a class="fa fa-angle-down" href="/article/2015/01/11/polaroid-cube-unboxing-and-mini4wd/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/">HHKB Pro2 開箱</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2015/">2015-01-09</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/Life/">Life</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/3C/">3C</a> <a href="/tag/HHKB/">HHKB</a> <a href="/tag/Keyboard/">Keyboard</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><p>其實本來沒有打算要買這隻鍵盤的，但近日日幣的走勢實在是太讓人衝動，然後就衝了，原先是請朋友去日本順便幫我帶，不過去了大阪日本橋卻沒有找到，也謝謝他們幫我找。</p>
-<p>後來透過朋友介紹代購公司幫我代買，下訂之後大約兩星期就送到了，這樣折合台幣含運費大約七張小朋友，價格真的不是許多人能接受。</p>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
@@ -201,6 +211,8 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
         <h2><a href="/archive/">Archive</a></h2>
     </div>
     <div class="nx-content">
+                <span class="nx-item">
+                        <a href="/archive/2019/">2019</a>        </span>
                 <span class="nx-item">
                         <a href="/archive/2018/">2018</a>        </span>
                 <span class="nx-item">
@@ -268,6 +280,8 @@ sudo add-apt-repository 'deb http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/rep
                         <a href="/tag/Express/">Express</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Facebook/">Facebook</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Feeling/">Feeling</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/HHKB/">HHKB</a>        </span>
                 <span class="nx-item">
