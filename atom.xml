@@ -5,11 +5,43 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-01-04T21:38:30+08:00</updated>
+	<updated>2019-01-22T02:21:50+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[CORS 跨域 AJAX 與 Cookie 請求]]></title>
+		<link href="https://scar.tw/article/2019/01/22/cors-ajax-and-cookie-request/" />
+		<id>urn:uuid:ffc4c446-c837-6eeb-5498-65ca058256b0</id>
+		<updated>2019-01-22T02:21:30+08:00</updated>
+		<summary type="html"><![CDATA[<p>以前使用跨域請求的時候，沒遇到使用 <code>Cookie</code> 的案例，在一般的使用情境下只要將 <code>Access-Control-Allow-Origin</code>、<code>Access-Control-Allow-Methods</code> 及 <code>Access-Control-Allow-Headers</code> 設置好可以正常的跨域請求了。</p>
+<p>但當要使用跨域請求修改 <code>Cookie</code> 的內容時，在瀏覽器及伺服器必需要額外設定才能達成目的。</p>
+<!--more-->
+<h2>瀏覽器請求</h2>
+<p>以 <code>axios</code> 的範例來看，必須要在發出請求前帶上 <code>withCredentials: true</code> 的設定，在跨域請求時才會正常發出附帶 <code>Cookie</code> 的 <code>header</code>。</p>
+<pre><code>axios.defaults.withCredentials = true;
+
+// or
+
+axios.interceptors.request.use(config =&gt; {
+    config.withCredentials = true;
+
+    return config;
+});
+</code></pre>
+<h2>伺服器回應</h2>
+<p>而在伺服器回應時也要一並帶上 <code>Access-Control-Allow-Credentials: true</code> 在 <code>header</code> 中，這樣在回應時在 <code>header</code> 中所附帶的 <code>Set-Cookie</code> 才會有作用。</p>
+<p>另外要注意的是如果要使用 <code>Access-Control-Allow-Credentials</code> 那麼就不能將 <code>Access-Control-Allow-Origin</code> 設定為 <code>*</code>。</p>
+<pre><code>HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://example.site
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Credentials: true
+Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></pre>
+<h2>Reference</h2>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">跨來源資源共用（CORS）</a></p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[寫在 2019 開頭]]></title>
 		<link href="https://scar.tw/article/2019/01/01/written-before-2019/" />
@@ -152,72 +184,5 @@
 <p>然後還有像是 <code>&gt;</code> 及 <code>&lt;</code> 這類數學符號的用法，如果所使用套件的依賴關聯性很嚴格可能會用到，用來限制版本範圍。</p>
 <h2>最後</h2>
 <p>雖然上面有明確的規範了，但照著規範走還是有機會爆炸的，人出來走跳總是要還...像是最近更新修訂號就炸的 <code>React 16.6.2</code> XD</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[HHKB on MacBook]]></title>
-		<link href="https://scar.tw/article/2018/10/01/hkkb-on-macbook/" />
-		<id>urn:uuid:6d8b5719-ae37-2153-6e50-011c935ed7f8</id>
-		<updated>2018-10-01T18:57:23+08:00</updated>
-		<summary type="html"><![CDATA[<p>最近因為工作需求把開發平台從 <code>Linux</code> 換成了 <code>macOS</code>，當然連周邊設備也一起搬過來了，遇到的最大問題就是快捷鍵不同的問題。</p>
-<p>其中 <code>macOS</code> 按鍵設定在 <code>HHKB</code> 上的按鍵對應完全不同，所以要做相對應的變更。</p>
-<!--more-->
-<h2>HHKB Switch</h2>
-<p>在硬體的開關從原本的 <code>101110</code> 改成了 <code>011111</code> 用來對應 <code>MacBook</code> 的快捷鍵，這部分並不影響使用。</p>
-<h2>macOS Keyboard Mapping for HHKB</h2>
-<p>接下來修改鍵盤的對應，修改內容如下：</p>
-<ul>
-<li>Control -&gt; Commnad</li>
-<li>Option -&gt; Control</li>
-<li>Commnad -&gt; Option</li>
-</ul>
-<p><img src="/images/hhkb-on-macbook/000.png" alt="對應設定" /></p>
-<p>最後可以用 <a href="http://keyboardchecker.com/">Keyboard Checker</a> 來測試一下按鍵對應。</p>
-<h2>同場加映 Sublime Text</h2>
-<p>如果你很習慣使用 <code>Home</code> 跟 <code>End</code> 來移動或選取的話抱歉這在 <code>macOS</code> 上是失效的。</p>
-<p>所以要在 <code>Sublime Text</code> 的 <code>Key Binding</code> 中加料像是下面那樣，這樣移動游標或是選取程式碼都會正常了就像原本習慣的那樣。</p>
-<pre><code class="language-json">[
-    {
-        "keys": [
-            "home"
-        ], 
-        "command": "move_to", 
-        "args": {
-            "to": "bol", 
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "end"
-        ], 
-        "command": "move_to", 
-        "args": {
-            "to": "eol", 
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "shift+home"
-        ], 
-        "command": "move_to", 
-        "args": {
-            "to": "bol", 
-            "extend": true
-        }
-    },
-    {
-        "keys": [
-            "shift+end"
-        ], 
-        "command": "move_to", 
-        "args": {
-            "to": "eol", 
-            "extend": true
-        }
-    }
-]</code></pre>
-<h2>完美？</h2>
-<p>不對！<code>macOS</code> 獨一無二的快捷鍵設定，完全跟 <code>Linux</code> 不同還是需要習慣。</p>]]></summary>
 	</entry>
 </feed>

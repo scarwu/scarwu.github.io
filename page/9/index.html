@@ -15,9 +15,9 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="https://scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-    <link rel="stylesheet" href="/assets/styles/theme.min.css?1546609109">
+    <link rel="stylesheet" href="/assets/styles/theme.min.css?1546610225275">
 
-    <script src="/assets/scripts/theme.min.js?1546609109" async></script>
+    <script src="/assets/scripts/theme.min.js?1546610225275" async></script>
     <script>
         window._nx = {
             googleAnalytics: 'UA-30675094-1',
@@ -42,6 +42,34 @@
         <div class="nx-container">
             <div class="nx-page">
     <div class="nx-limiter">
+                <article class="nx-block">
+            <div class="nx-title">
+                <h1><a href="/article/2012/12/13/increment-operator-in-few-programming-language/">關於一些程式語言裡的遞增運算子</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2012/">2012-12-13</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/C/C%2B%2B/">C/C++</a> <a href="/tag/JavaScript/">JavaScript</a> <a href="/tag/Note/">Note</a> <a href="/tag/PHP/">PHP</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><p>前幾天在教學弟 C 程式，其中有出現最常考學生的遞增運算子，像是下面這樣子：</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+main() {
+    int n = 0;
+    n = ++n + ++n + ++n + ++n;
+
+    printf("%d", n);
+}</code></pre>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2012/12/13/increment-operator-in-few-programming-language/"></a>
+            </div>
+        </article>
                 <article class="nx-block">
             <div class="nx-title">
                 <h1><a href="/article/2012/12/08/facebook-virus-ksum-exe/">Facebook病毒 - YouNaked.JPG.exe</a></h1>
@@ -136,42 +164,13 @@ cd xhprof-0.9.2</code></pre>
                 <a class="fa fa-angle-down" href="/article/2012/08/26/install-xphrof-on-ubuntu-12-04/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2012/08/19/hack-php-to-support-put-fileupload/">讓PHP支援PUT FileUpload</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2012/">2012-08-19</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/PHP/">PHP</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
-<pre><code class="language-php">&lt;?php
-// do something...
-
-$put_data = file_get_contents('php://input');
-
-// handle put data...</code></pre>
-<p><br>
-簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
-<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2012/08/19/hack-php-to-support-put-fileupload/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
         <div class="nx-paginator row">
             <span class="nx-prev col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/8/">Prev Posts</a></span>
             <span class="nx-next col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/10/">Next Posts</a></span>
-            <span class="nx-count col-12">9 / 11</span>
+            <span class="nx-count col-12">9 / 12</span>
         </div>
     </div>
 </div>        </div>
@@ -247,6 +246,8 @@ $put_data = file_get_contents('php://input');
                 <span class="nx-item">
                         <a href="/tag/AT9902/">AT9902</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/Ajax/">Ajax</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/Android/">Android</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Apache/">Apache</a>        </span>
@@ -257,9 +258,13 @@ $put_data = file_get_contents('php://input');
                 <span class="nx-item">
                         <a href="/tag/C/C%2B%2B/">C/C++</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/CORS/">CORS</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/Chrome/">Chrome</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Cluster/">Cluster</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Cookie/">Cookie</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/DIY/">DIY</a>        </span>
                 <span class="nx-item">
