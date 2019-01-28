@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-01-28T11:27:04+08:00</updated>
+	<updated>2019-01-28T12:36:26+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,15 +14,15 @@
 		<title type="html"><![CDATA[曼德拉效應在工程的應用]]></title>
 		<link href="https://scar.tw/article/2019/01/28/mandela-effect-in-engineering/" />
 		<id>urn:uuid:0ac6e3dd-68c3-9f3d-ce69-12234da312fa</id>
-		<updated>2019-01-28T11:26:57+08:00</updated>
+		<updated>2019-01-28T12:36:13+08:00</updated>
 		<summary type="html"><![CDATA[<p>以下故事如有雷同，不是巧合。</p>
 <p>有一天早上公司的人員沖沖得跑來向你回報了一個功能上的錯誤，你看了看發現這個錯誤早在很久以前就被修改掉了。</p>
 <!--more-->
 <p>你試了試自己的測試機以及正式機，發現它真的出問題了。</p>
 <p>然而你在記憶中記得它不應該會這樣，所以你問了你旁邊的RD同事確認當初是否有被修復，他也回答了你確實有被修復，但你還是不太放心所以你也問了當初測試過的QA同事，他也給予你一個肯定的答案。</p>
 <p>雖然同事們都記得它都是正常的，但現在卻壞了你覺得非常不可思議，所以你想搞清楚程式碼究竟是什麼時後被搞壞的，你接著打開了你 Source tree 的 Git log 看了看…。</p>
-<p>驚人的事情發生了，發生錯誤的地方它竟然上次修改的時間是兩年前，在你記憶中正確的解決方式竟然消失了，究竟在這兩年內功能是怎樣運作的。</p>
-<p>現實中的程式碼竟然被修改了，你和你同事卻保有著舊記憶…，你怎樣也想不通。</p>
+<p>驚人的事情發生了，發生錯誤的地方修改的時間竟然是兩年前，在你記憶中曾經修改過的解決方式竟然消失了，你納悶究竟在這兩年內功能是怎樣運作的。</p>
+<p>事實上的程式碼跟你和你同事的印象中都不同…，你怎樣也想不通這是怎麼一回事。</p>
 <h2>Reference</h2>
 <p><a href="https://zh.wikipedia.org/zh-tw/%E6%9B%BC%E5%BE%B7%E6%8B%89%E6%95%88%E6%87%89">曼德拉效應 on wiki</a></p>]]></summary>
 	</entry>
