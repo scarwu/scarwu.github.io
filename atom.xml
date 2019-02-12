@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-02-13T02:18:38+08:00</updated>
+	<updated>2019-02-13T02:21:10+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,7 +14,7 @@
 		<title type="html"><![CDATA[良好的專案檔案編排]]></title>
 		<link href="https://scar.tw/article/2019/02/13/good-file-structure-for-project/" />
 		<id>urn:uuid:50088711-0cfe-90d0-3af9-54a320877538</id>
-		<updated>2019-02-13T02:18:05+08:00</updated>
+		<updated>2019-02-13T02:21:04+08:00</updated>
 		<summary type="html"><![CDATA[<p>在看過各種語言以及各種專案之後，對於專案資料夾結構的編排有了一些想法，可能對於一些人來說覺得意義不大，將檔案整齊排放是個好習慣。</p>
 <p>良好的結構讓檔案一目了然有助於開發，你可能會說習慣成自然，專案通常不會只有一個人開發也會有交接的問題，養成好習慣把結構整理乾淨。</p>
 <p>一般框架或工具的官方文件，亦或者是使用 CLI 工具所產生出來的專案，通常都會有既定的結構存在，通常我在開發時不會照單全收，通常還會再進一步修改。</p>
@@ -82,7 +82,7 @@
 </ul></li>
 <li>說明文件
 <ul>
-<li>一般使用 <code>docs</code>，要寫 <code>manual</code> 也行，內部名稱結構依據閱讀方式自行規劃</li>
+<li>一般使用 <code>docs</code> 要寫 <code>manual</code> 也行，內部名稱結構依據閱讀方式自行規劃</li>
 </ul></li>
 <li>測試文件
 <ul>
@@ -93,7 +93,9 @@
 <li>這邊可以是 <code>release</code>、<code>dist</code> 或是 <code>output</code>，如果最後編出的是指令的話可以使用 <code>bin</code></li>
 </ul></li>
 <li>暫存檔
-<code>* tmp</code> 或是 <code>temp</code></li>
+<ul>
+<li><code>tmp</code> 或是 <code>temp</code></li>
+</ul></li>
 </ol>
 <h2>好處</h2>
 <p>對於個人或是團隊的助益有以下幾點：</p>
