@@ -5,11 +5,106 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-01-29T10:41:40+08:00</updated>
+	<updated>2019-02-13T02:18:38+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[良好的專案檔案編排]]></title>
+		<link href="https://scar.tw/article/2019/02/13/good-file-structure-for-project/" />
+		<id>urn:uuid:50088711-0cfe-90d0-3af9-54a320877538</id>
+		<updated>2019-02-13T02:18:05+08:00</updated>
+		<summary type="html"><![CDATA[<p>在看過各種語言以及各種專案之後，對於專案資料夾結構的編排有了一些想法，可能對於一些人來說覺得意義不大，將檔案整齊排放是個好習慣。</p>
+<p>良好的結構讓檔案一目了然有助於開發，你可能會說習慣成自然，專案通常不會只有一個人開發也會有交接的問題，養成好習慣把結構整理乾淨。</p>
+<p>一般框架或工具的官方文件，亦或者是使用 CLI 工具所產生出來的專案，通常都會有既定的結構存在，通常我在開發時不會照單全收，通常還會再進一步修改。</p>
+<!--more-->
+<h2>編排</h2>
+<p>基本上資料夾的結構編排，通常是遵循一個大方向將檔案擺放整齊，以一般網站開發的專案來說通常會有以下幾種類型的檔案：</p>
+<ol>
+<li>原始碼
+<ul>
+<li>專案本身的程式碼</li>
+</ul></li>
+<li>說明文件
+<ul>
+<li>程式碼說明、應用程式接口或是第三方套件的說明文件</li>
+</ul></li>
+<li>測試文件
+<ul>
+<li>程式碼本身的測試</li>
+</ul></li>
+<li>第三方套件與設定
+<ul>
+<li>可能來自 <code>npm</code>、<code>bower</code>、<code>composer</code> 或是 <code>gem</code> 的設定文件以及安裝目標的資料夾</li>
+</ul></li>
+<li>CI/CD 設定
+<ul>
+<li>持續整合、交付或是部署的設定檔</li>
+</ul></li>
+<li>Module Bundler
+<ul>
+<li>像是 <code>webpack</code> 或是 <code>bowserify</code> 之類的工具</li>
+</ul></li>
+<li>Task Runner
+<ul>
+<li>輔助開發的行程工具例如 <code>gulp</code> 或 <code>grunt</code></li>
+</ul></li>
+<li>輸出檔
+<ul>
+<li>編譯好的檔案，或是可用作部署的檔案</li>
+</ul></li>
+<li>暫存檔
+<ul>
+<li>一些開發過程中會產生的暫時性檔案</li>
+</ul></li>
+<li>其它
+<ul>
+<li>根據開發不同可能會用到的其它檔案</li>
+</ul></li>
+</ol>
+<h3>檔案</h3>
+<p>大致上的編排方法是將 <code>第三方套件設定</code>、<code>CI/CD 設定</code>、<code>Module Bundler</code> 及 <code>Task Runner</code>，這類的檔案放置在專案的根目錄中，主要原因為：</p>
+<ol>
+<li>這類的檔案通常關乎到專案本身的設定</li>
+<li>輔助開發的工具通常是將設定放置於此</li>
+</ol>
+<h3>資料夾</h3>
+<p>接下來是將 <code>原始碼</code>、<code>說明文件</code>、<code>測試程文件</code>、<code>輸出檔</code> 及 <code>暫存檔</code> 分別獨立出一個資料夾個別存放該檔案。</p>
+<p>這幾類的檔案占了專案大部分，每種類型的檔案用途都非常明確，所以獨立存放會是個好選擇也方便管理。</p>
+<h2>命名</h2>
+<p>上面說到了擺放的原則，那接下來資料夾的命名也是很重要，除了放置在專案根目錄有既有名稱之外的資料夾基本上都是自由命名，但就跟寫程式一樣參數及函式的命名一樣要淺顯易懂。</p>
+<p>所以通常我會這樣命名：</p>
+<ol>
+<li>原始碼
+<ul>
+<li>通常會使用 <code>src</code> 或是 <code>source</code>，我使用前者居多。如果是程式碼本身結構所使用的資料夾，一般參考框架本身的建議</li>
+</ul></li>
+<li>說明文件
+<ul>
+<li>一般使用 <code>docs</code>，要寫 <code>manual</code> 也行，內部名稱結構依據閱讀方式自行規劃</li>
+</ul></li>
+<li>測試文件
+<ul>
+<li>就使用 <code>tests</code> 了，內部資料夾一樣也是根據工具的規範</li>
+</ul></li>
+<li>輸出檔
+<ul>
+<li>這邊可以是 <code>release</code>、<code>dist</code> 或是 <code>output</code>，如果最後編出的是指令的話可以使用 <code>bin</code></li>
+</ul></li>
+<li>暫存檔
+<code>* tmp</code> 或是 <code>temp</code></li>
+</ol>
+<h2>好處</h2>
+<p>對於個人或是團隊的助益有以下幾點：</p>
+<ol>
+<li>降低閱讀門檻</li>
+<li>利用開發</li>
+<li>易於管理</li>
+<li>潔癖覺得舒服</li>
+<li>也是重構的其中一環</li>
+</ol>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[曼德拉效應在工程的應用]]></title>
 		<link href="https://scar.tw/article/2019/01/28/mandela-effect-in-engineering/" />
@@ -152,23 +247,5 @@ Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></pre>
 <p>它拿起來的重量很接近我另外一把 <code>FILCO Majestouch 2 NINJA</code>，但是打起來跟我另外一把紅軸的 <code>CM Storm Quick Fire Rapid</code> 不太一樣，打起來的聲音比較清脆。對於已經使用習慣 <code>HHKB</code> 的我來說對於一般的鍵盤配列用起來會非常不習慣。</p>
 <p>以無線模式來說，對於不希望桌面太雜亂的人來說很有用的，但是如果是因為它擁有無線模式需要攜帶的人來說它就重了點，並竟是 <code>100%</code> 鍵盤需要攜帶還是推薦 <code>60%</code> 鍵盤。</p>
 <p>結論，這是把不錯的鍵盤但不適合我，就如前面說的我已經習慣 <code>60%</code> 的 <code>HHKB Layout</code>，這把沒有一個點是符合的，如果是當年入坑的第一把還有可能，在價格不高且有雙模式可選擇且質感不差的狀況下，作為一把入門鍵盤是還不錯的選擇。</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[終於換部落格樣式了]]></title>
-		<link href="https://scar.tw/article/2018/11/17/finally-i-change-blog-theme/" />
-		<id>urn:uuid:979ceee5-bc1e-0825-20d3-68bb48625200</id>
-		<updated>2018-11-19T16:12:42+08:00</updated>
-		<summary type="html"><![CDATA[<p>在此紀念這歷史性的一刻，算一算長久來使用的樣式也有個五年多了，想當初這個樣式是我在 <code>Pointless</code> 開發初期的時候設計的我將它命名為 <code>Unique</code>，目的是讓它成為成為獨一無二的樣式(雖然後來還是開源了，不過我想應該也沒人用)。</p>
-<p>而最早為 <code>Pointless</code> 開發的樣式我稱為 <code>Classic</code> 但說穿了其實就是仿照 <code>Wordpress</code> 的預設樣式，所以稱為 &quot;經典&quot;，現在這個樣式稱它為 <code>Nex</code> 意味著下一個世代，我將許多元素捨去或將其簡化，但這只是外觀而重要的是背後的運作也更符合現代。</p>
-<!--more-->
-<h2>樣式們</h2>
-<p>所有的樣式都有開源出來，這是傳統。</p>
-<ul>
-<li><a href="https://github.com/scarwu/PointlessTheme-Classic">Classic</a></li>
-<li><a href="https://github.com/scarwu/PointlessTheme-Unique">Unique</a></li>
-<li><a href="https://github.com/scarwu/PointlessTheme-Nex">Nex</a></li>
-</ul>
-<h2>後記</h2>
-<p>因為加了 <code>SSR</code>、<code>RWD</code> 等...，所以 <code>Nex</code> 這個樣板還在測試中，在 18 年尾巴的現在，明明工作中都用很熟的東西最後才用在自己身上，真的是意料之外啊。</p>]]></summary>
 	</entry>
 </feed>
