@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-02-13T02:21:10+08:00</updated>
+	<updated>2019-02-16T16:04:31+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -111,7 +111,7 @@
 		<title type="html"><![CDATA[曼德拉效應在工程的應用]]></title>
 		<link href="https://scar.tw/article/2019/01/28/mandela-effect-in-engineering/" />
 		<id>urn:uuid:0ac6e3dd-68c3-9f3d-ce69-12234da312fa</id>
-		<updated>2019-01-29T10:41:33+08:00</updated>
+		<updated>2019-01-29T10:39:22+08:00</updated>
 		<summary type="html"><![CDATA[<p>以下故事如有雷同，不是巧合。</p>
 <p>有一天早上公司的人員沖沖得跑來向你回報了一個功能上的錯誤，你看了看發現這個錯誤早在很久以前就被修改掉了。</p>
 <!--more-->
