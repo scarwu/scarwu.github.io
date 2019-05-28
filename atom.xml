@@ -5,11 +5,45 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-02-22T14:48:46+08:00</updated>
+	<updated>2019-05-28T19:06:03+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[Nginx + Lua with Alpine Linux]]></title>
+		<link href="https://scar.tw/article/2019/05/28/nginx-lua-with-alpine-linux/" />
+		<id>urn:uuid:46cde755-2df6-a88c-f1a0-d9935edfa500</id>
+		<updated>2019-05-28T19:05:55+08:00</updated>
+		<summary type="html"><![CDATA[<p>最近在升級公司服務，在原有的環境是使用 <code>Ubuntu</code> + <code>Nginx Extras</code>，但為了最小化容器尺寸所以使用了 <code>Alpine Linux</code>，原本想說能順利轉換，但事情絕對不會是憨人想得這麼簡單。</p>
+<p>雖然 <code>Alpine</code> 的 <code>Nginx</code> 有把 <code>Lua Module</code> 編進去，但是套件庫卻缺乏新版的 <code>Openresty LuaJIT</code> 核心，原本嘗試自行編譯但繞了些路，但解決方法卻異常簡單。</p>
+<!--more-->
+<h2>Code</h2>
+<h3>Dockerfile</h3>
+<p>解決 <code>Openresty LuaJIT</code> 核心的問題，原本也是要連同 <code>Nignx</code> 一起自行編譯的。</p>
+<p>最後直接使用 <code>Openresty</code> 官方的 <code>Alpine Linux</code> 然後再把 <code>Nginx</code> 跟 <code>Lua Module</code> 直接安裝進去就完成了。</p>
+<pre><code class="language-dockerfile">FROM openresty/openresty:alpine
+
+RUN apk --update add \
+    nginx \
+    nginx-mod-http-lua \
+    nginx-mod-http-lua-upstream
+
+...</code></pre>
+<h3>Nginx Config</h3>
+<p>接著在 <code>Nginx</code> 的設定檔中加入最重要的一段載入動態套件庫的設定 <code>include /etc/nginx/modules/*.conf;</code>。</p>
+<pre><code class="language-conf">user nginx nginx;
+
+include /etc/nginx/modules/*.conf;
+
+...
+
+http {
+    ...
+}</code></pre>
+<h2>Done</h2>
+<p>這樣 <code>Alpine Linux</code> 的 <code>Nginx</code> 就可以支援 <code>Lua</code>，而不用回頭用 <code>Ubuntu</code> 的解決方案了。</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[良好的專案檔案編排]]></title>
 		<link href="https://scar.tw/article/2019/02/13/good-file-structure-for-project/" />
@@ -178,76 +212,5 @@ Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></pre>
 <p>最終惰性沒有戰勝，但還是希望未來能發更多文。</p>
 <h2>未來一年</h2>
 <p>在 2019 除了技術希望在其它的領域也能有所成長。</p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[GANSS 高斯 GM 108D 開箱]]></title>
-		<link href="https://scar.tw/article/2018/12/16/ganss-gm-108d-unboxing/" />
-		<id>urn:uuid:6f6f47b0-9e34-e0e8-b4a5-db1526bcfd71</id>
-		<updated>2018-12-17T20:53:28+08:00</updated>
-		<summary type="html"><![CDATA[<p>這是個意料之外的開箱，沒想到會在這次的鍵盤趴上抽到鍵盤，默默地參加了這麼多年的鍵盤趴，在這裡感謝老貓每年舉辦的活動每年都很熱鬧。</p>
-<p>先來說一下我平常使用的鍵盤，一把是多年前開箱過的 <a href="/article/2015/01/09/happy-hacking-keyboard-pro2-unboxing/">HHKB Professional 2</a> 用於工作，作為一個長時間用鍵盤的工程師保護手腕很重要；而另外一把是自己組裝的 <code>60%</code> 無刻青軸並使用 <code>GH60</code> 編寫成 <code>HHKB Layout</code> 作為一般用途使用，所以我已經很久沒用正常配置的鍵盤了。</p>
-<p>下面就來介紹抽到的鍵盤。</p>
-<!--more-->
-<h2>外盒</h2>
-<p>這是把來自對岸有著 <code>Type-C</code> 有線及藍牙無線雙模式的 <code>100%</code> 鍵盤，外盒的印刷非常的簡潔，雖然在外盒上有點損傷，但不影響內容物。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/000.jpg" alt="正面" /></p>
-<p>品牌與系列 Logo。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/001.jpg" alt="高斯 Logo" /></p>
-<p><img src="/images/ganss-gm-108d-unboxing/002.jpg" alt="系列 Logo" /></p>
-<p>直接告訴你是使用 Cherry MX 軸。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/003.jpg" alt="使用 Cherry 軸" /></p>
-<h2>內容物</h2>
-<p><img src="/images/ganss-gm-108d-unboxing/010.jpg" alt="簡潔的包裝" /></p>
-<p>附件有說明書、<code>Type-C</code> 傳輸線、拔鍵器以及磁吸式的腳架。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/011.jpg" alt="說明書與配件" /></p>
-<p>鍵盤本體以及附贈的透明上蓋，附贈的上蓋跟 <code>FILCO</code> 的上蓋比起來薄且軟很多。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/012.jpg" alt="鍵盤本體" /></p>
-<h2>鍵盤配置</h2>
-<p>作為一把 <code>100%</code> 的鍵盤，在鍵帽的配色上很復古協調並且使用 <code>PBT</code> 材質並使用熱昇華處理質感很不錯，而在 <code>Layout</code> 配置上很一般，不過在右上角有額外的四顆快捷鍵。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/020.jpg" alt="輸入區" /></p>
-<p><img src="/images/ganss-gm-108d-unboxing/021.jpg" alt="功能區" /></p>
-<p>整隻鍵盤都使用 <code>Cherry MX 紅軸</code>，另外長軸的部分是使用衛星軸。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/022.jpg" alt="使用 Cherry 紅軸" /></p>
-<p>指示燈在切換無線模式後會亮起。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/023.jpg" alt="無線指示燈號" /></p>
-<p>在鍵盤的右下角有一個低調的 Logo。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/024.jpg" alt="鍵盤上的 Logo" /></p>
-<h2>鍵盤底部</h2>
-<p>底部非常的乾淨。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/030.jpg" alt="底部" /></p>
-<p>腳墊以及線槽。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/031.jpg" alt="軟墊" /></p>
-<p>無線模式的開關，在有線模式的 USB 供電下可以關閉。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/032.jpg" alt="無線開關" /></p>
-<p>鍵盤無線模式使用兩顆 AAA 電池供電，另外要注意的是電池蓋非常的鬆，很容易開啟也意味著容易不見，如果有攜帶鍵盤的需求需要注意一下。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/033.jpg" alt="電池槽" /></p>
-<p><img src="/images/ganss-gm-108d-unboxing/034.jpg" alt="使用 AAA 電池" /></p>
-<p>鍵盤上也有內建 USB Hub 的功能，分別在鍵盤本體的兩側各有一個 USB 的插孔。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/035.jpg" alt="左方 USB Hub" /></p>
-<p><img src="/images/ganss-gm-108d-unboxing/036.jpg" alt="右方 USB Hub" /></p>
-<h2>傳輸線</h2>
-<p>本體使用 <code>USB Type-C</code> 不是以往使用的 <code>Mini USB</code> 作為有線連接，近年也許多鍵盤開始改用 <code>USB Type-C</code>。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/040.jpg" alt="使用 USB Type-C" /></p>
-<p>這裡有點小問題，隨附的傳輸線有做出一個角度，應該是要配合左右方線槽的方向，但如果要從中間拉線的話，線材與鍵盤間會有輕微的物理干涉，也因為如此非常不容易插拔。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/041.jpg" alt="使用隨附傳輸線" /></p>
-<p><img src="/images/ganss-gm-108d-unboxing/042.jpg" alt="使用隨附傳輸線" /></p>
-<p>在這邊我就另外使用我擁有的其它 <code>Type-C</code> 線材來連接，使用 <code>Apple</code> 的 <code>Type-C</code> 傳輸線沒問題，但使用 <code>Sony</code> 手機附贈的 <code>Type-C</code> 傳輸線就出事了，這個線槽開得不夠大會卡線頭。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/043.jpg" alt="使用 Apple 傳輸線" /></p>
-<p><img src="/images/ganss-gm-108d-unboxing/044.jpg" alt="使用 Sony 傳輸線" /></p>
-<h2>腳架</h2>
-<p>鍵盤本體是沒有腳架可以調整高度的，如果要調整鍵盤的高度需要使用附贈的磁吸式腳架，它有分為高、矮兩種高度。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/050.jpg" alt="隨附腳架" /></p>
-<p>沒有使用腳架的話，鍵盤本體就有一定的角度了。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/051.jpg" alt="無腳架" /></p>
-<p>加上矮的腳架。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/052.jpg" alt="使用矮腳架" /></p>
-<p>換成高的腳架。</p>
-<p><img src="/images/ganss-gm-108d-unboxing/053.jpg" alt="使用高腳架" /></p>
-<p>還是不夠？就全上了吧！</p>
-<p><img src="/images/ganss-gm-108d-unboxing/054.jpg" alt="同時使用全部腳架" /></p>
-<h2>個人心得</h2>
-<p>它拿起來的重量很接近我另外一把 <code>FILCO Majestouch 2 NINJA</code>，但是打起來跟我另外一把紅軸的 <code>CM Storm Quick Fire Rapid</code> 不太一樣，打起來的聲音比較清脆。對於已經使用習慣 <code>HHKB</code> 的我來說對於一般的鍵盤配列用起來會非常不習慣。</p>
-<p>以無線模式來說，對於不希望桌面太雜亂的人來說很有用的，但是如果是因為它擁有無線模式需要攜帶的人來說它就重了點，並竟是 <code>100%</code> 鍵盤需要攜帶還是推薦 <code>60%</code> 鍵盤。</p>
-<p>結論，這是把不錯的鍵盤但不適合我，就如前面說的我已經習慣 <code>60%</code> 的 <code>HHKB Layout</code>，這把沒有一個點是符合的，如果是當年入坑的第一把還有可能，在價格不高且有雙模式可選擇且質感不差的狀況下，作為一把入門鍵盤是還不錯的選擇。</p>]]></summary>
 	</entry>
 </feed>

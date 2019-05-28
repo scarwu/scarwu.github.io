@@ -44,6 +44,44 @@
     <div class="nx-limiter">
                 <article class="nx-block">
             <div class="nx-title">
+                <h1><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">NanoCLI - PHP CLI 開發工具 (2)</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2013/">2013-03-16</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/Works/">Works</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/NanoCLI/">NanoCLI</a> <a href="/tag/PHP/">PHP</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><p>上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。</p>
+<h2>使用</h2>
+<h3>實作指令 Help.php</h3>
+<p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
+<pre><code class="language-php">&lt;?php
+// 設定namespace
+namespace Test;
+
+use NanoCLI\IO;
+
+class Help extends NanoCLI\Command {
+    public function __construct() {
+        parent::__construct();
+    }
+
+    public function run() {
+        IO::writeln("This is Command: help\n");
+    }
+}</code></pre>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/"></a>
+            </div>
+        </article>
+                <article class="nx-block">
+            <div class="nx-title">
                 <h1><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/">NanoCLI - PHP CLI 開發工具 (1)</a></h1>
                 <div class="nx-info">
                     <span class="nx-archive">
@@ -145,27 +183,6 @@ main() {
                 <a class="fa fa-angle-down" href="/article/2012/12/08/facebook-virus-ksum-exe/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2012/09/20/extend-sqlite-to-support-regexp/">讓 SQLite 支援 REGEXP 語法</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2012/">2012-09-20</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/Note/">Note</a> <a href="/tag/PHP/">PHP</a> <a href="/tag/Python/">Python</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><p>在使用 MySQL 的時候 REGEXP 正規表示式查詢好用又強大，雖然 SQLite 官方說有支援但其實意思是要使用者寫函式去擴充 SQLite。</p>
-<p>因為最近寫 PHP, Python 都有用到 SQLite 所以就順便做一下使用筆記。</p>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2012/09/20/extend-sqlite-to-support-regexp/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
@@ -250,6 +267,8 @@ main() {
                 <span class="nx-item">
                         <a href="/tag/Ajax/">Ajax</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/Alpine%20Linux/">Alpine Linux</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/Android/">Android</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Apache/">Apache</a>        </span>
@@ -297,6 +316,8 @@ main() {
                         <a href="/tag/Keyboard/">Keyboard</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Linux/">Linux</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Lua/">Lua</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/MacBook/">MacBook</a>        </span>
                 <span class="nx-item">
