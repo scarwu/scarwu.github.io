@@ -57,7 +57,7 @@
                                     </div>
             </div>
             <div class="nx-content"><p>最近在升級公司服務，在原有的環境是使用 <code>Ubuntu</code> + <code>Nginx Extras</code>，但為了最小化容器尺寸所以使用了 <code>Alpine Linux</code>，原本想說能順利轉換，但事情絕對不會是憨人想得這麼簡單。</p>
-<p>雖然 <code>Alpine</code> 的 <code>Nginx</code> 有把 <code>Lua Module</code> 編進去，但是套件庫卻缺乏新版的 <code>Openresty LuaJIT</code> 核心，原本嘗試自行編譯但繞了些路，但解決方法卻異常簡單。</p>
+<p>雖然 <code>Alpine</code> 的 <code>Nginx</code> 有把 <code>Lua Module</code> 編進去，但是 <code>Nginx</code> 在運行時會缺少新版的 <code>Openresty LuaJIT</code> 核心導致無法運行，且在套件庫中的 <code>LuaJIT</code> 只有舊版，原本嘗試自行編譯但遇到了一些問題繞了些路，最終解決方法卻異常簡單。</p>
 <!--more-->
 <h2>Code</h2>
 <h3>Dockerfile</h3>
