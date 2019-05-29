@@ -76,7 +76,7 @@ $json = json_encode([
     'timestamp' =&gt; time()
 ]);
 $redis-&gt;lPush('mq', $json);</code></pre>
-<h3>Comsumer</h3>
+<h3>Consumer</h3>
 <pre><code>&lt;?php
 $redis = (new Redis)-&gt;connect('127.0.0.1', 6379);
 

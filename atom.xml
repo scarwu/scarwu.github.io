@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-05-29T12:50:52+08:00</updated>
+	<updated>2019-05-29T12:57:31+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,7 +14,7 @@
 		<title type="html"><![CDATA[用 Redis 簡單粗暴實作 MQ]]></title>
 		<link href="https://scar.tw/article/2019/05/29/using-redis-implement-mq/" />
 		<id>urn:uuid:865669d5-3e0a-1f74-54fa-fddf72d77b0f</id>
-		<updated>2019-05-29T12:50:15+08:00</updated>
+		<updated>2019-05-29T12:57:24+08:00</updated>
 		<summary type="html"><![CDATA[<p>話先說在前頭 <code>Redis</code> 是快取伺服器不是 <code>Message Queue</code>，但有時候現實面不允許時還是必須要妥協。</p>
 <p>先用 <code>Redis</code> 將功能實作出來，往後再找適合的 <code>MQ</code> 產品去替換 <code>Redis</code>。</p>
 <!--more-->
@@ -35,7 +35,7 @@ $json = json_encode([
     'timestamp' =&gt; time()
 ]);
 $redis-&gt;lPush('mq', $json);</code></pre>
-<h3>Comsumer</h3>
+<h3>Consumer</h3>
 <pre><code>&lt;?php
 $redis = (new Redis)-&gt;connect('127.0.0.1', 6379);
 
