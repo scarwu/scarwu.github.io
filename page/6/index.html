@@ -44,6 +44,29 @@
     <div class="nx-limiter">
                 <article class="nx-block">
             <div class="nx-title">
+                <h1><a href="/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/">Ubuntu 內建 PCRE Library 所造成的 PHP Segmentation Fault</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2014/">2014-02-23</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/Linux/">Linux</a> <a href="/tag/Note/">Note</a> <a href="/tag/PHP/">PHP</a> <a href="/tag/PHPBrew/">PHPBrew</a> <a href="/tag/Ubuntu/">Ubuntu</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><h2>接續</h2>
+<p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
+<p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
+<p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/"></a>
+            </div>
+        </article>
+                <article class="nx-block">
+            <div class="nx-title">
                 <h1><a href="/article/2014/02/21/pointless-with-segmentation-faults/">Pointless 所遭遇到的 Segmentation Faults</a></h1>
                 <div class="nx-info">
                     <span class="nx-archive">
@@ -137,35 +160,13 @@ Arch Linux       : 5.0.5</code></pre>
                 <a class="fa fa-angle-down" href="/article/2014/01/14/zsh-history-search-backward-and-forward/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2014/01/03/express-jade-less-coffee-with-livereload/">Express + Jade/LESS/Coffee with LiveReload</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2014/">2014-01-03</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/Express/">Express</a> <a href="/tag/JavaScript/">JavaScript</a> <a href="/tag/NodeJS/">NodeJS</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><h2>廢話</h2>
-<p>2014年的第一篇文，去年算是生中的轉折，從今年開始已不是學生，但是學習不能停止，所以趁著比較有空的時候把TODO中要學的東西全部湊合在一起，混在一起當撒尿牛丸！</p>
-<p>平常喜歡自幹習慣了，難得來用用別人已經做好的東西。這邊就先來用<code>Express</code>來搭配其它東西來開發網站。這邊用到的套件有<code>Jade</code>、<code>LESS</code>、<code>CoffeeScript</code>以及<code>LiveReload</code>。</p>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2014/01/03/express-jade-less-coffee-with-livereload/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
         <div class="nx-paginator row">
             <span class="nx-prev col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/5/">Prev Posts</a></span>
             <span class="nx-next col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/7/">Next Posts</a></span>
-            <span class="nx-count col-12">6 / 12</span>
+            <span class="nx-count col-12">6 / 13</span>
         </div>
     </div>
 </div>        </div>
@@ -295,6 +296,8 @@ Arch Linux       : 5.0.5</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Lua/">Lua</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/MQ/">MQ</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/MacBook/">MacBook</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Mandela%20Effect/">Mandela Effect</a>        </span>
@@ -342,6 +345,8 @@ Arch Linux       : 5.0.5</code></pre>
                         <a href="/tag/Python/">Python</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Raspberry%20Pi/">Raspberry Pi</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Redis/">Redis</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/RequireJS/">RequireJS</a>        </span>
                 <span class="nx-item">

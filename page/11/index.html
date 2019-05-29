@@ -44,6 +44,35 @@
     <div class="nx-limiter">
                 <article class="nx-block">
             <div class="nx-title">
+                <h1><a href="/article/2012/08/19/hack-php-to-support-put-fileupload/">讓 PHP 支援 PUT FileUpload</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2012/">2012-08-19</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/PHP/">PHP</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><p>由於PHP對於PUT Method所傳送的資料不會做處理，所以對於使用PUT所傳送的資料必須手動作處理，簡單的方式就是去讀取<code>php://input</code>再做處理</p>
+<pre><code class="language-php">&lt;?php
+// do something...
+
+$put_data = file_get_contents('php://input');
+
+// handle put data...</code></pre>
+<p><br>
+簡單的資料處理起來還OK但是遇到<code>form-data</code>的時候就困難了，之前在實做RESTful Server的時候就有寫過一隻PHP Function去做處理檔案上傳</p>
+<p>但是難免會有 BUG，所以那時候就想看看到底PHP在初始化的時候哪邊是在做FileHandle的相關處理，所以就去查詢相關的文章及Trace PHP Source Code</p>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2012/08/19/hack-php-to-support-put-fileupload/"></a>
+            </div>
+        </article>
+                <article class="nx-block">
+            <div class="nx-title">
                 <h1><a href="/article/2012/07/19/hidden-facebook-ads-with-google-chrome/">隱藏 Facebook 廣告 (Google Chrome)</a></h1>
                 <div class="nx-info">
                     <span class="nx-archive">
@@ -187,57 +216,13 @@ function hideAds() {
                 <a class="fa fa-angle-down" href="/article/2012/04/27/about-pointless-static-blog-generator/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2012/04/23/implement-a-small-router-use-php-2/">實作一個小型 Router use PHP (2)</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2012/">2012-04-23</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/PHP/">PHP</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
-<pre><code class="language-php">&lt;?php
-// filename: router.php
-class router {
-    public function __construct() {
-        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
-        $this-&gt;url = $_SERVER['PATH_INFO'];
-    }
-
-    public function add($route, $callback) {
-        $this-&gt;rules[] = array(
-            'route' =&gt; $route,
-            'callback' =&gt; $callback
-        );
-    }
-
-    public function run() {
-        foreach($this-&gt;rules as $rule) {
-            if($rule['route'] == $this-&gt;url) {
-                $rule['callback']();
-                break;
-            }
-        }
-    }
-}</code></pre>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2012/04/23/implement-a-small-router-use-php-2/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
         <div class="nx-paginator row">
             <span class="nx-prev col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/10/">Prev Posts</a></span>
             <span class="nx-next col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/12/">Next Posts</a></span>
-            <span class="nx-count col-12">11 / 12</span>
+            <span class="nx-count col-12">11 / 13</span>
         </div>
     </div>
 </div>        </div>
@@ -367,6 +352,8 @@ class router {
                 <span class="nx-item">
                         <a href="/tag/Lua/">Lua</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/MQ/">MQ</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/MacBook/">MacBook</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Mandela%20Effect/">Mandela Effect</a>        </span>
@@ -414,6 +401,8 @@ class router {
                         <a href="/tag/Python/">Python</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Raspberry%20Pi/">Raspberry Pi</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Redis/">Redis</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/RequireJS/">RequireJS</a>        </span>
                 <span class="nx-item">

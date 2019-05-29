@@ -44,6 +44,50 @@
     <div class="nx-limiter">
                 <article class="nx-block">
             <div class="nx-title">
+                <h1><a href="/article/2012/04/23/implement-a-small-router-use-php-2/">實作一個小型 Router use PHP (2)</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2012/">2012-04-23</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/PHP/">PHP</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><p>接續前一篇，我們開始實做比對的機制，所以我們稍微修改一下route.php</p>
+<pre><code class="language-php">&lt;?php
+// filename: router.php
+class router {
+    public function __construct() {
+        $this-&gt;method = $_SERVER['REQUEST_METHOD'];
+        $this-&gt;url = $_SERVER['PATH_INFO'];
+    }
+
+    public function add($route, $callback) {
+        $this-&gt;rules[] = array(
+            'route' =&gt; $route,
+            'callback' =&gt; $callback
+        );
+    }
+
+    public function run() {
+        foreach($this-&gt;rules as $rule) {
+            if($rule['route'] == $this-&gt;url) {
+                $rule['callback']();
+                break;
+            }
+        }
+    }
+}</code></pre>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2012/04/23/implement-a-small-router-use-php-2/"></a>
+            </div>
+        </article>
+                <article class="nx-block">
+            <div class="nx-title">
                 <h1><a href="/article/2012/04/23/implement-a-small-router-use-php-1/">實作一個小型 Router use PHP (1)</a></h1>
                 <div class="nx-info">
                     <span class="nx-archive">
@@ -133,41 +177,13 @@ print_r($_SERVER);</code></pre>
                 <a class="fa fa-angle-down" href="/article/2011/10/31/ios-rotation-resize-fix/"></a>
             </div>
         </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2011/09/26/android-develop-env-setting/">Android 開發環境設置</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2011/">2011-09-26</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/Android/">Android</a> <a href="/tag/Note/">Note</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><h2>前言</h2>
-<p>最近因為課程需要所以要架設 <code>Android</code> 開發的環境給學生使用，無奈學校的機器只有 <code>Windows</code>，當然我自己還是使用 <code>Linux</code>，所以就在這邊紀錄一下如何在 <code>Windows</code> 下架設環境。</p>
-<h2>下載</h2>
-<ul>
-<li>JDK 7 - <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">jdk-7-windows-i586.exe</a></li>
-<li>Android SDK - <a href="http://developer.android.com/sdk/index.html">android-sdk_r15-windows.zip</a></li>
-<li>ADT 15.0.0 - <a href="http://developer.android.com/sdk/eclipse-adt.html">ADT-15.0.0.zip</a></li>
-<li>Eclipse Classic 3.7 - <a href="http://www.eclipse.org/downloads/">Windows 32 Bit</a></li>
-</ul>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2011/09/26/android-develop-env-setting/"></a>
-            </div>
-        </article>
             </div>
 
     <div class="nx-limiter">
         <div class="nx-paginator row">
             <span class="nx-prev col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/11/">Prev Posts</a></span>
-            <span class="nx-next col-xl-6 col-lg-6 col-sm-6 col-12"></span>
-            <span class="nx-count col-12">12 / 12</span>
+            <span class="nx-next col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/page/13/">Next Posts</a></span>
+            <span class="nx-count col-12">12 / 13</span>
         </div>
     </div>
 </div>        </div>
@@ -297,6 +313,8 @@ print_r($_SERVER);</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Lua/">Lua</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/MQ/">MQ</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/MacBook/">MacBook</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Mandela%20Effect/">Mandela Effect</a>        </span>
@@ -344,6 +362,8 @@ print_r($_SERVER);</code></pre>
                         <a href="/tag/Python/">Python</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Raspberry%20Pi/">Raspberry Pi</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Redis/">Redis</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/RequireJS/">RequireJS</a>        </span>
                 <span class="nx-item">

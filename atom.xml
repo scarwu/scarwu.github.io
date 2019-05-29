@@ -5,11 +5,51 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-05-29T11:40:26+08:00</updated>
+	<updated>2019-05-29T12:50:52+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[用 Redis 簡單粗暴實作 MQ]]></title>
+		<link href="https://scar.tw/article/2019/05/29/using-redis-implement-mq/" />
+		<id>urn:uuid:865669d5-3e0a-1f74-54fa-fddf72d77b0f</id>
+		<updated>2019-05-29T12:50:15+08:00</updated>
+		<summary type="html"><![CDATA[<p>話先說在前頭 <code>Redis</code> 是快取伺服器不是 <code>Message Queue</code>，但有時候現實面不允許時還是必須要妥協。</p>
+<p>先用 <code>Redis</code> 將功能實作出來，往後再找適合的 <code>MQ</code> 產品去替換 <code>Redis</code>。</p>
+<!--more-->
+<h2>簡單說明</h2>
+<p><code>Redis</code> 是一個分散式且支援持久化的 <code>key-value</code> 快取伺服器，除了單純 <code>Get/Set</code> 操作變數之外還提供許多額外的函數用來操作變數。</p>
+<h2>運作原理</h2>
+<p>上面說到了除了單純的 <code>Get/Set</code> 之外，能夠實作 <code>MQ</code> 的關鍵就在於而外提供的函數，主要能夠實作出 <code>MQ</code> 的關鍵在於 <code>Push/Pop</code> 的函數。</p>
+<p>這組函數主要是將變數作為 List 處理，可以將它模擬成 <code>Queue</code> 或是 <code>Stack</code>，現在我們是要將它實作成 <code>MQ</code> 所以我們要模擬成 <code>Queue</code>。</p>
+<p>我們可以使用函數 <code>lPush, brPop</code> 或是 <code>rPush, blPop</code> 實作，要注意的是我們在 <code>Pop</code> 的時候使用 <code>Blocking</code> 模式的函數，可以設定 <code>Connection Timeout</code> 用來減少伺服器壓力。</p>
+<h2>Sample Code</h2>
+<p>下面是簡單的程式範例。</p>
+<h3>Producer</h3>
+<pre><code>&lt;?php
+$redis = (new Redis)-&gt;connect('127.0.0.1', 6379);
+
+// Enqueue
+$json = json_encode([
+    'timestamp' =&gt; time()
+]);
+$redis-&gt;lPush('mq', $json);</code></pre>
+<h3>Comsumer</h3>
+<pre><code>&lt;?php
+$redis = (new Redis)-&gt;connect('127.0.0.1', 6379);
+
+// Dequeue
+$bundle = $redis-&gt;brPop('mq', 60);
+$json = json_decode($bundle[1], true);
+
+var_dump($json);</code></pre>
+<h2>Reference</h2>
+<ul>
+<li><a href="https://zh.wikipedia.org/zh-tw/Redis">Redis - Wiki</a></li>
+<li><a href="https://github.com/phpredis/phpredis">PHP Redis</a></li>
+</ul>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[使用 PHP OPCache 的正確姿勢]]></title>
 		<link href="https://scar.tw/article/2019/05/29/php-opcache-tuning/" />
@@ -215,37 +255,5 @@ http {
 <p>事實上的程式碼跟你和你同事的印象中都不同…，你怎樣也想不通這是怎麼一回事。</p>
 <h2>Reference</h2>
 <p><a href="https://zh.wikipedia.org/zh-tw/%E6%9B%BC%E5%BE%B7%E6%8B%89%E6%95%88%E6%87%89">曼德拉效應 on wiki</a></p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[CORS 跨域 AJAX 與 Cookie 請求]]></title>
-		<link href="https://scar.tw/article/2019/01/22/cors-ajax-and-cookie-request/" />
-		<id>urn:uuid:ffc4c446-c837-6eeb-5498-65ca058256b0</id>
-		<updated>2019-01-22T02:21:30+08:00</updated>
-		<summary type="html"><![CDATA[<p>以前使用跨域請求的時候，沒遇到使用 <code>Cookie</code> 的案例，在一般的使用情境下只要將 <code>Access-Control-Allow-Origin</code>、<code>Access-Control-Allow-Methods</code> 及 <code>Access-Control-Allow-Headers</code> 設置好可以正常的跨域請求了。</p>
-<p>但當要使用跨域請求修改 <code>Cookie</code> 的內容時，在瀏覽器及伺服器必需要額外設定才能達成目的。</p>
-<!--more-->
-<h2>瀏覽器請求</h2>
-<p>以 <code>axios</code> 的範例來看，必須要在發出請求前帶上 <code>withCredentials: true</code> 的設定，在跨域請求時才會正常發出附帶 <code>Cookie</code> 的 <code>header</code>。</p>
-<pre><code>axios.defaults.withCredentials = true;
-
-// or
-
-axios.interceptors.request.use(config =&gt; {
-    config.withCredentials = true;
-
-    return config;
-});
-</code></pre>
-<h2>伺服器回應</h2>
-<p>而在伺服器回應時也要一並帶上 <code>Access-Control-Allow-Credentials: true</code> 在 <code>header</code> 中，這樣在回應時在 <code>header</code> 中所附帶的 <code>Set-Cookie</code> 才會有作用。</p>
-<p>另外要注意的是如果要使用 <code>Access-Control-Allow-Credentials</code> 那麼就不能將 <code>Access-Control-Allow-Origin</code> 設定為 <code>*</code>。</p>
-<pre><code>HTTP/1.1 200 OK
-Access-Control-Allow-Origin: http://example.site
-Access-Control-Allow-Methods: POST, GET, OPTIONS
-Access-Control-Allow-Headers: Content-Type
-Access-Control-Allow-Credentials: true
-Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></pre>
-<h2>Reference</h2>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">跨來源資源共用（CORS）</a></p>]]></summary>
 	</entry>
 </feed>
