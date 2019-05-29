@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="記錄學習過程、生活以及一些想說的話。">
-    <meta property="og:title" content="Archive: 2011 | ScarShow | 刀疤說">
-    <meta property="og:url" content="https://scar.tw/archive/2011/">
+    <meta property="og:description" name="description" content="PHP OPCache 看起來很迷人，但有時會被它傷得滿身，有可能今早用起來好好的系統，下午就突然壞掉了。">
+    <meta property="og:title" content="使用 PHP OPCache 的正確姿勢 | ScarShow | 刀疤說">
+    <meta property="og:url" content="https://scar.tw/article/2019/05/29/php-opcache-tuning/">
     <meta property="og:image" content="https://scar.tw/images/icon.jpg">
     <meta property="og:type" content="website">
 
-    <title>Archive: 2011 | ScarShow | 刀疤說</title>
+    <title>使用 PHP OPCache 的正確姿勢 | ScarShow | 刀疤說</title>
 
-    <link rel="canonical" href="https://scar.tw/archive/2011/">
+    <link rel="canonical" href="https://scar.tw/article/2019/05/29/php-opcache-tuning/">
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="https://scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
@@ -40,52 +40,91 @@
 
     <div id="nx-body">
         <div class="nx-container">
-            <div class="nx-archive">
+            <div class="nx-article">
     <div class="nx-limiter">
         <article class="nx-block">
             <div class="nx-title">
-                <h1>Archive: 2011</h1>
+                <h1>使用 PHP OPCache 的正確姿勢</h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2019/">2019-05-29</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/Note/">Note</a> <a href="/tag/OPCache/">OPCache</a> <a href="/tag/PHP/">PHP</a>                    </span>
+                                    </div>
             </div>
-            <div class="nx-list">
-                                <section class="nx-sub-block">
-                    <div class="nx-sub-title">
-                        <h2><a href="/article/2011/10/31/ios-rotation-resize-fix/">修正 iOS 螢幕轉向網頁自動放大問題</a></h2>
-                        <div class="nx-info">
-                            <span>
-                                <a href="/archive/2011/">2011-10-31</a>                            </span>
-                            &nbsp;/&nbsp;
-                            <span>
-                                <a href="/category/IT/">IT</a>                            </span>
-                            &nbsp;/&nbsp;
-                            <span>
-                                <a href="/tag/Android/">Android</a> <a href="/tag/Mobile%20Web/">Mobile Web</a> <a href="/tag/Note/">Note</a> <a href="/tag/iOS/">iOS</a>                            </span>
-                        </div>
-                    </div>
-                </section>
-                                <section class="nx-sub-block">
-                    <div class="nx-sub-title">
-                        <h2><a href="/article/2011/09/26/android-develop-env-setting/">Android 開發環境設置</a></h2>
-                        <div class="nx-info">
-                            <span>
-                                <a href="/archive/2011/">2011-09-26</a>                            </span>
-                            &nbsp;/&nbsp;
-                            <span>
-                                <a href="/category/IT/">IT</a>                            </span>
-                            &nbsp;/&nbsp;
-                            <span>
-                                <a href="/tag/Android/">Android</a> <a href="/tag/Note/">Note</a>                            </span>
-                        </div>
-                    </div>
-                </section>
-                            </div>
+            <div class="nx-content"><p><code>PHP OPCache</code> 看起來很迷人，但有時會被它傷得滿身，有可能今早用起來好好的系統，下午就突然壞掉了。</p>
+<p>人在江湖飄，哪能不挨刀？某天我就挨了好幾刀。</p>
+<!--more-->
+<h2>Trouble</h2>
+<p>基本上在生產環境開啟它是正確的選擇，對於效能上增進還是很不錯的，但凡事都有意外...例如無法強制清除快取。</p>
+<p>問題是這樣子的，在某次部署之後，強制清除快取卻異常失效，快取的檔案版本不一致，導致網站異常。</p>
+<p>所以又去看了原本的設定並且做了一且調整。</p>
+<h2>Config</h2>
+<p>下面是所有的設定，但有些設定還是要注意一下。</p>
+<p>設定要注意一下，<code>opcache.validate_timestamps</code> 在開啟的時候 <code>opcache.revalidate_freq</code> 的時間檢查才會發揮作業。</p>
+<p>但在生產環境上是推薦將 <code>opcache.validate_timestamps</code> 關閉，然後在部署成功之後再清除快取。</p>
+<p>但因為有發生過無法強制清除快取的事件，所以在這邊折衷將 <code>opcache.validate_timestamps</code> 開啟讓 <code>Opcache</code> 去自動檢查並清除快取。</p>
+<pre><code>[opcache]
+;opcache.enable=0
+;opcache.enable_cli=0
+;opcache.memory_consumption=64
+;opcache.interned_strings_buffer=4
+;opcache.max_accelerated_files=2000
+;opcache.max_wasted_percentage=5
+;opcache.use_cwd=1
+;opcache.validate_timestamps=1
+;opcache.revalidate_freq=2
+;opcache.revalidate_path=0
+;opcache.save_comments=1
+;opcache.load_comments=1
+;opcache.fast_shutdown=1
+;opcache.enable_file_override=0
+;opcache.optimization_level=0xffffffff
+;opcache.inherited_hack=1
+;opcache.dups_fix=0
+;opcache.blacklist_filename=
+;opcache.max_file_size=0
+;opcache.consistency_checks=0
+;opcache.force_restart_timeout=180
+;opcache.error_log=
+;opcache.log_verbosity_level=1
+;opcache.preferred_memory_model=
+;opcache.protect_memory=0</code></pre>
+<p>以下針對此次問題所調整的設定。</p>
+<pre><code>opcache.validate_timestamps=1
+opcache.revalidate_freq=60</code></pre>
+<h2>Clean Cache</h2>
+<p>清除快取的方式，必須在正確的行程中執行指令或是將行程重新啟動才能清除。</p>
+<p>所以這邊要注意的是在 <code>CLI</code> 執行 <code>opcache_reset()</code> 是無法影響到 <code>php-fpm</code> 的。</p>
+<pre><code class="language-php">&lt;?php
+opcache_reset();</code></pre>
+<pre><code class="language-bash">service php-fpm reload</code></pre>
+<h2>Reference</h2>
+<ul>
+<li><a href="https://php.net/manual/en/opcache.configuration.php">Opcache Runtime Configuration</a></li>
+<li><a href="https://ma.ttias.be/how-to-clear-php-opcache/">How To Clear PHP’s Opcache</a></li>
+<li><a href="https://gywbd.github.io/posts/2016/1/best-config-for-zend-opcache.html">zend opcache的最佳设置</a></li>
+</ul></div>
         </article>
     </div>
 
+        <div class="nx-disqus_thread">
+        <div class="nx-limiter">
+            <div class="nx-block">
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+    </div>
+    
     <div class="nx-limiter">
         <div class="nx-paginator row">
-            <span class="nx-prev col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/archive/2012/">2012</a></span>
-            <span class="nx-next col-xl-6 col-lg-6 col-sm-6 col-12"></span>
-            <span class="nx-count col-12">9 / 9</span>
+            <span class="nx-prev col-xl-6 col-lg-6 col-sm-6 col-12"></span>
+            <span class="nx-next col-xl-6 col-lg-6 col-sm-6 col-12"><a href="/article/2019/05/28/nginx-lua-with-alpine-linux/">Nginx + Lua with Alpine Linux</a></span>
+            <span class="nx-count col-12">1 / 60</span>
         </div>
     </div>
 </div>        </div>

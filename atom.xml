@@ -5,11 +5,70 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-05-29T11:05:03+08:00</updated>
+	<updated>2019-05-29T11:40:26+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[使用 PHP OPCache 的正確姿勢]]></title>
+		<link href="https://scar.tw/article/2019/05/29/php-opcache-tuning/" />
+		<id>urn:uuid:a5d92b8a-eea9-b360-9dab-1ee83a3d17d2</id>
+		<updated>2019-05-29T11:40:17+08:00</updated>
+		<summary type="html"><![CDATA[<p><code>PHP OPCache</code> 看起來很迷人，但有時會被它傷得滿身，有可能今早用起來好好的系統，下午就突然壞掉了。</p>
+<p>人在江湖飄，哪能不挨刀？某天我就挨了好幾刀。</p>
+<!--more-->
+<h2>Trouble</h2>
+<p>基本上在生產環境開啟它是正確的選擇，對於效能上增進還是很不錯的，但凡事都有意外...例如無法強制清除快取。</p>
+<p>問題是這樣子的，在某次部署之後，強制清除快取卻異常失效，快取的檔案版本不一致，導致網站異常。</p>
+<p>所以又去看了原本的設定並且做了一且調整。</p>
+<h2>Config</h2>
+<p>下面是所有的設定，但有些設定還是要注意一下。</p>
+<p>設定要注意一下，<code>opcache.validate_timestamps</code> 在開啟的時候 <code>opcache.revalidate_freq</code> 的時間檢查才會發揮作業。</p>
+<p>但在生產環境上是推薦將 <code>opcache.validate_timestamps</code> 關閉，然後在部署成功之後再清除快取。</p>
+<p>但因為有發生過無法強制清除快取的事件，所以在這邊折衷將 <code>opcache.validate_timestamps</code> 開啟讓 <code>Opcache</code> 去自動檢查並清除快取。</p>
+<pre><code>[opcache]
+;opcache.enable=0
+;opcache.enable_cli=0
+;opcache.memory_consumption=64
+;opcache.interned_strings_buffer=4
+;opcache.max_accelerated_files=2000
+;opcache.max_wasted_percentage=5
+;opcache.use_cwd=1
+;opcache.validate_timestamps=1
+;opcache.revalidate_freq=2
+;opcache.revalidate_path=0
+;opcache.save_comments=1
+;opcache.load_comments=1
+;opcache.fast_shutdown=1
+;opcache.enable_file_override=0
+;opcache.optimization_level=0xffffffff
+;opcache.inherited_hack=1
+;opcache.dups_fix=0
+;opcache.blacklist_filename=
+;opcache.max_file_size=0
+;opcache.consistency_checks=0
+;opcache.force_restart_timeout=180
+;opcache.error_log=
+;opcache.log_verbosity_level=1
+;opcache.preferred_memory_model=
+;opcache.protect_memory=0</code></pre>
+<p>以下針對此次問題所調整的設定。</p>
+<pre><code>opcache.validate_timestamps=1
+opcache.revalidate_freq=60</code></pre>
+<h2>Clean Cache</h2>
+<p>清除快取的方式，必須在正確的行程中執行指令或是將行程重新啟動才能清除。</p>
+<p>所以這邊要注意的是在 <code>CLI</code> 執行 <code>opcache_reset()</code> 是無法影響到 <code>php-fpm</code> 的。</p>
+<pre><code class="language-php">&lt;?php
+opcache_reset();</code></pre>
+<pre><code class="language-bash">service php-fpm reload</code></pre>
+<h2>Reference</h2>
+<ul>
+<li><a href="https://php.net/manual/en/opcache.configuration.php">Opcache Runtime Configuration</a></li>
+<li><a href="https://ma.ttias.be/how-to-clear-php-opcache/">How To Clear PHP’s Opcache</a></li>
+<li><a href="https://gywbd.github.io/posts/2016/1/best-config-for-zend-opcache.html">zend opcache的最佳设置</a></li>
+</ul>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[Nginx + Lua with Alpine Linux]]></title>
 		<link href="https://scar.tw/article/2019/05/28/nginx-lua-with-alpine-linux/" />
@@ -188,29 +247,5 @@ Access-Control-Allow-Credentials: true
 Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></pre>
 <h2>Reference</h2>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">跨來源資源共用（CORS）</a></p>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[寫在 2019 開頭]]></title>
-		<link href="https://scar.tw/article/2019/01/01/written-before-2019/" />
-		<id>urn:uuid:855d8a92-6053-cd06-95fe-398deffc2a0e</id>
-		<updated>2019-01-01T04:07:25+08:00</updated>
-		<summary type="html"><![CDATA[<p>在前年 2017 曾經對於 2018 有所期許，沒想到在去年 2018 這一年間的轉變真的是非常巨大出乎意料之外。</p>
-<p>我放棄了原有的舒適圈還是踏出了一小步，原本我希望這會是一大步但計劃趕不上變化，雖然失敗了但並沒有後悔。</p>
-<!--more-->
-<h2>Side Projects</h2>
-<p>因為有了一些閒暇的時間所以個人專案有了滿大的進步。</p>
-<h3>魔物獵人世界計算機</h3>
-<p>這個計算機是個意外產物，起初我只是因為想要配個裝但是工具不夠用，不過最近開始了新生活沒什麼時間，所以沒有更新裝備列表這個要找時間補上。</p>
-<h3>Oni</h3>
-<p>配合 <code>Pointless</code> 的改良，在背後的核心也是勢必要進化，所以將原本的核心的 <code>NanoCLI</code> 整了進來，再把原本的 <code>Web</code> 架構做了些調整，接下來會對於 <code>CLI</code> 進行強化。</p>
-<h3>Pointless &amp; Theme</h3>
-<p>對比 2017 年的期許，這個工具真的改變許多，我將原本的底層從 <code>NanoCLI</code> 抽換成 <code>Oni</code>，並重構符合 <code>PSR</code> 標準，還將原本的 <code>Built-in Server</code> 改由 <code>Oni</code> 負責直接動態產出頁面。</p>
-<p>並且將原本的 <code>Theme</code> 切出專案之外，並且可以配合新的 <code>Built-in Server</code> 開發，且使用現代化的前端工具，新的部落格樣式就是這樣開發出來的。</p>
-<h2>攝影及重車</h2>
-<p>在這一年間去了許多地方也拍了許多相片，雖然技術可能還是很粗淺，但可以到全台各地並且留下紀念，將兩個興趣結合也是不錯的事。</p>
-<h2>網誌</h2>
-<p>最終惰性沒有戰勝，但還是希望未來能發更多文。</p>
-<h2>未來一年</h2>
-<p>在 2019 除了技術希望在其它的領域也能有所成長。</p>]]></summary>
 	</entry>
 </feed>
