@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-06-20T14:27:12+08:00</updated>
+	<updated>2019-06-20T14:43:06+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -113,7 +113,7 @@ opcache_reset();</code></pre>
 		<title type="html"><![CDATA[Nginx + Lua with Alpine Linux]]></title>
 		<link href="https://scar.tw/article/2019/05/28/nginx-lua-with-alpine-linux/" />
 		<id>urn:uuid:46cde755-2df6-a88c-f1a0-d9935edfa500</id>
-		<updated>2019-06-20T14:26:22+08:00</updated>
+		<updated>2019-06-20T14:42:57+08:00</updated>
 		<summary type="html"><![CDATA[<p>最近在升級公司服務，在原有的環境是使用 <code>Ubuntu</code> + <code>Nginx Extras</code>，但為了最小化容器尺寸所以使用了 <code>Alpine Linux</code>，原本想說能順利轉換，但事情絕對不會是憨人想得這麼簡單。</p>
 <p>雖然 <code>Alpine</code> 的 <code>Nginx</code> 有把 <code>Lua Module</code> 編進去，但是 <code>Nginx</code> 在運行時會缺少新版的 <code>Openresty LuaJIT</code> 核心導致無法運行，且在套件庫中的 <code>LuaJIT</code> 只有舊版，原本嘗試自行編譯但遇到了一些問題繞了些路，最終解決方法卻異常簡單。</p>
 <!--more-->
@@ -138,7 +138,7 @@ include /etc/nginx/modules/*.conf;
 ...
 
 http {
-    lua_package_path "/usr/local/openresty/lualib/?.lua;/volume/config/lua/lib/?.lua;;";
+    lua_package_path "/usr/local/openresty/lualib/?.lua;;";
     lua_package_cpath "/usr/local/openresty/lualib/?.so;;";
 
     ...
