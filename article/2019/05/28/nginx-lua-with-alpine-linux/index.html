@@ -72,7 +72,7 @@ RUN apk --update add \
 
 ...</code></pre>
 <h3>Nginx Config</h3>
-<p>接著在 <code>Nginx</code> 的設定檔中加入最重要的一段載入動態套件庫的設定 <code>include /etc/nginx/modules/*.conf;</code>。</p>
+<p>接著在 <code>Nginx</code> 的設定檔中加入最重要的一段設定載入動態套件庫以及 <code>Lua Lib</code> 的路徑到 <code>OpenResty</code>。</p>
 <pre><code class="language-conf">user nginx nginx;
 
 include /etc/nginx/modules/*.conf;
@@ -80,6 +80,9 @@ include /etc/nginx/modules/*.conf;
 ...
 
 http {
+    lua_package_path "/usr/local/openresty/lualib/?.lua;/volume/config/lua/lib/?.lua;;";
+    lua_package_cpath "/usr/local/openresty/lualib/?.so;;";
+
     ...
 }</code></pre>
 <h2>Done</h2>
