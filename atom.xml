@@ -5,11 +5,62 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-06-20T14:43:06+08:00</updated>
+	<updated>2019-07-19T18:35:22+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[每個人心中都有一套 RESTful API]]></title>
+		<link href="https://scar.tw/article/2019/07/13/every-one-has-own-restful-api/" />
+		<id>urn:uuid:d5f50dbf-d370-fc00-b1a1-ddd1e18b64ac</id>
+		<updated>2019-07-19T18:35:11+08:00</updated>
+		<summary type="html"><![CDATA[<p>當年還在念碩士的時候，不免俗的看了 Roy Fielding 的 <code>Representational State Transfer Architectural Style</code> 的論文。</p>
+<p>而論文中所提到設計風格，則因為 Rails 所實作的 <code>RESTful API</code> 而發揚光大。</p>
+<!--more-->
+<h2>學習實作</h2>
+<p>在查了許多關於如何實作的資料之後，發現除了論文中所提的設計風格重點之外，其中最常搭配的就是 <code>Rails</code> 的實作。</p>
+<p>許多人會學習第一次學習實作 <code>RESTful API</code> 的第一個版本便是 Rails 的實作版本。</p>
+<p>並且將它視為一個標準，當有另一個實作版本提出時某部分的細節不符合 Rails 的版本，便會遭到質疑。</p>
+<h2>標準？原則！</h2>
+<p>但要特別注意的是 <code>REST</code> 從來就不是標準，它也不像 <code>RPC</code> 及 <code>SOAP</code> 等有標準規範可以參考，也不會有任何一個實作是標準。</p>
+<p>它僅是一個設計風格、是一個原則，只要設計出的 API 有達到 <code>REST</code> 其中所提到的約束，就能稱之為 RESTful API。</p>
+<h2>REST-like</h2>
+<p>雖然使用 REST 設計風格來實作 API 現在還是蔚為風潮，但是它並沒有辦法這麼簡單就能實作，大致上的困難點就有以下幾個。</p>
+<p>所以有些大廠提供的 <code>API</code> 都會稱為 <code>REST-like</code>，它像是 <code>REST</code> 但不是 <code>REST</code>。</p>
+<h3>HTTP Method 有限</h3>
+<p>在目前最常用的就屬 <code>GET</code>、<code>POST</code>、<code>PUT</code> 及 <code>DELETE</code> 這四種 <code>Method</code> 最常用。</p>
+<p>還有 <code>OPTIONS</code>、<code>HEAD</code> 及 <code>PATCH</code> 這三種 <code>Method</code> 還算是有用到。</p>
+<p>最後是 <code>CONNECT</code> 及 <code>TRACE</code> 這兩種 <code>Method</code> 通常不會用到。</p>
+<p>以上 9 種 <code>Method</code> 理論上實作不能超出這個限制，不然就會違反 <code>RFC</code> 的標準。</p>
+<h3>前端語言支援度</h3>
+<p>以前端的 JS 所提供的 <code>XMLHttpRequest</code> 來說僅支援六種 <code>Method</code> (<code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>、<code>OPTIONS</code> 及 <code>HEAD</code>) 所以在實作上，如果是提供給前端所使用也無法超出此限制。</p>
+<h3>後端語言支援度</h3>
+<p>以後端語言 <code>PHP</code> 來說，雖然送任何的 <code>Mehotd</code> 它雖然都能接受，但僅有 <code>POST Method</code> 會預設對 <code>Request Body</code> 做處理 (<code>Content-Type</code> 為 <code>application/x-www-form-urlencoded</code> 及 <code>multipart/form-data</code>)，除此之外不管是要用 <code>application/json</code> 或是 <code>application/xml</code>都必須要自行處理，但基本上影響不大。</p>
+<h3>設計與實作複雜度</h3>
+<p>最後以設計與實作面來說，例如 <code>使用者忘記密碼重新設定</code> 的功能如果要設計及實作的話，很可能就會超出了限制範圍，雖然都是對 <code>/user</code> 這個資源操作，但很有可能你所需要的操作不符合 <code>Verb</code> 或是 <code>URI</code>。</p>
+<p>以上，一點點的淺見。</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods</a></li>
+<li><a href="https://en.wikipedia.org/wiki/XMLHttpRequest">https://en.wikipedia.org/wiki/XMLHttpRequest</a></li>
+<li><a href="https://scar.tw/article/2012/08/19/hack-php-to-support-put-fileupload/">https://scar.tw/article/2012/08/19/hack-php-to-support-put-fileupload/</a></li>
+</ul>
+<!--
+在2011 2000論文 弔詭的是實作 Rails 將 REST 發揚光大，但
+拿 rails 的實作你可以參考但不能視為一個標準是不合邏輯的
+除非明訂有標準可循 IEEE RFC WSDL SOAP RPC
+符合設計原則
+設計風格不是標準
+HTTP Status Code 有限 rfc 標準
+瀏覽器支援度
+後端語言支援度
+實作複雜度
+每個人實作都有能會有一些差異 只要符合設計原則都能稱之為
+但事實上不好實作所以大部分一些大廠 API都只會表明說是 RESTful-like
+淺見
+-->]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[用 Redis 簡單粗暴實作 MQ]]></title>
 		<link href="https://scar.tw/article/2019/05/29/using-redis-implement-mq/" />
@@ -242,21 +293,5 @@ http {
 <li>潔癖覺得舒服</li>
 <li>也是重構的其中一環</li>
 </ol>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[曼德拉效應在工程的應用]]></title>
-		<link href="https://scar.tw/article/2019/01/28/mandela-effect-in-engineering/" />
-		<id>urn:uuid:0ac6e3dd-68c3-9f3d-ce69-12234da312fa</id>
-		<updated>2019-01-29T10:41:33+08:00</updated>
-		<summary type="html"><![CDATA[<p>以下故事如有雷同，不是巧合。</p>
-<p>有一天早上公司的人員沖沖得跑來向你回報了一個功能上的錯誤，你看了看發現這個錯誤早在很久以前就被修改掉了。</p>
-<!--more-->
-<p>你試了試自己的測試機以及正式機，發現它真的出問題了。</p>
-<p>然而你在記憶中記得它不應該會這樣，所以你問了你旁邊的 RD 同事確認當初是否有被修復，他也回答了你確實有被修復，但你還是不太放心所以你也問了當初測試過的 QA 同事，他也給予你一個肯定的答案。</p>
-<p>雖然同事們都記得它都是正常的，但現在卻壞了你覺得非常不可思議，所以你想搞清楚程式碼究竟是什麼時後被搞壞的，你接著打開了 Sourcetree 的 Git log 看了看…。</p>
-<p>驚人的事情發生了，發生錯誤的地方修改的時間竟然是兩年前，在你記憶中曾經修改過的解決方式竟然消失了，你納悶究竟在這兩年內功能是怎樣運作的。</p>
-<p>事實上的程式碼跟你和你同事的印象中都不同…，你怎樣也想不通這是怎麼一回事。</p>
-<h2>Reference</h2>
-<p><a href="https://zh.wikipedia.org/zh-tw/%E6%9B%BC%E5%BE%B7%E6%8B%89%E6%95%88%E6%87%89">曼德拉效應 on wiki</a></p>]]></summary>
 	</entry>
 </feed>
