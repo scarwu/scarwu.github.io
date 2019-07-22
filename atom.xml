@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2019-07-19T18:35:22+08:00</updated>
+	<updated>2019-07-22T10:33:43+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,9 +14,9 @@
 		<title type="html"><![CDATA[每個人心中都有一套 RESTful API]]></title>
 		<link href="https://scar.tw/article/2019/07/13/every-one-has-own-restful-api/" />
 		<id>urn:uuid:d5f50dbf-d370-fc00-b1a1-ddd1e18b64ac</id>
-		<updated>2019-07-19T18:35:11+08:00</updated>
-		<summary type="html"><![CDATA[<p>當年還在念碩士的時候，不免俗的看了 Roy Fielding 的 <code>Representational State Transfer Architectural Style</code> 的論文。</p>
-<p>而論文中所提到設計風格，則因為 Rails 所實作的 <code>RESTful API</code> 而發揚光大。</p>
+		<updated>2019-07-22T10:33:35+08:00</updated>
+		<summary type="html"><![CDATA[<p>當年還在念碩士的時候，不免俗的看了 Roy Fielding 所提及 <code>Representational State Transfer Architectural Style</code> 的論文。</p>
+<p>而論文中所提到設計風格，則因為 <code>Rails</code> 而發揚光大。</p>
 <!--more-->
 <h2>學習實作</h2>
 <p>在查了許多關於如何實作的資料之後，發現除了論文中所提的設計風格重點之外，其中最常搭配的就是 <code>Rails</code> 的實作。</p>
@@ -25,21 +25,26 @@
 <h2>標準？原則！</h2>
 <p>但要特別注意的是 <code>REST</code> 從來就不是標準，它也不像 <code>RPC</code> 及 <code>SOAP</code> 等有標準規範可以參考，也不會有任何一個實作是標準。</p>
 <p>它僅是一個設計風格、是一個原則，只要設計出的 API 有達到 <code>REST</code> 其中所提到的約束，就能稱之為 RESTful API。</p>
-<h2>REST-like</h2>
-<p>雖然使用 REST 設計風格來實作 API 現在還是蔚為風潮，但是它並沒有辦法這麼簡單就能實作，大致上的困難點就有以下幾個。</p>
-<p>所以有些大廠提供的 <code>API</code> 都會稱為 <code>REST-like</code>，它像是 <code>REST</code> 但不是 <code>REST</code>。</p>
-<h3>HTTP Method 有限</h3>
-<p>在目前最常用的就屬 <code>GET</code>、<code>POST</code>、<code>PUT</code> 及 <code>DELETE</code> 這四種 <code>Method</code> 最常用。</p>
-<p>還有 <code>OPTIONS</code>、<code>HEAD</code> 及 <code>PATCH</code> 這三種 <code>Method</code> 還算是有用到。</p>
-<p>最後是 <code>CONNECT</code> 及 <code>TRACE</code> 這兩種 <code>Method</code> 通常不會用到。</p>
-<p>以上 9 種 <code>Method</code> 理論上實作不能超出這個限制，不然就會違反 <code>RFC</code> 的標準。</p>
-<h3>前端語言支援度</h3>
-<p>以前端的 JS 所提供的 <code>XMLHttpRequest</code> 來說僅支援六種 <code>Method</code> (<code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code>、<code>OPTIONS</code> 及 <code>HEAD</code>) 所以在實作上，如果是提供給前端所使用也無法超出此限制。</p>
-<h3>後端語言支援度</h3>
-<p>以後端語言 <code>PHP</code> 來說，雖然送任何的 <code>Mehotd</code> 它雖然都能接受，但僅有 <code>POST Method</code> 會預設對 <code>Request Body</code> 做處理 (<code>Content-Type</code> 為 <code>application/x-www-form-urlencoded</code> 及 <code>multipart/form-data</code>)，除此之外不管是要用 <code>application/json</code> 或是 <code>application/xml</code>都必須要自行處理，但基本上影響不大。</p>
-<h3>設計與實作複雜度</h3>
-<p>最後以設計與實作面來說，例如 <code>使用者忘記密碼重新設定</code> 的功能如果要設計及實作的話，很可能就會超出了限制範圍，雖然都是對 <code>/user</code> 這個資源操作，但很有可能你所需要的操作不符合 <code>Verb</code> 或是 <code>URI</code>。</p>
-<p>以上，一點點的淺見。</p>
+<h2>難易度</h2>
+<p>雖然使用 REST 設計風格來實作 API 現在還是蔚為風潮，但是它並沒有辦法這麼容易實作，在有些應用上會有些設計的難處，所以有些大廠提供的 <code>API</code> 都會稱為 <code>REST-like</code>，它像是 <code>REST</code> 但不是 <code>REST</code>。</p>
+<p>關於 <code>Verbs</code> 大致上會有，<code>HTTP Method</code> 數量有限不好隨易擴充，因為會違反 <code>RFC</code> 的標準，另外還有實作語言支援度的問題。而 <code>URI</code> 的來說，通常一組 <code>URI</code> 都視為一組資源的操作，有可能在一寫複雜的需求中會不好設計。</p>
+<p>例如 <code>使用者忘記密碼重新設定</code> 的功能如果要設計及實作的話，很可能就會超出了限制範圍，雖然都是對 <code>/user</code> 這個資源操作，但很有可能你所需要的操作不符合 <code>Verb</code> 或是 <code>URI</code>。</p>
+<p>最後 <code>Hypermedia</code> 是表明敘述資源本身，以及如何前往其他相關的資源，等等操作方法。</p>
+<p>以上。</p>
+<!--
+### HTTP Method 有限
+在目前最常用的就屬 `GET`、`POST`、`PUT` 及 `DELETE` 這四種 `Method` 最常用。
+還有 `OPTIONS`、`HEAD` 及 `PATCH` 這三種 `Method` 還算是有用到。
+最後是 `CONNECT` 及 `TRACE` 這兩種 `Method` 通常不會用到。
+以上 9 種 `Method` 理論上實作不能超出這個限制，不然就會違反 `RFC` 的標準。
+### 前端語言支援度
+以前端的 JS 所提供的 `XMLHttpRequest` 來說僅支援六種 `Method` (`GET`、`POST`、`PUT`、`DELETE`、`OPTIONS` 及 `HEAD`) 所以在實作上，如果是提供給前端所使用也無法超出此限制。
+### 後端語言支援度
+以後端語言 `PHP` 來說，雖然送任何的 `Mehotd` 它雖然都能接受，但僅有 `POST Method` 會預設對 `Request Body` 做處理 (`Content-Type` 為 `application/x-www-form-urlencoded` 及 `multipart/form-data`)，除此之外不管是要用 `application/json` 或是 `application/xml`都必須要自行處理，但基本上影響不大。
+### 設計與實作複雜度
+最後以設計與實作面來說，例如 `使用者忘記密碼重新設定` 的功能如果要設計及實作的話，很可能就會超出了限制範圍，雖然都是對 `/user` 這個資源操作，但很有可能你所需要的操作不符合 `Verb` 或是 `URI`。
+以上，一點點的淺見。
+-->
 <h2>References</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods</a></li>
