@@ -44,6 +44,38 @@
     <div class="nx-limiter">
                 <article class="nx-block">
             <div class="nx-title">
+                <h1><a href="/article/2013/04/29/node-js-dgram-error-with-EBADF/">NodeJS - dgram error with EBADF</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2013/">2013-04-29</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/JavaScript/">JavaScript</a> <a href="/tag/NodeJS/">NodeJS</a> <a href="/tag/Note/">Note</a>                    </span>
+                                    </div>
+            </div>
+            <div class="nx-content"><p>最近把NodeJS從原本的<code>v0.8.x</code>更新到最新的<code>v0.10.x</code>，結果程式就炸了！程式就給我吐出<code>Error: setBroadcast EBADF</code>，結果是<code>dgram</code>炸了，不管是<code>setBroadcast</code>或者是<code>setTTL</code>都一樣會炸掉，問Google大神也問不出答案。</p>
+<p>然後我就查了一下<code>EBADF</code>到底是什麼意思，它是一個socket的錯誤碼，原文是<code>The socket argument is not a valid file descriptor.</code>，意思是非法的socket代號，我們來看原本炸掉的程式碼。</p>
+<pre><code class="language-javascript">#!/usr/bin/env node
+
+'use strict';
+
+var dgram = require('dgram'),
+    ip = '127.0.0.1',
+    port = 9000;
+
+client.bind(port);
+client.setBroadcast(true);
+client.send(message, 0, message.length, port, ip, callback);</code></pre>
+</div>
+            <div class="nx-more">
+                <a class="fa fa-angle-down" href="/article/2013/04/29/node-js-dgram-error-with-EBADF/"></a>
+            </div>
+        </article>
+                <article class="nx-block">
+            <div class="nx-title">
                 <h1><a href="/article/2013/04/28/apache-vhost-and-userdir-config/">Apache - mod_vhost_alias 與 mod_userdir 設定</a></h1>
                 <div class="nx-info">
                     <span class="nx-archive">
@@ -153,44 +185,6 @@ echo 'Hi $name';    // Hi $name</code></pre>
 </div>
             <div class="nx-more">
                 <a class="fa fa-angle-down" href="/article/2013/04/02/php-concatenate-string/"></a>
-            </div>
-        </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">NanoCLI - PHP CLI 開發工具 (2)</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2013/">2013-03-16</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/Works/">Works</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/NanoCLI/">NanoCLI</a> <a href="/tag/PHP/">PHP</a>                    </span>
-                                    </div>
-            </div>
-            <div class="nx-content"><p>上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。</p>
-<h2>使用</h2>
-<h3>實作指令 Help.php</h3>
-<p>接下來要實作上次提到的help指令，這邊要注意的是除了一開始的指令只要是以參數方式呼叫的指令都要加上Namespace這樣是要配合autoload的使用，記得help.php要放對資料夾位置。</p>
-<pre><code class="language-php">&lt;?php
-// 設定namespace
-namespace Test;
-
-use NanoCLI\IO;
-
-class Help extends NanoCLI\Command {
-    public function __construct() {
-        parent::__construct();
-    }
-
-    public function run() {
-        IO::writeln("This is Command: help\n");
-    }
-}</code></pre>
-</div>
-            <div class="nx-more">
-                <a class="fa fa-angle-down" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/"></a>
             </div>
         </article>
             </div>
@@ -327,6 +321,8 @@ class Help extends NanoCLI\Command {
                 <span class="nx-item">
                         <a href="/tag/Keyboard/">Keyboard</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/Lens/">Lens</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/Linux/">Linux</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Lua/">Lua</a>        </span>
@@ -404,6 +400,8 @@ class Help extends NanoCLI\Command {
                         <a href="/tag/Ubuntu/">Ubuntu</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Virus/">Virus</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/Voigtlander/">Voigtlander</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/WebGL/">WebGL</a>        </span>
                 <span class="nx-item">
