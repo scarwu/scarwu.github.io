@@ -44,38 +44,6 @@
     <div class="nx-limiter">
                 <article class="nx-block">
             <div class="nx-title">
-                <h1><a href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/">NanoCLI - PHP CLI 開發工具 (1)</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2013/">2013-03-16</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/Side%20Project/">Side Project</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/NanoCLI/">NanoCLI</a> <a href="/tag/PHP/">PHP</a> <a href="/tag/Works/">Works</a>                    </span>
-                                    </div>
-            </div>
-                        <div class="nx-content"><p>關於NanoCLI這個工具原本想都沒有想過要去製作它，它是伴隨著Pointless一起誕生出來的，除了NanoCLI之外還有一個CSS Compressor這個小工具但這邊先不說。</p>
-<p>約一年前，那時候為了想要讓Pointless看起來像是使用內建指令那樣去操作，所以就另外製作了NanoCLI讓Pointless能順利實作各種CLI的指令，到現在NanoCLI只有少少的3個檔案而且總程式不超過250行，使用上也很簡單。</p>
-<h2>系統要求</h2>
-<p>PHP 5.3+</p>
-<h2>功能</h2>
-<ul>
-<li>指令呼叫 (ex. <code>$ ./cli.php command</code>)</li>
-<li>指令選項 (ex. <code>$ ./cli.php command -v -al</code>)</li>
-<li>指令配置 (ex. <code>$ ./cli.php command --prefix=/usr/local/bin</code>)</li>
-<li>文字色彩</li>
-<li>文字界面讀寫</li>
-<li>Namespace 以及 Autoload</li>
-</ul>
-</div>
-            <div class="nx-more">
-                <a class="fas fa-chevron-down" href="/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-1/"></a>
-            </div>
-        </article>
-                <article class="nx-block">
-            <div class="nx-title">
                 <h1><a href="/article/2013/01/09/php-phar-create-and-use/">Phar 建立與使用</a></h1>
                 <div class="nx-info">
                     <span class="nx-archive">
@@ -166,6 +134,28 @@ main() {
                 <a class="fas fa-chevron-down" href="/article/2012/09/20/extend-sqlite-to-support-regexp/"></a>
             </div>
         </article>
+                <article class="nx-block">
+            <div class="nx-title">
+                <h1><a href="/article/2012/09/12/sqlite3-multi-thread-in-python/">SQLite3 Multi-Thread in Python</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2012/">2012-09-12</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/Note/">Note</a> <a href="/tag/Python/">Python</a> <a href="/tag/SQLite/">SQLite</a>                    </span>
+                                    </div>
+            </div>
+                        <div class="nx-content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)，但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
+<h3>Error Code</h3>
+<pre><code class="language-bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx</code></pre>
+</div>
+            <div class="nx-more">
+                <a class="fas fa-chevron-down" href="/article/2012/09/12/sqlite3-multi-thread-in-python/"></a>
+            </div>
+        </article>
             </div>
 
     <div class="nx-limiter">
@@ -206,8 +196,6 @@ main() {
         <h2><a href="/archive/">Archive</a></h2>
     </div>
     <div class="nx-content">
-                <span class="nx-item">
-                        <a href="/archive/2022/">2022</a>        </span>
                 <span class="nx-item">
                         <a href="/archive/2021/">2021</a>        </span>
                 <span class="nx-item">
@@ -297,8 +285,6 @@ main() {
                         <a href="/tag/Facebook/">Facebook</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Feeling/">Feeling</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/GH60/">GH60</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Ganss/">Ganss</a>        </span>
                 <span class="nx-item">
