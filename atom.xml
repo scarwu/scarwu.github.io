@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-01-29T14:16:26+08:00</updated>
+	<updated>2022-01-29T14:24:40+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,14 +14,14 @@
 		<title type="html"><![CDATA[GH60 按鍵失效檢查與維修]]></title>
 		<link href="https://scar.tw/article/2022/01/24/gh60-keypress-not-working-repair/" />
 		<id>urn:uuid:3f653627-89d6-612e-e079-d94dc696a2e5</id>
-		<updated>2022-01-29T14:15:35+08:00</updated>
+		<updated>2022-01-29T14:24:12+08:00</updated>
 		<summary type="html"><![CDATA[<p>這篇打得有點晚了，起因是前陣子在 WFH 的時候，使用了幾年的 GH60 最左邊那一排除了 Esc 之外其他的 Caps Lock, Shift 跟 Ctrl 都沒有反應。</p>
 <!--more-->
 <h2>檢查</h2>
 <p>原本以為是韌體問題，但重刷之後還是沒有起色，之好進行硬體上的查修。</p>
 <p><img src="/images/gh60-keypress-not-working-repair/000.jpg" alt="" /></p>
 <p>只好拿出三用電表，用最基本的方式好好檢查一下每個按鍵之間的電壓植有沒有問題，在一般鍵盤的電路設計上都是由垂直與水平的走做，使用 XY 座標的方式定位出每個觸發的按鍵。</p>
-<p>所以懷疑是左邊那一列的垂直方向的電路有問題，在量取其他正常按鍵的觸發電壓為大約為 2.7V 後，開始量取出問題按鍵的觸發電壓，大約是在 0.7V 左右明顯觸發的電壓沒有到門檻值。</p>
+<p>所以懷疑是左邊那一列的垂直方向的電路有問題，在量取其他正常按鍵的觸發電壓為大約為 2.5V 後，開始量取出問題按鍵的觸發電壓，大約是在 0.8V 左右明顯觸發的電壓沒有到門檻值。</p>
 <p>在這個狀態下，懷疑可能有兩個原因一個可能是二極體，另一個則是 PCB 的電路有問題了，在重複檢查確認了問題為後者。</p>
 <p><img src="/images/gh60-keypress-not-working-repair/001.jpg" alt="" /></p>
 <h2>維修</h2>
