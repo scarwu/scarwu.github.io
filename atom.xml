@@ -5,11 +5,35 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-01-28T18:07:16+08:00</updated>
+	<updated>2022-01-29T14:16:26+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[GH60 按鍵失效檢查與維修]]></title>
+		<link href="https://scar.tw/article/2022/01/24/gh60-keypress-not-working-repair/" />
+		<id>urn:uuid:3f653627-89d6-612e-e079-d94dc696a2e5</id>
+		<updated>2022-01-29T14:15:35+08:00</updated>
+		<summary type="html"><![CDATA[<p>這篇打得有點晚了，起因是前陣子在 WFH 的時候，使用了幾年的 GH60 最左邊那一排除了 Esc 之外其他的 Caps Lock, Shift 跟 Ctrl 都沒有反應。</p>
+<!--more-->
+<h2>檢查</h2>
+<p>原本以為是韌體問題，但重刷之後還是沒有起色，之好進行硬體上的查修。</p>
+<p><img src="/images/gh60-keypress-not-working-repair/000.jpg" alt="" /></p>
+<p>只好拿出三用電表，用最基本的方式好好檢查一下每個按鍵之間的電壓植有沒有問題，在一般鍵盤的電路設計上都是由垂直與水平的走做，使用 XY 座標的方式定位出每個觸發的按鍵。</p>
+<p>所以懷疑是左邊那一列的垂直方向的電路有問題，在量取其他正常按鍵的觸發電壓為大約為 2.7V 後，開始量取出問題按鍵的觸發電壓，大約是在 0.7V 左右明顯觸發的電壓沒有到門檻值。</p>
+<p>在這個狀態下，懷疑可能有兩個原因一個可能是二極體，另一個則是 PCB 的電路有問題了，在重複檢查確認了問題為後者。</p>
+<p><img src="/images/gh60-keypress-not-working-repair/001.jpg" alt="" /></p>
+<h2>維修</h2>
+<p>好險只是單純電路出問題，只要使用飛線就能簡單修復了，省去了去找二極體料的問題。</p>
+<p>所以我拿出了適合的電線，另外還要避開底座結構剪成了適合的長度，基本上把 PCB 的漆刮開並確實焊接上電線，但我這邊是直接焊接在二極體上比較方便，再使用三用電表檢查電壓都正常後，就完成修復了。</p>
+<p><img src="/images/gh60-keypress-not-working-repair/002.jpg" alt="" /></p>
+<p><img src="/images/gh60-keypress-not-working-repair/003.jpg" alt="" /></p>
+<h2>可能成因</h2>
+<p>想來想去可能是在長年累月的使用下電路被震斷了，因為在電路行經的路徑上有底座的支撐點壓在有問題的電路上，就這樣簡單的成因。</p>
+<p>我另外去找了網路上是否有人也遇到了相同的問題，也有人說可能是電路設計的瑕疵所造成。</p>
+<p>但至少能後維修，讓我省去充新組鍵盤的費用，說實在在鍵盤壞掉的當下我已經開始在找新鍵盤的零件了。</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[天工 LM-EA7 維修]]></title>
 		<link href="https://scar.tw/article/2021/03/15/techart-lm-ea7-repair/" />
@@ -171,93 +195,5 @@
 <li><a href="https://www.flickr.com/photos/scarwu/albums/72157663021744648">Flickr</a></li>
 <li><a href="https://www.instagram.com/scarwu/">Instagram</a></li>
 </ul>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[XPG Summoner 開箱]]></title>
-		<link href="https://scar.tw/article/2020/02/03/xpg-summoner-unboxing/" />
-		<id>urn:uuid:3ed28b19-0fba-aabc-4300-8d669284961e</id>
-		<updated>2021-03-15T00:52:59+08:00</updated>
-		<summary type="html"><![CDATA[<p>沒錯今年第一篇就是開箱文，這就要說到去年參加 2019 鍵盤趴的時候<a href="/article/2018/12/16/ganss-gm-108d-unboxing/">又抽到鍵盤</a>了，所以該寫的文還是要寫一下。</p>
-<p>相較於去年的文書鍵盤，今年抽到的是把電競鍵盤，但有趣的是去年的是紅軸今年是青軸，如果軸能夠互換那就完美。</p>
-<p>但還是要說一下我已經習慣了 HHKB 的配置了，所以已經很少在使用一般配置的鍵盤，現在比較吸引我的應該會是分離式的人體工學鍵盤。</p>
-<!--more-->
-<h2>外盒</h2>
-<p>今天的主角是 XPG Summoner，而 XPG 這個品牌是 ADATA 威剛的高效能品牌。</p>
-<p>先來看看外盒，用紅黑色作為主視覺很符合電競的主軸，基本上算是很大一盒。</p>
-<p>外盒直接就說明了這是一支使用 RGB 的 Cherry 軸鍵盤，並且擁有手拖以及有多媒體控制、一個外接 Port 還有替換用的鍵帽。</p>
-<p><img src="/images/xpg-summoner-unboxing/000.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/001.jpg" alt="" /></p>
-<p>雖然外盒上寫的是銀軸實際上這把是使用青軸，應該是在鍵盤趴展示的時候有裝錯，不過不要緊。</p>
-<p><img src="/images/xpg-summoner-unboxing/002.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/003.jpg" alt="" /></p>
-<h2>內部包裝</h2>
-<p>打開外合印了大大的 <code>Game to the Xtreme</code> 表明這是支針對電競發揮至極限的鍵盤。</p>
-<p><img src="/images/xpg-summoner-unboxing/004.jpg" alt="" /></p>
-<p>內部放了說明文件、一包真空包裝的鍵帽以及拔鍵器。</p>
-<p><img src="/images/xpg-summoner-unboxing/010.jpg" alt="" /></p>
-<p>拿出鍵盤主體，它兩側是使用泡綿固定而背面則是放置手托。</p>
-<p><img src="/images/xpg-summoner-unboxing/011.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/012.jpg" alt="" /></p>
-<p>以下是鍵帽、拔鍵器及說明書的內容物，隨附的鍵帽是使用紅色透明二色成型的形式，LED 的背光可直接透過。</p>
-<p><img src="/images/xpg-summoner-unboxing/013.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/014.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/015.jpg" alt="" /></p>
-<h2>手托</h2>
-<p>手托是使用塑料的材質，內部的填充物為海綿而外層則是合成皮，這個在使用一陣子後可能會有龜裂的問題。</p>
-<p>中間則是一個大大的 XPG 的 Logo，而手托跟鍵盤本身的連結是使用磁吸式的方式固定。</p>
-<p><img src="/images/xpg-summoner-unboxing/020.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/021.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/022.jpg" alt="" /></p>
-<h2>鍵盤正面</h2>
-<p>鍵盤的主體是使用無上蓋的設計，所以可以直接看到部分的軸體，而背版則是接使用整塊的金屬製成。</p>
-<p><img src="/images/xpg-summoner-unboxing/023.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/024.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/025.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/026.jpg" alt="" /></p>
-<h2>鍵盤背面</h2>
-<p>背面則是簡潔俐落，只有腳墊以及產品資訊。</p>
-<p><img src="/images/xpg-summoner-unboxing/030.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/031.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/032.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/033.jpg" alt="" /></p>
-<p>而增高腳墊只有一段，下面則是增高的幅度。</p>
-<p><img src="/images/xpg-summoner-unboxing/034.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/035.jpg" alt="" /></p>
-<h2>周邊介面</h2>
-<p>USB 是使用編織線材，非常粗壯且與主體是一體式的無法單獨更換線材，而在與主機連接的部分一個是鍵盤的訊號、另一個則是鍵盤上 HUB 的訊號線。</p>
-<p>現在比較少將訊號線分多個，如果能將兩條線整合為一條，在空間的利用上會有更好的表現。</p>
-<p><img src="/images/xpg-summoner-unboxing/040.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/041.jpg" alt="" /></p>
-<p>鍵盤的 USB HUB Port 僅為一個，算是不太夠用，如果能增為兩個以上或者是 3.5mm 的音源孔也許會更好。</p>
-<p><img src="/images/xpg-summoner-unboxing/042.jpg" alt="" /></p>
-<p>鍵盤右上角為多媒體控制的區域以及燈號顯示，分別是靜音按鈕、音量旋鈕以及燈號顯示（依序是電競模式、NUMBER LOCK、CAPS LOCK）。</p>
-<p><img src="/images/xpg-summoner-unboxing/043.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/044.jpg" alt="" /></p>
-<h2>軸與鍵帽</h2>
-<p>如同前面所說到的，雖然外盒是寫銀軸但實際上是青軸，且為 RGB 透明軸體式樣。</p>
-<p><img src="/images/xpg-summoner-unboxing/050.jpg" alt="" /></p>
-<p>鍵帽本身為黑色透明二色成型，透明的部分可以透出 LED 的光源。</p>
-<p><img src="/images/xpg-summoner-unboxing/051.jpg" alt="" /></p>
-<h2>燈光控制</h2>
-<h3>各級亮度</h3>
-<p>可透過 FN + UP/DOWM 組合鍵修改 LED 燈光的亮度，亮度分為四級。</p>
-<p><img src="/images/xpg-summoner-unboxing/060.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/061.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/062.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/063.jpg" alt="" /></p>
-<h3>各色顯示</h3>
-<p>可透過 FN + F1~F6 組合鍵修改整體鍵盤的顏色，不過這個顏色不是隨意修改的不同的顏色代表不同模式，除了紅色為一般模式外其餘的五種顏色分別為不同的電競模式。</p>
-<p><img src="/images/xpg-summoner-unboxing/070.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/071.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/072.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/073.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/074.jpg" alt="" /></p>
-<p><img src="/images/xpg-summoner-unboxing/075.jpg" alt="" /></p>
-<h3>燈色呈現</h3>
-<p>可透過 FN + LEFT/RIGHT 組合鍵切換鍵盤顏色顯示的模式，模式分為一般的全亮、呼吸燈、互動式燈光或是 RGB 彩虹顯示，以及特殊的 FPS 模式僅顯示重要的按鍵（如下圖）。</p>
-<p><img src="/images/xpg-summoner-unboxing/080.jpg" alt="" /></p>
-<h2>總結</h2>
-<p>在鍵盤的配置以及功能上，算是滿樸實的一把，如果能夠加強周邊連結的部分（例如提供而外的快捷鍵或是更多的插孔）應該會再加分的。</p>
-<p>但除說得以外，鍵盤本身的質感跟做工算是不錯的了。</p>]]></summary>
 	</entry>
 </feed>
