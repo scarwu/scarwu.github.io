@@ -15,9 +15,9 @@
     <link rel="author" href="https://plus.google.com/+ScarWu">
     <link rel="image_src" href="https://scar.tw/images/icon.jpg">
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-    <link rel="stylesheet" href="/assets/styles/theme.min.css?1636461477330">
+    <link rel="stylesheet" href="/assets/styles/theme.min.css?1644748203813">
 
-    <script src="/assets/scripts/theme.min.js?1636461477330" async></script>
+    <script src="/assets/scripts/theme.min.js?1644748203813" async></script>
     <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -102,6 +102,27 @@ HTTP Status Code 有限 rfc 標準
         </article>
                 <article class="nx-block">
             <div class="nx-title">
+                <h1><a href="/article/2019/05/28/nginx-lua-with-alpine-linux/">Nginx + Lua with Alpine Linux</a></h1>
+                <div class="nx-info">
+                    <span class="nx-archive">
+                        <a href="/archive/2019/">2019-05-28</a>                    </span>
+                    &nbsp;/&nbsp;
+                    <span class="nx-category">
+                        <a href="/category/IT/">IT</a>                    </span>
+                                        &nbsp;/&nbsp;
+                    <span class="nx-tag">
+                        <a href="/tag/Alpine%20Linux/">Alpine Linux</a> <a href="/tag/Docker/">Docker</a> <a href="/tag/Lua/">Lua</a> <a href="/tag/Nginx/">Nginx</a>                    </span>
+                                    </div>
+            </div>
+                        <div class="nx-content"><p>最近在升級公司服務，在原有的環境是使用 <code>Ubuntu</code> + <code>Nginx Extras</code>，但為了最小化容器尺寸所以使用了 <code>Alpine Linux</code>，原本想說能順利轉換，但事情絕對不會是憨人想得這麼簡單。</p>
+<p>雖然 <code>Alpine</code> 的 <code>Nginx</code> 有把 <code>Lua Module</code> 編進去，但是 <code>Nginx</code> 在運行時會缺少新版的 <code>Openresty LuaJIT</code> 核心導致無法運行，且在套件庫中的 <code>LuaJIT</code> 只有舊版，原本嘗試自行編譯但遇到了一些問題繞了些路，最終解決方法卻異常簡單。</p>
+</div>
+            <div class="nx-more">
+                <a class="fas fa-chevron-down" href="/article/2019/05/28/nginx-lua-with-alpine-linux/"></a>
+            </div>
+        </article>
+                <article class="nx-block">
+            <div class="nx-title">
                 <h1><a href="/article/2019/05/29/using-redis-implement-mq/">用 Redis 簡單粗暴實作 MQ</a></h1>
                 <div class="nx-info">
                     <span class="nx-archive">
@@ -140,27 +161,6 @@ HTTP Status Code 有限 rfc 標準
 </div>
             <div class="nx-more">
                 <a class="fas fa-chevron-down" href="/article/2019/05/29/php-opcache-tuning/"></a>
-            </div>
-        </article>
-                <article class="nx-block">
-            <div class="nx-title">
-                <h1><a href="/article/2019/05/28/nginx-lua-with-alpine-linux/">Nginx + Lua with Alpine Linux</a></h1>
-                <div class="nx-info">
-                    <span class="nx-archive">
-                        <a href="/archive/2019/">2019-05-28</a>                    </span>
-                    &nbsp;/&nbsp;
-                    <span class="nx-category">
-                        <a href="/category/IT/">IT</a>                    </span>
-                                        &nbsp;/&nbsp;
-                    <span class="nx-tag">
-                        <a href="/tag/Alpine%20Linux/">Alpine Linux</a> <a href="/tag/Docker/">Docker</a> <a href="/tag/Lua/">Lua</a> <a href="/tag/Nginx/">Nginx</a>                    </span>
-                                    </div>
-            </div>
-                        <div class="nx-content"><p>最近在升級公司服務，在原有的環境是使用 <code>Ubuntu</code> + <code>Nginx Extras</code>，但為了最小化容器尺寸所以使用了 <code>Alpine Linux</code>，原本想說能順利轉換，但事情絕對不會是憨人想得這麼簡單。</p>
-<p>雖然 <code>Alpine</code> 的 <code>Nginx</code> 有把 <code>Lua Module</code> 編進去，但是 <code>Nginx</code> 在運行時會缺少新版的 <code>Openresty LuaJIT</code> 核心導致無法運行，且在套件庫中的 <code>LuaJIT</code> 只有舊版，原本嘗試自行編譯但遇到了一些問題繞了些路，最終解決方法卻異常簡單。</p>
-</div>
-            <div class="nx-more">
-                <a class="fas fa-chevron-down" href="/article/2019/05/28/nginx-lua-with-alpine-linux/"></a>
             </div>
         </article>
             </div>
