@@ -1,24 +1,23 @@
 <!doctype html>
 <html lang="zh-TW">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:description" name="description" content="上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。">
-    <meta property="og:title" content="NanoCLI - PHP CLI 開發工具 (2) | ScarShow | 刀疤說">
-    <meta property="og:url" content="https://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">
-    <meta property="og:image" content="https://scar.tw/images/icon.jpg">
-    <meta property="og:type" content="website">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="author" content="ScarWu" />
+    <meta property="og:description" name="description" content="上次提到了NanoCLI的基本介紹，這邊延續上次的help指令實作以及標準輸入輸出的說明。" />
+    <meta property="og:title" content="NanoCLI - PHP CLI 開發工具 (2) | ScarShow | 刀疤說" />
+    <meta property="og:url" content="https://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/" />
+    <meta property="og:image" content="https://scar.tw/images/icon.jpg" />
+    <meta property="og:type" content="website" />
 
     <title>NanoCLI - PHP CLI 開發工具 (2) | ScarShow | 刀疤說</title>
 
-    <link rel="canonical" href="https://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/">
-    <link rel="author" href="https://plus.google.com/+ScarWu">
-    <link rel="image_src" href="https://scar.tw/images/icon.jpg">
-    <link rel="shortcut icon" href="https://scar.tw/favicon.ico">
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1654427857082">
-
-        <script src="/assets/scripts/theme.min.js?1654427857082" async></script>
-    <script>
+    <link rel="canonical" href="https://scar.tw/article/2013/03/16/nanocli-a-simply-php-cli-development-tools-2/" />
+    <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
+    <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1657632347" />
+            <script src="/assets/scripts/theme.min.js?1657632347" async></script>
+        <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
             disqusShortname: 'scarshow'        };
@@ -26,21 +25,21 @@
 </head>
 <body>
     <header id="nx-header">
-        <div class="nx-limiter">
-            <h1 class="nx-title"><a href="/">ScarShow</a></h1>
-            <h2 class="nx-slogan">&lt; IS &gt;</h2>
+    <div class="nx-limiter">
+        <h1 class="nx-title"><a href="/">ScarShow</a></h1>
+        <h2 class="nx-slogan">&lt; IS &gt;</h2>
 
-            <form class="nx-search" action="https://www.google.com/search?q=as" target="_blank" method="get">
-                <input type="hidden" name="q" value="site:scar.tw" />
-                <input type="text" name="q" placeholder="Search" />
-                <input type="submit" />
-            </form>
-        </div>
-    </header>
+        <form class="nx-search" action="https://www.google.com/search?q=as" target="_blank" method="get">
+            <input type="hidden" name="q" value="site:scar.tw" />
+            <input type="text" name="q" placeholder="Search" />
+            <input type="submit" />
+        </form>
+    </div>
+</header>
 
-    <div id="nx-body">
-        <div class="nx-container">
-            <div class="nx-article">
+<div id="nx-body">
+    <div class="nx-container">
+        <div class="nx-article">
     <div class="nx-limiter">
         <article class="nx-block">
             <div class="nx-title">
@@ -147,11 +146,11 @@ IO::writeln($size); // 80 x 24</code></pre>
             <span class="nx-count col-12">50 / 68</span>
         </div>
     </div>
-</div>        </div>
+</div>    </div>
 
-        <div class="nx-limiter">
-            <div class="nx-side row">
-                                <div class="nx-about col-12">
+    <div class="nx-limiter">
+        <div class="nx-side row">
+                        <div class="nx-about col-12">
     <div class="nx-content">
         <div class="nx-block">
             <div class="nx-avatar">
@@ -172,7 +171,7 @@ IO::writeln($size); // 80 x 24</code></pre>
             </div>
         </div>
     </div>
-</div>                                <div class="nx-archive col-xl-6 col-lg-6 col-md-6 col-12">
+</div>                        <div class="nx-archive col-xl-6 col-lg-6 col-md-6 col-12">
     <div class="nx-title">
         <h2><a href="/archive/">Archive</a></h2>
     </div>
@@ -202,7 +201,7 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/archive/2011/">2011</a>        </span>
             </div>
-</div>                                <div class="nx-category col-xl-6 col-lg-6 col-md-6 col-12">
+</div>                        <div class="nx-category col-xl-6 col-lg-6 col-md-6 col-12">
     <div class="nx-title">
         <h2><a href="/category/">Category</a></h2>
     </div>
@@ -217,17 +216,13 @@ IO::writeln($size); // 80 x 24</code></pre>
                         <a href="/category/Side%20Project/">Side Project</a>        </span>
             </div>
 </div>
-                                <div class="nx-tag col-12">
+                        <div class="nx-tag col-12">
     <div class="nx-title">
         <h2><a href="/tag/">Tag</a></h2>
     </div>
     <div class="nx-content">
                 <span class="nx-item">
                         <a href="/tag/3C/">3C</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/AS200V/">AS200V</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/AT9902/">AT9902</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Adapter/">Adapter</a>        </span>
                 <span class="nx-item">
@@ -243,9 +238,11 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Arch%20Linux/">Arch Linux</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/C/C%2B%2B/">C/C++</a>        </span>
+                        <a href="/tag/AS200V/">AS200V</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/CORS/">CORS</a>        </span>
+                        <a href="/tag/AT9902/">AT9902</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/C/C%2B%2B/">C/C++</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Chrome/">Chrome</a>        </span>
                 <span class="nx-item">
@@ -253,11 +250,13 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Cookie/">Cookie</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/DIY/">DIY</a>        </span>
+                        <a href="/tag/CORS/">CORS</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Debian/">Debian</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Diablo%20III/">Diablo III</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/DIY/">DIY</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Docker/">Docker</a>        </span>
                 <span class="nx-item">
@@ -269,15 +268,17 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Feeling/">Feeling</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/Ganss/">Ganss</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/GH60/">GH60</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/Ganss/">Ganss</a>        </span>
+                        <a href="/tag/Hadoop/">Hadoop</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/HHKB/">HHKB</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/HTML5/">HTML5</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/Hadoop/">Hadoop</a>        </span>
+                        <a href="/tag/iOS/">iOS</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/JavaScript/">JavaScript</a>        </span>
                 <span class="nx-item">
@@ -285,17 +286,15 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Keyboard/">Keyboard</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/LM-EA7/">LM-EA7</a>        </span>
-                <span class="nx-item">
                         <a href="/tag/Lens/">Lens</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Linux/">Linux</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/LM-EA7/">LM-EA7</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/Lomogon/">Lomogon</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Lua/">Lua</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/MQ/">MQ</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/MacBook/">MacBook</a>        </span>
                 <span class="nx-item">
@@ -313,13 +312,13 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Motocycle/">Motocycle</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/MQ/">MQ</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/MySQL/">MySQL</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/NFS/">NFS</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/NPM/">NPM</a>        </span>
-                <span class="nx-item">
                         <a href="/tag/NanoCLI/">NanoCLI</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/NFS/">NFS</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Nginx/">Nginx</a>        </span>
                 <span class="nx-item">
@@ -327,13 +326,11 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Note/">Note</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/OPCache/">OPCache</a>        </span>
+                        <a href="/tag/NPM/">NPM</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Oni/">Oni</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/PHP/">PHP</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/PHPBrew/">PHPBrew</a>        </span>
+                        <a href="/tag/OPCache/">OPCache</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Pentax/">Pentax</a>        </span>
                 <span class="nx-item">
@@ -341,13 +338,15 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/Photography/">Photography</a>        </span>
                 <span class="nx-item">
+                        <a href="/tag/PHP/">PHP</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/PHPBrew/">PHPBrew</a>        </span>
+                <span class="nx-item">
                         <a href="/tag/Pointless/">Pointless</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Polaroid%20Cube/">Polaroid Cube</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Python/">Python</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/RESTful/">RESTful</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Raspberry%20Pi/">Raspberry Pi</a>        </span>
                 <span class="nx-item">
@@ -357,9 +356,11 @@ IO::writeln($size); // 80 x 24</code></pre>
                 <span class="nx-item">
                         <a href="/tag/RequireJS/">RequireJS</a>        </span>
                 <span class="nx-item">
-                        <a href="/tag/SQLite/">SQLite</a>        </span>
+                        <a href="/tag/RESTful/">RESTful</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/SemVer/">SemVer</a>        </span>
+                <span class="nx-item">
+                        <a href="/tag/SQLite/">SQLite</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/Sublime/">Sublime</a>        </span>
                 <span class="nx-item">
@@ -386,19 +387,16 @@ IO::writeln($size); // 80 x 24</code></pre>
                         <a href="/tag/XPG/">XPG</a>        </span>
                 <span class="nx-item">
                         <a href="/tag/ZSH/">ZSH</a>        </span>
-                <span class="nx-item">
-                        <a href="/tag/iOS/">iOS</a>        </span>
             </div>
 </div>
-                            </div>
-        </div>
+                    </div>
     </div>
+</div>
 
-    <footer id="nx-footer">
-        <p class="nx-text">Copyright &copy; Scar Wu</p>
-        <a class="nx-powered" href="https://github.com/scarwu/Pointless" target="_blank">
-            <span>Powered by Pointless</span>
-        </a>
-    </footer>
-</body>
+<footer id="nx-footer">
+    <p class="nx-text">Copyright &copy; Scar Wu</p>
+    <a class="nx-powered" href="https://github.com/scarwu/Pointless" target="_blank">
+        <span>Powered by Pointless</span>
+    </a>
+</footer></body>
 </html>
