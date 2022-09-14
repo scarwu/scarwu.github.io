@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2022/09/14/manage-info-of-manual-lenses-by-exiftool/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663174419" />
-            <script src="/assets/scripts/theme.min.js?1663174419" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663177191" />
+            <script src="/assets/scripts/theme.min.js?1663177191" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -285,26 +285,24 @@ case "${1}" in
         exit 1
 esac
 
-if [ "" != "${2}" ]
-then
-    export CURRENT_PATH="${2}"
+if [ "" != "${2}" ]; then
+    export TARGET_PATH="${2}"
 else
-    export CURRENT_PATH=`pwd`
+    export TARGET_PATH=`pwd`
 fi
 
-if [ ! -d "$CURRENT_PATH" ]
-then
+if [ ! -d "$TARGET_PATH" ]; then
     echo "Path is't folder or not exists"
 
     exit 1
 fi
 
-echo "Current Path: ${CURRENT_PATH}"
+echo "Target Path: ${TARGET_PATH}"
 echo "Lens Name: ${LENS_NAME}"
 echo "Focal Length: ${FOCAL_LENGTH}"
 echo "Aperture Value: ${APERTURE_VALUE}"
 
-echo -e "\nIs info currently? [Y/n] \c"
+echo -e "\nIs above information correct? [Y/n] \c"
 
 read ANWSER
 
@@ -313,13 +311,15 @@ then
     exit 1
 fi
 
-export FILELIST=`find "${CURRENT_PATH}" -maxdepth 1 -type f -regextype sed -regex ".*.jpg$"`
-
 echo ""
 
-for FILENAME in ${FILELIST[*]}
+for FILENAME in "${TARGET_PATH}"/*.jpg
 do
-    echo "${FILENAME} ..."
+    if [ ! -f "$FILENAME" ]; then
+        continue
+    fi
+
+    echo "${FILENAME}"
 
     exiftool -overwrite_original \
         -Lens="${LENS_NAME}" \
@@ -333,9 +333,7 @@ do
         -FNumber="" \
         -LensID="" \
         "${FILENAME}" 1&gt; /dev/null
-done
-
-echo -e "\nDone"</code></pre>
+done</code></pre>
 <p>使用方式為進入你需要調整照片的資料夾，然後呼叫這支程式就會根據你的選擇對你的照片進行修改。</p>
 <pre><code>./path/to/exif.sh zm35
 
