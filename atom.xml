@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-09-15T00:13:45+08:00</updated>
+	<updated>2022-09-15T00:53:43+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,7 +14,7 @@
 		<title type="html"><![CDATA[使用 Exiftool 管理手動鏡頭資訊]]></title>
 		<link href="https://scar.tw/article/2022/09/14/manage-info-of-manual-lenses-by-exiftool/" />
 		<id>urn:uuid:5ccbee13-0cf1-1085-3776-9681eabdd3dc</id>
-		<updated>2022-09-14T21:45:56+08:00</updated>
+		<updated>2022-09-15T00:52:54+08:00</updated>
 		<summary type="html"><![CDATA[<p>由於長期都使用手動鏡頭在攝影，而手動鏡頭因為透過轉接的方式，機身基本上都紀錄不到正確的鏡頭資訊。</p>
 <p>平常是用 Windows 來管理照片，所以這幾年都是使用 AnalogExif 來修改鏡頭資訊，但它好幾年都沒有更新了，在使用上有總有些痛點，所以帶來了不少的麻煩。</p>
 <p>而最近受惠於 WSL 的成熟，現在在 Windows 系統上我可以繼續使用 Linux 來開發程式，所以既然能在 Windows 上使用 Linux 那麼我何不自己寫支程式來管理大量相片的鏡頭資訊？</p>
@@ -27,13 +27,13 @@
 <p>基本上 Exiftool 非常強大，只要有支援圖檔都能夠進行操作，雖然它還有其它的功能，但管理資訊則只需要專注在讀跟寫資訊就好。</p>
 <h3>讀取資訊</h3>
 <p>我們可以用以下的指令將照片中的資訊讀取出來，這邊額外的參數 <code>-s</code> 能讓屬性以短名稱的方式以及 <code>-g</code> 按照分類呈現，這樣有助於後續的程式撰寫。</p>
-<pre><code>exiftool -s -g ~/SCR00000.jpg
+<pre><code>exiftool -s -g ~/SCR06780.jpg
 
 ---- ExifTool ----
 ExifToolVersion                 : 12.40
 Warning                         : [minor] Fixed incorrect URI for xmlns:MicrosoftPhoto
 ---- File ----
-FileName                        : SCR00000.jpg
+FileName                        : SCR06780.jpg
 Directory                       : /home/scarwu
 FileSize                        : 14 MiB
 FileModifyDate                  : 2022:04:26 12:00:52+08:00
@@ -196,16 +196,90 @@ LensID                          : DT 40mm F2.8 SAM</code></pre>
     -ApertureValue="" \
     -FNumber="" \
     -LensID="" \
-    ~/SCR00000.jpg</code></pre>
+    ~/SCR06780.jpg</code></pre>
 <p>這樣你就會得到一張鏡頭資訊正確的照片了！</p>
 <h2>程式碼</h2>
 <p>根據剛剛的指令，為了更方便管理照片，我寫了一個 Shell Script 來管理大量的相片，裡面鏡頭的資訊也能夠照情況自由修改。</p>
 <pre><code class="language-bash">#!/usr/bin/env bash
 
-exiftoolHandler() {
-    echo "Lens Name: ${LENS_NAME}"
-    echo "Focal Length: ${FOCAL_LENGTH}"
-    echo "Aperture Value: ${APERTURE_VALUE}"
+case "${1}" in
+    zm35)
+        export LENS_NAME="Carl Zeiss Distagon T* 35mm F1.4 ZM"
+        export FOCAL_LENGTH="35"
+        export APERTURE_VALUE="1.4"
+        ;;
+
+    km35)
+        export LENS_NAME="Konica M-Hexanon 35mm F2"
+        export FOCAL_LENGTH="35"
+        export APERTURE_VALUE="2"
+        ;;
+
+    vm35)
+        export LENS_NAME="Voigtlander Nokton Classic 35mm F1.4"
+        export FOCAL_LENGTH="35"
+        export APERTURE_VALUE="1.4"
+        ;;
+
+    vm15)
+        export LENS_NAME="Voigtlander Super Wide-Heliar Aspherical III 15mm F4.5"
+        export FOCAL_LENGTH="15"
+        export APERTURE_VALUE="4.5"
+        ;;
+
+    pk50)
+        export LENS_NAME="SMC Pentax-M 50mm F1.4"
+        export FOCAL_LENGTH="50"
+        export APERTURE_VALUE="1.4"
+        ;;
+
+    lomo32)
+        export LENS_NAME="Lomogon 32mm F2.5 Art Lens"
+        export FOCAL_LENGTH="32"
+        export APERTURE_VALUE="2.5"
+        ;;
+
+    *)
+        echo $"Usage: $0 &lt;zm35|km35|vm35|vm15|pk50|lomo32&gt; &lt;?path&gt;"
+
+        exit 1
+esac
+
+if [ "" != "${2}" ]
+then
+    export CURRENT_PATH="${2}"
+else
+    export CURRENT_PATH=`pwd`
+fi
+
+if [ ! -d "$CURRENT_PATH" ]
+then
+    echo "Path is't folder or not exists"
+
+    exit 1
+fi
+
+echo "Current Path: ${CURRENT_PATH}"
+echo "Lens Name: ${LENS_NAME}"
+echo "Focal Length: ${FOCAL_LENGTH}"
+echo "Aperture Value: ${APERTURE_VALUE}"
+
+echo -e "\nIs info currently? [Y/n] \c"
+
+read ANWSER
+
+if [ "n" == "${ANWSER}" ]
+then
+    exit 1
+fi
+
+export FILELIST=`find "${CURRENT_PATH}" -maxdepth 1 -type f -regextype sed -regex ".*.jpg$"`
+
+echo ""
+
+for FILENAME in ${FILELIST[*]}
+do
+    echo "${FILENAME} ..."
 
     exiftool -overwrite_original \
         -Lens="${LENS_NAME}" \
@@ -218,62 +292,10 @@ exiftoolHandler() {
         -ApertureValue="" \
         -FNumber="" \
         -LensID="" \
-        *.jpg
-}
+        "${FILENAME}" 1&gt; /dev/null
+done
 
-case "$1" in
-    zm35)
-        export LENS_NAME="Carl Zeiss Distagon T* 35mm F1.4 ZM"
-        export FOCAL_LENGTH="35"
-        export APERTURE_VALUE="1.4"
-
-        exiftoolHandler
-        ;;
-
-    km35)
-        export LENS_NAME="Konica M-Hexanon 35mm F2"
-        export FOCAL_LENGTH="35"
-        export APERTURE_VALUE="2"
-
-        exiftoolHandler
-        ;;
-
-    vm35)
-        export LENS_NAME="Voigtlander Nokton Classic 35mm F1.4"
-        export FOCAL_LENGTH="35"
-        export APERTURE_VALUE="1.4"
-
-        exiftoolHandler
-        ;;
-
-    vm15)
-        export LENS_NAME="Voigtlander Super Wide-Heliar Aspherical III 15mm F4.5"
-        export FOCAL_LENGTH="15"
-        export APERTURE_VALUE="4.5"
-
-        exiftoolHandler
-        ;;
-
-    pk50)
-        export LENS_NAME="SMC Pentax-M 50mm F1.4"
-        export FOCAL_LENGTH="50"
-        export APERTURE_VALUE="1.4"
-
-        exiftoolHandler
-        ;;
-
-    lomo32)
-        export LENS_NAME="Lomogon 32mm F2.5 Art Lens"
-        export FOCAL_LENGTH="32"
-        export APERTURE_VALUE="2.5"
-
-        exiftoolHandler
-        ;;
-
-    *)
-        echo $"Usage: $0 {zm35|km35|vm35|vm15|pk50|lomo32}"
-        exit 1
-esac</code></pre>
+echo -e "\nDone"</code></pre>
 <p>使用方式為進入你需要調整照片的資料夾，然後呼叫這支程式就會根據你的選擇對你的照片進行修改。</p>
 <pre><code>./path/to/exif.sh zm35
 
