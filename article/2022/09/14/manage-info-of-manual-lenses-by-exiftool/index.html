@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2022/09/14/manage-info-of-manual-lenses-by-exiftool/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663160724" />
-            <script src="/assets/scripts/theme.min.js?1663160724" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663172021" />
+            <script src="/assets/scripts/theme.min.js?1663172021" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -62,7 +62,7 @@
 <p>所以我就找了強大的 exiftool 指令作為基底寫一支批次管理程式。</p>
 <h2>安裝</h2>
 <p>如果是使用 Ubuntu 的話就用下面指令就能安裝了，如果是其它平台理論上都會有相應的指令可供安裝。</p>
-<pre><code>sudo apt install exittool</code></pre>
+<pre><code>sudo apt install exiftool</code></pre>
 <h2>使用</h2>
 <p>基本上 Exiftool 非常強大，只要有支援圖檔都能夠進行操作，雖然它還有其它的功能，但管理資訊則只需要專注在讀跟寫資訊就好。</p>
 <h3>讀取資訊</h3>
@@ -236,7 +236,7 @@ LensID                          : DT 40mm F2.8 SAM</code></pre>
     -ApertureValue="" \
     -FNumber="" \
     -LensID="" \
-    SCR00000.jpg</code></pre>
+    ~/SCR00000.jpg</code></pre>
 <p>這樣你就會得到一張鏡頭資訊正確的照片了！</p>
 <h2>程式碼</h2>
 <p>根據剛剛的指令，為了更方便管理照片，我寫了一個 Shell Script 來管理大量的相片，裡面鏡頭的資訊也能夠照情況自由修改。</p>
@@ -319,7 +319,7 @@ esac</code></pre>
 
 # or
 
-alias exif="./path/of/exif.sh"
+alias exif="./path/to/exif.sh"
 
 exif zm35</code></pre>
 <p>最新的程式我放在 <a href="https://gist.github.com/scarwu/f0a6ba04de523d6e814f4a27839f51ee">Gist</a> 上。</p>
