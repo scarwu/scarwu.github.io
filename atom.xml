@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-09-15T14:10:52+08:00</updated>
+	<updated>2022-09-16T00:11:05+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,20 +14,23 @@
 		<title type="html"><![CDATA[使用 Exiftool 管理手動鏡頭資訊]]></title>
 		<link href="https://scar.tw/article/2022/09/14/manage-info-of-manual-lenses-by-exiftool/" />
 		<id>urn:uuid:5ccbee13-0cf1-1085-3776-9681eabdd3dc</id>
-		<updated>2022-09-15T14:10:34+08:00</updated>
+		<updated>2022-09-16T00:10:48+08:00</updated>
 		<summary type="html"><![CDATA[<p>由於長期都使用手動鏡頭在攝影，而手動鏡頭因為透過轉接的方式，機身基本上都紀錄不到正確的鏡頭資訊。</p>
 <p>平常是用 Windows 來管理照片，所以這幾年都是使用 AnalogExif 來修改鏡頭資訊，但它好幾年都沒有更新了，在使用上有總有些痛點，所以帶來了不少的麻煩。</p>
 <p>而最近受惠於 WSL 的成熟，現在在 Windows 系統上我可以繼續使用 Linux 來開發程式，所以既然能在 Windows 上使用 Linux 那麼我何不自己寫支程式來管理大量相片的鏡頭資訊？</p>
 <!--more-->
 <p>所以我就找了強大的 exiftool 指令作為基底寫一支批次管理程式。</p>
 <h2>安裝</h2>
-<p>如果是使用 Ubuntu 的話就用下面指令就能安裝了，如果是其它平台理論上都會有相應的指令可供安裝。</p>
-<pre><code>sudo apt install exiftool</code></pre>
+<p>如果是使用 Ubuntu 的話就用下面指令就能安裝了。</p>
+<pre><code class="language-bash">sudo apt install exiftool</code></pre>
+<p>macOS 的話先去裝 <a href="https://brew.sh/">Homebrew</a> 再用下面指令安裝。</p>
+<pre><code class="language-bash">brew install exiftool</code></pre>
+<p>如果是其它平台理論上都會有相應的指令可供安裝。</p>
 <h2>使用</h2>
 <p>基本上 Exiftool 非常強大，只要有支援圖檔都能夠進行操作，雖然它還有其它的功能，但管理資訊則只需要專注在讀跟寫資訊就好。</p>
 <h3>讀取資訊</h3>
 <p>我們可以用以下的指令將照片中的資訊讀取出來，這邊額外的參數 <code>-s</code> 能讓屬性以短名稱的方式以及 <code>-g</code> 按照分類呈現，這樣有助於後續的程式撰寫。</p>
-<pre><code>exiftool -s -g ~/SCR06780.jpg
+<pre><code class="language-bash">exiftool -s -g ~/SCR06780.jpg
 
 ---- ExifTool ----
 ExifToolVersion                 : 12.40
@@ -182,8 +185,8 @@ LensID                          : DT 40mm F2.8 SAM</code></pre>
 </ul></li>
 </ol>
 <h3>寫入資訊</h3>
-<p>有了剛剛的整理好的資訊，我們就能針對需要的參數去調整照片屬性。</p>
-<p>以 SMC Pentax-M 50mm F1.4 這顆鏡頭為例，我們可以用下面的指令去修改照片屬性。</p>
+<p>有了剛剛的整理好的屬性，我們就能填入正確的參數去調整照片屬性。</p>
+<p>以 <code>SMC Pentax-M 50mm F1.4</code> 這顆鏡頭為例，我們可以用下面的指令去修改照片屬性。</p>
 <p>但這邊要注意一下如果攝影的相機不是全幅機的話 <code>FocalLengthIn35mmFormat</code> 這項屬性需要而外進行換算。</p>
 <p>然而在拍照的時很難紀錄手動鏡頭當下的光圈值，除非你都會去記錄，所以大部分我都只設定最大光圈 <code>MaxApertureValue</code> 而把 <code>ApertureValue</code> 及 <code>FNumber</code> 清除。</p>
 <pre><code class="language-bash">exiftool -overwrite_original \
@@ -293,7 +296,7 @@ for FILENAME in "${TARGET_PATH}"/*.jpg; do
         "${FILENAME}" 1&gt; /dev/null
 done</code></pre>
 <p>使用方式為進入你需要調整照片的資料夾，然後呼叫這支程式就會根據你的選擇對你的照片進行修改。</p>
-<pre><code>./path/to/exif.sh zm35
+<pre><code class="language-bash">./path/to/exif.sh zm35
 
 # or
 
