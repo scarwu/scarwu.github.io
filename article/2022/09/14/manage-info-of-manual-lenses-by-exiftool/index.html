@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2022/09/14/manage-info-of-manual-lenses-by-exiftool/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663177483" />
-            <script src="/assets/scripts/theme.min.js?1663177483" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663219632" />
+            <script src="/assets/scripts/theme.min.js?1663219632" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -306,15 +306,13 @@ echo -e "\nIs above information correct? [Y/n] \c"
 
 read ANWSER
 
-if [ "n" == "${ANWSER}" ]
-then
+if [ "n" == "${ANWSER}" ]; then
     exit 1
 fi
 
 echo ""
 
-for FILENAME in "${TARGET_PATH}"/*.jpg
-do
+for FILENAME in "${TARGET_PATH}"/*.jpg; do
     if [ ! -f "${FILENAME}" ]; then
         continue
     fi
