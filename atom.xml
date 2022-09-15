@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-09-16T00:11:05+08:00</updated>
+	<updated>2022-09-16T00:48:14+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,7 +14,7 @@
 		<title type="html"><![CDATA[使用 Exiftool 管理手動鏡頭資訊]]></title>
 		<link href="https://scar.tw/article/2022/09/14/manage-info-of-manual-lenses-by-exiftool/" />
 		<id>urn:uuid:5ccbee13-0cf1-1085-3776-9681eabdd3dc</id>
-		<updated>2022-09-16T00:10:48+08:00</updated>
+		<updated>2022-09-16T00:19:42+08:00</updated>
 		<summary type="html"><![CDATA[<p>由於長期都使用手動鏡頭在攝影，而手動鏡頭因為透過轉接的方式，機身基本上都紀錄不到正確的鏡頭資訊。</p>
 <p>平常是用 Windows 來管理照片，所以這幾年都是使用 AnalogExif 來修改鏡頭資訊，但它好幾年都沒有更新了，在使用上有總有些痛點，所以帶來了不少的麻煩。</p>
 <p>而最近受惠於 WSL 的成熟，現在在 Windows 系統上我可以繼續使用 Linux 來開發程式，所以既然能在 Windows 上使用 Linux 那麼我何不自己寫支程式來管理大量相片的鏡頭資訊？</p>
