@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2012/09/12/sqlite3-multi-thread-in-python/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663260491" />
-            <script src="/assets/scripts/theme.min.js?1663260491" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663307415" />
+            <script src="/assets/scripts/theme.min.js?1663307415" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -55,7 +55,7 @@
                         <a href="/tag/Note/">Note</a> <a href="/tag/Python/">Python</a> <a href="/tag/SQLite/">SQLite</a>                    </span>
                                     </div>
             </div>
-            <div class="nx-content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)，但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
+                        <div class="nx-content"><p>最近在寫用 Python 寫 Multi-Thread 的程式，而每個程式都要對同一個 SQLite Connect 存取資料，當成是在單獨執行處理的時候不會發生問題(廢話)，但在開始將 Thread 一個一個都啟動並同時存取就爆了。</p>
 <h3>Error Code</h3>
 <pre><code class="language-bash">ProgrammingError: SQLite objects created in a thread can only be used in thatsame thread.The object was created in thread id xxx and this is thread id xxx</code></pre>
 <!--more-->

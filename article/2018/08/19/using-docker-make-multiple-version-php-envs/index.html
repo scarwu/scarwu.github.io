@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2018/08/19/using-docker-make-multiple-version-php-envs/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663260490" />
-            <script src="/assets/scripts/theme.min.js?1663260490" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663307414" />
+            <script src="/assets/scripts/theme.min.js?1663307414" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -55,7 +55,7 @@
                         <a href="/tag/Docker/">Docker</a> <a href="/tag/Nginx/">Nginx</a> <a href="/tag/PHP/">PHP</a>                    </span>
                                     </div>
             </div>
-            <div class="nx-content"><p>過去在這幾年間 <code>PHP</code> 終於從 <code>5.x</code> 升版到了 <code>7.x</code>，所以公司內的新專案也因應改版也順勢使用新版本，那原本的專案就保持舊版本或是之後有計畫升級新版本。</p>
+                        <div class="nx-content"><p>過去在這幾年間 <code>PHP</code> 終於從 <code>5.x</code> 升版到了 <code>7.x</code>，所以公司內的新專案也因應改版也順勢使用新版本，那原本的專案就保持舊版本或是之後有計畫升級新版本。</p>
 <p>但這樣就會造成環境混雜的問題，所以同時可能會有 <code>5.4</code>、<code>5.6</code> 或是 <code>7.0</code> 的專案需要開發。</p>
 <p>而在一般的開發環境之下，每台電腦就只能安裝單一版本的 <code>PHP</code>，就算有機會安裝多個環境也有機會造成環境污染，以及無法快速切換版本。</p>
 <p>所以利用 <code>Container</code> 的方式將不同的環境打包到個別的 <code>Image</code> 獨立運作，再利用 <code>PHP-FPM</code> 可以聆聽 <code>socket</code> 或是 <code>port</code> 的特性，以及 <code>Nginx</code> 的 <code>Proxy</code> 將請求送到不同的環境去執行。</p>

@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2019/05/28/nginx-lua-with-alpine-linux/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663260490" />
-            <script src="/assets/scripts/theme.min.js?1663260490" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663307413" />
+            <script src="/assets/scripts/theme.min.js?1663307413" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -55,7 +55,7 @@
                         <a href="/tag/Alpine%20Linux/">Alpine Linux</a> <a href="/tag/Docker/">Docker</a> <a href="/tag/Lua/">Lua</a> <a href="/tag/Nginx/">Nginx</a>                    </span>
                                     </div>
             </div>
-            <div class="nx-content"><p>最近在升級公司服務，在原有的環境是使用 <code>Ubuntu</code> + <code>Nginx Extras</code>，但為了最小化容器尺寸所以使用了 <code>Alpine Linux</code>，原本想說能順利轉換，但事情絕對不會是憨人想得這麼簡單。</p>
+                        <div class="nx-content"><p>最近在升級公司服務，在原有的環境是使用 <code>Ubuntu</code> + <code>Nginx Extras</code>，但為了最小化容器尺寸所以使用了 <code>Alpine Linux</code>，原本想說能順利轉換，但事情絕對不會是憨人想得這麼簡單。</p>
 <p>雖然 <code>Alpine</code> 的 <code>Nginx</code> 有把 <code>Lua Module</code> 編進去，但是 <code>Nginx</code> 在運行時會缺少新版的 <code>Openresty LuaJIT</code> 核心導致無法運行，且在套件庫中的 <code>LuaJIT</code> 只有舊版，原本嘗試自行編譯但遇到了一些問題繞了些路，最終解決方法卻異常簡單。</p>
 <!--more-->
 <h2>Code</h2>

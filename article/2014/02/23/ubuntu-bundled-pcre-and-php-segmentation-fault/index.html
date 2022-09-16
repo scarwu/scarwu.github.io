@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2014/02/23/ubuntu-bundled-pcre-and-php-segmentation-fault/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663260491" />
-            <script src="/assets/scripts/theme.min.js?1663260491" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663307414" />
+            <script src="/assets/scripts/theme.min.js?1663307414" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -55,7 +55,7 @@
                         <a href="/tag/Linux/">Linux</a> <a href="/tag/Note/">Note</a> <a href="/tag/PHP/">PHP</a> <a href="/tag/PHPBrew/">PHPBrew</a> <a href="/tag/Ubuntu/">Ubuntu</a>                    </span>
                                     </div>
             </div>
-            <div class="nx-content"><h2>接續</h2>
+                        <div class="nx-content"><h2>接續</h2>
 <p>我前天說到我要找時間查查到底是什麼原因造成<code>PHP</code>的<code>Segmentation Fault</code>，我想本篇文章的標題已經指名原因了，<del>那我就結束這回合</del>。</p>
 <p>當然我還是在這邊紀錄一下流程以及解決方法，然後在除錯的過程中還順便解了一個<code>PHPBrew</code>的<code>Bug</code>，這個<code>Bug</code>就是關於<code>./configure</code>找不到<code>libpcre(.a|.so)</code>的問題，原因是出在於系統架構的判斷。</p>
 <p>先不管這個，我之前說過只要<code>preg_match()</code>只要輸入的字串一長就會發生錯誤，所以我們朝<code>PCRE Library</code>進行。</p>

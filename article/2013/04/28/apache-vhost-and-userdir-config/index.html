@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://scar.tw/article/2013/04/28/apache-vhost-and-userdir-config/" />
     <link rel="image_src" href="https://scar.tw/images/icon.jpg" />
     <link rel="shortcut icon" href="https://scar.tw/favicon.ico" />
-        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663260491" />
-            <script src="/assets/scripts/theme.min.js?1663260491" async></script>
+        <link rel="stylesheet" href="/assets/styles/theme.min.css?1663307414" />
+            <script src="/assets/scripts/theme.min.js?1663307414" async></script>
         <script>
         window._nx = {
             googleAnalytics: 'G-YZVS19XQ4T',
@@ -55,7 +55,7 @@
                         <a href="/tag/Apache/">Apache</a> <a href="/tag/Linux/">Linux</a> <a href="/tag/Ubuntu/">Ubuntu</a>                    </span>
                                     </div>
             </div>
-            <div class="nx-content"><h2>前言</h2>
+                        <div class="nx-content"><h2>前言</h2>
 <p>Apache是常用的網頁伺服器，而<code>userdir</code>這個Module主要功能是用來讓Linux上的每個使用者擁有一個自己的網頁空間，通常都是以<code>http://examaple.com/~username</code>的形式呈現。另外<code>vhost_alias</code>則是讓網頁伺服器可以根據指向它域名來顯示不同的網頁內容，假設<code>http://a.example.com</code>與<code>b.examle.com</code>都指向<code>192.168.1.1</code>，那麼Apache就可以根據域名來挑選網頁的根目錄<code>/var/www/a</code>或是<code>/var/www/b</code>來呈現不同的內容。</p>
 <!--more-->
 <h2>啟用Module</h2>
