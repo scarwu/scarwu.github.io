@@ -5,11 +5,60 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-09-19T11:14:23+08:00</updated>
+	<updated>2022-09-29T01:24:27+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[天工 LM-EA9 開箱]]></title>
+		<link href="https://scar.tw/article/2022/09/29/techart-lm-ea9-unboxing/" />
+		<id>urn:uuid:9f7c0a50-4ae2-a5ac-7264-683574436828</id>
+		<updated>2022-09-29T01:23:18+08:00</updated>
+		<summary type="html"><![CDATA[<p>在接收到 LM-EA9 的發表消息後就非常期待上市，在使用 LM-EA7 好幾年後終於有後繼產品，而在八月得知可以預購後馬上下單，等了將近一個月後終於拿到實體了。</p>
+<!--more-->
+<h2>外觀</h2>
+<p><img src="https://live.staticflickr.com/65535/52390801436_dd67ddce98_h.jpg" alt="" /></p>
+<p>LM-EA9 因為本體少了下巴，厚度也有比較薄，但明顯大圈了一點，所以盒子與上代有明顯差異。</p>
+<p><img src="https://live.staticflickr.com/65535/52389879397_da2abe108a_h.jpg" alt="" /></p>
+<p>盒子裡面只有簡單的兩張說明書之外就是接環本體了，很精簡。</p>
+<p>這次所附上的前後蓋都是金屬製的，其中後蓋則是用來更新韌體的 USB Adapter，而本次的轉接環本體作工扎實很多，接環雖然小了不少但重量卻跟上代差不多，在鏡頭接上鏡座時明顯較緊。</p>
+<h2>明顯改善</h2>
+<p><img src="https://live.staticflickr.com/65535/52391229495_fc171038fd_h.jpg" alt="" /></p>
+<p>上代的下巴裡面塞有一個 N20 馬達跟減速齒輪機構，所以佔據不小的空間（見<a href="/article/2021/03/15/techart-lm-ea7-repair/">天工 LM-EA7 維修</a>），而這代改為四顆微型馬達驅動，所以對焦聲音小很多，而且能感覺到移動速度較為快速。</p>
+<p>另外上代在下巴中還有另外兩根金屬柱是用來支撐及移動鏡座的，當使用久之後或是較重的鏡頭，就會造成光軸歪斜，所以在使用大光圈拍攝的時候就會注意到暗角歪一邊。</p>
+<p><img src="https://live.staticflickr.com/65535/52390802426_a911c8833e_h.jpg" alt="" /></p>
+<p><img src="https://live.staticflickr.com/65535/52391112624_5af454e5f7_h.jpg" alt="" /></p>
+<p>還有一點很重要的，就是上代在鏡座完全伸出時會漏光！在這代就沒有這個問題。</p>
+<p>這代還順便改良了內部的結構防止散射，原本是在內圈分為比較突出的上下兩塊，一塊有絨布，而另一塊僅有梯形結構。這代則是整圈的絨布，而且還有些變窄了，寬度只比電子接點厚一點。</p>
+<p><img src="https://live.staticflickr.com/65535/52391230235_93671c67b8_h.jpg" alt="" /></p>
+<p><img src="https://live.staticflickr.com/65535/52391230375_fb115e2385_h.jpg" alt="" /></p>
+<p>而這代更新韌體的方式從原本的藍芽改為使用 USB 接孔，所以關機後就不會因為藍芽模組而耗電，這樣相機久放就不用再拔電池斷電了。</p>
+<h2>對焦延遲</h2>
+<p>對焦在這代上還是個問題，但問題跟上代有點不同，不知道是要同時驅動四顆馬達還是演算法問題，我感受到在按下半快門後有個很明顯的延遲，對焦環才會開始做動，但開始做動之後卻又是迅速的對焦，但在合焦前有會有些延遲，這點在使用 AFC 時會非常明顯。</p>
+<p>另外就是，使用眼控對焦或是彈性點 S 時，確認合焦後所拍下的照片，感覺會有些微失焦，準確度不夠。</p>
+<p>除以上兩點之外，沒有遇到其他問題，以目前來說現在這代產品還沒有成熟，希望後續的韌體更新可以改善這些問題。</p>
+<h2>總結</h2>
+<ul>
+<li>優點
+<ol>
+<li>更小的體積</li>
+<li>更扎實的作工</li>
+<li>光軸不再歪斜</li>
+<li>不會漏光</li>
+<li>不會自動耗電</li>
+<li>對焦聲音更小</li>
+<li>對焦速度更快</li>
+</ol></li>
+<li>缺點
+<ol>
+<li>半按快門到合焦前會延遲</li>
+<li>判定合焦後可能是失焦</li>
+</ol></li>
+</ul>
+<p>相較於上代，這代確實改善令人詬病的一些問題，但還有其他問題尚待韌體更新解決，所以目前使用上只能說是堪用，因為對焦問題現在只能慢慢拍，要拿上街拍照還需要一些時間。</p>
+<p>最後不確定是不是因為光軸正了，所以照片的立體感又更為明顯了。</p>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[使用 Exiftool 管理手動鏡頭資訊]]></title>
 		<link href="https://scar.tw/article/2022/09/14/manage-info-of-manual-lenses-by-exiftool/" />
@@ -338,7 +387,7 @@ exif zm35</code></pre>
 		<title type="html"><![CDATA[天工 LM-EA7 維修]]></title>
 		<link href="https://scar.tw/article/2021/03/15/techart-lm-ea7-repair/" />
 		<id>urn:uuid:b03dade0-f51d-59d8-e6d7-0ef72a99f0fb</id>
-		<updated>2022-06-04T20:09:18+08:00</updated>
+		<updated>2022-09-28T11:52:39+08:00</updated>
 		<summary type="html"><![CDATA[<p>就在上周在拍照的時候使用兩年的 LM-EA7 就罷工了，轉接環對焦時突出的接環座在關機後就縮不回去也無法進行對焦。</p>
 <p>在簡單測試後研判是推動鏡頭接環座、用做於對焦的馬達掛點了 (根據多年玩四驅車燒馬達的經驗 XD)。</p>
 <p>原本是要給店家送修但考慮到現在疫情影響，要把維修品送出國在時間來回上會拖延太久，所以就決定自行維修了。</p>
@@ -347,7 +396,7 @@ exif zm35</code></pre>
 <p><img src="/images/techart-lm-ea7-repair/000.jpg" alt="" /></p>
 <p>至於要怎樣拆下馬達，下圖圈起的地方是滑動軸，這個用還承載接環前後移動以及有一定的剛性為防止鏡頭在往前移動時下垂。</p>
 <p>只要在這兩的地方施力向外拉，接環連同馬達本身就會鬆脫，但要注意的是要小心連接馬達的電線可能會扯斷。</p>
-<p>在這邊可以簡單對馬達過電或是用三用電表確認是否短路，我過電後基本上他不會運轉以及以確認短路，很大的可能就是電刷壞了。</p>
+<p>在這邊可以簡單對馬達過電或是用三用電表確認是否短路，我過電後基本上他不會運轉以及確認短路，很大的可能就是電刷壞了。</p>
 <p><img src="/images/techart-lm-ea7-repair/001.jpg" alt="" /></p>
 <p>把馬達拿起翻至背面就能看見型號，基本上這是一顆 N10 的馬達並帶有減速機構，那麼要買的替換材料就是 N10 馬達，要注意的是轉速跟乘載基本上要一致。</p>
 <p>但網路上能查不到相關型號的資料，只有類似型號的資料如<a href="http://www.tronsunmotor.com/data/upload/file/201807/9cf0bda32900d9aef04178a754ffdad5.pdf">連結</a>，應該是同一系列的產品。</p>
@@ -450,45 +499,6 @@ exif zm35</code></pre>
 <h2>相關相片</h2>
 <ul>
 <li><a href="https://www.flickr.com/photos/scarwu/albums/72157666755921839">Flickr</a></li>
-<li><a href="https://www.instagram.com/scarwu/">Instagram</a></li>
-</ul>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[傳承經典 Lomogon 32mm F2.5 Art Lens]]></title>
-		<link href="https://scar.tw/article/2020/10/01/lomogon-32mm-f25-art-lens-review/" />
-		<id>urn:uuid:cfc01f53-9ca5-af00-65c3-9160be4cc911</id>
-		<updated>2022-06-04T20:02:56+08:00</updated>
-		<summary type="html"><![CDATA[<p>2019 年初看見 Lomography 在 <a href="https://www.kickstarter.com/projects/lomography/the-lomogon-25-32-art-lens">Kickstarter</a> 上募資，說明將會由俄國 ZENIT 生產，重現經典的 Lomo 相機 LC-A 發色的鏡頭。</p>
-<p>看見這則訊息開始，等了將近快一年終於收到了鏡頭，又過了九個月的現在，我才花了點時間好好使用這顆獨特的鏡頭。</p>
-<!--more-->
-<h2>外觀</h2>
-<p>悶騷如我選了一個黃銅的材質，金色的外觀真的很騷包，在街上拿起相機格外受到矚目。</p>
-<p><img src="https://live.staticflickr.com/65535/50404480247_54a87e424e_h.jpg" alt="" /></p>
-<p>鏡頭蓋使用無卡榫設計，內部使用絨布鋪裝，就摩擦力固定在鏡頭上，順便還能保護鏡頭表面。</p>
-<p><img src="https://live.staticflickr.com/65535/50404478827_2748394562_h.jpg" alt="" /></p>
-<p>變焦環在最前方，鏡頭使用外變焦方式，在變焦時會向前移動，但是移動幅度不太但會與鏡頭蓋干涉。</p>
-<p><img src="https://live.staticflickr.com/65535/50404478082_e3e2bc8270_h.jpg" alt="" /></p>
-<p>外露式的光圈轉盤，讓每個光圈切換後的散景光點都會呈現圓形。</p>
-<p><img src="https://live.staticflickr.com/65535/50404479477_9caebed182_h.jpg" alt="" /></p>
-<p>鏡尾使用 Canon EF 接環，在官方提供的方案中還有 Nikon F 及 Pentax K 可選擇。</p>
-<p><img src="https://live.staticflickr.com/65535/50404323876_d0b1324003_h.jpg" alt="" /></p>
-<p>我使用了 EOS-LM 轉接環再轉接到 LM-EA7 上讓它具有自動對焦及近攝功能，在拍攝上應用更為廣泛。</p>
-<h2>成像</h2>
-<p>對比我手上顯有的鏡頭，顏色上較為鮮豔而且對比度高，在畫面銳利度上的表現也不錯。</p>
-<p><img src="https://live.staticflickr.com/65535/50310780342_185857972c_h.jpg" alt="" /></p>
-<p><img src="https://live.staticflickr.com/65535/49273834531_e17ba71e97_h.jpg" alt="" /></p>
-<p>光圈全開時，高光的邊緣有些微色散，但大部份時候看不太出來，且在逆光時也沒有鬼影跟耀光，鏡頭鍍膜看起來處理得在水準上。</p>
-<p><img src="https://live.staticflickr.com/65535/50311979297_69ef727674_h.jpg" alt="" /></p>
-<p><img src="https://live.staticflickr.com/65535/50338460227_8b1a6ae698_h.jpg" alt="" /></p>
-<p>由於顏色鮮豔跟對比度高，如果將相片轉為黑白很多時候可得到很好的效果。</p>
-<p><img src="https://live.staticflickr.com/65535/50340649823_7e533d00c2_h.jpg" alt="" /></p>
-<h2>總結</h2>
-<p>不論是外觀、操作上都非常有特色，拍下的照片更是保有 Lomo 的風格。</p>
-<p>由於鏡頭在轉接後也是別具份量，而且黃銅材質表面的金油比想像中容易刮傷。</p>
-<p>在日常使用上在靈活度可能沒有非常理想，但如果出門是想拍攝一些風格特殊的照片不仿可以帶在身上。</p>
-<h2>相關相片</h2>
-<ul>
-<li><a href="https://www.flickr.com/photos/scarwu/albums/72157712320505788">Flickr</a></li>
 <li><a href="https://www.instagram.com/scarwu/">Instagram</a></li>
 </ul>]]></summary>
 	</entry>
