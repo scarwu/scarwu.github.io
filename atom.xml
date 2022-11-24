@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-11-24T19:16:41+08:00</updated>
+	<updated>2022-11-24T21:01:54+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,7 +14,7 @@
 		<title type="html"><![CDATA[天工 LM-EA9 開箱]]></title>
 		<link href="https://scar.tw/article/2022/09/29/techart-lm-ea9-unboxing/" />
 		<id>urn:uuid:9f7c0a50-4ae2-a5ac-7264-683574436828</id>
-		<updated>2022-11-24T19:16:10+08:00</updated>
+		<updated>2022-11-24T21:00:09+08:00</updated>
 		<summary type="html"><![CDATA[<p>在接收到 LM-EA9 的發表消息後就非常期待上市，在使用 LM-EA7 好幾年後終於有後繼產品，而在八月得知可以預購後馬上下單，等了將近一個月後終於拿到實體了。</p>
 <!--more-->
 <h2>外觀</h2>
@@ -60,7 +60,7 @@
 <p>最後不確定是不是因為光軸正了，所以照片的立體感又更為明顯了。</p>
 <h3>後記 (2022/11/24)</h3>
 <p>在 2022/11/15 的時候天工釋出了 LM-EA9 新的韌體 <code>1.6.0</code>，以我的 <code>A7c</code> 為例，在更新完成後使用起來，感覺大幅改善了對焦的速讀及精準度，所以上面所說的缺點就也消失了。</p>
-<p>另外就是如果轉接環的鏡頭焦段有設定正確，也能改善對焦的速度，像我平常都使用 <code>35mm</code> 的鏡頭，但不小心設定跑掉變成了 <code>15mm</code>，不管怎樣對焦都有大機率都在拉風箱，直到我改回正確的設定。</p>]]></summary>
+<p>另外就是如果轉接環的鏡頭焦段有設定正確，也能改善對焦的速度，像我平常都使用 <code>35mm</code> 的鏡頭，但不小心設定跑掉變成了 <code>15mm</code>，不管怎樣對焦都有大機率在拉風箱，直到我改回 <code>35mm</code> 的焦段設定才正常。</p>]]></summary>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[使用 Exiftool 管理手動鏡頭資訊]]></title>
