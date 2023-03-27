@@ -5,11 +5,297 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2022-11-24T21:01:54+08:00</updated>
+	<updated>2023-03-28T02:47:20+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
 	</author>
+	<entry>
+		<title type="html"><![CDATA[即可拍鏡頭改造特製版]]></title>
+		<link href="https://scar.tw/article/2023/03/28/disposable-camera-lens-transplant-customized-version/" />
+		<id>urn:uuid:035de82a-da09-1693-e326-d1b3b56399ec</id>
+		<updated>2023-03-28T02:44:00+08:00</updated>
+		<summary type="html"><![CDATA[<p>這次要來改造即可拍的鏡頭，但其實我在去年的時候已經用 Fujifilm 的鏡頭改造一次了，但我遇到了一些問題，所以我這次會用 Kodak 的鏡頭來改造。</p>
+<p>就改造個即可拍鏡頭有什麼好寫成，一篇文章的而且網路上已經有很多相關的改造文章及影片內容了，為什麼還要再寫一篇？</p>
+<p>這就是為什麼標題會是寫特製版了，如果只是一般的改造我就不會寫成文章了。</p>
+<!--more-->
+<h2>準備工具材料</h2>
+<ul>
+<li>美工刀</li>
+<li>遮蓋膠帶</li>
+<li>麥克筆</li>
+<li>鑷子</li>
+<li>斜口鉗</li>
+<li>銼刀或砂紙</li>
+<li>階梯鑽
+<ul>
+<li>3-13mm</li>
+<li>6-25mm</li>
+</ul></li>
+<li>直尺</li>
+<li>游標卡尺</li>
+<li>即可拍
+<ul>
+<li>Kodak Daylight 或 Kodak FunSaver</li>
+</ul></li>
+<li>機身蓋
+<ul>
+<li>Sony E Mount (NEX) 或 Leica M Mount (LM)</li>
+</ul></li>
+</ul>
+<h2>拆解及改造</h2>
+<p>拆解即可拍相機並取得鏡頭模組，這邊我就不寫像詳細步驟，但可以參考<a href="https://www.youtube.com/watch?v=2ymKt4uhTOw">此連結</a>。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/000.jpg" alt="" /></p>
+<p>當取得鏡頭模組後，需要用斜口鉗沿著鏡頭底板的周圍剪一圈，並保留下大約 1-2mm 的突出，然後邊緣可以使用砂紙或銼刀研磨修整一下。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/001.jpg" alt="" /></p>
+<p>接下來需要在機身蓋上面開一孔，使用游標卡尺測量，鏡頭直徑約為 <code>16.08mm</code> 而機身蓋的話 NEX 為 <code>60.07mm</code>、LM 為 <code>51.11mm</code>。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/002.jpg" alt="" /></p>
+<p>先在機身蓋上貼上遮蓋膠帶，接著使用游標卡尺在調整到半徑 NEX 為 <code>30.035mm</code>、LM 為 <code>25.255mm</code>，靠在鏡頭蓋上並旋轉畫幾條線就得到了圓心位置。我們要在中心位置上開一個 <code>16mm</code> 的孔，這時候可以使用階梯鑽來開孔。這樣就可以得到一個正圓且在中心位置的圓孔。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/003.jpg" alt="" /></p>
+<p>然後就可以把鏡頭直接固定在蓋子上就完成改造了。當然，網路上改造資訊到此就結束了，雖然獲得了一個改造鏡頭，但你會發現這個鏡頭需要非常近才能準焦。</p>
+<h2>焦距計算</h2>
+<p>接下來就是關鍵了，鏡頭必須要配置正確的位置，成像才能正確對焦在 Sensor 或是底片上。</p>
+<p>有在玩老鏡轉接的會知道 <code>鏡後距（Back Focal Distance）</code> 及 <code>法蘭距（Flange Focal Distance）</code> 這個兩詞，鏡後距指的是鏡頭後端到對焦平面的距離，而法蘭距指的是鏡頭接口到對焦平面的距離。</p>
+<p>它是鏡頭能不能合焦的關鍵，而過長的焦距會造成無限遠處不合焦，這也是造成只能拍近距離的問題。</p>
+<p>所以我們這邊需要計算出正確的焦距，並調整鏡頭，這也是要使用 Kodak 鏡頭的原因，Kodak 的鏡頭本身為圓通狀，且有較長的筒身，這在調整焦距上有比較大的調整空間。</p>
+<p>根據法蘭距資料顯示，NEX 為 <code>18mm</code>、LM 為 <code>27.8mm</code>。接著我們要來測量鏡頭蓋，我們需要測量接口卡榫的外側高度及內側高度然後與之相減，這邊稱為<strong>蓋內距</strong>。</p>
+<p>根據游標卡尺的測量結果，NEX 外側高度 <code>4.5mm</code>、內側高度 <code>12.5mm</code>，蓋內距為 <code>8mm</code>；而 LM 外側高度 <code>6.5mm</code>、內側高度 <code>7.5mm</code>、蓋內距為 <code>1mm</code>。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/100.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/101.jpg" alt="" /></p>
+<p>接下來我們來測量即可拍機身得出以下數值，快門簾凹槽 <code>1.3mm</code>、快門簾至底片 <code>20.6mm</code>，所以即可拍的鏡後距約為 <code>21.9mm</code>。</p>
+<p>如果將機身的法蘭距加上蓋內距就得到了<strong>蓋後距</strong>，NEX 為 <code>26mm</code>、LM 為 <code>28.8mm</code>，然後再減掉最後測量出來的即可拍鏡後距 <code>21.9mm</code> 就會是實際鏡頭需要校正的後移量，NEX 為 <code>4.1mm</code>、LM 為 <code>6.9mm</code>。</p>
+<p>所幸 Kodak 鏡頭的筒身長有 <code>9.5mm</code> 扣除前方導角 <code>0.5mm</code> 以及底板的 <code>1mm</code> 的厚度後，可用的平整面高度為 <code>8mm</code>，但實際上能用的調整空間為 <code>6mm</code> 以下，因為鏡頭蓋的厚度會吃掉一些調整空間作為固定鏡頭的支點，但上面兩個鏡頭蓋所需的調整偏移量都在範圍內（如果真的不夠的話，可以把鏡頭蓋的內部用膠板加厚創造支點）。</p>
+<p>這也就是不用 Fujifilm 鏡頭的原因，因為可用的調整空間不足。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/102.jpg" alt="" /></p>
+<p>雖然我們上面量出了大致上的數值，但在實際的製作還是會有些微誤差，起因是鏡頭蓋的其實是一個向外微凸的曲面，所實際上的後移量會大於上面所提及的數值。另外要注意當鏡頭裝上鏡頭蓋後，底板的厚度的 <code>1mm</code> 也包含在後移量裡，請記得把這個數字也算進去後移量。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/103.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/104.jpg" alt="" /></p>
+<p>最後如果有照上面的所以說的數值調整，那麼恭喜你將得到了一個跟即可拍一樣泛焦距離 1 公尺到無限遠的鏡頭。</p>
+<h2>光圈改造</h2>
+<p>接下來我們想一下光圈是不是也能改造，讓它有更大的光圈、能有更多的進光量，傻瓜相機因為是使用泛焦的原理來進行拍攝，所以鏡頭上所設計的光圈普遍都很小，例如這次所改造的就是一個 <code>32mm F/10</code> 的鏡頭。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/200.jpg" alt="" /></p>
+<p>經過簡單的測量了一下，光圈孔徑大小為 <code>2mm</code> 最大應該是可以擴孔到 <code>6.3mm</code>，但神奇的是根據公式 <code>焦距 / 孔徑 = 光圈值</code> 所得出結果卻表明這是一個 <code>F/16</code> 的鏡頭（<code>32mm / 2mm = F/16</code>）？如果是根據規格所說光圈值是 <code>F/10</code> 的話，那應該會是一個 <code>3.2mm</code> 的孔才是（<code>32mm / 3.2mm = F/10</code>）。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/201.jpg" alt="" /></p>
+<p>但不管如何，我們都能從 <code>2mm</code> 擴孔到 <code>6.3mm</code>，但受限於工具所以我只用階梯鑽擴到 <code>6mm</code>，雖然看起來不多但進光卻是原本的 9 倍，光圈值跳了三級多，從 <code>F/10</code> 變成了 <code>F/3.4</code> 左右。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/202.jpg" alt="" /></p>
+<p>但重點來了，前面有說到，因為要深景深的泛焦才能達到不用對焦也能拍清楚，但把光圈加大之後景深就變淺了、泛焦的範圍也隨之改變，所以這時對焦就變得很重要。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/203.jpg" alt="" /></p>
+<p>看到這邊應該就不難發現，為什麼除了 NEX 之外還額外提供了 LM 的數值了，因為我們就可以直接做一個 LM 版的鏡頭，並直接裝在 LM-NEX 的哈克神力環上。這樣就得到了一個大光圈又能夠對焦的即可拍鏡頭！甚至是裝在天工環上進行自動對焦！</p>
+<p><strong>但可惜的是，代誌不是憨人想得那麼簡單。</strong></p>
+<p>因為光圈變大了、鏡頭的像差變得非常明顯了（畢竟是塑膠鏡片），這讓天工環的自動對焦不起作用，無法正確合焦。而使用神力環也的手動對焦也只是堪用。</p>
+<p>所以在實務上，為了追求最大光圈變得有點不切實際，使用 <code>6mm</code> 的孔徑上會讓畫質迅速崩壞並讓對焦變得困難，後續會再測試其他光圈的成像找尋畫質及進光量的平衡點。</p>
+<!-- 所以在實務上，為了追求最大光圈變得有點不切實際，使用 `6mm` 的孔徑上會讓畫質迅速崩壞並讓對焦變得困難，後續在使用額外自製各種孔徑大小的光圈貼片測試後，個人認為使用 `?mm` 作為光圈孔徑會是畫質及進光量的平衡點。 -->
+<h2>成品</h2>
+<h3>By Kodak Daylight (32mm, F/3.4)</h3>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/300.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/301.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/302.jpg" alt="" /></p>
+<h3>By Fujifilm Simple Ace (32mm, F/10)</h3>
+<p>補一下之前用 Fujifilm 鏡頭製作的成品，可以看到的是鏡頭模組真的非常扁，基本上沒有什麼調整空間。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/400.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/401.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/402.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/403.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/404.jpg" alt="" /></p>
+<h2>測試照片</h2>
+<p>以下是 Kodak 鏡頭的成像測試。</p>
+<h3>Aperture@6mm</h3>
+<p>在擴孔後的最大光圈下，畫質急遽下滑，在高光的部分直接暈開來，一切都變得朦朧不清，但換來的是低一點的 ISO 及較快的快門，體感上並不像是一顆 <code>F/3.4</code> 的鏡頭，感覺實際光圈值更小一些。</p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04726.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04741.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04744.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04749.jpg" alt="" /></p>
+<h3>Aperture@?mm</h3>
+<p>其餘光圈在測試會再補上相片。</p>
+<h2>數值表格</h2>
+<p>以下是大約數值，供參考用。</p>
+<h3>即可拍鏡頭</h3>
+<table>
+<thead>
+<tr>
+<th>直徑</th>
+<th>高度</th>
+<th>底板厚度</th>
+<th>圓角高度</th>
+<th>平整面高度</th>
+<th>可調整範圍</th>
+<th>孔徑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16.08mm</td>
+<td>9.5mm</td>
+<td>1mm</td>
+<td>0.5mm</td>
+<td>8mm</td>
+<td>6mm</td>
+<td>2mm</td>
+</tr>
+</tbody>
+</table>
+<h3>即可拍機身</h3>
+<table>
+<thead>
+<tr>
+<th>快門簾凹槽</th>
+<th>快門簾至底片</th>
+<th>鏡後距</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.3mm</td>
+<td>20.6mm</td>
+<td>21.9mm</td>
+</tr>
+</tbody>
+</table>
+<h3>機身蓋</h3>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>直徑</th>
+<th>半徑</th>
+<th>外側高度</th>
+<th>內側高度</th>
+<th>蓋內距</th>
+<th>法蘭距</th>
+<th>蓋後距</th>
+<th>校正後移量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NEX</td>
+<td>60.07mm</td>
+<td>30.035mm</td>
+<td>4.5mm</td>
+<td>12.5mm</td>
+<td>8mm</td>
+<td>18mm</td>
+<td>26mm</td>
+<td>4.1mm</td>
+</tr>
+<tr>
+<td>LM</td>
+<td>51.11mm</td>
+<td>25.255mm</td>
+<td>6.5mm</td>
+<td>7.5mm</td>
+<td>1mm</td>
+<td>27.8mm</td>
+<td>28.9mm</td>
+<td>6.9mm</td>
+</tr>
+</tbody>
+</table>
+<h3>孔徑與光圈值對應</h3>
+<!--
+| Aperture | Multiple | EV       | F-number             |
+| 2mm      | 1        | 0        | F/10                 |
+| 2.5mm    | 1.5625   | 0.5625   | F/8.35247564417433   |
+|          | 2        | 1        | F/7.071067811865475  |
+| 3mm      | 2.25     | 1.3125   | F/6.81218433538229   |
+| 3.5mm    | 3.0625   | 1.53125  | F/5.970813036811941  |
+| 4mm      | 4        | 2        | F/4.999999999999999  |
+| 4.5mm    | 5.0625   | 2.265625 | F/4.611001193763382  |
+| 5mm      | 6.25     | 2.5625   | F/4.176237822087164  |
+| 5.5mm    | 7.5625   | 2.890625 | F/3.6957098849713437 |
+|          | 8        | 3        | F/3.535533905932737  |
+| 6mm      | 9        | 3.125    | F/3.4060921676911446 |
+|          | 16       | 4        | F/2.499999999999999  |
+-->
+<table>
+<thead>
+<tr>
+<th>孔徑</th>
+<th>進光量</th>
+<th>曝光值</th>
+<th>光圈值 (*1)</th>
+<th>光圈值 (*2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2mm</td>
+<td>1x</td>
+<td>+0</td>
+<td>F/10</td>
+<td>F/16</td>
+</tr>
+<tr>
+<td>2.5mm</td>
+<td>1.56x</td>
+<td>+0.56</td>
+<td>F/8.35</td>
+<td>F/12.8</td>
+</tr>
+<tr>
+<td>3mm</td>
+<td>2.25x</td>
+<td>+1.31</td>
+<td>F/6.81</td>
+<td>F/10.67</td>
+</tr>
+<tr>
+<td>3.5mm</td>
+<td>3.06x</td>
+<td>+1.53</td>
+<td>F/5.97</td>
+<td>F/9.14</td>
+</tr>
+<tr>
+<td>4mm</td>
+<td>4x</td>
+<td>+2</td>
+<td>F/5</td>
+<td>F/8</td>
+</tr>
+<tr>
+<td>4.5mm</td>
+<td>5.06x</td>
+<td>+2.27</td>
+<td>F/4.61</td>
+<td>F/7.11</td>
+</tr>
+<tr>
+<td>5mm</td>
+<td>6.25x</td>
+<td>+2.56</td>
+<td>F/4.18</td>
+<td>F/6.4</td>
+</tr>
+<tr>
+<td>5.5mm</td>
+<td>7.56x</td>
+<td>+2.89</td>
+<td>F/3.7</td>
+<td>F/6.82</td>
+</tr>
+<tr>
+<td>6mm</td>
+<td>9x</td>
+<td>+3.12</td>
+<td>F/3.4</td>
+<td>F/5.33</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ol>
+<li>根據商品規格推估</li>
+<li>根據實際孔徑推估</li>
+</ol>
+</blockquote>
+<h2>References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Aperture">https://en.wikipedia.org/wiki/Aperture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Focal_length">https://en.wikipedia.org/wiki/Focal_length</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Flange_focal_distance">https://en.wikipedia.org/wiki/Flange_focal_distance</a></li>
+</ul>]]></summary>
+	</entry>
 	<entry>
 		<title type="html"><![CDATA[天工 LM-EA9 開箱]]></title>
 		<link href="https://scar.tw/article/2022/09/29/techart-lm-ea9-unboxing/" />
@@ -459,50 +745,5 @@ exif zm35</code></pre>
 <li>鎖回螺絲</li>
 </ul></li>
 </ol>]]></summary>
-	</entry>
-	<entry>
-		<title type="html"><![CDATA[歷盡風霜 SMC Pentax-M 50mm F1.4]]></title>
-		<link href="https://scar.tw/article/2020/10/21/smc-pentax-m-50mm-f14-review/" />
-		<id>urn:uuid:005dce65-0f8c-e7e8-159a-3057e63cb56c</id>
-		<updated>2022-02-07T17:02:50+08:00</updated>
-		<summary type="html"><![CDATA[<p>在經過近四十年的歲月後，時間又再次凝結。</p>
-<p><a href="https://www.flickr.com/photos/scarwu/albums/72157666755921839">SMC Pentax-M 50mm F1.4</a> 這支鏡頭連同底片機身 Pentax MX 從我爸那邊接手過來，但由於早期保存方式不良，所以在拿到鏡頭的時候鏡片上已經布滿著菌絲且機身也無法使用了。</p>
-<!--more-->
-<p>在接收鏡頭後就馬上送去清洗黴菌，但結果也不太意外，鏡片鍍膜被黴菌侵蝕的大半且內部的膠合鏡片也已經脫膠。</p>
-<p>理論上一般人應該是就不會再次使用了，但能拿到一個經過歲月風霜的鏡頭也是一種機運。至於機身我有嘗試拆解不意外的維修難度很高，我也因此得知了這部相機生產於昭和 56 年（西元 1981 年）。</p>
-<p>所以在我幼兒時有許多照片是這台相機拍下的，雖然機身無法使用了但鏡頭卻能透過轉接重生。</p>
-<h2>外觀</h2>
-<p><img src="https://live.staticflickr.com/65535/50510135396_77c37dd53b_h.jpg" alt="" /></p>
-<p><img src="https://live.staticflickr.com/65535/50510135646_912108ce67_h.jpg" alt="" /></p>
-<p>黑色復古的外觀全金屬的鏡身，鏡頭前方式為對焦環且對焦行程非常長，對於景深很淺的 F1.4 光圈能盪對焦更為精準，但反之對焦速度就是反效果。</p>
-<p><img src="https://live.staticflickr.com/65535/50510136651_59894b791b_h.jpg" alt="" /></p>
-<p>後方則是光圈環，光圈刻度從 F1.4 到 F22 ，光圈葉片為 8 片。</p>
-<p><img src="https://live.staticflickr.com/65535/50510136436_9a48422024_h.jpg" alt="" /></p>
-<p>往鏡頭裡看，可以很清楚的看見侵蝕以及脫膠的痕跡。</p>
-<p><img src="https://live.staticflickr.com/65535/50510299212_fc4bfcfc9a_h.jpg" alt="" /></p>
-<p>尾部的接環為 Pentax K 接環且有光圈頂針，但不影響轉接後的光圈調整，最後不免俗的還是轉接在 A7II 上使用。</p>
-<h2>成像</h2>
-<p>由於目前手上沒有鏡片良好鏡頭，只能說明在受損狀態下的成像情況。</p>
-<p><img src="https://live.staticflickr.com/65535/50509544098_f4005cca00_h.jpg" alt="" /></p>
-<p><img src="https://live.staticflickr.com/65535/50505694686_3b26b74c6a_h.jpg" alt="" /></p>
-<p>在光圈全開下，由於鍍膜受到黴菌侵蝕以及鏡片脫膠的損害，在逆光或是光源充足的情況下鏡頭內的散射會非常嚴重。</p>
-<p><img src="https://live.staticflickr.com/65535/50505874512_3cd82efd03_h.jpg" alt="" /></p>
-<p><img src="https://live.staticflickr.com/65535/50505709861_676c62c878_h.jpg" alt="" /></p>
-<p>會在照片上留下過度的色散以及曝光，相片的畫質會急遽下降，但縮一級光圈就會得到大幅度的改善。</p>
-<p><img src="https://live.staticflickr.com/65535/48073059321_a5fcab4f29_h.jpg" alt="" /></p>
-<p><img src="https://live.staticflickr.com/65535/50509533868_7e995af4d9_h.jpg" alt="" /></p>
-<p>反之在順光或是低光源的環境下，畫面非常柔和且對比度也不高，色彩呈現清淡的調性。雖然在這種情況下發色會比較正常，但畫質還是不會回復到應有的水準。</p>
-<p><img src="https://live.staticflickr.com/65535/48073167117_77cd86bbf3_h.jpg" alt="" /></p>
-<p><img src="https://live.staticflickr.com/65535/48073062421_a7b26ad385_h.jpg" alt="" /></p>
-<p>但也因為有這種的特性，所以拍出的照片都會存在著這樣的缺陷。如果運用得當會得出還不錯的成果。</p>
-<h2>總結</h2>
-<p><img src="https://live.staticflickr.com/65535/50510135226_81871d9097_h.jpg" alt="" /></p>
-<p>雖然知道在二手市場中能夠用兩千多的價格，找到一顆同樣且保存完好的鏡頭，且在鏡片未受損的狀態下成像更是水準之上。</p>
-<p>在追求解像力高畫質的時代了，使用這顆受損鏡頭也許是背道而馳，但我更想的是在照片上保留歲月的痕跡。</p>
-<h2>相關相片</h2>
-<ul>
-<li><a href="https://www.flickr.com/photos/scarwu/albums/72157666755921839">Flickr</a></li>
-<li><a href="https://www.instagram.com/scarwu/">Instagram</a></li>
-</ul>]]></summary>
 	</entry>
 </feed>
