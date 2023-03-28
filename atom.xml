@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2023-03-28T02:55:54+08:00</updated>
+	<updated>2023-03-28T11:21:59+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,9 +14,9 @@
 		<title type="html"><![CDATA[即可拍鏡頭改造特製版]]></title>
 		<link href="https://scar.tw/article/2023/03/28/disposable-camera-lens-transplant-customized-version/" />
 		<id>urn:uuid:035de82a-da09-1693-e326-d1b3b56399ec</id>
-		<updated>2023-03-28T02:55:34+08:00</updated>
+		<updated>2023-03-28T11:19:44+08:00</updated>
 		<summary type="html"><![CDATA[<p>這次要來改造即可拍的鏡頭，但其實我在去年的時候已經用 Fujifilm 的鏡頭改造一次了，但我遇到了一些問題，所以我這次會用 Kodak 的鏡頭來改造。</p>
-<p>就改造個即可拍鏡頭有什麼好寫成，一篇文章的而且網路上已經有很多相關的改造文章及影片內容了，為什麼還要再寫一篇？</p>
+<p>就改造個即可拍鏡頭有什麼好寫成一篇文章的，而且網路上已經有很多相關的改造文章及影片內容了，為什麼還要再寫一篇？</p>
 <p>這就是為什麼標題會是寫特製版了，如果只是一般的改造我就不會寫成文章了。</p>
 <!--more-->
 <h2>準備工具材料</h2>
@@ -300,7 +300,7 @@
 		<title type="html"><![CDATA[天工 LM-EA9 開箱]]></title>
 		<link href="https://scar.tw/article/2022/09/29/techart-lm-ea9-unboxing/" />
 		<id>urn:uuid:9f7c0a50-4ae2-a5ac-7264-683574436828</id>
-		<updated>2022-11-24T21:00:09+08:00</updated>
+		<updated>2022-11-24T21:00:04+08:00</updated>
 		<summary type="html"><![CDATA[<p>在接收到 LM-EA9 的發表消息後就非常期待上市，在使用 LM-EA7 好幾年後終於有後繼產品，而在八月得知可以預購後馬上下單，等了將近一個月後終於拿到實體了。</p>
 <!--more-->
 <h2>外觀</h2>
@@ -676,7 +676,7 @@ exif zm35</code></pre>
 		<title type="html"><![CDATA[天工 LM-EA7 維修]]></title>
 		<link href="https://scar.tw/article/2021/03/15/techart-lm-ea7-repair/" />
 		<id>urn:uuid:b03dade0-f51d-59d8-e6d7-0ef72a99f0fb</id>
-		<updated>2022-09-28T11:52:39+08:00</updated>
+		<updated>2022-09-28T11:52:44+08:00</updated>
 		<summary type="html"><![CDATA[<p>就在上周在拍照的時候使用兩年的 LM-EA7 就罷工了，轉接環對焦時突出的接環座在關機後就縮不回去也無法進行對焦。</p>
 <p>在簡單測試後研判是推動鏡頭接環座、用做於對焦的馬達掛點了 (根據多年玩四驅車燒馬達的經驗 XD)。</p>
 <p>原本是要給店家送修但考慮到現在疫情影響，要把維修品送出國在時間來回上會拖延太久，所以就決定自行維修了。</p>
