@@ -5,7 +5,7 @@
 	<link href="https://scar.tw/atom.xml" rel="self" />
 	<link href="https://scar.tw/" />
 	<id>urn:uuid:4d418d05-9f8f-0741-8939-1476077aab63</id>
-	<updated>2023-03-29T15:16:20+08:00</updated>
+	<updated>2023-03-31T00:58:48+08:00</updated>
 	<author>
 		<name><![CDATA[ScarWu]]></name>
 		<uri>https://scar.tw/</uri>
@@ -14,7 +14,7 @@
 		<title type="html"><![CDATA[即可拍鏡頭改造特製版]]></title>
 		<link href="https://scar.tw/article/2023/03/28/disposable-camera-lens-transplant-customized-version/" />
 		<id>urn:uuid:035de82a-da09-1693-e326-d1b3b56399ec</id>
-		<updated>2023-03-28T19:01:28+08:00</updated>
+		<updated>2023-03-31T00:55:45+08:00</updated>
 		<summary type="html"><![CDATA[<p>這次要來改造即可拍的鏡頭，但其實我在去年的時候已經用 Fujifilm 的鏡頭改造一次了，但我遇到了一些問題，所以我這次會用 Kodak 的鏡頭來改造。</p>
 <p>就改造個即可拍鏡頭有什麼好寫成一篇文章的，而且網路上已經有很多相關的改造文章及影片內容了，為什麼還要再寫一篇？</p>
 <p>這就是為什麼標題會是寫特製版了，如果只是一般的改造我就不會寫成文章了。</p>
@@ -83,8 +83,7 @@
 <p>看到這邊應該就不難發現，為什麼除了 NEX 之外還額外提供了 LM 的數值了，因為我們就可以直接做一個 LM 版的鏡頭，並直接裝在 LM-NEX 的哈克神力環上。這樣就得到了一個大光圈又能夠對焦的即可拍鏡頭！甚至是裝在天工環上進行自動對焦！</p>
 <p><strong>但可惜的是，代誌不是憨人想得那麼簡單。</strong></p>
 <p>因為光圈變大了、鏡頭的像差變得非常明顯了（畢竟是塑膠鏡片），這讓天工環的自動對焦不起作用，無法正確合焦。而使用神力環也的手動對焦也只是堪用。</p>
-<p>所以在實務上，為了追求最大光圈變得有點不切實際，使用 <code>6mm</code> 的孔徑上會讓畫質迅速崩壞並讓對焦變得困難，後續會再測試其他光圈的成像找尋畫質及進光量的平衡點。</p>
-<!-- 所以在實務上，為了追求最大光圈變得有點不切實際，使用 `6mm` 的孔徑上會讓畫質迅速崩壞並讓對焦變得困難，後續在使用額外自製各種孔徑大小的光圈貼片測試後，個人認為使用 `?mm` 作為光圈孔徑會是畫質及進光量的平衡點。 -->
+<p>所以在實務上，為了追求最大光圈變得有點不切實際，使用 <code>6mm</code> 的孔徑上會讓畫質迅速崩壞並讓對焦變得困難。後續製作了 <code>5mm</code> 及 <code>4mm</code> 大小孔徑的光圈貼片測試，我單純使用了 <code>5mm</code> 後畫質已經是可接受範圍了，後續 <code>4mm</code> 就沒有嘗試了，當然用了畫質會再更好 。</p>
 <h2>成品</h2>
 <h3>By Kodak Daylight (32mm@F/3.4)</h3>
 <p><img src="/images/disposable-camera-lens-transplant-customized-version/300.jpg" alt="" /></p>
@@ -105,8 +104,11 @@
 <p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04741.jpg" alt="" /></p>
 <p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04744.jpg" alt="" /></p>
 <p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04749.jpg" alt="" /></p>
-<!-- ### Aperture@?mm
-其餘光圈在測試會再補上相片。 -->
+<h3>@F/4.18 (5mm)</h3>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04786.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04816.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04835.jpg" alt="" /></p>
+<p><img src="/images/disposable-camera-lens-transplant-customized-version/SCR04851.jpg" alt="" /></p>
 <h2>數值表格</h2>
 <p>以下是大約數值，供參考用。</p>
 <h3>即可拍鏡頭</h3>
@@ -300,7 +302,7 @@
 		<title type="html"><![CDATA[天工 LM-EA9 開箱]]></title>
 		<link href="https://scar.tw/article/2022/09/29/techart-lm-ea9-unboxing/" />
 		<id>urn:uuid:9f7c0a50-4ae2-a5ac-7264-683574436828</id>
-		<updated>2022-11-24T21:00:04+08:00</updated>
+		<updated>2022-11-24T21:00:09+08:00</updated>
 		<summary type="html"><![CDATA[<p>在接收到 LM-EA9 的發表消息後就非常期待上市，在使用 LM-EA7 好幾年後終於有後繼產品，而在八月得知可以預購後馬上下單，等了將近一個月後終於拿到實體了。</p>
 <!--more-->
 <h2>外觀</h2>
@@ -676,7 +678,7 @@ exif zm35</code></pre>
 		<title type="html"><![CDATA[天工 LM-EA7 維修]]></title>
 		<link href="https://scar.tw/article/2021/03/15/techart-lm-ea7-repair/" />
 		<id>urn:uuid:b03dade0-f51d-59d8-e6d7-0ef72a99f0fb</id>
-		<updated>2022-09-28T11:52:44+08:00</updated>
+		<updated>2022-09-28T11:52:39+08:00</updated>
 		<summary type="html"><![CDATA[<p>就在上周在拍照的時候使用兩年的 LM-EA7 就罷工了，轉接環對焦時突出的接環座在關機後就縮不回去也無法進行對焦。</p>
 <p>在簡單測試後研判是推動鏡頭接環座、用做於對焦的馬達掛點了 (根據多年玩四驅車燒馬達的經驗 XD)。</p>
 <p>原本是要給店家送修但考慮到現在疫情影響，要把維修品送出國在時間來回上會拖延太久，所以就決定自行維修了。</p>
